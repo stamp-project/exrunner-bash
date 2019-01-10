@@ -2,7 +2,7 @@ INPUT=new-inputs.csv
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; }
-LIMIT=10
+LIMIT=15
 
 while read application package version crashes
 do
@@ -20,7 +20,7 @@ do
 
   json_string=$(python jj.py "${logs[@]}")
 
-  java -Xmx10000m -jar botsing-model-generation.jar -projectCP "bins/$application/$version/bin" -projectPackage "$package" -crashes "$json_string" -outDir "results/$application-$version" > "logs/$application-$version-out.txt" 2> "logs/$application-$version-err.txt" &
+  java -d64 -Xmx10000m -jar botsing-model-generation.jar -projectCP "bins/$application/$version/bin" -projectPackage "$package" -crashes "$json_string" -outDir "results/$application-$version" > "logs/$application-$version-out.txt" 2> "logs/$application-$version-err.txt" &
 
   while (( $(pgrep -l java | wc -l) >= $LIMIT ))
     do
