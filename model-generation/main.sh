@@ -17,7 +17,7 @@ do
       logs[$i]=../crashes/$application/$temp/$temp.log
   done
 
-  json_string=$(python jj.py "${logs[@]}")
+  json_string=$(python python/jj.py "${logs[@]}")
 
   java -d64 -Xmx10000m -jar botsing-model-generation.jar -projectCP "../bins/$application/$version/bin" -projectPackage "$package" -crashes "$json_string" -outDir "results/$application-$version" > "logs/$application-$version-out.txt" 2> "logs/$application-$version-err.txt" &
 
