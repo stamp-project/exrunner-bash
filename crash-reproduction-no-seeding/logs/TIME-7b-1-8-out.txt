@@ -1,0 +1,67 @@
+21:21:20.828 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+21:21:20.847 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+21:21:20.847 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+21:21:25.371 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:21:44.023 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:21:44.075 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:21:44.075 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:21:44.139 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:21:44.139 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:21:44.139 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:21:44.139 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:21:44.139 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+21:21:44.173 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:21:55.668 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.0
+21:21:55.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 100 
+21:21:55.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:22:02.934 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+21:22:02.970 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:22:02.971 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:22:02.971 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:22:02.971 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:22:02.990 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.millisOfSecond();
+int int0 = 0;
+GJChronology gJChronology0 = GJChronology.getInstanceUTC();
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.forOffsetMillis(int0);
+MockPartial mockPartial0 = new MockPartial();
+DateTime dateTime0 = new DateTime((DateTimeZone) fixedDateTimeZone0);
+DateTime dateTime1 = dateTime0.withDayOfMonth(int0);
+long long0 = 436L;
+MutablePeriod mutablePeriod0 = new MutablePeriod(long0, (Chronology) gJChronology0);
+Duration duration0 = mutablePeriod0.toDurationTo(dateTime0);
+PeriodType periodType0 = PeriodType.yearDayTime();
+duration0.toPeriodTo((ReadableInstant) dateTime1, periodType0);
+DateTime dateTime2 = dateTime1.plus((ReadableDuration) duration0);
+DateTime dateTime3 = mockPartial0.toDateTime((ReadableInstant) dateTime2);
+GJChronology.getInstance((DateTimeZone) fixedDateTimeZone0, (ReadableInstant) dateTime3, int0);
+BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstanceUTC();
+DateTimeZone dateTimeZone0 = buddhistChronology0.getZone();
+gJChronology0.withZone(dateTimeZone0);
+gJChronology0.getMinimumDaysInFirstWeek();
+dateTimeFieldType0.getField(gJChronology0);
+int int1 = 2549;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int0, int1, int0);
+int int2 = (-1239);
+int int3 = 242;
+FieldUtils.safeMultiply(int2, int3);
+String string0 = "xKB]B7{Z9I7Z#1 -Nr&";
+int int4 = (-1);
+FieldUtils.verifyValueBounds(string0, int3, int4, int4);
+FieldUtils.safeSubtract(int2, int2);
+int int5 = 1885;
+int int6 = FieldUtils.safeMultiply(int0, int5);
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int1, int6, int6);
+int int7 = (-2146324724);
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int2, int7, int0);
+int int8 = 1;
+int int9 = (-1);
+int int10 = (-4603);
+FieldUtils.getWrappedValue(int8, int9, int10);
+Object object0 = new Object();
+Object object1 = new Object();
+FieldUtils.equals(object0, object1);
+
+21:22:02.996 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:22:03.225 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:22:06.997 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-7b-1-8
+21:22:07.064 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

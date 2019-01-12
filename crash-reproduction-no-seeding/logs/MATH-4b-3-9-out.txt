@@ -1,0 +1,68 @@
+15:31:41.855 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+15:31:41.864 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine:116)
+15:31:41.864 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine
+15:31:43.135 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+15:31:51.395 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:31:51.431 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:31:51.431 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:31:51.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:31:51.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:31:51.482 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:31:51.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:31:51.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is intersection
+15:31:51.487 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:31:58.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+15:31:58.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+15:31:58.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:32:06.670 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+15:32:11.135 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+15:32:15.553 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 400
+15:32:15.553 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+15:32:15.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:32:15.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:32:15.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+15:32:15.555 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: IntervalsSet intervalsSet0 = null;
+Vector3D vector3D0 = Vector3D.POSITIVE_INFINITY;
+Vector3D.distance(vector3D0, vector3D0);
+Vector3D vector3D1 = Vector3D.PLUS_J;
+Line line0 = new Line(vector3D1, vector3D0);
+Line line1 = new Line(line0);
+Segment segment0 = new Segment(vector3D0, vector3D1, line1);
+SubLine subLine0 = new SubLine(segment0);
+double double0 = 1141.41663333887;
+double double1 = (-1309.876);
+IntervalsSet intervalsSet1 = new IntervalsSet(double0, double1);
+SubLine subLine1 = new SubLine(line1, intervalsSet1);
+Plane plane0 = new Plane(vector3D0, vector3D1, vector3D0);
+Plane plane1 = new Plane(vector3D1, vector3D0);
+Vector2D vector2D0 = plane1.toSubSpace(vector3D1);
+BSPTree<Euclidean1D> bSPTree0 = new BSPTree<Euclidean1D>(vector2D0);
+BSPTree<Euclidean1D> bSPTree1 = bSPTree0.copySelf();
+intervalsSet1.buildNew(bSPTree1);
+Plane plane2 = new Plane(plane1);
+line0.toSubSpace(vector3D0);
+boolean boolean0 = plane2.isSimilarTo(plane1);
+plane2.getOffset(plane1);
+line0.revert();
+plane2.revertSelf();
+Line line2 = plane0.intersection(plane2);
+intervalsSet1.getBarycenter();
+line1.closestPoint(line2);
+boolean boolean1 = true;
+subLine0.intersection(subLine1, boolean1);
+boolean boolean2 = true;
+subLine0.getSegments();
+subLine1.intersection(subLine0, boolean2);
+boolean boolean3 = true;
+subLine1.intersection(subLine0, boolean3);
+subLine0.intersection(subLine1, boolean1);
+subLine1.intersection(subLine0, boolean1);
+subLine1.intersection(subLine0, boolean2);
+subLine1.intersection(subLine0, boolean0);
+subLine0.intersection(subLine1, boolean3);
+subLine0.getSegments();
+
+15:32:15.571 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:32:15.888 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:32:18.433 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SubLine_ESTest' to results/MATH-4b-3-9
+15:32:18.471 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

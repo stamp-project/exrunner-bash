@@ -1,0 +1,57 @@
+21:06:35.263 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:06:35.267 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+21:06:35.267 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+21:06:37.651 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:06:51.019 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:06:51.051 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:06:51.051 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:06:51.096 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:06:51.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:06:51.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:06:51.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:06:51.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+21:06:51.131 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:07:02.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:07:03.001 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.clockhourOfDay();
+int int0 = (-8293);
+int int1 = 3600;
+DateTimeFormatterBuilder.Fraction dateTimeFormatterBuilder_Fraction0 = new DateTimeFormatterBuilder.Fraction(dateTimeFieldType0, int0, int1);
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimeFormatterBuilder_Fraction0, dateTimeFormatterBuilder_Fraction0);
+String string0 = "{=W#I)H";
+dateTimeFormatter0.parseDateTime(string0);
+Locale locale0 = dateTimeFormatter0.getLocale();
+dateTimeFormatter0.isOffsetParsed();
+String string1 = "";
+File file0 = File.createTempFile(string0, string1);
+PrintWriter printWriter0 = new PrintWriter(file0, string0);
+Object[] objectArray0 = new Object[4];
+objectArray0[0] = (Object) dateTimeFieldType0;
+objectArray0[1] = (Object) dateTimeFormatterBuilder_Fraction0;
+objectArray0[2] = (Object) string1;
+objectArray0[3] = (Object) locale0;
+PrintWriter printWriter1 = printWriter0.printf(string0, objectArray0);
+Locale locale1 = Locale.ITALY;
+PrintWriter printWriter2 = printWriter1.printf(locale1, string0, objectArray0);
+BufferedWriter bufferedWriter0 = new BufferedWriter(printWriter2);
+PrintWriter printWriter3 = new PrintWriter(bufferedWriter0);
+PrintWriter printWriter4 = printWriter3.format(string0, objectArray0);
+int int2 = 2;
+PrintWriter printWriter5 = printWriter4.append((CharSequence) string0, int0, int2);
+int int3 = 0;
+int int4 = 0;
+LocalDateTime localDateTime0 = new LocalDateTime(int1, int1, int0, int3, int1, int4);
+int int5 = 76;
+LocalDateTime localDateTime1 = localDateTime0.withSecondOfMinute(int5);
+dateTimeFormatter0.printTo((Writer) printWriter5, (ReadablePartial) localDateTime1);
+DateTimeZone dateTimeZone0 = DateTimeZone.getDefault();
+dateTimeFormatter0.withZone(dateTimeZone0);
+
+21:07:03.012 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:07:03.597 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:07:07.360 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-3
+21:07:07.388 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

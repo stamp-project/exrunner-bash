@@ -1,0 +1,55 @@
+21:22:23.988 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+21:22:23.991 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeParserBucket$SavedField.set(DateTimeParserBucket$SavedField:483)
+21:22:23.992 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeParserBucket$SavedField
+21:22:26.080 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:22:46.091 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:22:46.135 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:22:46.135 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:22:46.210 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:22:46.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:22:46.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:22:46.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:22:46.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is set
+21:22:46.279 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:22:58.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:22:58.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:22:58.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:22:58.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:22:58.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:22:58.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:22:58.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstanceUTC();
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)buddhistChronology0.getZone();
+BuddhistChronology buddhistChronology1 = BuddhistChronology.getInstance((DateTimeZone) fixedDateTimeZone0);
+DateTimeField dateTimeField0 = buddhistChronology1.dayOfMonth();
+int int0 = (-2059);
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField0 = new DateTimeParserBucket.SavedField(dateTimeField0, int0);
+boolean boolean0 = true;
+dateTimeParserBucket_SavedField0.set(buddhistChronology0.BE, boolean0);
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField1 = new DateTimeParserBucket.SavedField(dateTimeField0, buddhistChronology0.BE);
+boolean boolean1 = true;
+dateTimeParserBucket_SavedField0.set(buddhistChronology0.BE, boolean1);
+long long0 = 0L;
+boolean boolean2 = false;
+long long1 = dateTimeParserBucket_SavedField1.set(long0, boolean2);
+long long2 = 0L;
+boolean boolean3 = false;
+dateTimeParserBucket_SavedField0.set(long2, boolean3);
+DateTimeField dateTimeField1 = buddhistChronology0.minuteOfHour();
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.era();
+DelegatedDateTimeField delegatedDateTimeField0 = new DelegatedDateTimeField(dateTimeField1, dateTimeFieldType0);
+String string0 = null;
+Locale locale0 = Locale.TRADITIONAL_CHINESE;
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField2 = new DateTimeParserBucket.SavedField(delegatedDateTimeField0, string0, locale0);
+dateTimeParserBucket_SavedField1.set(long1, boolean1);
+dateTimeParserBucket_SavedField0.compareTo(dateTimeParserBucket_SavedField1);
+int int1 = dateTimeParserBucket_SavedField2.compareTo(dateTimeParserBucket_SavedField0);
+Locale locale1 = Locale.KOREAN;
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField3 = new DateTimeParserBucket.SavedField(dateTimeField0, string0, locale1);
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField4 = new DateTimeParserBucket.SavedField(dateTimeField1, int1);
+long long3 = (-993L);
+dateTimeParserBucket_SavedField3.set(long3, boolean2);
+
+21:22:58.721 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:22:59.214 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:23:05.297 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeParserBucket$SavedField_ESTest' to results/TIME-7b-3-9
+21:23:05.322 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,47 @@
+21:13:05.600 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+21:13:05.616 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.PeriodType.setIndexedField(PeriodType:690)
+21:13:05.617 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.PeriodType
+21:13:09.966 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:13:22.814 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:13:22.851 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:13:22.851 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:13:22.874 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:13:22.906 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:13:22.906 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:13:22.906 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:13:22.906 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setIndexedField
+21:13:22.911 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:13:34.363 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:13:34.363 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:13:34.363 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:13:34.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:13:34.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:13:34.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:13:34.365 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodType periodType0 = PeriodType.dayTime();
+long long0 = 604800000L;
+String string0 = "";
+TestMutableInterval_Updates testMutableInterval_Updates0 = new TestMutableInterval_Updates(string0);
+TestMutableInterval_Updates.MockBadInterval testMutableInterval_Updates_MockBadInterval0 = testMutableInterval_Updates0.new MockBadInterval();
+ISOChronology iSOChronology0 = (ISOChronology)testMutableInterval_Updates_MockBadInterval0.getChronology();
+Period period0 = new Period(long0, (Chronology) iSOChronology0);
+int int0 = (-3241);
+Period period1 = period0.withSeconds(int0);
+Period period2 = period1.minusMonths(int0);
+int int1 = 0;
+int[] intArray0 = new int[1];
+intArray0[0] = int0;
+int int2 = 1930;
+periodType0.setIndexedField(period2, int1, intArray0, int2);
+PeriodType periodType1 = PeriodType.hours();
+periodType0.getIndexedField(period0, int1);
+PeriodType periodType2 = PeriodType.yearMonthDayTime();
+periodType1.withMonthsRemoved();
+periodType2.withSecondsRemoved();
+PeriodType.minutes();
+PeriodType.years();
+periodType0.size();
+
+21:13:34.525 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:13:34.869 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:13:39.167 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PeriodType_ESTest' to results/TIME-5b-1-2
+21:13:39.233 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

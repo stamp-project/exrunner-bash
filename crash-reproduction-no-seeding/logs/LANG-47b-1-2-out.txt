@@ -1,0 +1,62 @@
+13:09:31.504 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+13:09:31.508 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang.text.StrBuilder.appendFixedWidthPadLeft(StrBuilder:1186)
+13:09:31.508 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang.text.StrBuilder
+13:09:37.643 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+13:09:43.738 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:09:43.753 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:09:43.753 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:09:43.811 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:09:43.812 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:09:43.812 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:09:43.813 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:09:43.813 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is appendFixedWidthPadLeft
+13:09:43.817 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:10:03.583 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+13:10:03.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:10:03.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:10:03.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:10:03.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:10:03.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:10:03.585 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: StrBuilder strBuilder0 = new StrBuilder();
+String string0 = "zWH'a";
+int int0 = 457;
+StrBuilder strBuilder1 = strBuilder0.appendSeparator(string0, int0);
+StrBuilder strBuilder2 = strBuilder1.appendNull();
+Object object0 = null;
+char char0 = 'L';
+strBuilder0.appendFixedWidthPadLeft(object0, int0, char0);
+StrMatcher strMatcher0 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+int int1 = 1934;
+int int2 = strBuilder1.indexOf(strMatcher0, int1);
+int int3 = 3105;
+strBuilder2.append(int3);
+int int4 = 0;
+int int5 = 34;
+strBuilder0.appendFixedWidthPadLeft(int4, int5, char0);
+StrBuilder strBuilder3 = strBuilder1.setNullText(string0);
+strBuilder3.delete(int4, int1);
+StrBuilder strBuilder4 = strBuilder1.insert(int2, int1);
+Iterator<String> iterator0 = (Iterator<String>) mock(Iterator.class, new ViolatedAssumptionAnswer());
+StrBuilder strBuilder5 = strBuilder2.appendAll(iterator0);
+int int6 = (-41);
+strBuilder1.setLength(int6);
+StrMatcher strMatcher1 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+strBuilder5.contains(strMatcher1);
+char char1 = '^';
+strBuilder0.appendFixedWidthPadLeft((Object) strBuilder5, int6, char1);
+char char2 = '*';
+strBuilder3.deleteFirst(char2);
+StrMatcher strMatcher2 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+StrBuilder strBuilder6 = strBuilder3.deleteAll(strMatcher2);
+strBuilder6.deleteCharAt(int1);
+int int7 = 0;
+double double0 = (-397.5920968611639);
+strBuilder4.insert(int7, double0);
+String string1 = "";
+strBuilder1.endsWith(string1);
+StrBuilder.StrBuilderWriter strBuilder_StrBuilderWriter0 = strBuilder1.new StrBuilderWriter();
+
+13:10:03.619 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:10:03.891 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:10:06.695 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'StrBuilder_ESTest' to results/LANG-47b-1-2
+13:10:06.778 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

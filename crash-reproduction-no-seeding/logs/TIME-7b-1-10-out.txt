@@ -1,0 +1,81 @@
+21:22:48.653 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+21:22:48.664 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+21:22:48.664 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+21:22:52.556 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:23:11.363 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:23:11.422 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:23:11.422 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:23:11.470 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:23:11.471 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:23:11.471 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:23:11.471 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:23:11.471 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+21:23:11.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:23:24.950 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.0
+21:23:24.950 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 100 
+21:23:24.950 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:23:37.056 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+21:23:37.056 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:23:37.057 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:23:37.057 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:23:37.057 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:23:37.058 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfWeek();
+long long0 = 914L;
+int int0 = (-1);
+MockZone mockZone0 = new MockZone(long0, int0, int0);
+GregorianChronology gregorianChronology0 = GregorianChronology.getInstance((DateTimeZone) mockZone0);
+long long1 = 1532L;
+gregorianChronology0.getDateTimeMillis(long1, int0, int0, int0, int0);
+LenientChronology lenientChronology0 = LenientChronology.getInstance(gregorianChronology0);
+ZoneOffset zoneOffset0 = ZoneOffset.MAX;
+JapaneseDate japaneseDate0 = JapaneseDate.now((ZoneId) zoneOffset0);
+JapaneseDate japaneseDate1 = japaneseDate0.with((TemporalAdjuster) zoneOffset0);
+JapaneseChronology japaneseChronology0 = japaneseDate1.getChronology();
+int int1 = (-1099);
+HijrahEra hijrahEra0 = HijrahEra.of(int1);
+int int2 = (-609);
+int int3 = 408;
+JapaneseDate japaneseDate2 = japaneseChronology0.date((Era) hijrahEra0, int2, int1, int3);
+DateTime dateTime0 = new DateTime(japaneseDate2);
+DateTime dateTime1 = dateTime0.withField(dateTimeFieldType0, int3);
+int int4 = 17;
+DateTime dateTime2 = dateTime1.plusMillis(int4);
+MutablePeriod mutablePeriod0 = new MutablePeriod(dateTime0, dateTime2);
+Duration duration0 = mutablePeriod0.toDurationFrom(dateTime1);
+DateTime dateTime3 = dateTime2.plus((ReadableDuration) duration0);
+Period period0 = new Period(dateTime3, dateTime0);
+int int5 = (-1);
+Period period1 = period0.withMonths(int5);
+Period period2 = period1.minusDays(int4);
+int int6 = 1612;
+Period period3 = period2.withMinutes(int6);
+int int7 = (-2304);
+Period period4 = period3.plusMillis(int7);
+long long2 = (-2045L);
+lenientChronology0.get((ReadablePeriod) period4, long1, long2);
+dateTimeFieldType0.isSupported(lenientChronology0);
+dateTimeFieldType0.getRangeDurationType();
+dateTimeFieldType0.getDurationType();
+int int8 = (-1);
+dateTimeFieldType0.getDurationType();
+dateTimeFieldType0.getDurationType();
+int int9 = 292272708;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int8, int8, int9);
+long long3 = (-60000L);
+long long4 = (-2804L);
+FieldUtils.safeAdd(long3, long4);
+int int10 = 29;
+int int11 = 1960;
+FieldUtils.getWrappedValue(int10, int11, int10);
+FieldUtils.safeMultiply(int11, int9);
+long long5 = (-4477503406080L);
+long long6 = 328L;
+long long7 = FieldUtils.safeMultiply(long5, long6);
+FieldUtils.safeAdd((long) int8, long7);
+long long8 = (-758L);
+FieldUtils.safeSubtract(long8, long6);
+
+21:23:37.100 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:23:37.731 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:23:44.259 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-7b-1-10
+21:23:44.314 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

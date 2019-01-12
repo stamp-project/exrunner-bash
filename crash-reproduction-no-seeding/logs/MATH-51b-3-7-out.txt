@@ -1,0 +1,76 @@
+15:38:12.056 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+15:38:12.060 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseSecantSolver.doSolve(BaseSecantSolver:161)
+15:38:12.061 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseSecantSolver
+15:38:13.910 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+15:38:20.113 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:38:20.120 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:38:20.120 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:38:20.171 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:38:20.173 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:38:20.173 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:38:20.173 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:38:20.174 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doSolve
+15:38:20.180 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:38:26.113 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+15:38:26.113 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+15:38:26.113 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:38:28.770 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 200
+15:38:28.770 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 200 
+15:38:31.424 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 300
+15:38:33.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 400
+15:38:36.240 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 500
+15:38:39.594 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4915254237288135 | 600
+15:38:39.594 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4915254237288135. FE: 600 
+15:38:42.282 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4915254237288135 | 700
+15:38:45.780 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4915254237288135 | 800
+15:38:47.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4915254237288135 | 900
+15:38:51.162 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 1000
+15:38:51.162 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1000 
+15:38:51.163 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:38:51.163 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:38:51.163 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1000 
+15:38:51.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 0.0;
+PegasusSolver pegasusSolver0 = new PegasusSolver(double0, double0);
+int int0 = 1536;
+int int1 = 782;
+SinFunction sinFunction0 = new SinFunction();
+UnivariateRealFunction univariateRealFunction0 = sinFunction0.derivative();
+MonitoredFunction monitoredFunction0 = new MonitoredFunction(univariateRealFunction0);
+double double1 = (-2.0);
+double double2 = 1091.932080029;
+AllowedSolution allowedSolution0 = AllowedSolution.RIGHT_SIDE;
+double double3 = pegasusSolver0.solve(int1, (UnivariateRealFunction) monitoredFunction0, double1, double2, double0, allowedSolution0);
+SinFunction sinFunction1 = new SinFunction();
+UnivariateRealFunction univariateRealFunction1 = sinFunction1.derivative();
+pegasusSolver0.solve(int0, (UnivariateRealFunction) sinFunction1, (double) int0, double0, (double) int0);
+UnivariateRealFunction univariateRealFunction2 = sinFunction1.derivative();
+double double4 = pegasusSolver0.doSolve();
+double double5 = 2770.9815055652;
+double double6 = 0.10506974884810566;
+double double7 = 690.3227891799759;
+pegasusSolver0.isSequence(double6, double7, double4);
+pegasusSolver0.verifyInterval(double0, double5);
+String string0 = "Fbcv ";
+BaseSecantSolver.Method.valueOf(string0);
+int int2 = (-1431655765);
+double double8 = 1482.8327187054103;
+double double9 = 1102.39398058;
+double double10 = 0.09429243227927231;
+AllowedSolution allowedSolution1 = AllowedSolution.RIGHT_SIDE;
+pegasusSolver0.solve(int2, univariateRealFunction1, double8, double9, double10, allowedSolution1);
+double double11 = 0.0;
+monitoredFunction0.setCallsCount(int1);
+double double12 = 1.0E-6;
+double double13 = 9.417283362877432E108;
+AllowedSolution allowedSolution2 = AllowedSolution.ANY_SIDE;
+pegasusSolver0.solve(int2, univariateRealFunction1, double11, double12, double13, allowedSolution2);
+BaseSecantSolver.Method.valueOf(string0);
+double double14 = (-0.9539487253901756);
+double double15 = (-2484.3271495779063);
+pegasusSolver0.solve(int1, univariateRealFunction2, double3, double14, double15);
+BaseSecantSolver.Method.valueOf(string0);
+
+15:38:51.967 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:39:11.440 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:39:16.238 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseSecantSolver_ESTest' to results/MATH-51b-3-7
+15:39:16.785 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

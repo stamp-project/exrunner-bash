@@ -1,0 +1,48 @@
+21:23:48.632 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:23:48.665 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.DateTimeZone.forOffsetHoursMinutes(DateTimeZone:280)
+21:23:48.665 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.DateTimeZone
+21:23:55.195 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:24:12.379 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:24:12.407 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:24:12.407 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:24:12.442 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:24:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:24:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:24:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:24:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is forOffsetHoursMinutes
+21:24:12.468 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:24:22.666 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:24:22.687 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:24:22.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:24:22.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:24:22.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:24:22.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:24:22.698 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeZone.getNameProvider();
+DateTimeZone.getProvider();
+int int0 = 0;
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.forOffsetHoursMinutes(int0, int0);
+boolean boolean0 = false;
+long long0 = fixedDateTimeZone0.adjustOffset(int0, boolean0);
+fixedDateTimeZone0.getName(long0);
+fixedDateTimeZone0.isFixed();
+long long1 = 4086L;
+int int1 = (-4);
+MockZone mockZone0 = new MockZone(long1, int1, int0);
+mockZone0.nextTransition(long0);
+CachedDateTimeZone cachedDateTimeZone0 = (CachedDateTimeZone)DateTimeZone.getDefault();
+long long2 = 0L;
+int int2 = mockZone0.getStandardOffset(long2);
+int int3 = 578;
+MockZone mockZone1 = new MockZone(int1, int2, int3);
+cachedDateTimeZone0.getOffset((long) int1);
+DateTimeZone.getProvider();
+Partial partial0 = new Partial();
+partial0.getFormatter();
+int int4 = 0;
+int int5 = 1194;
+DateTimeZone.forOffsetHoursMinutes(int4, int5);
+
+21:24:22.738 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:24:23.288 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:24:26.239 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeZone_ESTest' to results/TIME-8b-1-10
+21:24:26.269 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

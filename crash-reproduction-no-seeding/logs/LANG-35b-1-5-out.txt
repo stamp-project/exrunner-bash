@@ -1,0 +1,58 @@
+12:56:29.507 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.text.ParseException
+12:56:29.530 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.DateUtils.parseDateWithLeniency(DateUtils:346)
+12:56:29.531 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.DateUtils
+12:56:37.754 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+12:56:52.794 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:56:52.817 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:56:52.817 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:56:52.897 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:56:52.909 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'parseDateWithLeniency(Ljava/lang/String;[Ljava/lang/String;Z)Ljava/util/Date;' is private!
+12:56:52.909 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+12:56:53.248 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+12:56:53.248 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDate
+12:56:53.248 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is parseDateStrictly
+12:56:53.272 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:57:07.736 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+12:57:07.742 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:57:07.745 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:57:07.746 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:57:07.746 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:57:07.746 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:57:07.747 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+String[] stringArray0 = new String[0];
+Date date0 = DateUtils.parseDate(string0, stringArray0);
+int int0 = 0;
+Date date1 = DateUtils.setMilliseconds(date0, int0);
+Calendar calendar0 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+Calendar calendar1 = DateUtils.round(calendar0, int0);
+int int1 = 0;
+Date date2 = DateUtils.setDays(date0, int1);
+Date date3 = DateUtils.setMonths(date2, int0);
+int int2 = 1362;
+DateUtils.setYears(date3, int2);
+DateUtils.isSameDay(calendar1, calendar1);
+int int3 = (-814);
+DateUtils.getFragmentInSeconds(calendar1, int3);
+DateUtils.parseDate(string0, stringArray0);
+DateUtils.isSameInstant(calendar1, calendar1);
+Date date4 = DateUtils.addMilliseconds(date2, int0);
+DateUtils.isSameInstant(calendar1, calendar1);
+int int4 = 1;
+DateUtils.iterator(calendar1, int4);
+DateUtils.getFragmentInDays(date1, int4);
+int int5 = 1527;
+Date date5 = DateUtils.setMilliseconds(date1, int5);
+Object object0 = new Object();
+DateUtils.truncate(object0, int1);
+DateUtils.isSameInstant(calendar1, calendar1);
+DateUtils.addHours(date1, int3);
+DateUtils.round(date4, int2);
+DateUtils.isSameInstant(date1, date3);
+DateUtils.isSameInstant(calendar1, calendar1);
+DateUtils.setHours(date5, int0);
+DateUtils.getFragmentInMilliseconds(calendar1, int3);
+
+12:57:07.804 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:57:08.081 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:57:14.478 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateUtils_ESTest' to results/LANG-35b-1-5
+12:57:14.591 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

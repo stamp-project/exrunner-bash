@@ -1,0 +1,71 @@
+21:07:53.400 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:07:53.415 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+21:07:53.415 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+21:07:56.466 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:08:10.123 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:08:10.145 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:08:10.145 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:08:10.164 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:08:10.168 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:08:10.169 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:08:10.169 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:08:10.169 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+21:08:10.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:08:22.514 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.863636363636363
+21:08:22.515 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.863636363636363. FE: 100 
+21:08:22.515 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:08:31.134 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 200
+21:08:38.765 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 300
+21:08:45.250 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 400
+21:08:50.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 500
+21:08:54.459 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+21:08:54.459 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:08:54.460 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:08:54.460 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:08:54.460 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:08:54.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.millisOfSecond();
+int int0 = 0;
+int int1 = 0;
+DateTimeFormatterBuilder.Fraction dateTimeFormatterBuilder_Fraction0 = new DateTimeFormatterBuilder.Fraction(dateTimeFieldType0, int0, int1);
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimeFormatterBuilder_Fraction0, dateTimeFormatterBuilder_Fraction0);
+String string0 = "(R";
+StringBuffer stringBuffer0 = new StringBuffer(string0);
+int int2 = 1688;
+CharBuffer charBuffer0 = CharBuffer.allocate(int0);
+StringBuffer stringBuffer1 = new StringBuffer(charBuffer0);
+char[] charArray0 = new char[7];
+char char0 = 'X';
+charArray0[0] = char0;
+char char1 = 'u';
+charArray0[1] = char1;
+char char2 = 's';
+charArray0[2] = char2;
+char char3 = '#';
+charArray0[3] = char3;
+char char4 = 'F';
+charArray0[4] = char4;
+char char5 = 'u';
+charArray0[5] = char5;
+char char6 = 'T';
+charArray0[6] = char6;
+stringBuffer1.append(charArray0);
+stringBuffer1.setLength(int1);
+ReadableInstant readableInstant0 = null;
+dateTimeFormatter0.printTo(stringBuffer1, readableInstant0);
+String string1 = "2002-06-08T00:00:00.000-04:00";
+dateTimeFormatter0.parseDateTime(string1);
+int int3 = 277;
+int int4 = (-2406);
+int int5 = 1657;
+int int6 = (-835);
+int int7 = 2672;
+GregorianCalendar gregorianCalendar0 = new GregorianCalendar(int3, int4, int5, int6, int6, int7);
+LocalDateTime localDateTime0 = LocalDateTime.fromCalendarFields(gregorianCalendar0);
+dateTimeFormatter0.printTo((Appendable) stringBuffer0, (ReadablePartial) localDateTime0);
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withOffsetParsed();
+dateTimeFormatter1.getZone();
+
+21:08:54.513 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:08:55.544 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:09:01.832 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-8
+21:09:01.979 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
