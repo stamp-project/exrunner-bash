@@ -1,0 +1,69 @@
+14:46:17.686 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+14:46:17.690 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:69)
+14:46:17.690 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+14:46:20.053 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+14:47:03.421 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:47:03.430 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:47:03.430 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:47:03.437 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:47:03.437 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:47:03.438 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:47:03.438 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:47:03.438 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+14:47:03.442 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:47:11.741 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+14:47:11.741 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+14:47:11.741 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:47:19.103 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+14:47:27.322 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+14:47:33.463 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+14:47:38.859 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+14:47:38.860 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+14:47:38.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:47:38.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:47:38.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+14:47:38.863 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+String string0 = "-#$#-8Et>#a\\%U";
+Syntax syntax0 = Syntax.XDOMXML_1_0;
+EntityReference entityReference0 = null;
+defaultContentParser0.parse(string0, syntax0, entityReference0);
+String string1 = "";
+Locale locale0 = Locale.FRENCH;
+locale0.getExtensionKeys();
+DocumentReference documentReference0 = new DocumentReference(string0, string0, string1, locale0);
+WikiReference wikiReference0 = new WikiReference(documentReference0);
+DocumentReference documentReference1 = documentReference0.setWikiReference(wikiReference0);
+defaultContentParser0.parse(string0, syntax0, (EntityReference) documentReference0);
+Provider<ContextRootComponentManager> provider0 = (Provider<ContextRootComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string1, syntax0);
+defaultContentParser0.parse(string0, syntax0);
+String string2 = "";
+boolean boolean0 = true;
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWiki xWiki0 = XWiki.getMainXWiki(boolean0, xWikiContext1);
+LazyXWikiDocument lazyXWikiDocument0 = new LazyXWikiDocument(documentReference0);
+BaseObject baseObject0 = lazyXWikiDocument0.newXObject(documentReference0, xWikiContext1);
+XWikiDocument xWikiDocument0 = baseObject0.getOwnerDocument();
+String string3 = "N]X+=Q?Iu`J3j,";
+XWikiDocument xWikiDocument1 = xWiki0.getDocument(xWikiDocument0, string3, xWikiContext1);
+String string4 = "_i\\p!J{r($M*DmdE";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument1, string4);
+DocumentReference documentReference2 = xWikiAttachment0.getAuthorReference();
+documentReference1.replaceParent(documentReference2, lazyXWikiDocument0.SHEETCLASS_REFERENCE);
+defaultContentParser0.parse(string2, syntax0);
+String string5 = "Could not create a validated object, cause: ";
+defaultContentParser0.parse(string5, syntax0, (EntityReference) documentReference1);
+String string6 = "HE\"MVy";
+baseObject0.setNumber(lazyXWikiDocument0.HAS_ATTACHMENTS);
+defaultContentParser0.parse(string6, syntax0, entityReference0);
+defaultContentParser0.parse(string5, syntax0, (EntityReference) documentReference1);
+String string7 = "4&AM6fi/";
+defaultContentParser0.parse(string7, syntax0, xWikiDocument0.SHEETCLASS_REFERENCE);
+defaultContentParser0.parse(xWikiDocument0.CKEY_SDOC, syntax0);
+defaultContentParser0.parse(xWikiDocument0.DB_SPACE_SEP, syntax0);
+
+14:47:38.873 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:47:38.990 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:47:43.717 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-2-10
+14:47:43.748 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,76 @@
+06:05:16.107 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+06:05:16.116 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.classes.BaseClass.addTextAreaField(BaseClass:868)
+06:05:16.116 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.classes.BaseClass
+06:05:23.404 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+06:06:11.563 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:06:11.574 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:06:11.574 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:06:11.584 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:06:11.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:06:11.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:06:11.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:06:11.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is addTextAreaField
+06:06:11.595 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:06:33.602 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+06:06:33.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+06:06:33.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:06:48.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+06:07:18.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.47619047619047616 | 300
+06:07:18.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.47619047619047616. FE: 300 
+06:07:56.383 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.47619047619047616 | 400
+06:08:12.123 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.47619047619047616 | 500
+06:08:29.626 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+06:08:29.626 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+06:08:29.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:08:29.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:08:29.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+06:08:29.628 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseClass baseClass0 = new BaseClass();
+String string0 = "YTn:~#/#$";
+int int0 = 992;
+int int1 = 977;
+baseClass0.addTextAreaField(string0, string0, int0, int1);
+String string1 = "";
+String string2 = "defaultViewSheet";
+BaseClass baseClass1 = baseClass0.clone();
+baseClass0.addTextAreaField(string0, string1, int0, int1, string1, string2);
+baseClass0.enableField(string2);
+String string3 = null;
+baseClass0.addGroupsField(string1, string3, int1);
+String string4 = "";
+int int2 = 0;
+TextAreaClass.ContentType textAreaClass_ContentType0 = TextAreaClass.ContentType.PURE_TEXT;
+baseClass0.addTextAreaField(string1, string4, int2, int2, textAreaClass_ContentType0);
+XWikiContext xWikiContext0 = new XWikiContext();
+baseClass0.isCustomMappingValid(xWikiContext0);
+String string5 = "e~IjgwZ;%";
+PathStringDocumentReferenceResolver pathStringDocumentReferenceResolver0 = new PathStringDocumentReferenceResolver();
+String string6 = "";
+Object[] objectArray0 = new Object[6];
+objectArray0[0] = (Object) pathStringDocumentReferenceResolver0;
+objectArray0[1] = (Object) string4;
+objectArray0[2] = (Object) string4;
+objectArray0[3] = (Object) string2;
+objectArray0[4] = (Object) string5;
+objectArray0[5] = (Object) string2;
+pathStringDocumentReferenceResolver0.resolve(string6, objectArray0);
+xWikiContext0.getOrDefault(pathStringDocumentReferenceResolver0, pathStringDocumentReferenceResolver0);
+int int3 = 1503;
+baseClass0.addLevelsField(string0, string5, int3);
+XWikiDocument xWikiDocument0 = baseClass1.getOwnerDocument();
+ExportURLFactory exportURLFactory0 = new ExportURLFactory();
+XWikiDocument xWikiDocument1 = xWikiContext0.getWikiServer();
+String string7 = "connect";
+XWikiAttachment xWikiAttachment0 = exportURLFactory0.findAttachmentForDocRevision(xWikiDocument1, xWikiContext0.EXECUTIONCONTEXT_KEY, string7, xWikiContext0);
+DocumentReference documentReference0 = xWikiAttachment0.getAuthorReference();
+DocumentReference documentReference1 = documentReference0.replaceParent(xWikiDocument0.SHEETCLASS_REFERENCE, xWikiDocument1.SHEETCLASS_REFERENCE);
+String string8 = "5GSD";
+BaseObject baseObject0 = xWikiDocument0.addXObjectFromRequest((EntityReference) documentReference1, string8, xWikiContext0.MODE_PORTLET, xWikiContext0);
+baseClass1.validateObject(baseObject0, xWikiContext0);
+String string9 = "nameField";
+baseClass0.addGroupsField(xWikiDocument0.DB_SPACE_SEP, string9);
+baseClass0.newCustomClassInstance(xWikiContext0);
+
+06:08:29.642 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:08:30.245 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:08:34.704 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseClass_ESTest' to results/XWIKI-13916-3-7
+06:08:34.759 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

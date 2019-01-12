@@ -1,0 +1,211 @@
+14:43:05.902 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+14:43:05.907 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:62)
+14:43:05.908 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+14:43:08.052 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+14:43:48.755 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:43:48.763 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:43:48.763 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:43:48.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:43:48.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:43:48.770 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:43:48.770 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:43:48.770 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+14:43:48.774 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:43:56.799 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+14:43:56.800 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+14:43:56.800 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:44:04.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+14:44:11.467 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+14:44:11.467 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+14:44:11.468 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:44:11.468 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:44:11.468 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+14:44:11.484 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+String string0 = "";
+Syntax syntax0 = Syntax.XWIKI_2_1;
+defaultContentParser0.parse(string0, syntax0);
+syntax0.equals(defaultContentParser0);
+Provider<EmbeddableComponentManager> provider0 = (Provider<EmbeddableComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+String string1 = "";
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+DocumentReference documentReference0 = xWikiContext2.getAuthorReference();
+LocalDocumentReference localDocumentReference0 = new LocalDocumentReference(string1, documentReference0);
+defaultContentParser0.parse(string0, syntax0, (EntityReference) localDocumentReference0);
+String string2 = " lock in share mode";
+defaultContentParser0.parse(string2, syntax0);
+defaultContentParser0.parse(string1, syntax0);
+String string3 = "";
+CreoleParser creoleParser0 = new CreoleParser();
+JSPWikiParser jSPWikiParser0 = new JSPWikiParser();
+ConfluenceParser confluenceParser0 = new ConfluenceParser();
+ResourceReferenceParser resourceReferenceParser0 = jSPWikiParser0.getImageReferenceParser();
+Injector.inject(confluenceParser0, (Class<?>) ConfluenceParser.class, "imageReferenceParser", (Object) resourceReferenceParser0);
+XWiki20Parser xWiki20Parser0 = new XWiki20Parser();
+ResourceReferenceParser resourceReferenceParser1 = creoleParser0.getLinkReferenceParser();
+Injector.inject(xWiki20Parser0, (Class<?>) XWiki20Parser.class, "imageReferenceParser", (Object) resourceReferenceParser1);
+HTMLParser hTMLParser0 = new HTMLParser();
+HTMLCleaner hTMLCleaner0 = mock(HTMLCleaner.class, new ViolatedAssumptionAnswer());
+Injector.inject(hTMLParser0, (Class<?>) HTMLParser.class, "htmlCleaner", (Object) hTMLCleaner0);
+ContextRootComponentManager contextRootComponentManager0 = new ContextRootComponentManager();
+EmbeddableComponentManager embeddableComponentManager0 = new EmbeddableComponentManager();
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "rootComponentManager", (Object) embeddableComponentManager0);
+ContextComponentManager contextComponentManager0 = new ContextComponentManager();
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "execution", (Object) execution0);
+SpaceComponentManager spaceComponentManager0 = new SpaceComponentManager();
+Provider<HTMLParser> provider1 = (Provider<HTMLParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "referenceProvider", (Object) provider1);
+WikiComponentManager wikiComponentManager0 = new WikiComponentManager();
+String string4 = "R.2*5\"o<'dTM@Y";
+EmbeddableComponentManager embeddableComponentManager1 = new EmbeddableComponentManager(string4);
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "rootComponentManager", (Object) embeddableComponentManager1);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "wikis", (Object) wikiDescriptorManager0);
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution1);
+EntityReferenceSerializer<JSPWikiParser> entityReferenceSerializer0 = (EntityReferenceSerializer<JSPWikiParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer0);
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager0);
+Injector.validateBean(wikiComponentManager0, (Class<?>) WikiComponentManager.class);
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "wikiComponentManager", (Object) wikiComponentManager0);
+Execution execution2 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution2);
+EntityReferenceSerializer<XWiki21Parser> entityReferenceSerializer1 = (EntityReferenceSerializer<XWiki21Parser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer1);
+ComponentManagerManager componentManagerManager1 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager1);
+Injector.validateBean(spaceComponentManager0, (Class<?>) SpaceComponentManager.class);
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "rootComponentManager", (Object) spaceComponentManager0);
+RootComponentManager rootComponentManager0 = new RootComponentManager();
+UserComponentManager userComponentManager0 = new UserComponentManager();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "documentAccessBridge", (Object) documentAccessBridge0);
+DocumentComponentManager documentComponentManager0 = new DocumentComponentManager();
+Provider<EmbeddableComponentManager> provider2 = (Provider<EmbeddableComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) DocumentComponentManager.class, "referenceProvider", (Object) provider2);
+ComponentManager componentManager0 = contextComponentManager0.getParent();
+Injector.inject(documentComponentManager0, (Class<?>) DocumentComponentManager.class, "spaceComponentManager", (Object) componentManager0);
+Execution execution3 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution3);
+EntityReferenceSerializer<PygmentsParser> entityReferenceSerializer2 = (EntityReferenceSerializer<PygmentsParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer2);
+ComponentManagerManager componentManagerManager2 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager2);
+Injector.validateBean(documentComponentManager0, (Class<?>) DocumentComponentManager.class);
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "documentComponentManager", (Object) documentComponentManager0);
+EntityReferenceSerializer<XWiki21Parser> entityReferenceSerializer3 = (EntityReferenceSerializer<XWiki21Parser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "referenceSerializer", (Object) entityReferenceSerializer3);
+Execution execution4 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution4);
+EntityReferenceSerializer<CreoleParser> entityReferenceSerializer4 = (EntityReferenceSerializer<CreoleParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer4);
+ComponentManagerManager componentManagerManager3 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager3);
+Injector.validateBean(userComponentManager0, (Class<?>) UserComponentManager.class);
+Injector.inject(rootComponentManager0, (Class<?>) RootComponentManager.class, "rootComponentManager", (Object) userComponentManager0);
+Injector.validateBean(rootComponentManager0, (Class<?>) RootComponentManager.class);
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "userComponentManager", (Object) rootComponentManager0);
+Injector.validateBean(contextComponentManager0, (Class<?>) ContextComponentManager.class);
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "userComponentManager", (Object) contextComponentManager0);
+Injector.validateBean(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class);
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "componentManager", (Object) contextRootComponentManager0);
+XWiki21Parser xWiki21Parser0 = new XWiki21Parser();
+ResourceReferenceParser resourceReferenceParser2 = confluenceParser0.getLinkReferenceParser();
+Injector.inject(xWiki21Parser0, (Class<?>) XWiki21Parser.class, "imageReferenceParser", (Object) resourceReferenceParser2);
+ResourceReferenceParser resourceReferenceParser3 = creoleParser0.getImageReferenceParser();
+Injector.inject(xWiki21Parser0, (Class<?>) XWiki21Parser.class, "linkReferenceParser", (Object) resourceReferenceParser3);
+XDOMXMLRenderer xDOMXMLRenderer0 = new XDOMXMLRenderer();
+XMLSerializerFactory xMLSerializerFactory0 = mock(XMLSerializerFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xDOMXMLRenderer0, (Class<?>) XDOMXMLRenderer.class, "serializerFactory", (Object) xMLSerializerFactory0);
+ComponentManager componentManager1 = contextRootComponentManager0.getComponentManager();
+Injector.inject(xDOMXMLRenderer0, (Class<?>) AbstractStreamRendererFactory.class, "componentManager", (Object) componentManager1);
+Injector.validateBean(xDOMXMLRenderer0, (Class<?>) XDOMXMLRenderer.class);
+Injector.inject(xWiki21Parser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) xDOMXMLRenderer0);
+Injector.validateBean(xWiki21Parser0, (Class<?>) XWiki21Parser.class);
+ResourceReferenceParser resourceReferenceParser4 = xWiki21Parser0.getLinkReferenceParser();
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "imageReferenceParser", (Object) resourceReferenceParser4);
+ResourceReferenceParser resourceReferenceParser5 = xWiki20Parser0.getImageReferenceParser();
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "linkReferenceParser", (Object) resourceReferenceParser5);
+ResourceReferenceParser resourceReferenceParser6 = xWiki21Parser0.getImageReferenceParser();
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "xhtmlMarkerResourceReferenceParser", (Object) resourceReferenceParser6);
+DocBookParser docBookParser0 = new DocBookParser();
+ResourceReferenceParser resourceReferenceParser7 = hTMLParser0.getLinkReferenceParser();
+Injector.inject(docBookParser0, (Class<?>) AbstractDoxiaParser.class, "imageReferenceParser", (Object) resourceReferenceParser7);
+ResourceReferenceParser resourceReferenceParser8 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(docBookParser0, (Class<?>) AbstractDoxiaParser.class, "linkReferenceParser", (Object) resourceReferenceParser8);
+XHTMLParser xHTMLParser0 = new XHTMLParser();
+ComponentManager componentManager2 = documentComponentManager0.getComponentManager();
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "componentManager", (Object) componentManager2);
+ResourceReferenceParser resourceReferenceParser9 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "imageReferenceParser", (Object) resourceReferenceParser9);
+ResourceReferenceParser resourceReferenceParser10 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "linkReferenceParser", (Object) resourceReferenceParser10);
+ResourceReferenceParser resourceReferenceParser11 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "xhtmlMarkerResourceReferenceParser", (Object) resourceReferenceParser11);
+TWikiParser tWikiParser0 = new TWikiParser();
+ResourceReferenceParser resourceReferenceParser12 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(tWikiParser0, (Class<?>) AbstractDoxiaParser.class, "imageReferenceParser", (Object) resourceReferenceParser12);
+ResourceReferenceParser resourceReferenceParser13 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(tWikiParser0, (Class<?>) AbstractDoxiaParser.class, "linkReferenceParser", (Object) resourceReferenceParser13);
+XDOMXMLParser xDOMXMLParser0 = new XDOMXMLParser();
+ComponentManager componentManager3 = embeddableComponentManager0.getParent();
+Injector.inject(xDOMXMLParser0, (Class<?>) AbstractStreamParser.class, "componentManager", (Object) componentManager3);
+Injector.validateBean(xDOMXMLParser0, (Class<?>) XDOMXMLParser.class);
+Injector.inject(tWikiParser0, (Class<?>) AbstractDoxiaParser.class, "plainParser", (Object) xDOMXMLParser0);
+PrintRendererFactory printRendererFactory0 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(tWikiParser0, (Class<?>) AbstractDoxiaParser.class, "plainRendererFactory", (Object) printRendererFactory0);
+Injector.validateBean(tWikiParser0, (Class<?>) TWikiParser.class);
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "xmlParser", (Object) tWikiParser0);
+XMLReaderFactory xMLReaderFactory0 = mock(XMLReaderFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "xmlReaderFactory", (Object) xMLReaderFactory0);
+PrintRendererFactory printRendererFactory1 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) XHTMLParser.class, "xmlRenderer", (Object) printRendererFactory1);
+PrintRendererFactory printRendererFactory2 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xHTMLParser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory2);
+Injector.validateBean(xHTMLParser0, (Class<?>) XHTMLParser.class);
+Injector.inject(docBookParser0, (Class<?>) AbstractDoxiaParser.class, "plainParser", (Object) xHTMLParser0);
+PrintRendererFactory printRendererFactory3 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(docBookParser0, (Class<?>) AbstractDoxiaParser.class, "plainRendererFactory", (Object) printRendererFactory3);
+Injector.validateBean(docBookParser0, (Class<?>) DocBookParser.class);
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "xmlParser", (Object) docBookParser0);
+XMLReaderFactory xMLReaderFactory1 = mock(XMLReaderFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "xmlReaderFactory", (Object) xMLReaderFactory1);
+PrintRendererFactory printRendererFactory4 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hTMLParser0, (Class<?>) XHTMLParser.class, "xmlRenderer", (Object) printRendererFactory4);
+PrintRendererFactory printRendererFactory5 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hTMLParser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory5);
+Injector.validateBean(hTMLParser0, (Class<?>) HTMLParser.class);
+ResourceReferenceParser resourceReferenceParser14 = hTMLParser0.getImageReferenceParser();
+Injector.inject(xWiki20Parser0, (Class<?>) XWiki20Parser.class, "linkReferenceParser", (Object) resourceReferenceParser14);
+PrintRendererFactory printRendererFactory6 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWiki20Parser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory6);
+Injector.validateBean(xWiki20Parser0, (Class<?>) XWiki20Parser.class);
+ResourceReferenceParser resourceReferenceParser15 = xWiki20Parser0.getLinkReferenceParser();
+Injector.inject(confluenceParser0, (Class<?>) ConfluenceParser.class, "referenceParser", (Object) resourceReferenceParser15);
+PrintRendererFactory printRendererFactory7 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(confluenceParser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory7);
+Injector.validateBean(confluenceParser0, (Class<?>) ConfluenceParser.class);
+ResourceReferenceParser resourceReferenceParser16 = confluenceParser0.getImageReferenceParser();
+Injector.inject(jSPWikiParser0, (Class<?>) JSPWikiParser.class, "imageReferenceParser", (Object) resourceReferenceParser16);
+ResourceReferenceParser resourceReferenceParser17 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(jSPWikiParser0, (Class<?>) JSPWikiParser.class, "linkReferenceParser", (Object) resourceReferenceParser17);
+PrintRendererFactory printRendererFactory8 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(jSPWikiParser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory8);
+Injector.validateBean(jSPWikiParser0, (Class<?>) JSPWikiParser.class);
+ResourceReferenceParser resourceReferenceParser18 = jSPWikiParser0.getLinkReferenceParser();
+Injector.inject(creoleParser0, (Class<?>) CreoleParser.class, "imageReferenceParser", (Object) resourceReferenceParser18);
+ResourceReferenceParser resourceReferenceParser19 = mock(ResourceReferenceParser.class, new ViolatedAssumptionAnswer());
+Injector.inject(creoleParser0, (Class<?>) CreoleParser.class, "linkReferenceParser", (Object) resourceReferenceParser19);
+PrintRendererFactory printRendererFactory9 = mock(PrintRendererFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(creoleParser0, (Class<?>) AbstractWikiModelParser.class, "plainRendererFactory", (Object) printRendererFactory9);
+Injector.validateBean(creoleParser0, (Class<?>) CreoleParser.class);
+Syntax syntax1 = creoleParser0.getSyntax();
+defaultContentParser0.parse(string3, syntax1, (EntityReference) documentReference0);
+
+14:44:11.490 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:44:13.335 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:44:17.621 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-1-8
+14:44:17.637 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
