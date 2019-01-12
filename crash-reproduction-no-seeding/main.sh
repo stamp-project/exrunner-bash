@@ -2,7 +2,7 @@ INPUT=inputs.csv
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; }
-LIMIT=30
+LIMIT=90
 job_list=()
 
 counter=0
@@ -34,7 +34,7 @@ for t in ${job_list[@]}; do
   echo "Task#$counter is frame level $frame of issue $case. This crash happened in $application version $version. task configurations -> execution_idx: $execution_idx, search budget: $search_budget"
 
   ## Start the search process:
-  java -d64 -Xmx5000m -jar botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXFITNESSEVALUATIONS -Dtest_dir="results/$case-$frame-$execution_idx" > "logs/$case-$frame-$execution_idx-out.txt" 2> "logs/$case-$frame-$execution_idx-err.txt" &
+  java -d64 -Xmx4000m -jar botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXFITNESSEVALUATIONS -Dtest_dir="results/$case-$frame-$execution_idx" > "logs/$case-$frame-$execution_idx-out.txt" 2> "logs/$case-$frame-$execution_idx-err.txt" &
   pid=$!
   echo $pid
   . parsing.sh $pid $execution_idx $application $case $version $frame $search_budget &
