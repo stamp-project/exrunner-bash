@@ -1,0 +1,59 @@
+04:38:52.439 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.text.ParseException
+04:38:52.443 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.DateUtils.parseDateWithLeniency(DateUtils:346)
+04:38:52.443 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.DateUtils
+04:38:57.082 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+04:39:04.435 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+04:39:04.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:39:04.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+04:39:04.627 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+04:39:04.673 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'parseDateWithLeniency(Ljava/lang/String;[Ljava/lang/String;Z)Ljava/util/Date;' is private!
+04:39:04.673 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+04:39:04.760 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+04:39:04.760 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDate
+04:39:04.760 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is parseDateStrictly
+04:39:04.772 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+04:39:14.264 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+04:39:14.264 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:39:14.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+04:39:14.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+04:39:14.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+04:39:14.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:39:14.266 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+String[] stringArray0 = new String[0];
+Date date0 = DateUtils.parseDateStrictly(string0, stringArray0);
+int int0 = 0;
+Date date1 = DateUtils.setMonths(date0, int0);
+Calendar calendar0 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.isSameDay(calendar0, calendar0);
+int int1 = 1236;
+DateUtils.setHours(date0, int1);
+DateUtils.addYears(date0, int0);
+Calendar calendar1 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.getFragmentInSeconds(calendar1, int0);
+int int2 = 0;
+DateUtils.setDays(date1, int2);
+Calendar calendar2 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+Calendar calendar3 = DateUtils.ceiling(calendar2, int0);
+Date date2 = DateUtils.addMonths(date0, int0);
+DateUtils.addHours(date1, int1);
+int int3 = 0;
+Date date3 = DateUtils.setSeconds(date2, int3);
+DateUtils.addMonths(date3, int0);
+Calendar calendar4 = DateUtils.round(calendar3, int1);
+DateUtils.iterator(calendar4, int1);
+DateUtils.isSameLocalTime(calendar4, calendar4);
+Object object0 = new Object();
+int int4 = (-155);
+DateUtils.round(object0, int4);
+DateUtils.DateIterator dateUtils_DateIterator0 = new DateUtils.DateIterator(calendar4, calendar4);
+DateUtils.getFragmentInMilliseconds(calendar3, int2);
+Date date4 = DateUtils.addYears(date2, int2);
+int int5 = 0;
+DateUtils.setHours(date4, int5);
+Date date5 = DateUtils.parseDate(string0, stringArray0);
+DateUtils.getFragmentInDays(date5, int2);
+
+04:39:14.272 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+04:39:14.522 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+04:39:18.459 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateUtils_ESTest' to results/LANG-35b-1-9
+04:39:18.506 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

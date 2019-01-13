@@ -1,0 +1,54 @@
+10:53:34.179 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.NotStrictlyPositiveException
+10:53:34.196 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.function.Gaussian$Parametric.validateParameters(Gaussian$Parametric:183)
+10:53:34.197 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.function.Gaussian$Parametric
+10:53:35.934 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+10:53:42.135 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:53:42.236 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:53:42.236 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:53:42.251 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:53:42.265 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'validateParameters([D)V' is private!
+10:53:42.265 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+10:53:42.302 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+10:53:42.303 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is gradient
+10:53:42.303 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is value
+10:53:42.307 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:53:47.412 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:53:47.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:53:47.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:53:47.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:53:47.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:53:47.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:53:47.426 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Gaussian.Parametric gaussian_Parametric0 = new Gaussian.Parametric();
+double double0 = (-1943.2869244784);
+double[] doubleArray0 = new double[3];
+doubleArray0[0] = double0;
+doubleArray0[1] = double0;
+doubleArray0[2] = double0;
+double[] doubleArray1 = gaussian_Parametric0.gradient(double0, doubleArray0);
+Gaussian.Parametric gaussian_Parametric1 = new Gaussian.Parametric();
+double double1 = 0.0;
+double[] doubleArray2 = gaussian_Parametric1.gradient(double1, doubleArray1);
+Gaussian.Parametric gaussian_Parametric2 = new Gaussian.Parametric();
+double double2 = 0.0;
+double[] doubleArray3 = gaussian_Parametric1.gradient(double2, doubleArray0);
+double[] doubleArray4 = gaussian_Parametric1.gradient(doubleArray0[0], doubleArray1);
+double[] doubleArray5 = gaussian_Parametric2.gradient(double0, doubleArray4);
+Gaussian.Parametric gaussian_Parametric3 = new Gaussian.Parametric();
+double double3 = gaussian_Parametric3.value(double2, doubleArray5);
+gaussian_Parametric1.value(double0, doubleArray3);
+double double4 = 1.0;
+gaussian_Parametric3.value(double4, doubleArray2);
+gaussian_Parametric2.value(double4, doubleArray0);
+gaussian_Parametric2.value(doubleArray0[1], doubleArray5);
+gaussian_Parametric0.value(double3, doubleArray5);
+double double5 = (-1.0);
+gaussian_Parametric1.gradient(double5, doubleArray5);
+Gaussian.Parametric gaussian_Parametric4 = new Gaussian.Parametric();
+gaussian_Parametric4.value(double5, doubleArray1);
+double double6 = 1427.9847486097572;
+gaussian_Parametric4.value(double6, doubleArray0);
+
+10:53:47.443 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:53:47.702 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:53:51.132 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Gaussian$Parametric_ESTest' to results/MATH-58b-1-6
+10:53:51.162 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

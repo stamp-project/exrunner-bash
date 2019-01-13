@@ -1,0 +1,81 @@
+10:25:10.672 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+10:25:10.676 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.Line.toSubSpace(Line:129)
+10:25:10.676 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.Line
+10:25:13.716 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+10:25:24.551 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:25:24.561 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:25:24.561 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:25:24.604 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:25:24.604 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:25:24.604 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:25:24.604 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:25:24.604 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is toSubSpace
+10:25:24.608 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:26:05.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:26:05.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:26:05.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:26:05.743 [main] INFO  e.s.10:26:05.842 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5 | 200
+10:26:05.843 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5. FE: 200 
+10:26:14.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+10:26:14.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+10:26:14.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:26:14.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:26:14.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+10:26:14.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = (-1.0);
+double double1 = (-7.0);
+double double2 = 2.0;
+Vector3D vector3D0 = new Vector3D(double0, double1, double2);
+double double3 = 7.0;
+double double4 = (-1.0);
+double double5 = (-2.0);
+Vector3D vector3D1 = new Vector3D(double3, double4, double5);
+Line line0 = new Line(vector3D0, vector3D1);
+double double6 = Double.NEGATIVE_INFINITY;
+Vector1D vector1D0 = new Vector1D(double6);
+line0.toSpace(vector1D0);
+double double7 = 0.0;
+Vector1D vector1D1 = new Vector1D(double7);
+vector1D1.scalarMultiply(double4);
+Vector3D vector3D2 = line0.toSpace(vector1D1);
+line0.toSubSpace(vector3D2);
+Line line1 = line0.revert();
+double double8 = 1.0;
+line1.pointAt(double8);
+Vector3D vector3D3 = line1.closestPoint(line0);
+Line line2 = line0.revert();
+line2.isSimilarTo(line1);
+line2.toSubSpace(vector3D3);
+double double9 = 0.0;
+Vector1D vector1D2 = new Vector1D(double9);
+boolean boolean0 = false;
+OrientedPoint orientedPoint0 = new OrientedPoint(vector1D2, boolean0);
+SubOrientedPoint subOrientedPoint0 = orientedPoint0.wholeHyperplane();
+BSPTree<? extends Space> bSPTree0 = new BSPTree<? extends Space>(boolean0);
+boolean boolean1 = true;
+BSPTree<? extends Space> bSPTree1 = new BSPTree<? extends Space>(boolean1);
+Object object0 = null;
+BSPTree bSPTree2 = new BSPTree(subOrientedPoint0, bSPTree0, bSPTree1, object0);
+double double10 = 0.0;
+double double11 = Double.POSITIVE_INFINITY;
+IntervalsSet intervalsSet0 = new IntervalsSet(double10, double11);
+intervalsSet0.asList();
+BSPTree<Euclidean1D> bSPTree3 = intervalsSet0.getTree(boolean0);
+bSPTree3.getCut();
+SubHyperplane subHyperplane0 = bSPTree3.getCut();
+Hyperplane<Euclidean1D> hyperplane0 = subHyperplane0.getHyperplane();
+Vector1D vector1D3 = ((OrientedPoint) hyperplane0).getLocation();
+vector1D3.getX();
+double double12 = 0.0;
+Vector1D vector1D4 = new Vector1D(double12);
+vector1D4.getX();
+double double13 = Double.POSITIVE_INFINITY;
+Vector1D vector1D5 = new Vector1D(double13);
+vector1D5.getX();
+line2.toSpace(vector1D5);
+Vector<Euclidean3D> vector0 = null;
+line2.toSubSpace(vector0);
+
+10:26:14.958 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:26:16.321 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:26:21.240 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Line_ESTest' to results/MATH-4b-2-3
+10:26:21.278 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

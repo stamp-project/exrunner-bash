@@ -1,0 +1,55 @@
+20:23:03.230 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+20:23:03.234 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Period.withYears(Period:896)
+20:23:03.234 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Period
+20:23:08.706 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+20:23:21.388 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:23:21.424 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:23:21.424 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:23:21.468 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:23:21.468 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:23:21.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:23:21.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:23:21.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is withYears
+20:23:21.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:35:42.897 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+20:35:42.897 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:35:42.897 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:35:42.898 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:35:42.898 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:35:42.898 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:35:42.899 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 0;
+int int1 = 5;
+int int2 = 6;
+int int3 = 7;
+int int4 = 8;
+PeriodType periodType0 = PeriodType.time();
+periodType0.size();
+DurationFieldType durationFieldType0 = DurationFieldType.years();
+periodType0.indexOf(durationFieldType0);
+Class<DurationFieldType> class0 = DurationFieldType.class;
+DurationFieldType durationFieldType1 = DurationFieldType.months();
+periodType0.indexOf(durationFieldType1);
+DurationFieldType durationFieldType2 = DurationFieldType.weeks();
+periodType0.indexOf(durationFieldType2);
+DurationFieldType durationFieldType3 = DurationFieldType.days();
+periodType0.indexOf(durationFieldType3);
+DurationFieldType durationFieldType4 = DurationFieldType.hours();
+periodType0.indexOf(durationFieldType4);
+DurationFieldType durationFieldType5 = DurationFieldType.minutes();
+periodType0.indexOf(durationFieldType5);
+DurationFieldType durationFieldType6 = DurationFieldType.seconds();
+periodType0.indexOf(durationFieldType6);
+DurationFieldType durationFieldType7 = DurationFieldType.millis();
+periodType0.indexOf(durationFieldType7);
+Period period0 = new Period(int0, int0, int0, int0, int1, int2, int3, int4, periodType0);
+Period period1 = period0.withFieldAdded(durationFieldType0, int0);
+String string0 = "<org.joda.time.Period>\n  <iType>\n    <iName>Time</iName>\n    <iTypes>\n      <org.joda.time.DurationFieldType_-StandardDurationFieldType>\n        <iName>hours</iName>\n        <iOrdinal>9</iOrdinal>\n      </org.joda.time.DurationFieldType_-StandardDurationFieldType>\n      <org.joda.time.DurationFieldType_-StandardDurationFieldType>\n        <iName>minutes</iName>\n        <iOrdinal>10</iOrdinal>\n      </org.joda.time.DurationFieldType_-StandardDurationFieldType>\n      <org.joda.time.DurationFieldType_-StandardDurationFieldType>\n        <iName>seconds</iName>\n        <iOrdinal>11</iOrdinal>\n      </org.joda.time.DurationFieldType_-StandardDurationFieldType>\n      <org.joda.time.DurationFieldType_-StandardDurationFieldType>\n        <iName>millis</iName>\n        <iOrdinal>12</iOrdinal>\n      </org.joda.time.DurationFieldType_-StandardDurationFieldType>\n    </iTypes>\n    <iIndices>\n      <int>-1</int>\n      <int>-1</int>\n      <int>-1</int>\n      <int>-1</int>\n      <int>0</int>\n      <int>1</int>\n      <int>2</int>\n      <int>3</int>\n    </iIndices>\n  </iType>\n  <iValues>\n    <int>5</int>\n    <int>6</int>\n    <int>7</int>\n    <int>8</int>\n  </iValues>\n</org.joda.time.Period>";
+org.joda.time.Period period2 = (org.joda.time.Period)EvoSuiteXStream.fromString(string0);
+period1.equals(period2);
+int int5 = 4;
+period1.withYears(int5);
+
+20:35:42.924 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:35:46.937 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:35:50.433 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Period_ESTest' to results/TIME-5b-2-6
+20:35:50.473 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
