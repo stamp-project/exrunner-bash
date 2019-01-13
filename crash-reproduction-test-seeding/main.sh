@@ -2,7 +2,7 @@ INPUT=inputs.csv
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; }
-LIMIT=3
+LIMIT=90
 job_list=()
 min_prob="0.2"
 
@@ -39,7 +39,7 @@ for t in ${job_list[@]}; do
   target_class=$(python python/get_target_class.py $application $case $frame)
   junits=$(python python/collect-junits.py $application $version $target_class)
   if [[ -z "$junits" ]]; then
-    if [ "$min_prob" == "$p_object_pool" ]; then
+    if [ "$min_prob" == "$seed_clone" ]; then
       echo "Task#$counter is frame level $frame of issue $case. This crash happened in $application version $version. task configurations -> execution_idx: $execution_idx, search budget: $search_budget"
 
       ## Start the search process:
