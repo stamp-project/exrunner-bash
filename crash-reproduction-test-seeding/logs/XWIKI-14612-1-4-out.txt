@@ -1,0 +1,107 @@
+17:50:25.004 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:50:25.023 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:62)
+17:50:25.023 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+17:50:31.688 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+17:52:57.733 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:52:57.743 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:52:57.743 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:52:57.753 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:52:57.754 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:52:57.754 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:52:57.754 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:52:57.754 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+17:52:57.759 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:53:27.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+17:53:27.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+17:53:27.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:53:59.494 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+17:54:20.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+17:54:34.564 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 400
+17:54:34.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+17:54:34.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:54:34.566 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:54:34.566 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+17:54:34.605 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+String string0 = "";
+Syntax syntax0 = Syntax.MEDIAWIKI_1_0;
+XDOM xDOM0 = defaultContentParser0.parse(string0, syntax0);
+xDOM0.equals(defaultContentParser0);
+syntax0.toIdString();
+String string1 = "";
+Syntax syntax1 = Syntax.XDOMXML_1_0;
+syntax1.equals(xDOM0);
+defaultContentParser0.parse(string1, syntax1);
+defaultContentParser0.parse(string1, syntax1);
+Syntax syntax2 = Syntax.HTML_5_0;
+String string2 = "";
+XWikiContext xWikiContext0 = new XWikiContext();
+DocumentReference documentReference0 = xWikiContext0.getUserReference();
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+WikiReference wikiReference0 = xWikiContext0.getWikiReference();
+EntityType entityType0 = EntityType.BLOCK;
+attachmentReference0.equals((EntityReference) wikiReference0, entityType0);
+defaultContentParser0.parse(string2, syntax0, (EntityReference) attachmentReference0);
+String string3 = "";
+String string4 = syntax2.toString();
+String string5 = "";
+syntax2.equals(string4);
+DocumentReference documentReference1 = new DocumentReference(string1, string3, string5);
+defaultContentParser0.parse(string1, syntax2, (EntityReference) documentReference1);
+Provider<HTMLParser> provider0 = (Provider<HTMLParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string3, syntax2, (EntityReference) documentReference1);
+defaultContentParser0.parse(string4, syntax1, (EntityReference) documentReference1);
+defaultContentParser0.parse(string1, syntax2);
+XDOMXMLParser xDOMXMLParser0 = new XDOMXMLParser();
+ContextRootComponentManager contextRootComponentManager0 = new ContextRootComponentManager();
+ContextComponentManager contextComponentManager0 = new ContextComponentManager();
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "execution", (Object) execution0);
+EmbeddableComponentManager embeddableComponentManager0 = new EmbeddableComponentManager();
+ComponentManager componentManager0 = embeddableComponentManager0.getParent();
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "rootComponentManager", (Object) componentManager0);
+String string6 = null;
+EmbeddableComponentManager embeddableComponentManager1 = new EmbeddableComponentManager(string6);
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "userComponentManager", (Object) embeddableComponentManager1);
+Injector.validateBean(contextComponentManager0, (Class<?>) ContextComponentManager.class);
+ComponentManager componentManager1 = contextComponentManager0.getParent();
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "rootComponentManager", (Object) componentManager1);
+UserComponentManager userComponentManager0 = new UserComponentManager();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "documentAccessBridge", (Object) documentAccessBridge0);
+RootComponentManager rootComponentManager0 = new RootComponentManager();
+SpaceComponentManager spaceComponentManager0 = new SpaceComponentManager();
+Provider<PoolingConnection> provider1 = (Provider<PoolingConnection>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "referenceProvider", (Object) provider1);
+ComponentManager componentManager2 = contextComponentManager0.getComponentManager();
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "wikiComponentManager", (Object) componentManager2);
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution1);
+EntityReferenceSerializer<PlainTextBlockParser> entityReferenceSerializer0 = (EntityReferenceSerializer<PlainTextBlockParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer0);
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager0);
+Injector.validateBean(spaceComponentManager0, (Class<?>) SpaceComponentManager.class);
+Injector.inject(rootComponentManager0, (Class<?>) RootComponentManager.class, "rootComponentManager", (Object) spaceComponentManager0);
+Injector.validateBean(rootComponentManager0, (Class<?>) RootComponentManager.class);
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "documentComponentManager", (Object) rootComponentManager0);
+EntityReferenceSerializer<XHTMLParser> entityReferenceSerializer1 = (EntityReferenceSerializer<XHTMLParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) UserComponentManager.class, "referenceSerializer", (Object) entityReferenceSerializer1);
+Execution execution2 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution2);
+EntityReferenceSerializer<XWiki21Parser> entityReferenceSerializer2 = (EntityReferenceSerializer<XWiki21Parser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer2);
+ComponentManagerManager componentManagerManager1 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(userComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager1);
+Injector.validateBean(userComponentManager0, (Class<?>) UserComponentManager.class);
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "userComponentManager", (Object) userComponentManager0);
+Injector.validateBean(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class);
+ComponentManager componentManager3 = contextRootComponentManager0.getParent();
+Injector.inject(xDOMXMLParser0, (Class<?>) AbstractStreamParser.class, "componentManager", (Object) componentManager3);
+Injector.validateBean(xDOMXMLParser0, (Class<?>) XDOMXMLParser.class);
+Syntax syntax3 = xDOMXMLParser0.getSyntax();
+defaultContentParser0.parse(string1, syntax3, (EntityReference) documentReference0);
+
+17:54:34.619 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:54:35.380 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:54:52.106 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-1-4
+17:54:52.240 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

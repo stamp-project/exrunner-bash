@@ -1,0 +1,78 @@
+14:53:32.339 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+14:53:32.349 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+14:53:32.349 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+14:53:40.633 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+14:56:40.763 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:56:40.826 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:56:40.827 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:56:40.868 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:56:40.893 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:56:40.893 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:56:40.893 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:56:40.894 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+14:56:40.905 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:57:14.998 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+14:57:14.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+14:57:14.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:57:45.551 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+14:58:08.945 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+14:58:29.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+14:58:47.769 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 500
+14:59:04.770 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 600
+14:59:21.580 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 700
+14:59:38.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 800
+14:59:38.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+14:59:38.350 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:59:38.350 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:59:38.350 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+14:59:38.381 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+periodicMimeMessageIterator0.next();
+NotificationUserIterator notificationUserIterator0 = new NotificationUserIterator();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+String string0 = null;
+LinkedTransferQueue<SubstituteLoggingEvent> linkedTransferQueue0 = new LinkedTransferQueue<SubstituteLoggingEvent>();
+boolean boolean0 = false;
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string0, linkedTransferQueue0, boolean0);
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "logger", (Object) substituteLogger0);
+DocumentReference documentReference0 = notificationUserIterator0.next();
+LazyXWikiDocument lazyXWikiDocument0 = new LazyXWikiDocument(documentReference0);
+XWikiStoreInterface xWikiStoreInterface0 = lazyXWikiDocument0.getStore();
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+SwingBuilder swingBuilder0 = new SwingBuilder(boolean0);
+Closure closure0 = swingBuilder0.getPropertyMissingDelegate();
+TimeUnit timeUnit0 = TimeUnit.SECONDS;
+boolean boolean1 = true;
+TimeScheduler3.Task timeScheduler3_Task0 = new TimeScheduler3.Task(closure0, xWikiContext1.MODE_XMLRPC, timeUnit0, boolean1);
+BiFunction<Object, Object, Integer> biFunction0 = (BiFunction<Object, Object, Integer>) mock(BiFunction.class, new ViolatedAssumptionAnswer());
+xWikiContext0.merge(documentReference0, timeScheduler3_Task0, biFunction0);
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiStoreInterface0, xWikiContext2);
+int int0 = (-3893);
+int int1 = (-46);
+int int2 = 0;
+int int3 = 0;
+xWikiCacheStore0.injectUpdatedCustomMappings(xWikiContext1);
+int int4 = 617;
+List<CompositeEvent> list0 = xWikiCacheStore0.search(xWikiContext1.KEY_LEGACY_VELOCITYCONTEXT, int3, int4, xWikiContext0);
+List<MimeMessage> list1 = xWikiCacheStore0.search(xWikiContext1.KEY_LEGACY_VELOCITYCONTEXT, xWikiContext2.MODE_GWT_DEBUG, int2, (List<?>) list0, xWikiContext2);
+xWikiCacheStore0.searchDocuments(xWikiContext2.KEY_LEGACY_VELOCITYCONTEXT, boolean0, boolean0, int0, int1, list1, xWikiContext1);
+QueryManager queryManager0 = xWikiCacheStore0.getQueryManager();
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "queryManager", (Object) queryManager0);
+DocumentReferenceResolver<XYDatasetTableModel> documentReferenceResolver0 = (DocumentReferenceResolver<XYDatasetTableModel>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "resolver", (Object) documentReferenceResolver0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(notificationUserIterator0, (Class<?>) NotificationUserIterator.class);
+CompilerConfiguration compilerConfiguration0 = CompilerConfiguration.DEFAULT;
+Map<String, Object> map0 = compilerConfiguration0.getJointCompilationOptions();
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, map0, documentReference0);
+periodicMimeMessageIterator0.computeNext();
+periodicMimeMessageIterator0.retrieveCompositeEventList(documentReference0);
+periodicMimeMessageIterator0.computeNext();
+
+14:59:38.388 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:59:38.547 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:59:58.219 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-6
+14:59:58.329 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
