@@ -1,4 +1,4 @@
 pid=$1
-Timeout=1200 # 20 minutes (Vibes+ Botsing)
+Timeout=900 # 15 minutes (Vibes+ Botsing)
 sleep "$Timeout"
 kill "$pid"
