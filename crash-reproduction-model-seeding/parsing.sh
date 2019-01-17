@@ -8,6 +8,8 @@ version=$5
 frame=$6
 search_budget=$7
 p_object_pool=$8
+seed_clone=$9
+seed_mutations=$10
 ##
 
 ## wait for the process to finish
