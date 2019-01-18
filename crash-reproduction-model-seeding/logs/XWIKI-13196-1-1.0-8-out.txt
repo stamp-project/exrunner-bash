@@ -1,0 +1,62 @@
+01:13:27.140 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+01:13:27.155 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.setName(EntityReference:186)
+01:13:27.155 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+01:14:36.816 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+01:15:44.175 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:15:44.242 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:15:44.242 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:15:44.294 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:15:44.295 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:15:44.295 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:15:44.295 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:15:44.295 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setName
+01:15:44.412 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:15:44.541 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+01:15:51.152 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last fitness value = 2831.2595238095146
+01:15:51.152 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last number of iterations = 70
+01:15:55.648 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+01:16:01.013 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last fitness value = 4180.737323014328
+01:16:01.014 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last number of iterations = 57
+01:16:03.437 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+01:16:08.472 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last fitness value = 1999.9999999999206
+01:16:08.500 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last number of iterations = 96
+01:16:11.139 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+01:16:16.342 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last fitness value = 3543.4456349206534
+01:16:16.342 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last number of iterations = 57
+01:16:59.880 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+01:17:05.298 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last fitness value = 3713.620351870402
+01:17:05.298 [main] INFO  be.vibes.dsl.selection.Dissimilar - Last number of iterations = 62
+01:17:07.570 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:17:39.316 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:17:39.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:17:39.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:17:39.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:17:39.320 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:17:39.320 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:17:39.321 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+EntityType entityType0 = EntityType.ATTACHMENT;
+EntityReference entityReference0 = new EntityReference(string0, entityType0);
+EntityType entityType1 = EntityType.WIKI;
+EntityReference entityReference1 = new EntityReference(string0, entityType1);
+EntityReference entityReference2 = entityReference0.getParent();
+EntityReference entityReference3 = entityReference2.getRoot();
+EntityReference entityReference4 = entityReference0.extractReference(entityType1);
+entityReference4.getType();
+Map<String, Serializable> map0 = entityReference3.getParameters();
+String string1 = "+";
+EntityType entityType2 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference5 = new EntityReference(string1, entityType2);
+entityReference5.getType();
+EntityReference entityReference6 = entityReference5.removeParent(entityReference5);
+EntityReference entityReference7 = new EntityReference(entityReference6);
+entityReference2.equals((Object) entityReference1);
+entityReference3.setName(string0);
+entityReference1.getReversedReferenceChain();
+entityReference3.size();
+EntityType entityType3 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference8 = new EntityReference(string1, entityType3, entityReference1, map0);
+
+01:17:39.332 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:17:39.537 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:17:57.276 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-1-1.0-8
+01:17:57.353 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
