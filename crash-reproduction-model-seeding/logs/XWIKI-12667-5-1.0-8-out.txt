@@ -1,0 +1,101 @@
+21:03:12.868 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:03:12.872 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+21:03:12.872 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+21:04:34.785 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+21:07:35.440 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:07:35.465 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:07:35.465 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:07:35.504 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:07:35.511 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'extractMimeType(Lcom/xpn/xwiki/XWikiContext;)Ljava/lang/String;' is private!
+21:07:35.512 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+21:07:35.702 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+21:07:35.702 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+21:07:35.702 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is resetMimeType
+21:07:35.811 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:07:35.901 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+21:07:49.285 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+21:07:55.972 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+21:08:01.401 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+21:08:06.693 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:08:12.025 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:08:40.744 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:08:40.745 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:08:40.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:08:40.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:08:40.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:08:40.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:08:40.802 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiDocument xWikiDocument1 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument1).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument1);
+boolean boolean0 = true;
+xWikiAttachment0.setMetaDataDirty(boolean0);
+xWikiAttachment0.getAttachment_content();
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment();
+XMLWriter xMLWriter0 = mock(XMLWriter.class, new ViolatedAssumptionAnswer());
+boolean boolean1 = true;
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment1.toXML(xMLWriter0, boolean1, boolean0, xWikiContext0);
+String string1 = xWikiAttachment0.getMimeType(xWikiContext0);
+xWikiAttachment1.setVersion(string1);
+String string2 = "Failed to read the content of [{}] in order to detect its mime type.";
+xWikiAttachment1.setAuthor(string2);
+DefaultStringDocumentReferenceResolver defaultStringDocumentReferenceResolver0 = new DefaultStringDocumentReferenceResolver();
+EntityReferenceResolver<XWikiAttachment> entityReferenceResolver0 = (EntityReferenceResolver<XWikiAttachment>) mock(EntityReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultStringDocumentReferenceResolver0, (Class<?>) DefaultStringDocumentReferenceResolver.class, "entityReferenceResolver", (Object) entityReferenceResolver0);
+Injector.validateBean(defaultStringDocumentReferenceResolver0, (Class<?>) DefaultStringDocumentReferenceResolver.class);
+String string3 = "";
+Object[] objectArray0 = null;
+DocumentReference documentReference0 = defaultStringDocumentReferenceResolver0.resolve(string3, objectArray0);
+ObjectReference objectReference0 = new ObjectReference(string3, documentReference0);
+PathStringDocumentReferenceResolver pathStringDocumentReferenceResolver0 = new PathStringDocumentReferenceResolver();
+String string4 = "Cannot retrieve versions of attachment [{}@{}]: {}";
+DocumentReference documentReference1 = pathStringDocumentReferenceResolver0.resolve(string4, objectArray0);
+ObjectReference objectReference1 = objectReference0.replaceParent(documentReference1, documentReference0);
+ObjectPropertyReference objectPropertyReference0 = new ObjectPropertyReference(string3, objectReference1);
+ObjectPropertyReference objectPropertyReference1 = objectPropertyReference0.replaceParent(documentReference1, documentReference0);
+DocumentReference documentReference2 = documentReference0.replaceParent(objectPropertyReference1, objectPropertyReference0);
+XWikiDocument xWikiDocument2 = new XWikiDocument(documentReference2);
+XWikiAttachment xWikiAttachment2 = new XWikiAttachment(xWikiDocument2, string4);
+String string5 = xWikiAttachment2.getComment();
+xWikiAttachment2.setComment(string5);
+xWikiAttachment2.isContentDirty();
+xWikiAttachment2.setAuthor(string4);
+HibernateAttachmentRecycleBinStore hibernateAttachmentRecycleBinStore0 = new HibernateAttachmentRecycleBinStore();
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hibernateAttachmentRecycleBinStore0, (Class<?>) HibernateAttachmentRecycleBinStore.class);
+long long0 = 565L;
+XWikiContext xWikiContext1 = new XWikiContext();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+boolean boolean2 = true;
+XWikiAttachment xWikiAttachment3 = hibernateAttachmentRecycleBinStore0.restoreFromRecycleBin(xWikiAttachment2, long0, xWikiContext2, boolean2);
+boolean boolean3 = xWikiAttachment3.isContentDirty();
+xWikiAttachment2.setAuthor(string3);
+String string6 = "";
+long long1 = (-4085L);
+Period period0 = new Period(long1, long1);
+int int0 = 22001;
+int int1 = (-1103);
+Range range0 = new Range(int0, int1);
+boolean boolean4 = false;
+RevisionCriteria revisionCriteria0 = new RevisionCriteria(string6, period0, range0, boolean4);
+Date date0 = revisionCriteria0.getMinDate();
+xWikiAttachment3.setDate(date0);
+boolean boolean5 = true;
+xWikiAttachment2.toStringXML(boolean3, boolean5, xWikiContext1);
+String string7 = null;
+xWikiAttachment3.setVersion(string7);
+
+21:08:40.849 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:08:46.021 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:08:56.367 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-5-1.0-8
+21:08:56.471 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

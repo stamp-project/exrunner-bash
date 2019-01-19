@@ -1,0 +1,45 @@
+21:06:09.469 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:06:09.473 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+21:06:09.473 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+21:07:34.347 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+21:10:52.619 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:10:52.720 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:10:52.720 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:10:52.786 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:10:52.788 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:10:52.795 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:10:52.795 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:10:52.796 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+21:10:52.920 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:10:52.978 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+21:11:08.956 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+21:11:18.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+21:11:24.364 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+21:11:30.025 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:11:35.518 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:12:14.893 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:12:14.894 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:12:14.894 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:12:14.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:12:14.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:12:14.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:12:14.925 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+String string0 = xWikiAttachment0.getFilename();
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiAttachmentArchive xWikiAttachmentArchive0 = xWikiAttachment0.loadArchive(xWikiContext0);
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.setVersion(string0);
+xWikiAttachment0.setComment(string0);
+DateFormatSymbols dateFormatSymbols0 = DateFormatSymbols.getInstance();
+SimpleDateFormat simpleDateFormat0 = new SimpleDateFormat(string0, dateFormatSymbols0);
+Date date0 = simpleDateFormat0.get2DigitYearStart();
+xWikiAttachment0.setDate(date0);
+xWikiAttachment0.getReference();
+
+21:12:14.957 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:12:15.593 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:12:26.123 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-4-1.0-9
+21:12:26.240 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

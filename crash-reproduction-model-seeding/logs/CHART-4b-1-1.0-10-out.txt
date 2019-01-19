@@ -1,0 +1,65 @@
+20:10:36.386 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+20:10:36.390 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+20:10:36.390 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+20:11:15.265 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+20:12:29.452 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:12:29.512 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:12:29.512 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:12:29.570 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:12:29.600 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:12:29.601 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:12:29.601 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:12:29.601 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+20:12:29.698 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+20:12:29.699 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+20:12:44.516 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+20:12:58.120 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+20:13:06.117 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+20:13:13.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:13:59.515 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+20:13:59.515 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:13:59.516 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:13:59.614 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:13:59.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:13:59.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:13:59.616 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null, (String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+ValueAxis valueAxis0 = mock(ValueAxis.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(valueAxis0).toString();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, valueAxis0, valueAxis0, xYItemRenderer0);
+LegendTitle legendTitle0 = new LegendTitle(xYItemRenderer0);
+RectangleInsets rectangleInsets0 = legendTitle0.getLegendItemGraphicPadding();
+xYPlot0.setAxisOffset(rectangleInsets0);
+String string0 = "";
+StackedBarRenderer stackedBarRenderer0 = new StackedBarRenderer(legendTitle0.visible);
+CategoryDataset categoryDataset0 = mock(CategoryDataset.class, new ViolatedAssumptionAnswer());
+Range range0 = stackedBarRenderer0.findRangeBounds(categoryDataset0);
+ModuloAxis moduloAxis0 = new ModuloAxis(string0, range0);
+xYPlot0.equals(moduloAxis0);
+int int0 = 0;
+xYPlot0.setDomainAxis(int0, (ValueAxis) moduloAxis0);
+Graphics2D graphics2D0 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+Rectangle2D rectangle2D0 = null;
+Paragraph paragraph0 = new Paragraph(int0);
+xYPlot0.drawDomainGridlines(graphics2D0, rectangle2D0, paragraph0);
+xYPlot0.getDomainAxisEdge(int0);
+XYPlot xYPlot1 = new XYPlot();
+String string1 = "";
+double double0 = 1.0;
+XYTextAnnotation xYTextAnnotation0 = new XYTextAnnotation(string1, double0, double0);
+xYPlot1.addAnnotation((XYAnnotation) xYTextAnnotation0);
+xYPlot1.removeAnnotation((XYAnnotation) xYTextAnnotation0);
+xYPlot1.getAnnotations();
+xYPlot1.removeAnnotation((XYAnnotation) xYTextAnnotation0);
+xYPlot1.getAnnotations();
+xYPlot1.removeAnnotation((XYAnnotation) xYTextAnnotation0);
+xYPlot1.getAnnotations();
+xYPlot1.getDataRange(moduloAxis0);
+xYPlot0.getDataRange(moduloAxis0);
+
+20:13:59.845 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:14:05.783 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:14:11.177 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-1.0-10
+20:14:11.342 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

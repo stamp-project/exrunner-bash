@@ -1,0 +1,70 @@
+20:48:47.576 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+20:48:47.580 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.internal.reference.AbstractStringEntityReferenceResolver.resolve(AbstractStringEntityReferenceResolver:155)
+20:48:47.580 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.internal.reference.AbstractStringEntityReferenceResolver
+20:48:56.057 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+20:50:01.428 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:50:01.464 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:50:01.464 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:50:01.495 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:50:01.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:50:01.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:50:01.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:50:01.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is resolve
+20:50:01.544 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+20:50:01.817 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:50:19.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.142857142857142
+20:50:19.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.142857142857142. FE: 100 
+20:50:19.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:50:34.741 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+20:50:34.742 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+20:50:44.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6923076923076923 | 300
+20:50:44.426 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6923076923076923. FE: 300 
+20:50:53.340 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 400
+20:50:53.340 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+20:50:53.341 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:50:53.341 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:50:53.341 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+20:50:53.350 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultSymbolScheme defaultSymbolScheme0 = new DefaultSymbolScheme();
+RelativeStringEntityReferenceResolver relativeStringEntityReferenceResolver0 = new RelativeStringEntityReferenceResolver();
+SymbolScheme symbolScheme0 = mock(SymbolScheme.class, new ViolatedAssumptionAnswer());
+Injector.inject(relativeStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) symbolScheme0);
+Injector.validateBean(relativeStringEntityReferenceResolver0, (Class<?>) RelativeStringEntityReferenceResolver.class);
+EntityType entityType0 = EntityType.ATTACHMENT;
+Object[] objectArray0 = new Object[10];
+objectArray0[0] = (Object) entityType0;
+objectArray0[2] = objectArray0[0];
+relativeStringEntityReferenceResolver0.resolveDefaultReference(entityType0, objectArray0);
+DefaultSymbolScheme defaultSymbolScheme1 = new DefaultSymbolScheme();
+Object[] objectArray1 = new Object[4];
+objectArray1[1] = (Object) entityType0;
+objectArray1[2] = objectArray1[1];
+defaultSymbolScheme0.initialize();
+objectArray1[3] = (Object) relativeStringEntityReferenceResolver0;
+HashMap<Character, EntityType> hashMap0 = new HashMap<Character, EntityType>();
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+Injector.inject(explicitStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme1);
+Injector.validateBean(explicitStringEntityReferenceResolver0, (Class<?>) ExplicitStringEntityReferenceResolver.class);
+explicitStringEntityReferenceResolver0.initialize();
+String string0 = "T";
+Object[] objectArray2 = new Object[10];
+objectArray2[0] = (Object) explicitStringEntityReferenceResolver0;
+objectArray2[2] = (Object) hashMap0;
+objectArray2[5] = (Object) defaultSymbolScheme0;
+explicitStringEntityReferenceResolver0.resolve(string0, entityType0, objectArray2);
+EntityType entityType1 = EntityType.BLOCK;
+defaultSymbolScheme1.initialize();
+explicitStringEntityReferenceResolver0.resolveDefaultReference(entityType1, objectArray1);
+RelativeStringEntityReferenceResolver relativeStringEntityReferenceResolver1 = new RelativeStringEntityReferenceResolver(defaultSymbolScheme1);
+Injector.inject(relativeStringEntityReferenceResolver1, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme1);
+Injector.validateBean(relativeStringEntityReferenceResolver1, (Class<?>) RelativeStringEntityReferenceResolver.class);
+EntityType entityType2 = EntityType.BLOCK;
+relativeStringEntityReferenceResolver1.resolveDefaultReference(entityType2, objectArray1);
+EntityType entityType3 = EntityType.BLOCK;
+relativeStringEntityReferenceResolver0.getDefaultReference(entityType0, objectArray1);
+EntityType entityType4 = EntityType.SPACE;
+relativeStringEntityReferenceResolver1.getDefaultReference(entityType0, objectArray0);
+
+20:50:53.385 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:50:53.997 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:51:00.545 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractStringEntityReferenceResolver_ESTest' to results/XWIKI-13942-4-1.0-10
+20:51:00.552 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

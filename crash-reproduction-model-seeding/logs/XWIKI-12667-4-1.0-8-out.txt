@@ -1,0 +1,76 @@
+21:02:51.090 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:02:51.093 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+21:02:51.094 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+21:04:14.100 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+21:07:22.759 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:07:22.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:07:22.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:07:22.869 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:07:22.875 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:07:22.876 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:07:22.876 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:07:22.876 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+21:07:22.962 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:07:22.992 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+21:07:33.688 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+21:07:51.212 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+21:07:56.600 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+21:08:02.120 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:08:07.539 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:08:25.266 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.5161290322580646
+21:08:25.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5161290322580646. FE: 100 
+21:08:25.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:09:17.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+21:09:17.791 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:09:17.791 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:09:17.792 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:09:17.792 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:09:17.794 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DbTimestampType dbTimestampType0 = DbTimestampType.INSTANCE;
+String string0 = "%-l{kof,{V";
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiContext0.put(string0, string0);
+HibernateAttachmentRecycleBinStore hibernateAttachmentRecycleBinStore0 = new HibernateAttachmentRecycleBinStore();
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hibernateAttachmentRecycleBinStore0, (Class<?>) HibernateAttachmentRecycleBinStore.class);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string1 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string1);
+XWikiContext xWikiContext1 = new XWikiContext();
+xWikiAttachment0.resetMimeType(xWikiContext1);
+xWikiAttachment0.getMimeType();
+xWikiAttachment0.resetMimeType(xWikiContext1);
+xWikiAttachment0.getNextVersion();
+XWikiAttachmentArchive xWikiAttachmentArchive0 = xWikiAttachment0.loadArchive(xWikiContext1);
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+long long0 = 1000L;
+char[] charArray0 = new char[9];
+char char0 = '(';
+charArray0[0] = char0;
+charArray0[1] = charArray0[0];
+char char1 = '!';
+charArray0[4] = char1;
+char char2 = 'V';
+charArray0[3] = char2;
+char char3 = 'g';
+charArray0[4] = char3;
+char char4 = 'c';
+char char5 = 'B';
+charArray0[6] = char5;
+char char6 = '>';
+charArray0[5] = char6;
+char char7 = 'H';
+charArray0[8] = char7;
+boolean boolean0 = true;
+
+21:09:17.832 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:09:19.363 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:09:28.855 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-4-1.0-8
+21:09:28.983 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

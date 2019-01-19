@@ -1,0 +1,60 @@
+18:09:45.174 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+18:09:45.178 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.<init>(FastDateParser:108)
+18:09:45.178 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+18:09:49.645 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+18:09:58.293 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:09:58.335 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:09:58.335 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:09:58.351 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:09:58.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:09:58.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:09:58.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:09:58.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+18:09:58.374 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:09:58.407 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+18:10:05.552 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+18:10:10.981 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+18:10:16.858 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:10:23.889 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+18:10:23.890 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+18:10:23.890 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:10:35.352 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+18:10:35.352 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+18:10:35.368 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:10:35.368 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:10:35.368 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+18:10:35.369 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Locale locale0 = Locale.GERMAN;
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+String string0 = "The array of suffixes must not be null";
+FastDateFormat.getInstance();
+FastDateFormat fastDateFormat0 = FastDateFormat.getInstance();
+String string1 = fastDateFormat0.toString();
+int int0 = 533;
+ParsePosition parsePosition0 = new ParsePosition(int0);
+fastDateFormat0.parseObject(string1, parsePosition0);
+TimeZone timeZone1 = fastDateFormat0.getTimeZone();
+String string2 = "The suffix must not be null";
+FastDateParser fastDateParser0 = new FastDateParser(string2, timeZone1, locale0);
+TimeZone.getDefault();
+int int1 = (-327);
+int int2 = fastDateParser0.adjustYear(int1);
+FastDateFormat.getInstance(string0, locale0);
+fastDateParser0.hashCode();
+String string3 = "Pattern is missing";
+ParsePosition parsePosition1 = new ParsePosition(int2);
+fastDateParser0.parse(string0, parsePosition0);
+fastDateParser0.parseObject(string1);
+String string4 = "The list of prefixes must not be null";
+fastDateParser0.parse(string4);
+Locale locale1 = Locale.JAPAN;
+String string5 = "GMTBST";
+String string6 = "MIT";
+fastDateParser0.parseObject(string6);
+fastDateParser0.parse(string1);
+fastDateParser0.getParsePattern();
+fastDateParser0.isNextNumber();
+
+18:10:35.588 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:10:35.621 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:10:35.642 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-5-1.0-8
+18:10:35.735 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
