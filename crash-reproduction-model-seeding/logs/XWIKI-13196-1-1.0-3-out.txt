@@ -1,0 +1,68 @@
+22:21:38.838 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:21:38.842 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.setName(EntityReference:186)
+22:21:38.842 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+22:22:42.612 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+22:23:38.285 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:23:38.370 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:23:38.370 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:23:38.398 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:23:38.399 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:23:38.399 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:23:38.399 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:23:38.399 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setName
+22:23:38.418 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:23:38.477 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+22:23:47.688 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+22:23:56.230 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+22:24:03.770 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+22:24:59.305 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+22:25:06.841 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:25:43.430 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:25:43.431 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:25:43.431 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:25:43.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:25:43.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:25:43.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:25:43.435 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+EntityType entityType0 = EntityType.ATTACHMENT;
+EntityReference entityReference0 = new EntityReference(string0, entityType0);
+EntityReference entityReference1 = entityReference0.getParent();
+String string1 = entityReference1.getName();
+entityReference1.setName(string1);
+entityReference0.equalsNonRecursive(entityReference1);
+String string2 = "";
+String string3 = "ZXLf{1aD";
+EntityType entityType1 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference2 = new EntityReference(string3, entityType1);
+AdvancedCache<String, Serializable> advancedCache0 = null;
+Flag[] flagArray0 = new Flag[6];
+Flag flag0 = Flag.SKIP_INDEXING;
+flagArray0[0] = flag0;
+Flag flag1 = Flag.DELTA_WRITE;
+flagArray0[1] = flag1;
+Flag flag2 = Flag.GUARANTEED_DELIVERY;
+flagArray0[2] = flag2;
+Flag flag3 = Flag.GUARANTEED_DELIVERY;
+flagArray0[3] = flag3;
+Flag flag4 = Flag.SKIP_STATISTICS;
+flagArray0[4] = flag4;
+Flag flag5 = Flag.SKIP_CACHE_LOAD;
+flagArray0[5] = flag5;
+DecoratedCache<String, Serializable> decoratedCache0 = new DecoratedCache<String, Serializable>(advancedCache0, flagArray0);
+AdvancedCache<Object, EntityReference> advancedCache1 = null;
+AbstractDelegatingAdvancedCache.AdvancedCacheWrapper<Object, EntityReference> abstractDelegatingAdvancedCache_AdvancedCacheWrapper0 = (AbstractDelegatingAdvancedCache.AdvancedCacheWrapper<Object, EntityReference>) mock(AbstractDelegatingAdvancedCache.AdvancedCacheWrapper.class, new ViolatedAssumptionAnswer());
+AbstractDelegatingAdvancedCache<Object, EntityReference> abstractDelegatingAdvancedCache0 = new AbstractDelegatingAdvancedCache<Object, EntityReference>(advancedCache1, abstractDelegatingAdvancedCache_AdvancedCacheWrapper0);
+AbstractDelegatingAdvancedCache<Object, EntityReference> abstractDelegatingAdvancedCache1 = new AbstractDelegatingAdvancedCache<Object, EntityReference>(abstractDelegatingAdvancedCache0);
+AbstractDelegatingAdvancedCache<Object, EntityReference> abstractDelegatingAdvancedCache2 = new AbstractDelegatingAdvancedCache<Object, EntityReference>(abstractDelegatingAdvancedCache1);
+ClassLoader classLoader0 = mock(ClassLoader.class, new ViolatedAssumptionAnswer());
+DecoratedCache<Object, EntityReference> decoratedCache1 = new DecoratedCache<Object, EntityReference>(abstractDelegatingAdvancedCache2, classLoader0, flagArray0);
+ClassLoader classLoader1 = decoratedCache1.getClassLoader();
+DecoratedCache<String, Serializable> decoratedCache2 = new DecoratedCache<String, Serializable>(decoratedCache0, classLoader1);
+DecoratedCache<String, Serializable> decoratedCache3 = new DecoratedCache<String, Serializable>(decoratedCache2, classLoader1, flagArray0);
+SecureCacheImpl<String, Serializable> secureCacheImpl0 = new SecureCacheImpl<String, Serializable>(decoratedCache3);
+EntityReference entityReference3 = new EntityReference(string2, entityType0, entityReference2, secureCacheImpl0);
+
+22:25:43.458 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:25:43.863 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:25:56.195 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-1-1.0-3
+22:25:56.249 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
