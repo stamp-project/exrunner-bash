@@ -1,0 +1,84 @@
+21:06:09.792 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+21:06:09.797 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.getDisplayNames(FastDateParser:381)
+21:06:09.797 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+21:06:13.045 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+21:06:21.483 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:06:21.546 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:06:21.546 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:06:21.573 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:06:21.574 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:06:21.574 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:06:21.574 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:06:21.574 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDisplayNames
+21:06:21.595 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:06:21.604 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+21:06:28.415 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+21:06:33.890 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+21:06:39.600 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:06:45.258 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.85
+21:06:45.258 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.85. FE: 100 
+21:06:45.259 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:07:02.846 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+21:07:02.846 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+21:07:09.726 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+21:07:20.027 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+21:07:30.673 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+21:07:34.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+21:07:38.596 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+21:07:49.378 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+21:07:58.059 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+21:08:09.336 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+21:08:18.102 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+21:08:31.409 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+21:08:57.163 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 1300
+21:08:57.164 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1300 
+21:08:57.165 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:08:57.165 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:08:57.165 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1300 
+21:08:57.166 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Collection<Locale> collection0 = null;
+LinkedHashSet<Character> linkedHashSet0 = new LinkedHashSet<Character>();
+char char0 = 'z';
+String string0 = null;
+ParsePosition parsePosition0 = new ParsePosition(char0);
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(timeZone0).getOffset(anyLong());
+doReturn(0).when(timeZone0).getRawOffset();
+String string1 = "D+|E+|F+|G+|H+|K+|M+|S+|W+|Z+|a+|d+|h+|k+|m+|s+|w+|y+|z+|''|'[^']++(''[^']*+)*+'|[^'A-Za-z]++";
+String string2 = null;
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+Locale.getISOCountries();
+String string3 = ">u4";
+String string4 = null;
+int int0 = (-3152);
+int int1 = 2041;
+int int2 = 22799;
+int int3 = 58;
+FastDateParser fastDateParser0 = new FastDateParser(string1, timeZone0, locale0);
+fastDateParser0.getLocale();
+Integer integer0 = new Integer(int3);
+fastDateParser0.parse(string4, parsePosition0);
+String string5 = "u2";
+String string6 = "";
+fastDateParser0.parse(string6, parsePosition0);
+ParsePosition parsePosition1 = null;
+fastDateParser0.parse(string5, parsePosition1);
+String string7 = "PLT";
+Locale.forLanguageTag(string7);
+String string8 = " is not a supported timezone nam";
+Character character0 = new Character(char0);
+String string9 = "GMTMIT";
+fastDateParser0.parseObject(string9);
+LinkedList<String> linkedList0 = new LinkedList<String>();
+fastDateParser0.toString();
+fastDateParser0.equals(linkedList0);
+String string10 = "GMTSST";
+fastDateParser0.parseObject(string0);
+Integer integer1 = new Integer(int0);
+fastDateParser0.getFieldWidth();
+fastDateParser0.getTimeZone();
+fastDateParser0.parseObject(string3);
+
+21:08:57.564 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:09:03.668 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:09:06.076 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-2-1.0-9
+21:09:06.104 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
