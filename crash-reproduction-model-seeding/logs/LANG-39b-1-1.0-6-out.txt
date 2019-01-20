@@ -1,0 +1,64 @@
+03:34:01.174 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+03:34:01.178 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.StringUtils.replaceEach(StringUtils:3676)
+03:34:01.178 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.StringUtils
+03:34:12.067 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+03:34:21.644 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:34:21.655 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:34:21.655 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:34:21.667 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:34:21.687 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'replaceEach(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ZI)Ljava/lang/String;' is private!
+03:34:21.687 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+03:34:21.862 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+03:34:21.863 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is replaceEach
+03:34:21.863 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is replaceEachRepeatedly
+03:34:21.901 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+03:34:21.904 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.StringUtils
+03:34:30.606 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:34:45.417 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+03:34:45.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:34:45.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:34:45.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:34:45.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:34:45.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:34:45.437 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = null;
+String string1 = "{M`\"LP*@w,:4";
+String string2 = StringUtils.substringAfterLast(string0, string1);
+Iterator<Object> iterator0 = (Iterator<Object>) mock(Iterator.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(iterator0).hasNext();
+String string3 = StringUtils.join(iterator0, string1);
+String string4 = "_O}{;";
+String string5 = "uijB,+0 jB[i]";
+StringUtils.contains(string4, string5);
+StringUtils.getLevenshteinDistance(string3, string5);
+String string6 = StringUtils.replaceOnce(string1, string4, string2);
+StringUtils stringUtils0 = new StringUtils();
+String string7 = null;
+StringUtils.containsIgnoreCase(string0, string7);
+String string8 = "ER6)1 _K9]x=f";
+StringUtils.remove(string6, string8);
+String string9 = " WO!<CD|-2d-%R$";
+String[] stringArray0 = new String[7];
+stringArray0[0] = string7;
+stringArray0[1] = string5;
+stringArray0[2] = string5;
+stringArray0[3] = string7;
+stringArray0[4] = string9;
+stringArray0[5] = string8;
+stringArray0[6] = string5;
+StringUtils.replaceEachRepeatedly(string9, stringArray0, stringArray0);
+StringUtils.endsWith(stringArray0[4], stringArray0[6]);
+int int0 = (-697);
+StringUtils.leftPad(stringArray0[4], int0);
+String string10 = "";
+StringUtils.strip(string7, string10);
+String string11 = ";R";
+String string12 = ";";
+int int1 = 57;
+StringUtils.overlay(string11, string12, int1, int1);
+String string13 = "F";
+StringUtils.stripEnd(string13, string10);
+
+03:34:45.482 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:34:47.105 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:34:49.737 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'StringUtils_ESTest' to results/LANG-39b-1-1.0-6
+03:34:49.863 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

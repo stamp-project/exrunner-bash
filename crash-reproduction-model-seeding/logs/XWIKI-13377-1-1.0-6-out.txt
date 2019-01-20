@@ -1,0 +1,68 @@
+20:56:29.517 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+20:56:29.596 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.BaseStringProperty.setValue(BaseStringProperty:45)
+20:56:29.597 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.BaseStringProperty
+20:56:44.869 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 566.
+21:00:57.340 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:00:57.384 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:00:57.417 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:00:57.457 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:00:57.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:00:57.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:00:57.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:00:57.469 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setValue
+21:00:57.649 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:00:57.813 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:01:08.111 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.struts.action.ActionServlet
+21:01:14.110 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.user.impl.xwiki.MyFormAuthenticator
+21:01:19.541 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.PropertyClass
+21:01:30.137 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils
+21:01:59.514 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.BaseStringProperty
+21:02:06.437 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+21:02:12.578 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+21:02:19.375 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.BaseClass
+21:02:33.990 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:02:58.980 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:02:58.980 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:02:58.980 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:02:58.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:02:58.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:02:58.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:02:58.983 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseStringProperty baseStringProperty0 = new BaseStringProperty();
+Action action0 = new Action();
+ActionServlet actionServlet0 = action0.getServlet();
+baseStringProperty0.setValue(actionServlet0);
+String string0 = baseStringProperty0.getName();
+String string1 = baseStringProperty0.getValue();
+BaseStringProperty baseStringProperty1 = baseStringProperty0.clone();
+baseStringProperty1.setValue(action0);
+baseStringProperty0.toText();
+baseStringProperty1.cloneInternal(baseStringProperty0);
+BaseStringProperty baseStringProperty2 = new BaseStringProperty();
+BaseStringProperty baseStringProperty3 = new BaseStringProperty();
+int int0 = 1;
+ThaiBuddhistDate thaiBuddhistDate0 = ThaiBuddhistDate.of(int0, int0, int0);
+long long0 = (-1L);
+ChronoUnit chronoUnit0 = ChronoUnit.YEARS;
+ThaiBuddhistDate thaiBuddhistDate1 = thaiBuddhistDate0.plus(long0, (TemporalUnit) chronoUnit0);
+baseStringProperty3.setValue(thaiBuddhistDate1);
+baseStringProperty3.getName();
+baseStringProperty3.setValue(string1);
+Object object0 = baseStringProperty3.getCustomMappingValue();
+baseStringProperty1.setValue(object0);
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+EntityType entityType0 = EntityType.SPACE;
+Object[] objectArray0 = new Object[4];
+objectArray0[0] = (Object) thaiBuddhistDate1;
+objectArray0[1] = (Object) baseStringProperty1;
+objectArray0[2] = (Object) actionServlet0;
+objectArray0[3] = (Object) baseStringProperty3;
+EntityReference entityReference0 = explicitStringEntityReferenceResolver0.resolve(string0, entityType0, objectArray0);
+AttachmentReference attachmentReference0 = new AttachmentReference(entityReference0);
+baseStringProperty1.setValue(attachmentReference0);
+baseStringProperty0.setValue(baseStringProperty1);
+baseStringProperty1.getValue();
+
+21:02:59.008 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:02:59.431 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:03:07.279 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseStringProperty_ESTest' to results/XWIKI-13377-1-1.0-6
+21:03:07.344 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
