@@ -75,6 +75,12 @@ with open(log_dir, "r") as ins:
         elif "Exception type is detected:" in stdout_line:
             splitted_line_1 = stdout_line.split("Exception type is detected: ")
             csv_result["exception_name"]=splitted_line_1[1].replace('\n', ' ').replace('\r', '').strip()
+        elif "Best fitness in the initial population is:" in stdout_line:
+            splitted_line_1 = stdout_line.split("population is:")
+            csv_result["number_of_fitness_evaluations"] = 100
+            distribution_ff = splitted_line_1[1].strip()
+            csv_result["fitness_function_value"]=distribution_ff
+            csv_result["fitness_function_evolution"]+="["+distribution_ff+","+str(csv_result["number_of_fitness_evaluations"])+"]"
 
 
 write_on_csv_file(csv_result,out_dir)
