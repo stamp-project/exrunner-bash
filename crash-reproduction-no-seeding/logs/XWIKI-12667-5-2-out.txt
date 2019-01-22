@@ -1,0 +1,66 @@
+23:49:40.835 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+23:49:40.840 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+23:49:40.841 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+23:49:51.717 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+23:51:22.613 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:51:22.641 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:51:22.641 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:51:22.715 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:51:22.720 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'extractMimeType(Lcom/xpn/xwiki/XWikiContext;)Ljava/lang/String;' is private!
+23:51:22.721 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+23:51:22.811 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+23:51:22.811 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+23:51:22.811 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is resetMimeType
+23:51:22.816 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:51:40.332 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:51:40.333 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:51:40.335 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:51:40.335 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:51:40.335 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:51:40.336 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:51:40.348 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+doReturn((String) null).when(xWikiDocument0).toString();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.apply(xWikiAttachment0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiAttachmentArchive xWikiAttachmentArchive0 = xWikiAttachment0.loadArchive(xWikiContext0);
+xWikiAttachment0.getDoc();
+xWikiAttachment0.resetMimeType(xWikiContext0);
+Blob blob0 = null;
+SerialBlob serialBlob0 = new SerialBlob(blob0);
+InputStream inputStream0 = serialBlob0.getBinaryStream();
+xWikiAttachment0.setContent(inputStream0);
+xWikiAttachment0.updateContentArchive(xWikiContext0);
+boolean boolean0 = xWikiAttachment0.isContentDirty();
+String string0 = null;
+xWikiAttachment0.setFilename(string0);
+String string1 = "date";
+xWikiAttachment0.setArchive(string1);
+xWikiAttachment0.getNextVersion();
+xWikiAttachment0.setArchive(string1);
+xWikiAttachment0.getArchive();
+XMLWriter xMLWriter0 = null;
+boolean boolean1 = false;
+xWikiAttachment0.toXML(xMLWriter0, boolean1, boolean1, xWikiContext0);
+boolean boolean2 = false;
+xWikiAttachment0.toXML(boolean0, boolean2, xWikiContext0);
+xWikiAttachment0.getMimeType();
+String string2 = "";
+xWikiAttachment0.setArchive(string2);
+xWikiAttachment0.getContentSize(xWikiContext0);
+xWikiAttachment0.isImage(xWikiContext0);
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+xWikiAttachment0.loadContent(xWikiContext0);
+long long0 = (-3149L);
+xWikiAttachment0.setDocId(long0);
+xWikiAttachment0.setComment(string0);
+xWikiAttachment0.setContent(inputStream0);
+String string3 = "";
+xWikiAttachment0.setAuthor(string3);
+
+23:51:40.391 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:51:41.119 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:51:45.245 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-5-2
+23:51:45.287 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
