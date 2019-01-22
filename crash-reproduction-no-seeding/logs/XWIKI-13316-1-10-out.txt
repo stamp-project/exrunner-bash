@@ -1,0 +1,59 @@
+23:15:37.784 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+23:15:37.789 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.internal.skin.EnvironmentSkin.getOutputSyntaxString(EnvironmentSkin:156)
+23:15:37.790 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.internal.skin.EnvironmentSkin
+23:15:48.060 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1078.
+23:18:03.370 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:18:03.419 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:18:03.419 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:18:03.450 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:18:03.452 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:18:03.452 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:18:03.452 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:18:03.453 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getOutputSyntaxString
+23:18:03.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:18:18.133 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:18:18.134 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:18:18.134 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:18:18.135 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:18:18.135 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:18:18.135 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:18:18.137 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+InternalSkinManager internalSkinManager0 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration0 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+SyntaxFactory syntaxFactory0 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+Environment environment0 = mock(Environment.class, new ViolatedAssumptionAnswer());
+doReturn((URL) null).when(environment0).getResource(anyString());
+Provider<XWikiContext> provider0 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+EnvironmentSkin environmentSkin0 = new EnvironmentSkin(string0, internalSkinManager0, internalSkinConfiguration0, logger0, syntaxFactory0, environment0, provider0);
+String string1 = null;
+environmentSkin0.getLocalResource(string1);
+InternalSkinManager internalSkinManager1 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration1 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+Logger logger1 = null;
+SyntaxFactory syntaxFactory1 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+Environment environment1 = mock(Environment.class, new ViolatedAssumptionAnswer());
+doReturn((URL) null).when(environment1).getResource(anyString());
+Provider<XWikiContext> provider1 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+EnvironmentSkin environmentSkin1 = new EnvironmentSkin(string1, internalSkinManager1, internalSkinConfiguration1, logger1, syntaxFactory1, environment1, provider1);
+environmentSkin1.createParent();
+String string2 = "";
+InternalSkinManager internalSkinManager2 = null;
+InternalSkinConfiguration internalSkinConfiguration2 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+SyntaxFactory syntaxFactory2 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+Environment environment2 = null;
+Provider<XWikiContext> provider2 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+EnvironmentSkin environmentSkin2 = new EnvironmentSkin(string2, internalSkinManager2, internalSkinConfiguration2, logger1, syntaxFactory2, environment2, provider2);
+String string3 = "parent";
+InternalSkinConfiguration internalSkinConfiguration3 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+SyntaxFactory syntaxFactory3 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+Provider<XWikiContext> provider3 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+EnvironmentSkin environmentSkin3 = new EnvironmentSkin(string3, internalSkinManager2, internalSkinConfiguration3, logger1, syntaxFactory3, environment2, provider3);
+environmentSkin2.createResource(string0, string1);
+environmentSkin3.getOutputSyntaxString();
+environmentSkin0.getOutputSyntaxString();
+
+23:18:18.177 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:18:19.869 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:18:25.461 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EnvironmentSkin_ESTest' to results/XWIKI-13316-1-10
+23:18:25.517 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,40 @@
+21:54:46.174 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:54:46.180 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:69)
+21:54:46.181 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+21:54:53.960 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+21:57:27.104 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:57:27.150 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:57:27.150 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:57:27.187 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:57:27.188 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:57:27.188 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:57:27.188 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:57:27.189 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+21:57:27.193 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:57:59.396 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:57:59.397 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:57:59.397 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:57:59.398 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:57:59.398 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:57:59.398 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:57:59.399 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+Provider<ChronoLocalDate> provider0 = (Provider<ChronoLocalDate>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(provider0).get();
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider0);
+EntityReferenceSerializer<String> entityReferenceSerializer0 = (EntityReferenceSerializer<String>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer0);
+Injector.validateBean(defaultContentParser0, (Class<?>) DefaultContentParser.class);
+String string0 = "Y^`dm'#gnxg;[epoU";
+Syntax syntax0 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(syntax0).toIdString();
+EntityReference entityReference0 = mock(EntityReference.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string0, syntax0, entityReference0);
+String string1 = "S50cq\\<?$vmp";
+Syntax syntax1 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+EntityReference entityReference1 = mock(EntityReference.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string1, syntax1, entityReference1);
+
+21:57:59.458 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:57:59.655 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:58:06.838 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-2-2
+21:58:06.883 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

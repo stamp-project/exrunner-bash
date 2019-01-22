@@ -1,0 +1,74 @@
+20:24:39.611 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+20:24:39.624 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.search.solr.internal.reference.SolrEntityReferenceResolver.getWikiReference(SolrEntityReferenceResolver:93)
+20:24:39.645 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.search.solr.internal.reference.SolrEntityReferenceResolver
+20:24:50.005 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 895.
+20:26:10.639 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:26:10.692 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:26:10.692 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:26:10.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:26:10.912 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'getWikiReference(Lorg/apache/solr/common/SolrDocument;[Ljava/lang/Object;)Lorg/xwiki/model/reference/EntityReference;' is private!
+20:26:10.912 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+20:26:11.031 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:26:11.031 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is resolve
+20:26:11.036 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:26:55.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+20:26:55.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+20:26:55.740 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:27:40.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+20:28:01.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+20:28:16.821 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+20:28:32.469 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+20:28:32.469 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+20:28:32.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:28:32.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:28:32.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+20:28:32.471 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EntityReferenceResolver<ExplicitStringEntityReferenceResolver> entityReferenceResolver0 = (EntityReferenceResolver<ExplicitStringEntityReferenceResolver>) mock(EntityReferenceResolver.class, new ViolatedAssumptionAnswer());
+EntityType entityType0 = EntityType.BLOCK;
+SolrDocument solrDocument0 = new SolrDocument();
+EntityType entityType1 = EntityType.BLOCK;
+Object[] objectArray0 = null;
+SolrDocument solrDocument1 = new SolrDocument();
+solrDocument0.remove((Object) solrDocument1, (Object) solrDocument1);
+EntityType entityType2 = EntityType.OBJECT_PROPERTY;
+BiConsumer<Object, Object> biConsumer0 = (BiConsumer<Object, Object>) mock(BiConsumer.class, new ViolatedAssumptionAnswer());
+solrDocument0.forEach(biConsumer0);
+Object[] objectArray1 = new Object[7];
+String string0 = "hX 7ND^X+6q=h<0";
+solrDocument0.put(string0, (Object) string0);
+String string1 = "wiki";
+String string2 = "doclocale";
+Object object0 = new Object();
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+solrDocument0.put(string1, (Object) solrDocument0);
+objectArray1[6] = (Object) entityType0;
+Object object1 = new Object();
+objectArray1[3] = (Object) entityReferenceResolver0;
+SolrDocument solrDocument2 = new SolrDocument();
+solrDocument2.setField(string1, entityType1);
+solrDocument0.put(string1, (Object) solrDocument2);
+EntityType entityType3 = EntityType.BLOCK;
+SolrEntityReferenceResolver solrEntityReferenceResolver0 = new SolrEntityReferenceResolver();
+Injector.inject(solrEntityReferenceResolver0, (Class<?>) SolrEntityReferenceResolver.class, "explicitReferenceEntityReferenceResolver", (Object) entityReferenceResolver0);
+Injector.validateBean(solrEntityReferenceResolver0, (Class<?>) SolrEntityReferenceResolver.class);
+SolrDocument solrDocument3 = new SolrDocument();
+EntityReference entityReference0 = null;
+solrDocument3.addChildDocument(solrDocument0);
+EntityType entityType4 = EntityType.DOCUMENT;
+solrEntityReferenceResolver0.resolve(solrDocument2, entityType4, objectArray0);
+Object[] objectArray2 = new Object[9];
+objectArray2[0] = (Object) entityType4;
+Object object2 = new Object();
+objectArray2[1] = object2;
+objectArray2[2] = (Object) solrDocument1;
+objectArray2[3] = (Object) solrDocument2;
+Object object3 = new Object();
+objectArray2[4] = object3;
+objectArray2[5] = (Object) entityReference0;
+objectArray2[6] = (Object) string0;
+objectArray2[7] = (Object) entityReference0;
+solrEntityReferenceResolver0.resolve(solrDocument3, entityType1, objectArray2);
+
+20:28:32.513 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:28:33.086 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:28:42.202 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SolrEntityReferenceResolver_ESTest' to results/XWIKI-13031-1-1
+20:28:42.207 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

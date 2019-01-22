@@ -1,0 +1,55 @@
+20:39:32.728 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+20:39:32.733 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.classes.BaseClass.addTextAreaField(BaseClass:878)
+20:39:32.734 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.classes.BaseClass
+20:39:51.369 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+20:42:41.960 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:42:42.114 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:42:42.114 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:42:42.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:42:42.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:42:42.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:42:42.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:42:42.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is addTextAreaField
+20:42:42.246 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:45:04.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+20:45:04.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:45:04.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:45:04.214 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:45:04.214 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:45:04.214 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:45:04.215 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseClass baseClass0 = new BaseClass();
+String string0 = "";
+int int0 = 0;
+boolean boolean0 = true;
+baseClass0.addDBListField(string0, string0, int0, boolean0, string0);
+baseClass0.merge(baseClass0);
+baseClass0.addBooleanField(string0, string0, string0);
+String string1 = "pool must not be null.";
+baseClass0.addTemplateField(string1, string1);
+String string2 = "";
+TextAreaClass.EditorType textAreaClass_EditorType0 = TextAreaClass.EditorType.WYSIWYG;
+baseClass0.addTextAreaField(string2, string0, int0, int0, textAreaClass_EditorType0);
+String string3 = null;
+baseClass0.setCustomMapping(string3);
+String string4 = "yes_no";
+baseClass0.setName(string4);
+TextAreaClass.ContentType textAreaClass_ContentType0 = TextAreaClass.ContentType.VELOCITY_CODE;
+baseClass0.addTextAreaField(string4, string2, int0, int0, textAreaClass_ContentType0);
+String string5 = "customMapping";
+baseClass0.addTextAreaField(string5, string3, int0, int0, string1);
+baseClass0.flushCache();
+String string6 = "Cannot instanciate custom class {0}";
+XWikiContext xWikiContext0 = new XWikiContext();
+BaseObject baseObject0 = BaseClass.newCustomClassInstance(string6, xWikiContext0);
+DBStringListProperty dBStringListProperty0 = new DBStringListProperty();
+ListProperty listProperty0 = dBStringListProperty0.clone();
+PropertyClass propertyClass0 = listProperty0.getPropertyClass(xWikiContext0);
+BaseProperty baseProperty0 = propertyClass0.newProperty();
+MergeConfiguration mergeConfiguration0 = mock(MergeConfiguration.class, new ViolatedAssumptionAnswer());
+MergeResult mergeResult0 = mock(MergeResult.class, new ViolatedAssumptionAnswer());
+baseClass0.merge((ElementInterface) baseObject0, (ElementInterface) baseProperty0, mergeConfiguration0, xWikiContext0, mergeResult0);
+
+20:45:04.243 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:45:04.877 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:45:11.479 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseClass_ESTest' to results/XWIKI-13916-2-7
+20:45:11.579 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

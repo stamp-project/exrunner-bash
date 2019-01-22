@@ -1,0 +1,55 @@
+03:10:08.351 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+03:10:08.363 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine:116)
+03:10:08.364 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine
+03:10:09.928 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+03:10:19.854 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:10:19.887 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:10:19.887 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:10:19.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:10:19.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+03:10:19.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+03:10:19.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:10:19.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is intersection
+03:10:19.977 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:10:32.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6
+03:10:32.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. FE: 100 
+03:10:32.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:10:44.266 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+03:10:44.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+03:10:44.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:10:44.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:10:44.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+03:10:44.268 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = Vector3D.POSITIVE_INFINITY;
+double double0 = (-606.2197024435261);
+double double1 = vector3D0.distance1((Vector<Euclidean3D>) vector3D0);
+vector3D0.toString();
+double double2 = 910.1814082;
+Vector3D vector3D1 = new Vector3D(double1, vector3D0);
+double double3 = 0.0;
+double double4 = (-4.813899778443457E-9);
+Vector3D vector3D2 = Vector3D.MINUS_K;
+vector3D2.orthogonal();
+RotationOrder rotationOrder0 = RotationOrder.XYX;
+Vector3D vector3D3 = new Vector3D(double3, vector3D0, double4, vector3D2);
+Vector3D vector3D4 = new Vector3D(double0, vector3D0, double2, vector3D1, double1, vector3D3);
+double double5 = 1246.0;
+Line line0 = null;
+Line line1 = new Line(vector3D1, vector3D3);
+line1.revert();
+line1.wholeLine();
+SubLine subLine0 = line1.wholeLine();
+subLine0.getSegments();
+BSPTree<Euclidean1D> bSPTree0 = new BSPTree<Euclidean1D>(line0);
+IntervalsSet intervalsSet0 = new IntervalsSet(bSPTree0);
+boolean boolean0 = false;
+Vector3D vector3D5 = subLine0.intersection(subLine0, boolean0);
+boolean boolean1 = true;
+SubLine subLine1 = new SubLine(vector3D1, vector3D5);
+boolean boolean2 = true;
+subLine0.intersection(subLine1, boolean2);
+subLine1.getSegments();
+
+03:10:44.302 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:10:44.562 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:10:47.201 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SubLine_ESTest' to results/MATH-4b-3-6
+03:10:47.216 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
