@@ -1,0 +1,69 @@
+20:15:37.857 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.util.NoSuchElementException
+20:15:37.871 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.listener.chaining.EmptyBlockChainingListener.stopContainerBlock(EmptyBlockChainingListener:458)
+20:15:37.871 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.listener.chaining.EmptyBlockChainingListener
+20:15:46.848 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 588.
+20:16:41.723 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:16:41.755 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:16:41.755 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:16:41.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:16:41.784 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'stopContainerBlock()V' is private!
+20:16:41.784 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 19 Target call(s):
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is endHeader
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is endGroup
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #3 is endListItem
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #4 is endTable
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #5 is endDefinitionList
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #6 is endFormat
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #7 is endTableHeadCell
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #8 is endQuotationLine
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #9 is endDocument
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #10 is endSection
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #11 is endDefinitionTerm
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #12 is endList
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #13 is endDefinitionDescription
+20:16:41.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #14 is endTableRow
+20:16:41.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #15 is endMacroMarker
+20:16:41.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #16 is endLink
+20:16:41.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #17 is endTableCell
+20:16:41.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #18 is endParagraph
+20:16:41.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #19 is endQuotation
+20:16:41.822 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:16:56.136 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+20:16:56.137 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:16:56.138 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:16:56.139 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:16:56.144 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:16:56.144 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:16:56.145 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ListenerChain listenerChain0 = mock(ListenerChain.class, new ViolatedAssumptionAnswer());
+doReturn((ChainingListener) null).when(listenerChain0).getNextListener(nullable(java.lang.Class.class));
+EmptyBlockChainingListener emptyBlockChainingListener0 = new EmptyBlockChainingListener(listenerChain0);
+Format format0 = Format.MONOSPACE;
+Map<String, String> map0 = Listener.EMPTY_PARAMETERS;
+emptyBlockChainingListener0.endFormat(format0, map0);
+Format format1 = Format.UNDERLINED;
+emptyBlockChainingListener0.beginFormat(format1, map0);
+char char0 = 'J';
+emptyBlockChainingListener0.onSpecialSymbol(char0);
+ResourceReference resourceReference0 = mock(ResourceReference.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = false;
+emptyBlockChainingListener0.beginLink(resourceReference0, boolean0, map0);
+emptyBlockChainingListener0.endSection(map0);
+emptyBlockChainingListener0.onSpecialSymbol(char0);
+emptyBlockChainingListener0.endQuotation(map0);
+ResourceReference resourceReference1 = null;
+boolean boolean1 = false;
+HashMap<String, String> hashMap0 = new HashMap<String, String>();
+emptyBlockChainingListener0.endLink(resourceReference1, boolean1, hashMap0);
+emptyBlockChainingListener0.beginDefinitionDescription();
+emptyBlockChainingListener0.endGroup(map0);
+emptyBlockChainingListener0.endQuotationLine();
+String string0 = "QS)Fsc";
+emptyBlockChainingListener0.endMacroMarker(string0, hashMap0, string0, boolean1);
+emptyBlockChainingListener0.endDefinitionList(hashMap0);
+emptyBlockChainingListener0.endTableHeadCell(map0);
+
+20:16:56.181 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:16:56.389 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:17:01.735 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EmptyBlockChainingListener_ESTest' to results/XRENDERING-422-1-9
+20:17:01.754 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

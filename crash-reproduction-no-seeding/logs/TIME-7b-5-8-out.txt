@@ -1,0 +1,43 @@
+06:39:47.963 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+06:39:47.977 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeParserBucket.computeMillis(DateTimeParserBucket:359)
+06:39:47.977 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeParserBucket
+06:39:50.997 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+06:40:08.630 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:40:08.637 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:40:08.637 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:40:08.742 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:40:08.746 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:40:08.747 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:40:08.747 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:40:08.747 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeMillis
+06:40:08.759 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:40:31.395 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+06:40:31.396 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:40:31.396 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:40:31.397 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:40:31.397 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:40:31.397 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:40:31.398 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeField dateTimeField0 = mock(DateTimeField.class, new ViolatedAssumptionAnswer());
+doReturn((DurationField) null, (DurationField) null).when(dateTimeField0).getDurationField();
+doReturn((DurationField) null, (DurationField) null).when(dateTimeField0).getRangeDurationField();
+String string0 = "";
+Locale locale0 = Locale.FRANCE;
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField0 = new DateTimeParserBucket.SavedField(dateTimeField0, string0, locale0);
+long long0 = (-2401L);
+Chronology chronology0 = null;
+long long1 = (-2970L);
+DateTimeParserBucket dateTimeParserBucket0 = new DateTimeParserBucket(long1, chronology0, locale0);
+dateTimeParserBucket0.computeMillis();
+dateTimeParserBucket_SavedField0.compareTo(dateTimeParserBucket_SavedField0);
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfWeek();
+int int0 = (-4);
+dateTimeParserBucket0.saveField(dateTimeFieldType0, int0);
+dateTimeParserBucket0.computeMillis();
+dateTimeParserBucket0.restoreState(chronology0);
+Object object0 = new Object();
+dateTimeParserBucket0.restoreState(object0);
+
+06:40:31.467 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:40:32.189 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:40:35.456 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeParserBucket_ESTest' to results/TIME-7b-5-8
+06:40:35.482 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
