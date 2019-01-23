@@ -1,0 +1,40 @@
+01:34:38.485 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+01:34:38.495 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+01:34:38.495 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+01:34:40.849 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+01:34:51.267 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:34:51.307 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:34:51.307 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:34:51.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:34:51.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:34:51.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:34:51.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:34:51.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+01:34:51.341 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:35:01.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:35:01.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:35:01.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:35:01.997 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:35:01.997 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:35:01.997 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:35:01.997 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+dateTimeFormatter0.getLocale();
+dateTimeFormatter0.isParser();
+DateTimePrinter dateTimePrinter1 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser1 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser1).toString();
+doReturn(0).when(dateTimeParser1).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter1 = new DateTimeFormatter(dateTimePrinter1, dateTimeParser1);
+String string0 = "\\e =GV@";
+dateTimeFormatter1.parseDateTime(string0);
+DateTimePrinter dateTimePrinter2 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser2 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter2 = new DateTimeFormatter(dateTimePrinter2, dateTimeParser2);
+dateTimeFormatter1.getPivotYear();
+
+01:35:02.114 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:35:02.476 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:35:04.778 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-9
+01:35:04.840 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

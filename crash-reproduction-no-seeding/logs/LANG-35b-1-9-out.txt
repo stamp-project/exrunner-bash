@@ -1,0 +1,58 @@
+18:44:54.805 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.text.ParseException
+18:44:54.811 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.DateUtils.parseDateWithLeniency(DateUtils:346)
+18:44:54.811 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.DateUtils
+18:44:59.119 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:45:06.372 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:45:06.403 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:45:06.404 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:45:06.411 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:45:06.427 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'parseDateWithLeniency(Ljava/lang/String;[Ljava/lang/String;Z)Ljava/util/Date;' is private!
+18:45:06.427 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+18:45:06.543 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+18:45:06.543 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDate
+18:45:06.543 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is parseDateStrictly
+18:45:06.559 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:45:15.291 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:45:15.291 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:15.291 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:45:15.292 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:45:15.292 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:45:15.292 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:15.293 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Date date0 = mock(Date.class, new ViolatedAssumptionAnswer());
+doReturn(0L).when(date0).getTime();
+int int0 = 1;
+Date date1 = DateUtils.setHours(date0, int0);
+String string0 = "\"p68V(d0{!-GZ]+OEs";
+String[] stringArray0 = new String[0];
+Date date2 = DateUtils.parseDateStrictly(string0, stringArray0);
+Date date3 = DateUtils.parseDateStrictly(string0, stringArray0);
+DateUtils.getFragmentInMilliseconds(date3, int0);
+String string1 = "n.i8{>m9k+|o&o{";
+DateUtils.parseDateStrictly(string1, stringArray0);
+Date date4 = DateUtils.addMonths(date2, int0);
+String string2 = "QXWGOKL}";
+Date date5 = DateUtils.parseDate(string2, stringArray0);
+int int1 = 500;
+DateUtils.setHours(date1, int1);
+Calendar calendar0 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+int int2 = (-2295);
+DateUtils.getFragmentInMinutes(calendar0, int2);
+int int3 = 748;
+DateUtils.setHours(date5, int3);
+Date date6 = DateUtils.parseDateStrictly(string1, stringArray0);
+Date date7 = DateUtils.round((Object) string1, int0);
+Date date8 = DateUtils.addDays(date4, int1);
+DateUtils.ceiling((Object) date8, int2);
+int int4 = 896;
+DateUtils.setMonths(date8, int4);
+DateUtils.setHours(date6, int1);
+DateUtils.setMinutes(date8, int4);
+String string3 = "krS9yA";
+int int5 = 1180;
+DateUtils.ceiling((Object) string3, int5);
+DateUtils.truncate(date7, int4);
+
+18:45:15.322 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:45:15.636 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:45:17.655 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateUtils_ESTest' to results/LANG-35b-1-9
+18:45:17.666 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
