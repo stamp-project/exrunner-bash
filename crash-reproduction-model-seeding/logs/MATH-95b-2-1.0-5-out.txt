@@ -1,0 +1,41 @@
+18:08:49.395 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:08:49.398 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(UnivariateRealSolverUtils:128)
+18:08:49.398 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils
+18:08:51.637 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+18:08:58.745 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:08:58.775 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:08:58.775 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:08:58.796 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:08:58.797 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:08:58.797 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:08:58.797 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:08:58.797 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is bracket
+18:08:58.805 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:08:58.845 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.UnivariateRealSolverUtils
+18:09:05.556 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.AbstractContinuousDistribution
+18:09:11.042 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.FDistributionImpl
+18:09:16.811 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:09:23.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:09:23.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:09:23.627 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:09:23.628 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:09:23.628 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:09:23.628 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:09:23.628 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(univariateRealFunction0).value(anyDouble());
+double double0 = 1.0;
+double double1 = 1167.041566;
+double double2 = UnivariateRealSolverUtils.solve(univariateRealFunction0, double0, double1);
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(univariateRealFunction1).value(anyDouble());
+double double3 = (-439.71972);
+UnivariateRealSolverUtils.solve(univariateRealFunction1, double3, double2, double2);
+UnivariateRealFunction univariateRealFunction2 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double4 = 0.0;
+double double5 = 966.46;
+UnivariateRealSolverUtils.bracket(univariateRealFunction2, double3, double4, double5);
+
+18:09:23.675 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:09:23.875 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:09:26.015 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'UnivariateRealSolverUtils_ESTest' to results/MATH-95b-2-1.0-5
+18:09:26.055 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

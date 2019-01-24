@@ -1,0 +1,43 @@
+15:51:26.873 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.direct.BOBYQAOptimizer$PathIsExploredException
+15:51:26.892 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer.prelim(BOBYQAOptimizer:1752)
+15:51:26.892 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer
+15:52:17.869 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+15:52:22.705 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:52:22.733 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:52:22.733 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:52:22.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:52:22.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'prelim([D[D)V' is private!
+15:52:22.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+15:52:25.298 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:52:25.298 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doOptimize
+15:52:25.329 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:52:25.391 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.BOBYQAOptimizer
+15:52:31.513 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:52:41.968 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+15:52:41.968 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:52:41.968 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:52:41.979 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:52:41.979 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:52:41.979 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:52:41.979 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 30;
+BOBYQAOptimizer bOBYQAOptimizer0 = new BOBYQAOptimizer(int0);
+MultivariateFunction multivariateFunction0 = mock(MultivariateFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(multivariateFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[9];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+doubleArray0[2] = (double) int0;
+doubleArray0[3] = (double) int0;
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+doubleArray0[6] = (double) int0;
+doubleArray0[7] = (double) int0;
+doubleArray0[8] = (double) int0;
+bOBYQAOptimizer0.optimize(int0, multivariateFunction0, goalType0, doubleArray0);
+bOBYQAOptimizer0.doOptimize();
+
+15:52:42.465 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:52:46.555 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:52:49.568 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BOBYQAOptimizer_ESTest' to results/MATH-38b-1-1.0-7
+15:52:49.601 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

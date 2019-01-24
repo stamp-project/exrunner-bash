@@ -1,0 +1,75 @@
+18:57:40.578 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+18:57:40.585 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.when(MockitoCore:56)
+18:57:40.586 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+18:57:43.182 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+18:57:51.810 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:57:51.887 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:57:51.887 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:57:51.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:57:51.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:57:51.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:57:51.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:57:51.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is when
+18:57:52.017 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:57:52.056 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+18:57:59.053 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+18:58:04.472 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+18:58:09.851 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:58:09.855 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+18:58:09.887 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+18:58:09.892 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+18:58:09.905 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+18:58:09.977 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+18:58:10.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+18:58:10.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 0 
+18:58:10.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:58:22.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+18:58:22.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:58:22.017 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:58:22.017 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:58:22.017 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:58:22.018 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Class<String> class0 = String.class;
+MockitoCore mockitoCore0 = new MockitoCore();
+Answer<Object> answer0 = (Answer<Object>) mock(Answer.class, new ViolatedAssumptionAnswer());
+Object[] objectArray0 = new Object[6];
+mockitoCore0.when(objectArray0[0]);
+mockitoCore0.inOrder(objectArray0);
+mockitoCore0.stub(objectArray0[0]);
+mockitoCore0.inOrder(objectArray0);
+MockitoCore mockitoCore1 = new MockitoCore();
+IOngoingStubbing iOngoingStubbing0 = mockitoCore0.stub();
+MockitoCore mockitoCore2 = new MockitoCore();
+MockingProgressImpl mockingProgressImpl0 = new MockingProgressImpl();
+InvocationContainerImpl invocationContainerImpl0 = new InvocationContainerImpl(mockingProgressImpl0);
+ConsecutiveStubbing<Object> consecutiveStubbing0 = new ConsecutiveStubbing<Object>(invocationContainerImpl0);
+Invocation invocation0 = mockitoCore0.getLastInvocation();
+Invocation.isToString(invocation0);
+StubbedInvocationMatcher stubbedInvocationMatcher0 = invocationContainerImpl0.findAnswerFor(invocation0);
+invocationContainerImpl0.addAnswer(stubbedInvocationMatcher0);
+ThreadSafeMockingProgress threadSafeMockingProgress0 = new ThreadSafeMockingProgress();
+VerificationMode verificationMode0 = threadSafeMockingProgress0.pullVerificationMode();
+mockitoCore2.verify(consecutiveStubbing0, verificationMode0);
+threadSafeMockingProgress0.verificationStarted(verificationMode0);
+Class<MockSettingsImpl> class1 = MockSettingsImpl.class;
+mockitoCore2.validateMockitoUsage();
+Answer<String> answer1 = (Answer<String>) mock(Answer.class, new ViolatedAssumptionAnswer());
+mockitoCore2.doAnswer(answer1);
+MockitoCore mockitoCore3 = new MockitoCore();
+MockitoCore mockitoCore4 = new MockitoCore();
+MockitoCore mockitoCore5 = new MockitoCore();
+mockitoCore1.verify((Object) threadSafeMockingProgress0, verificationMode0);
+int int0 = 0;
+Object[] objectArray1 = new Object[2];
+objectArray1[0] = (Object) invocation0;
+objectArray1[1] = (Object) iOngoingStubbing0;
+mockitoCore2.inOrder(objectArray1);
+mockitoCore4.inOrder(objectArray1);
+Class<Integer> class2 = Integer.class;
+MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+MockSettings mockSettings0 = mockSettingsImpl0.serializable();
+mockitoCore4.mock(class2, mockSettings0);
+
+18:58:22.024 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:58:22.176 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:58:23.568 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-3-1.0-10
+18:58:23.572 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

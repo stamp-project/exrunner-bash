@@ -1,0 +1,60 @@
+16:10:08.242 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$6
+16:10:08.245 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.OpenMapRealVector.ebeMultiply(OpenMapRealVector:372)
+16:10:08.245 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.OpenMapRealVector
+16:10:12.422 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+16:10:18.250 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:10:18.257 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:10:18.258 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:10:18.300 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:10:18.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:10:18.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:10:18.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:10:18.302 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is ebeMultiply
+16:10:18.341 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+16:10:18.378 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.MathRuntimeException
+16:10:24.935 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.linear.OpenMapRealVector
+16:10:30.925 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.util.OpenIntToDoubleHashMap$Iterator
+16:10:36.111 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:10:43.117 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+16:10:43.118 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:10:43.118 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:10:43.118 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:10:43.119 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:10:43.119 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:10:43.120 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double[] doubleArray0 = new double[3];
+double double0 = 0.0;
+doubleArray0[0] = double0;
+double double1 = 0.0;
+doubleArray0[1] = double1;
+double double2 = 1687.123;
+doubleArray0[2] = double2;
+OpenMapRealVector openMapRealVector0 = new OpenMapRealVector(doubleArray0);
+openMapRealVector0.getData();
+double double3 = (-1.0);
+OpenMapRealVector openMapRealVector1 = (OpenMapRealVector)openMapRealVector0.mapDivide(double3);
+double double4 = 1.0E-12;
+OpenMapRealVector openMapRealVector2 = openMapRealVector0.mapAdd(double4);
+openMapRealVector2.add((RealVector) openMapRealVector1);
+openMapRealVector2.ebeMultiply((RealVector) openMapRealVector1);
+int int0 = 1866;
+OpenMapRealVector openMapRealVector3 = new OpenMapRealVector(int0, double2);
+openMapRealVector3.unitize();
+OpenMapRealVector openMapRealVector4 = new OpenMapRealVector();
+int int1 = openMapRealVector4.getDimension();
+OpenMapRealVector openMapRealVector5 = new OpenMapRealVector((RealVector) openMapRealVector4);
+OpenMapRealVector openMapRealVector6 = new OpenMapRealVector(int1);
+OpenMapRealVector openMapRealVector7 = new OpenMapRealVector();
+OpenMapRealVector openMapRealVector8 = new OpenMapRealVector(openMapRealVector7);
+OpenMapRealVector openMapRealVector9 = openMapRealVector8.unitVector();
+openMapRealVector9.getNorm();
+openMapRealVector8.getDistance(openMapRealVector9);
+OpenMapRealVector openMapRealVector10 = openMapRealVector7.subtract(openMapRealVector8);
+openMapRealVector8.getNorm();
+openMapRealVector10.getL1Norm();
+openMapRealVector9.getLInfNorm();
+openMapRealVector10.equals(openMapRealVector5);
+
+16:10:43.157 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:10:43.870 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:10:45.921 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'OpenMapRealVector_ESTest' to results/MATH-49b-3-1.0-3
+16:10:45.964 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
