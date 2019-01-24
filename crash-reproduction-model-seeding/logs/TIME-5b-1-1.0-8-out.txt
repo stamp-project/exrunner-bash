@@ -1,0 +1,70 @@
+02:29:44.822 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+02:29:44.826 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.PeriodType.setIndexedField(PeriodType:690)
+02:29:44.826 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.PeriodType
+02:29:49.235 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+02:30:02.001 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+02:30:02.023 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+02:30:02.024 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+02:30:02.099 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+02:30:02.100 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+02:30:02.101 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+02:30:02.101 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+02:30:02.101 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setIndexedField
+02:30:02.172 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+02:30:02.224 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Period
+02:30:10.793 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.PeriodType
+02:30:17.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+02:30:27.070 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+02:30:27.070 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:30:27.071 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+02:30:27.071 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+02:30:27.071 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+02:30:27.071 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:30:27.073 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodType periodType0 = PeriodType.millis();
+periodType0.withSecondsRemoved();
+periodType0.withYearsRemoved();
+PeriodType periodType1 = PeriodType.standard();
+PeriodType.dayTime();
+PeriodType.yearDay();
+long long0 = (-720L);
+UTCProvider uTCProvider0 = new UTCProvider();
+String string0 = "";
+DateTimeZone dateTimeZone0 = uTCProvider0.getZone(string0);
+MutableDateTime mutableDateTime0 = new MutableDateTime(long0, dateTimeZone0);
+PeriodType periodType2 = PeriodType.yearDay();
+PeriodType periodType3 = periodType2.withYearsRemoved();
+PeriodType periodType4 = periodType3.withWeeksRemoved();
+Period period0 = new Period(mutableDateTime0, mutableDateTime0, periodType4);
+int int0 = (-3373);
+Period period1 = Period.hours(int0);
+int int1 = (-394);
+Period period2 = period1.plusHours(int1);
+int int2 = 13;
+Period period3 = period2.withMonths(int2);
+Period period4 = period3.withHours(int0);
+int int3 = (-539);
+Period.minutes(int3);
+period0.withMinutes(int0);
+int int4 = (-2507);
+Period.seconds(int4);
+int int5 = 0;
+Period period5 = period4.withMillis(int5);
+int int6 = (-353);
+int[] intArray0 = new int[9];
+int int7 = 1485;
+intArray0[0] = int7;
+intArray0[1] = int4;
+intArray0[2] = int2;
+intArray0[3] = int6;
+intArray0[4] = int5;
+intArray0[5] = int6;
+intArray0[6] = int6;
+intArray0[7] = int1;
+intArray0[8] = int4;
+int int8 = 86400;
+periodType1.setIndexedField(period5, int6, intArray0, int8);
+
+02:30:27.092 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+02:30:28.332 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+02:30:30.729 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PeriodType_ESTest' to results/TIME-5b-1-1.0-8
+02:30:30.772 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
