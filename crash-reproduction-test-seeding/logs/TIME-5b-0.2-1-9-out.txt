@@ -1,0 +1,89 @@
+20:48:14.876 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+20:48:14.880 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.PeriodType.setIndexedField(PeriodType:690)
+20:48:14.880 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.PeriodType
+20:48:18.234 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+20:48:29.590 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:48:29.618 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:48:29.619 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:48:29.627 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:48:29.654 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:48:29.654 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:48:29.654 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:48:29.655 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setIndexedField
+20:48:29.663 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:00:42.171 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:42.246 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:42.291 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:42.664 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:42.969 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.296 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.315 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.323 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.507 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.787 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.925 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.979 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:43.980 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:44.012 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:44.115 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:44.117 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:44.312 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:44.384 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:00:49.973 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:00:49.973 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:00:49.973 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:00:49.974 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:00:49.974 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:00:49.975 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:00:49.978 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodType periodType0 = PeriodType.hours();
+Class<PeriodType> class0 = PeriodType.class;
+PeriodType periodType1 = PeriodType.hours();
+String string0 = "<org.joda.time.PeriodType>\n  <iName>Hours</iName>\n  <iTypes>\n    <org.joda.time.DurationFieldType_-StandardDurationFieldType>\n      <iName>hours</iName>\n      <iOrdinal>9</iOrdinal>\n    </org.joda.time.DurationFieldType_-StandardDurationFieldType>\n  </iTypes>\n  <iIndices>\n    <int>-1</int>\n    <int>-1</int>\n    <int>-1</int>\n    <int>-1</int>\n    <int>0</int>\n    <int>-1</int>\n    <int>-1</int>\n    <int>-1</int>\n  </iIndices>\n</org.joda.time.PeriodType>";
+org.joda.time.PeriodType periodType2 = (org.joda.time.PeriodType)EvoSuiteXStream.fromString(string0);
+periodType0.equals(periodType2);
+periodType1.withHoursRemoved();
+PeriodType periodType3 = periodType1.withWeeksRemoved();
+periodType1.withMonthsRemoved();
+Months months0 = Months.ZERO;
+months0.getMonths();
+Class<Months> class1 = Months.class;
+Months months1 = Months.ONE;
+int int0 = months1.getMonths();
+Months months2 = Months.TWO;
+months2.getMonths();
+Months months3 = Months.THREE;
+months3.getMonths();
+Months months4 = Months.FOUR;
+months4.getMonths();
+Months months5 = Months.FIVE;
+months5.getMonths();
+Months months6 = Months.SIX;
+months6.getMonths();
+Months months7 = Months.SEVEN;
+months7.getMonths();
+Months months8 = Months.EIGHT;
+int int1 = months8.getMonths();
+Months months9 = Months.NINE;
+months9.getMonths();
+Months months10 = Months.TEN;
+months10.getMonths();
+Months months11 = Months.ELEVEN;
+int int2 = months11.getMonths();
+Months months12 = Months.TWELVE;
+months12.getMonths();
+Months months13 = Months.MAX_VALUE;
+int int3 = months13.getMonths();
+Months months14 = Months.MIN_VALUE;
+int int4 = months14.getMonths();
+int[] intArray0 = new int[4];
+intArray0[0] = int3;
+intArray0[1] = int1;
+int int5 = 973;
+intArray0[2] = int5;
+intArray0[3] = int4;
+periodType3.setIndexedField(months14, int0, intArray0, int2);
+
+21:00:50.002 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:00:51.165 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:00:52.441 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PeriodType_ESTest' to results/TIME-5b-0.2-1-9
+21:00:52.456 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

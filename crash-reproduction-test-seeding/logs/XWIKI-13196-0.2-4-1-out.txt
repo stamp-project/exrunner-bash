@@ -1,0 +1,50 @@
+07:28:18.920 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+07:28:18.951 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+07:28:18.951 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+07:28:35.387 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+07:30:29.034 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:30:29.094 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:30:29.094 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:30:29.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:30:29.131 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:30:29.131 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:30:29.132 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:30:29.132 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+07:30:29.137 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:31:00.922 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:31:00.922 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:31:00.922 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:31:00.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:31:00.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:31:00.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:31:00.925 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setDoc(xWikiDocument0);
+XWikiDocument xWikiDocument1 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument1).getDocumentReference();
+doReturn((String) null).when(xWikiDocument1).toString();
+xWikiAttachment0.setDoc(xWikiDocument1);
+XWikiDocument xWikiDocument2 = xWikiAttachment0.getDoc();
+String string0 = null;
+xWikiAttachment0.setComment(string0);
+String string1 = null;
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment(xWikiDocument2, string1);
+XWikiAttachmentContent xWikiAttachmentContent0 = new XWikiAttachmentContent();
+xWikiAttachment0.setAttachment_content(xWikiAttachmentContent0);
+xWikiAttachment0.getReference();
+XWikiAttachment xWikiAttachment2 = new XWikiAttachment();
+DocumentFactory documentFactory0 = new DocumentFactory();
+NamespaceStack namespaceStack0 = new NamespaceStack(documentFactory0);
+Namespace namespace0 = namespaceStack0.pop(string1);
+DefaultStringEntityReferenceResolver defaultStringEntityReferenceResolver0 = new DefaultStringEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider0 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultStringEntityReferenceResolver0, (Class<?>) DefaultStringEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider0);
+Injector.validateBean(defaultStringEntityReferenceResolver0, (Class<?>) DefaultStringEntityReferenceResolver.class);
+BeanElement beanElement0 = new BeanElement(string0, namespace0, defaultStringEntityReferenceResolver0);
+Element element0 = beanElement0.createCopy();
+xWikiAttachment0.fromXML(element0);
+
+07:31:00.943 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:31:01.396 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:31:06.737 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-0.2-4-1
+07:31:06.975 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
