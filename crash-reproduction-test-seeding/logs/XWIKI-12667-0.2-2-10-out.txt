@@ -1,0 +1,80 @@
+14:37:39.249 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:37:39.265 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.<init>(EntityReference:153)
+14:37:39.265 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+14:37:46.257 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+14:38:45.905 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:38:45.930 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:38:45.930 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:38:45.966 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:38:45.971 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:38:45.971 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:38:45.971 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:38:45.971 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+14:38:45.984 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:39:44.028 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:44.303 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:44.329 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:44.358 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.334 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.503 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.636 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.653 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.654 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.756 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.756 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.829 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.831 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.836 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:45.977 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:46.010 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:46.090 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:46.119 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:46.194 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:39:54.222 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:39:54.238 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:39:54.239 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:39:54.247 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:39:54.247 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:39:54.247 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:39:54.249 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "space.nestedspace";
+EntityType entityType0 = EntityType.DOCUMENT;
+Class<EntityType> class0 = EntityType.class;
+EntityType entityType1 = EntityType.SPACE;
+EntityReference entityReference0 = new EntityReference(string0, entityType1);
+String string1 = "space";
+EntityReference entityReference1 = new EntityReference(string1, entityType1);
+String string2 = "nestedspace";
+EntityReference entityReference2 = new EntityReference(string2, entityType1, entityReference1);
+String string3 = "page";
+EntityReference entityReference3 = new EntityReference(string3, entityType0, entityReference2);
+EntityReference entityReference4 = entityReference3.replaceParent(entityReference1, entityReference0);
+EntityType entityType2 = EntityType.CLASS_PROPERTY;
+HashMap<String, Serializable> hashMap0 = new HashMap<String, Serializable>();
+EntityReference entityReference5 = new EntityReference(string1, entityType2, entityReference1, hashMap0);
+entityReference1.setParameters(hashMap0);
+EntityType entityType3 = EntityType.BLOCK;
+EntityReference entityReference6 = entityReference1.extractReference(entityType3);
+EntityReference entityReference7 = entityReference3.getRoot();
+Object object0 = null;
+entityReference1.equals(object0);
+String string4 = entityReference7.getName();
+entityReference1.size();
+entityReference2.compareTo(entityReference7);
+String string5 = null;
+EntityType entityType4 = EntityType.WIKI;
+EntityReference entityReference8 = new EntityReference(string5, entityType4, entityReference6);
+EntityReference entityReference9 = entityReference4.getRoot();
+String string6 = "x.$l9";
+entityReference8.setParameter(string6, string4);
+String string7 = "space2";
+EntityReference entityReference10 = new EntityReference(string7, entityType4, entityReference7);
+entityReference3.equals((Object) entityReference10);
+EntityReference entityReference11 = new EntityReference(entityReference9);
+entityReference4.getReversedReferenceChain();
+EntityReference entityReference12 = new EntityReference(entityReference8, entityReference1);
+entityReference7.equalsNonRecursive(entityReference0);
+
+14:39:54.268 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:39:55.196 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:40:02.660 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-12667-0.2-2-10
+14:40:02.683 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,83 @@
+08:58:45.515 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+08:58:45.518 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.when(MockitoCore:56)
+08:58:45.519 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+08:58:48.015 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+08:58:56.565 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+08:58:56.617 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:58:56.617 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+08:58:56.626 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+08:58:56.655 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+08:58:56.655 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+08:58:56.655 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+08:58:56.655 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is when
+08:58:56.682 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+08:59:18.117 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+08:59:18.834 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+08:59:18.855 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+08:59:18.855 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 0 
+08:59:18.855 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+08:59:30.602 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+08:59:30.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+08:59:30.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+08:59:30.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+08:59:30.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+08:59:30.605 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+String string0 = "mock";
+Object object0 = new Object();
+MockSettingsImpl mockSettingsImpl1 = (MockSettingsImpl)mockSettingsImpl0.spiedInstance(object0);
+Class<Invocation>[] classArray0 = null;
+MockSettingsImpl mockSettingsImpl2 = new MockSettingsImpl();
+MockitoCore mockitoCore0 = new MockitoCore();
+mockitoCore0.when(string0);
+Object[] objectArray0 = new Object[4];
+int int0 = 250;
+MockingProgressImpl mockingProgressImpl0 = new MockingProgressImpl();
+int int1 = 1;
+Class<Invocation> class0 = Invocation.class;
+mockSettingsImpl0.initiateMockName(class0);
+Times times0 = new Times(int1);
+mockingProgressImpl0.verificationStarted(times0);
+mockitoCore0.getLastInvocation();
+mockingProgressImpl0.pullVerificationMode();
+Class<Invocation> class1 = Invocation.class;
+boolean boolean0 = false;
+Invocation invocation0 = mockitoCore0.mock(class1, (MockSettings) mockSettingsImpl0, boolean0);
+Class<Invocation> class2 = Invocation.class;
+mockitoCore0.stub();
+Class<Object> class3 = Object.class;
+mockitoCore0.mock(class3, (MockSettings) mockSettingsImpl1);
+InvocationContainerImpl invocationContainerImpl0 = new InvocationContainerImpl(mockingProgressImpl0);
+StubbedInvocationMatcher stubbedInvocationMatcher0 = invocationContainerImpl0.findAnswerFor(invocation0);
+ClonesArguments clonesArguments0 = new ClonesArguments();
+StubbedInvocationMatcher stubbedInvocationMatcher1 = new StubbedInvocationMatcher(stubbedInvocationMatcher0, clonesArguments0);
+Integer[] integerArray0 = new Integer[9];
+Integer integer0 = new Integer(int1);
+integerArray0[0] = integer0;
+int int2 = (-1249);
+Integer integer1 = Integer.getInteger(string0);
+integerArray0[1] = integer1;
+int int3 = 1064;
+Integer integer2 = new Integer(int3);
+integerArray0[2] = integer2;
+integerArray0[3] = integerArray0[0];
+Integer integer3 = new Integer(int0);
+integerArray0[4] = integer3;
+Integer integer4 = new Integer(int2);
+integerArray0[5] = integer4;
+int int4 = 501;
+Integer integer5 = new Integer(int4);
+integerArray0[6] = integer5;
+int int5 = 741;
+Integer integer6 = new Integer(int5);
+integerArray0[7] = integer6;
+int int6 = 1256;
+Integer integer7 = new Integer(int6);
+integerArray0[8] = integer7;
+PrintSettings printSettings0 = PrintSettings.verboseMatchers(integerArray0);
+stubbedInvocationMatcher1.toString(printSettings0);
+mockitoCore0.doAnswer(stubbedInvocationMatcher1);
+
+08:59:30.611 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+08:59:30.781 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+08:59:32.828 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-0.8-3-6
+08:59:32.833 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

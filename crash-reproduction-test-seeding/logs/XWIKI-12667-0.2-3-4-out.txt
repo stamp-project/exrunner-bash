@@ -1,0 +1,57 @@
+14:24:16.247 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:24:16.251 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+14:24:16.251 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+14:24:25.052 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+14:25:13.640 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:25:13.692 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:25:13.692 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:25:13.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:25:13.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:25:13.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:25:13.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:25:13.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+14:25:13.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:25:19.037 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:19.235 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.071 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.187 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.192 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.329 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.353 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.383 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.383 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.435 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.466 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.543 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.600 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.705 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.735 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:23.741 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+14:25:30.134 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:25:30.167 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:25:30.167 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:25:30.167 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:25:30.168 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:25:30.168 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:25:30.168 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "Lo";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((EntityReference) null, (EntityReference) null).when(documentReference0).getParent();
+doReturn((EntityType) null, (EntityType) null).when(documentReference0).getType();
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+attachmentReference0.getDocumentReference();
+DocumentReference documentReference1 = attachmentReference0.getDocumentReference();
+AttachmentReference attachmentReference1 = new AttachmentReference(attachmentReference0);
+String string1 = null;
+AttachmentReference attachmentReference2 = new AttachmentReference(string1, documentReference1);
+String string2 = "filename";
+EntityType entityType0 = EntityType.ATTACHMENT;
+String string3 = "wiki";
+WikiReference wikiReference0 = new WikiReference(string3);
+EntityReference entityReference0 = new EntityReference(string2, entityType0, wikiReference0);
+LocalizedStringEntityReferenceSerializer localizedStringEntityReferenceSerializer0 = EntityReference.TOSTRING_SERIALIZER;
+attachmentReference0.setParent(entityReference0);
+
+14:25:30.194 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:25:30.334 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:25:36.037 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-12667-0.2-3-4
+14:25:36.042 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

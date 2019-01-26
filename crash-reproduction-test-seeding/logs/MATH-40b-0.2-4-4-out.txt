@@ -1,0 +1,58 @@
+17:49:46.638 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+17:49:46.649 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.solve(BaseAbstractUnivariateRealSolver:190)
+17:49:46.649 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver
+17:49:47.973 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+17:49:54.570 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:49:54.577 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:49:54.578 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:49:54.629 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:49:54.630 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:49:54.630 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:49:54.630 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:49:54.630 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+17:49:54.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:50:03.028 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.3324742268041237
+17:50:03.038 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.3324742268041237. FE: 100 
+17:50:03.039 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:50:10.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 200
+17:50:14.764 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 300
+17:50:18.275 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 400
+17:50:21.818 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 500
+17:50:25.859 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 600
+17:50:28.496 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 700
+17:50:30.708 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 800
+17:50:33.917 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 900
+17:50:36.299 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 1000
+17:50:38.032 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 1100
+17:50:40.363 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 1200
+17:50:40.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1200 
+17:50:40.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:50:40.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:50:40.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1200 
+17:50:40.365 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: AllowedSolution allowedSolution0 = AllowedSolution.LEFT_SIDE;
+double double0 = (-1299.6501714);
+int int0 = 7;
+double double1 = 1.0;
+double double2 = (-2583.36158194);
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver0 = new BracketingNthOrderBrentSolver(int0, int0);
+int int1 = bracketingNthOrderBrentSolver0.getMaximalOrder();
+SinFunction sinFunction0 = new SinFunction();
+UnivariateFunction univariateFunction0 = sinFunction0.derivative();
+double double3 = (-2623.798109539038);
+double double4 = 0.5;
+double double5 = 209.3;
+sinFunction0.value(double5);
+AllowedSolution allowedSolution1 = AllowedSolution.BELOW_SIDE;
+bracketingNthOrderBrentSolver0.solve(int1, univariateFunction0, double3, double4, allowedSolution1);
+double double6 = 0.0;
+NewtonSolver newtonSolver0 = new NewtonSolver(double6);
+int int2 = 880;
+double double7 = 4.01780853635105E197;
+double double8 = 1.0E-15;
+newtonSolver0.solve(int2, (DifferentiableUnivariateFunction) sinFunction0, double7, double8);
+newtonSolver0.doSolve();
+
+17:50:40.372 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:50:40.473 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:50:42.163 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseAbstractUnivariateRealSolver_ESTest' to results/MATH-40b-0.2-4-4
+17:50:42.168 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

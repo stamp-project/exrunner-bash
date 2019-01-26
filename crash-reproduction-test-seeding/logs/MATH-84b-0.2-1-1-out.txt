@@ -1,0 +1,43 @@
+19:50:16.057 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+19:50:16.086 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer:320)
+19:50:16.086 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+19:50:22.218 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+19:50:38.923 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:50:38.991 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:50:38.991 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:50:39.097 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:50:39.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:50:39.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:50:39.104 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:50:39.104 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is incrementIterationsCounter
+19:50:39.137 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:51:25.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:51:25.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:51:25.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:51:25.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:51:25.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:51:25.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:51:25.753 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+int int0 = (-195);
+multiDirectional0.setMaxIterations(int0);
+multiDirectional0.incrementIterationsCounter();
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[6];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+double double0 = 0.0;
+doubleArray0[2] = double0;
+doubleArray0[3] = (double) int0;
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+multiDirectional0.incrementIterationsCounter();
+multiDirectional0.getMaxEvaluations();
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.iterateSimplex(comparator0);
+
+19:51:25.938 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:51:26.185 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:51:34.183 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-0.2-1-1
+19:51:34.254 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

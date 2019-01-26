@@ -1,0 +1,76 @@
+10:03:45.018 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+10:03:45.029 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.toArray(FastDateParser:413)
+10:03:45.029 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+10:03:49.411 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+10:03:57.493 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:03:57.500 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:03:57.500 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:03:57.532 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:03:57.532 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'toArray(Ljava/util/Map;)[Ljava/lang/String;' is private!
+10:03:57.532 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+10:03:57.582 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:03:57.583 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDisplayNames
+10:03:57.607 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:04:09.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+10:04:09.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+10:04:09.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:04:20.002 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+10:04:30.571 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+10:04:41.307 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+10:04:53.978 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+10:05:07.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+10:05:24.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+10:05:43.106 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 800
+10:05:43.107 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+10:05:43.120 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:05:43.120 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:05:43.120 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+10:05:43.121 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Locale locale0 = Locale.KOREA;
+int int0 = 137;
+int int1 = (-883);
+Date date0 = new Date();
+int int2 = 7;
+int int3 = 1242;
+int int4 = 6;
+String string0 = "NET";
+String string1 = "W 1<";
+String string2 = ",";
+List<String> list0 = null;
+LinkedList<String> linkedList0 = new LinkedList<String>();
+LinkedHashSet<MinguoDate> linkedHashSet0 = new LinkedHashSet<MinguoDate>();
+String string3 = "GMTCST";
+String string4 = ";k";
+int int5 = (-961);
+String string5 = "GTMT";
+Locale locale1 = FastDateParser.JAPANESE_IMPERIAL;
+SimpleTimeZone simpleTimeZone0 = new SimpleTimeZone(int1, string3);
+FastDateParser fastDateParser0 = new FastDateParser(string3, simpleTimeZone0, locale1);
+simpleTimeZone0.toZoneId();
+simpleTimeZone0.setStartRule(int3, int1, int5);
+ParsePosition parsePosition0 = new ParsePosition(int5);
+parsePosition0.setIndex(int1);
+int int6 = 10;
+Instant instant0 = Instant.EPOCH;
+MinguoChronology minguoChronology0 = MinguoChronology.INSTANCE;
+int int7 = (-599);
+int int8 = 111;
+MinguoDate minguoDate0 = minguoChronology0.date(int2, int7, int8);
+MinguoChronology minguoChronology1 = MinguoChronology.INSTANCE;
+ChronoZonedDateTime<MinguoDate> chronoZonedDateTime0 = minguoChronology1.zonedDateTime((TemporalAccessor) minguoDate0);
+long long0 = 1L;
+TemporalUnit temporalUnit0 = null;
+chronoZonedDateTime0.with((TemporalAdjuster) instant0);
+ZoneOffset zoneOffset0 = chronoZonedDateTime0.getOffset();
+OffsetDateTime offsetDateTime0 = instant0.atOffset(zoneOffset0);
+Instant instant1 = offsetDateTime0.toInstant();
+Date date1 = Date.from(instant1);
+simpleTimeZone0.inDaylightTime(date1);
+Date date2 = new Date();
+fastDateParser0.toString();
+Pattern.compile(string2, int2);
+fastDateParser0.getPattern();
+
+10:05:43.137 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:05:44.492 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:05:46.897 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-0.2-1-3
+10:05:46.945 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
