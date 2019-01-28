@@ -1,0 +1,68 @@
+07:49:43.511 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+07:49:43.514 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.toArray(FastDateParser:413)
+07:49:43.515 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+07:49:46.361 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+07:49:52.850 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:49:52.868 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:49:52.868 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:49:52.883 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:49:52.895 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'toArray(Ljava/util/Map;)[Ljava/lang/String;' is private!
+07:49:52.895 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+07:49:52.936 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:49:52.936 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDisplayNames
+07:49:52.955 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:49:52.963 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+07:49:59.506 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+07:50:04.798 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+07:50:10.180 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:50:15.537 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.75
+07:50:15.537 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.75. FE: 100 
+07:50:15.537 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:50:28.382 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+07:50:28.383 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+07:50:37.707 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+07:50:46.929 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+07:50:52.080 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+07:50:52.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+07:50:52.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:50:52.082 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:50:52.082 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+07:50:52.083 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Locale locale0 = Locale.JAPANESE;
+long long0 = (-1399L);
+LinkedList<Locale.LanguageRange> linkedList0 = new LinkedList<Locale.LanguageRange>();
+Locale.Category locale_Category0 = Locale.Category.FORMAT;
+char[] charArray0 = new char[12];
+String string0 = "C 878e}H";
+Object object0 = new Object();
+String string1 = "(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|";
+int int0 = 0;
+int int1 = (-8);
+FastDateFormat.getDateTimeInstance(int0, int0);
+int int2 = 2141;
+String string2 = "IET";
+int int3 = 4632;
+ParsePosition parsePosition0 = new ParsePosition(int3);
+String string3 = "NET";
+String string4 = null;
+SimpleTimeZone simpleTimeZone0 = new SimpleTimeZone(int1, string4);
+String string5 = "";
+ZoneId zoneId0 = null;
+TimeZone timeZone0 = TimeZone.getTimeZone(zoneId0);
+Locale locale1 = Locale.GERMANY;
+FastDateParser fastDateParser0 = new FastDateParser(string4, timeZone0, locale1);
+String string6 = "{DJF;n}{U0g >|6";
+int int4 = 42;
+parsePosition0.setErrorIndex(int4);
+fastDateParser0.parseObject(string2, parsePosition0);
+locale1.getDisplayCountry();
+String string7 = "IiLaelamw8";
+fastDateParser0.parseObject(string7);
+fastDateParser0.parse(string6, parsePosition0);
+fastDateParser0.getParsePattern();
+String string8 = "yo+V*@.n";
+fastDateParser0.parseObject(string8);
+
+07:50:52.141 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:50:53.028 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:50:54.597 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-1-0.8-8
+07:50:54.607 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

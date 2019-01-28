@@ -1,0 +1,55 @@
+23:21:02.056 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+23:21:02.083 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.mail.internal.configuration.SendMailConfigClassDocumentConfigurationSource.getDocumentReference(SendMailConfigClassDocumentConfigurationSource:68)
+23:21:02.083 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.mail.internal.configuration.SendMailConfigClassDocumentConfigurationSource
+23:21:07.790 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+23:22:01.708 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:22:01.752 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:22:01.752 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:22:01.832 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:22:01.833 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:22:01.833 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:22:01.833 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:22:01.833 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDocumentReference
+23:22:02.000 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:22:02.001 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+23:22:54.877 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+23:23:03.413 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+23:23:11.934 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.WikiReference
+23:23:17.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:23:47.933 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:23:47.933 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:23:47.933 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:23:47.952 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:23:47.952 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:23:47.952 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:23:47.953 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: SendMailConfigClassDocumentConfigurationSource sendMailConfigClassDocumentConfigurationSource0 = new SendMailConfigClassDocumentConfigurationSource();
+CacheManager cacheManager0 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager0);
+ConverterManager converterManager0 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) logger0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) observationManager0);
+EntityReferenceSerializer<Integer> entityReferenceSerializer0 = (EntityReferenceSerializer<Integer>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(wikiDescriptorManager0).getCurrentWikiId();
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager0);
+Provider<Integer> provider0 = (Provider<Integer>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) SendMailConfigClassDocumentConfigurationSource.class);
+String string0 = sendMailConfigClassDocumentConfigurationSource0.getCacheId();
+DocumentReference documentReference0 = sendMailConfigClassDocumentConfigurationSource0.getDocumentReference();
+LocalDocumentReference localDocumentReference0 = sendMailConfigClassDocumentConfigurationSource0.getClassReference();
+String string1 = sendMailConfigClassDocumentConfigurationSource0.getCacheId();
+sendMailConfigClassDocumentConfigurationSource0.getProperty(string1, (Object) documentReference0);
+sendMailConfigClassDocumentConfigurationSource0.getProperty(string0, (Object) localDocumentReference0);
+sendMailConfigClassDocumentConfigurationSource0.getDocumentReference();
+String string2 = "E\\UZb1";
+sendMailConfigClassDocumentConfigurationSource0.getProperty(string2, (Object) string0);
+
+23:23:47.987 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:23:48.202 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:24:06.385 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SendMailConfigClassDocumentConfigurationSource_ESTest' to results/XWIKI-13546-6-0.5-5
+23:24:06.459 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

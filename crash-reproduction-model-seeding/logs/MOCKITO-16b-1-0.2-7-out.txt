@@ -1,0 +1,44 @@
+07:02:21.733 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+07:02:21.739 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.missingMethodInvocation(Reporter:77)
+07:02:21.739 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+07:02:24.911 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+07:02:33.926 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:02:33.981 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:02:33.981 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:02:34.056 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:02:34.060 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:02:34.061 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:02:34.061 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:02:34.061 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is missingMethodInvocation
+07:02:34.129 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:02:34.208 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+07:02:41.416 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+07:02:47.119 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+07:02:52.807 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:03:01.814 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:03:01.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:03:01.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:03:01.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:03:01.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:03:01.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:03:01.816 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Reporter reporter0 = new Reporter();
+reporter0.missingMethodInvocation();
+Class<Integer> class0 = Integer.class;
+reporter0.extraInterfacesCannotContainMockedType(class0);
+int int0 = 463;
+int int1 = 9;
+reporter0.invalidUseOfMatchers(int0, int1);
+PrintableInvocation printableInvocation0 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+reporter0.wantedButNotInvoked(printableInvocation0);
+Class<Object> class1 = Object.class;
+reporter0.extraInterfacesAcceptsOnlyInterfaces(class1);
+Reporter reporter1 = new Reporter();
+int int2 = 463;
+reporter0.invalidUseOfMatchers(int0, int2);
+int int3 = 2469;
+reporter1.invalidUseOfMatchers(int1, int3);
+
+07:03:01.847 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:03:01.968 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:03:05.090 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Reporter_ESTest' to results/MOCKITO-16b-1-0.2-7
+07:03:05.113 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

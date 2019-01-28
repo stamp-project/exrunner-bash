@@ -1,0 +1,65 @@
+07:59:35.623 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+07:59:35.626 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.EigenDecompositionImpl.computeShiftIncrement(EigenDecompositionImpl:1544)
+07:59:35.626 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.EigenDecompositionImpl
+07:59:49.259 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+08:00:00.952 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+08:00:00.960 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:00:00.960 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+08:00:01.174 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+08:00:01.178 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'computeShiftIncrement(III)V' is private!
+08:00:01.178 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+08:00:02.287 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+08:00:02.287 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+08:00:02.337 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+08:00:02.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+08:00:15.109 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.982142857142858
+08:00:15.110 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.982142857142858. FE: 100 
+08:00:15.110 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+08:00:27.276 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.982142857142858 | 200
+08:00:40.716 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.982142857142858 | 300
+08:00:53.682 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.982142857142858 | 400
+08:01:08.337 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.982142857142858 | 500
+08:01:21.799 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+08:01:21.800 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+08:01:21.802 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+08:01:21.802 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+08:01:21.802 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+08:01:21.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Array2DRowRealMatrix array2DRowRealMatrix0 = new Array2DRowRealMatrix();
+DefaultRealMatrixPreservingVisitor defaultRealMatrixPreservingVisitor0 = new DefaultRealMatrixPreservingVisitor();
+double double0 = 9.0;
+int int0 = 6;
+double[] doubleArray0 = new double[9];
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+double double1 = 85781.66267439893;
+SparseRealVectorTest.SparseRealVectorTestImpl sparseRealVectorTest_SparseRealVectorTestImpl0 = new SparseRealVectorTest.SparseRealVectorTestImpl(doubleArray0);
+double[] doubleArray1 = null;
+ArrayRealVector arrayRealVector0 = new ArrayRealVector(doubleArray0);
+int int1 = 1435;
+int int2 = 2145733513;
+int int3 = 14;
+double[] doubleArray2 = new double[8];
+doubleArray2[0] = double0;
+doubleArray2[1] = (double) int2;
+doubleArray2[2] = double1;
+doubleArray2[3] = (double) int0;
+doubleArray2[4] = (double) int1;
+doubleArray2[5] = double0;
+doubleArray2[6] = (double) int1;
+doubleArray2[7] = double0;
+EigenDecompositionImpl eigenDecompositionImpl0 = new EigenDecompositionImpl(doubleArray0, doubleArray2, doubleArray2[4]);
+eigenDecompositionImpl0.getV();
+eigenDecompositionImpl0.getV();
+eigenDecompositionImpl0.getVT();
+eigenDecompositionImpl0.getSolver();
+eigenDecompositionImpl0.getEigenvector(int0);
+eigenDecompositionImpl0.getD();
+eigenDecompositionImpl0.getVT();
+eigenDecompositionImpl0.getImagEigenvalue(int0);
+eigenDecompositionImpl0.getEigenvector(int3);
+eigenDecompositionImpl0.getDeterminant();
+
+08:01:22.535 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+08:01:48.103 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+08:01:51.731 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EigenDecompositionImpl_ESTest' to results/MATH-81b-1-0.8-2
+08:01:51.914 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

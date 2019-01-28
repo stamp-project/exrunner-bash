@@ -1,0 +1,38 @@
+04:19:42.555 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+04:19:42.558 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.BrentSolver.solve(BrentSolver:141)
+04:19:42.558 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.BrentSolver
+04:19:47.499 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+04:19:55.656 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+04:19:55.698 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:19:55.698 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+04:19:55.732 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+04:19:55.732 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+04:19:55.732 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+04:19:55.733 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+04:19:55.733 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+04:19:55.777 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+04:19:55.821 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.BrentSolver
+04:20:02.253 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+04:20:10.766 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+04:20:10.767 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:20:10.767 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+04:20:10.767 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+04:20:10.767 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+04:20:10.767 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:20:10.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+BrentSolver brentSolver0 = new BrentSolver(univariateRealFunction0);
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(univariateRealFunction1).value(anyDouble());
+BrentSolver brentSolver1 = new BrentSolver(univariateRealFunction1);
+double double0 = 0.0;
+double double1 = 1.0;
+brentSolver1.solve(double0, double1);
+double double2 = 1048.9748862;
+brentSolver1.solve(double2, double1);
+UnivariateRealFunction univariateRealFunction2 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+BrentSolver brentSolver2 = new BrentSolver(univariateRealFunction2);
+
+04:20:10.803 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+04:20:10.911 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+04:20:14.696 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BrentSolver_ESTest' to results/MATH-97b-1-0.5-8
+04:20:14.735 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

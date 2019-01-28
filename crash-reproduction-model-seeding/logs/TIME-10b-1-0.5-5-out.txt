@@ -1,0 +1,66 @@
+06:25:31.479 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+06:25:31.482 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+06:25:31.482 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+06:25:34.567 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+06:25:46.788 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:25:46.821 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:25:46.822 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:25:46.891 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:25:46.892 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:25:46.892 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:25:46.892 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:25:46.892 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+06:25:46.951 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+06:25:46.953 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+06:25:53.640 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.base.BaseSingleFieldPeriod
+06:26:00.662 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Days
+06:26:06.344 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:26:12.513 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+06:26:12.513 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:26:12.513 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:26:12.514 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:26:12.514 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:26:12.514 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:26:12.515 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: TestOffsetDateTimeField.MockStandardDateTimeField testOffsetDateTimeField_MockStandardDateTimeField0 = new TestOffsetDateTimeField.MockStandardDateTimeField();
+EthiopicChronology ethiopicChronology0 = EthiopicChronology.getInstanceUTC();
+LenientDateTimeField lenientDateTimeField0 = (LenientDateTimeField)LenientDateTimeField.getInstance(testOffsetDateTimeField_MockStandardDateTimeField0, ethiopicChronology0);
+int int0 = (-635);
+int int1 = (-2966);
+FieldUtils.verifyValueBounds((DateTimeField) lenientDateTimeField0, int0, int1, int1);
+int int2 = FieldUtils.safeNegate(int1);
+int int3 = FieldUtils.safeMultiplyToInt(int2, int0);
+String string0 = "Multiplication overflows an int: ";
+int int4 = 0;
+FieldUtils.verifyValueBounds(string0, int0, int3, int4);
+int int5 = 1990;
+int int6 = FieldUtils.safeMultiply(int0, int5);
+long long0 = 2147483647L;
+long long1 = FieldUtils.safeAdd(long0, (long) int2);
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.hourOfHalfday();
+int int7 = 176;
+int int8 = 0;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int7, int8, int0);
+long long2 = FieldUtils.safeSubtract(int0, int2);
+long long3 = (-2077L);
+long long4 = 0L;
+int int9 = FieldUtils.safeMultiplyToInt(long3, long4);
+int int10 = 63;
+int int11 = 165;
+FieldUtils.verifyValueBounds(string0, int2, int10, int11);
+FieldUtils.safeMultiplyToInt(int10, long1);
+long long5 = 604800L;
+long long6 = (-1414L);
+FieldUtils.safeMultiply(long5, long6);
+int int12 = (-2840);
+int int13 = 0;
+FieldUtils.getWrappedValue(int12, int6, int13);
+FieldUtils.safeSubtract(int0, long2);
+int int14 = (-20);
+int int15 = 1200;
+int int16 = 29;
+FieldUtils.getWrappedValue(int14, int15, int9, int16);
+
+06:26:12.536 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:26:12.743 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:26:15.123 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-10b-1-0.5-5
+06:26:15.145 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

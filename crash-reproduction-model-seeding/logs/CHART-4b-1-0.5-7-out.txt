@@ -1,0 +1,96 @@
+21:08:26.133 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:08:26.141 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+21:08:26.141 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+21:08:55.377 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+21:09:48.191 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:09:48.238 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:09:48.239 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:09:48.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:09:48.280 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:09:48.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:09:48.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:09:48.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+21:09:48.329 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:09:48.330 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+21:09:58.528 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+21:10:09.811 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+21:10:18.299 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+21:10:24.529 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:11:02.742 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:11:02.743 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:11:02.743 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:11:02.744 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:11:02.744 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:11:02.744 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:11:02.775 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+String string0 = "~|";
+LogarithmicAxis logarithmicAxis0 = new LogarithmicAxis(string0);
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, logarithmicAxis0, logarithmicAxis0, xYItemRenderer0);
+XYDataset xYDataset1 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+int int0 = xYPlot0.indexOf(xYDataset1);
+xYPlot0.getRangeAxisForDataset(int0);
+int int1 = (-480);
+List<CategoryAxis> list0 = null;
+xYPlot0.mapDatasetToRangeAxes(int1, list0);
+ValueAxis valueAxis0 = xYPlot0.getRangeAxisForDataset(int0);
+Graphics2D graphics2D0 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+Rectangle2D rectangle2D0 = mock(Rectangle2D.class, new ViolatedAssumptionAnswer());
+xYPlot0.drawBackground(graphics2D0, rectangle2D0);
+xYPlot0.getDataRange(valueAxis0);
+xYPlot0.clearDomainMarkers();
+int int2 = xYPlot0.getRangeAxisIndex(logarithmicAxis0);
+Marker marker0 = mock(Marker.class, new ViolatedAssumptionAnswer());
+Layer layer0 = mock(Layer.class, new ViolatedAssumptionAnswer());
+xYPlot0.addRangeMarker(int2, marker0, layer0);
+xYPlot0.setRangeCrosshairValue((double) int1);
+xYPlot0.getDataRange(logarithmicAxis0);
+xYPlot0.getFixedRangeAxisSpace();
+xYPlot0.configureDomainAxes();
+int int3 = (-3163);
+ValueAxis valueAxis1 = xYPlot0.getRangeAxis(int3);
+xYPlot0.getDataRange(valueAxis1);
+xYPlot0.getRangeTickBandPaint();
+XYPlot xYPlot1 = new XYPlot();
+int int4 = 1025;
+String string1 = "Indices must be unique.";
+DateAxis dateAxis0 = new DateAxis(string1);
+xYPlot1.setDomainAxis(int4, (ValueAxis) dateAxis0);
+xYPlot1.equals(string1);
+Paint paint0 = AbstractRenderer.DEFAULT_VALUE_LABEL_PAINT;
+xYPlot1.setRangeTickBandPaint(paint0);
+boolean boolean0 = true;
+xYPlot1.setDomainMinorGridlinesVisible(boolean0);
+double double0 = (-1580.5317144);
+boolean boolean1 = true;
+ClusteredXYBarRenderer clusteredXYBarRenderer0 = new ClusteredXYBarRenderer(double0, boolean1);
+xYPlot1.equals(clusteredXYBarRenderer0);
+xYPlot1.setRangeMinorGridlinePaint(paint0);
+XYCrosshairState xYCrosshairState0 = new XYCrosshairState();
+Point2D point2D0 = xYCrosshairState0.getAnchor();
+Line2D.Double line2D_Double0 = new Line2D.Double(point2D0, point2D0);
+XYShapeAnnotation xYShapeAnnotation0 = new XYShapeAnnotation(line2D_Double0);
+xYPlot1.equals(xYShapeAnnotation0);
+xYPlot1.setRangeCrosshairPaint(paint0);
+xYPlot1.equals(paint0);
+boolean boolean2 = false;
+xYPlot1.setRangeMinorGridlinesVisible(boolean2);
+xYPlot1.equals(xYShapeAnnotation0);
+PieDataset pieDataset0 = null;
+RingPlot ringPlot0 = new RingPlot(pieDataset0);
+Stroke stroke0 = ringPlot0.getLabelOutlineStroke();
+xYPlot1.setRangeGridlineStroke(stroke0);
+xYPlot1.setRangeGridlinePaint(paint0);
+xYPlot1.setDomainCrosshairPaint(paint0);
+xYPlot1.setRangeCrosshairPaint(paint0);
+xYPlot1.equals(pieDataset0);
+xYPlot1.getRenderer();
+Layer layer1 = mock(Layer.class, new ViolatedAssumptionAnswer());
+xYPlot1.getRangeMarkers(layer1);
+
+21:11:02.828 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:11:05.350 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:11:09.236 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-0.5-7
+21:11:09.331 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

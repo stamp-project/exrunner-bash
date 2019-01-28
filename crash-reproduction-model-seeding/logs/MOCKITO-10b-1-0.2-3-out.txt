@@ -1,0 +1,63 @@
+06:18:29.316 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.base.MockitoException
+06:18:29.319 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.serializableWontWorkForObjectsThatDontImplementSerializable(Reporter:760)
+06:18:29.320 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+06:18:32.820 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+06:18:38.721 [main] ERROR e.s.b.reproduction.CrashReproduction - Error in target initialization:
+06:18:38.757 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:18:38.757 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:18:38.788 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:18:38.789 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:18:38.789 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:18:38.789 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:18:38.789 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serializableWontWorkForObjectsThatDontImplementSerializable
+06:18:38.850 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+06:18:38.868 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.handler.NullResultGuardian
+06:18:44.750 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.creation.MockSettingsImpl
+06:18:52.127 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.creation.MethodInterceptorFilter
+06:18:58.235 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.util.MockCreationValidator
+06:19:03.812 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+06:19:09.462 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+06:19:14.902 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.handler.MockHandlerImpl
+06:19:20.189 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.handler.InvocationNotifierHandler
+06:19:25.916 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:19:35.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+06:19:36.000 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:19:36.000 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:19:36.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:19:36.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:19:36.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:19:36.001 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Reporter reporter0 = new Reporter();
+Class<Integer> class0 = Integer.class;
+reporter0.serializableWontWorkForObjectsThatDontImplementSerializable(class0);
+reporter0.defaultAnswerDoesNotAcceptNullParameter();
+Reporter reporter1 = new Reporter();
+Reporter reporter2 = new Reporter();
+Class<InvocationImpl> class1 = InvocationImpl.class;
+reporter2.extraInterfacesCannotContainMockedType(class1);
+reporter2.inOrderRequiresFamiliarMock();
+String string0 = "BASIC";
+Exception exception0 = mock(Exception.class, new ViolatedAssumptionAnswer());
+reporter2.cannotInitializeForSpyAnnotation(string0, exception0);
+String string1 = "    someMethod(anyObject(), eq(\"String by matcher\"));";
+Exception exception1 = mock(Exception.class, new ViolatedAssumptionAnswer());
+reporter1.cannotInitializeForInjectMocksAnnotation(string1, exception1);
+reporter1.cannotVerifyToString();
+reporter2.cannotVerifyToString();
+Class<Integer> class2 = Integer.class;
+reporter1.extraInterfacesCannotContainMockedType(class2);
+Reporter reporter3 = new Reporter();
+reporter3.nullPassedToVerifyNoMoreInteractions();
+reporter3.notAMockPassedToVerifyNoMoreInteractions();
+reporter3.cannotStubVoidMethodWithAReturnValue(string1);
+reporter3.inOrderRequiresFamiliarMock();
+Reporter reporter4 = new Reporter();
+String string2 = "n78*rS8:*rP82O5PO=o";
+Location location0 = mock(Location.class, new ViolatedAssumptionAnswer());
+reporter4.argumentsAreDifferent(string0, string2, location0);
+Exception exception2 = mock(Exception.class, new ViolatedAssumptionAnswer());
+reporter0.cannotInitializeForInjectMocksAnnotation(string1, exception2);
+
+06:19:36.047 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:19:36.508 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:19:38.048 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Reporter_ESTest' to results/MOCKITO-10b-1-0.2-3
+06:19:38.094 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

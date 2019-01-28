@@ -1,0 +1,63 @@
+02:38:07.747 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.text.ParseException
+02:38:07.750 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.DateUtils.parseDateWithLeniency(DateUtils:346)
+02:38:07.750 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.DateUtils
+02:38:12.709 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+02:38:24.394 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+02:38:24.476 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+02:38:24.476 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+02:38:24.540 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+02:38:24.541 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'parseDateWithLeniency(Ljava/lang/String;[Ljava/lang/String;Z)Ljava/util/Date;' is private!
+02:38:24.543 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+02:38:24.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+02:38:24.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDate
+02:38:24.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is parseDateStrictly
+02:38:24.824 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+02:38:24.900 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.DateUtils
+02:38:33.931 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+02:38:46.064 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+02:38:46.065 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:38:46.065 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+02:38:46.065 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+02:38:46.065 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+02:38:46.066 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:38:46.067 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Date date0 = mock(Date.class, new ViolatedAssumptionAnswer());
+doReturn(0L).when(date0).getTime();
+int int0 = 0;
+Date date1 = DateUtils.setSeconds(date0, int0);
+DateUtils.ceiling(date1, int0);
+Calendar calendar0 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.DateIterator dateUtils_DateIterator0 = new DateUtils.DateIterator(calendar0, calendar0);
+DateUtils.isSameDay(date1, date1);
+String string0 = "The unit ";
+String[] stringArray0 = new String[0];
+Date date2 = DateUtils.parseDateStrictly(string0, stringArray0);
+Date date3 = DateUtils.ceiling((Object) date2, int0);
+Calendar calendar1 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+int int1 = 94;
+DateUtils.getFragmentInSeconds(calendar1, int1);
+Date date4 = DateUtils.addWeeks(date2, int1);
+Calendar calendar2 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.isSameInstant(calendar2, calendar2);
+DateUtils.parseDateStrictly(string0, stringArray0);
+DateUtils.addMilliseconds(date3, int0);
+int int2 = 6;
+DateUtils.iterator((Object) date1, int2);
+DateUtils.parseDateStrictly(string0, stringArray0);
+Calendar calendar3 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.isSameDay(calendar3, calendar3);
+int int3 = 0;
+DateUtils.setYears(date4, int3);
+Calendar calendar4 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+int int4 = 643;
+DateUtils.getFragmentInHours(calendar4, int4);
+int int5 = (-651);
+DateUtils.addDays(date3, int5);
+DateUtils.getFragmentInMilliseconds(date1, int4);
+Calendar calendar5 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.ceiling(calendar5, int5);
+DateUtils.round(date3, int3);
+
+02:38:46.215 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+02:38:48.294 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+02:38:52.463 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateUtils_ESTest' to results/LANG-35b-1-0.2-4
+02:38:52.513 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

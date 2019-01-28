@@ -1,0 +1,51 @@
+07:36:14.289 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+07:36:14.292 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.RandomStringUtils.random(RandomStringUtils:248)
+07:36:14.292 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.RandomStringUtils
+07:36:15.452 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+07:36:22.261 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:36:22.269 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:36:22.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:36:22.286 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:36:22.286 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:36:22.293 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:36:22.294 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:36:22.294 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is random
+07:36:22.327 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:36:22.344 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.RandomStringUtils
+07:36:28.911 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:37:39.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:37:39.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:37:39.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:37:39.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:37:39.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:37:39.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:37:39.017 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 0;
+RandomStringUtils.randomAlphabetic(int0);
+int int1 = 2119;
+int int2 = 4303;
+boolean boolean0 = false;
+char[] charArray0 = new char[8];
+char char0 = '\"';
+charArray0[0] = char0;
+char char1 = '\'';
+charArray0[1] = char1;
+char char2 = '-';
+charArray0[2] = char2;
+char char3 = '\'';
+charArray0[3] = char3;
+char char4 = 'h';
+charArray0[4] = char4;
+char char5 = '9';
+charArray0[5] = char5;
+char char6 = '}';
+charArray0[6] = char6;
+char char7 = 'B';
+charArray0[7] = char7;
+Random random0 = mock(Random.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(random0).nextInt(anyInt());
+RandomStringUtils.random(int1, int1, int2, boolean0, boolean0, charArray0, random0);
+
+07:37:39.087 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:37:39.333 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:37:41.156 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'RandomStringUtils_ESTest' to results/LANG-12b-1-0.8-6
+07:37:41.161 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

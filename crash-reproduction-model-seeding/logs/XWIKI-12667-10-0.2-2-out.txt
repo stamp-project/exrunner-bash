@@ -1,0 +1,72 @@
+00:42:21.701 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:42:21.704 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.web.XWikiAction.execute(XWikiAction:417)
+00:42:21.705 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.web.XWikiAction
+00:43:19.226 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:45:24.270 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:45:24.278 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:45:24.278 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:45:24.334 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:45:24.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:45:24.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:45:24.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:45:24.352 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is execute
+00:45:24.477 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:45:24.514 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+00:45:36.063 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+00:45:46.902 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+00:45:52.362 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+00:45:57.649 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+00:46:02.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:46:18.584 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.863636363636363
+00:46:18.585 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.863636363636363. FE: 100 
+00:46:18.585 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:46:52.304 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 200
+00:47:29.732 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 300
+00:48:00.436 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 400
+00:48:19.571 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 500
+00:49:22.059 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 600
+00:49:44.911 [Timer-0] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@23a62f7b -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+00:49:44.930 [Timer-0] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@23a62f7b -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 0
+	Active Tasks: 
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@2b2252e9
+Pool thread stack traces:
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0,5,]
+
+
+00:49:53.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 700
+00:50:13.884 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 800
+00:50:14.201 [Task-Thread-for-com.mchange.v2.async.ThreadPerTaskAsynchronousRunner@261ee468] WARN  c.m.v.resourcepool.BasicResourcePool - com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@2b2252e9 -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getDriver(DriverManager.java:315) ~[na:1.8.0_91]
+	at com.mchange.v2.c3p0.DriverManagerDataSource.driver(DriverManagerDataSource.java:224) ~[na:na]
+	at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:120) ~[na:na]
+	at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:143) ~[na:na]
+	at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:132) ~[na:na]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:137) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1014) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool.access$800(BasicResourcePool.java:32) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask.run(BasicResourcePool.java:1810) ~[na:na]
+	at com.mchange.v2.async.ThreadPerTaskAsynchronousRunner$TaskThread.run(ThreadPerTaskAsynchronousRunner.java:255) [na:na]
+00:50:33.241 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 900
+00:50:35.090 [Finalizer] WARN  c.m.v.resourcepool.BasicResourcePool - com.mchange.v2.resourcepool.BasicResourcePool@a0fea5a -- close() called multiple times.
+00:51:09.251 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1000
+00:51:43.601 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1100
+00:52:09.202 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1200
+00:52:35.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1300
+00:52:44.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1400
+00:53:03.111 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1500
+00:53:18.422 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1600
+00:53:41.563 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1700
+00:54:01.526 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1800
+00:54:25.669 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 1900
+00:54:38.062 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 2000
+00:55:08.403 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: null
+00:55:35.428 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 2100
+00:55:54.941 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 2200
+00:56:34.002 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 2300
+00:56:49.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.863636363636363 | 2400

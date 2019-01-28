@@ -1,0 +1,45 @@
+09:21:09.948 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+09:21:09.951 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+09:21:09.951 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+09:21:11.920 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+09:21:24.137 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:21:24.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:21:24.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:21:24.245 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:21:24.255 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:21:24.255 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:21:24.255 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:21:24.255 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+09:21:24.276 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:21:24.279 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+09:21:33.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:21:42.881 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+09:21:42.882 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:21:42.882 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:21:42.883 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:21:42.883 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:21:42.883 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:21:42.884 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser0).toString();
+doReturn(0).when(dateTimeParser0).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withZoneUTC();
+String string0 = "99)%3/%";
+dateTimeFormatter0.parseDateTime(string0);
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter1.withZone(dateTimeZone0);
+dateTimeFormatter1.getZone();
+ReadWritableInstant readWritableInstant0 = mock(ReadWritableInstant.class, new ViolatedAssumptionAnswer());
+String string1 = null;
+int int0 = 19;
+dateTimeFormatter2.parseInto(readWritableInstant0, string1, int0);
+dateTimeFormatter2.getLocale();
+dateTimeFormatter2.parseLocalDate(string1);
+String string2 = "4$'N!l?>Sla'HX,E";
+dateTimeFormatter2.parseLocalTime(string2);
+
+09:21:42.906 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:21:43.152 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:21:45.928 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-0.2-10
+09:21:45.958 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

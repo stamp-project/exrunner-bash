@@ -1,0 +1,41 @@
+21:14:06.457 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:14:06.469 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.ClassUtils.toClass(ClassUtils:910)
+21:14:06.469 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.ClassUtils
+21:14:13.378 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+21:14:27.383 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:14:27.446 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:14:27.451 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:14:27.510 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:14:27.519 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:14:27.519 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:14:27.520 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:14:27.520 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is toClass
+21:14:27.583 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:14:27.631 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.ClassUtils
+21:14:37.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:14:54.914 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:14:54.928 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:14:54.928 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:14:54.928 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:14:54.928 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:14:54.928 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:14:54.929 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Object[] objectArray0 = new Object[2];
+ClassUtils classUtils0 = new ClassUtils();
+Class<String> class0 = String.class;
+Class<?> class1 = ClassUtils.primitiveToWrapper(class0);
+ClassUtils.primitiveToWrapper(class1);
+Class<Object> class2 = Object.class;
+Class<?> class3 = ClassUtils.wrapperToPrimitive(class2);
+objectArray0[0] = (Object) class3;
+objectArray0[1] = objectArray0[0];
+Class<?>[] classArray0 = ClassUtils.toClass(objectArray0);
+ClassUtils.primitivesToWrappers(classArray0);
+Class<Object> class4 = Object.class;
+ClassUtils.primitiveToWrapper(class4);
+Class<String> class5 = String.class;
+ClassUtils.isAssignable(class3, class5);
+
+21:14:54.939 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:14:55.172 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:14:59.440 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'ClassUtils_ESTest' to results/LANG-33b-1-0.5-1
+21:14:59.536 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

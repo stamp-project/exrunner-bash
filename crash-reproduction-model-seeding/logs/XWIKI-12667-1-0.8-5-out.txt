@@ -1,0 +1,41 @@
+11:45:48.157 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:45:48.160 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.setName(EntityReference:185)
+11:45:48.160 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+11:46:49.313 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+11:47:41.249 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:47:41.274 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:47:41.274 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:47:41.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:47:41.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:47:41.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:47:41.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:47:41.332 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setName
+11:47:41.423 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:47:41.502 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+11:47:51.868 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+11:47:57.869 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+11:48:03.457 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+11:48:09.330 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+11:48:14.558 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:48:23.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:48:23.485 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:48:23.485 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:48:23.485 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:48:23.485 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:48:23.485 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:48:23.486 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+EntityType entityType0 = EntityType.ATTACHMENT;
+EntityReference entityReference0 = new EntityReference(string0, entityType0);
+String string1 = "";
+EntityType entityType1 = EntityType.DOCUMENT;
+EntityReference entityReference1 = new EntityReference(string1, entityType1, entityReference0);
+String string2 = entityReference1.getName();
+entityReference1.getReversedReferenceChain();
+EntityReference entityReference2 = entityReference1.appendParent(entityReference0);
+entityReference2.setName(string2);
+entityReference1.getParent();
+
+11:48:23.499 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:48:23.642 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:48:30.053 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-12667-1-0.8-5
+11:48:30.085 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

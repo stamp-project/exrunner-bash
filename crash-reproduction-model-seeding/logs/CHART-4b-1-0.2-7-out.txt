@@ -1,0 +1,54 @@
+23:02:15.720 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+23:02:15.723 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+23:02:15.723 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+23:02:37.256 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+23:03:22.181 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:03:22.259 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:03:22.259 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:03:22.308 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:03:22.325 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:03:22.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:03:22.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:03:22.336 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+23:03:22.422 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:03:22.423 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+23:03:32.525 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+23:03:43.003 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+23:03:50.053 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+23:03:56.427 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:04:33.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:04:33.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:04:33.021 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:04:33.047 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:04:33.047 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:04:33.047 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:04:33.048 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null, (String) null, (String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+ValueAxis valueAxis0 = mock(ValueAxis.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(valueAxis0).toString();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, valueAxis0, valueAxis0, xYItemRenderer0);
+int int0 = 2;
+XYDataset xYDataset1 = null;
+xYPlot0.setDataset(int0, xYDataset1);
+ValueAxis valueAxis1 = xYPlot0.getRangeAxis();
+boolean boolean0 = xYPlot0.isDomainCrosshairVisible();
+int int1 = 0;
+xYPlot0.setRenderer(int1, xYItemRenderer0, boolean0);
+xYPlot0.getDataRange(valueAxis1);
+xYPlot0.getDatasetRenderingOrder();
+Marker marker0 = null;
+Layer layer0 = mock(Layer.class, new ViolatedAssumptionAnswer());
+xYPlot0.removeDomainMarker(marker0, layer0);
+xYPlot0.getDataRange(valueAxis1);
+xYPlot0.addDomainMarker(marker0);
+Graphics2D graphics2D0 = null;
+Rectangle2D rectangle2D0 = mock(Rectangle2D.class, new ViolatedAssumptionAnswer());
+Layer layer1 = mock(Layer.class, new ViolatedAssumptionAnswer());
+xYPlot0.drawRangeMarkers(graphics2D0, rectangle2D0, int1, layer1);
+
+23:04:33.116 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:04:34.401 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:04:37.674 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-0.2-7
+23:04:37.767 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

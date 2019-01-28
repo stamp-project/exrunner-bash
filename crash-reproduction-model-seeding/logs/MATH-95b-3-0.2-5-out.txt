@@ -1,0 +1,78 @@
+06:14:12.504 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+06:14:12.507 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution.inverseCumulativeProbability(AbstractContinuousDistribution:84)
+06:14:12.508 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution
+06:14:14.040 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+06:14:21.433 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:14:21.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:14:21.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:14:21.520 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:14:21.535 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:14:21.535 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:14:21.535 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:14:21.535 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is inverseCumulativeProbability
+06:14:21.576 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+06:14:21.621 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.UnivariateRealSolverUtils
+06:14:28.143 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.AbstractContinuousDistribution
+06:14:33.576 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.FDistributionImpl
+06:14:39.110 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:14:46.697 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+06:14:46.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+06:14:46.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:14:52.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+06:14:56.277 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6923076923076923 | 300
+06:14:56.278 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6923076923076923. FE: 300 
+06:14:58.731 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6654275092936803 | 400
+06:14:58.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6654275092936803. FE: 400 
+06:15:02.392 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6654275092936803 | 500
+06:15:05.181 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6654275092936803 | 600
+06:15:07.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+06:15:07.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+06:15:07.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:15:07.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:15:07.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+06:15:07.990 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CauchyDistributionImpl cauchyDistributionImpl0 = new CauchyDistributionImpl();
+double double0 = 0.9175705299286632;
+double double1 = cauchyDistributionImpl0.inverseCumulativeProbability(double0);
+FDistributionImpl fDistributionImpl0 = new FDistributionImpl(double0, double0);
+Double double2 = new Double(double0);
+double double3 = (-3052.4237);
+fDistributionImpl0.setNumeratorDegreesOfFreedom(double1);
+double double4 = 126.107672;
+double double5 = fDistributionImpl0.cumulativeProbability(double4);
+double double6 = fDistributionImpl0.inverseCumulativeProbability((double) double2);
+double double7 = 11.025666759605;
+fDistributionImpl0.setNumeratorDegreesOfFreedom(double7);
+WeibullDistributionImpl weibullDistributionImpl0 = new WeibullDistributionImpl(double0, (double) double2);
+double double8 = 5476.13529800459;
+double double9 = weibullDistributionImpl0.cumulativeProbability(double3, double8);
+fDistributionImpl0.setNumeratorDegreesOfFreedom((double) double2);
+double double10 = cauchyDistributionImpl0.getScale();
+Double double11 = new Double(double10);
+GammaDistributionImpl gammaDistributionImpl0 = new GammaDistributionImpl(double1, double1);
+double double12 = 0.0;
+double double13 = weibullDistributionImpl0.inverseCumulativeProbability(double1);
+BetaDistributionImpl betaDistributionImpl0 = new BetaDistributionImpl(double12, double0);
+weibullDistributionImpl0.inverseCumulativeProbability(double6);
+double double14 = cauchyDistributionImpl0.inverseCumulativeProbability(double0);
+TDistributionImpl tDistributionImpl0 = new TDistributionImpl(double14);
+double double15 = 14.136097974741746;
+cauchyDistributionImpl0.setMedian(double15);
+double double16 = 576.2877127272724;
+tDistributionImpl0.cumulativeProbability(double16);
+double double17 = 1.0;
+tDistributionImpl0.setDegreesOfFreedom(double17);
+tDistributionImpl0.cumulativeProbability(double13);
+double double18 = 218.74337084199794;
+tDistributionImpl0.setDegreesOfFreedom(double5);
+weibullDistributionImpl0.getShape();
+Double double19 = new Double(double12);
+weibullDistributionImpl0.setScale(double3);
+weibullDistributionImpl0.inverseCumulativeProbability(double9);
+double double20 = cauchyDistributionImpl0.getMedian();
+ExponentialDistributionImpl exponentialDistributionImpl0 = new ExponentialDistributionImpl(double9);
+exponentialDistributionImpl0.inverseCumulativeProbability(double20);
+
+06:15:08.047 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:15:08.327 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:15:10.570 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractContinuousDistribution_ESTest' to results/MATH-95b-3-0.2-5
+06:15:10.580 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

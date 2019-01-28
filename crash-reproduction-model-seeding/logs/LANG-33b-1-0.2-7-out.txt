@@ -1,0 +1,62 @@
+23:08:48.128 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+23:08:48.136 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.ClassUtils.toClass(ClassUtils:910)
+23:08:48.136 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.ClassUtils
+23:08:52.871 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+23:09:00.907 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:09:00.945 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:09:00.945 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:09:00.974 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:09:00.975 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:09:00.976 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:09:00.976 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:09:00.976 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is toClass
+23:09:00.993 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:09:00.998 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.ClassUtils
+23:09:08.181 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:09:21.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:09:21.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:09:21.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:09:21.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:09:21.566 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:09:21.566 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:09:21.567 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Object[] objectArray0 = new Object[7];
+ClassUtils classUtils0 = new ClassUtils();
+Class<Integer>[] classArray0 = null;
+ClassUtils.wrappersToPrimitives(classArray0);
+Class<Character> class0 = Character.class;
+Class<?> class1 = ClassUtils.wrapperToPrimitive(class0);
+Class<?> class2 = ClassUtils.wrapperToPrimitive(class1);
+objectArray0[0] = (Object) class2;
+objectArray0[1] = objectArray0[0];
+objectArray0[2] = objectArray0[1];
+objectArray0[3] = objectArray0[2];
+objectArray0[4] = objectArray0[3];
+objectArray0[5] = objectArray0[4];
+ClassUtils classUtils1 = new ClassUtils();
+Class<Short>[] classArray1 = (Class<Short>[]) Array.newInstance(Class.class, 7);
+Class<Short> class3 = Short.class;
+classArray1[0] = class3;
+Class<Short> class4 = Short.class;
+classArray1[1] = class4;
+Class<Short> class5 = Short.class;
+classArray1[2] = class5;
+Class<Short> class6 = Short.class;
+classArray1[3] = class6;
+Class<Short> class7 = Short.class;
+classArray1[4] = class7;
+Class<Short> class8 = Short.class;
+classArray1[5] = class8;
+Class<Short> class9 = Short.class;
+classArray1[6] = class9;
+Class<?>[] classArray2 = ClassUtils.primitivesToWrappers(classArray1);
+Class<ClassUtils> class10 = ClassUtils.class;
+ClassUtils.primitiveToWrapper(class10);
+ClassUtils.primitiveToWrapper(classArray1[6]);
+Class<?>[] classArray3 = ClassUtils.primitivesToWrappers(classArray2);
+objectArray0[6] = (Object) classArray3;
+ClassUtils.toClass(objectArray0);
+
+23:09:21.655 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:09:22.290 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:09:24.876 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'ClassUtils_ESTest' to results/LANG-33b-1-0.2-7
+23:09:24.913 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

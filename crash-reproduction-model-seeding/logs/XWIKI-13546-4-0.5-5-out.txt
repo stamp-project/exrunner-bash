@@ -1,0 +1,66 @@
+23:20:57.214 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+23:20:57.228 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.WikiReference.<init>(WikiReference:61)
+23:20:57.228 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.WikiReference
+23:21:03.404 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+23:23:18.843 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:23:18.882 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:23:18.882 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:23:18.963 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:23:18.964 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:23:18.964 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:23:18.964 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:23:18.964 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+23:23:19.206 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:23:19.211 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+23:23:28.062 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+23:23:43.788 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+23:23:53.678 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.WikiReference
+23:24:03.376 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:24:22.465 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:24:22.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:24:22.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:24:22.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:24:22.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:24:22.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:24:22.468 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "hSz'";
+WikiReference wikiReference0 = new WikiReference(string0);
+String string1 = "";
+WikiReference wikiReference1 = new WikiReference(string1);
+ReadOnlyXWikiContextProvider readOnlyXWikiContextProvider0 = new ReadOnlyXWikiContextProvider();
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class, "execution", (Object) execution0);
+Injector.validateBean(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class);
+wikiReference1.equals((Object) readOnlyXWikiContextProvider0);
+EntityType entityType0 = EntityType.BLOCK;
+wikiReference1.setType(entityType0);
+wikiReference0.setType(entityType0);
+String string2 = "] in a wiki reference";
+WikiReference wikiReference2 = new WikiReference(string2);
+wikiReference2.equals((Object) string2);
+EntityType entityType1 = EntityType.SPACE;
+wikiReference2.setType(entityType1);
+wikiReference0.setParent(wikiReference2);
+WikiReference wikiReference3 = new WikiReference(wikiReference2);
+WikiReference wikiReference4 = new WikiReference(wikiReference1);
+wikiReference2.setParent(wikiReference1);
+wikiReference2.setParent(wikiReference1);
+String string3 = "Invalid type [";
+EntityType entityType2 = EntityType.ATTACHMENT;
+EntityReference entityReference0 = new EntityReference(string3, entityType2);
+entityReference0.getReversedReferenceChain();
+entityReference0.getName();
+Object object0 = null;
+entityReference0.equals(object0);
+EntityReference entityReference1 = entityReference0.getParent();
+EntityReference entityReference2 = entityReference0.replaceParent(entityReference1, entityReference1);
+String string4 = null;
+ObjectReference objectReference0 = new ObjectReference(entityReference1, entityReference0, entityReference2);
+ObjectReference objectReference1 = objectReference0.replaceParent(entityReference1, entityReference0);
+ObjectPropertyReference objectPropertyReference0 = new ObjectPropertyReference(string4, objectReference1);
+EntityReference entityReference3 = objectPropertyReference0.appendParent(objectReference1);
+WikiReference wikiReference5 = new WikiReference(entityReference3);
+
+23:24:22.491 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:24:22.745 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:24:30.374 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'WikiReference_ESTest' to results/XWIKI-13546-4-0.5-5
+23:24:30.444 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

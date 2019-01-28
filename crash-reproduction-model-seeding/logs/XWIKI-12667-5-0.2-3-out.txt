@@ -1,0 +1,45 @@
+00:42:39.084 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:42:39.100 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+00:42:39.100 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+00:43:23.749 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:45:40.053 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:45:40.094 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:45:40.094 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:45:40.146 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:45:40.147 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'extractMimeType(Lcom/xpn/xwiki/XWikiContext;)Ljava/lang/String;' is private!
+00:45:40.147 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+00:45:40.278 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+00:45:40.290 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+00:45:40.300 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is resetMimeType
+00:45:40.387 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:45:40.457 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+00:45:52.350 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+00:45:59.111 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+00:46:04.611 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+00:46:09.885 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+00:46:15.217 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:46:34.036 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:46:34.037 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:46:34.037 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:46:34.037 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:46:34.037 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:46:34.037 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:46:34.038 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiAttachmentContent xWikiAttachmentContent0 = mock(XWikiAttachmentContent.class, new ViolatedAssumptionAnswer());
+doReturn((InputStream) null).when(xWikiAttachmentContent0).getContentInputStream();
+xWikiAttachment0.setAttachment_content(xWikiAttachmentContent0);
+XWikiAttachmentArchive xWikiAttachmentArchive0 = mock(XWikiAttachmentArchive.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(xWikiAttachmentArchive0).toString();
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+xWikiAttachment0.getAttachment_archive();
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment0.loadArchive(xWikiContext0);
+xWikiAttachment0.resetMimeType(xWikiContext0);
+
+00:46:34.069 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:46:34.517 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:46:42.238 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-5-0.2-3
+00:46:42.263 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

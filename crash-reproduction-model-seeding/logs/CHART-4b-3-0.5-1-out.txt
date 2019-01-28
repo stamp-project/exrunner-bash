@@ -1,0 +1,90 @@
+21:01:19.381 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:01:19.385 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.axis.NumberAxis.configure(NumberAxis:417)
+21:01:19.385 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.axis.NumberAxis
+21:01:26.969 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+21:01:46.961 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:01:46.971 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:01:46.971 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:01:46.979 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:01:46.992 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:01:46.993 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:01:46.993 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:01:46.993 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is configure
+21:01:47.020 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:01:47.020 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+21:01:54.627 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+21:02:02.466 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+21:02:09.134 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+21:02:14.955 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:02:26.312 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6756756756756757
+21:02:26.312 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6756756756756757. FE: 100 
+21:02:26.312 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:02:40.394 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6756756756756757 | 200
+21:02:49.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6756756756756757 | 300
+21:03:05.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6756756756756757 | 400
+21:03:20.745 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6756756756756757 | 500
+21:03:43.096 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+21:03:43.096 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:03:43.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:03:43.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:03:43.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:03:43.099 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: NumberAxis.createIntegerTickUnits();
+NumberAxis numberAxis0 = new NumberAxis();
+NumberAxis3D numberAxis3D0 = new NumberAxis3D();
+numberAxis3D0.getRangeType();
+Graphics2D graphics2D0 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+Rectangle2D rectangle2D0 = mock(Rectangle2D.class, new ViolatedAssumptionAnswer());
+RectangleEdge rectangleEdge0 = RectangleEdge.BOTTOM;
+String string0 = "0.00";
+String string1 = "Null 'unit' argument.";
+Font font0 = null;
+Font font1 = Font.getFont(string1, font0);
+XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(xYDataset0).getSeriesCount();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, numberAxis3D0, numberAxis3D0, xYItemRenderer0);
+ValueAxis valueAxis0 = xYPlot0.getRangeAxis();
+XYPlot xYPlot1 = new XYPlot();
+int int0 = 0;
+xYPlot0.setRangeAxis(int0, valueAxis0);
+boolean boolean0 = false;
+JFreeChart jFreeChart0 = new JFreeChart(string0, font1, xYPlot1, boolean0);
+int int1 = 2126221433;
+int int2 = 500;
+boolean boolean1 = true;
+boolean boolean2 = false;
+ChartPanel chartPanel0 = new ChartPanel(jFreeChart0, int0, int1, int2, int1, int1, int0, boolean0, boolean1, boolean1, boolean0, boolean0, boolean2);
+Rectangle2D rectangle2D1 = null;
+boolean boolean3 = numberAxis0.getAutoRangeIncludesZero();
+Rectangle2D rectangle2D2 = null;
+RectangleEdge.coordinate(rectangle2D2, rectangleEdge0);
+numberAxis3D0.configure();
+NumberAxis3D numberAxis3D1 = new NumberAxis3D(string1);
+int int3 = numberAxis3D0.calculateVisibleTickCount();
+Graphics2D graphics2D1 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+Rectangle2D rectangle2D3 = null;
+numberAxis3D1.refreshTicksHorizontal(graphics2D1, rectangle2D3, rectangleEdge0);
+RectangleEdge rectangleEdge1 = RectangleEdge.BOTTOM;
+numberAxis3D1.java2DToValue(int3, rectangle2D3, rectangleEdge1);
+CyclicNumberAxis cyclicNumberAxis0 = new CyclicNumberAxis(int3);
+cyclicNumberAxis0.autoAdjustRange();
+Graphics2D graphics2D2 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+RectangleEdge rectangleEdge2 = mock(RectangleEdge.class, new ViolatedAssumptionAnswer());
+Anchor anchor0 = new Anchor();
+NumberTickUnit numberTickUnit0 = numberAxis3D1.getTickUnit();
+Graphics2D graphics2D3 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+doReturn((FontMetrics) null).when(graphics2D3).getFontMetrics(any(java.awt.Font.class));
+cyclicNumberAxis0.estimateMaximumTickLabelWidth(graphics2D3, numberTickUnit0);
+numberAxis0.calculateLowestVisibleTickValue();
+int int4 = ValueAxis.MAXIMUM_TICK_COUNT;
+cyclicNumberAxis0.clone();
+MarkerAxisBand markerAxisBand0 = cyclicNumberAxis0.getMarkerBand();
+numberAxis0.setMarkerBand(markerAxisBand0);
+numberAxis3D0.setTickUnit(numberTickUnit0, boolean3, boolean3);
+cyclicNumberAxis0.autoAdjustRange();
+NumberAxis.createStandardTickUnits();
+
+21:03:43.126 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:03:43.772 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:03:46.197 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'NumberAxis_ESTest' to results/CHART-4b-3-0.5-1
+21:03:46.248 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

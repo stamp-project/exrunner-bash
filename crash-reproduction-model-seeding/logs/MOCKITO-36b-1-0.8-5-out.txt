@@ -1,0 +1,63 @@
+10:12:19.122 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+10:12:19.126 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.invocation.Invocation.callRealMethod(Invocation:202)
+10:12:19.126 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.invocation.Invocation
+10:12:23.272 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+10:12:35.179 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:12:35.206 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:12:35.206 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:12:35.248 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:12:35.280 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:12:35.280 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:12:35.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:12:35.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is callRealMethod
+10:12:35.328 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+10:12:35.338 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.invocation.Invocation
+10:12:43.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:13:10.521 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:13:10.522 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:13:10.522 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:13:10.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:13:10.555 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:13:10.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:13:10.564 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Class<Invocation> class0 = Invocation.class;
+IsInstanceOf isInstanceOf0 = new IsInstanceOf(class0);
+MockitoMethod mockitoMethod0 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod0).isVarArgs();
+Object[] objectArray0 = new Object[4];
+objectArray0[0] = (Object) class0;
+objectArray0[1] = (Object) mockitoMethod0;
+objectArray0[2] = (Object) mockitoMethod0;
+objectArray0[3] = (Object) isInstanceOf0;
+int int0 = 45;
+RealMethod realMethod0 = null;
+Invocation invocation0 = new Invocation(isInstanceOf0, mockitoMethod0, objectArray0, int0, realMethod0);
+MockitoMethod mockitoMethod1 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod1).isVarArgs();
+int int1 = 0;
+Invocation invocation1 = new Invocation(invocation0, mockitoMethod1, objectArray0, int1, realMethod0);
+invocation1.isVerified();
+invocation0.isVerified();
+invocation0.getMock();
+invocation1.callRealMethod();
+invocation0.hashCode();
+Class<Object> class1 = Object.class;
+invocation1.isValidReturnType(class1);
+PrintSettings printSettings0 = mock(PrintSettings.class, new ViolatedAssumptionAnswer());
+invocation1.toString(printSettings0);
+invocation1.getRawArguments();
+invocation1.getMethodName();
+invocation1.markVerified();
+invocation0.printMethodReturnType();
+invocation0.markVerified();
+invocation0.isVoid();
+List<Matcher> list0 = null;
+PrintSettings printSettings1 = mock(PrintSettings.class, new ViolatedAssumptionAnswer());
+invocation0.toString(list0, printSettings1);
+invocation0.hashCode();
+invocation1.callRealMethod();
+invocation1.getMethod();
+
+10:13:10.593 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:13:11.628 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:13:15.703 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Invocation_ESTest' to results/MOCKITO-36b-1-0.8-5
+10:13:15.722 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
