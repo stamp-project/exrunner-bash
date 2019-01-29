@@ -1,0 +1,45 @@
+17:24:17.234 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:24:17.238 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:62)
+17:24:17.239 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+17:24:22.288 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+17:26:32.883 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:26:32.917 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:26:32.918 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:26:32.945 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:26:32.956 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:26:32.956 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:26:32.956 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:26:32.956 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+17:26:33.008 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:26:33.304 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:27:00.840 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+17:27:00.841 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:27:00.841 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:27:00.842 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:27:00.842 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:27:00.842 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:27:00.842 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+Provider<ConfluenceParser> provider0 = (Provider<ConfluenceParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(provider0).get();
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider0);
+EntityReferenceSerializer<DocumentComponentManager> entityReferenceSerializer0 = (EntityReferenceSerializer<DocumentComponentManager>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer0);
+Injector.validateBean(defaultContentParser0, (Class<?>) DefaultContentParser.class);
+String string0 = "source";
+Syntax syntax0 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(syntax0).toIdString();
+EntityReference entityReference0 = null;
+defaultContentParser0.parse(string0, syntax0, entityReference0);
+String string1 = null;
+Syntax syntax1 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string1, syntax1);
+String string2 = " cannot be greater than ";
+Syntax syntax2 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string2, syntax2);
+Syntax syntax3 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string1, syntax3);
+
+17:27:00.867 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:27:01.100 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:27:08.041 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-1-0.8-8
+17:27:08.091 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

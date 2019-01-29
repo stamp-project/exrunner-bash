@@ -1,0 +1,80 @@
+18:51:44.638 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+18:51:44.693 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.container.servlet.filters.internal.SavedRequestRestorerFilter.doFilter(SavedRequestRestorerFilter:208)
+18:51:44.693 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.container.servlet.filters.internal.SavedRequestRestorerFilter
+18:51:59.302 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 567.
+18:54:44.210 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:54:44.247 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:54:44.247 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:54:44.369 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:54:44.369 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:54:44.369 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:54:44.370 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:54:44.370 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doFilter
+18:54:44.721 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:54:44.917 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+18:54:54.497 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.struts.action.ActionServlet
+18:55:00.687 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.user.impl.xwiki.MyFormAuthenticator
+18:55:06.059 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.PropertyClass
+18:55:15.382 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils
+18:56:33.225 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.BaseStringProperty
+18:56:40.718 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+18:56:49.681 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+18:57:13.932 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.BaseClass
+18:57:40.246 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:58:04.294 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+18:58:04.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+18:58:04.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:58:56.630 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+18:59:32.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+18:59:44.015 [TEST_EXECUTION_THREAD_1] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED org.eclipse.jetty.server.session.HashSessionIdManager@72b9dc5e: java.lang.ThreadDeath
+java.lang.ThreadDeath: null
+	at java.lang.Thread.stop(Thread.java:853) ~[na:1.8.0_191]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:460) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:277) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:264) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.runTest(TestCaseExecutor.java:140) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.runTest(TestFitnessFunction.java:91) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:60) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:34) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.calculateFitness(GuidedGeneticAlgorithm.java:257) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.evolve(GuidedGeneticAlgorithm.java:164) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.generateSolution(GuidedGeneticAlgorithm.java:98) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:92) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:124) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:78) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:68) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.Botsing.main(Botsing.java:161) ~[na:1.0.2-SNAPSHOT]
+18:59:44.048 [TEST_EXECUTION_THREAD_1] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED org.eclipse.jetty.server.Server@e69e1be: java.lang.ThreadDeath
+java.lang.ThreadDeath: null
+	at java.lang.Thread.stop(Thread.java:853) ~[na:1.8.0_191]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:460) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:277) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:264) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestCaseExecutor.runTest(TestCaseExecutor.java:140) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.runTest(TestFitnessFunction.java:91) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:60) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:34) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.calculateFitness(GuidedGeneticAlgorithm.java:257) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.evolve(GuidedGeneticAlgorithm.java:164) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.generateSolution(GuidedGeneticAlgorithm.java:98) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:92) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:124) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:78) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:68) ~[na:1.0.2-SNAPSHOT]
+	at eu.stamp.botsing.Botsing.main(Botsing.java:161) ~[na:1.0.2-SNAPSHOT]
+19:00:22.847 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+19:00:51.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+19:01:18.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+19:01:50.029 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+19:02:21.935 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+19:02:47.687 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+19:03:10.176 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+19:03:29.029 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+19:03:51.954 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+19:04:26.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1300
+19:04:46.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1400
+19:05:05.021 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1500
+19:05:25.371 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1600
+19:05:45.796 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1700
+19:06:07.810 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1800
+19:06:27.955 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1900

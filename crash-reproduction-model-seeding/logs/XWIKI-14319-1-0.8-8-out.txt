@@ -1,0 +1,68 @@
+18:26:43.574 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+18:26:43.578 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiDocument.getTranslationList(XWikiDocument:5983)
+18:26:43.578 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiDocument
+18:27:15.329 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 579.
+18:29:27.372 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:29:27.390 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:29:27.390 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:29:27.420 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:29:27.433 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:29:27.437 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:29:27.437 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:29:27.438 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getTranslationList
+18:29:27.517 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:29:27.533 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.api.Document
+18:29:42.339 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiDocument
+18:29:53.268 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:32:52.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:32:52.663 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:32:52.663 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:32:52.663 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:32:52.663 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:32:52.664 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:32:52.686 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((Locale) null).when(documentReference0).getLocale();
+doReturn((String) null).when(documentReference0).toString();
+doReturn((List) null).when(documentReference0).getReversedReferenceChain();
+XWikiDocument xWikiDocument0 = new XWikiDocument(documentReference0);
+DocumentReference documentReference1 = xWikiDocument0.getCreatorReference();
+DocumentReference documentReference2 = xWikiDocument0.getCreatorReference();
+xWikiDocument0.setCreatorReference(documentReference1);
+xWikiDocument0.getAuthorReference();
+String string0 = null;
+XWikiAttachment xWikiAttachment0 = xWikiDocument0.getAttachment(string0);
+xWikiDocument0.getAttachmentList();
+XWikiAttachment xWikiAttachment1 = xWikiDocument0.getAttachment(string0);
+xWikiDocument0.removeAttachment(xWikiAttachment1);
+xWikiDocument0.toString();
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiDocument0.getTranslationList(xWikiContext0);
+xWikiDocument0.setMeta(string0);
+int int0 = 966;
+boolean boolean0 = true;
+xWikiDocument0.getXObject((EntityReference) documentReference2, int0, boolean0, xWikiContext0);
+xWikiDocument0.isMinorEdit();
+xWikiDocument0.addObjectFromRequest(string0, int0, xWikiContext0);
+xWikiDocument0.removeAttachment(xWikiAttachment0);
+String string1 = "<cMtRwK";
+String string2 = "] mode for Object of Class [";
+String string3 = "";
+XWikiDocument xWikiDocument1 = new XWikiDocument(string1, string2, string3);
+XWikiContext xWikiContext1 = null;
+Document document0 = new Document(xWikiDocument1, xWikiContext1);
+String string4 = "";
+document0.setContent(string4);
+document0.setTitle(string2);
+document0.setParent(string3);
+document0.setSyntaxId(string1);
+boolean boolean1 = false;
+document0.setHidden(boolean1);
+Object object0 = document0.getObject(string4);
+document0.removeObject(object0);
+Locale locale0 = document0.getDefaultLocale();
+xWikiDocument0.setDefaultLocale(locale0);
+
+18:32:52.721 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:32:52.745 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:32:52.756 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiDocument_ESTest' to results/XWIKI-14319-1-0.8-8
+18:32:53.078 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

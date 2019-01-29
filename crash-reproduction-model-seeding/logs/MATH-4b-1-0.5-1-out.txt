@@ -1,0 +1,47 @@
+01:53:05.188 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+01:53:05.192 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.Line.getAbscissa(Line:114)
+01:53:05.208 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.Line
+01:53:07.487 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+01:53:17.569 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:53:17.592 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:53:17.592 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:53:17.618 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:53:17.619 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:53:17.619 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:53:17.619 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:53:17.620 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getAbscissa
+01:53:17.680 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:53:17.744 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+01:53:24.187 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+01:53:29.892 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:53:40.867 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+01:53:40.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+01:53:40.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:53:53.426 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+01:53:53.427 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:53:53.427 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:53:53.427 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:53:53.427 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:53:53.428 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = Vector3D.PLUS_I;
+double double0 = 4.116164446561962E-8;
+Vector3D vector3D1 = Vector3D.MINUS_K;
+Vector3D vector3D2 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+Vector3D vector3D3 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+doReturn((Vector3D) null).when(vector3D3).subtract(nullable(org.apache.commons.math3.geometry.Vector.class));
+Vector3D vector3D4 = vector3D0.normalize();
+Vector3D vector3D5 = vector3D0.normalize();
+Vector3D vector3D6 = new Vector3D(double0, vector3D0);
+Vector1D vector1D0 = Vector1D.ZERO;
+Vector3D vector3D7 = Vector3D.NEGATIVE_INFINITY;
+DecimalFormat decimalFormat0 = (DecimalFormat)NumberFormat.getCurrencyInstance();
+vector3D5.toString((NumberFormat) decimalFormat0);
+Line line0 = new Line(vector3D4, vector3D1);
+vector3D1.subtract((Vector<Euclidean3D>) vector3D5);
+line0.toSubSpace(vector3D3);
+Line line1 = new Line(line0);
+line1.toSubSpace(vector3D4);
+
+01:53:53.479 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:53:53.926 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:53:56.834 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Line_ESTest' to results/MATH-4b-1-0.5-1
+01:53:56.873 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,67 @@
+11:45:44.618 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+11:45:44.646 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils.updateUserFromLDAP(XWikiLDAPUtils:1183)
+11:45:44.647 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils
+11:46:07.144 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 567.
+11:48:59.154 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:48:59.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:48:59.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:48:59.238 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:48:59.249 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:48:59.249 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:48:59.249 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:48:59.250 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is updateUserFromLDAP
+11:48:59.362 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:48:59.451 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+11:49:06.411 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.struts.action.ActionServlet
+11:49:12.418 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.user.impl.xwiki.MyFormAuthenticator
+11:49:17.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.PropertyClass
+11:49:27.758 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils
+11:50:49.926 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.BaseStringProperty
+11:51:28.433 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+11:51:41.877 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+11:51:50.861 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.BaseClass
+11:52:22.306 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:53:41.315 [TEST_EXECUTION_THREAD_2] ERROR c.x.xwiki.plugin.ldap.XWikiLDAPUtils - Failed to add a user [null] to a group [null]
+java.lang.NullPointerException: null
+	at com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils.addUserToXWikiGroup(XWikiLDAPUtils.java:1209) ~[xwiki-platform-ldap-authenticator-8.1-milestone-1.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+11:53:41.320 [TEST_EXECUTION_THREAD_2] ERROR c.x.x.plugin.ldap.XWikiLDAPConfig - Failed to get preferences
+java.lang.NullPointerException: null
+	at com.xpn.xwiki.plugin.ldap.XWikiLDAPConfig.getLDAPParam(XWikiLDAPConfig.java:162) [na:na]
+	at com.xpn.xwiki.plugin.ldap.XWikiLDAPConfig.getLDAPParam(XWikiLDAPConfig.java:193) [na:na]
+	at com.xpn.xwiki.plugin.ldap.XWikiLDAPConfig.getUserMappings(XWikiLDAPConfig.java:415) [na:na]
+	at com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils.createUserFromLDAP(XWikiLDAPUtils.java:1116) [na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+11:53:46.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+11:53:46.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+11:53:46.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:55:32.206 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+11:57:30.702 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+11:59:23.183 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+12:00:37.556 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 500

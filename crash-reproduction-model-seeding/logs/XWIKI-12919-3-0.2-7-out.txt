@@ -1,0 +1,54 @@
+05:58:12.323 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.xwiki.query.jpql.parser.ParserException
+05:58:12.338 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator.translate(XWQLtoHQLTranslator:55)
+05:58:12.338 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator
+05:58:18.301 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 568.
+05:59:10.342 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:59:10.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:59:10.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:59:10.409 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:59:10.417 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:59:10.417 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:59:10.417 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:59:10.417 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is translate
+05:59:10.485 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:59:10.686 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator
+05:59:20.216 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.jpql.internal.JPQLParser
+05:59:25.680 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.jpql.parser.Parser
+05:59:31.239 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:59:40.488 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+05:59:40.488 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:59:40.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:59:40.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:59:40.498 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:59:40.498 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:59:40.499 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWQLtoHQLTranslator xWQLtoHQLTranslator0 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWQLtoHQLTranslator0, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+Injector.validateBean(xWQLtoHQLTranslator0, (Class<?>) XWQLtoHQLTranslator.class);
+QueryContext queryContext0 = mock(QueryContext.class, new ViolatedAssumptionAnswer());
+xWQLtoHQLTranslator0.getPrinter(queryContext0);
+String string0 = xWQLtoHQLTranslator0.getOutputLanguage();
+XWQLtoHQLTranslator xWQLtoHQLTranslator1 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge1);
+Injector.validateBean(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class);
+xWQLtoHQLTranslator1.translate(string0);
+XWQLtoHQLTranslator xWQLtoHQLTranslator2 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge2 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge2);
+Injector.validateBean(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class);
+String string1 = "order";
+xWQLtoHQLTranslator1.translate(string1);
+DocumentAccessBridge documentAccessBridge3 = xWQLtoHQLTranslator2.getDocumentAccessBridge();
+xWQLtoHQLTranslator0.translate(string0);
+QueryContext queryContext1 = mock(QueryContext.class, new ViolatedAssumptionAnswer());
+xWQLtoHQLTranslator0.getPrinter(queryContext1);
+xWQLtoHQLTranslator2.getDocumentAccessBridge();
+XWQLtoHQLTranslator xWQLtoHQLTranslator3 = new XWQLtoHQLTranslator();
+Injector.inject(xWQLtoHQLTranslator3, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge3);
+Injector.validateBean(xWQLtoHQLTranslator3, (Class<?>) XWQLtoHQLTranslator.class);
+
+05:59:40.534 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:59:40.852 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:59:46.241 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWQLtoHQLTranslator_ESTest' to results/XWIKI-12919-3-0.2-7
+05:59:46.246 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

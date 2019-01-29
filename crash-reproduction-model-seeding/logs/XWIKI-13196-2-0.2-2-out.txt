@@ -1,0 +1,62 @@
+19:00:55.135 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+19:00:55.139 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.<init>(EntityReference:154)
+19:00:55.139 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+19:01:53.428 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+19:02:48.928 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:02:48.956 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:02:48.956 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:02:48.990 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:02:48.990 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:02:48.990 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:02:48.990 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:02:48.990 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+19:02:49.032 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:02:49.087 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+19:02:59.884 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+19:03:07.257 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+19:03:14.686 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+19:03:56.565 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+19:04:04.192 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:04:33.608 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:04:33.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:04:33.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:04:33.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:04:33.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:04:33.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:04:33.611 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+EntityType entityType0 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference0 = null;
+EntityReference entityReference1 = new EntityReference(string0, entityType0, entityReference0);
+entityReference1.getReversedReferenceChain();
+entityReference1.getName();
+String string1 = entityReference1.getName();
+EntityReference entityReference2 = entityReference1.getParent();
+entityReference2.getType();
+entityReference2.hasParent(entityReference0);
+EntityType entityType1 = EntityType.BLOCK;
+EntityReference entityReference3 = new EntityReference(string1, entityType1);
+String string2 = "";
+String string3 = "A&v*]T4cCI_U8Aik|l";
+CacheImpl<String, Serializable> cacheImpl0 = new CacheImpl<String, Serializable>(string3);
+AbstractDelegatingAdvancedCache.AdvancedCacheWrapper<String, Serializable> abstractDelegatingAdvancedCache_AdvancedCacheWrapper0 = (AbstractDelegatingAdvancedCache.AdvancedCacheWrapper<String, Serializable>) mock(AbstractDelegatingAdvancedCache.AdvancedCacheWrapper.class, new ViolatedAssumptionAnswer());
+AbstractDelegatingAdvancedCache<String, Serializable> abstractDelegatingAdvancedCache0 = new AbstractDelegatingAdvancedCache<String, Serializable>(cacheImpl0, abstractDelegatingAdvancedCache_AdvancedCacheWrapper0);
+ClassLoader classLoader0 = mock(ClassLoader.class, new ViolatedAssumptionAnswer());
+DecoratedCache<String, Serializable> decoratedCache0 = new DecoratedCache<String, Serializable>(abstractDelegatingAdvancedCache0, classLoader0);
+Flag[] flagArray0 = new Flag[3];
+Flag flag0 = Flag.DELTA_WRITE;
+flagArray0[0] = flag0;
+Flag flag1 = Flag.REMOVE_DATA_ON_STOP;
+flagArray0[1] = flag1;
+Flag flag2 = Flag.ZERO_LOCK_ACQUISITION_TIMEOUT;
+flagArray0[2] = flag2;
+DecoratedCache<String, Serializable> decoratedCache1 = new DecoratedCache<String, Serializable>(decoratedCache0, flagArray0);
+Flag[] flagArray1 = null;
+DecoratedCache<String, Serializable> decoratedCache2 = new DecoratedCache<String, Serializable>(decoratedCache1, flagArray1);
+ClassLoader classLoader1 = null;
+DecoratedCache<String, Serializable> decoratedCache3 = new DecoratedCache<String, Serializable>(decoratedCache2, classLoader1, flagArray1);
+EntityReference entityReference4 = new EntityReference(string2, entityType0, entityReference0, decoratedCache3);
+
+19:04:33.651 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:04:33.883 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:04:40.850 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-2-0.2-2
+19:04:40.885 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

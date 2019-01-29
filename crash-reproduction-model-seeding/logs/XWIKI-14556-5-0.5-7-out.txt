@@ -1,0 +1,86 @@
+13:58:27.959 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+13:58:27.963 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor:417)
+13:58:27.963 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+13:58:34.527 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 552.
+14:00:04.170 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:00:04.179 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:00:04.179 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:00:04.205 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:00:04.206 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:00:04.206 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:00:04.206 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:00:04.206 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+14:00:04.255 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:00:04.391 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+14:00:17.608 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+14:00:23.896 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:01:00.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+14:01:00.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+14:01:00.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:02:21.254 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+14:03:35.204 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+14:05:03.668 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+14:07:22.380 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+14:09:06.695 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+14:11:09.647 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+14:11:09.648 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+14:11:09.672 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:11:09.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:11:09.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+14:11:09.694 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Provider<ContextComponentManager> provider0 = (Provider<ContextComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Query query0 = mock(Query.class, new ViolatedAssumptionAnswer());
+org.hibernate.Query query1 = mock(org.hibernate.Query.class, new ViolatedAssumptionAnswer());
+String string0 = null;
+Session session0 = mock(Session.class, new ViolatedAssumptionAnswer());
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Provider<ContextRootComponentManager> provider1 = (Provider<ContextRootComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager1 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager1);
+Provider<EmbeddableComponentManager> provider2 = (Provider<EmbeddableComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "componentManagerProvider", (Object) provider2);
+Execution execution2 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution2);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory1 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory1);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string1 = " ";
+ExtendedUUID extendedUUID0 = ExtendedUUID.randomUUID(string1);
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = null;
+boolean boolean0 = false;
+AtomicHashMap.ProxyMode atomicHashMap_ProxyMode0 = AtomicHashMap.ProxyMode.COARSE;
+AtomicHashMap<MinguoDate, String> atomicHashMap0 = new AtomicHashMap<MinguoDate, String>(boolean0, atomicHashMap_ProxyMode0);
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, atomicHashMap0);
+CollectionFilterImpl collectionFilterImpl0 = new CollectionFilterImpl(string0, extendedUUID0, sessionImplementor0, parameterMetadata0);
+CacheMode cacheMode0 = null;
+CollectionFilterImpl collectionFilterImpl1 = (CollectionFilterImpl)collectionFilterImpl0.setCacheMode(cacheMode0);
+String string2 = "order by ";
+hqlQueryExecutor0.setNamedParameter(collectionFilterImpl1, string2, execution0);
+String string3 = ",wherh]jbfw`";
+hqlQueryExecutor0.completeShortFormStatement(string3);
+hqlQueryExecutor0.getContext();
+String string4 = "Sending request for %s via remote transport thread";
+hqlQueryExecutor0.setNamedParameter(query1, string4, provider1);
+hqlQueryExecutor0.execute(query0);
+hqlQueryExecutor0.getStore();
+long long0 = 252L;
+long long1 = (-69L);
+ExtendedUUID extendedUUID1 = new ExtendedUUID(long0, long1);
+SessionImplementor sessionImplementor1 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+int int0 = (-112630274);
+TypeFactory.TypeScope typeFactory_TypeScope0 = mock(TypeFactory.TypeScope.class, new ViolatedAssumptionAnswer());
+String string5 = "5f:d";
+int int1 = 1851;
+LockMode lockMode0 = LockMode.OPTIMISTIC;
+JDialog jDialog0 = new JDialog();
+
+14:11:09.710 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:11:10.789 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:11:16.843 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-5-0.5-7
+14:11:16.875 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

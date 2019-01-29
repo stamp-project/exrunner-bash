@@ -1,0 +1,68 @@
+22:28:48.257 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:28:48.261 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+22:28:48.261 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+22:29:52.086 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+22:32:13.287 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:32:13.316 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:32:13.316 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:32:13.449 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:32:13.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:32:13.461 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:32:13.461 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:32:13.461 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+22:32:13.551 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:32:13.629 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+22:32:34.490 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+22:32:43.104 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+22:32:49.715 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+22:32:58.215 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+22:33:07.784 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:33:31.171 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:33:31.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:33:31.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:33:31.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:33:31.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:33:31.173 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:33:31.174 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((Locale) null).when(documentReference0).getLocale();
+doReturn((List) null).when(documentReference0).getReversedReferenceChain();
+Locale locale0 = Locale.CANADA_FRENCH;
+XWikiDocument xWikiDocument0 = new XWikiDocument(documentReference0, locale0);
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+xWikiAttachment0.clone();
+xWikiAttachment0.getReference();
+xWikiAttachment0.getFilesize();
+xWikiAttachment0.getAuthorReference();
+int int0 = xWikiAttachment0.getFilesize();
+xWikiAttachment0.getAuthor();
+xWikiAttachment0.getReference();
+boolean boolean0 = true;
+xWikiAttachment0.setMetaDataDirty(boolean0);
+XWikiAttachmentArchive xWikiAttachmentArchive0 = mock(XWikiAttachmentArchive.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+byte[] byteArray0 = new byte[8];
+byte byte0 = (byte)0;
+byteArray0[0] = byte0;
+byte byte1 = (byte) (-83);
+byteArray0[1] = byte1;
+byte byte2 = (byte)0;
+byteArray0[2] = byte2;
+byte byte3 = (byte) (-19);
+byteArray0[3] = byte3;
+byte byte4 = (byte)0;
+byteArray0[4] = byte4;
+byte byte5 = (byte) (-106);
+byteArray0[5] = byte5;
+byte byte6 = (byte) (-30);
+byteArray0[6] = byte6;
+byte byte7 = (byte)1;
+byteArray0[7] = byte7;
+SerialBlob serialBlob0 = new SerialBlob(byteArray0);
+InputStream inputStream0 = serialBlob0.getBinaryStream((long) int0, (long) byte3);
+xWikiAttachment0.setContent(inputStream0);
+
+22:33:31.205 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:33:31.929 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:33:38.460 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-4-0.8-9
+22:33:38.551 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

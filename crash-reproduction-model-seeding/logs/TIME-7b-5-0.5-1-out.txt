@@ -1,0 +1,74 @@
+14:55:55.295 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+14:55:55.299 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeParserBucket.computeMillis(DateTimeParserBucket:359)
+14:55:55.299 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeParserBucket
+14:55:59.083 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+14:56:14.371 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:56:14.408 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:56:14.408 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:56:14.442 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:56:14.446 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:56:14.446 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:56:14.447 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:56:14.447 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeMillis
+14:56:14.502 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:56:14.506 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+14:56:23.372 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+14:56:29.382 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+14:56:35.190 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+14:56:40.499 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:56:50.794 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+14:56:50.794 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+14:56:50.794 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:57:01.912 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+14:57:01.912 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+14:57:01.912 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:57:01.912 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:57:01.912 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+14:57:01.914 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: long long0 = 31083663600000L;
+Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+doReturn((DateTimeZone) null).when(chronology0).getZone();
+doReturn((Chronology) null).when(chronology0).withUTC();
+long long1 = 1L;
+Locale locale0 = null;
+DateTimeParserBucket dateTimeParserBucket0 = new DateTimeParserBucket(long1, chronology0, locale0);
+Chronology chronology1 = dateTimeParserBucket0.getChronology();
+DateTimeParserBucket dateTimeParserBucket1 = new DateTimeParserBucket(long1, chronology1, locale0);
+boolean boolean0 = false;
+String string0 = "w{FAvU$";
+dateTimeParserBucket1.computeMillis(boolean0, string0);
+boolean boolean1 = true;
+int int0 = dateTimeParserBucket0.getOffset();
+dateTimeParserBucket1.setOffset(int0);
+long long2 = dateTimeParserBucket1.computeMillis(boolean1);
+Object object0 = new Object();
+int int1 = dateTimeParserBucket1.getOffset();
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfYear();
+dateTimeParserBucket0.saveField(dateTimeFieldType0, int0);
+dateTimeFieldType0.getDurationType();
+Integer integer0 = new Integer(int0);
+dateTimeParserBucket0.saveField(dateTimeFieldType0, int0);
+dateTimeParserBucket1.getChronology();
+dateTimeParserBucket0.computeMillis();
+DateTimeField dateTimeField0 = mock(DateTimeField.class, new ViolatedAssumptionAnswer());
+dateTimeParserBucket1.computeMillis();
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField0 = new DateTimeParserBucket.SavedField(dateTimeField0, int0);
+dateTimeParserBucket_SavedField0.set(long2, boolean1);
+long long3 = 342L;
+dateTimeParserBucket_SavedField0.set(long3, boolean1);
+long long4 = 1468L;
+dateTimeParserBucket_SavedField0.set(int1, boolean1);
+int int2 = new Integer(int0);
+DurationField durationField0 = MillisDurationField.INSTANCE;
+DateTimeParserBucket.compareReverse(durationField0, durationField0);
+dateTimeParserBucket1.computeMillis();
+String string1 = null;
+Integer integer1 = new Integer(int0);
+Integer.decode(string1);
+dateTimeParserBucket0.saveState();
+boolean boolean2 = true;
+dateTimeParserBucket1.computeMillis(boolean2, string1);
+
+14:57:01.942 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:57:03.271 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:57:06.988 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeParserBucket_ESTest' to results/TIME-7b-5-0.5-1
+14:57:06.999 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,45 @@
+19:16:30.806 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+19:16:30.810 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang.text.StrBuilder.appendFixedWidthPadLeft(StrBuilder:1186)
+19:16:30.810 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang.text.StrBuilder
+19:16:39.048 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+19:16:49.207 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:16:49.244 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:16:49.244 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:16:49.299 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:16:49.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:16:49.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:16:49.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:16:49.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is appendFixedWidthPadLeft
+19:16:49.385 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:16:49.386 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang.text.StrBuilder
+19:16:56.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:17:22.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:17:22.788 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:17:22.788 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:17:22.788 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:17:22.788 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:17:22.789 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:17:22.790 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+StrBuilder strBuilder0 = new StrBuilder(string0);
+char char0 = 'r';
+StrBuilder strBuilder1 = strBuilder0.append(char0);
+StrBuilder strBuilder2 = strBuilder1.append(char0);
+String string1 = strBuilder2.toString();
+int int0 = 1669;
+strBuilder0.appendFixedWidthPadLeft((Object) string1, int0, char0);
+StrMatcher strMatcher0 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+doReturn(0, 0, 0, 0, 0).when(strMatcher0).isMatch(any(char[].class) , anyInt() , anyInt() , anyInt());
+int int1 = strBuilder1.lastIndexOf(strMatcher0);
+strBuilder0.getNewLineText();
+Object object0 = null;
+strBuilder2.appendFixedWidthPadLeft(object0, int0, char0);
+StrMatcher strMatcher1 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+String string2 = null;
+strBuilder1.replaceFirst(strMatcher1, string2);
+int int2 = 115;
+strBuilder1.validateRange(int1, int2);
+
+19:17:24.064 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:17:34.817 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:17:37.958 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'StrBuilder_ESTest' to results/LANG-47b-1-0.2-6
+19:17:38.080 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

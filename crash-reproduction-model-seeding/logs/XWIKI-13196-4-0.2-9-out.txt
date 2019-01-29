@@ -1,0 +1,58 @@
+19:11:45.051 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+19:11:45.056 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+19:11:45.056 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+19:12:55.809 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+19:15:22.822 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:15:22.847 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:15:22.847 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:15:22.922 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:15:22.930 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:15:22.930 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:15:22.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:15:22.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+19:15:23.018 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:15:23.069 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+19:15:42.695 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+19:15:51.290 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+19:15:58.413 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+19:16:04.947 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+19:16:14.392 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:16:37.169 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:16:37.174 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:16:37.174 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:16:37.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:16:37.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:16:37.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:16:37.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment0.loadContent(xWikiContext0);
+xWikiAttachment0.loadArchive(xWikiContext0);
+xWikiAttachment0.getAttachment_archive();
+String string0 = xWikiAttachment0.getVersion();
+XWikiAttachmentContent xWikiAttachmentContent0 = mock(XWikiAttachmentContent.class, new ViolatedAssumptionAnswer());
+doReturn((InputStream) null).when(xWikiAttachmentContent0).getContentInputStream();
+doReturn(false).when(xWikiAttachmentContent0).isContentDirty();
+doReturn((String) null, (String) null).when(xWikiAttachmentContent0).toString();
+xWikiAttachment0.setAttachment_content(xWikiAttachmentContent0);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+boolean boolean0 = false;
+xWikiAttachment0.setMetaDataDirty(boolean0);
+xWikiAttachment0.isContentDirty();
+String string1 = xWikiAttachment0.getFilename();
+xWikiAttachment0.getContentInputStream(xWikiContext0);
+xWikiAttachment0.getReference();
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment();
+xWikiAttachment1.getFilename();
+xWikiAttachment1.setFilename(string1);
+int int0 = 8935;
+xWikiAttachment1.setFilesize(int0);
+xWikiAttachment1.setAuthor(string0);
+xWikiAttachment1.isContentDirty();
+xWikiAttachment1.getReference();
+
+19:16:37.288 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:16:38.435 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:16:45.299 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-4-0.2-9
+19:16:45.366 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

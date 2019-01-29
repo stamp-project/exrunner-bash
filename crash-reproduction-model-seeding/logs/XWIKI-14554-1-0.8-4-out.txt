@@ -1,0 +1,70 @@
+17:26:47.232 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:26:47.236 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+17:26:47.237 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+17:26:56.286 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+17:29:44.654 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:29:44.703 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:29:44.704 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:29:44.766 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:29:44.767 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:29:44.767 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:29:44.767 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:29:44.767 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+17:29:48.687 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:29:48.962 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:30:38.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.42857142857142855
+17:30:38.458 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.42857142857142855. FE: 100 
+17:30:38.458 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:31:39.534 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+17:31:39.534 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:31:39.535 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:31:39.535 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:31:39.535 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:31:39.536 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager0 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager0);
+EntityReferenceSerializer<JToolTip> entityReferenceSerializer0 = (EntityReferenceSerializer<JToolTip>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer0);
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<ChronoLocalDate> mimeMessageFactory0 = (MimeMessageFactory<ChronoLocalDate>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) logger0);
+MailSenderConfiguration mailSenderConfiguration0 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(mailSenderConfiguration0).getFromAddress();
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) mailSenderConfiguration0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class);
+Logger logger1 = null;
+periodicMimeMessageIterator0.logger = logger1;
+periodicMimeMessageIterator0.next();
+NotificationUserIterator notificationUserIterator0 = mock(NotificationUserIterator.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.computeNext();
+ServletWebContext servletWebContext0 = new ServletWebContext();
+String string0 = "XWikiUsers";
+SecureASTCustomizer secureASTCustomizer0 = new SecureASTCustomizer();
+List<String> list0 = secureASTCustomizer0.getConstantTypesWhiteList();
+SpaceReference spaceReference0 = new SpaceReference(string0, list0);
+TimerScheduler timerScheduler0 = new TimerScheduler();
+long long0 = 14L;
+TimeUnit timeUnit0 = TimeUnit.MINUTES;
+boolean boolean0 = false;
+TimeScheduler3.Task timeScheduler3_Task0 = new TimeScheduler3.Task(timerScheduler0, long0, timeUnit0, boolean0);
+servletWebContext0.put(spaceReference0, timeScheduler3_Task0);
+DocumentReference documentReference0 = null;
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, servletWebContext0, documentReference0);
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Logger logger2 = SQLCustomQuery.log;
+DocumentReferenceResolver<CompositeEvent> documentReferenceResolver0 = (DocumentReferenceResolver<CompositeEvent>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+WikiDescriptorManager wikiDescriptorManager1 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+long long1 = 0L;
+Time time0 = new Time(long1);
+
+17:31:39.568 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:31:39.806 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:31:48.330 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-0.8-4
+17:31:48.783 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

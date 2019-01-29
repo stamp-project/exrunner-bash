@@ -1,0 +1,72 @@
+14:52:00.477 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+14:52:00.482 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Period.withYears(Period:896)
+14:52:00.482 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Period
+14:52:04.919 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+14:52:18.797 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:52:18.966 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:52:18.966 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:52:19.038 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:52:19.039 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:52:19.039 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:52:19.039 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:52:19.040 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is withYears
+14:52:19.106 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:52:19.127 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Period
+14:52:28.430 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.PeriodType
+14:52:35.178 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:52:45.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+14:52:45.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+14:52:45.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:52:56.115 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+14:52:56.116 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+14:52:56.116 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:52:56.116 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:52:56.116 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+14:52:56.117 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ReadableDuration readableDuration0 = mock(ReadableDuration.class, new ViolatedAssumptionAnswer());
+doReturn(0L).when(readableDuration0).getMillis();
+ReadableInstant readableInstant0 = mock(ReadableInstant.class, new ViolatedAssumptionAnswer());
+doReturn((Chronology) null).when(readableInstant0).getChronology();
+doReturn(0L).when(readableInstant0).getMillis();
+PeriodType periodType0 = PeriodType.weeks();
+Period period0 = new Period(readableDuration0, readableInstant0, periodType0);
+int int0 = (-3);
+Period period1 = period0.withYears(int0);
+int int1 = (-292269337);
+int int2 = 100;
+period1.minusHours(int2);
+Period period2 = Period.seconds(int1);
+Period period3 = Period.months(int2);
+String string0 = "/ie";
+Period period4 = Period.parse(string0);
+Period period5 = Period.months(int1);
+period0.toStandardMinutes();
+Period period6 = period5.negated();
+period4.minus(period5);
+int int3 = 8;
+period3.negated();
+PeriodType.yearDay();
+int int4 = (-745);
+int int5 = 1046;
+Period.years(int5);
+int int6 = 12;
+period4.withMillis(int6);
+period0.getYears();
+int int7 = (-1188);
+Period period7 = period1.plusYears(int7);
+PeriodType.seconds();
+int int8 = new Integer(int0);
+period1.withYears(int5);
+PeriodType.yearDay();
+period2.minusDays(int1);
+int int9 = (-1970);
+period7.minusHours(int0);
+Period.parse(string0);
+period6.plusMinutes(int3);
+int int10 = 1556;
+period3.minusMillis(int10);
+Period.minutes(int5);
+
+14:52:56.145 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:52:56.171 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:52:56.192 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Period_ESTest' to results/TIME-5b-2-0.5-1
+14:52:56.391 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

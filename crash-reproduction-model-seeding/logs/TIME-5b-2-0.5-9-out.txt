@@ -1,0 +1,49 @@
+14:55:14.072 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+14:55:14.076 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Period.withYears(Period:896)
+14:55:14.076 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Period
+14:55:19.134 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+14:55:31.971 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:55:32.005 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:55:32.005 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:55:32.038 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:55:32.120 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:55:32.120 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:55:32.120 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:55:32.121 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is withYears
+14:55:32.248 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:55:32.358 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Period
+14:55:41.541 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.PeriodType
+14:55:48.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:56:01.256 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:56:01.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:56:01.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:56:01.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:56:01.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:56:01.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:56:01.258 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: long long0 = (-7200000L);
+PeriodType periodType0 = PeriodType.seconds();
+PeriodType periodType1 = periodType0.withWeeksRemoved();
+PeriodType periodType2 = periodType1.withMinutesRemoved();
+Period period0 = new Period(long0, periodType2);
+int int0 = period0.getMinutes();
+Period period1 = new Period();
+Period period2 = period0.multipliedBy(int0);
+period2.plusYears(int0);
+ReadableInstant readableInstant0 = mock(ReadableInstant.class, new ViolatedAssumptionAnswer());
+doReturn((Chronology) null).when(readableInstant0).getChronology();
+doReturn(0L, 0L).when(readableInstant0).getMillis();
+Period period3 = new Period(readableInstant0, readableInstant0);
+period2.withYears(int0);
+period0.toStandardWeeks();
+int int1 = 0;
+period3.withDays(int1);
+period1.minusHours(int1);
+int int2 = 9;
+Period period4 = new Period(int2, int2, int2, int2);
+ReadablePartial readablePartial0 = mock(ReadablePartial.class, new ViolatedAssumptionAnswer());
+Period period5 = new Period(readablePartial0, readablePartial0);
+
+14:56:01.296 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:56:01.567 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:56:03.745 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Period_ESTest' to results/TIME-5b-2-0.5-9
+14:56:03.756 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
