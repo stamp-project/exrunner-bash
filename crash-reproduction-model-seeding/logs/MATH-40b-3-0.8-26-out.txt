@@ -1,0 +1,72 @@
+03:45:00.611 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+03:45:00.623 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.doSolve(BracketingNthOrderBrentSolver:283)
+03:45:00.623 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver
+03:45:04.033 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+03:45:08.539 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:45:08.547 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:45:08.547 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:45:08.572 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:45:08.573 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+03:45:08.573 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+03:45:08.573 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:45:08.573 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doSolve
+03:45:08.597 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+03:45:08.779 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver
+03:45:15.208 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:45:19.836 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.6
+03:45:19.836 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.6. FE: 100 
+03:45:19.836 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:45:25.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 200
+03:45:25.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 200 
+03:45:28.506 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 300
+03:45:32.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 400
+03:45:35.857 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+03:45:35.857 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:45:35.858 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:45:35.858 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:45:35.858 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:45:35.859 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver0 = new BracketingNthOrderBrentSolver();
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver1 = new BracketingNthOrderBrentSolver();
+int int0 = bracketingNthOrderBrentSolver1.getMaximalOrder();
+int int1 = bracketingNthOrderBrentSolver0.getMaximalOrder();
+SincFunction sincFunction0 = new SincFunction();
+double double0 = 302.75853;
+AllowedSolution allowedSolution0 = AllowedSolution.LEFT_SIDE;
+double double1 = bracketingNthOrderBrentSolver1.solve(int0, (UnivariateFunction) sincFunction0, (double) int0, double0, allowedSolution0);
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver2 = new BracketingNthOrderBrentSolver();
+Expm1Function expm1Function0 = new Expm1Function();
+UnivariateFunction univariateFunction0 = expm1Function0.derivative();
+double double2 = 0.0;
+bracketingNthOrderBrentSolver2.getAbsoluteAccuracy();
+int int2 = (-261);
+double double3 = (-1.0);
+double double4 = bracketingNthOrderBrentSolver2.solve(int2, (UnivariateFunction) expm1Function0, double3);
+bracketingNthOrderBrentSolver2.getAbsoluteAccuracy();
+int int3 = 0;
+double double5 = (-1.0);
+bracketingNthOrderBrentSolver2.solve(int3, (UnivariateFunction) expm1Function0, double5);
+int int4 = bracketingNthOrderBrentSolver2.getEvaluations();
+int int5 = 11;
+double double6 = 937.463187285;
+bracketingNthOrderBrentSolver2.solve(int5, univariateFunction0, double6);
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver3 = new BracketingNthOrderBrentSolver(double1, int0, int4);
+bracketingNthOrderBrentSolver3.getEvaluations();
+bracketingNthOrderBrentSolver3.incrementEvaluationCount();
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver4 = new BracketingNthOrderBrentSolver(double3, int2, double4, int1);
+double double7 = 1.1681688445204168E-7;
+bracketingNthOrderBrentSolver1.getEvaluations();
+bracketingNthOrderBrentSolver2.solve(int3, (UnivariateFunction) expm1Function0, double7);
+double double8 = 3682.46937;
+bracketingNthOrderBrentSolver4.solve(int4, univariateFunction0, double8);
+SinFunction sinFunction0 = new SinFunction();
+sinFunction0.value(int4);
+sinFunction0.derivative();
+bracketingNthOrderBrentSolver4.doSolve();
+bracketingNthOrderBrentSolver3.getMaximalOrder();
+bracketingNthOrderBrentSolver0.doSolve();
+bracketingNthOrderBrentSolver2.getMaximalOrder();
+
+03:45:35.923 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:45:36.697 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:45:38.543 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BracketingNthOrderBrentSolver_ESTest' to results/MATH-40b-3-0.8-26
+03:45:38.549 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

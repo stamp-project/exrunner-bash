@@ -1,0 +1,68 @@
+17:55:49.490 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:55:49.494 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BisectionSolver.solve(BisectionSolver:72)
+17:55:49.494 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BisectionSolver
+17:55:50.828 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+17:55:57.309 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:55:57.341 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:55:57.342 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:55:57.386 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:55:57.402 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:55:57.403 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:55:57.403 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:55:57.403 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+17:55:57.444 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:55:57.465 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:56:05.572 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+17:56:05.572 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+17:56:05.572 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:56:13.384 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+17:56:13.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:56:13.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:56:13.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:56:13.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:56:13.386 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BisectionSolver bisectionSolver0 = new BisectionSolver();
+BisectionSolver bisectionSolver1 = new BisectionSolver();
+double double0 = (-1800.3505120577);
+UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+Expm1Function expm1Function0 = new Expm1Function();
+double double1 = 0.3995878464821948;
+bisectionSolver1.setAbsoluteAccuracy(double1);
+double double2 = 1956.12;
+bisectionSolver0.solve((UnivariateRealFunction) expm1Function0, double1, double2, double1);
+double double3 = 1.0;
+double double4 = bisectionSolver0.solve((UnivariateRealFunction) expm1Function0, double1, double0, double3);
+double double5 = 0.0;
+double double6 = (-1538.0);
+double double7 = bisectionSolver1.functionValueAccuracy;
+UnivariateRealFunction univariateRealFunction1 = null;
+double double8 = (-3754.50041);
+double double9 = 0.0;
+bisectionSolver0.solve(univariateRealFunction1, double7, double8, double9);
+double double10 = (-1556.43755477);
+double double11 = bisectionSolver0.functionValueAccuracy;
+BisectionSolver bisectionSolver2 = new BisectionSolver();
+double double12 = (-1.0);
+BisectionSolver bisectionSolver3 = new BisectionSolver(univariateRealFunction1);
+double double13 = 1169.6156983;
+double double14 = bisectionSolver3.functionValueAccuracy;
+BisectionSolver bisectionSolver4 = new BisectionSolver(univariateRealFunction1);
+bisectionSolver4.result = double4;
+double double15 = 1.0E-6;
+boolean boolean0 = bisectionSolver3.isBracketing(double12, double15, expm1Function0);
+bisectionSolver3.resultComputed = boolean0;
+double double16 = 0.0;
+double double17 = (-714.0);
+bisectionSolver3.solve(double16, double17);
+double double18 = 1.0254031068690495E-6;
+double double19 = bisectionSolver3.functionValue;
+double double20 = (-3117.956);
+double double21 = 4.101612427032109E-6;
+double double22 = bisectionSolver1.functionValueAccuracy;
+bisectionSolver4.solve(double14, double17);
+double double23 = 1.0;
+bisectionSolver4.solve(double23, double8);
+
+17:56:13.392 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:56:13.511 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:56:14.721 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BisectionSolver_ESTest' to results/MATH-70b-3-0.8-11
+17:56:14.770 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

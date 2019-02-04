@@ -1,0 +1,62 @@
+22:57:54.180 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:57:54.184 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+22:57:54.184 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+22:59:02.313 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+23:00:15.462 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:00:15.487 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:00:15.487 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:00:15.529 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:00:15.529 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:00:15.529 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:00:15.529 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:00:15.529 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+23:00:15.643 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:00:15.792 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+23:00:27.777 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+23:00:34.780 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+23:00:40.777 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+23:00:47.679 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+23:00:53.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:01:04.748 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:01:04.748 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:01:04.748 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:01:04.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:01:04.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:01:04.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:01:04.750 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "Invalid type [";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+String string1 = null;
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference1 = new AttachmentReference(string1, documentReference1);
+AttachmentReference attachmentReference2 = new AttachmentReference(attachmentReference1, attachmentReference0, attachmentReference0);
+AttachmentReference attachmentReference3 = new AttachmentReference(attachmentReference0, attachmentReference2, attachmentReference2);
+DocumentReference documentReference2 = attachmentReference1.getDocumentReference();
+AttachmentReference attachmentReference4 = new AttachmentReference(attachmentReference2);
+DocumentReference documentReference3 = attachmentReference3.getDocumentReference();
+AttachmentReference attachmentReference5 = new AttachmentReference(string1, documentReference3);
+DocumentReference documentReference4 = attachmentReference0.getDocumentReference();
+AttachmentReference attachmentReference6 = new AttachmentReference(attachmentReference2, attachmentReference2, attachmentReference5);
+attachmentReference5.setParent(attachmentReference2);
+AttachmentReference attachmentReference7 = new AttachmentReference(string1, documentReference4);
+attachmentReference4.replaceParent(documentReference2, documentReference3);
+attachmentReference4.getDocumentReference();
+attachmentReference2.setParent(attachmentReference0);
+DocumentReference documentReference5 = attachmentReference1.getDocumentReference();
+EntityType entityType0 = EntityType.WIKI;
+attachmentReference1.setType(entityType0);
+String string2 = ",tBgS*HZdh+1k)Fa";
+AttachmentReference attachmentReference8 = new AttachmentReference(string2, documentReference2);
+DocumentReference documentReference6 = attachmentReference8.getDocumentReference();
+AttachmentReference attachmentReference9 = new AttachmentReference(string0, documentReference6);
+String string3 = "}";
+AttachmentReference attachmentReference10 = new AttachmentReference(string3, documentReference5);
+AttachmentReference attachmentReference11 = new AttachmentReference(string1, documentReference2);
+AttachmentReference attachmentReference12 = new AttachmentReference(attachmentReference11, attachmentReference5, documentReference2);
+AttachmentReference attachmentReference13 = new AttachmentReference(attachmentReference5);
+AttachmentReference attachmentReference14 = new AttachmentReference(attachmentReference13, documentReference3, documentReference6);
+
+23:01:04.811 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:01:05.439 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:01:16.585 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-12667-3-0.2-21
+23:01:16.623 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,71 @@
+12:12:54.833 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+12:12:54.849 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.chrono.BaseChronology.set(BaseChronology:240)
+12:12:54.849 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.chrono.BaseChronology
+12:12:57.878 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+12:13:08.735 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:13:08.782 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:13:08.783 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:13:08.840 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:13:08.841 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:13:08.841 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:13:08.841 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:13:08.841 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is set
+12:13:08.892 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:13:08.922 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+12:13:16.339 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.base.BaseSingleFieldPeriod
+12:13:23.285 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Days
+12:13:29.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:13:40.153 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6
+12:13:40.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. FE: 100 
+12:13:40.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:13:57.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+12:13:57.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:13:57.879 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:13:57.879 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:13:57.879 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:13:57.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EthiopicChronology ethiopicChronology0 = EthiopicChronology.getInstance();
+ethiopicChronology0.eras();
+MonthDay monthDay0 = new MonthDay();
+long long0 = (-1944L);
+long long1 = BasicFixedMonthChronology.MILLIS_PER_MONTH;
+long long2 = BasicFixedMonthChronology.MILLIS_PER_MONTH;
+long long3 = 537L;
+long long4 = BasicFixedMonthChronology.MILLIS_PER_MONTH;
+ethiopicChronology0.days();
+AssembledChronology.Fields assembledChronology_Fields0 = new AssembledChronology.Fields();
+ethiopicChronology0.assemble(assembledChronology_Fields0);
+ethiopicChronology0.millisOfDay();
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.getDefault();
+ZonedChronology zonedChronology0 = ZonedChronology.getInstance(ethiopicChronology0, fixedDateTimeZone0);
+zonedChronology0.set(monthDay0, long0);
+ethiopicChronology0.millis();
+ethiopicChronology0.withUTC();
+zonedChronology0.toString();
+zonedChronology0.seconds();
+AssembledChronology.Fields assembledChronology_Fields1 = new AssembledChronology.Fields();
+long long5 = 2003L;
+int int0 = 5143;
+HijrahChronology hijrahChronology0 = HijrahChronology.INSTANCE;
+ThaiBuddhistChronology thaiBuddhistChronology0 = ThaiBuddhistChronology.INSTANCE;
+HashMap<TemporalField, Long> hashMap0 = new HashMap<TemporalField, Long>();
+ResolverStyle resolverStyle0 = ResolverStyle.SMART;
+ThaiBuddhistDate thaiBuddhistDate0 = thaiBuddhistChronology0.resolveDate(hashMap0, resolverStyle0);
+thaiBuddhistDate0.getChronology();
+ChronoField chronoField0 = ChronoField.PROLEPTIC_MONTH;
+Long long6 = null;
+hashMap0.put(chronoField0, long6);
+ChronoField chronoField1 = ChronoField.CLOCK_HOUR_OF_DAY;
+int int1 = 1051;
+int int2 = 2146560792;
+IslamicChronology islamicChronology0 = IslamicChronology.getInstance();
+islamicChronology0.getMinYear();
+MutableDateTime mutableDateTime0 = new MutableDateTime((Object) zonedChronology0);
+long long7 = 60L;
+islamicChronology0.getDayOfMonth(long7, int2);
+LimitChronology limitChronology0 = LimitChronology.getInstance(islamicChronology0, mutableDateTime0, mutableDateTime0);
+limitChronology0.getLowerLimit();
+
+12:13:57.900 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:13:58.356 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:14:01.205 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseChronology_ESTest' to results/TIME-10b-3-0.8-26
+12:14:01.227 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

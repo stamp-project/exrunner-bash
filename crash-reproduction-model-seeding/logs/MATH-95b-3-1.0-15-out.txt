@@ -1,0 +1,46 @@
+11:39:35.422 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:39:35.425 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution.inverseCumulativeProbability(AbstractContinuousDistribution:84)
+11:39:35.426 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution
+11:39:37.341 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+11:39:43.672 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:39:43.685 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:39:43.685 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:39:43.768 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:39:43.768 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:39:43.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:39:43.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:39:43.769 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is inverseCumulativeProbability
+11:39:43.819 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:39:43.847 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.UnivariateRealSolverUtils
+11:39:50.667 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.AbstractContinuousDistribution
+11:39:55.947 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.FDistributionImpl
+11:40:01.728 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:40:08.384 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:40:08.406 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:40:08.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:40:08.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:40:08.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:40:08.407 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:40:08.409 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CauchyDistributionImpl cauchyDistributionImpl0 = new CauchyDistributionImpl();
+double double0 = 4.9E-324;
+GammaDistribution gammaDistribution0 = mock(GammaDistribution.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(gammaDistribution0).cumulativeProbability(anyDouble());
+doReturn(0.0, 0.0).when(gammaDistribution0).getAlpha();
+doReturn(0.0, 0.0).when(gammaDistribution0).getBeta();
+ChiSquaredDistributionImpl chiSquaredDistributionImpl0 = new ChiSquaredDistributionImpl(double0, gammaDistribution0);
+double double1 = 1.0E-6;
+cauchyDistributionImpl0.inverseCumulativeProbability(double1);
+double double2 = (-3215.2273897065284);
+double double3 = chiSquaredDistributionImpl0.getDomainLowerBound(double2);
+double double4 = 950.2145;
+chiSquaredDistributionImpl0.cumulativeProbability(double4);
+CauchyDistributionImpl cauchyDistributionImpl1 = new CauchyDistributionImpl();
+double double5 = (-1.0);
+cauchyDistributionImpl0.setMedian(double5);
+cauchyDistributionImpl1.cumulativeProbability(double3);
+chiSquaredDistributionImpl0.inverseCumulativeProbability(double0);
+
+11:40:08.433 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:40:08.631 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:40:11.160 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractContinuousDistribution_ESTest' to results/MATH-95b-3-1.0-15
+11:40:11.178 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

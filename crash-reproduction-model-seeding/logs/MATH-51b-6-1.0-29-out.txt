@@ -1,0 +1,70 @@
+08:32:25.620 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+08:32:25.623 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseSecantSolver.solve(BaseSecantSolver:124)
+08:32:25.624 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseSecantSolver
+08:32:27.455 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+08:32:34.013 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+08:32:34.042 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:32:34.043 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+08:32:34.076 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+08:32:34.076 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+08:32:34.076 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+08:32:34.077 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+08:32:34.077 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+08:32:34.115 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+08:32:34.176 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+08:32:40.595 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.32941176470588235
+08:32:40.596 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.32941176470588235. FE: 100 
+08:32:40.596 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+08:32:47.049 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+08:32:47.050 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+08:32:47.050 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+08:32:47.050 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+08:32:47.050 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+08:32:47.051 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 0.0;
+double double1 = 0.5;
+IllinoisSolver illinoisSolver0 = new IllinoisSolver(double0);
+double double2 = 0.5;
+PegasusSolver pegasusSolver0 = new PegasusSolver(double2, double0);
+int int0 = 2;
+QuinticFunction quinticFunction0 = new QuinticFunction();
+double double3 = (-1.7168146928204135);
+double double4 = illinoisSolver0.solve(int0, (UnivariateRealFunction) quinticFunction0, double3, (double) int0, double0);
+double double5 = 2526.84880297143;
+IllinoisSolver illinoisSolver1 = new IllinoisSolver(double5, double5, double0);
+double double6 = (-1758.626779327532);
+double double7 = 1813.72;
+IllinoisSolver illinoisSolver2 = new IllinoisSolver(double6, double7, double4);
+int int1 = 9;
+UnivariateRealFunction univariateRealFunction0 = null;
+double double8 = 1.0E-6;
+AllowedSolution allowedSolution0 = AllowedSolution.ABOVE_SIDE;
+illinoisSolver1.solve(int1, univariateRealFunction0, double8, double6, allowedSolution0);
+double double9 = 0.0;
+double double10 = BaseSecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+IllinoisSolver illinoisSolver3 = new IllinoisSolver(double9);
+double double11 = 17.11;
+PegasusSolver pegasusSolver1 = new PegasusSolver(double0, double6);
+double double12 = 29.79992233681366;
+illinoisSolver3.incrementEvaluationCount();
+int int2 = 22;
+double double13 = 3311.99266167;
+double double14 = (-2713.5614919374734);
+int int3 = (-3967);
+illinoisSolver3.solve(int3, univariateRealFunction0, double11, double0, double14);
+illinoisSolver3.solve(int2, univariateRealFunction0, double13, double14, double1);
+double double15 = 0.0;
+illinoisSolver0.solve(int0, univariateRealFunction0, double0, double14, double15);
+AllowedSolution allowedSolution1 = AllowedSolution.RIGHT_SIDE;
+double double16 = BaseSecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+illinoisSolver3.doSolve();
+illinoisSolver2.solve(int2, univariateRealFunction0, double7, double16, (double) int2, allowedSolution1);
+double double17 = 1.2675934823758863E-8;
+double double18 = (-53.25133);
+double double19 = (-1.0);
+AllowedSolution allowedSolution2 = AllowedSolution.RIGHT_SIDE;
+pegasusSolver1.solve(int0, (UnivariateRealFunction) quinticFunction0, double17, double18, double19, allowedSolution2);
+
+08:32:47.068 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+08:32:47.349 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+08:32:48.987 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseSecantSolver_ESTest' to results/MATH-51b-6-1.0-29
+08:32:48.998 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

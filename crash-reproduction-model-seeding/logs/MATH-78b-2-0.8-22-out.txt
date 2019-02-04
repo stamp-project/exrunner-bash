@@ -1,0 +1,64 @@
+07:04:45.977 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$4
+07:04:45.981 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BrentSolver.solve(BrentSolver:178)
+07:04:45.981 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BrentSolver
+07:04:50.698 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+07:04:57.113 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:04:57.141 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:04:57.141 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:04:57.176 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:04:57.182 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:04:57.183 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:04:57.183 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:04:57.183 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+07:04:57.216 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:04:57.268 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.MathRuntimeException
+07:05:04.723 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.solvers.BrentSolver
+07:05:11.466 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.ode.events.EventState
+07:05:17.363 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:05:25.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.142857142857142
+07:05:25.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.142857142857142. FE: 100 
+07:05:25.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:05:34.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+07:05:34.962 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+07:05:34.962 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:05:34.962 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:05:34.962 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+07:05:34.963 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BrentSolver brentSolver0 = new BrentSolver();
+BrentSolver brentSolver1 = new BrentSolver();
+QuinticFunction quinticFunction0 = new QuinticFunction();
+double double0 = 497.0;
+double double1 = 2697.7224812563827;
+quinticFunction0.derivative();
+UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double2 = (-2502.6398599337);
+brentSolver1.resetRelativeAccuracy();
+double double3 = (-1163.870296);
+QuinticFunction quinticFunction1 = new QuinticFunction();
+double double4 = 982.3910921382723;
+UnivariateRealFunction univariateRealFunction2 = quinticFunction1.derivative();
+Expm1Function expm1Function0 = new Expm1Function();
+double double5 = 1463.355393;
+brentSolver0.solve((UnivariateRealFunction) quinticFunction1, double4, double5);
+UnivariateRealFunction univariateRealFunction3 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double6 = 1285.87862134226;
+double double7 = 1.0E-6;
+double double8 = 1.0E-6;
+double double9 = brentSolver0.solve(double8, brentSolver1.defaultFunctionValueAccuracy, double5);
+double double10 = (-1642.5305332038724);
+double double11 = brentSolver0.functionValue;
+double double12 = 1.0E-15;
+brentSolver0.solve(double6, double12);
+double double13 = (-43.92151023134026);
+brentSolver0.solve(double13, double9);
+brentSolver0.checkResultComputed();
+double double14 = 0.5711733135247822;
+double double15 = 0.03245011942354147;
+brentSolver0.solve(univariateRealFunction2, double14, double15);
+double double16 = (-2774.5892542);
+brentSolver1.solve((UnivariateRealFunction) quinticFunction0, double4, double16);
+
+07:05:34.994 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:05:35.163 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:05:37.789 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BrentSolver_ESTest' to results/MATH-78b-2-0.8-22
+07:05:37.797 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

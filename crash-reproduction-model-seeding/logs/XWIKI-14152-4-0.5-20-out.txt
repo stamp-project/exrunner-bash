@@ -1,0 +1,40 @@
+00:02:37.010 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+00:02:37.014 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.internal.CountDocumentFilter.filterStatement(CountDocumentFilter:70)
+00:02:37.018 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.internal.CountDocumentFilter
+00:02:41.353 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+00:03:08.171 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:03:08.200 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:03:08.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:03:08.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:03:08.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:03:08.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:03:08.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:03:08.231 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is filterStatement
+00:03:08.268 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:03:08.327 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+00:03:14.702 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+00:03:24.274 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+00:03:30.280 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+00:03:35.687 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:03:41.869 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:03:41.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:03:41.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:03:41.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:03:41.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:03:41.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:03:41.871 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+String string0 = "Query [{}] has been transformed into [{}]";
+countDocumentFilter0.filterStatement(string0, string0);
+String string1 = "\\\\";
+String string2 = "hql";
+countDocumentFilter0.filterStatement(string1, string2);
+LinkedList<Object> linkedList0 = new LinkedList<Object>();
+countDocumentFilter0.filterResults(linkedList0);
+
+00:03:41.951 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:03:42.136 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:03:46.116 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'CountDocumentFilter_ESTest' to results/XWIKI-14152-4-0.5-20
+00:03:46.132 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

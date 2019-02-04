@@ -1,0 +1,67 @@
+14:00:40.830 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:00:40.838 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+14:00:40.838 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+14:00:43.978 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+14:00:58.877 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:00:58.900 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:00:58.900 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:00:58.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:00:58.956 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:00:58.963 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:00:58.963 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:00:58.964 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+14:00:59.003 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:00:59.006 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+14:01:08.580 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:01:20.526 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:01:20.527 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:01:20.527 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:01:20.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:01:20.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:01:20.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:01:20.529 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfWeek();
+int int0 = 0;
+boolean boolean0 = true;
+int int1 = 1;
+DateTimeFormatterBuilder.PaddedNumber dateTimeFormatterBuilder_PaddedNumber0 = new DateTimeFormatterBuilder.PaddedNumber(dateTimeFieldType0, int0, boolean0, int1);
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimeFormatterBuilder_PaddedNumber0, dateTimeFormatterBuilder_PaddedNumber0);
+String string0 = "Value ";
+dateTimeFormatter0.parseDateTime(string0);
+dateTimeFormatter0.withOffsetParsed();
+dateTimeFormatter0.withOffsetParsed();
+int int2 = 0;
+DateTimeZone dateTimeZone0 = DateTimeZone.forOffsetHours(int2);
+BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstance(dateTimeZone0);
+ZonedChronology zonedChronology0 = ZonedChronology.getInstance(buddhistChronology0, dateTimeZone0);
+Chronology chronology0 = zonedChronology0.withZone(dateTimeZone0);
+MutableDateTime mutableDateTime0 = new MutableDateTime(chronology0);
+MutableDateTime mutableDateTime1 = mutableDateTime0.toMutableDateTime(dateTimeZone0);
+String string1 = "+00";
+int int3 = 0;
+int int4 = dateTimeFormatter0.parseInto(mutableDateTime1, string1, int3);
+DateTimeFieldType[] dateTimeFieldTypeArray0 = new DateTimeFieldType[4];
+dateTimeFieldTypeArray0[0] = dateTimeFieldType0;
+DateTimeFieldType dateTimeFieldType1 = DateTimeFieldType.minuteOfDay();
+dateTimeFieldTypeArray0[1] = dateTimeFieldType1;
+dateTimeFieldTypeArray0[2] = dateTimeFieldType0;
+dateTimeFieldTypeArray0[3] = dateTimeFieldType0;
+int[] intArray0 = new int[9];
+intArray0[0] = int1;
+intArray0[1] = int0;
+intArray0[2] = int4;
+intArray0[3] = int2;
+intArray0[4] = int1;
+intArray0[5] = int0;
+intArray0[6] = int2;
+intArray0[7] = int3;
+intArray0[8] = int1;
+Partial partial0 = new Partial(dateTimeFieldTypeArray0, intArray0, zonedChronology0);
+DateTimeFormatter dateTimeFormatter1 = partial0.getFormatter();
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter1.withZone(dateTimeZone0);
+String string2 = "";
+dateTimeFormatter2.parseDateTime(string2);
+
+14:01:20.563 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:01:20.860 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:01:22.916 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-0.8-29
+14:01:22.933 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,77 @@
+22:38:39.506 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:38:39.514 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+22:38:39.514 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+22:39:40.099 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+22:41:44.694 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:41:44.723 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:41:44.723 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:41:44.747 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:41:44.748 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:41:44.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:41:44.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:41:44.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+22:41:44.803 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:41:44.833 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+22:41:53.810 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+22:42:01.266 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+22:42:06.769 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+22:42:12.274 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+22:42:17.570 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:42:25.727 [TEST_EXECUTION_THREAD_1] WARN  com.xpn.xwiki.doc.XWikiAttachment - Failed to load archive for attachment [@<unknown>]. This attachment is broken, please consider re-uploading it. Internal error: null
+22:42:32.838 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.5161290322580646
+22:42:32.838 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5161290322580646. FE: 100 
+22:42:32.838 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:43:20.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5161290322580646 | 200
+22:43:50.437 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5161290322580646 | 300
+22:44:12.795 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 400
+22:44:12.795 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+22:44:12.796 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:44:12.796 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:44:12.796 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+22:44:12.797 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+XWikiAttachmentContent xWikiAttachmentContent0 = new XWikiAttachmentContent();
+XWikiDocument xWikiDocument1 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument1).getDocumentReference();
+doReturn((String) null).when(xWikiDocument1).toString();
+xWikiAttachment0.setDoc(xWikiDocument1);
+String string1 = "Failed o load archive for attachment [{}@{}]. This attachment is broken, please consider re-uploading it. Internal error: {}";
+XWikiDocument xWikiDocument2 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+XWikiAttachmentContent xWikiAttachmentContent1 = new XWikiAttachmentContent();
+XWikiAttachment xWikiAttachment1 = (XWikiAttachment)xWikiAttachment0.clone();
+XWikiAttachment xWikiAttachment2 = new XWikiAttachment();
+xWikiAttachment1.getReference();
+XWikiAttachment xWikiAttachment3 = new XWikiAttachment();
+MockServletContext mockServletContext0 = new MockServletContext();
+InputStream inputStream0 = mockServletContext0.getResourceAsStream(string1);
+int int0 = 0;
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = new XWikiContext();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+xWikiAttachment3.getContent(xWikiContext2);
+xWikiAttachment2.setContent(inputStream0, int0);
+xWikiAttachment3.isContentDirty();
+byte[] byteArray0 = new byte[10];
+byte byte0 = (byte) (-115);
+byteArray0[2] = byte0;
+byte byte1 = (byte)56;
+byteArray0[1] = byte1;
+byteArray0[2] = byteArray0[2];
+byteArray0[3] = byteArray0[1];
+byte byte2 = (byte) (-53);
+byteArray0[4] = byte2;
+byte byte3 = (byte) (-61);
+byteArray0[3] = byte3;
+byte byte4 = (byte)38;
+byteArray0[6] = byte4;
+byte byte5 = (byte) (-35);
+byteArray0[3] = byte5;
+byte byte6 = (byte) (-34);
+byteArray0[8] = byte6;
+xWikiAttachment2.setContent(byteArray0);
+
+22:44:12.831 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:44:13.483 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:44:18.846 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-4-0.2-13
+22:44:18.903 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,69 @@
+17:29:39.050 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:29:39.054 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+17:29:39.054 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+17:29:58.547 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+17:30:39.258 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:30:39.322 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:30:39.322 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:30:39.348 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:30:39.371 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:30:39.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:30:39.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:30:39.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+17:30:39.421 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:30:39.422 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+17:30:48.443 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+17:31:00.224 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+17:31:08.120 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+17:31:14.795 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:31:58.141 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+17:31:58.141 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:31:58.141 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:31:58.171 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:31:58.171 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:31:58.171 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:31:58.172 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYPlot xYPlot0 = new XYPlot();
+int int0 = 0;
+XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+xYPlot0.setDataset(int0, xYDataset0);
+double double0 = 4175.9115716637525;
+String string0 = null;
+CyclicNumberAxis cyclicNumberAxis0 = new CyclicNumberAxis(int0, double0, string0);
+xYPlot0.setDomainAxis(int0, (ValueAxis) cyclicNumberAxis0);
+AxisLocation axisLocation0 = mock(AxisLocation.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = true;
+xYPlot0.setDomainAxisLocation(int0, axisLocation0, boolean0);
+Graphics2D graphics2D0 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+xYPlot0.getDataRange(cyclicNumberAxis0);
+boolean boolean1 = false;
+xYPlot0.setDomainCrosshairLockedOnData(boolean1);
+xYPlot0.isRangeCrosshairVisible();
+Marker marker0 = mock(Marker.class, new ViolatedAssumptionAnswer());
+Layer layer0 = mock(Layer.class, new ViolatedAssumptionAnswer());
+boolean boolean2 = false;
+xYPlot0.addRangeMarker(int0, marker0, layer0, boolean2);
+BasicListUI basicListUI0 = new BasicListUI();
+JList<DefaultWindDataset> jList0 = (JList<DefaultWindDataset>) mock(JList.class, new ViolatedAssumptionAnswer());
+Point point0 = basicListUI0.indexToLocation(jList0, int0);
+MultiMenuItemUI multiMenuItemUI0 = new MultiMenuItemUI();
+JButton jButton0 = new JButton();
+Dimension dimension0 = multiMenuItemUI0.getMinimumSize(jButton0);
+Rectangle rectangle0 = new Rectangle(point0, dimension0);
+float float0 = 684.0F;
+Phrase phrase0 = new Phrase(float0);
+xYPlot0.drawDomainTickBands(graphics2D0, rectangle0, phrase0);
+Paint paint0 = xYPlot0.getRangeZeroBaselinePaint();
+Graphics2D graphics2D1 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+PlotOrientation plotOrientation0 = mock(PlotOrientation.class, new ViolatedAssumptionAnswer());
+xYPlot0.drawDomainCrosshair(graphics2D1, rectangle0, plotOrientation0, rectangle0.y, cyclicNumberAxis0, cyclicNumberAxis0.DEFAULT_ADVANCE_LINE_STROKE, paint0);
+boolean boolean3 = false;
+xYPlot0.setDomainCrosshairLockedOnData(boolean3);
+XYDataset xYDataset1 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+xYPlot0.getRendererForDataset(xYDataset1);
+
+17:31:58.195 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:31:59.414 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:32:03.064 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-0.8-25
+17:32:03.126 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

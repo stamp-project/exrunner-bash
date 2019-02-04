@@ -1,0 +1,55 @@
+18:44:02.126 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:44:02.131 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver.resolveDefaultReference(AbstractEntityReferenceResolver:77)
+18:44:02.131 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver
+18:44:06.499 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+18:44:45.588 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:44:45.612 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:44:45.612 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:44:45.643 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:44:45.643 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:44:45.643 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:44:45.644 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:44:45.644 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is resolveDefaultReference
+18:44:45.683 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:44:46.013 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:45:00.952 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:45:00.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:00.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:45:00.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:45:00.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:45:00.954 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:01.012 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultReferenceEntityReferenceResolver defaultReferenceEntityReferenceResolver0 = new DefaultReferenceEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider0 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+doReturn((EntityReference) null).when(entityReferenceProvider0).getDefaultReference(any(org.xwiki.model.EntityType.class));
+Injector.inject(defaultReferenceEntityReferenceResolver0, (Class<?>) DefaultReferenceEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider0);
+Injector.validateBean(defaultReferenceEntityReferenceResolver0, (Class<?>) DefaultReferenceEntityReferenceResolver.class);
+EntityType entityType0 = EntityType.OBJECT;
+Object[] objectArray0 = new Object[1];
+objectArray0[0] = (Object) entityReferenceProvider0;
+defaultReferenceEntityReferenceResolver0.getDefaultReference(entityType0, objectArray0);
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+SymbolScheme symbolScheme0 = mock(SymbolScheme.class, new ViolatedAssumptionAnswer());
+Injector.inject(explicitStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) symbolScheme0);
+Injector.validateBean(explicitStringEntityReferenceResolver0, (Class<?>) ExplicitStringEntityReferenceResolver.class);
+SymbolScheme symbolScheme1 = mock(SymbolScheme.class, new ViolatedAssumptionAnswer());
+doReturn((Character) null).when(symbolScheme1).getEscapeSymbol();
+doReturn((Map) null).when(symbolScheme1).getSeparatorSymbols();
+RelativeStringEntityReferenceResolver relativeStringEntityReferenceResolver0 = new RelativeStringEntityReferenceResolver(symbolScheme1);
+SymbolScheme symbolScheme2 = mock(SymbolScheme.class, new ViolatedAssumptionAnswer());
+Injector.inject(relativeStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) symbolScheme2);
+Injector.validateBean(relativeStringEntityReferenceResolver0, (Class<?>) RelativeStringEntityReferenceResolver.class);
+DefaultReferenceEntityReferenceResolver defaultReferenceEntityReferenceResolver1 = new DefaultReferenceEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider1 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultReferenceEntityReferenceResolver1, (Class<?>) DefaultReferenceEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider1);
+Injector.validateBean(defaultReferenceEntityReferenceResolver1, (Class<?>) DefaultReferenceEntityReferenceResolver.class);
+EntityType entityType1 = EntityType.OBJECT;
+explicitStringEntityReferenceResolver0.resolveDefaultReference(entityType1, objectArray0);
+DefaultReferenceEntityReferenceResolver defaultReferenceEntityReferenceResolver2 = new DefaultReferenceEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider2 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultReferenceEntityReferenceResolver2, (Class<?>) DefaultReferenceEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider2);
+Injector.validateBean(defaultReferenceEntityReferenceResolver2, (Class<?>) DefaultReferenceEntityReferenceResolver.class);
+
+18:45:01.102 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:45:01.168 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:45:01.210 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEntityReferenceResolver_ESTest' to results/XWIKI-13942-2-0.8-30
+18:45:01.389 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

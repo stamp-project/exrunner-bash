@@ -1,0 +1,73 @@
+15:06:20.572 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+15:06:20.575 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.when(MockitoCore:56)
+15:06:20.576 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+15:06:23.211 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+15:06:31.664 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:06:31.710 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:06:31.711 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:06:31.829 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:06:31.829 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:06:31.829 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:06:31.829 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:06:31.830 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is when
+15:06:31.957 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:06:31.995 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+15:06:38.613 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+15:06:44.088 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+15:06:49.486 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:06:49.516 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:49.518 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:49.523 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:49.569 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+15:06:49.569 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 0 
+15:06:49.569 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:06:58.568 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+15:06:58.568 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:06:58.568 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:06:58.568 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:06:58.568 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:06:58.569 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MockitoCore mockitoCore0 = new MockitoCore();
+Class<Invocation> class0 = Invocation.class;
+String string0 = "Mocked type must be: ";
+MockitoCore mockitoCore1 = new MockitoCore();
+mockitoCore1.when(mockitoCore0);
+MockitoCore mockitoCore2 = new MockitoCore();
+Invocation invocation0 = mockitoCore2.getLastInvocation();
+Invocation.isToString(invocation0);
+mockitoCore1.getLastInvocation();
+VerificationMode verificationMode0 = mock(VerificationMode.class, new ViolatedAssumptionAnswer());
+MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+mockitoCore0.validateMockitoUsage();
+mockitoCore2.stub();
+Class<Object> class1 = Object.class;
+boolean boolean0 = false;
+mockitoCore1.mock(class1, (MockSettings) mockSettingsImpl0, boolean0);
+Method method0 = invocation0.getMethod();
+method0.setAccessible(boolean0);
+mockSettingsImpl0.serializable();
+int int0 = 5;
+String string1 = "";
+Type type0 = Type.FLOAT_TYPE;
+Type[] typeArray0 = new Type[7];
+Type type1 = Type.LONG_TYPE;
+typeArray0[0] = type1;
+typeArray0[1] = type0;
+typeArray0[2] = type0;
+typeArray0[3] = typeArray0[1];
+typeArray0[4] = type0;
+typeArray0[0] = type0;
+typeArray0[6] = type0;
+Signature signature0 = new Signature(string1, string1);
+MethodProxy methodProxy0 = MethodProxy.find(class0, signature0);
+SerializableMockitoMethodProxy serializableMockitoMethodProxy0 = new SerializableMockitoMethodProxy(methodProxy0);
+Integer integer0 = new Integer(int0);
+String string2 = "";
+Integer.parseUnsignedInt(string2);
+mockitoCore2.stubVoid(mockSettingsImpl0);
+mockitoCore1.verify(mockSettingsImpl0, verificationMode0);
+mockitoCore0.getLastInvocation();
+
+15:06:58.588 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:06:58.717 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:06:59.853 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-3-0.5-30
+15:06:59.858 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

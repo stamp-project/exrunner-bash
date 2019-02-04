@@ -1,0 +1,71 @@
+13:05:25.896 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+13:05:25.900 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateFormat.<init>(FastDateFormat:370)
+13:05:25.900 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateFormat
+13:05:28.060 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+13:05:35.816 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:05:35.920 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:05:35.920 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:05:35.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:05:35.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:05:35.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:05:35.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:05:35.948 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+13:05:35.995 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+13:05:36.063 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+13:05:42.710 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+13:05:48.255 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+13:05:53.997 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:06:02.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+13:06:02.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+13:06:02.718 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:06:09.561 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+13:06:16.297 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+13:06:16.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+13:06:16.299 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:06:16.299 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:06:16.299 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+13:06:16.300 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = ",";
+int int0 = 3;
+FastDateFormat.getDateInstance(int0);
+FastDateFormat fastDateFormat0 = FastDateFormat.getInstance(string0);
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+Locale locale1 = null;
+FastDateFormat fastDateFormat1 = FastDateFormat.getDateTimeInstance(int0, int0, locale1);
+String string1 = "kzYLv%l%bZ:)";
+int int1 = 1;
+FastDateFormat.getDateTimeInstance(int0, int1, locale0);
+int int2 = (-2033);
+String string2 = "A\"Q";
+int int3 = 0;
+ParsePosition parsePosition0 = new ParsePosition(int3);
+int int4 = 3;
+FastDateFormat fastDateFormat2 = FastDateFormat.getTimeInstance(int4);
+String string3 = "(\\p{IsNd}{";
+SimpleTimeZone simpleTimeZone0 = new SimpleTimeZone(int0, string0, int1, int2, int1, int1, int0, int4, int1, int4, int0);
+Locale locale2 = Locale.JAPAN;
+Locale locale3 = Locale.US;
+locale2.getDisplayVariant(locale3);
+FastDateFormat fastDateFormat3 = FastDateFormat.getInstance(string3, (TimeZone) simpleTimeZone0, locale2);
+Locale locale4 = fastDateFormat2.getLocale();
+int int5 = 46;
+String string4 = "";
+Locale locale5 = Locale.forLanguageTag(string4);
+fastDateFormat0.parseObject(string0, parsePosition0);
+int int6 = (-3839);
+String string5 = "C<Ay";
+FastDateFormat fastDateFormat4 = FastDateFormat.getInstance(string5, locale4);
+fastDateFormat4.parse(string5, parsePosition0);
+Object object0 = fastDateFormat3.parseObject(string4, parsePosition0);
+StringBuffer stringBuffer0 = new StringBuffer((CharSequence) string1);
+Format.Field format_Field0 = mock(Format.Field.class, new ViolatedAssumptionAnswer());
+FieldPosition fieldPosition0 = new FieldPosition(format_Field0, int1);
+fastDateFormat1.format(object0, stringBuffer0, fieldPosition0);
+FastDateFormat.getDateTimeInstance(int0, int2, (TimeZone) simpleTimeZone0, locale5);
+FastDateFormat.getDateInstance(int2, locale0);
+int int7 = 3216;
+FastDateFormat.getDateTimeInstance(int7, int5, locale1);
+
+13:06:16.383 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:06:16.700 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:06:18.524 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateFormat_ESTest' to results/LANG-9b-6-0.8-27
+13:06:18.531 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

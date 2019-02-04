@@ -1,0 +1,41 @@
+22:17:40.321 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+22:17:40.324 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.internal.AbstractQueryFilter.getSelectColumns(AbstractQueryFilter:80)
+22:17:40.324 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.internal.AbstractQueryFilter
+22:17:45.618 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+22:18:18.094 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:18:18.119 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:18:18.119 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:18:18.149 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:18:18.149 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:18:18.149 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:18:18.149 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:18:18.149 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getSelectColumns
+22:18:18.189 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:18:18.255 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+22:18:25.270 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+22:18:34.610 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+22:18:41.017 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+22:18:46.471 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:18:53.199 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:18:53.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:18:53.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:18:53.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:18:53.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:18:53.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:18:53.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+CountDocumentFilter countDocumentFilter1 = new CountDocumentFilter();
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter1, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger1);
+Injector.validateBean(countDocumentFilter1, (Class<?>) CountDocumentFilter.class);
+String string0 = "";
+countDocumentFilter1.getSelectColumns(string0);
+String string1 = "X*ID7_k*-<Jgmvw&";
+countDocumentFilter1.getSelectColumns(string1);
+
+22:18:53.215 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:18:53.325 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:18:58.476 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractQueryFilter_ESTest' to results/XWIKI-14152-2-1.0-26
+22:18:58.488 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

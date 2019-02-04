@@ -1,0 +1,95 @@
+00:33:27.392 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:33:27.397 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.mail.internal.thread.SendMailRunnable.run(SendMailRunnable:74)
+00:33:27.397 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.mail.internal.thread.SendMailRunnable
+00:33:34.285 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+00:34:44.409 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:34:44.440 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:34:44.440 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:34:44.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:34:44.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:34:44.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:34:44.484 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:34:44.484 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is run
+00:34:44.549 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:34:44.562 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+00:35:13.584 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+00:35:20.871 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+00:35:27.567 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.WikiReference
+00:35:34.628 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:36:25.538 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+00:36:25.538 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+00:36:25.538 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:37:31.171 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+00:38:26.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+00:39:23.778 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+00:40:10.525 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+00:41:01.122 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+00:41:29.826 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+00:42:00.497 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+00:42:31.071 [TEST_EXECUTION_THREAD_57] ERROR o.h.loader.custom.sql.SQLCustomQuery - Unexpected error in the Mail Sender Thread
+java.lang.NullPointerException: null
+	at org.xwiki.mail.internal.thread.SendMailRunnable.runInternal(SendMailRunnable.java:95) [na:na]
+	at org.xwiki.mail.internal.thread.SendMailRunnable.run(SendMailRunnable.java:74) [na:na]
+	at sun.reflect.GeneratedMethodAccessor29.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+00:42:31.073 [TEST_EXECUTION_THREAD_57] ERROR o.h.loader.custom.sql.SQLCustomQuery - Unexpected error in the Mail Sender Thread
+java.lang.NullPointerException: null
+	at org.xwiki.mail.internal.thread.SendMailRunnable.runInternal(SendMailRunnable.java:95) [na:na]
+	at org.xwiki.mail.internal.thread.SendMailRunnable.run(SendMailRunnable.java:74) [na:na]
+	at sun.reflect.GeneratedMethodAccessor29.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+00:42:31.083 [TEST_EXECUTION_THREAD_57] ERROR o.h.loader.custom.sql.SQLCustomQuery - Unexpected error in the Mail Sender Thread
+java.lang.NullPointerException: null
+	at org.xwiki.mail.internal.thread.SendMailRunnable.runInternal(SendMailRunnable.java:95) [na:na]
+	at org.xwiki.mail.internal.thread.SendMailRunnable.run(SendMailRunnable.java:74) [na:na]
+	at sun.reflect.GeneratedMethodAccessor29.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+00:42:31.084 [TEST_EXECUTION_THREAD_57] INFO  o.h.loader.custom.sql.SQLCustomQuery - b
+00:42:46.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+00:43:10.278 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+00:43:32.830 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+00:44:05.806 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+00:44:28.806 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1300
+00:44:49.437 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1400
+00:45:22.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1500
+00:45:38.090 [TEST_EXECUTION_THREAD_75] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.CUBRIDDialect
+00:45:47.752 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1600
+00:46:25.725 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1700
+00:47:05.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1800
+00:47:23.502 [TEST_EXECUTION_THREAD_87] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.CUBRIDDialect
+00:47:51.407 [TEST_EXECUTION_THREAD_92] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.CUBRIDDialect
+00:47:56.690 [TEST_EXECUTION_THREAD_93] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.CUBRIDDialect
+00:48:08.132 [TEST_EXECUTION_THREAD_95] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.CUBRIDDialect

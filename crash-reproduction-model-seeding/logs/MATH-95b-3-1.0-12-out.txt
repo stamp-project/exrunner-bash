@@ -1,0 +1,61 @@
+11:39:04.012 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:39:04.015 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution.inverseCumulativeProbability(AbstractContinuousDistribution:84)
+11:39:04.016 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.distribution.AbstractContinuousDistribution
+11:39:05.894 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+11:39:13.337 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:39:13.366 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:39:13.366 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:39:13.391 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:39:13.392 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:39:13.393 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:39:13.393 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:39:13.393 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is inverseCumulativeProbability
+11:39:13.429 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:39:13.435 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.UnivariateRealSolverUtils
+11:39:20.048 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.AbstractContinuousDistribution
+11:39:25.527 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.FDistributionImpl
+11:39:31.276 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:39:37.621 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:39:37.621 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:39:37.621 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:39:37.621 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:39:37.622 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:39:37.622 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:39:37.622 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 1262.7889967;
+double double1 = 1.0;
+FDistributionImpl fDistributionImpl0 = new FDistributionImpl(double0, double1);
+double double2 = 1.0;
+fDistributionImpl0.cumulativeProbability(double2);
+double double3 = Double.NaN;
+fDistributionImpl0.cumulativeProbability(double3);
+fDistributionImpl0.inverseCumulativeProbability(double1);
+fDistributionImpl0.inverseCumulativeProbability(double2);
+double double4 = fDistributionImpl0.cumulativeProbability(double0);
+double double5 = (-1295.47373);
+double double6 = (-2409.297230423699);
+BetaDistributionImpl betaDistributionImpl0 = new BetaDistributionImpl(double5, double6);
+double double7 = fDistributionImpl0.inverseCumulativeProbability(double4);
+double double8 = (-3391.114835);
+GammaDistributionImpl gammaDistributionImpl0 = new GammaDistributionImpl(double8, double1);
+gammaDistributionImpl0.getAlpha();
+double double9 = 3503.7;
+betaDistributionImpl0.getDomainLowerBound(double9);
+gammaDistributionImpl0.getBeta();
+betaDistributionImpl0.getInitialDomain(double9);
+betaDistributionImpl0.inverseCumulativeProbability(double7);
+double double10 = gammaDistributionImpl0.cumulativeProbability(double7);
+double double11 = 0.0;
+ChiSquaredDistributionImpl chiSquaredDistributionImpl0 = new ChiSquaredDistributionImpl(double11);
+gammaDistributionImpl0.inverseCumulativeProbability(double10);
+betaDistributionImpl0.setBeta(double7);
+ChiSquaredDistributionImpl chiSquaredDistributionImpl1 = new ChiSquaredDistributionImpl(double9, gammaDistributionImpl0);
+double double12 = (-373.6);
+fDistributionImpl0.setNumeratorDegreesOfFreedom(double12);
+double double13 = 6.283185307179586;
+double double14 = 1.0;
+GammaDistributionImpl gammaDistributionImpl1 = new GammaDistributionImpl(double13, double14);
+
+11:39:37.648 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:39:37.900 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:39:40.226 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractContinuousDistribution_ESTest' to results/MATH-95b-3-1.0-12
+11:39:40.242 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,89 @@
+14:37:31.933 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+14:37:31.937 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.init(FastDateParser:138)
+14:37:31.937 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+14:37:34.881 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+14:37:41.998 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:37:42.006 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:37:42.006 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:37:42.046 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:37:42.047 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'init()V' is private!
+14:37:42.047 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+14:37:42.089 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:37:42.089 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+14:37:42.114 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:37:42.152 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+14:37:48.469 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+14:37:53.796 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+14:37:59.676 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:38:07.728 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+14:38:07.729 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+14:38:07.729 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:38:20.350 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+14:38:20.351 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+14:38:27.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+14:38:35.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.75 | 400
+14:38:35.995 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.75. FE: 400 
+14:38:42.193 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.75 | 500
+14:38:47.910 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.75 | 600
+14:38:57.326 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.75 | 700
+14:39:06.206 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 800
+14:39:06.206 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+14:39:06.210 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:39:06.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:39:06.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+14:39:06.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: FastDateFormat fastDateFormat0 = FastDateFormat.getInstance();
+Locale locale0 = Locale.GERMANY;
+Locale.getISOLanguages();
+locale0.hasExtensions();
+String string0 = locale0.getDisplayName();
+Locale locale1 = Locale.TRADITIONAL_CHINESE;
+locale1.hasExtensions();
+int int0 = 1112;
+Clock clock0 = Clock.systemUTC();
+JapaneseChronology japaneseChronology0 = JapaneseChronology.INSTANCE;
+TemporalAccessor temporalAccessor0 = null;
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime0 = japaneseChronology0.zonedDateTime(temporalAccessor0);
+ChronoField chronoField0 = ChronoField.YEAR_OF_ERA;
+chronoZonedDateTime0.with((TemporalField) chronoField0, (long) int0);
+chronoZonedDateTime0.getZone();
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime1 = japaneseChronology0.zonedDateTime(temporalAccessor0);
+LocalDate localDate0 = LocalDate.ofYearDay(int0, int0);
+Period period0 = Period.between(localDate0, localDate0);
+int int1 = 100;
+Period period1 = period0.withYears(int1);
+int int2 = 124;
+Period period2 = period1.withDays(int2);
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime2 = chronoZonedDateTime1.plus((TemporalAmount) period2);
+ChronoLocalDateTime<JapaneseDate> chronoLocalDateTime0 = chronoZonedDateTime2.toLocalDateTime();
+ChronoLocalDateTime<JapaneseDate> chronoLocalDateTime1 = chronoLocalDateTime0.plus((TemporalAmount) period2);
+ChronoLocalDateTime<JapaneseDate> chronoLocalDateTime2 = chronoLocalDateTime1.with((TemporalAdjuster) chronoLocalDateTime0);
+TemporalUnit temporalUnit0 = chronoField0.getRangeUnit();
+ChronoLocalDateTime<JapaneseDate> chronoLocalDateTime3 = chronoLocalDateTime2.minus((long) int1, temporalUnit0);
+String string1 = "`b`SMqS Jx";
+ZoneId zoneId0 = ZoneId.of(string1);
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime3 = chronoLocalDateTime3.atZone(zoneId0);
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime4 = chronoZonedDateTime3.withZoneSameLocal(zoneId0);
+ChronoZonedDateTime<JapaneseDate> chronoZonedDateTime5 = chronoZonedDateTime4.minus((TemporalAmount) period2);
+ZoneOffset zoneOffset0 = chronoZonedDateTime5.getOffset();
+Clock.system(zoneOffset0);
+clock0.instant();
+TimeZone timeZone0 = fastDateFormat0.getTimeZone();
+String string2 = "?Ps";
+locale1.getUnicodeLocaleType(string2);
+String string3 = "@;3";
+FastDateParser fastDateParser0 = new FastDateParser(string3, timeZone0, locale1);
+String string4 = "#6XS5pei\\7H~W4kdiyz";
+SimpleTimeZone simpleTimeZone0 = new SimpleTimeZone(int2, string2);
+fastDateParser0.getLocale();
+fastDateParser0.getParsePattern();
+int int3 = 14;
+fastDateParser0.isNextNumber();
+fastDateParser0.toString();
+fastDateParser0.parse(string0);
+fastDateParser0.getLocale();
+fastDateParser0.getParsePattern();
+
+14:39:06.236 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:39:07.362 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:39:09.140 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-4-0.2-19
+14:39:09.159 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

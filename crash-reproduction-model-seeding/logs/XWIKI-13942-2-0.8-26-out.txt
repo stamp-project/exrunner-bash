@@ -1,0 +1,41 @@
+18:41:39.177 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:41:39.189 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver.resolveDefaultReference(AbstractEntityReferenceResolver:77)
+18:41:39.190 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver
+18:41:43.115 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+18:42:25.471 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:42:25.507 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:42:25.507 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:42:25.521 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:42:25.532 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:42:25.533 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:42:25.533 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:42:25.533 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is resolveDefaultReference
+18:42:25.563 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:42:25.856 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:42:45.075 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:42:45.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:42:45.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:42:45.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:42:45.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:42:45.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:42:45.077 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultReferenceEntityReferenceResolver defaultReferenceEntityReferenceResolver0 = new DefaultReferenceEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider0 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultReferenceEntityReferenceResolver0, (Class<?>) DefaultReferenceEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider0);
+Injector.validateBean(defaultReferenceEntityReferenceResolver0, (Class<?>) DefaultReferenceEntityReferenceResolver.class);
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+SymbolScheme symbolScheme0 = mock(SymbolScheme.class, new ViolatedAssumptionAnswer());
+Injector.inject(explicitStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) symbolScheme0);
+Injector.validateBean(explicitStringEntityReferenceResolver0, (Class<?>) ExplicitStringEntityReferenceResolver.class);
+EntityType entityType0 = EntityType.OBJECT;
+Object[] objectArray0 = new Object[5];
+objectArray0[0] = (Object) entityReferenceProvider0;
+objectArray0[1] = (Object) symbolScheme0;
+objectArray0[2] = objectArray0[1];
+objectArray0[3] = (Object) defaultReferenceEntityReferenceResolver0;
+objectArray0[4] = objectArray0[3];
+explicitStringEntityReferenceResolver0.resolveDefaultReference(entityType0, objectArray0);
+
+18:42:45.112 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:42:45.392 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:42:51.380 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEntityReferenceResolver_ESTest' to results/XWIKI-13942-2-0.8-26
+18:42:51.387 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

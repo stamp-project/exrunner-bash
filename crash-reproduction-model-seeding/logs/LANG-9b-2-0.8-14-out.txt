@@ -1,0 +1,64 @@
+12:34:08.218 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+12:34:08.246 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.getDisplayNames(FastDateParser:381)
+12:34:08.247 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+12:34:13.435 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+12:34:23.738 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:34:23.777 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:34:23.777 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:34:23.825 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:34:23.868 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:34:23.868 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:34:23.868 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:34:23.868 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDisplayNames
+12:34:23.891 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:34:23.924 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateParser
+12:34:31.297 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FormatCache
+12:34:36.733 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.FastDateFormat
+12:34:42.807 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:34:50.763 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.85
+12:34:50.763 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.85. FE: 100 
+12:34:50.763 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:35:07.451 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+12:35:07.452 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+12:35:16.561 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+12:35:16.561 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+12:35:16.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:35:16.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:35:16.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+12:35:16.579 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "GMTPST";
+int int0 = 889;
+int int1 = 11;
+int int2 = 5;
+int int3 = 113;
+Locale.Category locale_Category0 = Locale.Category.DISPLAY;
+String string1 = "GMTPN";
+ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getTimeZone(string0);
+TimeZone.getDefault();
+ZoneId.systemDefault();
+String string2 = "=.(`6Rk75?m.X";
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+LinkedList<Locale.LanguageRange> linkedList0 = new LinkedList<Locale.LanguageRange>();
+LinkedList<Locale.LanguageRange> linkedList1 = new LinkedList<Locale.LanguageRange>();
+Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.AUTOSELECT_FILTERING;
+LinkedList<Locale.LanguageRange> linkedList2 = new LinkedList<Locale.LanguageRange>(linkedList1);
+String string3 = "ja";
+Locale.LanguageRange locale_LanguageRange0 = new Locale.LanguageRange(string3);
+linkedList2.add(locale_LanguageRange0);
+Set<String> set0 = Calendar.getAvailableCalendarTypes();
+List<String> list0 = Locale.filterTags((List<Locale.LanguageRange>) linkedList2, (Collection<String>) set0);
+List<String> list1 = Locale.filterTags((List<Locale.LanguageRange>) linkedList2, (Collection<String>) list0);
+Locale.filterTags((List<Locale.LanguageRange>) linkedList2, (Collection<String>) list1, locale_FilteringMode0);
+Locale.FilteringMode locale_FilteringMode1 = Locale.FilteringMode.IGNORE_EXTENDED_RANGES;
+Locale.FilteringMode locale_FilteringMode2 = Locale.FilteringMode.MAP_EXTENDED_RANGES;
+FastDateParser fastDateParser0 = new FastDateParser(string1, zoneInfo0, locale0);
+String string4 = "The magic number must contain at least one byte";
+fastDateParser0.isNextNumber();
+int int4 = 2554;
+int int5 = fastDateParser0.adjustYear(int4);
+ParsePosition parsePosition0 = new ParsePosition(int5);
+fastDateParser0.parse(string4, parsePosition0);
+
+12:35:16.630 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:35:17.242 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:35:19.513 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-2-0.8-14
+12:35:19.534 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,72 @@
+17:41:55.274 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+17:41:55.278 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+17:41:55.278 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+17:41:58.281 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+17:42:11.447 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:42:11.481 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:42:11.481 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:42:11.590 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:42:11.595 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:42:11.595 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:42:11.595 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:42:11.595 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+17:42:11.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:42:11.664 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+17:42:18.554 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.base.BaseSingleFieldPeriod
+17:42:25.433 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Days
+17:42:30.968 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:42:35.846 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+17:42:35.846 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+17:42:35.846 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:42:44.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+17:42:44.888 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:42:44.889 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:42:44.889 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:42:44.889 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+17:42:44.890 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = (-1243);
+int int1 = 26;
+long long0 = 6L;
+int int2 = FieldUtils.safeToInt(long0);
+long long1 = (-1898L);
+long long2 = (-928L);
+FieldUtils.safeSubtract(long1, long2);
+int int3 = (-564);
+int int4 = FieldUtils.getWrappedValue(int1, int1, int3, int2);
+int int5 = (-1949);
+int int6 = 2134145240;
+Chronology chronology0 = null;
+int int7 = (-662);
+CachedDateTimeZone cachedDateTimeZone0 = (CachedDateTimeZone)DateTimeZone.getDefault();
+DateMidnight dateMidnight0 = DateMidnight.now((DateTimeZone) cachedDateTimeZone0);
+DateMidnight dateMidnight1 = dateMidnight0.withZoneRetainFields(cachedDateTimeZone0);
+ReadablePeriod readablePeriod0 = null;
+Days days0 = Days.standardDaysIn(readablePeriod0);
+days0.toPeriod();
+dateMidnight1.plus((ReadablePeriod) days0);
+dateMidnight1.withDayOfWeek(int4);
+long long3 = 1034L;
+PeriodType periodType0 = null;
+MutablePeriod mutablePeriod0 = new MutablePeriod(long3, periodType0, chronology0);
+int int8 = 93;
+FieldUtils.safeNegate(int8);
+long long4 = 1678L;
+FieldUtils.safeAdd((long) int1, long4);
+long long5 = 2147483647L;
+FieldUtils.safeMultiply((long) int6, long5);
+long long6 = (-2147483648L);
+int int9 = 1;
+FieldUtils.safeMultiply((long) int2, int7);
+int int10 = 4;
+int int11 = Integer.MIN_VALUE;
+long long7 = 228L;
+FieldUtils.safeToInt(long7);
+String string0 = "BST";
+int int12 = 915;
+int int13 = 1;
+int int14 = 1;
+FieldUtils.verifyValueBounds(string0, int12, int13, int14);
+
+17:42:44.907 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:42:45.158 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:42:47.384 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-10b-1-0.5-15
+17:42:47.409 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

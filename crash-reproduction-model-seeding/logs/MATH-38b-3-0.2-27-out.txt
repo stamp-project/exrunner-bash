@@ -1,0 +1,65 @@
+05:20:06.002 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.direct.BOBYQAOptimizer$PathIsExploredException
+05:20:06.009 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer.bobyqa(BOBYQAOptimizer:332)
+05:20:06.010 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer
+05:21:02.169 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+05:21:07.924 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:21:07.933 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:21:07.933 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:21:07.963 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:21:07.968 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'bobyqa([D[D)D' is private!
+05:21:07.968 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+05:21:10.193 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:21:10.194 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doOptimize
+05:21:10.222 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:21:10.259 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.BOBYQAOptimizer
+05:21:16.712 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:21:25.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+05:21:25.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+05:21:25.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:21:33.623 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+05:21:33.623 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+05:21:37.291 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+05:21:41.271 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+05:21:44.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+05:21:48.577 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+05:21:56.094 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+05:21:56.098 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+05:21:56.103 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:21:56.103 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:21:56.103 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+05:21:56.104 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: GoalType goalType0 = GoalType.MAXIMIZE;
+int int0 = 2607;
+int int1 = 85;
+BOBYQAOptimizer bOBYQAOptimizer0 = new BOBYQAOptimizer(int1);
+int int2 = bOBYQAOptimizer0.getEvaluations();
+double[] doubleArray0 = new double[12];
+int int3 = 323;
+double double0 = (-120.4730307440464);
+SumSincFunction sumSincFunction0 = new SumSincFunction(double0);
+MultivariateFunction multivariateFunction0 = sumSincFunction0.partialDerivative(int2);
+bOBYQAOptimizer0.optimize(int3, multivariateFunction0, goalType0, doubleArray0);
+doubleArray0[0] = (double) int1;
+doubleArray0[1] = (double) int0;
+double double1 = 2.2250738585072014E-308;
+SumSincFunction sumSincFunction1 = new SumSincFunction(double1);
+int int4 = 2;
+sumSincFunction1.value(doubleArray0);
+sumSincFunction1.partialDerivative(int4);
+bOBYQAOptimizer0.doOptimize();
+GoalType goalType1 = null;
+bOBYQAOptimizer0.optimize(int2, sumSincFunction1, goalType1, doubleArray0);
+doubleArray0[2] = (double) int0;
+doubleArray0[4] = (double) int0;
+bOBYQAOptimizer0.doOptimize();
+doubleArray0[0] = (double) int0;
+bOBYQAOptimizer0.computeObjectiveValue(doubleArray0);
+bOBYQAOptimizer0.doOptimize();
+bOBYQAOptimizer0.doOptimize();
+bOBYQAOptimizer0.doOptimize();
+bOBYQAOptimizer0.doOptimize();
+bOBYQAOptimizer0.doOptimize();
+
+05:21:57.980 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:22:37.342 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:22:41.479 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BOBYQAOptimizer_ESTest' to results/MATH-38b-3-0.2-27
+05:22:41.506 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

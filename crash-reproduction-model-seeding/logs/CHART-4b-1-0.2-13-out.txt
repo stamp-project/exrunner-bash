@@ -1,0 +1,79 @@
+19:04:00.622 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+19:04:00.625 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+19:04:00.625 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+19:04:17.741 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+19:04:53.301 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:04:53.446 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:04:53.446 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:04:53.560 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:04:53.568 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:04:53.568 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:04:53.568 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:04:53.569 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+19:04:53.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:04:53.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+19:05:04.651 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+19:05:14.716 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+19:05:22.017 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+19:05:28.004 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:05:53.535 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+19:05:53.535 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+19:05:53.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:06:29.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 200
+19:06:55.873 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 300
+19:07:19.412 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 400
+19:07:44.860 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 500
+19:08:10.773 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 600
+19:08:37.869 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+19:08:37.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+19:08:37.882 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:08:37.882 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:08:37.883 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+19:08:37.884 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+NumberAxis3D numberAxis3D0 = new NumberAxis3D();
+StackedXYAreaRenderer stackedXYAreaRenderer0 = new StackedXYAreaRenderer();
+StackedXYAreaRenderer stackedXYAreaRenderer1 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, numberAxis3D0, numberAxis3D0, stackedXYAreaRenderer1);
+xYPlot0.getDomainAxisEdge();
+xYPlot0.getOrientation();
+xYPlot0.getRangeTickBandPaint();
+xYPlot0.clearDomainMarkers();
+BasicStroke basicStroke0 = new BasicStroke();
+String string0 = null;
+Font font0 = xYPlot0.getNoDataMessageFont();
+boolean boolean0 = true;
+JFreeChart jFreeChart0 = new JFreeChart(string0, font0, xYPlot0, boolean0);
+ChartPanel chartPanel0 = new ChartPanel(jFreeChart0);
+SynthTextPaneUI synthTextPaneUI0 = new SynthTextPaneUI();
+int int0 = 1976;
+Color color0 = Color.white;
+xYPlot0.setDomainCrosshairStroke(basicStroke0);
+Color color1 = Color.PINK;
+ValueAxis valueAxis0 = mock(ValueAxis.class, new ViolatedAssumptionAnswer());
+Range range0 = xYPlot0.getDataRange(valueAxis0);
+NumberAxis numberAxis0 = new NumberAxis();
+NumberAxis numberAxis1 = new NumberAxis();
+boolean boolean1 = true;
+numberAxis3D0.setRangeWithMargins(range0, boolean1, boolean1);
+xYPlot0.setRangeAxis((ValueAxis) numberAxis1);
+Graphics2D graphics2D0 = null;
+AxisSpace axisSpace0 = mock(AxisSpace.class, new ViolatedAssumptionAnswer());
+xYPlot0.getDomainCrosshairValue();
+xYPlot0.isDomainGridlinesVisible();
+BasicStroke basicStroke1 = new BasicStroke();
+MultiplePiePlot multiplePiePlot0 = new MultiplePiePlot();
+multiplePiePlot0.getPieChart();
+boolean boolean2 = false;
+boolean boolean3 = false;
+xYPlot0.getFixedRangeAxisSpace();
+double double0 = (-2465.79);
+PlotOrientation plotOrientation0 = PlotOrientation.VERTICAL;
+xYPlot0.clearAnnotations();
+xYPlot0.getDataset();
+
+19:08:37.913 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:08:38.629 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:08:44.167 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-0.2-13
+19:08:44.230 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,55 @@
+06:01:49.405 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$6
+06:01:49.411 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.OpenMapRealVector.ebeMultiply(OpenMapRealVector:372)
+06:01:49.411 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.OpenMapRealVector
+06:01:53.988 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+06:01:58.600 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:01:58.617 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:01:58.617 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:01:58.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:01:58.653 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:01:58.653 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:01:58.653 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:01:58.654 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is ebeMultiply
+06:01:58.680 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+06:01:58.693 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.MathRuntimeException
+06:02:04.992 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.linear.OpenMapRealVector
+06:02:10.813 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.util.OpenIntToDoubleHashMap$Iterator
+06:02:15.901 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:02:23.756 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+06:02:23.756 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:02:23.756 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:02:23.779 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:02:23.779 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:02:23.779 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:02:23.780 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Double[] doubleArray0 = new Double[8];
+double double0 = 1997.424173271736;
+Double double1 = new Double(double0);
+doubleArray0[0] = double1;
+Double double2 = new Double((double) doubleArray0[0]);
+doubleArray0[1] = double2;
+Double double3 = new Double(double0);
+doubleArray0[2] = double3;
+Double double4 = new Double((double) doubleArray0[0]);
+doubleArray0[3] = double4;
+Double double5 = new Double(double0);
+doubleArray0[4] = double5;
+Double double6 = new Double(double0);
+doubleArray0[5] = double6;
+Double double7 = new Double((double) doubleArray0[3]);
+doubleArray0[6] = double7;
+double double8 = 0.0;
+Double double9 = new Double(double8);
+doubleArray0[7] = double9;
+OpenMapRealVector openMapRealVector0 = new OpenMapRealVector(doubleArray0);
+openMapRealVector0.getData();
+OpenMapRealVector openMapRealVector1 = (OpenMapRealVector)openMapRealVector0.mapMultiply((double) doubleArray0[1]);
+double double10 = 0.0;
+openMapRealVector0.mapMultiplyToSelf(double10);
+openMapRealVector0.getData();
+openMapRealVector0.mapDivideToSelf((double) doubleArray0[2]);
+openMapRealVector0.ebeMultiply((RealVector) openMapRealVector1);
+
+06:02:23.831 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:02:24.678 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:02:25.985 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'OpenMapRealVector_ESTest' to results/MATH-49b-3-0.2-24
+06:02:25.992 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

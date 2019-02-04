@@ -1,0 +1,48 @@
+12:53:31.550 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+12:53:31.580 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.MultiDirectional.iterateSimplex(MultiDirectional:66)
+12:53:31.584 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.MultiDirectional
+12:53:33.299 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+12:53:41.965 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:53:42.006 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:53:42.011 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:53:42.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:53:42.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:53:42.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:53:42.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:53:42.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is iterateSimplex
+12:53:42.163 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:53:42.255 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.MultiDirectional
+12:53:49.070 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:54:10.516 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+12:54:10.516 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:54:10.516 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:54:10.517 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:54:10.517 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:54:10.517 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:54:10.518 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+int int0 = 7;
+multiDirectional0.setMaxIterations(int0);
+double[] doubleArray0 = new double[6];
+doubleArray0[0] = (double) int0;
+double double0 = (-1846.84881);
+doubleArray0[1] = double0;
+double double1 = 830.937871213675;
+doubleArray0[2] = double1;
+doubleArray0[3] = (double) int0;
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+multiDirectional0.setStartConfiguration(doubleArray0);
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(multivariateRealFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MINIMIZE;
+multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+multiDirectional0.getEvaluations();
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.iterateSimplex(comparator0);
+
+12:54:10.642 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:54:17.956 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:54:19.754 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MultiDirectional_ESTest' to results/MATH-84b-2-0.5-21
+12:54:19.769 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

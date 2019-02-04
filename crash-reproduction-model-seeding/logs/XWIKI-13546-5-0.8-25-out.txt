@@ -1,0 +1,76 @@
+22:15:08.661 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:15:08.687 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getCurrentWikiReference(AbstractDocumentConfigurationSource:185)
+22:15:08.687 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+22:15:15.786 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+22:17:57.638 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:17:57.731 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:17:57.731 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:17:57.774 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:17:57.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:17:57.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:17:57.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:17:57.782 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getCurrentWikiReference
+22:17:57.936 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:17:57.945 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+22:18:07.457 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+22:18:19.614 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+22:18:27.346 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.WikiReference
+22:18:32.793 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:18:56.722 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:18:56.722 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:18:56.722 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:18:56.723 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:18:56.723 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:18:56.723 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:18:56.725 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: SpacePreferencesConfigurationSource spacePreferencesConfigurationSource0 = new SpacePreferencesConfigurationSource();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) SpacePreferencesConfigurationSource.class, "documentAccessBridge", (Object) documentAccessBridge0);
+CacheManager cacheManager0 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager0);
+ConverterManager converterManager0 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) logger0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) observationManager0);
+EntityReferenceSerializer<SpecialSymbolBlock> entityReferenceSerializer0 = (EntityReferenceSerializer<SpecialSymbolBlock>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(entityReferenceSerializer0).serialize(any(org.xwiki.model.reference.EntityReference.class) , any(java.lang.Object[].class));
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(wikiDescriptorManager0).getCurrentWikiId();
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager0);
+Provider<DefaultTableModel> provider0 = (Provider<DefaultTableModel>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(spacePreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(spacePreferencesConfigurationSource0, (Class<?>) SpacePreferencesConfigurationSource.class);
+spacePreferencesConfigurationSource0.getCacheCleanupEvents();
+spacePreferencesConfigurationSource0.getCurrentWikiReference();
+String string0 = "(not created)";
+spacePreferencesConfigurationSource0.containsKey(string0);
+String string1 = "";
+Class<NullDelta> class0 = NullDelta.class;
+spacePreferencesConfigurationSource0.getProperty(string1, (Class<?>) class0);
+String string2 = spacePreferencesConfigurationSource0.getCacheId();
+spacePreferencesConfigurationSource0.getProperty(string2);
+AbstractDocumentConfigurationSource abstractDocumentConfigurationSource0 = new AbstractDocumentConfigurationSource();
+CacheManager cacheManager1 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager1);
+ConverterManager converterManager1 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager1);
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) logger1);
+ObservationManager observationManager1 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) observationManager1);
+EntityReferenceSerializer<AllEvent> entityReferenceSerializer1 = (EntityReferenceSerializer<AllEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer1);
+WikiDescriptorManager wikiDescriptorManager1 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager1);
+Provider<ChronoLocalDate> provider1 = (Provider<ChronoLocalDate>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider1);
+Injector.validateBean(abstractDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class);
+abstractDocumentConfigurationSource0.getCacheCleanupEvents();
+abstractDocumentConfigurationSource0.dispose();
+
+22:18:56.803 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:18:57.892 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:19:03.719 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractDocumentConfigurationSource_ESTest' to results/XWIKI-13546-5-0.8-25
+22:19:03.773 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

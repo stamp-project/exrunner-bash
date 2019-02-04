@@ -1,0 +1,73 @@
+13:14:01.651 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+13:14:01.655 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.estimation.AbstractEstimator.getCovariances(AbstractEstimator:173)
+13:14:01.655 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.estimation.AbstractEstimator
+13:14:03.628 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+13:14:08.795 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:14:08.801 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:14:08.802 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:14:08.823 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:14:08.824 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:14:08.824 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:14:08.824 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:14:08.824 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getCovariances
+13:14:08.832 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+13:14:08.852 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.estimation.AbstractEstimator
+13:14:14.222 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:14:18.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.25
+13:14:18.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.25. FE: 100 
+13:14:18.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:14:26.895 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+13:14:26.896 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+13:14:31.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+13:14:36.431 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 400
+13:14:36.431 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+13:14:36.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:14:36.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:14:36.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 400 
+13:14:36.433 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: LevenbergMarquardtEstimator levenbergMarquardtEstimator0 = new LevenbergMarquardtEstimator();
+SimpleEstimationProblem simpleEstimationProblem0 = new SimpleEstimationProblem();
+WeightedMeasurement weightedMeasurement0 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+double double0 = 0.0;
+levenbergMarquardtEstimator0.setOrthoTolerance(double0);
+String string0 = "no degrees of freedom ({0} measurements, {1} parameters)";
+double double1 = 269.1163092569689;
+boolean boolean0 = false;
+EstimatedParameter estimatedParameter0 = new EstimatedParameter(string0, double1, boolean0);
+WeightedMeasurement weightedMeasurement1 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(weightedMeasurement1).getPartial(any(org.apache.commons.math.estimation.EstimatedParameter.class));
+doReturn(0.0).when(weightedMeasurement1).getWeight();
+simpleEstimationProblem0.addMeasurement(weightedMeasurement1);
+double double2 = 686.9794972719;
+simpleEstimationProblem0.addParameter(estimatedParameter0);
+WeightedMeasurement weightedMeasurement2 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+levenbergMarquardtEstimator0.initializeEstimate(simpleEstimationProblem0);
+simpleEstimationProblem0.getMeasurements();
+levenbergMarquardtEstimator0.initializeEstimate(simpleEstimationProblem0);
+simpleEstimationProblem0.addMeasurement(weightedMeasurement2);
+EstimatedParameter estimatedParameter1 = null;
+levenbergMarquardtEstimator0.getCovariances(simpleEstimationProblem0);
+EstimatedParameter estimatedParameter2 = null;
+simpleEstimationProblem0.addParameter(estimatedParameter2);
+simpleEstimationProblem0.getUnboundParameters();
+levenbergMarquardtEstimator0.getChiSquare(simpleEstimationProblem0);
+simpleEstimationProblem0.addMeasurement(weightedMeasurement0);
+levenbergMarquardtEstimator0.setOrthoTolerance(double0);
+levenbergMarquardtEstimator0.getJacobianEvaluations();
+WeightedMeasurement weightedMeasurement3 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+simpleEstimationProblem0.addMeasurement(weightedMeasurement3);
+int int0 = levenbergMarquardtEstimator0.getJacobianEvaluations();
+levenbergMarquardtEstimator0.updateResidualsAndCost();
+levenbergMarquardtEstimator0.updateResidualsAndCost();
+levenbergMarquardtEstimator0.setOrthoTolerance(double0);
+levenbergMarquardtEstimator0.setOrthoTolerance(int0);
+levenbergMarquardtEstimator0.guessParametersErrors(simpleEstimationProblem0);
+int int1 = (-1);
+levenbergMarquardtEstimator0.setMaxCostEval(int1);
+levenbergMarquardtEstimator0.getCovariances(simpleEstimationProblem0);
+double double3 = 928.0;
+levenbergMarquardtEstimator0.setParRelativeTolerance(double3);
+
+13:14:36.472 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:14:37.235 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:14:39.544 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEstimator_ESTest' to results/MATH-100b-1-0.8-18
+13:14:39.580 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

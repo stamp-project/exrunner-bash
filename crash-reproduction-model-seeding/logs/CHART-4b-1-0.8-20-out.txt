@@ -1,0 +1,55 @@
+17:22:11.217 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:22:11.220 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.getDataRange(XYPlot:4493)
+17:22:11.221 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+17:22:46.992 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+17:23:40.005 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:23:40.089 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:23:40.089 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:23:40.140 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:23:40.186 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:23:40.187 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:23:40.187 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:23:40.187 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDataRange
+17:23:40.333 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:23:40.333 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+17:23:52.420 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+17:24:04.340 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+17:24:11.501 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+17:24:18.047 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:24:59.135 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+17:24:59.136 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:24:59.142 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:24:59.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:24:59.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:24:59.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+17:24:59.144 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null, (String) null).when(xYDataset0).toString();
+ValueAxis valueAxis0 = mock(ValueAxis.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null, (String) null, (String) null).when(valueAxis0).toString();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, valueAxis0, valueAxis0, xYItemRenderer0);
+ValueAxis valueAxis1 = xYPlot0.getDomainAxis();
+xYPlot0.getRangeAxis();
+XYDataset xYDataset1 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(xYDataset1).toString();
+doReturn(0).when(xYDataset1).getSeriesCount();
+xYPlot0.setDataset(xYDataset1);
+xYPlot0.getDatasetRenderingOrder();
+DatasetChangeEvent datasetChangeEvent0 = mock(DatasetChangeEvent.class, new ViolatedAssumptionAnswer());
+xYPlot0.datasetChanged(datasetChangeEvent0);
+xYPlot0.getDomainGridlinePaint();
+xYPlot0.getDomainZeroBaselinePaint();
+xYPlot0.getDataRange(valueAxis1);
+double double0 = (-4717.203715046);
+xYPlot0.setRangeCrosshairValue(double0);
+Graphics2D graphics2D0 = mock(Graphics2D.class, new ViolatedAssumptionAnswer());
+Rectangle2D rectangle2D0 = mock(Rectangle2D.class, new ViolatedAssumptionAnswer());
+xYPlot0.drawZeroDomainBaseline(graphics2D0, rectangle2D0);
+AxisLocation axisLocation0 = mock(AxisLocation.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = true;
+xYPlot0.setRangeAxisLocation(axisLocation0, boolean0);
+
+17:24:59.249 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:25:01.285 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:25:05.122 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-1-0.8-20
+17:25:05.215 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

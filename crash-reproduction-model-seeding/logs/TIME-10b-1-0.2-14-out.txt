@@ -1,0 +1,35 @@
+13:59:14.717 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+13:59:14.721 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+13:59:14.721 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+13:59:18.280 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+13:59:32.799 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:59:32.843 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:59:32.843 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:59:32.854 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:59:32.855 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:59:32.855 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:59:32.855 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:59:32.855 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+13:59:33.084 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+13:59:33.088 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+13:59:40.541 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.base.BaseSingleFieldPeriod
+13:59:47.901 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Days
+13:59:54.235 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:00:03.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:00:03.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:00:03.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:00:03.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:00:03.686 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:00:03.686 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:00:03.686 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: TestBaseDateTimeField.MockStandardBaseDateTimeField testBaseDateTimeField_MockStandardBaseDateTimeField0 = new TestBaseDateTimeField.MockStandardBaseDateTimeField();
+int int0 = 3639;
+int int1 = 2165;
+FieldUtils.verifyValueBounds((DateTimeField) testBaseDateTimeField_MockStandardBaseDateTimeField0, int0, int0, int1);
+DateTimeFieldType dateTimeFieldType0 = mock(DateTimeFieldType.class, new ViolatedAssumptionAnswer());
+int int2 = 47;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int0, int2, int0);
+
+14:00:03.719 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:00:03.785 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:00:05.834 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-10b-1-0.2-14
+14:00:05.859 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

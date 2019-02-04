@@ -1,0 +1,64 @@
+09:23:31.312 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+09:23:31.324 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.missingMethodInvocation(Reporter:77)
+09:23:31.325 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+09:23:35.134 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+09:23:43.992 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:23:44.030 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:23:44.030 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:23:44.081 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:23:44.092 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:23:44.092 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:23:44.092 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:23:44.092 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is missingMethodInvocation
+09:23:44.148 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:23:44.211 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+09:23:52.019 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+09:23:57.972 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+09:24:03.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:24:13.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+09:24:13.993 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:24:13.993 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:24:14.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:24:14.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:24:14.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:24:14.096 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Reporter reporter0 = new Reporter();
+reporter0.missingMethodInvocation();
+PrintableInvocation printableInvocation0 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+reporter0.noMoreInteractionsWanted(printableInvocation0);
+PrintableInvocation printableInvocation1 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+LinkedList<Invocation> linkedList0 = new LinkedList<Invocation>();
+reporter0.wantedButNotInvoked(printableInvocation1, (List<? extends PrintableInvocation>) linkedList0);
+Class<Invocation> class0 = Invocation.class;
+reporter0.extraInterfacesAcceptsOnlyInterfaces(class0);
+reporter0.nullPassedToVerifyNoMoreInteractions();
+reporter0.extraInterfacesCannotContainMockedType(class0);
+reporter0.missingMethodInvocation();
+Discrepancy discrepancy0 = mock(Discrepancy.class, new ViolatedAssumptionAnswer());
+PrintableInvocation printableInvocation2 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+Location location0 = mock(Location.class, new ViolatedAssumptionAnswer());
+reporter0.tooLittleActualInvocationsInOrder(discrepancy0, printableInvocation2, location0);
+reporter0.extraInterfacesDoesNotAcceptNullParameters();
+reporter0.cannotMockFinalClass(class0);
+int int0 = 12;
+int int1 = 8;
+reporter0.wantedAtMostX(int0, int1);
+int int2 = 12;
+reporter0.invalidUseOfMatchers(int1, int2);
+PrintableInvocation printableInvocation3 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+reporter0.wantedButNotInvoked(printableInvocation3);
+PrintableInvocation printableInvocation4 = mock(PrintableInvocation.class, new ViolatedAssumptionAnswer());
+reporter0.wantedButNotInvoked(printableInvocation4, (List<? extends PrintableInvocation>) linkedList0);
+Location location1 = mock(Location.class, new ViolatedAssumptionAnswer());
+reporter0.unfinishedVerificationException(location1);
+Discrepancy discrepancy1 = mock(Discrepancy.class, new ViolatedAssumptionAnswer());
+PrintableInvocation printableInvocation5 = null;
+Location location2 = mock(Location.class, new ViolatedAssumptionAnswer());
+reporter0.tooLittleActualInvocations(discrepancy1, printableInvocation5, location2);
+reporter0.inOrderRequiresFamiliarMock();
+reporter0.missingMethodInvocation();
+reporter0.nullPassedWhenCreatingInOrder();
+
+09:24:14.151 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:24:14.803 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:24:18.784 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Reporter_ESTest' to results/MOCKITO-16b-1-0.8-20
+09:24:18.800 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

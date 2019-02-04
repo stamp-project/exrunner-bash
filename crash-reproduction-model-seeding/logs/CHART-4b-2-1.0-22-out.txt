@@ -1,0 +1,75 @@
+21:26:25.273 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:26:25.303 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis:434)
+21:26:25.303 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.axis.NumberAxis
+21:26:37.571 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+21:27:24.520 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:27:24.569 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:27:24.569 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:27:24.646 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:27:24.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:27:24.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:27:24.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:27:24.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is autoAdjustRange
+21:27:24.730 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:27:24.731 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+21:27:34.863 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+21:27:45.616 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+21:27:52.498 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+21:27:58.504 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:28:19.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.5862068965517241
+21:28:19.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5862068965517241. FE: 100 
+21:28:19.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:28:47.240 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5862068965517241 | 200
+21:29:06.417 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+21:29:06.417 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+21:29:06.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:29:06.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:29:06.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+21:29:06.450 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: NumberAxis numberAxis0 = new NumberAxis();
+String string0 = "";
+numberAxis0.isAutoRange();
+double double0 = numberAxis0.getLowerBound();
+numberAxis0.setLowerBound(double0);
+numberAxis0.getLowerBound();
+double double1 = numberAxis0.getUpperBound();
+Rectangle2D.Double rectangle2D_Double0 = new Rectangle2D.Double(double0, double0, double1, double1);
+FixedHeightLayoutCache fixedHeightLayoutCache0 = new FixedHeightLayoutCache();
+MultiTextUI multiTextUI0 = new MultiTextUI();
+AxisChangeEvent axisChangeEvent0 = new AxisChangeEvent(numberAxis0);
+JFreeChart jFreeChart0 = axisChangeEvent0.getChart();
+boolean boolean0 = true;
+XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(xYDataset0).getSeriesCount();
+NumberAxis numberAxis1 = new NumberAxis(string0);
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, numberAxis1, numberAxis1, xYItemRenderer0);
+xYPlot0.getDomainAxis();
+xYPlot0.getRangeAxis();
+jFreeChart0.getXYPlot();
+int int0 = ValueAxis.MAXIMUM_TICK_COUNT;
+xYPlot0.getRangeAxis();
+xYPlot0.getDataset();
+axisChangeEvent0.setChart(jFreeChart0);
+boolean boolean1 = true;
+boolean boolean2 = false;
+PolarChartPanel polarChartPanel0 = new PolarChartPanel(jFreeChart0, boolean0);
+multiTextUI0.getBaselineResizeBehavior(polarChartPanel0);
+JFormattedTextField jFormattedTextField0 = new JFormattedTextField(multiTextUI0);
+int int1 = 60026;
+double double2 = 1555.6613185334638;
+RectangleEdge rectangleEdge0 = Title.DEFAULT_POSITION;
+RectangleEdge.coordinate(rectangle2D_Double0, rectangleEdge0);
+double double3 = (-4522.90467);
+numberAxis0.autoAdjustRange();
+Integer integer0 = JLayeredPane.PALETTE_LAYER;
+numberAxis0.valueToJava2D(double3, rectangle2D_Double0, rectangleEdge0);
+SynthTreeUI synthTreeUI0 = new SynthTreeUI();
+MultiTreeUI multiTreeUI0 = new MultiTreeUI();
+int int2 = ValueAxis.MAXIMUM_TICK_COUNT;
+numberAxis0.hashCode();
+numberAxis0.getMarkerBand();
+
+21:29:06.484 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:29:07.395 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:29:10.518 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'NumberAxis_ESTest' to results/CHART-4b-2-1.0-22
+21:29:10.608 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

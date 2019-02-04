@@ -1,0 +1,60 @@
+18:20:24.724 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+18:20:24.728 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.internal.CountDocumentFilter.filterStatement(CountDocumentFilter:70)
+18:20:24.743 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.internal.CountDocumentFilter
+18:20:29.621 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+18:21:16.806 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:21:16.847 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:21:16.847 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:21:16.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:21:16.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:21:16.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:21:16.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:21:16.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is filterStatement
+18:21:17.065 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:21:17.209 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+18:21:24.461 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+18:21:37.068 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:21:44.074 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+18:21:49.333 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:22:00.348 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:22:00.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:22:00.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:22:00.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:22:00.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:22:00.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:22:00.351 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+CountDocumentFilter countDocumentFilter1 = new CountDocumentFilter();
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter1, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger1);
+Injector.validateBean(countDocumentFilter1, (Class<?>) CountDocumentFilter.class);
+String string0 = "big_integer";
+String string1 = "hql";
+countDocumentFilter1.filterStatement(string0, string1);
+String string2 = "";
+String string3 = countDocumentFilter1.filterStatement(string1, string2);
+String string4 = "";
+countDocumentFilter1.filterStatement(string4, string3);
+CountDocumentFilter countDocumentFilter2 = new CountDocumentFilter();
+Logger logger2 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter2, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger2);
+Injector.validateBean(countDocumentFilter2, (Class<?>) CountDocumentFilter.class);
+countDocumentFilter2.filterStatement(string4, string0);
+CountDocumentFilter countDocumentFilter3 = new CountDocumentFilter();
+Logger logger3 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter3, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger3);
+Injector.validateBean(countDocumentFilter3, (Class<?>) CountDocumentFilter.class);
+String string5 = "requires evictions: size=";
+countDocumentFilter3.getOrderByColumns(string5);
+String string6 = "k0";
+countDocumentFilter3.filterStatement(string4, string6);
+String string7 = "]sx)WSW{:";
+String string8 = "P0BC}Cstwam}";
+countDocumentFilter3.filterStatement(string7, string8);
+
+18:22:00.376 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:22:01.271 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:22:08.296 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'CountDocumentFilter_ESTest' to results/XWIKI-14152-4-0.8-26
+18:22:08.320 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

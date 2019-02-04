@@ -1,0 +1,67 @@
+09:33:57.150 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$6
+09:33:57.154 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.OpenMapRealVector.ebeMultiply(OpenMapRealVector:372)
+09:33:57.154 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.OpenMapRealVector
+09:34:00.662 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+09:34:06.640 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:34:06.647 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:34:06.647 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:34:06.665 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:34:06.667 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:34:06.667 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:34:06.668 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:34:06.671 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is ebeMultiply
+09:34:06.704 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:34:06.722 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.MathRuntimeException
+09:34:13.349 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.linear.OpenMapRealVector
+09:34:19.571 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.util.OpenIntToDoubleHashMap$Iterator
+09:34:24.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:34:30.483 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+09:34:30.483 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:34:30.483 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:34:30.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:34:30.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:34:30.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:34:30.485 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double[] doubleArray0 = new double[4];
+double double0 = 0.0;
+doubleArray0[0] = double0;
+double double1 = (-439.85078376);
+doubleArray0[1] = double1;
+double double2 = 0.0;
+doubleArray0[2] = double2;
+double double3 = 1837.3256374;
+doubleArray0[3] = double3;
+OpenMapRealVector openMapRealVector0 = new OpenMapRealVector(doubleArray0);
+openMapRealVector0.unitize();
+double[] doubleArray1 = openMapRealVector0.getData();
+double double4 = 0.5;
+openMapRealVector0.mapDivide(double4);
+double double5 = (-1681.68040888);
+OpenMapRealVector openMapRealVector1 = (OpenMapRealVector)openMapRealVector0.mapDivide(double5);
+openMapRealVector0.subtract(doubleArray1);
+Double[] doubleArray2 = new Double[4];
+doubleArray2[0] = (Double) doubleArray0[2];
+doubleArray2[1] = (Double) doubleArray0[3];
+doubleArray2[2] = (Double) doubleArray0[1];
+doubleArray2[3] = (Double) doubleArray0[3];
+OpenMapRealVector openMapRealVector2 = new OpenMapRealVector(doubleArray2);
+OpenMapRealVector openMapRealVector3 = new OpenMapRealVector(doubleArray2, double5);
+Object object0 = new Object();
+openMapRealVector2.equals(object0);
+OpenMapRealVector openMapRealVector4 = openMapRealVector2.ebeMultiply((RealVector) openMapRealVector1);
+openMapRealVector4.ebeMultiply(doubleArray1);
+double[] doubleArray3 = new double[6];
+doubleArray3[0] = double3;
+doubleArray3[1] = double5;
+doubleArray3[2] = double1;
+doubleArray3[3] = double0;
+doubleArray3[4] = (double) doubleArray2[2];
+doubleArray3[5] = double4;
+OpenMapRealVector openMapRealVector5 = openMapRealVector4.ebeMultiply(doubleArray3);
+openMapRealVector4.dotProduct(openMapRealVector2);
+double[] doubleArray4 = null;
+openMapRealVector5.ebeMultiply(doubleArray4);
+
+09:34:30.502 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:34:31.900 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:34:33.531 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'OpenMapRealVector_ESTest' to results/MATH-49b-3-0.5-14
+09:34:33.538 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

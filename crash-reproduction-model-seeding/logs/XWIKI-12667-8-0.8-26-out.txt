@@ -1,0 +1,121 @@
+21:13:02.087 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+21:13:02.091 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.web.DownloadAction.sendContent(DownloadAction:291)
+21:13:02.091 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.web.DownloadAction
+21:14:21.354 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+21:17:06.644 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:17:06.678 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:17:06.678 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:17:06.714 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:17:06.747 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'sendContent(Lcom/xpn/xwiki/doc/XWikiAttachment;Lcom/xpn/xwiki/web/XWikiRequest;Lcom/xpn/xwiki/web/XWikiResponse;Ljava/lang/String;Lcom/xpn/xwiki/XWikiContext;)V' is private!
+21:17:06.751 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+21:17:06.929 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:17:06.929 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is render
+21:17:07.044 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:17:07.147 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+21:17:20.710 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+21:17:33.501 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+21:17:38.967 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+21:17:44.622 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:17:49.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:18:00.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+21:18:00.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+21:18:00.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:18:49.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+21:18:58.404 [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,Test_Execution_Group] -- caught unexpected Exception while executing posted task.
+java.lang.IndexOutOfBoundsException: Index: 34418, Size: 34423
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_91]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_91]
+	at org.evosuite.runtime.LoopCounter.checkLoop(LoopCounter.java:111) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask.shouldTry(BasicResourcePool.java:1896) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask.run(BasicResourcePool.java:1800) ~[na:na]
+	at com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:547) ~[na:na]
+21:19:18.183 [Timer-1] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@5ee420ae -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+21:19:18.201 [Timer-1] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@5ee420ae -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 0
+	Active Tasks: 
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@4e2f39dd
+Pool thread stack traces:
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,]
+
+
+21:19:20.729 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+21:19:45.905 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+21:19:47.553 [Task-Thread-for-com.mchange.v2.async.ThreadPerTaskAsynchronousRunner@53ab007a] WARN  c.m.v.resourcepool.BasicResourcePool - com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@4e2f39dd -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getDriver(DriverManager.java:315) ~[na:1.8.0_91]
+	at com.mchange.v2.c3p0.DriverManagerDataSource.driver(DriverManagerDataSource.java:224) ~[na:na]
+	at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:120) ~[na:na]
+	at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:143) ~[na:na]
+	at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:132) ~[na:na]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:137) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1014) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool.access$800(BasicResourcePool.java:32) ~[na:na]
+	at com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask.run(BasicResourcePool.java:1810) ~[na:na]
+	at com.mchange.v2.async.ThreadPerTaskAsynchronousRunner$TaskThread.run(ThreadPerTaskAsynchronousRunner.java:255) [na:na]
+21:20:09.444 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 500
+21:20:28.045 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 600
+21:20:52.803 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 700
+21:21:01.644 [Timer-2] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@720e23b9 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+21:21:01.644 [Timer-2] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@720e23b9 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 0
+	Active Tasks: 
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@2753f8df
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@55eddb01
+Pool thread stack traces:
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0,5,]
+
+
+21:21:15.074 [Timer-3] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@35a7081d -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+21:21:15.075 [Timer-3] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@35a7081d -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 0
+	Active Tasks: 
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@53e71d8f
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@3189d991
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@47f2e337
+Pool thread stack traces:
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1,5,]
+
+
+21:21:39.647 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 800
+21:22:08.470 [Timer-4] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@7177bf8e -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+21:22:08.471 [Timer-4] WARN  c.m.v.a.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@7177bf8e -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 0
+	Active Tasks: 
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@5fc8f6ac
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@5dffd971
+		com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@2e37deb9
+Pool thread stack traces:
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2,5,]
+	Thread[com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1,5,]
+
+
+21:22:14.429 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 900
+21:22:35.168 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1000
+21:23:02.089 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1100
+21:23:24.665 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1200
+21:23:45.436 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1300
+21:24:12.047 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1400
+21:24:41.997 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1500
+21:25:06.575 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1600
+21:25:24.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1700
+21:25:56.190 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1800
+21:26:24.577 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 1900
+21:26:46.854 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 2000
+21:27:12.250 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 2100
+21:27:44.036 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 2200
+21:27:51.644 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: null

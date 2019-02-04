@@ -1,0 +1,75 @@
+15:03:12.238 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+15:03:12.241 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.estimation.AbstractEstimator.getCovariances(AbstractEstimator:173)
+15:03:12.241 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.estimation.AbstractEstimator
+15:03:14.077 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+15:03:19.175 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:03:19.199 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:03:19.199 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:03:19.220 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:03:19.220 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:03:19.220 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:03:19.220 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:03:19.220 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getCovariances
+15:03:19.263 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:03:19.335 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.estimation.AbstractEstimator
+15:03:24.933 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:03:30.023 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.25
+15:03:30.024 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.25. FE: 100 
+15:03:30.024 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:03:35.686 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 200
+15:03:38.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.142857142857142 | 300
+15:03:38.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.142857142857142. FE: 300 
+15:03:41.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+15:03:41.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 400 
+15:03:44.537 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+15:03:47.676 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+15:03:51.019 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+15:03:51.028 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+15:03:51.028 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:03:51.028 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:03:51.028 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+15:03:51.029 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: SimpleEstimationProblem simpleEstimationProblem0 = new SimpleEstimationProblem();
+String string0 = "W>";
+int int0 = 45;
+LevenbergMarquardtEstimator levenbergMarquardtEstimator0 = new LevenbergMarquardtEstimator();
+double double0 = 2136.215837417424;
+EstimatedParameter estimatedParameter0 = new EstimatedParameter(string0, double0);
+boolean boolean0 = false;
+estimatedParameter0.setBound(boolean0);
+estimatedParameter0.setBound(boolean0);
+SimpleEstimationProblem simpleEstimationProblem1 = new SimpleEstimationProblem();
+EstimatedParameter estimatedParameter1 = new EstimatedParameter(estimatedParameter0);
+boolean boolean1 = false;
+estimatedParameter1.setBound(boolean1);
+boolean boolean2 = false;
+estimatedParameter1.setBound(boolean2);
+estimatedParameter1.estimate = double0;
+simpleEstimationProblem0.addParameter(estimatedParameter1);
+EstimatedParameter estimatedParameter2 = new EstimatedParameter(string0, int0);
+estimatedParameter2.setEstimate(estimatedParameter1.estimate);
+WeightedMeasurement weightedMeasurement0 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(weightedMeasurement0).getResidual();
+doReturn(0.0).when(weightedMeasurement0).getWeight();
+simpleEstimationProblem1.addMeasurement(weightedMeasurement0);
+boolean boolean3 = true;
+EstimatedParameter estimatedParameter3 = null;
+simpleEstimationProblem1.addParameter(estimatedParameter3);
+levenbergMarquardtEstimator0.estimate(simpleEstimationProblem0);
+simpleEstimationProblem1.getMeasurements();
+levenbergMarquardtEstimator0.getChiSquare(simpleEstimationProblem1);
+int int1 = 202;
+levenbergMarquardtEstimator0.setMaxCostEval(int1);
+levenbergMarquardtEstimator0.getChiSquare(simpleEstimationProblem0);
+levenbergMarquardtEstimator0.getCovariances(simpleEstimationProblem1);
+levenbergMarquardtEstimator0.guessParametersErrors(simpleEstimationProblem0);
+double double1 = 1743.9;
+levenbergMarquardtEstimator0.setCostRelativeTolerance(double1);
+levenbergMarquardtEstimator0.getRMS(simpleEstimationProblem1);
+levenbergMarquardtEstimator0.getChiSquare(simpleEstimationProblem1);
+double double2 = 0.0;
+levenbergMarquardtEstimator0.setCostRelativeTolerance(double2);
+
+15:03:51.101 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:03:51.496 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:03:52.898 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEstimator_ESTest' to results/MATH-100b-1-0.2-14
+15:03:52.915 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

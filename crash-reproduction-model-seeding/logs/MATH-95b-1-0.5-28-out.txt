@@ -1,0 +1,57 @@
+13:30:25.041 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+13:30:25.052 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(UnivariateRealSolverUtils:179)
+13:30:25.052 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils
+13:30:26.956 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+13:30:33.484 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:30:33.491 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:30:33.492 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:30:33.503 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:30:33.504 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:30:33.504 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:30:33.504 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:30:33.504 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is bracket
+13:30:33.526 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+13:30:33.560 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.UnivariateRealSolverUtils
+13:30:40.426 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.AbstractContinuousDistribution
+13:30:46.046 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.FDistributionImpl
+13:30:51.773 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:30:58.955 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+13:30:58.956 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:30:58.956 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:30:58.966 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:30:58.967 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:30:58.967 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:30:58.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(univariateRealFunction0).value(anyDouble());
+double double0 = (-1683.287778079179);
+double double1 = 1254.836805662;
+double double2 = UnivariateRealSolverUtils.solve(univariateRealFunction0, double0, double1);
+double double3 = (-1500.723142424912);
+double double4 = UnivariateRealSolverUtils.midpoint(double3, double2);
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double5 = (-584.216235434);
+UnivariateRealSolverUtils.bracket(univariateRealFunction1, double2, double4, double5);
+UnivariateRealFunction univariateRealFunction2 = null;
+double double6 = 0.0;
+int int0 = 1652;
+UnivariateRealSolverUtils.bracket(univariateRealFunction2, double2, double6, double4, int0);
+double double7 = 951.14192822;
+UnivariateRealSolverUtils.bracket(univariateRealFunction2, double7, double1, double0);
+double double8 = (-1826.954);
+double double9 = 0.0;
+int int1 = 1883;
+UnivariateRealSolverUtils.bracket(univariateRealFunction2, double7, double8, double9, int1);
+double double10 = 0.0;
+double double11 = 1833.13402993577;
+UnivariateRealSolverUtils.bracket(univariateRealFunction2, double10, double11, double4, int0);
+double double12 = 959.8039193;
+UnivariateRealSolverUtils.solve(univariateRealFunction2, double7, double12);
+double double13 = 1385.86177691776;
+UnivariateRealSolverUtils.solve(univariateRealFunction2, double13, double0, (double) int0);
+double double14 = 0.0;
+UnivariateRealSolverUtils.midpoint(double1, double14);
+
+13:30:59.014 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:30:59.795 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:31:02.636 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'UnivariateRealSolverUtils_ESTest' to results/MATH-95b-1-0.5-28
+13:31:02.660 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

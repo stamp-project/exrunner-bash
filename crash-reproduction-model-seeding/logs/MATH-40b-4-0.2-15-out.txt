@@ -1,0 +1,74 @@
+05:31:31.043 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+05:31:31.047 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.solve(BaseAbstractUnivariateRealSolver:190)
+05:31:31.047 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver
+05:31:32.415 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+05:31:38.691 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:31:38.703 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:31:38.703 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:31:38.744 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:31:38.745 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:31:38.745 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:31:38.745 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:31:38.745 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+05:31:38.766 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:31:38.826 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver
+05:31:45.182 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:31:52.825 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.3324742268041237
+05:31:52.826 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.3324742268041237. FE: 100 
+05:31:52.826 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:32:00.116 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 200
+05:32:05.067 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 300
+05:32:09.456 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.33242506811989103 | 400
+05:32:09.456 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.33242506811989103. FE: 400 
+05:32:13.656 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.33242506811989103 | 500
+05:32:19.473 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.33242506811989103 | 600
+05:32:23.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 700
+05:32:23.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+05:32:23.618 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:32:23.618 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:32:23.618 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 700 
+05:32:23.619 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 380.45044649235;
+NewtonSolver newtonSolver0 = new NewtonSolver(double0);
+double double1 = (-2416.7);
+RegulaFalsiSolver regulaFalsiSolver0 = new RegulaFalsiSolver(double0, double1, double1);
+double double2 = BaseSecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+int int0 = 9;
+DifferentiableUnivariateFunction differentiableUnivariateFunction0 = mock(DifferentiableUnivariateFunction.class, new ViolatedAssumptionAnswer());
+double double3 = (-2.0);
+BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver0 = new BracketingNthOrderBrentSolver(double3, double1, int0);
+SincFunction sincFunction0 = new SincFunction();
+double double4 = (-1599.7536083156497);
+AllowedSolution allowedSolution0 = AllowedSolution.ABOVE_SIDE;
+bracketingNthOrderBrentSolver0.solve(int0, (UnivariateFunction) sincFunction0, double4, (double) int0, allowedSolution0);
+Expm1Function expm1Function0 = new Expm1Function();
+double double5 = (-688.9566);
+expm1Function0.value(double4);
+expm1Function0.value(double5);
+double double6 = (-1487.0747414917);
+double double7 = newtonSolver0.solve(int0, (DifferentiableUnivariateFunction) expm1Function0, double4, double6);
+bracketingNthOrderBrentSolver0.getMaxEvaluations();
+RegulaFalsiSolver regulaFalsiSolver1 = new RegulaFalsiSolver();
+double double8 = 0.0;
+bracketingNthOrderBrentSolver0.isBracketing(double8, double7);
+BisectionSolver bisectionSolver0 = new BisectionSolver(double2);
+double double9 = 0.0;
+double double10 = (-3253.65910432);
+newtonSolver0.verifySequence(int0, double6, double10);
+double double11 = 0.0;
+double double12 = 0.0;
+bracketingNthOrderBrentSolver0.isBracketing(double11, double12);
+BisectionSolver bisectionSolver1 = new BisectionSolver();
+double double13 = 0.0;
+double double14 = 114.0;
+IllinoisSolver illinoisSolver0 = new IllinoisSolver(double11);
+RiddersSolver riddersSolver0 = new RiddersSolver();
+IllinoisSolver illinoisSolver1 = new IllinoisSolver(double9);
+DifferentiableUnivariateFunction differentiableUnivariateFunction1 = null;
+int int1 = (-2355);
+double double15 = (-246.48097517);
+double double16 = SecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+
+05:32:23.649 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:32:24.380 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:32:26.198 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseAbstractUnivariateRealSolver_ESTest' to results/MATH-40b-4-0.2-15
+05:32:26.211 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

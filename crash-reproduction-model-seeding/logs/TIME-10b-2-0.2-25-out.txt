@@ -1,0 +1,39 @@
+14:13:34.250 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+14:13:34.253 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.PreciseDurationDateTimeField.set(PreciseDurationDateTimeField:78)
+14:13:34.253 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.PreciseDurationDateTimeField
+14:13:36.729 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+14:13:49.288 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:13:49.304 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:13:49.304 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:13:49.324 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:13:49.324 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:13:49.324 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:13:49.325 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:13:49.325 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is set
+14:13:49.353 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:13:49.358 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+14:13:57.075 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.base.BaseSingleFieldPeriod
+14:14:03.993 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Days
+14:14:10.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:14:20.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:14:20.604 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:14:20.604 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:14:20.605 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:14:20.605 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:14:20.605 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:14:20.605 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.clockhourOfHalfday();
+DurationFieldType durationFieldType0 = mock(DurationFieldType.class, new ViolatedAssumptionAnswer());
+TestPreciseDurationDateTimeField.MockCountingDurationField testPreciseDurationDateTimeField_MockCountingDurationField0 = new TestPreciseDurationDateTimeField.MockCountingDurationField(durationFieldType0);
+TestPreciseDurationDateTimeField.MockPreciseDurationDateTimeField testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0 = new TestPreciseDurationDateTimeField.MockPreciseDurationDateTimeField(dateTimeFieldType0, testPreciseDurationDateTimeField_MockCountingDurationField0);
+long long0 = 91L;
+testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.roundFloor(long0);
+long long1 = testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.roundCeiling(long0);
+int int0 = (-1);
+testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.set(long1, int0);
+testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.getUnitMillis();
+testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.getMinimumValue();
+
+14:14:20.693 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:14:20.844 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:14:24.573 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PreciseDurationDateTimeField_ESTest' to results/TIME-10b-2-0.2-25
+14:14:24.599 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

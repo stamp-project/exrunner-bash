@@ -1,0 +1,67 @@
+21:56:40.623 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:56:40.627 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BisectionSolver.solve(BisectionSolver:72)
+21:56:40.627 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BisectionSolver
+21:56:42.034 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+21:56:49.842 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:56:49.881 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:56:49.881 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:56:49.929 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:56:49.946 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:56:49.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:56:49.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:56:49.947 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+21:56:50.023 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:56:50.045 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:56:59.147 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4866920152091255
+21:56:59.147 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4866920152091255. FE: 100 
+21:56:59.147 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:57:07.553 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+21:57:07.553 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:57:07.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:57:07.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:57:07.554 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+21:57:07.555 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BisectionSolver bisectionSolver0 = new BisectionSolver();
+UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double0 = (-0.7196683475151677);
+double double1 = 3261.2458002124513;
+bisectionSolver0.clearResult();
+double double2 = 0.0;
+double double3 = 1349.9602421054776;
+Expm1Function expm1Function0 = new Expm1Function();
+double double4 = (-1.4013163223253227);
+double double5 = 1.1784289525981672E-22;
+bisectionSolver0.solve((UnivariateRealFunction) expm1Function0, double4, double5, double1);
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+UnivariateRealFunction univariateRealFunction2 = expm1Function0.derivative();
+double double6 = (-0.44615100995788115);
+double double7 = 0.0;
+bisectionSolver0.solve(double6, double7);
+double double8 = 0.0;
+double double9 = bisectionSolver0.functionValue;
+double double10 = 0.0;
+double double11 = 719.1495;
+bisectionSolver0.verifyBracketing(double10, double11, univariateRealFunction0);
+expm1Function0.derivative();
+double double12 = 4.186404112260789E-9;
+double double13 = (-0.25962702159076545);
+double double14 = bisectionSolver0.solve(double12, double13);
+double double15 = 585.0055619169833;
+bisectionSolver0.solve(double11, double2, double9);
+double double16 = 1.0E-15;
+double double17 = bisectionSolver0.result;
+expm1Function0.derivative();
+double double18 = 1.1368683772161603E-13;
+double double19 = 0.5;
+double double20 = (-596.52661356162);
+bisectionSolver0.solve(univariateRealFunction2, double20, double1, double17);
+double double21 = (-1047.3010024330194);
+bisectionSolver0.solve(double21, double1, double12);
+bisectionSolver0.solve(double14, double8);
+UnivariateRealFunction univariateRealFunction3 = null;
+double double22 = 0.0;
+bisectionSolver0.solve(univariateRealFunction3, double22, double7, double18);
+
+21:57:07.567 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:57:07.745 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:57:10.000 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BisectionSolver_ESTest' to results/MATH-70b-3-1.0-29
+21:57:10.027 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

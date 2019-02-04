@@ -1,0 +1,45 @@
+12:51:24.508 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+12:51:24.511 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.MultiDirectional.iterateSimplex(MultiDirectional:66)
+12:51:24.511 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.MultiDirectional
+12:51:27.135 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+12:51:35.924 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:51:35.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:51:35.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:51:36.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:51:36.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:51:36.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:51:36.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:51:36.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is iterateSimplex
+12:51:36.109 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:51:36.196 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.MultiDirectional
+12:51:43.345 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:52:06.403 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+12:52:06.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:52:06.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:52:06.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:52:06.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:52:06.404 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:52:06.405 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+int int0 = 0;
+multiDirectional0.setMaxIterations(int0);
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(multivariateRealFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[4];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+doubleArray0[2] = (double) int0;
+doubleArray0[3] = (double) int0;
+multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+multiDirectional0.getEvaluations();
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.iterateSimplex(comparator0);
+Comparator<RealPointValuePair> comparator1 = null;
+multiDirectional0.iterateSimplex(comparator1);
+
+12:52:06.456 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:52:14.787 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:52:17.106 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MultiDirectional_ESTest' to results/MATH-84b-2-0.5-14
+12:52:17.156 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

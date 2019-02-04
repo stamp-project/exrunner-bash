@@ -1,0 +1,58 @@
+07:04:26.921 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.NotStrictlyPositiveException
+07:04:26.929 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.function.Gaussian$Parametric.validateParameters(Gaussian$Parametric:183)
+07:04:26.929 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.function.Gaussian$Parametric
+07:04:28.181 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+07:04:34.702 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:04:34.767 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:04:34.767 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:04:34.776 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:04:34.799 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'validateParameters([D)V' is private!
+07:04:34.799 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+07:04:34.802 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+07:04:34.802 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is gradient
+07:04:34.802 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is value
+07:04:34.877 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:04:34.881 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer
+07:04:41.309 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.function.Gaussian$Parametric
+07:04:46.875 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.fitting.CurveFitter$TheoreticalValuesFunction
+07:04:52.331 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.fitting.CurveFitter
+07:04:58.099 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.fitting.GaussianFitter
+07:05:03.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:05:06.705 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:05:06.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:05:06.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:05:06.738 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:05:06.738 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:05:06.738 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:05:06.739 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Gaussian.Parametric gaussian_Parametric0 = new Gaussian.Parametric();
+Gaussian.Parametric gaussian_Parametric1 = new Gaussian.Parametric();
+Gaussian.Parametric gaussian_Parametric2 = new Gaussian.Parametric();
+Gaussian.Parametric gaussian_Parametric3 = new Gaussian.Parametric();
+double double0 = 0.0;
+double[] doubleArray0 = new double[3];
+double double1 = 100.0;
+doubleArray0[0] = double1;
+doubleArray0[1] = double0;
+doubleArray0[2] = double0;
+double double2 = gaussian_Parametric0.value(double0, doubleArray0);
+double[] doubleArray1 = gaussian_Parametric0.gradient(doubleArray0[2], doubleArray0);
+Gaussian.Parametric gaussian_Parametric4 = new Gaussian.Parametric();
+double double3 = 4838.665588287239;
+gaussian_Parametric0.gradient(double3, doubleArray1);
+double[] doubleArray2 = gaussian_Parametric4.gradient(doubleArray0[1], doubleArray0);
+double[] doubleArray3 = new double[4];
+doubleArray3[0] = double2;
+doubleArray3[1] = double0;
+doubleArray3[2] = double1;
+doubleArray3[3] = double2;
+gaussian_Parametric2.value(doubleArray0[2], doubleArray3);
+Gaussian.Parametric gaussian_Parametric5 = new Gaussian.Parametric();
+double double4 = (-1122.0);
+gaussian_Parametric4.gradient(double4, doubleArray3);
+double double5 = 9.313225746154785E-10;
+gaussian_Parametric1.gradient(double5, doubleArray2);
+
+07:05:06.836 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:05:07.081 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:05:10.730 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Gaussian$Parametric_ESTest' to results/MATH-58b-1-0.2-16
+07:05:10.779 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

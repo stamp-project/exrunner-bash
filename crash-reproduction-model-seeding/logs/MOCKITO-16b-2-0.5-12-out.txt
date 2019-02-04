@@ -1,0 +1,44 @@
+15:02:12.643 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+15:02:12.659 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.stub(MockitoCore:43)
+15:02:12.660 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+15:02:14.139 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+15:02:21.400 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:02:21.428 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:02:21.429 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:02:21.458 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:02:21.459 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:02:21.459 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:02:21.459 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:02:21.459 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is stub
+15:02:21.501 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:02:21.513 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+15:02:27.838 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+15:02:33.253 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+15:02:38.844 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:02:38.848 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:02:38.871 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:02:38.933 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:02:38.980 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+15:02:38.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 0 
+15:02:38.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:02:38.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:02:38.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:02:38.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 0 
+15:02:38.982 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MockitoCore mockitoCore0 = new MockitoCore();
+MockitoCore mockitoCore1 = new MockitoCore();
+IOngoingStubbing iOngoingStubbing0 = mockitoCore1.stub();
+DeprecatedOngoingStubbing<?> deprecatedOngoingStubbing0 = mockitoCore0.stub((Object) iOngoingStubbing0);
+DeprecatedOngoingStubbing<?> deprecatedOngoingStubbing1 = mockitoCore1.stub((Object) mockitoCore0);
+Object[] objectArray0 = new Object[6];
+objectArray0[0] = (Object) mockitoCore0;
+objectArray0[1] = (Object) deprecatedOngoingStubbing1;
+objectArray0[2] = (Object) deprecatedOngoingStubbing0;
+objectArray0[3] = (Object) mockitoCore1;
+objectArray0[4] = (Object) mockitoCore1;
+objectArray0[5] = (Object) deprecatedOngoingStubbing1;
+mockitoCore0.verifyNoMoreInteractions(objectArray0);
+
+15:02:39.030 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:02:39.144 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:02:41.577 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-2-0.5-12
+15:02:41.603 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,60 @@
+14:01:42.801 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+14:01:42.832 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.BigMatrixImpl.operate(BigMatrixImpl:997)
+14:01:42.832 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.BigMatrixImpl
+14:01:53.519 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+14:02:03.084 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:02:03.122 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:02:03.122 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:02:03.175 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:02:03.190 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:02:03.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:02:03.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:02:03.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is operate
+14:02:03.244 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:02:03.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:02:19.433 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.875
+14:02:19.433 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.875. FE: 100 
+14:02:19.434 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:02:37.572 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 200
+14:02:49.457 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 300
+14:03:07.069 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 400
+14:03:20.948 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 500
+14:03:35.387 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 600
+14:03:50.176 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 700
+14:04:03.333 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 800
+14:04:10.706 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 900
+14:04:21.638 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 1000
+14:04:31.578 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.875 | 1100
+14:04:44.270 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 1200
+14:04:44.270 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1200 
+14:04:44.271 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:04:44.271 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:04:44.271 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 1200 
+14:04:44.272 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BigDecimal[] bigDecimalArray0 = new BigDecimal[1];
+BigDecimal bigDecimal0 = BigMatrixImpl.ONE;
+int[] intArray0 = new int[7];
+int int0 = 561;
+bigDecimal0.toBigIntegerExact();
+intArray0[6] = intArray0[1];
+int int1 = 626;
+BigDecimal bigDecimal1 = new BigDecimal((double) intArray0[4]);
+double[] doubleArray0 = new double[1];
+int int2 = 2981;
+int int3 = 12;
+int int4 = 599;
+double[][] doubleArray1 = new double[14][1];
+doubleArray1[0] = doubleArray0;
+doubleArray1[1] = doubleArray0;
+doubleArray1[3] = doubleArray0;
+BigMatrixImpl bigMatrixImpl0 = new BigMatrixImpl(doubleArray1);
+bigMatrixImpl0.scalarAdd(bigDecimal0);
+bigMatrixImpl0.getNorm();
+bigMatrixImpl0.operate(doubleArray1[2]);
+BigDecimal bigDecimal2 = BigMatrixImpl.ONE;
+int int5 = 7;
+bigMatrixImpl0.setRoundingMode(int5);
+
+14:04:44.349 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:04:45.357 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:04:49.750 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BigMatrixImpl_ESTest' to results/MATH-98b-1-0.8-23
+14:04:49.762 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

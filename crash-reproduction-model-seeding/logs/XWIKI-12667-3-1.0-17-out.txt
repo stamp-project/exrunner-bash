@@ -1,0 +1,70 @@
+00:45:37.885 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:45:37.888 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+00:45:37.888 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+00:46:30.183 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:47:17.878 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:47:17.901 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:47:17.902 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:47:17.951 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:47:17.952 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:47:17.952 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:47:17.952 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:47:17.952 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+00:47:18.016 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:47:18.073 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+00:47:28.404 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+00:47:34.491 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+00:47:40.109 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.DownloadAction
+00:47:46.092 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+00:47:51.403 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:47:59.998 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:47:59.998 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:47:59.998 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:47:59.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:47:59.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:47:59.999 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:48:00.028 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "A[2D?ZZ";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((EntityReference) null).when(documentReference0).getParent();
+doReturn((EntityType) null).when(documentReference0).getType();
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+String string1 = "Corner Coordinates";
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference1 = new AttachmentReference(string1, documentReference1);
+EntityType entityType0 = EntityType.ATTACHMENT;
+AttachmentReference attachmentReference2 = (AttachmentReference)attachmentReference1.extractReference(entityType0);
+attachmentReference1.setType(entityType0);
+AttachmentReference attachmentReference3 = new AttachmentReference(attachmentReference2);
+DocumentReference documentReference2 = attachmentReference0.getDocumentReference();
+AttachmentReference attachmentReference4 = new AttachmentReference(attachmentReference0);
+String string2 = null;
+AttachmentReference attachmentReference5 = new AttachmentReference(string2, documentReference2);
+AttachmentReference attachmentReference6 = new AttachmentReference(attachmentReference3, documentReference2, attachmentReference0);
+AttachmentReference attachmentReference7 = new AttachmentReference(attachmentReference2, attachmentReference4, attachmentReference0);
+DocumentReference documentReference3 = attachmentReference4.getDocumentReference();
+AttachmentReference attachmentReference8 = new AttachmentReference(string0, documentReference3);
+attachmentReference1.setParent(documentReference2);
+attachmentReference8.setParent(documentReference3);
+AttachmentReference attachmentReference9 = attachmentReference3.replaceParent(attachmentReference4, attachmentReference4);
+AttachmentReference attachmentReference10 = new AttachmentReference(attachmentReference9, attachmentReference8, attachmentReference0);
+AttachmentReference attachmentReference11 = new AttachmentReference(documentReference2, attachmentReference9, attachmentReference1);
+String string3 = null;
+EntityType entityType1 = EntityType.BLOCK;
+EntityReference entityReference0 = mock(EntityReference.class, new ViolatedAssumptionAnswer());
+EntityReference entityReference1 = new EntityReference(string3, entityType1, entityReference0);
+Object object0 = null;
+entityReference1.equals(object0);
+EntityReference entityReference2 = entityReference1.getParent();
+entityReference1.equalsNonRecursive(entityReference2);
+entityReference1.getParent();
+EntityReference entityReference3 = entityReference1.getParent();
+EntityReference entityReference4 = entityReference2.getParent();
+EntityReference entityReference5 = entityReference4.extractReference(entityType1);
+entityReference1.getType();
+entityReference3.toString();
+attachmentReference3.setParent(entityReference5);
+
+00:48:00.101 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:48:00.973 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:48:09.776 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-12667-3-1.0-17
+00:48:09.814 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

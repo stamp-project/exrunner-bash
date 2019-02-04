@@ -1,0 +1,45 @@
+12:53:04.847 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+12:53:04.850 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.optimize(DirectSearchOptimizer:307)
+12:53:04.850 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+12:53:08.318 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+12:53:17.096 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:53:17.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:53:17.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:53:17.117 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:53:17.118 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:53:17.118 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:53:17.134 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:53:17.134 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is optimize
+12:53:17.144 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:53:17.183 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.MultiDirectional
+12:53:23.998 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:54:56.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+12:54:56.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:54:56.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:54:56.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:54:56.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:54:56.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:54:56.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+int int0 = (-2093);
+multiDirectional0.setMaxIterations(int0);
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(multivariateRealFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MAXIMIZE;
+double[] doubleArray0 = new double[1];
+doubleArray0[0] = (double) int0;
+multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+multiDirectional0.getMaxIterations();
+multiDirectional0.getConvergenceChecker();
+multiDirectional0.getEvaluations();
+MultivariateRealFunction multivariateRealFunction1 = null;
+GoalType goalType1 = GoalType.MINIMIZE;
+multiDirectional0.optimize(multivariateRealFunction1, goalType1, doubleArray0);
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.iterateSimplex(comparator0);
+
+12:54:56.676 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:55:06.084 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:55:08.312 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-3-0.5-19
+12:55:08.319 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

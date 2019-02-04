@@ -1,0 +1,60 @@
+07:33:24.915 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+07:33:24.919 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.solve(BaseAbstractUnivariateRealSolver:190)
+07:33:24.919 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver
+07:33:26.712 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+07:33:33.414 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:33:33.422 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:33:33.422 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:33:33.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:33:33.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:33:33.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:33:33.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:33:33.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+07:33:33.500 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:33:33.538 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver
+07:33:40.008 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:33:46.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.3324742268041237
+07:33:46.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.3324742268041237. FE: 100 
+07:33:46.275 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:33:52.873 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.3324742268041237 | 200
+07:33:57.297 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+07:33:57.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+07:33:57.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:33:57.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:33:57.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+07:33:57.299 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BracketingNthOrderBrentSolver bracketingNthOrderBrentSolver0 = new BracketingNthOrderBrentSolver();
+int int0 = 24;
+Expm1Function expm1Function0 = new Expm1Function();
+double double0 = SecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+double double1 = (-245.0);
+bracketingNthOrderBrentSolver0.solve(int0, (UnivariateFunction) expm1Function0, double1, (double) int0);
+XMinus5Function xMinus5Function0 = new XMinus5Function();
+double double2 = 0.0;
+double double3 = BaseSecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+double double4 = 1.0;
+AllowedSolution allowedSolution0 = AllowedSolution.ABOVE_SIDE;
+int int1 = 845;
+double double5 = (-1097.0718342347664);
+xMinus5Function0.derivative();
+double double6 = (-2928.189);
+xMinus5Function0.derivative();
+bracketingNthOrderBrentSolver0.solve(int1, (UnivariateFunction) expm1Function0, double5, double6, allowedSolution0);
+NewtonSolver newtonSolver0 = new NewtonSolver(int1);
+double double7 = 0.5483922958374023;
+double double8 = 0.0;
+double double9 = 2230.31;
+double double10 = 170.4935246831078;
+double double11 = 1372.9608600915;
+double double12 = (-2018.45397071735);
+double double13 = 809.042476825;
+newtonSolver0.verifyInterval(double12, double13);
+LaguerreSolver laguerreSolver0 = new LaguerreSolver(double8, double9);
+double double14 = 4.278345398213486E-9;
+double double15 = 1.887237361505784E-207;
+newtonSolver0.doSolve();
+laguerreSolver0.doSolve();
+
+07:33:57.340 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:33:57.885 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:33:59.404 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseAbstractUnivariateRealSolver_ESTest' to results/MATH-40b-4-1.0-26
+07:33:59.412 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

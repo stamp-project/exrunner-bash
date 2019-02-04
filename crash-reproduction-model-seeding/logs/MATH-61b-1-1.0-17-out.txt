@@ -1,0 +1,63 @@
+10:46:49.118 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$4
+10:46:49.121 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(MathRuntimeException:387)
+10:46:49.121 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.MathRuntimeException
+10:46:51.812 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+10:46:59.691 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:46:59.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:46:59.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:46:59.722 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:46:59.722 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:46:59.722 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:46:59.722 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:46:59.758 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is createIllegalArgumentException
+10:46:59.788 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+10:46:59.863 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.MathRuntimeException
+10:47:06.993 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.distribution.PoissonDistributionImpl
+10:47:12.895 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:47:33.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:47:33.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:47:33.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:47:33.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:47:33.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:47:33.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:47:33.995 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: LocalizedFormats localizedFormats0 = LocalizedFormats.TOO_MANY_ELEMENTS_TO_DISCARD_FROM_ARRAY;
+Object[] objectArray0 = new Object[8];
+Throwable throwable0 = mock(Throwable.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(throwable0).toString();
+String string0 = "";
+Object[] objectArray1 = new Object[2];
+objectArray1[0] = (Object) string0;
+objectArray1[1] = (Object) throwable0;
+MathRuntimeException mathRuntimeException0 = new MathRuntimeException(throwable0, string0, objectArray1);
+String string1 = "FIRST_ELEMENT_NOT_ZERO";
+EOFException eOFException0 = MathRuntimeException.createEOFException(string1, objectArray1);
+objectArray0[0] = (Object) eOFException0;
+objectArray0[1] = (Object) localizedFormats0;
+objectArray0[2] = (Object) localizedFormats0;
+objectArray0[3] = (Object) localizedFormats0;
+objectArray0[4] = (Object) localizedFormats0;
+objectArray0[5] = (Object) localizedFormats0;
+objectArray0[6] = (Object) localizedFormats0;
+double double0 = (-972.5);
+PoissonDistributionImpl poissonDistributionImpl0 = new PoissonDistributionImpl(double0);
+poissonDistributionImpl0.cumulativeProbability(double0);
+double double1 = poissonDistributionImpl0.getMean();
+objectArray0[7] = (Object) double1;
+MathRuntimeException.createArithmeticException((Localizable) localizedFormats0, objectArray0);
+MathRuntimeException mathRuntimeException1 = new MathRuntimeException(eOFException0);
+int int0 = 99;
+MathRuntimeException.createParseException(int0, (Localizable) localizedFormats0, objectArray1);
+MathRuntimeException.createIllegalStateException((Localizable) localizedFormats0, objectArray1);
+String string2 = "";
+EOFException eOFException1 = MathRuntimeException.createEOFException(string2, objectArray1);
+MathRuntimeException.createIllegalArgumentException((Throwable) eOFException1);
+mathRuntimeException1.getLocalizedMessage();
+String string3 = "IDENTICAL_ABSCISSAS_DIVISION_BY_ZERO";
+MathRuntimeException mathRuntimeException2 = new MathRuntimeException(string3, objectArray1);
+mathRuntimeException0.getPattern();
+MathRuntimeException.createUnsupportedOperationException(localizedFormats0, objectArray1);
+
+10:47:34.016 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:47:34.342 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:47:36.109 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MathRuntimeException_ESTest' to results/MATH-61b-1-1.0-17
+10:47:36.138 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

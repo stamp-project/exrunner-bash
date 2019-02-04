@@ -1,0 +1,54 @@
+19:36:28.526 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+19:36:28.530 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.invocation.Invocation.callRealMethod(Invocation:202)
+19:36:28.530 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.invocation.Invocation
+19:36:31.897 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+19:36:40.718 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:36:40.774 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:36:40.774 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:36:40.847 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:36:40.859 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:36:40.859 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:36:40.859 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:36:40.859 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is callRealMethod
+19:36:40.912 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:36:40.928 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.invocation.Invocation
+19:36:49.435 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:37:08.156 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:37:08.156 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:37:08.156 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:37:08.157 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:37:08.157 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:37:08.157 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:37:08.158 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Class<Object> class0 = Object.class;
+IsInstanceOf isInstanceOf0 = new IsInstanceOf(class0);
+MockitoMethod mockitoMethod0 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod0).isVarArgs();
+Object[] objectArray0 = new Object[0];
+int int0 = 83;
+RealMethod realMethod0 = mock(RealMethod.class, new ViolatedAssumptionAnswer());
+Invocation invocation0 = new Invocation(isInstanceOf0, mockitoMethod0, objectArray0, int0, realMethod0);
+invocation0.markVerifiedInOrder();
+Class<Object> class1 = Object.class;
+IsInstanceOf isInstanceOf1 = new IsInstanceOf(class1);
+MockitoMethod mockitoMethod1 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod1).isVarArgs();
+Object[] objectArray1 = new Object[5];
+objectArray1[0] = (Object) isInstanceOf1;
+objectArray1[1] = (Object) isInstanceOf1;
+objectArray1[2] = (Object) mockitoMethod1;
+objectArray1[3] = (Object) mockitoMethod1;
+objectArray1[4] = (Object) isInstanceOf1;
+int int1 = 6;
+RealMethod realMethod1 = null;
+Invocation invocation1 = new Invocation(isInstanceOf1, mockitoMethod1, objectArray1, int1, realMethod1);
+invocation1.getMock();
+invocation1.equals(objectArray1[3]);
+invocation1.equals(objectArray1[0]);
+invocation1.equals(objectArray1[4]);
+invocation1.getSequenceNumber();
+invocation1.callRealMethod();
+
+19:37:08.320 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:37:09.595 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:37:12.422 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Invocation_ESTest' to results/MOCKITO-36b-1-0.2-25
+19:37:12.452 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

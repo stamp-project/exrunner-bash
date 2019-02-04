@@ -1,0 +1,82 @@
+17:29:45.993 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+17:29:45.997 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.axis.NumberAxis.autoAdjustRange(NumberAxis:434)
+17:29:45.997 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.axis.NumberAxis
+17:29:57.375 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+17:30:35.315 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:30:35.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:30:35.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:30:35.344 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:30:35.346 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:30:35.347 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:30:35.347 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:30:35.347 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is autoAdjustRange
+17:30:35.366 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:30:35.366 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+17:30:45.398 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+17:30:54.629 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+17:31:04.098 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+17:31:10.592 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:31:39.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+17:31:39.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+17:31:39.144 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:32:08.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5862068965517241 | 200
+17:32:08.594 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5862068965517241. FE: 200 
+17:32:34.137 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5862068965517241 | 300
+17:32:56.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5862068965517241 | 400
+17:33:18.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5862068965517241 | 500
+17:33:37.612 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+17:33:37.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+17:33:37.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:33:37.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:33:37.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+17:33:37.640 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Graphics2D graphics2D0 = null;
+Rectangle rectangle0 = new Rectangle();
+NumberFormat numberFormat0 = mock(NumberFormat.class, new ViolatedAssumptionAnswer());
+NumberAxis numberAxis0 = new NumberAxis();
+DecimalFormat decimalFormat0 = new DecimalFormat();
+NumberTickUnit numberTickUnit0 = numberAxis0.getTickUnit();
+Rectangle2D rectangle2D0 = mock(Rectangle2D.class, new ViolatedAssumptionAnswer());
+double double0 = 0.0;
+String string0 = numberTickUnit0.valueToString(double0);
+double double1 = 1.0E-8;
+Object object0 = null;
+double double2 = (-39.6);
+rectangle0.setFrame(double1, double1, double2, (double) rectangle0.x);
+NumberAxis.createIntegerTickUnits();
+double double3 = (-7.176814990590271);
+Rectangle2D.Float rectangle2D_Float0 = new Rectangle2D.Float();
+XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(xYDataset0).getSeriesCount();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, numberAxis0, numberAxis0, xYItemRenderer0);
+int int0 = 3047;
+XYDataset xYDataset1 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+xYPlot0.setDataset(int0, xYDataset1);
+xYPlot0.getRangeAxis();
+RectangleEdge rectangleEdge0 = xYPlot0.getRangeAxisEdge();
+JFreeChart jFreeChart0 = new JFreeChart(string0, xYPlot0);
+ChartPanel chartPanel0 = new ChartPanel(jFreeChart0);
+RectangleEdge.coordinate(rectangle0, rectangleEdge0);
+RangeType rangeType0 = null;
+double double4 = (-1756.329539985014);
+double double5 = (-1263.9617);
+rectangle2D_Float0.setFrameFromDiagonal((double) rectangle0.height, double3, double4, double5);
+boolean boolean0 = false;
+numberAxis0.hashCode();
+NumberAxis.createStandardTickUnits();
+AxisChangeEvent axisChangeEvent0 = new AxisChangeEvent(numberAxis0);
+JFreeChart jFreeChart1 = axisChangeEvent0.getChart();
+int int1 = 4290;
+LegendTitle legendTitle0 = jFreeChart1.getLegend(int1);
+RectangleEdge rectangleEdge1 = legendTitle0.getLegendItemGraphicEdge();
+int int2 = 2;
+int int3 = 1738;
+boolean boolean1 = true;
+boolean boolean2 = false;
+double double6 = 665.32457;
+numberAxis0.selectAutoTickUnit(graphics2D0, rectangle2D0, rectangleEdge1);
+
+17:33:37.675 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:33:38.532 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:33:42.212 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'NumberAxis_ESTest' to results/CHART-4b-2-0.8-25
+17:33:42.267 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,53 @@
+22:45:19.521 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+22:45:19.525 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.computeGeometricalProperties(PolygonsSet:136)
+22:45:19.525 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet
+22:45:22.794 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+22:45:28.550 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:45:28.562 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:45:28.562 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:45:28.584 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:45:28.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:45:28.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:45:28.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:45:28.587 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeGeometricalProperties
+22:45:28.612 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:45:28.637 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSet
+22:45:35.228 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet
+22:45:40.702 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.partitioning.BSPTree
+22:45:46.366 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:45:55.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+22:45:55.365 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+22:45:55.365 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:46:03.849 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+22:46:09.433 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+22:46:15.142 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+22:46:20.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+22:46:20.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+22:46:20.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:46:20.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:46:20.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+22:46:20.990 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = (-97.92324884871402);
+Vector2D vector2D0 = null;
+Vector2D vector2D1 = new Vector2D(double0, double0);
+BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>();
+BSPTree<Euclidean2D> bSPTree1 = bSPTree0.getCell(vector2D0);
+bSPTree1.setAttribute(bSPTree0);
+BSPTree.LeafMerger<Euclidean2D> bSPTree_LeafMerger0 = (BSPTree.LeafMerger<Euclidean2D>) mock(BSPTree.LeafMerger.class, new ViolatedAssumptionAnswer());
+doReturn((BSPTree) null).when(bSPTree_LeafMerger0).merge(nullable(org.apache.commons.math3.geometry.partitioning.BSPTree.class) , nullable(org.apache.commons.math3.geometry.partitioning.BSPTree.class) , nullable(org.apache.commons.math3.geometry.partitioning.BSPTree.class) , anyBoolean() , anyBoolean());
+boolean boolean0 = true;
+bSPTree0.insertInTree(bSPTree1, boolean0);
+bSPTree0.merge(bSPTree1, bSPTree_LeafMerger0);
+BSPTreeVisitor<Euclidean2D> bSPTreeVisitor0 = (BSPTreeVisitor<Euclidean2D>) mock(BSPTreeVisitor.class, new ViolatedAssumptionAnswer());
+bSPTree0.visit(bSPTreeVisitor0);
+boolean boolean1 = true;
+bSPTree0.insertInTree(bSPTree1, boolean1);
+PolygonsSet polygonsSet0 = new PolygonsSet(bSPTree0);
+polygonsSet0.computeGeometricalProperties();
+polygonsSet0.getVertices();
+polygonsSet0.getVertices();
+polygonsSet0.getVertices();
+
+22:46:21.018 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:46:21.188 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:46:22.882 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PolygonsSet_ESTest' to results/MATH-32b-1-0.5-30
+22:46:22.892 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

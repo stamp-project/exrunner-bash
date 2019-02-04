@@ -1,0 +1,74 @@
+09:23:23.473 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+09:23:23.476 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.stub(MockitoCore:43)
+09:23:23.476 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+09:23:25.447 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+09:23:34.711 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:23:34.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:23:34.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:23:34.806 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:23:34.821 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:23:34.821 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:23:34.822 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:23:34.822 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is stub
+09:23:34.846 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:23:34.889 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+09:23:42.002 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+09:23:47.932 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+09:23:54.082 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:23:54.096 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+09:23:54.207 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+09:23:55.185 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.625
+09:23:55.185 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.625. FE: 0 
+09:23:55.185 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:24:13.655 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+09:24:13.655 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:24:13.656 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:24:13.656 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:24:13.656 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:24:13.657 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Class<Invocation> class0 = Invocation.class;
+MockSettings mockSettings0 = null;
+VerificationMode verificationMode0 = mock(VerificationMode.class, new ViolatedAssumptionAnswer());
+Class<Object> class1 = Object.class;
+Object object0 = new Object();
+MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+MockitoCore mockitoCore0 = new MockitoCore();
+Object[] objectArray0 = new Object[9];
+int int0 = 1649;
+mockitoCore0.stub();
+Integer integer0 = new Integer(int0);
+Class<String> class2 = String.class;
+MockitoCore mockitoCore1 = new MockitoCore();
+mockitoCore1.inOrder(objectArray0);
+ThreadSafeMockingProgress threadSafeMockingProgress0 = new ThreadSafeMockingProgress();
+InvocationContainerImpl invocationContainerImpl0 = new InvocationContainerImpl(threadSafeMockingProgress0);
+ConsecutiveStubbing<MockSettingsImpl> consecutiveStubbing0 = new ConsecutiveStubbing<MockSettingsImpl>(invocationContainerImpl0);
+mockitoCore0.stubVoid((ConsecutiveStubbing<ConsecutiveStubbing>) consecutiveStubbing0);
+String string0 = mockitoCore0.mock(class2, (MockSettings) mockSettingsImpl0);
+Class<Annotation> class3 = Annotation.class;
+mockitoCore0.inOrder(objectArray0);
+mockitoCore1.validateMockitoUsage();
+mockitoCore0.verifyNoMoreInteractions(objectArray0);
+InvocationContainerImpl invocationContainerImpl1 = new InvocationContainerImpl(threadSafeMockingProgress0);
+Invocation invocation0 = mockitoCore0.getLastInvocation();
+InvocationMatcher invocationMatcher0 = new InvocationMatcher(invocation0);
+List<Matcher> list0 = invocationMatcher0.getMatchers();
+InvocationMatcher invocationMatcher1 = new InvocationMatcher(invocation0, list0);
+Method method0 = invocationMatcher1.getMethod();
+SerializableMethod serializableMethod0 = new SerializableMethod(method0);
+Class<Integer> class4 = Integer.class;
+Class<Invocation> class5 = Invocation.class;
+Class<Integer> class6 = Integer.class;
+String string1 = null;
+MethodProxy methodProxy0 = MethodProxy.create(class5, class6, string0, string0, string1);
+Signature signature0 = methodProxy0.getSignature();
+MethodProxy methodProxy1 = MethodProxy.find(class4, signature0);
+DelegatingMockitoMethodProxy delegatingMockitoMethodProxy0 = new DelegatingMockitoMethodProxy(methodProxy1);
+CGLIBProxyRealMethod cGLIBProxyRealMethod0 = new CGLIBProxyRealMethod(delegatingMockitoMethodProxy0);
+Invocation invocation1 = new Invocation(object0, serializableMethod0, objectArray0, int0, cGLIBProxyRealMethod0);
+StubbedInvocationMatcher stubbedInvocationMatcher0 = invocationContainerImpl1.findAnswerFor(invocation1);
+mockitoCore0.doAnswer(stubbedInvocationMatcher0);
+
+09:24:13.668 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:24:13.945 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:24:16.298 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-2-0.8-19
+09:24:16.308 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

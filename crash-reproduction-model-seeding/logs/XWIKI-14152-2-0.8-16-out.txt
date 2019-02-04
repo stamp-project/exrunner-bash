@@ -1,0 +1,45 @@
+18:02:26.541 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+18:02:26.544 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.internal.AbstractQueryFilter.getSelectColumns(AbstractQueryFilter:80)
+18:02:26.544 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.internal.AbstractQueryFilter
+18:02:31.761 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+18:03:20.762 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:03:20.919 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:03:20.919 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:03:20.987 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:03:20.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:03:20.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:03:20.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:03:20.988 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getSelectColumns
+18:03:21.122 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:03:21.209 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+18:03:29.789 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+18:03:44.189 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:03:50.591 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+18:03:56.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:04:06.732 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:04:06.732 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:04:06.732 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:04:06.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:04:06.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:04:06.733 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:04:06.734 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+LinkedList<Object> linkedList0 = new LinkedList<Object>();
+List list0 = countDocumentFilter0.filterResults(linkedList0);
+countDocumentFilter0.filterResults(list0);
+String string0 = ".";
+countDocumentFilter0.getSelectColumns(string0);
+CountDocumentFilter countDocumentFilter1 = new CountDocumentFilter();
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter1, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger1);
+Injector.validateBean(countDocumentFilter1, (Class<?>) CountDocumentFilter.class);
+String string1 = null;
+countDocumentFilter1.getSelectColumns(string1);
+countDocumentFilter1.getSelectColumns(string0);
+
+18:04:06.764 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:04:06.981 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:04:15.157 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractQueryFilter_ESTest' to results/XWIKI-14152-2-0.8-16
+18:04:15.183 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

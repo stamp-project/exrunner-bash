@@ -1,0 +1,63 @@
+21:49:00.153 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:49:00.157 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer.assignPointsToClusters(KMeansPlusPlusClusterer:91)
+21:49:00.157 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer
+21:49:01.645 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+21:49:07.112 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:49:07.122 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:49:07.122 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:49:07.159 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:49:07.160 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'assignPointsToClusters(Ljava/util/Collection;Ljava/util/Collection;)V' is private!
+21:49:07.160 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+21:49:07.183 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:49:07.183 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is cluster
+21:49:07.202 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:49:07.235 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:49:15.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.666666666666666
+21:49:15.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.666666666666666. FE: 100 
+21:49:15.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:49:39.347 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+21:49:39.348 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+21:49:49.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+21:49:57.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+21:50:16.693 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5 | 500
+21:50:16.693 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5. FE: 500 
+21:50:40.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+21:50:40.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:50:40.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:50:40.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:50:40.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+21:50:40.925 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Random random0 = mock(Random.class, new ViolatedAssumptionAnswer());
+int int0 = Integer.MAX_VALUE;
+Random random1 = mock(Random.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(random1).nextInt(anyInt());
+KMeansPlusPlusClusterer<EuclideanIntegerPoint> kMeansPlusPlusClusterer0 = new KMeansPlusPlusClusterer<EuclideanIntegerPoint>(random1);
+int int1 = 6;
+int int2 = (-7);
+Random random2 = mock(Random.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(random2).nextInt(anyInt());
+KMeansPlusPlusClusterer<EuclideanIntegerPoint> kMeansPlusPlusClusterer1 = new KMeansPlusPlusClusterer<EuclideanIntegerPoint>(random2);
+int int3 = 1289;
+int int4 = 17;
+LinkedList<EuclideanIntegerPoint> linkedList0 = new LinkedList<EuclideanIntegerPoint>();
+int[] intArray0 = new int[8];
+intArray0[0] = int1;
+int int5 = (-1496);
+intArray0[4] = int2;
+intArray0[6] = int0;
+EuclideanIntegerPoint euclideanIntegerPoint0 = new EuclideanIntegerPoint(intArray0);
+linkedList0.add(euclideanIntegerPoint0);
+linkedList0.add(euclideanIntegerPoint0);
+int int6 = 0;
+kMeansPlusPlusClusterer0.cluster(linkedList0, int6, intArray0[7]);
+linkedList0.add(euclideanIntegerPoint0);
+int int7 = (-1);
+int int8 = 5273;
+int int9 = Integer.MAX_VALUE;
+int int10 = 1397;
+int int11 = 2838;
+kMeansPlusPlusClusterer1.cluster(linkedList0, int5, int11);
+
+21:50:40.938 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:50:41.262 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:50:42.988 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'KMeansPlusPlusClusterer_ESTest' to results/MATH-79b-1-1.0-28
+21:50:43.015 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

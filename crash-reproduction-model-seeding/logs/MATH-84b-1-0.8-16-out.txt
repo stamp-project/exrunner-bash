@@ -1,0 +1,48 @@
+07:10:32.548 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+07:10:32.552 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer:320)
+07:10:32.552 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+07:10:35.678 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+07:10:44.224 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:10:44.262 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:10:44.262 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:10:44.322 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:10:44.332 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:10:44.333 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:10:44.333 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:10:44.333 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is incrementIterationsCounter
+07:10:44.396 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:10:44.445 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.MultiDirectional
+07:10:51.162 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:11:58.712 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:11:58.713 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:11:58.713 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:11:58.714 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:11:58.714 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:11:58.714 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:11:58.723 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+int int0 = (-3563);
+multiDirectional0.setMaxIterations(int0);
+multiDirectional0.incrementIterationsCounter();
+multiDirectional0.getMaxEvaluations();
+double double0 = 2209.0;
+MultiDirectional multiDirectional1 = new MultiDirectional(int0, double0);
+RealPointValuePair realPointValuePair0 = mock(RealPointValuePair.class, new ViolatedAssumptionAnswer());
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional1.replaceWorstPoint(realPointValuePair0, comparator0);
+double[] doubleArray0 = new double[0];
+multiDirectional1.setStartConfiguration(doubleArray0);
+double[][] doubleArray1 = new double[1][3];
+doubleArray1[0] = doubleArray0;
+multiDirectional1.setStartConfiguration(doubleArray1);
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+GoalType goalType0 = GoalType.MAXIMIZE;
+multiDirectional1.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+RealConvergenceChecker realConvergenceChecker1 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional1.setConvergenceChecker(realConvergenceChecker1);
+
+07:11:58.740 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:11:58.994 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:12:00.882 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-1-0.8-16
+07:12:00.893 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

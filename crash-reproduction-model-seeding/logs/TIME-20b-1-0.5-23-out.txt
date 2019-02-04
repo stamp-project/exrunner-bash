@@ -1,0 +1,59 @@
+19:45:08.789 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+19:45:08.792 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+19:45:08.792 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+19:45:11.445 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+19:45:23.500 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:45:23.528 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:45:23.528 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:45:23.560 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:45:23.582 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:45:23.582 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:45:23.582 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:45:23.583 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+19:45:23.643 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:45:23.646 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+19:45:32.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:45:43.986 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+19:45:43.990 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:45:43.991 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:45:43.991 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:45:43.991 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:45:43.991 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+19:45:43.992 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+Locale locale0 = Locale.FRANCE;
+boolean boolean0 = true;
+String string0 = "";
+Instant instant0 = Instant.parse(string0);
+Chronology chronology0 = instant0.getChronology();
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+int int0 = (-1225);
+Integer integer0 = new Integer(int0);
+Integer integer1 = Integer.getInteger(string0, integer0);
+int int1 = 60;
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0, locale0, boolean0, chronology0, dateTimeZone0, integer1, int1);
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withChronology(chronology0);
+dateTimeFormatter1.print((long) int0);
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter0.withChronology(chronology0);
+String string1 = "`z?";
+LocalDateTime localDateTime0 = dateTimeFormatter2.parseLocalDateTime(string1);
+DateTimeZone dateTimeZone1 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter3 = dateTimeFormatter2.withZone(dateTimeZone1);
+dateTimeFormatter1.getParser();
+dateTimeFormatter1.isPrinter();
+dateTimeFormatter3.isParser();
+dateTimeFormatter2.print((long) int1);
+String string2 = null;
+dateTimeFormatter2.parseDateTime(string2);
+dateTimeFormatter3.getPrinter();
+DateTimeFormatter dateTimeFormatter4 = dateTimeFormatter3.withOffsetParsed();
+dateTimeFormatter3.parseDateTime(string2);
+Writer writer0 = mock(Writer.class, new ViolatedAssumptionAnswer());
+dateTimeFormatter4.printTo(writer0, (ReadablePartial) localDateTime0);
+LocalTime localTime0 = dateTimeFormatter4.parseLocalTime(string0);
+dateTimeFormatter4.print((ReadablePartial) localTime0);
+
+19:45:44.009 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:45:44.413 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:45:46.003 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-0.5-23
+19:45:46.020 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

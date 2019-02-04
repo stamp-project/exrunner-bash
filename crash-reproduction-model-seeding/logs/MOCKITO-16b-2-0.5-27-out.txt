@@ -1,0 +1,71 @@
+15:05:42.333 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+15:05:42.337 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.stub(MockitoCore:43)
+15:05:42.337 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+15:05:44.641 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+15:05:52.033 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:05:52.045 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:05:52.045 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:05:52.054 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:05:52.055 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:05:52.055 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:05:52.055 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:05:52.055 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is stub
+15:05:52.063 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:05:52.072 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.Mockito
+15:05:58.964 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.MockitoCore
+15:06:04.915 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.exceptions.Reporter
+15:06:10.732 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:06:10.762 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:10.825 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:10.864 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+15:06:12.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.625
+15:06:12.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.625. FE: 0 
+15:06:12.318 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:06:30.294 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+15:06:30.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:06:30.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:06:30.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:06:30.295 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:06:30.296 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+Class<String>[] classArray0 = (Class<String>[]) Array.newInstance(Class.class, 8);
+Class<String> class0 = String.class;
+Class<String> class1 = String.class;
+Class<String> class2 = String.class;
+classArray0[2] = class2;
+classArray0[4] = classArray0[2];
+Class<String> class3 = String.class;
+classArray0[4] = class3;
+Class<String> class4 = String.class;
+classArray0[5] = classArray0[0];
+Class<String> class5 = String.class;
+classArray0[6] = class5;
+Class<String> class6 = String.class;
+MockSettingsImpl mockSettingsImpl1 = new MockSettingsImpl();
+String string0 = "W";
+String string1 = null;
+boolean boolean0 = false;
+VerificationMode verificationMode0 = null;
+Invocation invocation0 = null;
+MockitoCore mockitoCore0 = new MockitoCore();
+MockSettingsImpl mockSettingsImpl2 = new MockSettingsImpl();
+mockSettingsImpl0.spiedInstance(mockSettingsImpl2);
+MockSettingsImpl mockSettingsImpl3 = new MockSettingsImpl();
+Class<Integer> class7 = Integer.class;
+mockitoCore0.stub((Object) mockSettingsImpl3);
+mockitoCore0.validateMockitoUsage();
+mockitoCore0.stub((Object) classArray0[2]);
+Only only0 = new Only();
+MockingProgress mockingProgress0 = null;
+InvocationContainerImpl invocationContainerImpl0 = new InvocationContainerImpl(mockingProgress0);
+OngoingStubbingImpl<MockSettingsImpl> ongoingStubbingImpl0 = new OngoingStubbingImpl<MockSettingsImpl>(invocationContainerImpl0);
+List<Invocation> list0 = ongoingStubbingImpl0.getRegisteredInvocations();
+StubbedInvocationMatcher stubbedInvocationMatcher0 = invocationContainerImpl0.findAnswerFor(invocation0);
+VerificationDataImpl verificationDataImpl0 = new VerificationDataImpl(list0, stubbedInvocationMatcher0);
+only0.verify(verificationDataImpl0);
+mockitoCore0.getLastInvocation();
+mockitoCore0.mock(class7, (MockSettings) mockSettingsImpl3);
+
+15:06:30.319 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:06:30.587 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:06:32.898 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-2-0.5-27
+15:06:32.930 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

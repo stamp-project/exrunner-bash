@@ -1,0 +1,75 @@
+19:30:02.117 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+19:30:02.133 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.<init>(XYPlot:660)
+19:30:02.133 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+19:30:27.697 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+19:31:23.586 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+19:31:23.668 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+19:31:23.668 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+19:31:23.738 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+19:31:23.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+19:31:23.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+19:31:23.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+19:31:23.766 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+19:31:23.860 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+19:31:23.861 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.ChartFactory
+19:31:34.897 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.plot.XYPlot
+19:31:47.912 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.NumberAxis
+19:31:56.977 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.jfree.chart.axis.Axis
+19:32:04.322 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+19:32:46.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.7818181818181819
+19:32:46.372 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.7818181818181819. FE: 100 
+19:32:46.373 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+19:33:38.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.7818181818181819 | 200
+19:34:20.937 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 300
+19:34:20.938 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. FE: 300 
+19:35:08.114 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 400
+19:35:46.255 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 500
+19:36:19.283 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+19:36:19.284 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+19:36:19.294 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+19:36:19.294 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+19:36:19.294 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+19:36:19.319 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(xYDataset0).toString();
+doReturn(0).when(xYDataset0).getSeriesCount();
+NumberAxis3D numberAxis3D0 = new NumberAxis3D();
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYDataset0, numberAxis3D0, numberAxis3D0, xYItemRenderer0);
+PlotRenderingInfo plotRenderingInfo0 = null;
+BasicSplitPaneUI basicSplitPaneUI0 = new BasicSplitPaneUI();
+JSplitPane jSplitPane0 = basicSplitPaneUI0.getSplitPane();
+int int0 = 10906;
+long long0 = 36L;
+int int1 = 19;
+int int2 = 42;
+boolean boolean0 = true;
+MouseWheelEvent mouseWheelEvent0 = new MouseWheelEvent(jSplitPane0, int0, long0, int0, int1, int2, int2, boolean0, int1, int2, int1);
+Point point0 = new Point(int2, int1);
+JFreeChart jFreeChart0 = new JFreeChart(xYPlot0);
+boolean boolean1 = false;
+boolean boolean2 = true;
+PolarChartPanel polarChartPanel0 = new PolarChartPanel(jFreeChart0);
+polarChartPanel0.restoreAutoDomainBounds();
+jFreeChart0.removeChangeListener(polarChartPanel0);
+PolarChartPanel polarChartPanel1 = new PolarChartPanel(jFreeChart0);
+Point point1 = polarChartPanel1.getToolTipLocation(mouseWheelEvent0);
+int int3 = (-6);
+VectorSeriesCollection vectorSeriesCollection0 = new VectorSeriesCollection();
+xYPlot0.setDataset(int3, (XYDataset) vectorSeriesCollection0);
+NumberAxis3D numberAxis3D1 = new NumberAxis3D();
+Layer layer0 = Layer.FOREGROUND;
+ArrayDeque<DefaultValueDataset> arrayDeque0 = new ArrayDeque<DefaultValueDataset>(int0);
+Rectangle rectangle0 = new Rectangle(point1.y, point1.y);
+SimpleTable.getDimensionlessInstance(rectangle0, point1.x);
+Document document0 = new Document(rectangle0, int2, point0.y, long0, point1.x);
+OutputStream outputStream0 = null;
+String string0 = "'DILA\\::4ey7ZZD0Xv";
+String string1 = "Q%4Lf&e('[+{$Rvpm";
+float float0 = 0.5F;
+ListItem listItem0 = new ListItem();
+xYPlot0.getRangeAxisCount();
+
+19:36:19.333 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+19:36:20.039 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+19:36:26.277 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-5-0.2-28
+19:36:26.374 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

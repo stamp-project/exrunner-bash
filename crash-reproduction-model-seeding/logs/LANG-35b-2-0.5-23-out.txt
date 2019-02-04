@@ -1,0 +1,50 @@
+06:26:28.790 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.text.ParseException
+06:26:28.793 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.DateUtils.parseDate(DateUtils:287)
+06:26:28.793 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.DateUtils
+06:26:34.519 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+06:26:43.732 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:26:43.750 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:26:43.750 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:26:43.789 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:26:43.812 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:26:43.812 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:26:43.812 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:26:43.813 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDate
+06:26:43.840 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+06:26:43.892 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang3.time.DateUtils
+06:26:52.091 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:27:04.903 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+06:27:04.903 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:27:04.903 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:27:04.903 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:27:04.903 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:27:04.904 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+06:27:04.904 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Calendar calendar0 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+doReturn(0, 0, 0, 0, 0).when(calendar0).get(anyInt());
+int int0 = 1;
+DateUtils.getFragmentInDays(calendar0, int0);
+String string0 = "[Son-\\t1~jqB~6(";
+String[] stringArray0 = new String[0];
+Date date0 = DateUtils.parseDate(string0, stringArray0);
+Calendar calendar1 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+int int1 = 2592;
+DateUtils.getFragmentInSeconds(calendar1, int1);
+Date date1 = DateUtils.addDays(date0, int1);
+Date date2 = DateUtils.addMonths(date1, int0);
+int int2 = 1467;
+DateUtils.truncate((Object) string0, int2);
+Date date3 = DateUtils.addYears(date1, int2);
+DateUtils.isSameDay(date3, date3);
+DateUtils.ceiling(date2, int2);
+Calendar calendar2 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+int int3 = 1;
+DateUtils.getFragmentInMinutes(calendar2, int3);
+DateUtils.setMilliseconds(date0, int1);
+DateUtils.isSameDay(date0, date0);
+Calendar calendar3 = mock(Calendar.class, new ViolatedAssumptionAnswer());
+DateUtils.getFragmentInMilliseconds(calendar3, int1);
+
+06:27:04.934 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:27:05.327 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:27:08.707 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateUtils_ESTest' to results/LANG-35b-2-0.5-23
+06:27:08.828 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

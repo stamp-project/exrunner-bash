@@ -1,0 +1,58 @@
+23:32:02.433 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+23:32:02.436 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.invocation.Invocation.callRealMethod(Invocation:202)
+23:32:02.436 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.invocation.Invocation
+23:32:06.581 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+23:32:17.546 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:32:17.553 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:32:17.553 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:32:17.623 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:32:17.646 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:32:17.647 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:32:17.647 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:32:17.647 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is callRealMethod
+23:32:17.698 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:32:17.712 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.mockito.internal.invocation.Invocation
+23:32:26.837 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:32:43.189 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+23:32:43.189 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:32:43.189 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:32:43.190 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:32:43.190 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:32:43.190 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+23:32:43.191 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Object object0 = new Object();
+MockitoMethod mockitoMethod0 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod0).isVarArgs();
+Object[] objectArray0 = new Object[1];
+objectArray0[0] = (Object) mockitoMethod0;
+int int0 = (-1658);
+RealMethod realMethod0 = mock(RealMethod.class, new ViolatedAssumptionAnswer());
+Invocation invocation0 = new Invocation(object0, mockitoMethod0, objectArray0, int0, realMethod0);
+MockitoMethod mockitoMethod1 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod1).isVarArgs();
+int int1 = 7;
+RealMethod realMethod1 = null;
+Invocation invocation1 = new Invocation(invocation0, mockitoMethod1, objectArray0, int1, realMethod1);
+MockitoMethod mockitoMethod2 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod2).isVarArgs();
+int int2 = 0;
+Invocation invocation2 = new Invocation(invocation1, mockitoMethod2, objectArray0, int2, realMethod1);
+MockitoMethod mockitoMethod3 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod3).isVarArgs();
+Invocation invocation3 = new Invocation(invocation2, mockitoMethod3, objectArray0, int2, realMethod1);
+MockitoMethod mockitoMethod4 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(mockitoMethod4).isVarArgs();
+Invocation invocation4 = new Invocation(invocation3, mockitoMethod4, objectArray0, int2, realMethod1);
+invocation2.getArgumentsCount();
+Location location0 = invocation4.getLocation();
+invocation3.callRealMethod();
+PrintSettings printSettings0 = mock(PrintSettings.class, new ViolatedAssumptionAnswer());
+invocation2.toString(printSettings0);
+MockitoMethod mockitoMethod5 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+Invocation invocation5 = new Invocation(location0, mockitoMethod5, objectArray0, int0, realMethod1);
+invocation4.argumentsToMatchers();
+invocation5.returnsPrimitive();
+
+23:32:43.255 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:32:44.959 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:32:48.959 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Invocation_ESTest' to results/MOCKITO-36b-1-0.5-21
+23:32:48.966 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,47 @@
+09:13:27.775 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+09:13:27.781 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer:320)
+09:13:27.781 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+09:13:31.348 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+09:13:39.110 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:13:39.144 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:13:39.145 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:13:39.194 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:13:39.203 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:13:39.203 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:13:39.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:13:39.204 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is incrementIterationsCounter
+09:13:39.229 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:13:39.324 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.optimization.direct.MultiDirectional
+09:13:46.491 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:14:45.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+09:14:45.266 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:14:45.266 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:14:45.275 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:14:45.275 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:14:45.275 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+09:14:45.276 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+int int0 = (-1041);
+multiDirectional0.setMaxIterations(int0);
+multiDirectional0.incrementIterationsCounter();
+multiDirectional0.incrementIterationsCounter();
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[8];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+doubleArray0[2] = (double) int0;
+doubleArray0[3] = (double) int0;
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+doubleArray0[6] = (double) int0;
+doubleArray0[7] = (double) int0;
+multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.iterateSimplex(comparator0);
+
+09:14:45.327 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:14:45.841 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:14:49.168 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-1-0.2-23
+09:14:49.205 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
