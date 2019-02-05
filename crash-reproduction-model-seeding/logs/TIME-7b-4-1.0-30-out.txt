@@ -1,0 +1,78 @@
+18:43:22.751 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+18:43:22.755 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeParserBucket.computeMillis(DateTimeParserBucket:366)
+18:43:22.756 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeParserBucket
+18:43:27.663 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:43:49.240 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:43:49.304 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:43:49.304 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:43:49.396 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:43:49.397 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:43:49.397 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:43:49.397 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:43:49.397 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeMillis
+18:43:49.528 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:43:49.530 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+18:44:00.433 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+18:44:06.869 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+18:44:13.103 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+18:44:18.857 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:44:39.083 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6551724137931034
+18:44:39.083 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6551724137931034. FE: 100 
+18:44:39.084 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:44:58.237 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6551724137931034 | 200
+18:45:10.704 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6551724137931034 | 300
+18:45:22.191 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6551724137931034 | 400
+18:45:33.592 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 500
+18:45:33.592 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. FE: 500 
+18:45:42.844 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+18:45:42.844 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:45:42.866 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:45:42.866 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:45:42.866 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:45:42.867 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MillisDurationField millisDurationField0 = (MillisDurationField)MillisDurationField.INSTANCE;
+int int0 = DateTimeParserBucket.compareReverse(millisDurationField0, millisDurationField0);
+DateTimeField dateTimeField0 = mock(DateTimeField.class, new ViolatedAssumptionAnswer());
+Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+doReturn((DateTimeZone) null).when(chronology0).getZone();
+doReturn((Chronology) null).when(chronology0).withUTC();
+String string0 = "Illegal instant due to time zone offset transition (";
+Integer integer0 = new Integer(int0);
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfWeek();
+Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.AUTOSELECT_FILTERING;
+long long0 = (-489L);
+boolean boolean0 = false;
+long long1 = 1828L;
+Locale locale0 = Locale.TAIWAN;
+locale0.toLanguageTag();
+Locale locale1 = Locale.CANADA_FRENCH;
+locale1.getDisplayName(locale0);
+DateTimeParserBucket dateTimeParserBucket0 = new DateTimeParserBucket(int0, chronology0, locale1);
+int int1 = dateTimeParserBucket0.getOffset();
+String string1 = "Cannot parse \"";
+Locale locale2 = Locale.GERMANY;
+int int2 = (-2974);
+DateTimeParserBucket.compareReverse(millisDurationField0, millisDurationField0);
+DateTimeParserBucket.SavedField dateTimeParserBucket_SavedField0 = new DateTimeParserBucket.SavedField(dateTimeField0, string1, locale2);
+Integer integer1 = new Integer(int0);
+DateTimeZone.getDefault();
+dateTimeParserBucket0.setOffset(integer0);
+long long2 = 12L;
+MockZone mockZone0 = new MockZone(long2, int1, int1);
+dateTimeParserBucket0.setZone(mockZone0);
+MockPartial mockPartial0 = new MockPartial();
+int int3 = (-2675);
+int int4 = 0;
+dateTimeParserBucket0.saveField(dateTimeFieldType0, int4);
+dateTimeParserBucket0.getChronology();
+dateTimeParserBucket0.getZone();
+dateTimeParserBucket0.computeMillis(boolean0);
+dateTimeParserBucket0.saveState();
+String string2 = "";
+dateTimeParserBucket0.saveField(dateTimeFieldType0, string2, locale1);
+dateTimeParserBucket0.getLocale();
+dateTimeParserBucket0.setOffset(int2);
+
+18:45:42.904 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:45:45.836 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:45:49.065 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeParserBucket_ESTest' to results/TIME-7b-4-1.0-30
+18:45:49.099 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

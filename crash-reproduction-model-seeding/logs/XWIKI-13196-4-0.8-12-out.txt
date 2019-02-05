@@ -1,0 +1,145 @@
+04:56:05.582 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+04:56:05.587 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+04:56:05.587 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+04:57:00.285 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+04:58:56.034 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+04:58:56.043 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:58:56.044 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+04:58:56.145 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+04:58:56.154 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+04:58:56.154 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+04:58:56.155 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+04:58:56.155 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+04:58:56.216 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+04:58:56.261 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+04:59:13.827 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+04:59:23.868 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+04:59:30.757 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+04:59:36.972 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+04:59:45.261 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:00:06.677 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+05:00:06.678 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:00:06.689 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:00:06.690 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:00:06.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:00:06.694 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:00:06.720 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+String string0 = "";
+xWikiAttachment0.setAuthor(string0);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.setVersion(string0);
+boolean boolean0 = true;
+xWikiAttachment0.setMetaDataDirty(boolean0);
+xWikiAttachment0.getReference();
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment();
+String string1 = "exception while attach.clone";
+xWikiAttachment1.setFilename(string1);
+XMLWriter xMLWriter0 = mock(XMLWriter.class, new ViolatedAssumptionAnswer());
+String string2 = "author";
+xWikiAttachment1.fromXML(string2);
+xWikiAttachment0.getAuthor();
+JarResourceLoader jarResourceLoader0 = new JarResourceLoader();
+InputStream inputStream0 = jarResourceLoader0.getResourceStream(string0);
+int int0 = 0;
+xWikiAttachment0.setContent(inputStream0, int0);
+xWikiAttachment0.getAttachment_content();
+XWikiAttachmentArchive xWikiAttachmentArchive0 = null;
+xWikiAttachment0.setAttachment_archive(xWikiAttachmentArchive0);
+XWikiHibernateStore xWikiHibernateStore0 = new XWikiHibernateStore();
+EntityReferenceSerializer<DefaultReferenceDocumentReferenceResolver> entityReferenceSerializer0 = (EntityReferenceSerializer<DefaultReferenceDocumentReferenceResolver>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "compactWikiEntityReferenceSerializer", (Object) entityReferenceSerializer0);
+DocumentReferenceResolver<PathStringEntityReferenceSerializer> documentReferenceResolver0 = (DocumentReferenceResolver<PathStringEntityReferenceSerializer>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "currentMixedDocumentReferenceResolver", (Object) documentReferenceResolver0);
+DocumentReferenceResolver<Role> documentReferenceResolver1 = (DocumentReferenceResolver<Role>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultDocumentReferenceResolver", (Object) documentReferenceResolver1);
+EntityReferenceSerializer<RelativeStringEntityReferenceResolver> entityReferenceSerializer1 = (EntityReferenceSerializer<RelativeStringEntityReferenceResolver>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultEntityReferenceSerializer", (Object) entityReferenceSerializer1);
+EntityReferenceSerializer<EntityReference> entityReferenceSerializer2 = (EntityReferenceSerializer<EntityReference>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "localEntityReferenceSerializer", (Object) entityReferenceSerializer2);
+Logger logger0 = SQLCustomQuery.log;
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "logger", (Object) logger0);
+DefaultObservationManager defaultObservationManager0 = new DefaultObservationManager();
+ContextComponentManager contextComponentManager0 = new ContextComponentManager();
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "execution", (Object) execution0);
+ContextComponentManagerProvider contextComponentManagerProvider0 = new ContextComponentManagerProvider();
+Logger logger1 = CustomX509TrustManager.logger;
+Injector.inject(contextComponentManagerProvider0, (Class<?>) ContextComponentManagerProvider.class, "logger", (Object) logger1);
+DocumentComponentManager documentComponentManager0 = new DocumentComponentManager();
+PersistentClass persistentClass0 = null;
+JoinedSubclass joinedSubclass0 = new JoinedSubclass(persistentClass0);
+String string3 = null;
+HashtableCache hashtableCache0 = new HashtableCache(string3);
+Configuration configuration0 = new Configuration();
+Settings settings0 = configuration0.buildSettings();
+CacheDataDescriptionImpl cacheDataDescriptionImpl0 = CacheDataDescriptionImpl.decode(persistentClass0);
+EntityRegionAdapter entityRegionAdapter0 = new EntityRegionAdapter(hashtableCache0, settings0, cacheDataDescriptionImpl0);
+ReadWriteCache readWriteCache0 = new ReadWriteCache();
+EntityAccessStrategyAdapter entityAccessStrategyAdapter0 = new EntityAccessStrategyAdapter(entityRegionAdapter0, readWriteCache0, settings0);
+HttpConnection httpConnection0 = HttpConnection.getCurrentConnection();
+HttpInputOverHTTP httpInputOverHTTP0 = new HttpInputOverHTTP(httpConnection0);
+ObjectInputStream objectInputStream0 = new ObjectInputStream(httpInputOverHTTP0);
+JDBCContext.Context jDBCContext_Context0 = mock(JDBCContext.Context.class, new ViolatedAssumptionAnswer());
+Interceptor interceptor0 = null;
+JDBCContext jDBCContext0 = JDBCContext.deserialize(objectInputStream0, jDBCContext_Context0, interceptor0);
+SessionFactoryImplementor sessionFactoryImplementor0 = jDBCContext0.getFactory();
+JoinedSubclassEntityPersister joinedSubclassEntityPersister0 = new JoinedSubclassEntityPersister(joinedSubclass0, entityAccessStrategyAdapter0, sessionFactoryImplementor0, sessionFactoryImplementor0);
+EntityMode entityMode0 = settings0.getDefaultEntityMode();
+Class class0 = joinedSubclassEntityPersister0.getConcreteProxyClass(entityMode0);
+RoleHint<ReadOnlyXWikiContextProvider> roleHint0 = new RoleHint<ReadOnlyXWikiContextProvider>(class0, string3);
+GenericProvider<ReadOnlyXWikiContextProvider> genericProvider0 = new GenericProvider<ReadOnlyXWikiContextProvider>(contextComponentManager0, roleHint0);
+Injector.inject(documentComponentManager0, (Class<?>) DocumentComponentManager.class, "referenceProvider", (Object) genericProvider0);
+ContextRootComponentManager contextRootComponentManager0 = new ContextRootComponentManager();
+EmbeddableComponentManager embeddableComponentManager0 = new EmbeddableComponentManager(string3);
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "rootComponentManager", (Object) embeddableComponentManager0);
+ComponentManager componentManager0 = embeddableComponentManager0.getParent();
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "userComponentManager", (Object) componentManager0);
+Injector.validateBean(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class);
+ComponentManager componentManager1 = contextRootComponentManager0.getComponentManager();
+Injector.inject(documentComponentManager0, (Class<?>) DocumentComponentManager.class, "spaceComponentManager", (Object) componentManager1);
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution1);
+EntityReferenceSerializer<DefaultReferenceEntityReferenceResolver> entityReferenceSerializer3 = (EntityReferenceSerializer<DefaultReferenceEntityReferenceResolver>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer3);
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(documentComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager0);
+Injector.validateBean(documentComponentManager0, (Class<?>) DocumentComponentManager.class);
+ComponentManager componentManager2 = documentComponentManager0.getComponentManager();
+Injector.inject(contextComponentManagerProvider0, (Class<?>) ContextComponentManagerProvider.class, "rootComponentManager", (Object) componentManager2);
+Injector.validateBean(contextComponentManagerProvider0, (Class<?>) ContextComponentManagerProvider.class);
+ComponentManager componentManager3 = contextComponentManagerProvider0.get();
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "rootComponentManager", (Object) componentManager3);
+RootComponentManager rootComponentManager0 = new RootComponentManager();
+ComponentManager componentManager4 = contextComponentManager0.getParent();
+Injector.inject(rootComponentManager0, (Class<?>) RootComponentManager.class, "rootComponentManager", (Object) componentManager4);
+Injector.validateBean(rootComponentManager0, (Class<?>) RootComponentManager.class);
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "userComponentManager", (Object) rootComponentManager0);
+Injector.validateBean(contextComponentManager0, (Class<?>) ContextComponentManager.class);
+ComponentManager componentManager5 = contextComponentManager0.getComponentManager();
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "componentManager", (Object) componentManager5);
+String string4 = "jojH6q$ZPw}b^E,241v";
+LinkedList<SubstituteLoggingEvent> linkedList0 = new LinkedList<SubstituteLoggingEvent>();
+boolean boolean1 = true;
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string4, linkedList0, boolean1);
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "logger", (Object) substituteLogger0);
+Injector.validateBean(defaultObservationManager0, (Class<?>) DefaultObservationManager.class);
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "observationManager", (Object) defaultObservationManager0);
+Class<DefaultStringAttachmentReferenceResolver> class1 = DefaultStringAttachmentReferenceResolver.class;
+LoadedClass<DefaultStringAttachmentReferenceResolver> loadedClass0 = new LoadedClass<DefaultStringAttachmentReferenceResolver>(class1);
+com.google.inject.Injector injector0 = mock(com.google.inject.Injector.class, new ViolatedAssumptionAnswer());
+Injector.inject(loadedClass0, (Class<?>) AbstractDeferredClass.class, "injector", (Object) injector0);
+Injector.validateBean(loadedClass0, (Class<?>) LoadedClass.class);
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "oldRenderingProvider", (Object) loadedClass0);
+XWikiContext xWikiContext0 = null;
+XWiki xWiki0 = XWiki.getXWiki(boolean1, xWikiContext0);
+xWiki0.getPluginManager();
+XWikiAttachment xWikiAttachment2 = new XWikiAttachment();
+XWikiAttachment xWikiAttachment3 = new XWikiAttachment();
+xWikiAttachment3.getAttachment_content();
+
+05:00:06.776 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:00:08.277 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:00:14.525 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-4-0.8-12
+05:00:14.633 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

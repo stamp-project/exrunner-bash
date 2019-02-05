@@ -1,0 +1,69 @@
+22:54:00.124 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+22:54:00.129 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang.text.StrBuilder.appendFixedWidthPadLeft(StrBuilder:1186)
+22:54:00.129 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang.text.StrBuilder
+22:54:07.274 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+22:54:14.695 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:54:14.729 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:54:14.730 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:54:14.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:54:14.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:54:14.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:54:14.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:54:14.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is appendFixedWidthPadLeft
+22:54:14.817 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:54:14.818 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang.text.StrBuilder
+22:54:21.419 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:54:35.757 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+22:54:35.758 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+22:54:35.758 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:54:51.137 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.4 | 200
+22:55:00.197 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+22:55:00.197 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+22:55:00.224 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:55:00.224 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:55:00.224 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+22:55:00.225 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: StrBuilder strBuilder0 = new StrBuilder();
+int int0 = StrBuilder.CAPACITY;
+int int1 = StrBuilder.CAPACITY;
+StrMatcher strMatcher0 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(strMatcher0).toString();
+int int2 = (-4797);
+StrBuilder strBuilder1 = new StrBuilder();
+int int3 = (-3930);
+int int4 = 8;
+char char0 = ',';
+StrBuilder strBuilder2 = strBuilder0.appendFixedWidthPadLeft((Object) strMatcher0, int4, char0);
+StrBuilder strBuilder3 = new StrBuilder(int2);
+int int5 = 273;
+int int6 = (-53);
+StrBuilder.StrBuilderWriter strBuilder_StrBuilderWriter0 = strBuilder1.new StrBuilderWriter();
+int int7 = (-904);
+String string0 = "length must be valid";
+strBuilder2.insert(int7, string0);
+char[] charArray0 = new char[4];
+charArray0[1] = char0;
+charArray0[1] = char0;
+charArray0[2] = char0;
+charArray0[3] = char0;
+CharBuffer.allocate(int5);
+int int8 = 32;
+int int9 = 101;
+StrBuilder.StrBuilderWriter strBuilder_StrBuilderWriter1 = strBuilder1.new StrBuilderWriter();
+char[] charArray1 = new char[1];
+strBuilder2.deleteFirst(string0);
+strBuilder_StrBuilderWriter0.close();
+StrBuilder strBuilder4 = strBuilder2.setLength(int3);
+String string1 = "5.0";
+strBuilder4.setNewLineText(string1);
+int int10 = StrBuilder.CAPACITY;
+strBuilder0.asReader();
+StrBuilder strBuilder5 = new StrBuilder();
+strBuilder0.length();
+int int11 = 0;
+strBuilder5.charAt(int0);
+StrBuilder.StrBuilderTokenizer strBuilder_StrBuilderTokenizer0 = strBuilder3.new StrBuilderTokenizer();
+
+22:55:00.255 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:55:00.634 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:55:02.669 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'StrBuilder_ESTest' to results/LANG-47b-1-0.2-18
+22:55:02.757 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

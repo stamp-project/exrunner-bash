@@ -1,0 +1,86 @@
+23:36:58.080 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+23:36:58.084 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+23:36:58.084 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+23:37:10.735 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+23:40:02.662 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+23:40:02.708 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+23:40:02.708 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+23:40:02.749 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+23:40:02.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+23:40:02.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+23:40:02.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+23:40:02.765 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+23:40:07.219 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+23:40:07.602 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+23:41:05.454 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+23:41:05.454 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+23:41:05.455 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+23:42:00.830 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+23:42:00.830 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+23:42:00.831 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+23:42:00.831 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+23:42:00.831 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+23:42:00.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager0 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager0);
+EntityReferenceSerializer<String> entityReferenceSerializer0 = (EntityReferenceSerializer<String>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer0);
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<MimeMessage> mimeMessageFactory0 = (MimeMessageFactory<MimeMessage>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) logger0);
+MailSenderConfiguration mailSenderConfiguration0 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(mailSenderConfiguration0).getFromAddress();
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) mailSenderConfiguration0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class);
+Logger logger1 = null;
+periodicMimeMessageIterator0.logger = logger1;
+Consumer<Object> consumer0 = (Consumer<Object>) mock(Consumer.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.forEach(consumer0);
+periodicMimeMessageIterator0.next();
+periodicMimeMessageIterator0.computeNext();
+FacesWebContext facesWebContext0 = new FacesWebContext();
+HsqlProperties hsqlProperties0 = null;
+JDBCConnection jDBCConnection0 = new JDBCConnection(hsqlProperties0);
+String string0 = "";
+int int0 = 2147483645;
+int int1 = 1244;
+JDBCCallableStatement jDBCCallableStatement0 = new JDBCCallableStatement(jDBCConnection0, string0, int0, int0, int1);
+jDBCCallableStatement0.getTime(int1);
+DefaultEvent defaultEvent0 = new DefaultEvent();
+CompositeEvent compositeEvent0 = new CompositeEvent(defaultEvent0);
+CompositeEvent compositeEvent1 = new CompositeEvent(compositeEvent0);
+DocumentReference documentReference0 = compositeEvent1.getDocument();
+LazyXWikiDocument lazyXWikiDocument0 = new LazyXWikiDocument(documentReference0);
+HibernateAttachmentRecycleBinStore hibernateAttachmentRecycleBinStore0 = new HibernateAttachmentRecycleBinStore();
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Provider<Box> provider0 = (Provider<Box>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hibernateAttachmentRecycleBinStore0, (Class<?>) XWikiHibernateBaseStore.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(hibernateAttachmentRecycleBinStore0, (Class<?>) HibernateAttachmentRecycleBinStore.class);
+String string1 = "could not read a hi value - you need to populate the table: ";
+String string2 = "yqhi'yme#~";
+URL uRL0 = jDBCCallableStatement0.getURL(string2);
+uRL0.openStream();
+String string3 = "";
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiContext0.clone();
+long long0 = 0L;
+boolean boolean0 = true;
+
+23:42:00.845 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+23:42:01.446 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+23:42:08.581 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-0.5-20
+23:42:08.600 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

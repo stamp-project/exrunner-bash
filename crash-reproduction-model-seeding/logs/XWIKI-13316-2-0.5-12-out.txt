@@ -1,0 +1,72 @@
+01:40:04.415 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+01:40:04.419 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.internal.skin.AbstractSkin.getOutputSyntax(AbstractSkin:140)
+01:40:04.419 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.internal.skin.AbstractSkin
+01:40:14.388 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1078.
+01:42:04.545 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:42:04.584 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:42:04.586 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:42:04.626 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:42:04.635 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:42:04.635 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:42:04.635 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:42:04.635 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getOutputSyntax
+01:42:04.708 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:42:04.924 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+01:42:29.194 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.internal.skin.EnvironmentSkin
+01:42:35.536 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.internal.template.InternalTemplateManager
+01:42:45.734 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:43:03.851 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:43:03.852 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:43:03.852 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:43:03.852 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:43:03.852 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:43:03.852 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:43:03.854 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "";
+InternalSkinManager internalSkinManager0 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+doReturn((Skin) null).when(internalSkinManager0).getSkin(anyString());
+InternalSkinConfiguration internalSkinConfiguration0 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(internalSkinConfiguration0).getDefaultParentSkinId();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+SyntaxFactory syntaxFactory0 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+Environment environment0 = mock(Environment.class, new ViolatedAssumptionAnswer());
+doReturn((URL) null).when(environment0).getResource(anyString());
+Provider<XWikiContext> provider0 = null;
+EnvironmentSkin environmentSkin0 = new EnvironmentSkin(string0, internalSkinManager0, internalSkinConfiguration0, logger0, syntaxFactory0, environment0, provider0);
+environmentSkin0.getParent();
+String string1 = "2~$6OnV_*%5w";
+InternalSkinManager internalSkinManager1 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration1 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+SyntaxFactory syntaxFactory1 = null;
+Environment environment1 = null;
+EnvironmentSkin environmentSkin1 = new EnvironmentSkin(string1, internalSkinManager1, internalSkinConfiguration1, logger1, syntaxFactory1, environment1, provider0);
+String string2 = environmentSkin1.getSkinFolder();
+environmentSkin0.createResource(string1, string2);
+environmentSkin1.getOutputSyntax();
+InternalSkinManager internalSkinManager2 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration2 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+Logger logger2 = mock(Logger.class, new ViolatedAssumptionAnswer());
+EnvironmentSkin environmentSkin2 = new EnvironmentSkin(string0, internalSkinManager2, internalSkinConfiguration2, logger2, syntaxFactory1, environment1, provider0);
+environmentSkin1.getOutputSyntax();
+String string3 = "8$2n";
+environmentSkin1.getLocalResource(string3);
+String string4 = null;
+InternalSkinManager internalSkinManager3 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration3 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+WikiSkinUtils wikiSkinUtils0 = mock(WikiSkinUtils.class, new ViolatedAssumptionAnswer());
+Logger logger3 = mock(Logger.class, new ViolatedAssumptionAnswer());
+WikiSkin wikiSkin0 = new WikiSkin(string4, internalSkinManager3, internalSkinConfiguration3, wikiSkinUtils0, logger3, syntaxFactory1);
+environmentSkin1.getId();
+wikiSkin0.getOutputSyntaxString();
+environmentSkin0.getSkinFolder();
+String string5 = "Rijndael";
+InternalSkinManager internalSkinManager4 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+InternalSkinConfiguration internalSkinConfiguration4 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+WikiSkinUtils wikiSkinUtils1 = null;
+Logger logger4 = mock(Logger.class, new ViolatedAssumptionAnswer());
+WikiSkin wikiSkin1 = new WikiSkin(string5, internalSkinManager4, internalSkinConfiguration4, wikiSkinUtils1, logger4, syntaxFactory1);
+
+01:43:03.940 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:43:04.484 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:43:15.153 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractSkin_ESTest' to results/XWIKI-13316-2-0.5-12
+01:43:15.495 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,73 @@
+11:20:20.993 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+11:20:20.997 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.wiki.template.internal.DefaultWikiTemplateManager.setTemplate(DefaultWikiTemplateManager:119)
+11:20:20.997 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.wiki.template.internal.DefaultWikiTemplateManager
+11:20:29.591 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 552.
+11:22:46.011 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:22:46.054 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:22:46.054 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:22:46.115 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:22:46.135 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:22:46.135 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:22:46.136 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:22:46.136 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setTemplate
+11:22:46.191 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:22:46.561 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+11:23:02.285 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:24:06.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+11:24:06.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+11:24:06.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:24:57.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+11:25:24.483 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+11:26:00.449 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+11:26:31.466 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 500
+11:27:05.264 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+11:27:05.264 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+11:27:05.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:27:05.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:27:05.265 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+11:27:05.282 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultWikiTemplateManager defaultWikiTemplateManager0 = new DefaultWikiTemplateManager();
+QueryManager queryManager0 = mock(QueryManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "queryManager", (Object) queryManager0);
+WikiPropertyGroupProvider wikiPropertyGroupProvider0 = mock(WikiPropertyGroupProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "templateWikiPropertyGroupProvider", (Object) wikiPropertyGroupProvider0);
+String string0 = "*iN?>bnE-@?C{At";
+WikiDescriptor wikiDescriptor0 = new WikiDescriptor(string0, string0);
+WikiDescriptor wikiDescriptor1 = wikiDescriptor0.clone();
+wikiDescriptor0.clone();
+wikiDescriptor1.getMainPageReference();
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+doReturn(wikiDescriptor1).when(wikiDescriptorManager0).getById(anyString());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+WikiManager wikiManager0 = mock(WikiManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiManager", (Object) wikiManager0);
+WikiProvisioningJobExecutor wikiProvisioningJobExecutor0 = mock(WikiProvisioningJobExecutor.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiProvisionerExecutor", (Object) wikiProvisioningJobExecutor0);
+Provider<Locale.LanguageRange> provider0 = (Provider<Locale.LanguageRange>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class);
+String string1 = "C>R:S.";
+boolean boolean0 = true;
+defaultWikiTemplateManager0.setTemplate(string1, boolean0);
+String string2 = "NITY";
+int int0 = 1;
+String string3 = "<n~!m(TMFQ\"Q<Q.{se";
+defaultWikiTemplateManager0.applyTemplate(string0, string1);
+String string4 = ",Rm9D9+\\6F";
+String string5 = "";
+Object object0 = new Object();
+defaultWikiTemplateManager0.getTemplates();
+String string6 = "[D";
+String string7 = "_Mv8)gV}QyyuT";
+defaultWikiTemplateManager0.isTemplate(string7);
+Boolean boolean1 = new Boolean(boolean0);
+String string8 = null;
+String string9 = "";
+String string10 = "~;MNw<m,p3";
+boolean boolean2 = false;
+defaultWikiTemplateManager0.createWikiFromTemplate(string8, string1, string9, string10, boolean2);
+defaultWikiTemplateManager0.applyTemplate(string5, string6);
+
+11:27:05.316 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:27:05.793 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:27:14.688 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultWikiTemplateManager_ESTest' to results/XWIKI-14475-1-0.2-11
+11:27:14.720 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

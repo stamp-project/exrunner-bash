@@ -1,0 +1,74 @@
+12:36:08.849 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+12:36:08.853 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+12:36:08.853 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+12:36:20.535 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+12:39:16.276 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:39:16.319 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:39:16.319 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:39:16.346 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:39:16.347 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:39:16.348 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:39:16.348 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:39:16.348 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+12:39:20.689 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:39:20.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:40:35.543 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+12:40:35.548 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+12:40:35.549 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:41:42.121 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+12:41:42.121 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:41:42.122 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:41:42.122 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:41:42.122 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:41:42.125 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager0 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager0);
+EntityReferenceSerializer<String> entityReferenceSerializer0 = (EntityReferenceSerializer<String>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer0);
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<CompositeBlock> mimeMessageFactory0 = (MimeMessageFactory<CompositeBlock>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) logger0);
+MailSenderConfiguration mailSenderConfiguration0 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) mailSenderConfiguration0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class);
+NotificationUserIterator notificationUserIterator0 = mock(NotificationUserIterator.class, new ViolatedAssumptionAnswer());
+doReturn(false, false).when(notificationUserIterator0).hasNext();
+ServletWebContext servletWebContext0 = new ServletWebContext();
+DocumentReference documentReference0 = null;
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, servletWebContext0, documentReference0);
+PeriodicMimeMessageIterator periodicMimeMessageIterator1 = new PeriodicMimeMessageIterator();
+periodicMimeMessageIterator0.computeNext();
+NotificationUserIterator notificationUserIterator1 = new NotificationUserIterator();
+periodicMimeMessageIterator1.next();
+periodicMimeMessageIterator0.hasNext();
+periodicMimeMessageIterator1.next();
+PeriodicMimeMessageIterator periodicMimeMessageIterator2 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager1 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager1);
+EntityReferenceSerializer<CompositeBlock> entityReferenceSerializer1 = (EntityReferenceSerializer<CompositeBlock>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer1);
+NotificationEmailRenderer notificationEmailRenderer1 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer1);
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge1);
+MimeMessageFactory<String> mimeMessageFactory1 = (MimeMessageFactory<String>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory1);
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) logger1);
+MailSenderConfiguration mailSenderConfiguration1 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) mailSenderConfiguration1);
+WikiDescriptorManager wikiDescriptorManager1 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator2, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager1);
+Injector.validateBean(periodicMimeMessageIterator2, (Class<?>) PeriodicMimeMessageIterator.class);
+
+12:41:42.193 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:41:43.152 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:41:49.874 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-0.2-18
+12:41:49.951 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

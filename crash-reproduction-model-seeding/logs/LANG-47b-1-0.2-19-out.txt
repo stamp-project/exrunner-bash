@@ -1,0 +1,70 @@
+22:54:09.563 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+22:54:09.568 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang.text.StrBuilder.appendFixedWidthPadLeft(StrBuilder:1186)
+22:54:09.569 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang.text.StrBuilder
+22:54:15.846 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+22:54:23.396 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:54:23.405 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:54:23.405 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:54:23.434 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:54:23.436 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:54:23.436 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:54:23.448 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:54:23.449 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is appendFixedWidthPadLeft
+22:54:23.478 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:54:23.491 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.lang.text.StrBuilder
+22:54:30.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:54:43.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+22:54:43.614 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+22:54:43.614 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:54:56.003 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+22:55:03.849 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+22:55:13.525 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+22:55:20.253 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+22:55:20.253 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+22:55:20.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:55:20.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:55:20.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+22:55:20.258 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: StrBuilder strBuilder0 = new StrBuilder();
+char char0 = '7';
+double double0 = 6.094575512857478;
+int int0 = 39;
+StrBuilder strBuilder1 = new StrBuilder();
+String string0 = null;
+char char1 = 'O';
+StrBuilder strBuilder2 = strBuilder0.appendFixedWidthPadLeft((Object) string0, (int) char0, char1);
+strBuilder2.validateIndex(int0);
+long long0 = 1L;
+strBuilder2.insert(int0, long0);
+int int1 = (-1587);
+int int2 = StrBuilder.CAPACITY;
+StrMatcher strMatcher0 = mock(StrMatcher.class, new ViolatedAssumptionAnswer());
+doReturn(0, 0, 0, 0, 0).when(strMatcher0).isMatch(any(char[].class) , anyInt() , anyInt() , anyInt());
+StrBuilder strBuilder3 = new StrBuilder();
+strBuilder3.asWriter();
+int int3 = 1287;
+double double1 = 0.0;
+StrBuilder strBuilder4 = strBuilder3.append(double1);
+strBuilder0.midString(int0, int3);
+int int4 = (-3249);
+strBuilder3.clear();
+String string1 = "T)!U~8|";
+int int5 = (-2509);
+strBuilder4.replace(int2, int4, string1);
+StrMatcher.spaceMatcher();
+int int6 = 90;
+StrBuilder strBuilder5 = strBuilder0.insert(int6, (long) int5);
+char char2 = 'l';
+double double2 = (-1.0);
+StrBuilder strBuilder6 = strBuilder5.appendln(double2);
+strBuilder6.appendln((double) int0);
+char char3 = '7';
+strBuilder5.lastIndexOf(char3, int1);
+int int7 = 2120;
+StrBuilder strBuilder7 = new StrBuilder();
+StrBuilder.StrBuilderWriter strBuilder_StrBuilderWriter0 = strBuilder7.new StrBuilderWriter();
+strBuilder_StrBuilderWriter0.write(string0, int0, int2);
+
+22:55:20.278 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:55:20.469 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:55:22.195 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'StrBuilder_ESTest' to results/LANG-47b-1-0.2-19
+22:55:22.278 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

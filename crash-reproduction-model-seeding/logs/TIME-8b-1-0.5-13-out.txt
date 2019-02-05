@@ -1,0 +1,73 @@
+12:12:46.959 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+12:12:46.963 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.DateTimeZone.forOffsetHoursMinutes(DateTimeZone:280)
+12:12:46.963 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.DateTimeZone
+12:12:56.000 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+12:13:20.645 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:13:20.769 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:13:20.770 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:13:20.819 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:13:20.857 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:13:20.857 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:13:20.857 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:13:20.857 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is forOffsetHoursMinutes
+12:13:20.940 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+12:13:21.121 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.DateTimeZone
+12:13:30.206 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:13:43.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+12:13:43.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:13:43.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:13:43.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:13:43.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:13:43.213 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+12:13:43.215 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 0;
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.forOffsetMillis(int0);
+int int1 = 89;
+DateTimeZone.forOffsetHoursMinutes(int0, int1);
+DateTimeZone.getAvailableIDs();
+DateTimeZone.setDefault(fixedDateTimeZone0);
+long long0 = 0L;
+int int2 = 58;
+int int3 = (-8);
+MockZone mockZone0 = new MockZone(long0, int2, int3);
+Provider provider0 = mock(Provider.class, new ViolatedAssumptionAnswer());
+DateTimeZone.setProvider(provider0);
+long long1 = (-3717L);
+mockZone0.previousTransition(long1);
+DateTimeZone dateTimeZone0 = DateTimeZone.forOffsetHoursMinutes(int2, int1);
+DateTimeZone.getNameProvider();
+dateTimeZone0.isFixed();
+long long2 = 475L;
+int int4 = 157;
+MockZone mockZone1 = new MockZone(long2, int4, int0);
+long long3 = (-3773L);
+mockZone0.previousTransition(long3);
+long long4 = 1L;
+mockZone0.isStandardOffset(long4);
+long long5 = 740L;
+int int5 = fixedDateTimeZone0.getStandardOffset(long5);
+int int6 = 43;
+DateTimeZone.forOffsetHoursMinutes(int6, int0);
+UTCProvider uTCProvider0 = new UTCProvider();
+mockZone1.equals(uTCProvider0);
+boolean boolean0 = mockZone1.isFixed();
+String string0 = "America/Los_Angeles";
+DateTimeZone.forID(string0);
+MockZone mockZone2 = new MockZone(long1, int5, int4);
+DateTimeZone.forOffsetHoursMinutes(int0, int6);
+mockZone1.convertUTCToLocal(int2);
+String string1 = ">9";
+DateTimeZone dateTimeZone1 = new DateTimeZone(string1);
+dateTimeZone1.hashCode();
+int int7 = 23;
+DateTimeZone dateTimeZone2 = DateTimeZone.forOffsetHoursMinutes(int7, int7);
+Object object0 = dateTimeZone2.writeReplace();
+dateTimeZone1.equals(object0);
+DateTimeZone dateTimeZone3 = DateTimeZone.forOffsetHours(int7);
+dateTimeZone3.equals(dateTimeZone1);
+long long6 = 3398L;
+dateTimeZone3.convertLocalToUTC(long4, boolean0, long6);
+
+12:13:43.238 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:13:43.871 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:13:47.933 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeZone_ESTest' to results/TIME-8b-1-0.5-13
+12:13:47.974 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

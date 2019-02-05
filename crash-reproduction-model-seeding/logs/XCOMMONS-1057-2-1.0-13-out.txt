@@ -1,0 +1,77 @@
+16:33:05.322 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+16:33:05.326 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.job.internal.UpgradePlanJob.tryInstallExtension(UpgradePlanJob:152)
+16:33:05.326 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.job.internal.UpgradePlanJob
+16:33:15.573 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 578.
+16:34:44.157 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:34:44.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:34:44.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:34:44.250 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:34:44.272 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:34:44.273 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:34:44.274 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:34:44.274 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is tryInstallExtension
+16:34:44.369 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+16:34:44.749 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+16:35:01.545 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.extension.job.internal.AbstractInstallPlanJob$ModifableExtensionPlanTree
+16:35:07.222 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:35:23.997 [main] ERROR e.s.b.f.t.f.RootMethodTestChromosomeFactory - Guided initialization failed. Please revise the target class and method!
+16:35:23.998 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: Guided initialization failed. Please revise the target class and method!
+16:35:30.019 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.857142857142857
+16:35:30.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.857142857142857. FE: 0 
+16:35:30.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:37:14.105 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+16:37:14.105 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+16:38:52.022 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+16:39:41.107 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+16:40:26.302 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+16:41:03.955 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+16:41:03.956 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+16:41:03.957 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:41:03.957 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:41:03.957 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+16:41:03.959 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: UpgradePlanJob upgradePlanJob0 = new UpgradePlanJob();
+CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractInstallPlanJob.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+NamespaceValidator namespaceValidator0 = mock(NamespaceValidator.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractInstallPlanJob.class, "namespaceResolver", (Object) namespaceValidator0);
+ExtensionRepositoryManager extensionRepositoryManager0 = mock(ExtensionRepositoryManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractInstallPlanJob.class, "repositoryManager", (Object) extensionRepositoryManager0);
+ExtensionHandlerManager extensionHandlerManager0 = mock(ExtensionHandlerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractExtensionJob.class, "extensionHandlerManager", (Object) extensionHandlerManager0);
+InstalledExtensionRepository installedExtensionRepository0 = mock(InstalledExtensionRepository.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractExtensionJob.class, "installedExtensionRepository", (Object) installedExtensionRepository0);
+LocalExtensionRepository localExtensionRepository0 = mock(LocalExtensionRepository.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractExtensionJob.class, "localExtensionRepository", (Object) localExtensionRepository0);
+ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "componentManager", (Object) componentManager0);
+Provider<DropMode> provider0 = (Provider<DropMode>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "executionContextManagerProvider", (Object) provider0);
+Provider<X509Principal> provider1 = (Provider<X509Principal>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "executionProvider", (Object) provider1);
+JobContext jobContext0 = mock(JobContext.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "jobContext", (Object) jobContext0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "logger", (Object) logger0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "loggerManager", (Object) loggerManager0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "observationManager", (Object) observationManager0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "progressManager", (Object) jobProgressManager0);
+JobStatusStore jobStatusStore0 = mock(JobStatusStore.class, new ViolatedAssumptionAnswer());
+Injector.inject(upgradePlanJob0, (Class<?>) AbstractJob.class, "store", (Object) jobStatusStore0);
+Injector.validateBean(upgradePlanJob0, (Class<?>) UpgradePlanJob.class);
+AbstractInstallPlanJob.ModifableExtensionPlanTree abstractInstallPlanJob_ModifableExtensionPlanTree0 = new AbstractInstallPlanJob.ModifableExtensionPlanTree();
+upgradePlanJob0.extensionTree = abstractInstallPlanJob_ModifableExtensionPlanTree0;
+ExtensionPlanNode extensionPlanNode0 = mock(ExtensionPlanNode.class, new ViolatedAssumptionAnswer());
+abstractInstallPlanJob_ModifableExtensionPlanTree0.add(extensionPlanNode0);
+ExtensionId extensionId0 = mock(ExtensionId.class, new ViolatedAssumptionAnswer());
+DefaultRequest defaultRequest0 = new DefaultRequest();
+LinkedList<String> linkedList0 = new LinkedList<String>();
+String string0 = "No FileSystem for scheme: ";
+upgradePlanJob0.tryInstallExtension(extensionId0, string0);
+
+16:41:03.988 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:41:04.196 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:41:08.251 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'UpgradePlanJob_ESTest' to results/XCOMMONS-1057-2-1.0-13
+16:41:08.284 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

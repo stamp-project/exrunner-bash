@@ -1,0 +1,79 @@
+07:39:03.063 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+07:39:03.076 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+07:39:03.076 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+07:39:06.104 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+07:39:21.328 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:39:21.437 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:39:21.438 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:39:21.455 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:39:21.464 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:39:21.464 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:39:21.464 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:39:21.464 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+07:39:21.520 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:39:21.523 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+07:39:31.256 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+07:39:37.521 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+07:39:43.587 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+07:39:49.107 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:39:58.428 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+07:39:58.429 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+07:39:58.429 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:40:13.786 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+07:40:13.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+07:40:13.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:40:13.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:40:13.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+07:40:13.789 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: GJChronology gJChronology0 = GJChronology.getInstance();
+CachedDateTimeZone cachedDateTimeZone0 = (CachedDateTimeZone)DateTimeZone.getDefault();
+long long0 = 509L;
+LocalTime localTime0 = new LocalTime(long0);
+int int0 = 1780;
+LocalTime localTime1 = localTime0.withSecondOfMinute(int0);
+LocalTime localTime2 = localTime1.minusMinutes(int0);
+PeriodType periodType0 = PeriodType.yearDayTime();
+Period period0 = new Period(long0, periodType0);
+LocalTime localTime3 = localTime2.minus(period0);
+int int1 = (-2541);
+LocalTime localTime4 = localTime3.withMillisOfSecond(int1);
+LocalTime localTime5 = localTime4.plusMinutes(int1);
+Minutes minutes0 = Minutes.minutesBetween((ReadablePartial) localTime5, (ReadablePartial) localTime1);
+long long1 = 382L;
+gJChronology0.add((ReadablePeriod) minutes0, long1, int1);
+Weeks weeks0 = Weeks.MIN_VALUE;
+int int2 = (-346);
+DateTimeZone.forOffsetMillis(int0);
+long long2 = 320L;
+gJChronology0.getZone();
+int int3 = (-3652);
+Locale locale0 = Locale.UK;
+LinkedList<Locale.LanguageRange> linkedList0 = new LinkedList<Locale.LanguageRange>();
+LinkedList<Locale> linkedList1 = new LinkedList<Locale>();
+cachedDateTimeZone0.getName(long2, locale0);
+long long3 = gJChronology0.add((ReadablePeriod) weeks0, long2, int3);
+int int4 = (-773);
+int int5 = (-2883);
+int int6 = 2066;
+FieldUtils.safeMultiply((long) int6, int4);
+FieldUtils.safeSubtract(int5, long3);
+int int7 = 0;
+weeks0.getFieldType();
+String string0 = "w";
+long long4 = 0L;
+FieldUtils.safeAdd(int4, int4);
+int int8 = (-1989);
+int int9 = 0;
+int int10 = 0;
+FieldUtils.verifyValueBounds(string0, int8, int9, int10);
+int int11 = (-2474);
+int int12 = (-3);
+int int13 = 2110;
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.era();
+int int14 = 1792;
+int int15 = 1;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int14, int15, int7);
+
+07:40:13.847 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:40:14.075 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:40:16.667 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-7b-1-0.8-17
+07:40:16.691 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

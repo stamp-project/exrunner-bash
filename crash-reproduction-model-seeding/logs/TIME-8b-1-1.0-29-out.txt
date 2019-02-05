@@ -1,0 +1,63 @@
+18:44:36.918 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:44:36.922 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.DateTimeZone.forOffsetHoursMinutes(DateTimeZone:280)
+18:44:36.988 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.DateTimeZone
+18:44:44.758 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:45:05.691 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:45:05.757 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:45:05.793 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:45:05.821 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:45:05.848 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:45:05.848 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:45:05.849 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:45:05.849 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is forOffsetHoursMinutes
+18:45:05.938 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:45:06.020 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.DateTimeZone
+18:45:14.609 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:45:26.674 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:45:26.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:26.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:45:26.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:45:26.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:45:26.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:45:26.721 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 0;
+int int1 = (-3131);
+DateTimeZone dateTimeZone0 = DateTimeZone.forOffsetHoursMinutes(int0, int1);
+boolean boolean0 = true;
+dateTimeZone0.convertLocalToUTC((long) int0, boolean0);
+long long0 = (-63L);
+long long1 = dateTimeZone0.nextTransition(long0);
+int int2 = 1267;
+DateTimeZone dateTimeZone1 = DateTimeZone.forOffsetHoursMinutes(int0, int2);
+dateTimeZone1.getMillisKeepLocal(dateTimeZone0, int1);
+boolean boolean1 = dateTimeZone0.equals(dateTimeZone1);
+Provider provider0 = mock(Provider.class, new ViolatedAssumptionAnswer());
+DateTimeZone.setProvider(provider0);
+int int3 = 0;
+int int4 = 3227;
+DateTimeZone.forOffsetHoursMinutes(int3, int4);
+long long2 = (-2936L);
+dateTimeZone1.convertLocalToUTC(long2, boolean1);
+int int5 = (-2519);
+DateTimeZone.forOffsetHoursMinutes(int3, int5);
+dateTimeZone0.isFixed();
+dateTimeZone0.previousTransition(int0);
+String string0 = "America/Los_Angeles";
+DateTimeZone dateTimeZone2 = new DateTimeZone(string0);
+dateTimeZone2.getID();
+dateTimeZone2.getID();
+dateTimeZone2.getID();
+dateTimeZone2.getID();
+dateTimeZone2.getID();
+long long3 = (-647L);
+dateTimeZone2.getOffset(long3);
+dateTimeZone2.toTimeZone();
+long long4 = 50L;
+boolean boolean2 = false;
+dateTimeZone2.convertLocalToUTC(long4, boolean2, long1);
+long long5 = 10800000L;
+dateTimeZone0.getShortName(long5);
+
+18:45:26.743 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:45:27.142 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:45:30.695 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeZone_ESTest' to results/TIME-8b-1-1.0-29
+18:45:30.753 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

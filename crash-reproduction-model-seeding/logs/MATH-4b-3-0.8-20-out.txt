@@ -1,0 +1,70 @@
+05:32:17.903 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+05:32:17.933 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine:116)
+05:32:17.934 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine
+05:32:20.456 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+05:32:31.477 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:32:31.499 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:32:31.499 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:32:31.560 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:32:31.562 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:32:31.562 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:32:31.562 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:32:31.562 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is intersection
+05:32:31.639 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:32:31.767 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+05:32:39.214 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+05:32:44.557 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:32:59.187 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6666666666666666
+05:32:59.187 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6666666666666666. FE: 100 
+05:32:59.187 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:33:13.655 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6666666666666666 | 200
+05:33:24.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+05:33:24.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+05:33:24.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:33:24.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:33:24.680 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+05:33:24.682 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Segment segment0 = mock(Segment.class, new ViolatedAssumptionAnswer());
+Vector3D vector3D0 = Vector3D.NEGATIVE_INFINITY;
+double double0 = (-54.521227924);
+Vector3D vector3D1 = Vector3D.NaN;
+double double1 = vector3D1.getNorm1();
+Vector3D vector3D2 = vector3D0.add(double0, (Vector<Euclidean3D>) vector3D1);
+Vector3D vector3D3 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(vector3D3).dotProduct(nullable(org.apache.commons.math3.geometry.Vector.class));
+Vector3D vector3D4 = new Vector3D(double0, vector3D2, double1, vector3D0);
+Line line0 = new Line(vector3D3, vector3D4);
+SubLine subLine0 = line0.wholeLine();
+boolean boolean0 = true;
+Vector3D vector3D5 = Vector3D.NEGATIVE_INFINITY;
+line0.distance(vector3D4);
+Line line1 = line0.revert();
+IntervalsSet intervalsSet0 = new IntervalsSet(double1, double1);
+Segment segment1 = new Segment(vector3D0, vector3D0, line1);
+SubLine subLine1 = new SubLine(segment1);
+boolean boolean1 = false;
+subLine0.intersection(subLine0, boolean1);
+subLine0.getSegments();
+subLine0.intersection(subLine1, boolean1);
+subLine0.intersection(subLine1, boolean0);
+boolean boolean2 = false;
+Vector3D vector3D6 = Vector3D.MINUS_K;
+LinkedList<Segment> linkedList0 = new LinkedList<Segment>();
+subLine1.getSegments();
+subLine1.getSegments();
+subLine0.intersection(subLine1, boolean2);
+subLine0.getSegments();
+subLine0.intersection(subLine1, boolean0);
+subLine1.getSegments();
+subLine1.getSegments();
+boolean boolean3 = false;
+subLine0.intersection(subLine1, boolean3);
+boolean boolean4 = false;
+subLine1.intersection(subLine0, boolean4);
+subLine1.getSegments();
+boolean boolean5 = false;
+subLine0.intersection(subLine1, boolean5);
+
+05:33:24.717 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:33:25.393 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:33:28.890 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SubLine_ESTest' to results/MATH-4b-3-0.8-20
+05:33:28.945 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

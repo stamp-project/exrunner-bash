@@ -1,0 +1,56 @@
+02:07:46.153 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+02:07:46.200 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.BaseStringProperty.setValue(BaseStringProperty:45)
+02:07:46.200 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.BaseStringProperty
+02:07:59.500 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 567.
+02:11:08.965 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+02:11:09.097 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+02:11:09.097 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+02:11:09.262 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+02:11:09.269 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+02:11:09.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+02:11:09.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+02:11:09.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setValue
+02:11:09.385 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+02:11:09.535 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+02:11:16.961 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.struts.action.ActionServlet
+02:11:22.674 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.user.impl.xwiki.MyFormAuthenticator
+02:11:27.935 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.PropertyClass
+02:11:37.328 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.plugin.ldap.XWikiLDAPUtils
+02:11:53.066 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.BaseStringProperty
+02:12:06.387 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+02:12:12.614 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+02:12:19.168 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.BaseClass
+02:12:39.891 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+02:13:03.576 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+02:13:03.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:13:03.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+02:13:03.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+02:13:03.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+02:13:03.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+02:13:03.618 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseStringProperty baseStringProperty0 = new BaseStringProperty();
+BaseStringProperty baseStringProperty1 = baseStringProperty0.clone();
+BaseStringProperty baseStringProperty2 = new BaseStringProperty();
+BaseStringProperty baseStringProperty3 = new BaseStringProperty();
+baseStringProperty2.cloneInternal(baseStringProperty0);
+baseStringProperty1.cloneInternal(baseStringProperty0);
+BaseStringProperty baseStringProperty4 = new BaseStringProperty();
+baseStringProperty2.getValue();
+baseStringProperty2.getValue();
+baseStringProperty1.getValue();
+baseStringProperty3.cloneInternal(baseStringProperty1);
+SecurityFilter securityFilter0 = new SecurityFilter();
+baseStringProperty0.setValue(securityFilter0);
+TotalOrderTxPerCacheInboundInvocationHandler totalOrderTxPerCacheInboundInvocationHandler0 = new TotalOrderTxPerCacheInboundInvocationHandler();
+CacheRpcCommand cacheRpcCommand0 = null;
+Reply reply0 = mock(Reply.class, new ViolatedAssumptionAnswer());
+TopologyMode topologyMode0 = TopologyMode.WAIT_TOPOLOGY;
+int int0 = 0;
+DefaultTopologyRunnable defaultTopologyRunnable0 = new DefaultTopologyRunnable(totalOrderTxPerCacheInboundInvocationHandler0, cacheRpcCommand0, reply0, topologyMode0, int0);
+Thread thread0 = new Thread(defaultTopologyRunnable0);
+TimeScheduler3.Task timeScheduler3_Task0 = new TimeScheduler3.Task(thread0);
+baseStringProperty1.setValue(timeScheduler3_Task0);
+
+02:13:03.655 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+02:13:04.312 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+02:13:11.702 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseStringProperty_ESTest' to results/XWIKI-13377-1-1.0-22
+02:13:11.836 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

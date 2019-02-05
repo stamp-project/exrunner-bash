@@ -1,0 +1,69 @@
+11:59:24.956 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+11:59:24.961 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Period.withYears(Period:896)
+11:59:24.961 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Period
+11:59:29.911 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+11:59:43.328 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:59:43.386 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:59:43.387 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:59:43.548 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:59:43.551 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:59:43.569 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:59:43.569 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:59:43.569 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is withYears
+11:59:43.688 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+11:59:43.693 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Period
+11:59:52.463 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.PeriodType
+11:59:59.268 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:00:07.029 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.5862068965517241
+12:00:07.029 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5862068965517241. FE: 100 
+12:00:07.029 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:00:19.052 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+12:00:19.052 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:00:19.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:00:19.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:00:19.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+12:00:19.054 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: long long0 = 24L;
+long long1 = 1462L;
+PeriodType periodType0 = PeriodType.minutes();
+Period period0 = new Period(long0, long1, periodType0);
+int int0 = (-1379);
+int int1 = 1769;
+Period period1 = period0.withYears(int1);
+DurationFieldType durationFieldType0 = DurationFieldType.MILLIS_TYPE;
+Period period2 = period1.withMinutes(int0);
+PeriodType periodType1 = PeriodType.millis();
+period2.isSupported(durationFieldType0);
+UTCProvider uTCProvider0 = new UTCProvider();
+String string0 = "!aaPvF.yer@_";
+String string1 = null;
+DateTimeZone dateTimeZone0 = uTCProvider0.getZone(string1);
+YearMonth yearMonth0 = new YearMonth(dateTimeZone0);
+Interval interval0 = new Interval(int1, long0, dateTimeZone0);
+DateTime dateTime0 = interval0.getStart();
+dateTime0.minus((long) int1);
+Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+period1.plusMinutes(int1);
+int int2 = 997;
+Period period3 = period0.plusDays(int2);
+int int3 = (-272);
+Period period4 = period3.withHours(int3);
+period4.minusMinutes(int1);
+PeriodType periodType2 = PeriodType.yearWeekDayTime();
+period4.normalizedStandard(periodType2);
+period0.toStandardWeeks();
+Period period5 = period0.minusDays(int1);
+MutableDateTime mutableDateTime0 = new MutableDateTime();
+ReadableDuration readableDuration0 = mock(ReadableDuration.class, new ViolatedAssumptionAnswer());
+Period period6 = new Period(mutableDateTime0, readableDuration0, periodType1);
+period0.toStandardDays();
+DateTimeZone.setDefault(dateTimeZone0);
+Chronology chronology1 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+period5.normalizedStandard(periodType0);
+Period.millis(int2);
+period5.getHours();
+period0.plusYears(int1);
+
+12:00:19.060 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:00:19.197 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:00:21.303 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Period_ESTest' to results/TIME-5b-2-0.5-16
+12:00:21.313 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

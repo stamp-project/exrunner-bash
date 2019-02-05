@@ -1,0 +1,60 @@
+05:31:32.373 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+05:31:32.377 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.Line.getAbscissa(Line:114)
+05:31:32.378 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.Line
+05:31:34.843 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+05:31:45.545 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:31:45.587 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:31:45.587 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:31:45.634 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:31:45.642 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:31:45.642 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:31:45.642 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:31:45.642 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getAbscissa
+05:31:45.725 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:31:45.806 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+05:31:52.153 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+05:31:57.770 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:32:08.326 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+05:32:08.326 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+05:32:08.326 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:32:20.615 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+05:32:20.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+05:32:20.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:32:20.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:32:20.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+05:32:20.634 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = null;
+Vector3D vector3D1 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(vector3D1).dotProduct(nullable(org.apache.commons.math3.geometry.Vector.class));
+Vector3D vector3D2 = Vector3D.POSITIVE_INFINITY;
+Line line0 = new Line(vector3D1, vector3D2);
+double double0 = line0.getAbscissa(vector3D0);
+Line line1 = new Line(line0);
+Line line2 = new Line(line1);
+line2.intersection(line2);
+Vector3D vector3D3 = Vector3D.POSITIVE_INFINITY;
+vector3D2.scalarMultiply(double0);
+line1.intersection(line0);
+Vector1D vector1D0 = line0.toSubSpace(vector3D0);
+line2.isSimilarTo(line1);
+line0.getOrigin();
+Vector3D vector3D4 = null;
+line2.closestPoint(line1);
+Line line3 = line1.revert();
+vector3D2.add(double0, (Vector<Euclidean3D>) vector3D0);
+Line line4 = new Line(line1);
+Vector3D vector3D5 = Vector3D.POSITIVE_INFINITY;
+Vector3D vector3D6 = line4.getDirection();
+vector3D6.scalarMultiply(double0);
+double double1 = 0.0;
+vector3D3.subtract(double1, (Vector<Euclidean3D>) vector3D6);
+line4.getDirection();
+line4.wholeLine();
+line2.intersection(line4);
+line4.wholeLine();
+line4.distance(line3);
+line1.toSpace(vector1D0);
+
+05:32:20.642 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:32:20.869 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:32:23.429 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Line_ESTest' to results/MATH-4b-1-0.8-17
+05:32:23.460 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

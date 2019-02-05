@@ -1,0 +1,53 @@
+01:15:31.872 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+01:15:31.908 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.DateTimeZone.forOffsetHoursMinutes(DateTimeZone:280)
+01:15:31.908 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.DateTimeZone
+01:15:39.488 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+01:15:59.220 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:15:59.261 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:15:59.262 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:15:59.301 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:15:59.318 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:15:59.319 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:15:59.319 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:15:59.319 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is forOffsetHoursMinutes
+01:15:59.389 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:15:59.502 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.DateTimeZone
+01:16:07.378 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:16:20.578 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:16:20.579 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:16:20.597 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:16:20.598 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:16:20.598 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:16:20.598 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:16:20.599 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, CALLS_REAL_METHODS);
+doReturn((String) null).when(dateTimeZone0).getNameKey(anyLong());
+doReturn(0).when(dateTimeZone0).getStandardOffset(anyLong());
+doReturn(false).when(dateTimeZone0).isFixed();
+DateTimeZone.setDefault(dateTimeZone0);
+ZoneInfoProvider zoneInfoProvider0 = (ZoneInfoProvider)DateTimeZone.getProvider();
+DateTimeZone dateTimeZone1 = DateTimeZone.getDefault();
+long long0 = 0L;
+int int0 = dateTimeZone1.getStandardOffset(long0);
+dateTimeZone1.isFixed();
+dateTimeZone1.getName(long0);
+int int1 = 356;
+DateTimeZone.forOffsetHoursMinutes(int0, int1);
+long long1 = (-4939L);
+dateTimeZone1.isStandardOffset(int1);
+MockZone mockZone0 = new MockZone(long0, int0, int0);
+long long2 = (-2442L);
+DateTimeZone.setProvider(zoneInfoProvider0);
+int int2 = 1713;
+MockZone mockZone1 = new MockZone(int1, int2, int1);
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeZone.forTimeZone(timeZone0);
+DateTimeZone.getAvailableIDs();
+LocalDateTime localDateTime0 = mock(LocalDateTime.class, new ViolatedAssumptionAnswer());
+mockZone0.isLocalDateTimeGap(localDateTime0);
+int int3 = (-1327);
+DateTimeZone.forOffsetMillis(int3);
+
+01:16:20.646 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:16:21.593 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:16:24.949 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeZone_ESTest' to results/TIME-8b-1-0.2-29
+01:16:25.026 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

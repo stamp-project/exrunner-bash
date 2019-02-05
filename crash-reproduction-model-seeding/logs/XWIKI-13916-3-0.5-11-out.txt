@@ -1,0 +1,74 @@
+20:35:31.978 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+20:35:31.982 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.classes.BaseClass.addTextAreaField(BaseClass:868)
+20:35:31.982 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.classes.BaseClass
+20:35:49.979 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+20:38:07.449 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:38:07.463 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:38:07.463 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:38:07.472 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:38:07.475 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:38:07.476 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:38:07.476 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:38:07.476 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is addTextAreaField
+20:38:07.621 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+20:38:07.621 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.internal.WikiInitializerJob
+20:38:19.797 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+20:38:27.375 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+20:38:35.997 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.objects.classes.BaseClass
+20:39:00.891 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:40:33.361 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+20:40:33.361 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:40:33.361 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:40:33.362 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:40:33.362 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:40:33.362 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+20:40:33.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseClass baseClass0 = new BaseClass();
+baseClass0.getCustomMapping();
+baseClass0.getName();
+ExtendedProperties extendedProperties0 = new ExtendedProperties();
+String string0 = "changed";
+extendedProperties0.subset(string0);
+XWikiContext xWikiContext0 = new XWikiContext();
+baseClass0.getCustomMappingPropertyList(xWikiContext0);
+String string1 = baseClass0.getName();
+String string2 = "";
+int int0 = 5035;
+boolean boolean0 = true;
+String string3 = "v%v<zPTgD4hT>:<$CN";
+baseClass0.addStaticListField(string2, string1, int0, boolean0, string3);
+String string4 = "current";
+int int1 = 534;
+int int2 = 0;
+baseClass0.addTextAreaField(string0, string4, int1, int2);
+String string5 = "";
+int int3 = 730;
+int int4 = 2388;
+TextAreaClass.ContentType textAreaClass_ContentType0 = TextAreaClass.ContentType.WIKI_TEXT;
+baseClass0.addTextAreaField(string5, string3, int3, int4, textAreaClass_ContentType0);
+BaseClass baseClass1 = new BaseClass();
+String string6 = baseClass1.toXMLString();
+boolean boolean1 = true;
+baseClass1.setDirty(boolean1);
+DefaultReferenceDocumentReferenceResolver defaultReferenceDocumentReferenceResolver0 = new DefaultReferenceDocumentReferenceResolver();
+EntityReferenceResolver<DocumentReference> entityReferenceResolver0 = (EntityReferenceResolver<DocumentReference>) mock(EntityReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultReferenceDocumentReferenceResolver0, (Class<?>) DefaultReferenceDocumentReferenceResolver.class, "entityReferenceResolver", (Object) entityReferenceResolver0);
+Injector.validateBean(defaultReferenceDocumentReferenceResolver0, (Class<?>) DefaultReferenceDocumentReferenceResolver.class);
+EntityReference entityReference0 = null;
+ObjectPropertyReference objectPropertyReference0 = new ObjectPropertyReference(entityReference0);
+Object[] objectArray0 = new Object[1];
+objectArray0[0] = (Object) string6;
+DocumentReference documentReference0 = defaultReferenceDocumentReferenceResolver0.resolve((EntityReference) objectPropertyReference0, objectArray0);
+baseClass1.setDocumentReference(documentReference0);
+String string7 = "Uknown property type [{}]";
+int int5 = 0;
+boolean boolean2 = baseClass1.addTextField(string7, string7, int5);
+String string8 = "xwiki.authentication.cookielife";
+baseClass1.addStaticListField(string8, string8, int5, boolean2, string8);
+String string9 = "";
+int int6 = 957;
+baseClass1.addGroupsField(string9, string1, int6);
+
+20:40:33.390 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:40:34.571 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:40:42.091 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseClass_ESTest' to results/XWIKI-13916-3-0.5-11
+20:40:42.178 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,46 @@
+14:35:26.058 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+14:35:26.061 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiDocument.getTranslationList(XWikiDocument:5983)
+14:35:26.062 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiDocument
+14:36:02.067 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 579.
+14:38:33.629 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:38:33.657 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:38:33.658 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:38:33.722 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:38:33.743 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:38:33.743 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:38:33.743 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:38:33.743 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getTranslationList
+14:38:33.831 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:38:33.837 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.api.Document
+14:38:51.756 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiDocument
+14:39:16.355 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:41:45.188 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:41:45.206 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:41:45.207 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:41:45.207 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:41:45.207 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:41:45.207 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:41:45.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((Locale) null).when(documentReference0).getLocale();
+doReturn((String) null).when(documentReference0).toString();
+Locale.Category locale_Category0 = Locale.Category.DISPLAY;
+Locale locale0 = Locale.getDefault(locale_Category0);
+XWikiDocument xWikiDocument0 = new XWikiDocument(documentReference0, locale0);
+boolean boolean0 = false;
+xWikiDocument0.setFromCache(boolean0);
+boolean boolean1 = true;
+xWikiDocument0.setNew(boolean1);
+xWikiDocument0.getDocumentReference();
+xWikiDocument0.getVersion();
+xWikiDocument0.getComment();
+xWikiDocument0.getLocale();
+String string0 = "6b914mY0H[D'U\\\"X";
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiDocument0.getFirstObject(string0, xWikiContext0);
+xWikiDocument0.getTranslationList(xWikiContext0);
+xWikiDocument0.mergexWikiClass(xWikiDocument0);
+
+14:41:45.244 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:41:45.866 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:41:51.896 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiDocument_ESTest' to results/XWIKI-14319-1-0.2-23
+14:41:52.018 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

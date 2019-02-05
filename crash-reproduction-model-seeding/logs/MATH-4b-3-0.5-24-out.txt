@@ -1,0 +1,52 @@
+09:59:42.040 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+09:59:42.045 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine:116)
+09:59:42.045 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine
+09:59:44.038 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+09:59:55.539 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:59:55.595 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:59:55.596 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:59:55.656 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:59:55.684 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:59:55.685 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:59:55.685 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:59:55.685 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is intersection
+09:59:55.731 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:59:55.848 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+10:00:02.260 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+10:00:07.721 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:00:19.545 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6666666666666666
+10:00:19.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6666666666666666. FE: 100 
+10:00:19.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:00:33.331 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+10:00:33.331 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+10:00:33.348 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:00:33.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:00:33.349 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+10:00:33.350 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: IntervalsSet intervalsSet0 = new IntervalsSet();
+Vector3D vector3D0 = Vector3D.ZERO;
+double double0 = 600.0;
+Vector1D vector1D0 = Vector1D.ONE;
+Vector1D vector1D1 = Vector1D.NaN;
+Vector3D vector3D1 = Vector3D.NEGATIVE_INFINITY;
+SubLine subLine0 = new SubLine(vector3D1, vector3D1);
+SubLine subLine1 = new SubLine(vector3D0, vector3D1);
+double double1 = vector3D1.distance1((Vector<Euclidean3D>) vector3D0);
+boolean boolean0 = false;
+boolean boolean1 = false;
+subLine1.getSegments();
+subLine0.intersection(subLine1, boolean1);
+boolean boolean2 = false;
+Vector3D vector3D2 = subLine1.intersection(subLine0, boolean2);
+Vector3D vector3D3 = new Vector3D(double1, vector3D2, double1, vector3D2);
+boolean boolean3 = true;
+subLine1.intersection(subLine0, boolean3);
+subLine0.getSegments();
+subLine1.getSegments();
+subLine0.intersection(subLine1, boolean3);
+boolean boolean4 = false;
+subLine1.intersection(subLine0, boolean4);
+
+10:00:33.387 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:00:33.631 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:00:36.509 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'SubLine_ESTest' to results/MATH-4b-3-0.5-24
+10:00:36.540 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

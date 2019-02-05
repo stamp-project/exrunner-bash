@@ -1,0 +1,67 @@
+16:10:18.225 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+16:10:18.230 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+16:10:18.230 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+16:11:14.769 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+16:12:10.804 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:12:10.828 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:12:10.828 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:12:10.907 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:12:10.907 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:12:10.907 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:12:10.907 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:12:10.907 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+16:12:11.018 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+16:12:11.142 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+16:12:21.005 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+16:12:28.688 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+16:12:36.896 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+16:13:21.090 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+16:13:31.277 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:13:41.303 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+16:13:41.304 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:13:41.304 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:13:41.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:13:41.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:13:41.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:13:41.307 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "Y>%frxJf";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((EntityReference) null, (EntityReference) null, (EntityReference) null).when(documentReference0).getParent();
+doReturn((EntityType) null, (EntityType) null, (EntityType) null).when(documentReference0).getType();
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+DocumentReference documentReference1 = attachmentReference0.getDocumentReference();
+DocumentReference documentReference2 = attachmentReference0.getDocumentReference();
+DocumentReference documentReference3 = attachmentReference0.getDocumentReference();
+String string1 = null;
+DocumentReference documentReference4 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference1 = new AttachmentReference(string1, documentReference4);
+EntityType entityType0 = EntityType.DOCUMENT;
+attachmentReference1.setType(entityType0);
+String string2 = "char";
+AttachmentReference attachmentReference2 = new AttachmentReference(string2, documentReference3);
+String string3 = "'Z4\\O'O53&z8;y";
+AttachmentReference attachmentReference3 = new AttachmentReference(string3, documentReference2);
+attachmentReference1.setType(entityType0);
+AttachmentReference attachmentReference4 = new AttachmentReference(documentReference1);
+attachmentReference4.replaceParent(documentReference1, documentReference2);
+AttachmentReference attachmentReference5 = attachmentReference0.replaceParent(attachmentReference2, documentReference1);
+attachmentReference3.setType(entityType0);
+EntityType entityType1 = EntityType.OBJECT;
+attachmentReference3.setType(entityType1);
+AttachmentReference attachmentReference6 = new AttachmentReference(string3, documentReference1);
+AttachmentReference attachmentReference7 = new AttachmentReference(attachmentReference2);
+String string4 = "/,B";
+DocumentReference documentReference5 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference8 = new AttachmentReference(string4, documentReference5);
+attachmentReference8.replaceParent(attachmentReference7, documentReference3);
+String string5 = "] in an attachment reference";
+AttachmentReference attachmentReference9 = new AttachmentReference(string5, documentReference2);
+AttachmentReference attachmentReference10 = new AttachmentReference(documentReference2, attachmentReference7, attachmentReference0);
+String string6 = "";
+DocumentReference documentReference6 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference11 = new AttachmentReference(string6, documentReference6);
+attachmentReference11.replaceParent(attachmentReference7, attachmentReference5);
+
+16:13:41.368 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:13:42.224 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:13:50.758 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-13196-3-1.0-25
+16:13:50.791 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

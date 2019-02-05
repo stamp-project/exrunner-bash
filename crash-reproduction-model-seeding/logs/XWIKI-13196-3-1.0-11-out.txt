@@ -1,0 +1,51 @@
+15:52:52.346 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+15:52:52.351 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+15:52:52.351 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+15:53:42.936 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+15:54:36.107 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:54:36.132 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:54:36.132 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:54:36.167 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:54:36.167 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:54:36.167 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:54:36.167 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:54:36.167 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+15:54:36.227 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:54:36.285 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+15:54:44.550 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+15:54:52.547 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+15:54:59.971 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+15:55:46.357 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+15:55:57.323 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:56:05.080 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+15:56:05.080 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:56:05.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:56:05.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:56:05.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:56:05.081 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+15:56:05.082 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "GreaterEqual";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((EntityReference) null, (EntityReference) null).when(documentReference0).getParent();
+doReturn((EntityType) null, (EntityType) null).when(documentReference0).getType();
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+attachmentReference0.getName();
+EntityType entityType0 = EntityType.CLASS_PROPERTY;
+attachmentReference0.extractReference(entityType0);
+attachmentReference0.getName();
+attachmentReference0.extractReference(entityType0);
+attachmentReference0.getName();
+attachmentReference0.getName();
+String string1 = "";
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference1 = new AttachmentReference(string1, documentReference1);
+DocumentReference documentReference2 = attachmentReference1.getDocumentReference();
+AttachmentReference attachmentReference2 = new AttachmentReference(documentReference2, attachmentReference0, documentReference2);
+EntityType entityType1 = EntityType.WIKI;
+attachmentReference1.setType(entityType1);
+EntityType entityType2 = EntityType.DOCUMENT;
+attachmentReference2.setType(entityType2);
+
+15:56:05.109 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:56:05.475 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:56:13.231 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-13196-3-1.0-11
+15:56:13.269 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

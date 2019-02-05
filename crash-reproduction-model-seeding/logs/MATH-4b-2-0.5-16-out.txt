@@ -1,0 +1,66 @@
+09:58:34.241 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+09:58:34.246 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.Line.toSubSpace(Line:129)
+09:58:34.246 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.Line
+09:58:36.796 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+09:58:48.381 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+09:58:48.419 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:58:48.419 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+09:58:48.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+09:58:48.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+09:58:48.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+09:58:48.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+09:58:48.496 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is toSubSpace
+09:58:48.561 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+09:58:48.719 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+09:58:55.473 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+09:59:00.907 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+09:59:11.339 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+09:59:11.340 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+09:59:11.340 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+09:59:23.771 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.5714285714285715 | 200
+09:59:23.772 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.5714285714285715. FE: 200 
+09:59:31.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+09:59:31.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+09:59:31.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+09:59:31.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+09:59:31.924 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+09:59:31.926 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 2788.549260306573;
+double double1 = (-17.718573039502758);
+Locale locale0 = Locale.ENGLISH;
+locale0.getDisplayName();
+Locale.getISOCountries();
+Locale.setDefault(locale0);
+Vector3D vector3D0 = Vector3D.MINUS_J;
+Vector3D vector3D1 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+doReturn((Vector3D) null).when(vector3D1).subtract(nullable(org.apache.commons.math3.geometry.Vector.class));
+Vector3D vector3D2 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+Vector3D vector3D3 = new Vector3D(double0, double0, double0);
+Vector3D vector3D4 = vector3D3.add((Vector<Euclidean3D>) vector3D2);
+Line line0 = new Line(vector3D0, vector3D3);
+line0.isSimilarTo(line0);
+Vector3D vector3D5 = line0.intersection(line0);
+Vector1D vector1D0 = Vector1D.ONE;
+Vector1D vector1D1 = line0.toSubSpace(vector3D1);
+vector1D1.getSpace();
+vector1D0.normalize();
+Vector3D vector3D6 = line0.toSpace(vector1D0);
+Vector3D vector3D7 = new Vector3D(double0, vector3D4, double1, vector3D0);
+Vector3D vector3D8 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+Vector3D vector3D9 = line0.closestPoint(line0);
+Line line1 = new Line(line0);
+line1.getDirection();
+line1.distance(vector3D0);
+line0.contains(vector3D6);
+Vector3D vector3D10 = line0.intersection(line1);
+line1.wholeLine();
+Vector3D vector3D11 = line1.getDirection();
+line0.isSimilarTo(line0);
+line1.reset(vector3D5, vector3D0);
+double double2 = 1.0E-10;
+Vector3D vector3D12 = new Vector3D(double1, vector3D10, double2, vector3D9, double0, vector3D11);
+line0.getAbscissa(vector3D12);
+
+09:59:31.943 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+09:59:32.993 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+09:59:35.855 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Line_ESTest' to results/MATH-4b-2-0.5-16
+09:59:35.901 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

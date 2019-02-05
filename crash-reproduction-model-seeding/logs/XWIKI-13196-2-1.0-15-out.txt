@@ -1,0 +1,72 @@
+15:58:41.756 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+15:58:41.761 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.<init>(EntityReference:154)
+15:58:41.761 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+15:59:30.740 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+16:00:21.995 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:00:22.065 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:00:22.066 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:00:22.120 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:00:22.121 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:00:22.121 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:00:22.121 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:00:22.121 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+16:00:22.175 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+16:00:22.311 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+16:00:30.955 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+16:00:38.387 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+16:00:45.606 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+16:01:19.358 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+16:01:26.439 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:01:40.681 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+16:01:40.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+16:01:40.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 0 
+16:01:40.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:02:32.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+16:02:32.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:02:32.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:02:32.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:02:32.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:02:32.102 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EntityType entityType0 = EntityType.OBJECT_PROPERTY;
+Object object0 = null;
+String string0 = "cwWs*pXN*";
+WikiReference wikiReference0 = null;
+String string1 = null;
+SpaceReference spaceReference0 = new SpaceReference(string1, wikiReference0);
+String string2 = "Provided reference should not be null";
+CacheImpl<String, Serializable> cacheImpl0 = new CacheImpl<String, Serializable>(string2);
+NonTransactionalInvocationContextFactory nonTransactionalInvocationContextFactory0 = new NonTransactionalInvocationContextFactory();
+TransactionTable transactionTable0 = new TransactionTable();
+TransactionFactory transactionFactory0 = new TransactionFactory();
+JGroupsTransport jGroupsTransport0 = new JGroupsTransport();
+Address address0 = jGroupsTransport0.getCoordinator();
+boolean boolean0 = false;
+GlobalTransaction globalTransaction0 = transactionFactory0.newGlobalTransaction(address0, boolean0);
+LocalTransaction localTransaction0 = transactionTable0.getLocalTransaction(globalTransaction0);
+LocalTxInvocationContext localTxInvocationContext0 = nonTransactionalInvocationContextFactory0.createTxInvocationContext(localTransaction0);
+ClassLoader classLoader0 = localTxInvocationContext0.getClassLoader();
+Flag[] flagArray0 = new Flag[4];
+Flag flag0 = Flag.SKIP_XSITE_BACKUP;
+flagArray0[0] = flag0;
+Flag flag1 = Flag.SKIP_LISTENER_NOTIFICATION;
+flagArray0[1] = flag0;
+Flag flag2 = Flag.CACHE_MODE_LOCAL;
+flagArray0[2] = flag2;
+int int0 = 482;
+transactionFactory0.newRemoteTransaction(globalTransaction0, int0);
+flagArray0[3] = flag1;
+DecoratedCache<String, Serializable> decoratedCache0 = new DecoratedCache<String, Serializable>(cacheImpl0, classLoader0, flagArray0);
+spaceReference0.setParameters(decoratedCache0);
+int int1 = spaceReference0.size();
+spaceReference0.getParameters();
+EntityReference entityReference0 = spaceReference0.appendParent(wikiReference0);
+entityReference0.hasParent(spaceReference0);
+JProgressBar jProgressBar0 = new JProgressBar(int1, int1);
+spaceReference0.equals((Object) jProgressBar0);
+spaceReference0.setParameters(decoratedCache0);
+EntityReference entityReference1 = spaceReference0.getParent();
+entityReference1.hasParent(wikiReference0);
+
+16:02:32.134 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:02:32.351 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:02:38.570 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-2-1.0-15
+16:02:38.630 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

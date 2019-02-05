@@ -1,0 +1,71 @@
+01:14:07.165 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+01:14:07.169 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+01:14:07.169 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+01:14:12.071 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+01:14:34.181 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:14:34.289 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:14:34.290 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:14:34.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:14:34.331 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:14:34.332 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:14:34.332 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:14:34.360 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+01:14:34.450 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:14:34.453 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+01:14:44.864 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+01:14:51.126 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+01:14:57.258 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+01:15:03.167 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:15:15.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+01:15:15.873 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+01:15:15.873 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:15:32.564 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+01:15:32.564 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:15:32.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:15:32.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:15:32.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:15:32.567 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = mock(DateTimeFieldType.class, new ViolatedAssumptionAnswer());
+int int0 = (-19);
+DateTimeFieldType dateTimeFieldType1 = DateTimeFieldType.dayOfYear();
+int int1 = 939;
+int int2 = 0;
+int int3 = (-410);
+long long0 = (-734L);
+int int4 = 2795;
+DateTimeFieldType dateTimeFieldType2 = mock(DateTimeFieldType.class, new ViolatedAssumptionAnswer());
+int int5 = (-717);
+Integer integer0 = new Integer(int5);
+JulianChronology julianChronology0 = JulianChronology.getInstance();
+int int6 = 3783;
+int int7 = 3779;
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.forOffsetMillis(int7);
+ZonedChronology zonedChronology0 = ZonedChronology.getInstance(julianChronology0, fixedDateTimeZone0);
+long long1 = 91L;
+int int8 = 4343;
+zonedChronology0.getDateTimeMillis((long) int4, int8, int8, int0, int6);
+dateTimeFieldType1.isSupported(zonedChronology0);
+long long2 = 2880L;
+fixedDateTimeZone0.getShortName(long2);
+Chronology chronology0 = zonedChronology0.withZone(fixedDateTimeZone0);
+dateTimeFieldType1.getField(chronology0);
+String string0 = "^?d9#lDz@|";
+int int9 = (-523);
+int int10 = (-2734);
+int int11 = 2147483646;
+long long3 = (-7886L);
+long long4 = 911L;
+FieldUtils.safeMultiply(long4, int11);
+int int12 = new Integer(int10);
+dateTimeFieldType1.getRangeDurationType();
+int int13 = 1489;
+long long5 = (-3772L);
+Integer integer1 = new Integer(int6);
+long long6 = (-1595L);
+FieldUtils.safeToInt(long6);
+FieldUtils.safeSubtract(int3, int10);
+int int14 = (-1291);
+
+01:15:32.612 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:15:33.270 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:15:37.201 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-7b-1-0.2-30
+01:15:37.263 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

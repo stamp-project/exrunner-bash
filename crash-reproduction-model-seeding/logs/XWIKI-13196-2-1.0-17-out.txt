@@ -1,0 +1,65 @@
+16:00:38.648 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+16:00:38.652 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.<init>(EntityReference:154)
+16:00:38.653 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+16:01:41.288 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+16:02:33.318 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:02:33.359 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:02:33.359 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:02:33.453 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:02:33.455 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:02:33.456 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:02:33.456 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:02:33.456 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+16:02:33.599 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+16:02:33.721 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+16:02:43.422 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+16:02:50.773 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+16:02:58.368 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+16:03:36.165 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+16:03:43.364 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:04:08.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.32432432432432434
+16:04:08.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.32432432432432434. FE: 100 
+16:04:08.699 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:04:56.891 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+16:04:56.891 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+16:04:56.892 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:04:56.892 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:04:56.892 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+16:04:56.909 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EntityType entityType0 = EntityType.DOCUMENT;
+EntityType entityType1 = EntityType.ATTACHMENT;
+String string0 = "concurrencyLevel";
+String[] stringArray0 = new String[10];
+String string1 = " RPCs of ";
+stringArray0[0] = string1;
+stringArray0[3] = string0;
+stringArray0[3] = string0;
+stringArray0[4] = stringArray0[3];
+SpaceReference spaceReference0 = new SpaceReference(string0, stringArray0);
+String string2 = "Ygy-rh0EI*<adRkd,VR";
+SessionImplementor sessionImplementor0 = null;
+PersistentSortedMap persistentSortedMap0 = new PersistentSortedMap();
+PersistentSortedMap persistentSortedMap1 = new PersistentSortedMap(sessionImplementor0, persistentSortedMap0);
+EntityReference entityReference0 = new EntityReference(string2, entityType0, spaceReference0, persistentSortedMap1);
+entityReference0.equals((Object) entityType0);
+SpaceReference spaceReference1 = spaceReference0.replaceParent(entityReference0, spaceReference0);
+Locale locale0 = null;
+DocumentReference documentReference0 = new DocumentReference(string0, spaceReference1, locale0);
+EntityReference entityReference1 = new DocumentReference(stringArray0[3], stringArray0[0], string1, string2);
+EntityType entityType2 = EntityType.WIKI;
+entityReference1.equals((EntityReference) spaceReference0, entityType2);
+EntityType entityType3 = EntityType.CLASS_PROPERTY;
+entityReference1.equals((EntityReference) documentReference0, entityType3);
+entityReference0.equals(entityReference1, entityType0, entityType0);
+EntityReference entityReference2 = new LocalDocumentReference(entityReference1);
+EntityType entityType4 = EntityType.OBJECT_PROPERTY;
+documentReference0.equals(entityReference1, entityType4);
+EntityReference entityReference3 = documentReference0.extractReference(entityType4);
+entityReference3.getParent();
+spaceReference1.equalsNonRecursive(entityReference2);
+entityReference1.getParent();
+entityReference3.getName();
+
+16:04:56.928 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:04:57.190 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:05:03.242 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-2-1.0-17
+16:05:03.327 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

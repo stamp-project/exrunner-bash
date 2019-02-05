@@ -1,0 +1,58 @@
+10:57:56.313 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.util.NoSuchElementException
+10:57:56.332 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.listener.chaining.EmptyBlockChainingListener.endFormat(EmptyBlockChainingListener:263)
+10:57:56.333 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.listener.chaining.EmptyBlockChainingListener
+10:58:04.345 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 588.
+10:58:58.986 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:58:59.020 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:58:59.021 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:58:59.042 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:58:59.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:58:59.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:58:59.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:58:59.059 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is endFormat
+10:58:59.127 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+10:58:59.167 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.XhtmlParser
+10:59:06.724 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.impl.InternalWikiScannerContext
+10:59:12.665 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.impl.XhtmlHandler
+10:59:18.333 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.filter.XHTMLWhitespaceXMLFilter
+10:59:25.888 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.impl.WikiScannerContext
+10:59:31.007 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.listener.chaining.AbstractChainingListener
+10:59:36.621 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.filter.AccumulationXMLFilter
+10:59:41.857 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.listener.chaining.BlockStateChainingListener
+10:59:47.413 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.listener.chaining.EmptyBlockChainingListener
+10:59:52.778 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.filter.DTDXMLFilter
+10:59:57.983 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.listener.CompositeListener
+11:00:03.177 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.rendering.wikimodel.xhtml.impl.TagStack
+11:00:08.870 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:00:16.153 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:00:16.153 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:00:16.153 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:00:16.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:00:16.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:00:16.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:00:16.155 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ListenerChain listenerChain0 = mock(ListenerChain.class, new ViolatedAssumptionAnswer());
+doReturn((ChainingListener) null).when(listenerChain0).getNextListener(nullable(java.lang.Class.class));
+EmptyBlockChainingListener emptyBlockChainingListener0 = new EmptyBlockChainingListener(listenerChain0);
+Format format0 = Format.MONOSPACE;
+Map<String, String> map0 = Listener.EMPTY_PARAMETERS;
+emptyBlockChainingListener0.endFormat(format0, map0);
+emptyBlockChainingListener0.beginListItem();
+emptyBlockChainingListener0.beginQuotationLine();
+emptyBlockChainingListener0.beginTableHeadCell(map0);
+String string0 = "}\"L:V.o/";
+String string1 = "Base References";
+Syntax syntax0 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+emptyBlockChainingListener0.onRawText(string1, syntax0);
+emptyBlockChainingListener0.endTableRow(map0);
+emptyBlockChainingListener0.onSpace();
+Format format1 = Format.SUBSCRIPT;
+emptyBlockChainingListener0.endFormat(format1, map0);
+emptyBlockChainingListener0.onSpace();
+ResourceReference resourceReference0 = mock(ResourceReference.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = true;
+emptyBlockChainingListener0.endLink(resourceReference0, boolean0, map0);
+
+11:00:16.192 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:00:16.429 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:00:21.897 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EmptyBlockChainingListener_ESTest' to results/XRENDERING-422-2-0.8-28
+11:00:21.904 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,63 @@
+22:32:06.415 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:32:06.419 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.EntityReference.setName(EntityReference:186)
+22:32:06.419 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.EntityReference
+22:33:06.763 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+22:34:10.706 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:34:10.739 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:34:10.739 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:34:10.777 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:34:10.779 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:34:10.780 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:34:10.780 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:34:10.780 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setName
+22:34:10.951 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:34:11.023 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.AttachmentReference
+22:34:21.681 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.doc.XWikiAttachment
+22:34:30.153 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.search.solr.internal.reference.DefaultSolrReferenceResolver
+22:34:38.146 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+22:35:24.904 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.model.reference.EntityReference
+22:35:33.614 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:36:09.894 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:36:09.895 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:36:09.895 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:36:09.905 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:36:09.906 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:36:09.906 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:36:09.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "!:R2$A8qeq`";
+EntityType entityType0 = EntityType.BLOCK;
+EntityReference entityReference0 = new EntityReference(string0, entityType0);
+entityReference0.size();
+entityReference0.getReversedReferenceChain();
+String string1 = null;
+EntityType entityType1 = EntityType.ATTACHMENT;
+EntityReference entityReference1 = new EntityReference(string1, entityType1);
+EntityReference entityReference2 = entityReference1.appendParent(entityReference1);
+EntityReference entityReference3 = entityReference1.appendParent(entityReference2);
+EntityType entityType2 = EntityType.BLOCK;
+EntityType entityType3 = EntityType.OBJECT;
+entityReference0.equals(entityReference3, entityType2, entityType3);
+entityReference1.toString();
+EntityType entityType4 = EntityType.DOCUMENT;
+EntityReference entityReference4 = entityReference0.extractReference(entityType4);
+EntityType entityType5 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference5 = entityReference2.extractReference(entityType5);
+EntityReference entityReference6 = new EntityReference(entityReference4);
+EntityReference entityReference7 = entityReference6.replaceParent(entityReference5, entityReference1);
+String string2 = "3?BiiG=r-Y$<uR~";
+entityReference7.setName(string2);
+EntityReference entityReference8 = new EntityReference(entityReference1, entityReference2, entityReference5);
+ObjectPool<PoolableConnection> objectPool0 = null;
+PoolingDataSource<PoolableConnection> poolingDataSource0 = new PoolingDataSource<PoolableConnection>(objectPool0);
+Connection connection0 = poolingDataSource0.getConnection();
+ObjectName objectName0 = ObjectName.WILDCARD;
+PoolableConnection poolableConnection0 = new PoolableConnection(connection0, objectPool0, objectName0);
+entityReference4.equals((Object) poolableConnection0);
+EntityReference entityReference9 = entityReference3.appendParent(entityReference8);
+entityReference2.toString();
+entityReference9.equalsNonRecursive(entityReference0);
+entityReference2.appendParent(entityReference5);
+
+22:36:09.957 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:36:10.415 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:36:18.577 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EntityReference_ESTest' to results/XWIKI-13196-1-0.2-20
+22:36:18.728 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

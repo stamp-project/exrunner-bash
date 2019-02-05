@@ -1,0 +1,70 @@
+18:40:09.402 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+18:40:09.432 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils:220)
+18:40:09.433 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.FieldUtils
+18:40:13.218 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:40:29.051 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:40:29.135 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:40:29.136 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:40:29.269 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:40:29.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:40:29.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:40:29.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:40:29.270 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is verifyValueBounds
+18:40:29.403 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:40:29.406 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+18:40:38.494 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+18:40:44.568 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+18:40:50.442 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+18:40:55.952 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:41:04.672 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+18:41:04.696 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+18:41:04.696 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:41:16.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+18:41:16.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+18:41:16.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:41:16.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:41:16.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+18:41:16.873 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = null;
+int int0 = 0;
+int int1 = 2147483645;
+Integer integer0 = new Integer(int1);
+long long0 = (-3716L);
+long long1 = (-3064L);
+Integer integer1 = Integer.valueOf(int0);
+long long2 = (-1199L);
+long long3 = 168L;
+FieldUtils.safeSubtract(long2, long3);
+Integer integer2 = new Integer(int0);
+long long4 = (-23L);
+long long5 = 2209L;
+String string0 = null;
+int int2 = (-1635);
+int int3 = 386;
+FieldUtils.verifyValueBounds(string0, int2, int2, int3);
+int int4 = (-1564);
+int int5 = (-15);
+Integer integer3 = new Integer((int) integer1);
+long long6 = 382L;
+Integer.getInteger(string0, int4);
+Integer integer4 = new Integer(int5);
+int int6 = Integer.MIN_VALUE;
+int int7 = FieldUtils.getWrappedValue((int) integer1, int6, int1);
+FieldUtils.safeMultiply((long) integer3, (long) int4);
+Chronology chronology0 = null;
+CachedDateTimeZone cachedDateTimeZone0 = (CachedDateTimeZone)DateTimeZone.getDefault();
+BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstance((DateTimeZone) cachedDateTimeZone0);
+DateTimeField dateTimeField0 = buddhistChronology0.clockhourOfDay();
+Integer integer5 = new Integer(int6);
+SkipDateTimeField skipDateTimeField0 = new SkipDateTimeField(chronology0, dateTimeField0);
+int int8 = 1;
+FieldUtils.verifyValueBounds((DateTimeField) skipDateTimeField0, int7, int8, int0);
+long long7 = (-9223372036854775808L);
+FieldUtils.safeMultiply(long7, (long) int8);
+int int9 = 1401;
+int int10 = 100;
+FieldUtils.verifyValueBounds(dateTimeFieldType0, int9, int3, int10);
+
+18:41:16.897 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:41:17.444 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:41:20.913 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FieldUtils_ESTest' to results/TIME-7b-1-1.0-21
+18:41:20.960 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

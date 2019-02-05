@@ -1,0 +1,67 @@
+01:10:33.190 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+01:10:33.195 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeParserBucket.computeMillis(DateTimeParserBucket:366)
+01:10:33.195 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeParserBucket
+01:10:36.847 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+01:10:54.579 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:10:54.640 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:10:54.640 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:10:54.706 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:10:54.710 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:10:54.710 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:10:54.710 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:10:54.711 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeMillis
+01:10:54.758 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:10:54.761 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeFormatter
+01:11:04.086 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket
+01:11:09.933 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.field.FieldUtils
+01:11:15.692 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.format.DateTimeParserBucket$SavedField
+01:11:21.088 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:11:39.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.6551724137931034
+01:11:39.563 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6551724137931034. FE: 100 
+01:11:39.563 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:11:56.233 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6551724137931034 | 200
+01:12:11.250 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+01:12:11.250 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+01:12:11.251 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:12:11.251 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:12:11.251 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+01:12:11.272 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+doReturn((DateTimeZone) null).when(chronology0).getZone();
+doReturn((Chronology) null).when(chronology0).withUTC();
+String string0 = "Fixing duplicate recuret name key - ";
+long long0 = (-1058L);
+Locale locale0 = new Locale(string0);
+Calendar.getAvailableCalendarTypes();
+DateTimeParserBucket dateTimeParserBucket0 = new DateTimeParserBucket(long0, chronology0, locale0);
+DateTimeField dateTimeField0 = null;
+int int0 = (-421);
+boolean boolean0 = false;
+dateTimeParserBucket0.computeMillis(boolean0, string0);
+DateTimeParserBucket.SavedState dateTimeParserBucket_SavedState0 = dateTimeParserBucket0.new SavedState();
+dateTimeParserBucket_SavedState0.restoreState(dateTimeParserBucket0);
+Integer integer0 = dateTimeParserBucket_SavedState0.iOffset;
+dateTimeParserBucket0.saveState();
+int int1 = (-459);
+FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.UTC;
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.dayOfYear();
+dateTimeParserBucket0.saveField(dateTimeFieldType0, int1);
+boolean boolean1 = false;
+DateTimeFieldType dateTimeFieldType1 = DateTimeFieldType.weekyear();
+boolean boolean2 = true;
+dateTimeParserBucket0.computeMillis(boolean2);
+DateTimeParserBucket.SavedState dateTimeParserBucket_SavedState1 = dateTimeParserBucket0.new SavedState();
+Integer integer1 = new Integer(int1);
+String string1 = "s!Il^\\[iP";
+Integer.parseUnsignedInt(string1);
+dateTimeParserBucket_SavedState0.restoreState(dateTimeParserBucket0);
+dateTimeParserBucket0.setOffset(integer1);
+dateTimeParserBucket0.setPivotYear(integer0);
+String string2 = "Illegal insant due to time one offset transition (";
+int int2 = 0;
+String string3 = "\": ";
+dateTimeParserBucket0.saveField(dateTimeFieldType1, string3, locale0);
+
+01:12:11.300 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:12:12.338 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:12:17.162 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeParserBucket_ESTest' to results/TIME-7b-4-0.2-19
+01:12:17.184 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

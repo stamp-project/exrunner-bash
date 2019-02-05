@@ -1,0 +1,72 @@
+01:03:47.792 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.UnsupportedOperationException
+01:03:47.796 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.PeriodType.setIndexedField(PeriodType:690)
+01:03:47.796 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.PeriodType
+01:03:54.083 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+01:04:06.741 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:04:06.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:04:06.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:04:06.824 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:04:06.826 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:04:06.826 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:04:06.826 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:04:06.826 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setIndexedField
+01:04:06.960 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+01:04:06.970 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.Period
+01:04:15.762 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.joda.time.PeriodType
+01:04:23.077 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:04:32.993 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:04:32.994 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:04:33.000 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:04:33.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:04:33.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:04:33.001 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:04:33.004 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodType periodType0 = PeriodType.dayTime();
+long long0 = (-1067L);
+String string0 = "";
+TestMutableInterval_Basics testMutableInterval_Basics0 = new TestMutableInterval_Basics(string0);
+TestMutableInterval_Basics.MockInterval testMutableInterval_Basics_MockInterval0 = testMutableInterval_Basics0.new MockInterval();
+ISOChronology iSOChronology0 = (ISOChronology)testMutableInterval_Basics_MockInterval0.getChronology();
+MutablePeriod mutablePeriod0 = new MutablePeriod(long0, periodType0, (Chronology) iSOChronology0);
+int int0 = 0;
+int[] intArray0 = new int[2];
+intArray0[0] = int0;
+intArray0[1] = int0;
+periodType0.setIndexedField(mutablePeriod0, int0, intArray0, intArray0[0]);
+periodType0.withMillisRemoved();
+periodType0.withHoursRemoved();
+PeriodType periodType1 = PeriodType.yearDayTime();
+PeriodType periodType2 = periodType1.withDaysRemoved();
+PeriodType.yearDayTime();
+int[] intArray1 = new int[2];
+intArray1[0] = int0;
+intArray1[1] = int0;
+int int1 = 0;
+periodType2.setIndexedField(mutablePeriod0, intArray0[0], intArray1, int1);
+int int2 = 3;
+periodType1.setIndexedField(mutablePeriod0, intArray0[0], intArray1, int2);
+PeriodType.weeks();
+PeriodType.yearDayTime();
+PeriodType periodType3 = PeriodType.yearMonthDay();
+periodType3.withWeeksRemoved();
+Period period0 = new Period();
+int int3 = Integer.MAX_VALUE;
+Period period1 = period0.minusMonths(int3);
+period1.getPeriodType();
+int int4 = 2807;
+Period period2 = period1.withMillis(int4);
+period2.getYears();
+period0.getMonths();
+period0.getMonths();
+String string1 = "Months";
+TestMutableInterval_Constructors testMutableInterval_Constructors0 = new TestMutableInterval_Constructors(string1);
+TestMutableInterval_Constructors.MockInterval testMutableInterval_Constructors_MockInterval0 = testMutableInterval_Constructors0.new MockInterval();
+Period period3 = testMutableInterval_Constructors_MockInterval0.toPeriod();
+period3.getWeeks();
+period2.getDays();
+int int5 = 1751;
+periodType0.setIndexedField(period3, int5, intArray0, intArray1[0]);
+
+01:04:33.022 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:04:33.554 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:04:36.042 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PeriodType_ESTest' to results/TIME-5b-1-0.2-24
+01:04:36.106 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

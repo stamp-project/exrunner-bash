@@ -1,0 +1,49 @@
+05:32:56.671 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+05:32:56.679 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.Line.getAbscissa(Line:114)
+05:32:56.680 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.Line
+05:32:58.867 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+05:33:11.262 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:33:11.306 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:33:11.307 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:33:11.413 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:33:11.414 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:33:11.414 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:33:11.414 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:33:11.414 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getAbscissa
+05:33:11.496 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+05:33:11.726 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.Line
+05:33:18.779 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math3.geometry.euclidean.threed.SubLine
+05:33:24.460 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:33:37.723 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+05:33:37.724 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+05:33:37.724 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:33:50.208 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+05:33:50.209 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+05:33:50.209 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:33:50.209 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:33:50.209 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+05:33:50.223 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = null;
+Vector3D vector3D1 = Vector3D.PLUS_K;
+Vector3D vector3D2 = mock(Vector3D.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(vector3D2).dotProduct(nullable(org.apache.commons.math3.geometry.Vector.class));
+Line line0 = new Line(vector3D2, vector3D1);
+Vector3D vector3D3 = Vector3D.NEGATIVE_INFINITY;
+Vector3D.dotProduct(vector3D3, vector3D1);
+Line line1 = null;
+line0.getAbscissa(vector3D0);
+line0.distance(vector3D0);
+line0.getAbscissa(vector3D2);
+Vector3D vector3D4 = Vector3D.MINUS_K;
+line0.isSimilarTo(line0);
+line0.intersection(line1);
+double double0 = 0.0;
+Vector3D vector3D5 = Vector3D.PLUS_I;
+double double1 = (-826.3484163651);
+Vector3D vector3D6 = new Vector3D(double0, vector3D5, double1, vector3D5);
+Line line2 = new Line(vector3D6, vector3D6);
+line0.intersection(line2);
+
+05:33:50.261 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:33:50.505 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:33:53.119 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Line_ESTest' to results/MATH-4b-1-0.8-27
+05:33:53.171 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
