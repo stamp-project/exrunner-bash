@@ -1,0 +1,80 @@
+21:05:11.850 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+21:05:11.853 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.util.MathArrays.linearCombination(MathArrays:846)
+21:05:11.853 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.util.MathArrays
+21:05:18.761 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+21:05:28.760 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:05:28.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:05:28.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:05:28.860 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:05:28.862 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:05:28.863 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:05:28.863 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:05:28.863 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is linearCombination
+21:05:28.867 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:06:10.210 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:06:11.253 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:06:11.254 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+21:06:11.407 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+21:06:11.444 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.863636363636363
+21:06:11.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.863636363636363. FE: 0 
+21:06:11.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:06:30.464 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+21:06:30.464 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:06:30.465 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:06:30.465 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:06:30.465 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:06:30.466 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 2147483644;
+int int1 = 20;
+int int2 = 1;
+int int3 = 113;
+int int4 = 4769;
+int int5 = Integer.MAX_VALUE;
+int[] intArray0 = new int[13];
+intArray0[1] = int1;
+intArray0[11] = int2;
+intArray0[5] = int3;
+intArray0[1] = int4;
+intArray0[1] = int5;
+MathArrays.copyOf(intArray0, intArray0[6]);
+float[] floatArray0 = new float[8];
+floatArray0[0] = (float) int5;
+floatArray0[1] = (float) int5;
+floatArray0[2] = (float) int2;
+floatArray0[3] = (float) intArray0[1];
+floatArray0[4] = (float) intArray0[3];
+intArray0[4] = intArray0[1];
+floatArray0[7] = (float) int4;
+boolean boolean0 = MathArrays.equalsIncludingNaN(floatArray0, floatArray0);
+double[] doubleArray0 = new double[1];
+doubleArray0[0] = (double) floatArray0[0];
+MathArrays.scaleInPlace(intArray0[1], doubleArray0);
+MathArrays.linearCombination(doubleArray0, doubleArray0);
+MathArrays.OrderDirection mathArrays_OrderDirection0 = MathArrays.OrderDirection.INCREASING;
+boolean boolean1 = false;
+MathArrays.checkOrder(doubleArray0, mathArrays_OrderDirection0, boolean0, boolean1);
+double[][] doubleArray1 = new double[13][8];
+double[] doubleArray2 = new double[8];
+floatArray0[1] = floatArray0[3];
+doubleArray2[2] = (double) floatArray0[0];
+doubleArray2[3] = (double) floatArray0[7];
+doubleArray2[5] = (double) floatArray0[0];
+doubleArray2[6] = (double) floatArray0[6];
+doubleArray2[7] = (double) int4;
+doubleArray1[0] = doubleArray2;
+doubleArray1[2] = doubleArray0;
+double[] doubleArray3 = new double[1];
+double double0 = 0.0;
+doubleArray3[0] = doubleArray2[7];
+doubleArray1[3] = doubleArray3;
+doubleArray1[4] = doubleArray0;
+double[] doubleArray4 = new double[1];
+doubleArray2[3] = (double) floatArray0[7];
+doubleArray1[5] = doubleArray4;
+doubleArray1[6] = doubleArray0;
+doubleArray1[7] = doubleArray0;
+MathArrays.sortInPlace(doubleArray0, doubleArray1);
+
+21:06:30.545 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:06:31.519 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:06:34.939 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MathArrays_ESTest' to results/MATH-3b-0.8-1-12
+21:06:35.039 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

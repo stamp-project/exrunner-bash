@@ -1,0 +1,60 @@
+22:29:07.736 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+22:29:07.757 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.optimize(DirectSearchOptimizer:307)
+22:29:07.757 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+22:29:12.121 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+22:29:25.708 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:29:25.733 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:29:25.733 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:29:25.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:29:25.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:29:25.794 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:29:25.794 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:29:25.794 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is optimize
+22:29:25.837 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:30:27.332 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:30:27.332 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:30:27.332 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:30:27.332 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:30:27.333 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:30:27.333 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:30:27.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = (-1186.7366193017);
+double double1 = (-654.65);
+MultiDirectional multiDirectional0 = new MultiDirectional(double0, double1);
+int int0 = 1740;
+multiDirectional0.setMaxEvaluations(int0);
+double double2 = 815.75;
+double double3 = 3987.9;
+MultiDirectional multiDirectional1 = new MultiDirectional(double2, double3);
+int int1 = multiDirectional1.getMaxIterations();
+multiDirectional0.setMaxIterations(int1);
+int int2 = (-109);
+multiDirectional1.setMaxEvaluations(int2);
+int int3 = 2;
+multiDirectional0.setMaxIterations(int3);
+multiDirectional1.getEvaluations();
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(multivariateRealFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[1];
+doubleArray0[0] = double2;
+RealPointValuePair realPointValuePair0 = multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+int int4 = multiDirectional1.getIterations();
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional1.replaceWorstPoint(realPointValuePair0, comparator0);
+MultiDirectional multiDirectional2 = new MultiDirectional(double1, int4);
+Comparator<RealPointValuePair> comparator1 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional2.replaceWorstPoint(realPointValuePair0, comparator1);
+Comparator<RealPointValuePair> comparator2 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional1.iterateSimplex(comparator2);
+MultiDirectional multiDirectional3 = new MultiDirectional();
+multiDirectional2.setStartConfiguration(doubleArray0);
+int int5 = 850;
+multiDirectional2.setMaxEvaluations(int5);
+multiDirectional2.getMaxEvaluations();
+MultivariateRealFunction multivariateRealFunction1 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+multiDirectional1.optimize(multivariateRealFunction1, goalType0, doubleArray0);
+
+22:30:27.422 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:30:49.940 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:30:53.792 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-0.2-3-16
+22:30:53.823 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

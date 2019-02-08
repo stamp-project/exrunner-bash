@@ -1,0 +1,77 @@
+03:37:23.530 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+03:37:23.538 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.estimation.AbstractEstimator.getCovariances(AbstractEstimator:173)
+03:37:23.538 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.estimation.AbstractEstimator
+03:37:25.676 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+03:37:31.387 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:37:31.413 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:37:31.413 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:37:31.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:37:31.444 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+03:37:31.444 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+03:37:31.445 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:37:31.445 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getCovariances
+03:37:31.449 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:37:37.025 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.25
+03:37:37.025 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.25. FE: 100 
+03:37:37.026 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:37:42.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 200
+03:37:42.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 200 
+03:37:46.704 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+03:37:46.704 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 300 
+03:37:50.491 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+03:37:53.530 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+03:37:53.531 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:37:53.534 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:37:53.534 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:37:53.534 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:37:53.537 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: SimpleEstimationProblem simpleEstimationProblem0 = new SimpleEstimationProblem();
+boolean boolean0 = true;
+WeightedMeasurement weightedMeasurement0 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(weightedMeasurement0).getResidual();
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(weightedMeasurement0).getWeight();
+simpleEstimationProblem0.addMeasurement(weightedMeasurement0);
+LevenbergMarquardtEstimator levenbergMarquardtEstimator0 = new LevenbergMarquardtEstimator();
+WeightedMeasurement weightedMeasurement1 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(weightedMeasurement1).getResidual();
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(weightedMeasurement1).getWeight();
+simpleEstimationProblem0.getMeasurements();
+simpleEstimationProblem0.getAllParameters();
+simpleEstimationProblem0.addMeasurement(weightedMeasurement1);
+simpleEstimationProblem0.getUnboundParameters();
+double double0 = (-8.95E-4);
+WeightedMeasurement weightedMeasurement2 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0).when(weightedMeasurement2).getResidual();
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(weightedMeasurement2).getWeight();
+simpleEstimationProblem0.addMeasurement(weightedMeasurement2);
+simpleEstimationProblem0.getUnboundParameters();
+String string0 = "Yg";
+EstimatedParameter estimatedParameter0 = new EstimatedParameter(string0, double0, boolean0);
+simpleEstimationProblem0.addParameter(estimatedParameter0);
+simpleEstimationProblem0.getAllParameters();
+levenbergMarquardtEstimator0.estimate(simpleEstimationProblem0);
+double double1 = 0.0;
+double double2 = 2889.2228;
+double double3 = (-317.5258626);
+levenbergMarquardtEstimator0.getJacobianEvaluations();
+levenbergMarquardtEstimator0.guessParametersErrors(simpleEstimationProblem0);
+levenbergMarquardtEstimator0.updateJacobian();
+levenbergMarquardtEstimator0.updateResidualsAndCost();
+levenbergMarquardtEstimator0.getRMS(simpleEstimationProblem0);
+double double4 = 539.09119;
+levenbergMarquardtEstimator0.incrementJacobianEvaluationsCounter();
+levenbergMarquardtEstimator0.updateJacobian();
+levenbergMarquardtEstimator0.setOrthoTolerance(double4);
+levenbergMarquardtEstimator0.initializeEstimate(simpleEstimationProblem0);
+levenbergMarquardtEstimator0.guessParametersErrors(simpleEstimationProblem0);
+levenbergMarquardtEstimator0.estimate(simpleEstimationProblem0);
+int int0 = 83;
+levenbergMarquardtEstimator0.getRMS(simpleEstimationProblem0);
+double double5 = 712.728759618486;
+levenbergMarquardtEstimator0.setParRelativeTolerance(double5);
+SimpleEstimationProblem simpleEstimationProblem1 = new SimpleEstimationProblem();
+levenbergMarquardtEstimator0.estimate(simpleEstimationProblem1);
+
+03:37:53.547 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:37:54.143 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:37:56.072 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEstimator_ESTest' to results/MATH-100b-0.2-1-12
+03:37:56.119 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

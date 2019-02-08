@@ -1,0 +1,85 @@
+12:39:55.400 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+12:39:55.439 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.WikiReference.<init>(WikiReference:61)
+12:39:55.439 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.WikiReference
+12:40:00.951 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+12:41:29.328 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+12:41:29.352 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:41:29.352 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+12:41:29.378 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+12:41:29.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+12:41:29.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+12:41:29.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+12:41:29.379 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+12:41:29.383 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+12:41:39.911 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.7446808510638298
+12:41:39.911 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.7446808510638298. FE: 100 
+12:41:39.911 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+12:42:09.612 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6317727511835876 | 200
+12:42:09.612 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6317727511835876. FE: 200 
+12:42:35.210 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+12:42:35.210 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+12:42:35.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+12:42:35.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+12:42:35.211 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+12:42:35.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EntityType entityType0 = EntityType.OBJECT;
+String string0 = "AxT,1~u";
+WikiReference wikiReference0 = new WikiReference(string0);
+XWikiServletRequestStub xWikiServletRequestStub0 = new XWikiServletRequestStub();
+xWikiServletRequestStub0.setContextPath(string0);
+Locale locale0 = xWikiServletRequestStub0.getLocale();
+DocumentReference documentReference0 = new DocumentReference(string0, string0, string0);
+documentReference0.hasParent(wikiReference0);
+String string1 = null;
+WikiReference wikiReference1 = new WikiReference(string1);
+locale0.toLanguageTag();
+EntityType entityType1 = EntityType.OBJECT;
+String string2 = "R|Pn%2AbdMy)@";
+documentReference0.getReversedReferenceChain();
+xWikiServletRequestStub0.setHost(string2);
+wikiReference0.setType(entityType1);
+EntityType entityType2 = EntityType.BLOCK;
+wikiReference0.setType(entityType1);
+wikiReference1.setParent(wikiReference0);
+Locale.setDefault(locale0);
+wikiReference0.setParent(wikiReference1);
+EntityType entityType3 = EntityType.WIKI;
+wikiReference0.setType(entityType3);
+wikiReference1.setType(entityType3);
+wikiReference1.setParent(documentReference0);
+EntityType entityType4 = EntityType.DOCUMENT;
+wikiReference0.setType(entityType4);
+wikiReference1.setParent(documentReference0);
+EntityType entityType5 = EntityType.ATTACHMENT;
+wikiReference1.setType(entityType5);
+EntityType entityType6 = EntityType.DOCUMENT;
+wikiReference0.setType(entityType6);
+XWikiContextProvider xWikiContextProvider0 = new XWikiContextProvider();
+XWikiStubContextProvider xWikiStubContextProvider0 = mock(XWikiStubContextProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class, "contextProvider", (Object) xWikiStubContextProvider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class, "execution", (Object) execution0);
+Injector.validateBean(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class);
+XWikiContext xWikiContext0 = xWikiContextProvider0.get();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+ServletWebContext servletWebContext0 = new ServletWebContext();
+ServletActionContext servletActionContext0 = new ServletActionContext(servletWebContext0);
+ActionServlet actionServlet0 = servletActionContext0.getActionServlet();
+ServletContext servletContext0 = actionServlet0.getServletContext();
+XWikiServletContext xWikiServletContext0 = new XWikiServletContext(servletContext0);
+boolean boolean0 = true;
+XWiki xWiki0 = new XWiki(xWikiContext1, xWikiServletContext0, boolean0);
+XWikiStoreInterface xWikiStoreInterface0 = xWiki0.getStore();
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiStoreInterface0, xWikiContext1);
+int int0 = 0;
+int int1 = 667;
+String string3 = "dlog";
+List<String> list0 = xWikiCacheStore0.searchDocumentsNames(string0, int0, int1, string3, xWikiContext0);
+String string4 = "org.apache.struts.validator.ValidatorForm";
+DocumentReference documentReference1 = new DocumentReference(string1, list0, string4, locale0);
+LocalDocumentReference localDocumentReference0 = new LocalDocumentReference(documentReference1);
+wikiReference1.setParent(localDocumentReference0);
+
+12:42:35.280 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+12:42:35.647 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+12:42:41.277 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'WikiReference_ESTest' to results/XWIKI-13546-0.2-4-20
+12:42:41.327 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

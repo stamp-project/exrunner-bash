@@ -1,0 +1,69 @@
+02:45:50.980 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+02:45:50.998 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.init(FastDateParser:138)
+02:45:50.998 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+02:45:54.551 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+02:46:03.491 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+02:46:03.498 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+02:46:03.514 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+02:46:03.538 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+02:46:03.538 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'init()V' is private!
+02:46:03.538 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+02:46:03.606 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+02:46:03.630 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+02:46:03.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+02:46:14.726 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+02:46:14.727 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+02:46:14.727 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+02:46:26.094 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+02:46:40.177 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+02:46:57.675 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+02:47:06.832 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+02:47:06.833 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+02:47:06.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+02:47:06.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+02:47:06.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+02:47:06.859 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "(\\p{IsNd}++)";
+ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getDefault();
+int int0 = 66;
+ParsePosition parsePosition0 = new ParsePosition(int0);
+int int1 = 2207;
+parsePosition0.setIndex(int1);
+int int2 = (-1388);
+int int3 = 8;
+parsePosition0.setErrorIndex(int3);
+int int4 = 43;
+parsePosition0.setIndex(int4);
+zoneInfo0.clone();
+ParsePosition parsePosition1 = mock(ParsePosition.class, new ViolatedAssumptionAnswer());
+String string1 = "(\\p{IsNd}++)";
+Object object0 = new Object();
+int int5 = (-5600);
+Integer integer0 = new Integer(int4);
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+String string2 = "GMTE";
+FastDateParser fastDateParser0 = new FastDateParser(string2, zoneInfo0, locale0);
+int int6 = 104;
+fastDateParser0.parseObject(string1);
+locale0.stripExtensions();
+fastDateParser0.toString();
+String string3 = "gSyTcI:%[H1x-!";
+fastDateParser0.parse(string3);
+fastDateParser0.toString();
+LinkedList<Locale.LanguageRange> linkedList0 = new LinkedList<Locale.LanguageRange>();
+String string4 = "x=5M/3CdJn<B";
+fastDateParser0.parseObject(string4, parsePosition0);
+LinkedHashSet<Locale> linkedHashSet0 = new LinkedHashSet<Locale>();
+List<Locale> list0 = Locale.filter((List<Locale.LanguageRange>) linkedList0, (Collection<Locale>) linkedHashSet0);
+Locale.filter((List<Locale.LanguageRange>) linkedList0, (Collection<Locale>) list0);
+Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.IGNORE_EXTENDED_RANGES;
+Locale.filter((List<Locale.LanguageRange>) linkedList0, (Collection<Locale>) list0, locale_FilteringMode0);
+Object object1 = new Object();
+fastDateParser0.getParsePattern();
+fastDateParser0.adjustYear(int0);
+fastDateParser0.getParsePattern();
+fastDateParser0.getFieldWidth();
+
+02:47:06.909 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+02:47:08.047 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+02:47:10.469 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-0.2-4-11
+02:47:10.490 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

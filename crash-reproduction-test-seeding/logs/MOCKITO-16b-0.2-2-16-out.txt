@@ -1,0 +1,68 @@
+00:50:45.535 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+00:50:45.539 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.stub(MockitoCore:43)
+00:50:45.539 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+00:50:47.203 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+00:50:54.680 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:50:54.737 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:50:54.737 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:50:54.792 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:50:54.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:50:54.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:50:54.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:50:54.793 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is stub
+00:50:54.805 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:51:18.469 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+00:51:18.470 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+00:51:18.566 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+00:51:18.651 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.625
+00:51:18.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.625. FE: 0 
+00:51:18.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:51:35.640 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+00:51:35.641 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:51:35.641 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:51:35.642 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:51:35.642 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:51:35.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: GloballyConfiguredAnswer globallyConfiguredAnswer0 = new GloballyConfiguredAnswer();
+String string0 = "'I+C3TYO)I/`z9Ng";
+MockSettingsImpl mockSettingsImpl0 = new MockSettingsImpl();
+Class<Mockito> class0 = Mockito.class;
+ReturnsSmartNulls returnsSmartNulls0 = new ReturnsSmartNulls();
+MockSettingsImpl mockSettingsImpl1 = (MockSettingsImpl)mockSettingsImpl0.defaultAnswer(returnsSmartNulls0);
+ClonesArguments clonesArguments0 = new ClonesArguments();
+MockitoCore mockitoCore0 = new MockitoCore();
+Object object0 = new Object();
+mockSettingsImpl0.spiedInstance(object0);
+mockitoCore0.stub();
+InvocationContainerImpl invocationContainerImpl0 = null;
+OngoingStubbingImpl<OngoingStubbingImpl<MockSettingsImpl>> ongoingStubbingImpl0 = new OngoingStubbingImpl<OngoingStubbingImpl<MockSettingsImpl>>(invocationContainerImpl0);
+Class<String> class1 = String.class;
+boolean boolean0 = true;
+String string1 = mockitoCore0.mock(class1, (MockSettings) mockSettingsImpl0, boolean0);
+mockitoCore0.stub((Object) string1);
+Integer[] integerArray0 = new Integer[29];
+int int0 = 176;
+Integer integer0 = new Integer(int0);
+integerArray0[2] = integer0;
+String string2 = "'(z}JIE3$j}txR2S_U}";
+int int1 = (-6);
+Integer integer1 = new Integer(int1);
+Integer.getInteger(string2, integerArray0[0]);
+int int2 = 193;
+Integer integer2 = new Integer(int2);
+integerArray0[3] = integer2;
+Integer integer3 = new Integer((int) integerArray0[0]);
+integerArray0[4] = integer3;
+mockitoCore0.reset(integerArray0);
+OngoingStubbingImpl<Invocation> ongoingStubbingImpl1 = new OngoingStubbingImpl<Invocation>(invocationContainerImpl0);
+ongoingStubbingImpl1.thenAnswer(globallyConfiguredAnswer0);
+mockitoCore0.when((Object) ongoingStubbingImpl1);
+mockitoCore0.reset((Object[]) integerArray0);
+Class<Invocation> class2 = Invocation.class;
+boolean boolean1 = false;
+mockitoCore0.mock(class2, (MockSettings) mockSettingsImpl1, boolean1);
+mockitoCore0.stub(string0);
+
+00:51:35.686 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:51:35.974 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:51:38.505 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-0.2-2-16
+00:51:38.532 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

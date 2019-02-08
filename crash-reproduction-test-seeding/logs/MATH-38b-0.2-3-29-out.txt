@@ -1,0 +1,52 @@
+18:20:45.421 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.direct.BOBYQAOptimizer$PathIsExploredException
+18:20:45.471 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer.bobyqa(BOBYQAOptimizer:332)
+18:20:45.471 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.BOBYQAOptimizer
+18:21:34.411 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+18:21:39.362 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:21:39.385 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:21:39.386 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:21:39.398 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:21:39.401 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'bobyqa([D[D)D' is private!
+18:21:39.401 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+18:21:40.422 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:21:40.422 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doOptimize
+18:21:40.448 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:21:43.834 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+18:21:43.834 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+18:21:43.834 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:21:49.380 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+18:21:55.442 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+18:21:55.443 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+18:21:55.459 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:21:55.459 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:21:55.459 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+18:21:55.460 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 49;
+double double0 = Double.NaN;
+BOBYQAOptimizer bOBYQAOptimizer0 = new BOBYQAOptimizer(int0, double0, double0);
+int int1 = bOBYQAOptimizer0.getMaxEvaluations();
+int int2 = 238;
+double double1 = (-2325.6526004081866);
+SumSincFunction sumSincFunction0 = new SumSincFunction(double1);
+GoalType goalType0 = GoalType.MINIMIZE;
+double[] doubleArray0 = new double[11];
+double double2 = 0.0;
+sumSincFunction0.gradient();
+doubleArray0[1] = double2;
+doubleArray0[2] = double1;
+doubleArray0[3] = double0;
+doubleArray0[4] = (double) int2;
+doubleArray0[6] = double0;
+sumSincFunction0.value(doubleArray0);
+doubleArray0[7] = double0;
+sumSincFunction0.partialDerivative(int0);
+bOBYQAOptimizer0.optimize(int2, sumSincFunction0, goalType0, doubleArray0);
+bOBYQAOptimizer0.doOptimize();
+GoalType goalType1 = GoalType.MAXIMIZE;
+bOBYQAOptimizer0.optimize(int1, (MultivariateFunction) sumSincFunction0, goalType1, doubleArray0, doubleArray0, doubleArray0);
+bOBYQAOptimizer0.doOptimize();
+bOBYQAOptimizer0.doOptimize();
+
+18:21:56.175 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:22:07.303 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:22:12.992 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BOBYQAOptimizer_ESTest' to results/MATH-38b-0.2-3-29
+18:22:13.012 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

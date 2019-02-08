@@ -1,0 +1,49 @@
+03:35:38.101 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+03:35:38.112 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.init(FastDateParser:138)
+03:35:38.112 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+03:35:41.575 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+03:35:49.139 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:35:49.146 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:35:49.146 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:35:49.178 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:35:49.180 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'init()V' is private!
+03:35:49.180 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+03:35:49.249 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:35:49.249 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+03:35:49.254 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:36:02.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+03:36:02.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+03:36:02.923 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:36:13.571 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+03:36:21.736 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+03:36:29.195 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+03:36:33.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+03:36:33.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:36:33.750 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:36:33.750 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:36:33.750 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+03:36:33.750 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ParsePosition parsePosition0 = mock(ParsePosition.class, new ViolatedAssumptionAnswer());
+String string0 = "KAH";
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(timeZone0).getOffset(anyLong());
+doReturn(0).when(timeZone0).getRawOffset();
+ParsePosition parsePosition1 = null;
+String string1 = null;
+String string2 = "The prefix must not be null";
+String string3 = "GMT";
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+locale0.getDisplayScript();
+int int0 = 113;
+String string4 = "The wildcard array must not be null";
+String string5 = "GMTCST";
+FastDateParser fastDateParser0 = new FastDateParser(string5, timeZone0, locale0);
+LinkedList<Locale.LanguageRange> linkedList0 = new LinkedList<Locale.LanguageRange>();
+Set<String> set0 = ZoneId.getAvailableZoneIds();
+Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.MAP_EXTENDED_RANGES;
+List<String> list0 = Locale.filterTags((List<Locale.LanguageRange>) linkedList0, (Collection<String>) set0, locale_FilteringMode0);
+fastDateParser0.equals(list0);
+
+03:36:33.791 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:36:33.993 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:36:36.063 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-0.2-4-30
+03:36:36.080 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

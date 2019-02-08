@@ -1,0 +1,73 @@
+03:41:40.258 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+03:41:40.271 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Days.daysBetween(Days:141)
+03:41:40.271 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Days
+03:41:42.157 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+03:41:54.506 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:41:54.541 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:41:54.541 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:41:54.565 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:41:54.565 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+03:41:54.565 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+03:41:54.565 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:41:54.565 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is daysBetween
+03:41:54.633 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:42:53.800 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.006 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.045 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.063 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.355 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.368 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.369 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.500 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.501 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.842 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.870 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.914 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:54.915 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:55.095 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:55.138 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:55.267 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:55.337 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:42:55.340 [main] INFO  e.s.b.f.t.f.RootMethodTestChromosomeFactory - Cloning user test
+03:43:00.237 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+03:43:00.238 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:43:00.238 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:43:00.243 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:43:00.244 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:43:00.244 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:43:00.247 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: int int0 = 2;
+int int1 = 29;
+MonthDay monthDay0 = new MonthDay(int0, int1);
+Class<MonthDay> class0 = MonthDay.class;
+monthDay0.toString();
+String string0 = "--02-29";
+MonthDay monthDay1 = MonthDay.parse(string0);
+monthDay0.equals(monthDay1);
+Days days0 = Days.daysBetween((ReadablePartial) monthDay1, (ReadablePartial) monthDay0);
+days0.getPeriodType();
+days0.toString();
+days0.isGreaterThan(days0);
+Days days1 = Days.days(int1);
+int int2 = (-60);
+DateMidnight dateMidnight0 = new DateMidnight(int0, int2, int1);
+DateMidnight dateMidnight1 = dateMidnight0.withYearOfCentury(int1);
+DateMidnight dateMidnight2 = dateMidnight1.withCenturyOfEra(int1);
+Days days2 = Days.daysBetween((ReadableInstant) dateMidnight2, (ReadableInstant) dateMidnight1);
+Days days3 = Days.days(int2);
+Days days4 = days3.plus(days0);
+int int3 = (-987);
+Days days5 = days4.minus(int3);
+days1.toStandardSeconds();
+Days days6 = days3.negated();
+days2.multipliedBy(int2);
+days3.isGreaterThan(days4);
+int int4 = 532;
+days6.multipliedBy(int4);
+days5.toStandardHours();
+days4.isGreaterThan(days5);
+days0.plus(days5);
+
+03:43:00.258 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:43:00.427 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:43:03.470 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'Days_ESTest' to results/TIME-10b-0.2-5-25
+03:43:03.501 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,45 @@
+03:24:06.819 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+03:24:06.823 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.init(FastDateParser:138)
+03:24:06.823 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+03:24:09.589 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+03:24:16.249 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:24:16.268 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:24:16.268 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:24:16.275 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:24:16.290 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'init()V' is private!
+03:24:16.291 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+03:24:16.311 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:24:16.311 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+03:24:16.411 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:24:25.178 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+03:24:25.178 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:24:25.178 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:24:25.179 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:24:25.179 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:24:25.179 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:24:25.180 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "G/1a";
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+doReturn(0).when(timeZone0).getOffset(anyLong());
+doReturn(0).when(timeZone0).getRawOffset();
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+FastDateParser fastDateParser0 = new FastDateParser(string0, timeZone0, locale0);
+String string1 = fastDateParser0.toString();
+ParsePosition parsePosition0 = mock(ParsePosition.class, new ViolatedAssumptionAnswer());
+fastDateParser0.parse(string1, parsePosition0);
+String string2 = "";
+fastDateParser0.parseObject(string2);
+fastDateParser0.isNextNumber();
+fastDateParser0.getParsePattern();
+fastDateParser0.getFieldWidth();
+TimeZone timeZone1 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+FastDateParser fastDateParser1 = new FastDateParser(string1, timeZone1, locale0);
+fastDateParser0.parseObject(string0);
+String string3 = "QZ:AIQ47{|N./!$-!t";
+fastDateParser1.parse(string3);
+ParsePosition parsePosition1 = mock(ParsePosition.class, new ViolatedAssumptionAnswer());
+fastDateParser0.parseObject(string2, parsePosition1);
+
+03:24:25.222 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:24:25.785 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:24:27.433 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-0.2-4-26
+03:24:27.438 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
