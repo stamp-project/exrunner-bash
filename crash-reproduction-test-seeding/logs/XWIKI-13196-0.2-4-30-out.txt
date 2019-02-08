@@ -1,0 +1,53 @@
+11:27:30.990 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:27:31.027 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+11:27:31.029 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+11:27:49.228 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+11:30:12.385 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:30:12.402 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:30:12.402 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:30:12.429 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:30:12.432 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:30:12.442 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:30:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:30:12.443 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+11:30:12.447 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:30:40.760 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:30:40.761 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:30:40.761 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:30:40.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:30:40.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:30:40.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:30:40.778 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.getReference();
+String string0 = "HuQh/z(HthXd";
+InputStream inputStream0 = mock(InputStream.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setContent(inputStream0);
+boolean boolean0 = xWikiAttachment0.isContentDirty();
+long long0 = 0L;
+xWikiAttachment0.setDocId(long0);
+boolean boolean1 = xWikiAttachment0.isMetaDataDirty();
+String string1 = "Duplicate identifier in table for: ";
+xWikiAttachment0.setComment(string1);
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setAuthorReference(documentReference0);
+xWikiAttachment0.fromXML(string0);
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment0.toXML(boolean1, boolean1, xWikiContext0);
+xWikiAttachment0.clone();
+xWikiAttachment0.getContent(xWikiContext0);
+XWikiAttachment xWikiAttachment1 = xWikiAttachment0.getAttachmentRevision(string1, xWikiContext0);
+xWikiAttachment1.getNextVersion();
+InputStream inputStream1 = mock(InputStream.class, new ViolatedAssumptionAnswer());
+int int0 = 9575;
+xWikiAttachment0.setContent(inputStream1, int0);
+xWikiAttachment1.getFilesize();
+boolean boolean2 = false;
+xWikiAttachment1.toXML(boolean0, boolean2, xWikiContext0);
+
+11:30:40.798 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:30:41.037 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:30:45.211 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-0.2-4-30
+11:30:45.297 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

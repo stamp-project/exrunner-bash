@@ -1,0 +1,63 @@
+11:26:49.495 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:26:49.509 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+11:26:49.509 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+11:27:06.753 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 584.
+11:29:30.442 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:29:30.471 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:29:30.471 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:29:30.505 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:29:30.515 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:29:30.516 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:29:30.516 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:29:30.516 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+11:29:30.530 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:29:56.529 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:29:56.530 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:29:56.540 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:29:56.541 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:29:56.541 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:29:56.541 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:29:56.543 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+long long0 = 0L;
+xWikiAttachment0.setDocId(long0);
+String string0 = "";
+long long1 = (-489L);
+xWikiAttachment0.setId(long1);
+xWikiAttachment0.clone();
+XMLWriter xMLWriter0 = mock(XMLWriter.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = false;
+boolean boolean1 = true;
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment(xWikiDocument0, string0);
+MergeConfiguration mergeConfiguration0 = mock(MergeConfiguration.class, new ViolatedAssumptionAnswer());
+xWikiAttachment1.getReference();
+xWikiAttachment1.getDate();
+xWikiAttachment0.setArchive(string0);
+XWikiContext xWikiContext0 = new XWikiContext();
+MergeResult mergeResult0 = mock(MergeResult.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.merge(xWikiAttachment1, xWikiAttachment1, mergeConfiguration0, xWikiContext0, mergeResult0);
+xWikiAttachment1.incrementVersion();
+boolean boolean2 = false;
+String string1 = xWikiAttachment0.toStringXML(boolean2, boolean0, xWikiContext0);
+Blob blob0 = null;
+SerialBlob serialBlob0 = new SerialBlob(blob0);
+long long2 = 1579L;
+InputStream inputStream0 = serialBlob0.getBinaryStream(long0, long2);
+xWikiAttachment1.setContent(inputStream0);
+xWikiAttachment1.apply(xWikiAttachment0);
+xWikiAttachment1.getAttachment_archive();
+xWikiAttachment1.getReference();
+xWikiAttachment1.setAuthor(string1);
+xWikiAttachment1.incrementVersion();
+byte[] byteArray0 = xWikiAttachment0.getContent(xWikiContext0);
+String string2 = "org.eclipse.jetty.servlet.SessionIdPathParameterName";
+xWikiAttachment0.fromXML(string2);
+xWikiAttachment1.isMetaDataDirty();
+xWikiAttachment0.getDoc();
+xWikiAttachment1.setContent(byteArray0);
+
+11:29:56.590 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:29:57.658 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:30:03.249 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-13196-0.2-4-29
+11:30:03.316 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

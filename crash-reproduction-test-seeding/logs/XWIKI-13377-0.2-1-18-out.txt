@@ -1,0 +1,64 @@
+21:06:35.087 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+21:06:35.145 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.objects.BaseStringProperty.setValue(BaseStringProperty:45)
+21:06:35.145 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.objects.BaseStringProperty
+21:06:42.611 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 567.
+21:09:37.929 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:09:37.979 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:09:37.979 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:09:38.065 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:09:38.066 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:09:38.066 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:09:38.067 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:09:38.067 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setValue
+21:09:38.071 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:10:20.576 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:10:20.577 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:10:20.577 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:10:20.578 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:10:20.578 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:10:20.578 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:10:20.580 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BaseStringProperty baseStringProperty0 = new BaseStringProperty();
+BaseStringProperty baseStringProperty1 = baseStringProperty0.clone();
+BaseStringProperty baseStringProperty2 = baseStringProperty1.clone();
+baseStringProperty1.equals(baseStringProperty2);
+baseStringProperty2.cloneInternal(baseStringProperty0);
+Connection connection0 = mock(Connection.class, new ViolatedAssumptionAnswer());
+ObjectPool<PoolableConnection> objectPool0 = (ObjectPool<PoolableConnection>) mock(ObjectPool.class, new ViolatedAssumptionAnswer());
+baseStringProperty1.cloneInternal(baseStringProperty0);
+baseStringProperty2.equals(objectPool0);
+baseStringProperty2.cloneInternal(baseStringProperty1);
+baseStringProperty0.cloneInternal(baseStringProperty1);
+BaseStringProperty baseStringProperty3 = new BaseStringProperty();
+baseStringProperty0.setValue(baseStringProperty1);
+String string0 = baseStringProperty0.getValue();
+StringProperty stringProperty0 = new StringProperty();
+baseStringProperty3.setValue(stringProperty0);
+baseStringProperty1.equals(baseStringProperty0);
+String string1 = stringProperty0.getValue();
+BaseStringProperty baseStringProperty4 = new BaseStringProperty();
+baseStringProperty0.setValue(string0);
+BaseStringProperty baseStringProperty5 = baseStringProperty4.clone();
+baseStringProperty0.getValue();
+baseStringProperty0.setValue(baseStringProperty3);
+BaseStringProperty baseStringProperty6 = baseStringProperty5.clone();
+baseStringProperty1.getValue();
+baseStringProperty4.setValue(string1);
+String string2 = baseStringProperty6.getValue();
+baseStringProperty3.toText();
+baseStringProperty4.equals(baseStringProperty3);
+baseStringProperty6.cloneInternal(baseStringProperty1);
+baseStringProperty6.clone();
+baseStringProperty4.setValue(string2);
+Configuration configuration0 = new Configuration();
+String string3 = "? P :['Z";
+Class<Block> class0 = Block.class;
+List<Block> list0 = configuration0.getInstances(string3, class0);
+Format format0 = Format.SUBSCRIPT;
+ConcurrentSkipListMap<String, String> concurrentSkipListMap0 = new ConcurrentSkipListMap<String, String>();
+FormatBlock formatBlock0 = new FormatBlock(list0, format0, concurrentSkipListMap0);
+baseStringProperty2.setValue(formatBlock0);
+
+21:10:20.619 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:10:22.174 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:10:30.090 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BaseStringProperty_ESTest' to results/XWIKI-13377-0.2-1-18
+21:10:30.110 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

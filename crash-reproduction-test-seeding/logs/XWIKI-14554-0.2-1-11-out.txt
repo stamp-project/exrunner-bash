@@ -1,0 +1,122 @@
+01:21:39.719 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+01:21:39.744 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+01:21:39.751 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+01:21:51.593 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+01:24:35.597 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:24:35.606 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:24:35.607 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:24:35.650 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:24:35.660 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:24:35.661 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:24:35.661 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:24:35.661 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+01:24:39.600 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:25:44.575 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+01:25:44.576 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+01:25:44.576 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:27:00.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+01:27:00.684 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:27:00.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:27:00.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:27:00.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:27:00.698 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager0 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager0);
+EntityReferenceSerializer<CompositeEvent> entityReferenceSerializer0 = (EntityReferenceSerializer<CompositeEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer0);
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<CompositeEvent> mimeMessageFactory0 = (MimeMessageFactory<CompositeEvent>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) logger0);
+MailSenderConfiguration mailSenderConfiguration0 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(mailSenderConfiguration0).getFromAddress();
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) mailSenderConfiguration0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class);
+Consumer<Object> consumer0 = (Consumer<Object>) mock(Consumer.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.forEach(consumer0);
+periodicMimeMessageIterator0.spliterator();
+Logger logger1 = null;
+periodicMimeMessageIterator0.logger = logger1;
+periodicMimeMessageIterator0.next();
+boolean boolean0 = periodicMimeMessageIterator0.hasNext();
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.retrieveCompositeEventList(documentReference0);
+DocumentReference documentReference1 = null;
+Stack<CompositeEvent> stack0 = new Stack<CompositeEvent>();
+periodicMimeMessageIterator0.next();
+NotificationManager notificationManager1 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+NotificationEmailRenderer notificationEmailRenderer1 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+MimeMessageFactory<String> mimeMessageFactory1 = (MimeMessageFactory<String>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Logger logger2 = URLStreamHandlerFactory.log;
+MailSenderConfiguration mailSenderConfiguration1 = mock(MailSenderConfiguration.class, new ViolatedAssumptionAnswer());
+WikiDescriptorManager wikiDescriptorManager1 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.retrieveCompositeEventList(documentReference1);
+NotificationUserIterator notificationUserIterator0 = new NotificationUserIterator();
+DocumentAccessBridge documentAccessBridge2 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "documentAccessBridge", (Object) documentAccessBridge2);
+String string0 = "";
+PriorityBlockingQueue<SubstituteLoggingEvent> priorityBlockingQueue0 = new PriorityBlockingQueue<SubstituteLoggingEvent>();
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string0, priorityBlockingQueue0, boolean0);
+EventRecodingLogger eventRecodingLogger0 = new EventRecodingLogger(substituteLogger0, priorityBlockingQueue0);
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "logger", (Object) eventRecodingLogger0);
+XWikiHibernateStore xWikiHibernateStore0 = new XWikiHibernateStore();
+EntityReferenceSerializer<CompositeEvent> entityReferenceSerializer1 = (EntityReferenceSerializer<CompositeEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "compactWikiEntityReferenceSerializer", (Object) entityReferenceSerializer1);
+DocumentReferenceResolver<TimeScheduler3.Task> documentReferenceResolver0 = (DocumentReferenceResolver<TimeScheduler3.Task>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "currentMixedDocumentReferenceResolver", (Object) documentReferenceResolver0);
+DocumentReferenceResolver<WikiReference> documentReferenceResolver1 = (DocumentReferenceResolver<WikiReference>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultDocumentReferenceResolver", (Object) documentReferenceResolver1);
+EntityReferenceSerializer<XDOM> entityReferenceSerializer2 = (EntityReferenceSerializer<XDOM>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultEntityReferenceSerializer", (Object) entityReferenceSerializer2);
+EntityReferenceSerializer<CompositeEvent> entityReferenceSerializer3 = (EntityReferenceSerializer<CompositeEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "localEntityReferenceSerializer", (Object) entityReferenceSerializer3);
+SubstituteLoggingEvent substituteLoggingEvent0 = new SubstituteLoggingEvent();
+SubstituteLogger substituteLogger1 = substituteLoggingEvent0.getLogger();
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "logger", (Object) substituteLogger1);
+DefaultObservationManager defaultObservationManager0 = new DefaultObservationManager();
+ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "componentManager", (Object) componentManager0);
+NOPLogger nOPLogger0 = NOPLogger.NOP_LOGGER;
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "logger", (Object) nOPLogger0);
+Injector.validateBean(defaultObservationManager0, (Class<?>) DefaultObservationManager.class);
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "observationManager", (Object) defaultObservationManager0);
+Provider<Integer> provider0 = (Provider<Integer>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "oldRenderingProvider", (Object) provider0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiHibernateStore0, xWikiContext1);
+QueryManager queryManager0 = xWikiCacheStore0.getQueryManager();
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "queryManager", (Object) queryManager0);
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Provider<ChronoLocalDate> provider1 = (Provider<ChronoLocalDate>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "xcontextProvider", (Object) provider1);
+Injector.validateBean(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class);
+QueryManager queryManager1 = xWikiHibernateStore0.getQueryManager();
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "queryManager", (Object) queryManager1);
+DocumentReferenceResolver<WikiReference> documentReferenceResolver2 = (DocumentReferenceResolver<WikiReference>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "resolver", (Object) documentReferenceResolver2);
+WikiDescriptorManager wikiDescriptorManager2 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager2);
+Injector.validateBean(notificationUserIterator0, (Class<?>) NotificationUserIterator.class);
+RuntimeInstance runtimeInstance0 = new RuntimeInstance();
+ExtendedProperties extendedProperties0 = runtimeInstance0.getConfiguration();
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, extendedProperties0, documentReference1);
+
+01:27:00.718 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:27:02.378 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:27:12.059 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-0.2-1-11
+01:27:12.150 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,67 @@
+01:21:51.864 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+01:21:51.869 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+01:21:51.869 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+01:22:05.327 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1118.
+01:24:49.456 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:24:49.465 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:24:49.465 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:24:49.481 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:24:49.483 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:24:49.484 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:24:49.484 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:24:49.484 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is next
+01:24:53.835 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:25:40.905 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.4
+01:25:40.906 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.4. FE: 100 
+01:25:40.906 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:26:47.784 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+01:26:47.785 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:26:47.785 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:26:47.786 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:26:47.786 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+01:26:47.787 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+MimeMessageFactory<Integer> mimeMessageFactory0 = (MimeMessageFactory<Integer>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+NotificationUserIterator notificationUserIterator0 = new NotificationUserIterator();
+PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+periodicMimeMessageIterator0.next();
+periodicMimeMessageIterator0.logger = logger0;
+Consumer<MimeMessage> consumer0 = (Consumer<MimeMessage>) mock(Consumer.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.computeNext();
+periodicMimeMessageIterator0.forEach(consumer0);
+String string0 = "<${tYseyOi4Pfwzg";
+Boolean boolean0 = new Boolean(string0);
+MimeMessage mimeMessage0 = periodicMimeMessageIterator0.next();
+String string1 = null;
+Message.RecipientType message_RecipientType0 = Message.RecipientType.BCC;
+Address[] addressArray0 = new Address[4];
+String string2 = "";
+InternetAddress internetAddress0 = new InternetAddress(string2);
+addressArray0[1] = (Address) internetAddress0;
+InternetAddress internetAddress1 = new InternetAddress(string0);
+addressArray0[2] = (Address) internetAddress1;
+String string3 = "j";
+String string4 = "N{f2^Oq";
+mimeMessage0.setRecipients(message_RecipientType0, addressArray0);
+mimeMessage0.setHeader(string0, string1);
+periodicMimeMessageIterator0.hasNext();
+Consumer<MimeMessage> consumer1 = (Consumer<MimeMessage>) mock(Consumer.class, new ViolatedAssumptionAnswer());
+periodicMimeMessageIterator0.forEach(consumer1);
+periodicMimeMessageIterator0.iterator();
+Boolean boolean1 = new Boolean((boolean) boolean0);
+periodicMimeMessageIterator0.hasNext();
+String string5 = "";
+String string6 = "4B-py>3";
+ExtendedProperties extendedProperties0 = new ExtendedProperties(string5, string6);
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiContext0.clone();
+XWikiContext xWikiContext1 = new XWikiContext();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+XWikiContext xWikiContext3 = xWikiContext2.clone();
+DocumentReference documentReference0 = xWikiContext3.getUserReference();
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, extendedProperties0, documentReference0);
+
+01:26:47.806 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:26:48.200 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:26:58.557 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-0.2-1-12
+01:26:58.634 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

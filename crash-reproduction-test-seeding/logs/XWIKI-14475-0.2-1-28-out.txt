@@ -1,0 +1,77 @@
+00:23:53.847 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+00:23:53.852 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.wiki.template.internal.DefaultWikiTemplateManager.setTemplate(DefaultWikiTemplateManager:119)
+00:23:53.852 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.wiki.template.internal.DefaultWikiTemplateManager
+00:24:00.659 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 552.
+00:25:41.244 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:25:41.290 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:25:41.291 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:25:41.329 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:25:41.353 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:25:41.353 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:25:41.354 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:25:41.354 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setTemplate
+00:25:41.359 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:26:23.202 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+00:26:23.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. FE: 100 
+00:26:23.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:27:18.528 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 200
+00:27:52.677 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 300
+00:28:25.153 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 400
+00:28:49.242 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 500
+00:29:13.686 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 600
+00:29:33.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 700
+00:30:03.273 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 800
+00:30:03.273 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+00:30:03.273 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:30:03.273 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:30:03.286 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 800 
+00:30:03.288 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultWikiTemplateManager defaultWikiTemplateManager0 = new DefaultWikiTemplateManager();
+QueryManager queryManager0 = mock(QueryManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "queryManager", (Object) queryManager0);
+WikiPropertyGroupProvider wikiPropertyGroupProvider0 = mock(WikiPropertyGroupProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "templateWikiPropertyGroupProvider", (Object) wikiPropertyGroupProvider0);
+String string0 = "a?'TV$ZEZG~:fFa%A";
+String string1 = "8Q\"gs{2Hy,`e8z";
+WikiDescriptor wikiDescriptor0 = new WikiDescriptor(string1, string1);
+WikiDescriptor wikiDescriptor1 = wikiDescriptor0.clone();
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+doReturn(wikiDescriptor1).when(wikiDescriptorManager0).getById(anyString());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+WikiManager wikiManager0 = mock(WikiManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiManager", (Object) wikiManager0);
+WikiProvisioningJob wikiProvisioningJob0 = mock(WikiProvisioningJob.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(wikiProvisioningJob0).toString();
+WikiProvisioningJobExecutor wikiProvisioningJobExecutor0 = mock(WikiProvisioningJobExecutor.class, new ViolatedAssumptionAnswer());
+doReturn(wikiProvisioningJob0, wikiProvisioningJob0).when(wikiProvisioningJobExecutor0).createAndExecuteJob(anyString() , anyString() , any());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiProvisionerExecutor", (Object) wikiProvisioningJobExecutor0);
+Provider<Flag> provider0 = (Provider<Flag>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class);
+String string2 = "bvgL3u8";
+String string3 = "3}[:o%5R'b&";
+defaultWikiTemplateManager0.applyTemplate(string2, string3);
+String string4 = "K(e@0";
+defaultWikiTemplateManager0.applyTemplate(string4, string4);
+String string5 = "";
+boolean boolean0 = true;
+String string6 = "GJR ?+rj";
+boolean boolean1 = true;
+defaultWikiTemplateManager0.setTemplate(string6, boolean1);
+WikiPropertyGroupProvider wikiPropertyGroupProvider1 = mock(WikiPropertyGroupProvider.class, new ViolatedAssumptionAnswer());
+WikiDescriptorManager wikiDescriptorManager1 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+WikiProvisioningJobExecutor wikiProvisioningJobExecutor1 = mock(WikiProvisioningJobExecutor.class, new ViolatedAssumptionAnswer());
+String string7 = "xwql";
+boolean boolean2 = defaultWikiTemplateManager0.isTemplate(string7);
+defaultWikiTemplateManager0.setTemplate(string7, boolean2);
+String string8 = "XJbn^QD";
+boolean boolean3 = false;
+defaultWikiTemplateManager0.setTemplate(string5, boolean3);
+String string9 = "WN7)(C0|/Js9B9Y?;$$";
+String string10 = "";
+boolean boolean4 = true;
+defaultWikiTemplateManager0.createWikiFromTemplate(string10, string1, string10, string0, boolean4);
+
+00:30:03.309 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:30:03.549 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:30:08.618 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultWikiTemplateManager_ESTest' to results/XWIKI-14475-0.2-1-28
+00:30:08.671 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

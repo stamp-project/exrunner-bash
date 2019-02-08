@@ -1,0 +1,36 @@
+03:20:21.868 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+03:20:21.875 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiDocument.getTranslationList(XWikiDocument:5983)
+03:20:21.876 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiDocument
+03:21:00.914 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 579.
+03:23:31.947 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+03:23:31.972 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+03:23:31.972 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+03:23:31.998 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+03:23:32.009 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+03:23:32.010 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+03:23:32.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+03:23:32.025 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getTranslationList
+03:23:32.039 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+03:27:48.967 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+03:27:48.967 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:27:48.968 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+03:27:48.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+03:27:48.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+03:27:48.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+03:27:48.997 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((Locale) null).when(documentReference0).getLocale();
+Locale locale0 = Locale.JAPANESE;
+XWikiDocument xWikiDocument0 = new XWikiDocument(documentReference0, locale0);
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+xWikiDocument0.getXObjectSize(documentReference1);
+String string0 = "## Advanced content";
+xWikiDocument0.isCreator(string0);
+xWikiDocument0.getCreator();
+xWikiDocument0.getTemplateDocumentReference();
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiDocument0.getTranslationList(xWikiContext0);
+
+03:27:49.085 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+03:27:49.605 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+03:27:56.121 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiDocument_ESTest' to results/XWIKI-14319-0.2-1-16
+03:27:56.354 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
