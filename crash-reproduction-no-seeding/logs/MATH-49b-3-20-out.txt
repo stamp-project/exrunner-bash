@@ -1,0 +1,52 @@
+07:46:41.494 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$6
+07:46:41.499 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.linear.OpenMapRealVector.ebeMultiply(OpenMapRealVector:372)
+07:46:41.499 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.linear.OpenMapRealVector
+07:46:44.596 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+07:46:49.429 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:46:49.437 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:46:49.437 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:46:49.465 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:46:49.466 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:46:49.466 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:46:49.466 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:46:49.467 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is ebeMultiply
+07:46:49.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:47:01.525 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+07:47:01.526 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:47:01.526 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:47:01.533 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+07:47:01.533 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+07:47:01.533 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+07:47:01.534 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Double[] doubleArray0 = new Double[2];
+double double0 = (-1041.1414282733838);
+Double double1 = new Double(double0);
+doubleArray0[0] = double1;
+Double double2 = new Double(double0);
+doubleArray0[1] = double2;
+OpenMapRealVector openMapRealVector0 = new OpenMapRealVector(doubleArray0);
+openMapRealVector0.getDistance((RealVector) openMapRealVector0);
+OpenMapRealVector openMapRealVector1 = openMapRealVector0.subtract((RealVector) openMapRealVector0);
+OpenMapRealVector openMapRealVector2 = openMapRealVector0.ebeMultiply((RealVector) openMapRealVector1);
+int int0 = (-838);
+OpenMapRealVector openMapRealVector3 = new OpenMapRealVector(openMapRealVector2, int0);
+openMapRealVector3.isNaN();
+double double3 = 348.00569;
+openMapRealVector3.isDefaultValue(double3);
+openMapRealVector3.setSubVector(int0, (RealVector) openMapRealVector0);
+OpenMapRealVector openMapRealVector4 = openMapRealVector1.copy();
+double[] doubleArray1 = new double[2];
+doubleArray1[0] = (double) doubleArray0[1];
+double double4 = (-3853.670771809403);
+doubleArray1[1] = double4;
+openMapRealVector4.setSubVector(int0, doubleArray1);
+OpenMapRealVector openMapRealVector5 = openMapRealVector2.add(openMapRealVector0);
+openMapRealVector5.getL1Distance(openMapRealVector0);
+openMapRealVector5.append(doubleArray1);
+openMapRealVector1.mapAdd(doubleArray1[0]);
+int int1 = 0;
+openMapRealVector5.setSubVector(int1, doubleArray1);
+
+07:47:01.547 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+07:47:01.929 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+07:47:03.238 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'OpenMapRealVector_ESTest' to results/MATH-49b-3-20
+07:47:03.252 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

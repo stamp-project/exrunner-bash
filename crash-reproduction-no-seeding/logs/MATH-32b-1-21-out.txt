@@ -1,0 +1,59 @@
+20:19:00.212 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+20:19:00.223 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.computeGeometricalProperties(PolygonsSet:136)
+20:19:00.223 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet
+20:19:03.089 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+20:19:10.719 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+20:19:10.726 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:19:10.726 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+20:19:10.781 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+20:19:10.782 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+20:19:10.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+20:19:10.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+20:19:10.783 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is computeGeometricalProperties
+20:19:10.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+20:19:19.024 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+20:19:19.024 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+20:19:19.025 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+20:19:27.019 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+20:19:27.019 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+20:19:27.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+20:19:27.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+20:19:27.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+20:19:27.021 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>();
+PolygonsSet polygonsSet0 = new PolygonsSet();
+polygonsSet0.computeGeometricalProperties();
+BSPTree<Euclidean2D> bSPTree1 = (BSPTree<Euclidean2D>) mock(BSPTree.class, new ViolatedAssumptionAnswer());
+polygonsSet0.computeGeometricalProperties();
+polygonsSet0.computeGeometricalProperties();
+Vector2D vector2D0 = Vector2D.ZERO;
+Vector3D vector3D0 = Vector3D.MINUS_I;
+double double0 = vector3D0.getNorm1();
+BSPTree<Euclidean2D> bSPTree2 = new BSPTree<Euclidean2D>();
+double double1 = polygonsSet0.getSize();
+BSPTree<Euclidean2D> bSPTree3 = new BSPTree<Euclidean2D>(vector3D0);
+polygonsSet0.computeGeometricalProperties();
+Vector3D vector3D1 = new Vector3D(double0, double0);
+PolygonsSet polygonsSet1 = polygonsSet0.buildNew(bSPTree3);
+polygonsSet1.getBarycenter();
+Line line0 = new Line(vector2D0, double1);
+SubLine subLine0 = line0.wholeHyperplane();
+SubHyperplane<Euclidean2D> subHyperplane0 = polygonsSet0.intersection(subLine0);
+bSPTree2.split(subHyperplane0);
+PolygonsSet polygonsSet2 = polygonsSet1.buildNew(bSPTree2);
+polygonsSet2.contains(polygonsSet1);
+vector3D0.negate();
+polygonsSet0.computeGeometricalProperties();
+polygonsSet2.getSize();
+polygonsSet1.getVertices();
+PolygonsSet polygonsSet3 = polygonsSet2.buildNew(bSPTree3);
+polygonsSet2.getVertices();
+bSPTree2.copySelf();
+polygonsSet2.getVertices();
+PolygonsSet polygonsSet4 = polygonsSet2.buildNew(bSPTree0);
+polygonsSet4.buildNew(bSPTree1);
+polygonsSet3.computeGeometricalProperties();
+
+20:19:27.048 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+20:19:27.424 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+20:19:28.983 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PolygonsSet_ESTest' to results/MATH-32b-1-21
+20:19:28.989 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

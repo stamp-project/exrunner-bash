@@ -1,0 +1,72 @@
+17:11:09.701 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+17:11:09.712 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.estimation.AbstractEstimator.getCovariances(AbstractEstimator:173)
+17:11:09.712 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.estimation.AbstractEstimator
+17:11:12.195 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+17:11:18.319 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:11:18.351 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:11:18.351 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:11:18.389 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:11:18.389 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:11:18.389 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:11:18.390 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:11:18.390 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getCovariances
+17:11:18.394 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:11:24.437 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.25
+17:11:24.437 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.25. FE: 100 
+17:11:24.437 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:11:31.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.142857142857142 | 200
+17:11:31.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.142857142857142. FE: 200 
+17:11:36.734 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.142857142857142 | 300
+17:11:41.111 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+17:11:41.111 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 400 
+17:11:45.564 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+17:11:45.564 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+17:11:45.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:11:45.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:11:45.565 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+17:11:45.566 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EstimatedParameter[] estimatedParameterArray0 = new EstimatedParameter[6];
+String string0 = "z";
+String string1 = "coefficient matrix is not square";
+boolean boolean0 = true;
+String string2 = "";
+LevenbergMarquardtEstimatorTest levenbergMarquardtEstimatorTest0 = new LevenbergMarquardtEstimatorTest(string2);
+int int0 = levenbergMarquardtEstimatorTest0.countTestCases();
+WeightedMeasurement weightedMeasurement0 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+double double0 = (-2017.8642830997);
+TestCase.assertTrue(string2, boolean0);
+String string3 = null;
+TestCase.assertEquals(string3, boolean0, boolean0);
+GaussNewtonEstimator gaussNewtonEstimator0 = new GaussNewtonEstimator(int0, double0, double0);
+LevenbergMarquardtEstimatorTest.QuadraticProblem levenbergMarquardtEstimatorTest_QuadraticProblem0 = levenbergMarquardtEstimatorTest0.new QuadraticProblem();
+gaussNewtonEstimator0.initializeEstimate(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+levenbergMarquardtEstimatorTest_QuadraticProblem0.addMeasurement(weightedMeasurement0);
+levenbergMarquardtEstimatorTest_QuadraticProblem0.getMeasurements();
+gaussNewtonEstimator0.getCovariances(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+SimpleEstimationProblem simpleEstimationProblem0 = new SimpleEstimationProblem();
+simpleEstimationProblem0.getMeasurements();
+simpleEstimationProblem0.getAllParameters();
+gaussNewtonEstimator0.getRMS(simpleEstimationProblem0);
+double double1 = gaussNewtonEstimator0.getRMS(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+gaussNewtonEstimator0.initializeEstimate(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+gaussNewtonEstimator0.estimate(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+gaussNewtonEstimator0.updateResidualsAndCost();
+LevenbergMarquardtEstimator levenbergMarquardtEstimator0 = new LevenbergMarquardtEstimator();
+double[] doubleArray0 = new double[3];
+doubleArray0[1] = (double) int0;
+levenbergMarquardtEstimator0.jacobian = doubleArray0;
+WeightedMeasurement weightedMeasurement1 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+levenbergMarquardtEstimatorTest_QuadraticProblem0.addMeasurement(weightedMeasurement1);
+doubleArray0[2] = double1;
+levenbergMarquardtEstimator0.jacobian = doubleArray0;
+levenbergMarquardtEstimator0.setOrthoTolerance(doubleArray0[2]);
+levenbergMarquardtEstimator0.estimate(simpleEstimationProblem0);
+levenbergMarquardtEstimator0.getJacobianEvaluations();
+gaussNewtonEstimator0.getJacobianEvaluations();
+levenbergMarquardtEstimator0.getJacobianEvaluations();
+int int1 = (-1813);
+gaussNewtonEstimator0.setMaxCostEval(int1);
+
+17:11:45.606 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:11:46.064 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:11:48.310 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractEstimator_ESTest' to results/MATH-100b-1-17
+17:11:48.324 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

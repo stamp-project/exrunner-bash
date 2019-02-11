@@ -1,0 +1,66 @@
+21:17:54.481 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:17:54.493 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.jfree.chart.plot.XYPlot.<init>(XYPlot:660)
+21:17:54.493 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.jfree.chart.plot.XYPlot
+21:18:18.970 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 6.
+21:19:02.169 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:19:02.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:19:02.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:19:02.197 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:19:02.200 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:19:02.200 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:19:02.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:19:02.201 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+21:19:02.233 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:19:49.691 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+21:19:49.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:19:49.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:19:49.707 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+21:19:49.707 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+21:19:49.707 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+21:19:49.721 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: TaskSeriesCollection taskSeriesCollection0 = new TaskSeriesCollection();
+XYTaskDataset xYTaskDataset0 = new XYTaskDataset(taskSeriesCollection0);
+String string0 = "";
+NumberAxis numberAxis0 = new NumberAxis(string0);
+XYItemRenderer xYItemRenderer0 = null;
+XYPlot xYPlot0 = new XYPlot(xYTaskDataset0, numberAxis0, numberAxis0, xYItemRenderer0);
+int int0 = 450;
+xYPlot0.clearDomainMarkers(int0);
+int int1 = xYPlot0.indexOf(xYTaskDataset0);
+boolean boolean0 = true;
+xYPlot0.setDomainGridlinesVisible(boolean0);
+RendererChangeEvent rendererChangeEvent0 = mock(RendererChangeEvent.class, new ViolatedAssumptionAnswer());
+xYPlot0.rendererChanged(rendererChangeEvent0);
+xYPlot0.getDataset();
+ValueAxis[] valueAxisArray0 = new ValueAxis[6];
+valueAxisArray0[0] = (ValueAxis) numberAxis0;
+valueAxisArray0[1] = (ValueAxis) numberAxis0;
+NumberAxis3D numberAxis3D0 = new NumberAxis3D();
+valueAxisArray0[2] = (ValueAxis) numberAxis3D0;
+valueAxisArray0[3] = (ValueAxis) numberAxis0;
+valueAxisArray0[4] = (ValueAxis) numberAxis0;
+valueAxisArray0[5] = (ValueAxis) numberAxis0;
+xYPlot0.setRangeAxes(valueAxisArray0);
+boolean boolean1 = xYPlot0.isRangeCrosshairLockedOnData();
+Paint paint0 = xYPlot0.getRangeGridlinePaint();
+xYPlot0.getDataset();
+AxisLocation axisLocation0 = xYPlot0.getDomainAxisLocation();
+xYPlot0.setRangeAxisLocation(axisLocation0, boolean0);
+PdfWriter pdfWriter0 = mock(PdfWriter.class, new ViolatedAssumptionAnswer());
+JFreeChart jFreeChart0 = mock(JFreeChart.class, new ViolatedAssumptionAnswer());
+ChartPanel chartPanel0 = new ChartPanel(jFreeChart0);
+ImageCapabilities imageCapabilities0 = new ImageCapabilities(boolean1);
+VolatileImage volatileImage0 = chartPanel0.createVolatileImage(int1, int1, imageCapabilities0);
+float float0 = (-834.9F);
+Image image0 = Image.getInstance(pdfWriter0, (java.awt.Image) volatileImage0, float0);
+Color color0 = image0.getBorderColorBottom();
+AreaRenderer areaRenderer0 = new AreaRenderer();
+int int2 = 1;
+Stroke stroke0 = areaRenderer0.getItemStroke(int2, int1, boolean0);
+float float1 = 0.0F;
+CategoryMarker categoryMarker0 = new CategoryMarker(string0, color0, stroke0, paint0, stroke0, float1);
+xYPlot0.addDomainMarker((Marker) categoryMarker0);
+
+21:19:49.739 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+21:19:50.956 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+21:19:54.756 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XYPlot_ESTest' to results/CHART-4b-5-18
+21:19:54.832 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

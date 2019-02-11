@@ -1,0 +1,38 @@
+00:56:28.080 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:56:28.097 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+00:56:28.097 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+00:56:41.641 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:58:52.864 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:58:52.872 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:58:52.873 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:58:52.914 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:58:52.936 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'extractMimeType(Lcom/xpn/xwiki/XWikiContext;)Ljava/lang/String;' is private!
+00:58:52.936 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+00:58:53.011 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 2 Target call(s):
+00:58:53.021 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+00:58:53.021 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #2 is resetMimeType
+00:58:53.027 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:59:12.387 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:59:12.387 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:59:12.388 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:59:12.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:59:12.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:59:12.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:59:12.400 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+boolean boolean0 = false;
+xWikiAttachment0.setMetaDataDirty(boolean0);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.isMetaDataDirty();
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+xWikiAttachment0.resetMimeType(xWikiContext2);
+xWikiAttachment0.getDoc();
+xWikiAttachment0.resetMimeType(xWikiContext1);
+
+00:59:12.427 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:59:12.649 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:59:18.666 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-5-21
+00:59:18.683 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

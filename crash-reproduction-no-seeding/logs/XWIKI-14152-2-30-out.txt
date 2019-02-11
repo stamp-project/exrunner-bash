@@ -1,0 +1,48 @@
+22:29:19.844 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+22:29:19.852 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.internal.AbstractQueryFilter.getSelectColumns(AbstractQueryFilter:80)
+22:29:19.853 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.internal.AbstractQueryFilter
+22:29:25.208 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+22:29:55.864 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:29:55.872 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:29:55.872 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:29:55.916 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:29:55.917 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:29:55.917 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:29:55.917 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:29:55.917 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getSelectColumns
+22:29:55.939 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:30:06.286 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:30:06.286 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:30:06.286 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:30:06.287 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:30:06.287 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:30:06.287 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:30:06.287 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+CountDocumentFilter countDocumentFilter1 = new CountDocumentFilter();
+Logger logger1 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter1, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger1);
+Injector.validateBean(countDocumentFilter1, (Class<?>) CountDocumentFilter.class);
+String string0 = "-";
+countDocumentFilter0.getSelectColumns(string0);
+List<String> list0 = countDocumentFilter1.getOrderByColumns(string0);
+String string1 = "";
+List<String> list1 = countDocumentFilter0.getSelectColumns(string1);
+countDocumentFilter1.filterResults(list1);
+countDocumentFilter1.filterResults(list0);
+String string2 = "CE/;Vr(7zZaL!*5}";
+String string3 = "v@RUv0,t-t)pI>`l+";
+String string4 = countDocumentFilter0.filterStatement(string2, string3);
+CountDocumentFilter countDocumentFilter2 = new CountDocumentFilter();
+Logger logger2 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter2, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger2);
+Injector.validateBean(countDocumentFilter2, (Class<?>) CountDocumentFilter.class);
+countDocumentFilter1.getSelectColumns(string1);
+countDocumentFilter1.getSelectColumns(string4);
+
+22:30:06.302 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:30:06.443 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:30:10.976 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AbstractQueryFilter_ESTest' to results/XWIKI-14152-2-30
+22:30:10.982 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

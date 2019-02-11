@@ -1,0 +1,63 @@
+16:22:20.501 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+16:22:20.505 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.field.PreciseDurationDateTimeField.set(PreciseDurationDateTimeField:78)
+16:22:20.505 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.field.PreciseDurationDateTimeField
+16:22:22.892 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+16:22:37.745 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:22:37.782 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:22:37.782 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:22:37.820 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:22:37.843 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+16:22:37.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+16:22:37.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:22:37.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is set
+16:22:37.848 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:22:47.491 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+16:22:47.492 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:22:47.492 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:22:47.492 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:22:47.493 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:22:47.493 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+16:22:47.494 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.centuryOfEra();
+ISOChronology iSOChronology0 = ISOChronology.getInstance();
+ISOChronology iSOChronology1 = (ISOChronology)iSOChronology0.withUTC();
+LocalDate localDate0 = LocalDate.now((Chronology) iSOChronology1);
+Instant instant0 = Instant.now();
+DateTime dateTime0 = instant0.toDateTime();
+int int0 = (-2356);
+DateTime dateTime1 = dateTime0.withDayOfWeek(int0);
+int int1 = 1197;
+DateTime dateTime2 = dateTime1.plusDays(int1);
+LocalDateTime localDateTime0 = dateTime2.toLocalDateTime();
+LocalDate localDate1 = localDate0.withFields(localDateTime0);
+int int2 = 137;
+DateTimeField dateTimeField0 = localDate1.getField(int2);
+int int3 = 604800;
+RemainderDateTimeField remainderDateTimeField0 = new RemainderDateTimeField(dateTimeField0, dateTimeFieldType0, int3);
+DividedDateTimeField dividedDateTimeField0 = new DividedDateTimeField(remainderDateTimeField0, dateTimeFieldType0);
+RemainderDateTimeField remainderDateTimeField1 = new RemainderDateTimeField(dividedDateTimeField0);
+DurationField durationField0 = remainderDateTimeField1.iRangeField;
+TestPreciseDateTimeField.MockPreciseDateTimeField testPreciseDateTimeField_MockPreciseDateTimeField0 = new TestPreciseDateTimeField.MockPreciseDateTimeField(dateTimeFieldType0, durationField0, durationField0);
+testPreciseDateTimeField_MockPreciseDateTimeField0.getDurationField();
+testPreciseDateTimeField_MockPreciseDateTimeField0.set((long) int2, int1);
+testPreciseDateTimeField_MockPreciseDateTimeField0.getRange();
+TestPreciseDateTimeField.MockPreciseDateTimeField testPreciseDateTimeField_MockPreciseDateTimeField1 = new TestPreciseDateTimeField.MockPreciseDateTimeField(dateTimeFieldType0, durationField0, durationField0);
+testPreciseDateTimeField_MockPreciseDateTimeField1.getDurationField();
+testPreciseDateTimeField_MockPreciseDateTimeField0.getRange();
+int int4 = testPreciseDateTimeField_MockPreciseDateTimeField1.get(int1);
+long long0 = testPreciseDateTimeField_MockPreciseDateTimeField0.getUnitMillis();
+testPreciseDateTimeField_MockPreciseDateTimeField1.get(long0);
+testPreciseDateTimeField_MockPreciseDateTimeField1.getRangeDurationField();
+testPreciseDateTimeField_MockPreciseDateTimeField0.getRangeDurationField();
+int int5 = (-892);
+testPreciseDateTimeField_MockPreciseDateTimeField1.set((long) int4, int5);
+TestPreciseDurationDateTimeField.MockPreciseDurationDateTimeField testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0 = new TestPreciseDurationDateTimeField.MockPreciseDurationDateTimeField();
+testPreciseDurationDateTimeField_MockPreciseDurationDateTimeField0.getMaximumValue();
+testPreciseDateTimeField_MockPreciseDateTimeField0.roundCeiling(int5);
+testPreciseDateTimeField_MockPreciseDateTimeField0.roundCeiling(int0);
+TestPreciseDateTimeField.MockPreciseDateTimeField testPreciseDateTimeField_MockPreciseDateTimeField2 = new TestPreciseDateTimeField.MockPreciseDateTimeField();
+testPreciseDateTimeField_MockPreciseDateTimeField2.getRangeDurationField();
+
+16:22:47.524 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:22:47.945 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:22:50.946 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'PreciseDurationDateTimeField_ESTest' to results/TIME-10b-2-24
+16:22:50.954 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

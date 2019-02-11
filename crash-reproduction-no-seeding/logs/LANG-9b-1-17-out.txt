@@ -1,0 +1,48 @@
+16:36:19.304 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ArrayIndexOutOfBoundsException
+16:36:19.311 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.lang3.time.FastDateParser.toArray(FastDateParser:413)
+16:36:19.311 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.lang3.time.FastDateParser
+16:36:22.412 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 8.
+16:36:31.317 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:36:31.478 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:36:31.478 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+16:36:31.518 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+16:36:31.518 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target call 'toArray(Ljava/util/Map;)[Ljava/lang/String;' is private!
+16:36:31.518 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Searching for public callers
+16:36:31.613 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+16:36:31.614 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getDisplayNames
+16:36:31.658 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+16:36:50.570 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.75
+16:36:50.602 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.75. FE: 100 
+16:36:50.603 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:37:08.384 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+16:37:08.384 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+16:37:08.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+16:37:08.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:37:08.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 200 
+16:37:08.385 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "K\\GE>p$ ";
+ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getTimeZone(string0);
+TimeZone timeZone0 = mock(TimeZone.class, new ViolatedAssumptionAnswer());
+Locale locale0 = FastDateParser.JAPANESE_IMPERIAL;
+Locale locale1 = Locale.ENGLISH;
+FastDateParser fastDateParser0 = new FastDateParser(string0, zoneInfo0, locale0);
+int int0 = 13;
+ParsePosition parsePosition0 = new ParsePosition(int0);
+fastDateParser0.parse(string0, parsePosition0);
+int int1 = 2;
+parsePosition0.setIndex(int1);
+ParsePosition parsePosition1 = null;
+boolean boolean0 = true;
+zoneInfo0.getDisplayName(boolean0, int0, locale0);
+Object object0 = new Object();
+Object object1 = new Object();
+String string1 = "The wildcard array must not Be null";
+Locale locale2 = Locale.CHINA;
+fastDateParser0.parseObject(string1);
+fastDateParser0.parseObject(string0, parsePosition0);
+fastDateParser0.getLocale();
+fastDateParser0.getTimeZone();
+
+16:37:08.480 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:37:09.691 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:37:12.643 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'FastDateParser_ESTest' to results/LANG-9b-1-17
+16:37:12.667 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

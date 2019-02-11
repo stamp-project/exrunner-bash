@@ -1,0 +1,67 @@
+13:33:48.752 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.misusing.MissingMethodInvocationException
+13:33:48.756 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.internal.MockitoCore.stub(MockitoCore:43)
+13:33:48.757 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.internal.MockitoCore
+13:33:50.193 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 3.
+13:33:57.177 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:33:57.202 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:33:57.202 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:33:57.231 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:33:57.246 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:33:57.247 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:33:57.247 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:33:57.247 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is stub
+13:33:57.251 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:33:57.525 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: null
+13:33:57.755 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.625
+13:33:57.755 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.625. FE: 0 
+13:33:57.755 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:34:12.202 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+13:34:12.202 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:34:12.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:34:12.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:34:12.203 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:34:12.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MockSettings mockSettings0 = null;
+Object object0 = new Object();
+MockingProgressImpl mockingProgressImpl0 = new MockingProgressImpl();
+Type[] typeArray0 = new Type[7];
+InvocationContainerImpl invocationContainerImpl0 = new InvocationContainerImpl(mockingProgressImpl0);
+mockingProgressImpl0.pullOngoingStubbing();
+Class<String> class0 = null;
+String string0 = "";
+MockitoCore mockitoCore0 = new MockitoCore();
+Invocation invocation0 = null;
+DeprecatedOngoingStubbing<Invocation> deprecatedOngoingStubbing0 = mockitoCore0.stub(invocation0);
+String[] stringArray0 = new String[6];
+stringArray0[0] = string0;
+stringArray0[1] = string0;
+stringArray0[2] = string0;
+stringArray0[3] = string0;
+stringArray0[4] = string0;
+stringArray0[5] = stringArray0[2];
+mockitoCore0.reset(stringArray0);
+InvocationMatcher invocationMatcher0 = new InvocationMatcher(invocation0);
+Object object1 = new Object();
+Method method0 = invocationMatcher0.getMethod();
+SerializableMethod serializableMethod0 = new SerializableMethod(method0);
+Object[] objectArray0 = new Object[9];
+objectArray0[0] = (Object) deprecatedOngoingStubbing0;
+objectArray0[2] = (Object) stringArray0[5];
+objectArray0[3] = (Object) string0;
+objectArray0[4] = (Object) invocationMatcher0;
+objectArray0[5] = (Object) invocation0;
+objectArray0[6] = (Object) mockingProgressImpl0;
+objectArray0[7] = (Object) mockitoCore0;
+objectArray0[8] = object1;
+int int0 = 1;
+MockitoMethodProxy mockitoMethodProxy0 = null;
+FilteredCGLIBProxyRealMethod filteredCGLIBProxyRealMethod0 = new FilteredCGLIBProxyRealMethod(mockitoMethodProxy0);
+Invocation invocation1 = mockitoCore0.getLastInvocation();
+StubbedInvocationMatcher stubbedInvocationMatcher0 = invocationContainerImpl0.findAnswerFor(invocation1);
+StubbedInvocationMatcher stubbedInvocationMatcher1 = new StubbedInvocationMatcher(invocationMatcher0, stubbedInvocationMatcher0);
+mockitoCore0.doAnswer(stubbedInvocationMatcher1);
+mockitoCore0.doAnswer(stubbedInvocationMatcher0);
+
+13:34:12.212 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:34:12.386 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:34:14.483 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'MockitoCore_ESTest' to results/MOCKITO-16b-2-23
+13:34:14.497 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,56 @@
+18:10:46.287 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:10:46.296 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+18:10:46.296 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+18:10:49.066 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:11:00.360 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:11:00.411 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:11:00.411 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:11:00.450 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:11:00.450 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:11:00.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:11:00.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:11:00.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+18:11:00.562 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:11:15.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:11:15.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:11:15.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:11:15.501 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:11:15.501 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:11:15.501 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:11:15.503 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.clockhourOfDay();
+int int0 = 0;
+DateTimeFormatterBuilder.Fraction dateTimeFormatterBuilder_Fraction0 = new DateTimeFormatterBuilder.Fraction(dateTimeFieldType0, int0, int0);
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimeFormatterBuilder_Fraction0, dateTimeFormatterBuilder_Fraction0);
+String string0 = dateTimeFormatter0.print((long) int0);
+dateTimeFormatter0.isOffsetParsed();
+DateTime dateTime0 = dateTimeFormatter0.parseDateTime(string0);
+String string1 = "M";
+DateTime dateTime1 = dateTimeFormatter0.parseDateTime(string1);
+dateTimeFormatter0.isOffsetParsed();
+StringWriter stringWriter0 = new StringWriter();
+StringWriter stringWriter1 = stringWriter0.append((CharSequence) string1, int0, int0);
+char char0 = '7';
+StringWriter stringWriter2 = stringWriter1.append(char0);
+StringWriter stringWriter3 = stringWriter2.append((CharSequence) string1);
+dateTimeFormatter0.printTo((Appendable) stringWriter3, (ReadableInstant) dateTime1);
+ReadablePartial readablePartial0 = null;
+dateTimeFormatter0.printTo((Writer) stringWriter2, readablePartial0);
+dateTimeFormatter0.printTo((Appendable) stringWriter3, (long) int0);
+int int1 = 0;
+StringWriter stringWriter4 = new StringWriter(int1);
+StringBuffer stringBuffer0 = stringWriter4.getBuffer();
+dateTimeFormatter0.printTo(stringBuffer0, (ReadableInstant) dateTime0);
+Locale locale0 = Locale.SIMPLIFIED_CHINESE;
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withLocale(locale0);
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter1.withPivotYear(int0);
+String string2 = dateTimeFormatter2.print(readablePartial0);
+MutableDateTime mutableDateTime0 = MutableDateTime.parse(string1, dateTimeFormatter0);
+int int2 = (-1903);
+DateTimeZone dateTimeZone0 = DateTimeZone.forOffsetHours(int2);
+MutableDateTime mutableDateTime1 = mutableDateTime0.toMutableDateTime(dateTimeZone0);
+dateTimeFormatter2.parseInto(mutableDateTime1, string2, int2);
+
+18:11:15.527 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:11:15.780 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:11:18.445 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-22
+18:11:18.490 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

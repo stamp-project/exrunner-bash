@@ -1,0 +1,52 @@
+11:48:28.129 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+11:48:28.133 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(UnivariateRealSolverUtils:128)
+11:48:28.133 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.UnivariateRealSolverUtils
+11:48:30.957 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+11:48:37.970 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+11:48:37.977 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:48:37.977 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+11:48:37.999 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+11:48:38.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+11:48:38.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+11:48:38.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+11:48:38.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is bracket
+11:48:38.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+11:48:45.538 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+11:48:45.539 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:48:45.539 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+11:48:45.539 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+11:48:45.539 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+11:48:45.540 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+11:48:45.557 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: QuinticFunction quinticFunction0 = new QuinticFunction();
+UnivariateRealFunction univariateRealFunction0 = quinticFunction0.derivative();
+double double0 = 896.92917;
+double double1 = 0.0;
+double[] doubleArray0 = UnivariateRealSolverUtils.bracket(univariateRealFunction0, double0, double1, double1);
+double double2 = UnivariateRealSolverUtils.solve((UnivariateRealFunction) quinticFunction0, double0, double1);
+double double3 = Double.NaN;
+double double4 = Double.POSITIVE_INFINITY;
+double double5 = UnivariateRealSolverUtils.solve((UnivariateRealFunction) quinticFunction0, double3, double4);
+PolynomialFunction[] polynomialFunctionArray0 = new PolynomialFunction[3];
+PolynomialFunction polynomialFunction0 = new PolynomialFunction(doubleArray0);
+PolynomialFunction polynomialFunction1 = polynomialFunction0.polynomialDerivative();
+polynomialFunctionArray0[0] = polynomialFunction1;
+PolynomialFunction polynomialFunction2 = new PolynomialFunction(doubleArray0);
+polynomialFunctionArray0[1] = polynomialFunction2;
+PolynomialFunction polynomialFunction3 = polynomialFunctionArray0[0].polynomialDerivative();
+polynomialFunctionArray0[2] = polynomialFunction3;
+PolynomialSplineFunction polynomialSplineFunction0 = new PolynomialSplineFunction(doubleArray0, polynomialFunctionArray0);
+PolynomialSplineFunction polynomialSplineFunction1 = polynomialSplineFunction0.polynomialSplineDerivative();
+double double6 = (-1987.3708358524364);
+UnivariateRealSolverUtils.bracket((UnivariateRealFunction) polynomialSplineFunction1, double6, double1, double2);
+double double7 = 0.0;
+double double8 = 0.0;
+UnivariateRealSolverUtils.solve(univariateRealFunction0, double7, double5, double8);
+double double9 = 2198.036564570547;
+UnivariateRealSolverUtils.bracket((UnivariateRealFunction) polynomialSplineFunction0, double9, double4, double8);
+double double10 = 1324.0;
+UnivariateRealSolverUtils.midpoint(double5, double10);
+
+11:48:45.583 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+11:48:45.793 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+11:48:48.189 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'UnivariateRealSolverUtils_ESTest' to results/MATH-95b-2-30
+11:48:48.239 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

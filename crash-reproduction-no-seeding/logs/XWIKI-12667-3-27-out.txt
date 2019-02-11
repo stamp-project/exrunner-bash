@@ -1,0 +1,40 @@
+01:08:24.994 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+01:08:25.005 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference:68)
+01:08:25.005 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.reference.AttachmentReference
+01:08:32.844 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+01:09:19.782 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+01:09:19.802 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+01:09:19.802 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+01:09:19.845 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+01:09:19.846 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+01:09:19.846 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+01:09:19.846 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+01:09:19.846 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is <init>
+01:09:19.872 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+01:09:33.276 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+01:09:33.277 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:09:33.278 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+01:09:33.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+01:09:33.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+01:09:33.298 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+01:09:33.303 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "&q2]b:\"i9cQ$#*";
+DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference0 = new AttachmentReference(string0, documentReference0);
+String string1 = "The old reference [";
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference1 = new AttachmentReference(string1, documentReference1);
+String string2 = "";
+DocumentReference documentReference2 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference2 = new AttachmentReference(string2, documentReference2);
+DocumentReference documentReference3 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+AttachmentReference attachmentReference3 = new AttachmentReference(string0, documentReference3);
+AttachmentReference attachmentReference4 = new AttachmentReference(attachmentReference3);
+attachmentReference1.setParent(attachmentReference4);
+attachmentReference2.setParent(attachmentReference4);
+AttachmentReference attachmentReference5 = attachmentReference2.replaceParent(attachmentReference4, attachmentReference4);
+attachmentReference3.replaceParent(attachmentReference4, attachmentReference5);
+
+01:09:33.335 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+01:09:33.540 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+01:09:38.377 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'AttachmentReference_ESTest' to results/XWIKI-12667-3-27
+01:09:38.393 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

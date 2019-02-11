@@ -1,0 +1,61 @@
+18:09:12.848 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:09:12.852 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+18:09:12.852 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+18:09:15.249 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 4.
+18:09:26.668 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:09:26.767 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:09:26.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:09:26.830 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:09:26.830 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:09:26.831 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:09:26.831 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:09:26.831 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parseDateTime
+18:09:26.877 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:09:39.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+18:09:39.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:09:39.484 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:09:39.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:09:39.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:09:39.500 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+18:09:39.501 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser0).toString();
+doReturn(0).when(dateTimeParser0).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+Chronology chronology0 = dateTimeFormatter0.getChronology();
+dateTimeFormatter0.getChronology();
+String string0 = "yyyy HH";
+DateTime dateTime0 = dateTimeFormatter0.parseDateTime(string0);
+String string1 = "";
+dateTimeFormatter0.parseLocalDate(string1);
+Writer writer0 = mock(Writer.class, new ViolatedAssumptionAnswer());
+dateTimeFormatter0.printTo(writer0, (ReadableInstant) dateTime0);
+dateTimeFormatter0.getPivotYear();
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withChronology(chronology0);
+dateTimeFormatter0.getChronology();
+dateTimeFormatter1.getChronology();
+dateTimeFormatter1.isOffsetParsed();
+DateTime dateTime1 = dateTimeFormatter1.parseDateTime(string1);
+dateTimeFormatter1.print((ReadableInstant) dateTime0);
+int int0 = 0;
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter0.withDefaultYear(int0);
+ReadWritableInstant readWritableInstant0 = mock(ReadWritableInstant.class, new ViolatedAssumptionAnswer());
+dateTimeFormatter1.parseInto(readWritableInstant0, string1, int0);
+Writer writer1 = mock(Writer.class, new ViolatedAssumptionAnswer());
+long long0 = 0L;
+dateTimeFormatter1.printTo(writer1, long0);
+dateTimeFormatter1.getPivotYear();
+dateTimeFormatter1.getChronology();
+dateTimeFormatter0.parseLocalTime(string0);
+dateTimeFormatter0.isOffsetParsed();
+dateTimeFormatter0.parseLocalDateTime(string0);
+dateTimeFormatter0.isOffsetParsed();
+dateTimeFormatter2.getDefaultYear();
+Duration duration0 = new Duration(dateTime1, dateTime1);
+DateTime dateTime2 = dateTime1.minus((ReadableDuration) duration0);
+dateTimeFormatter0.print((ReadableInstant) dateTime2);
+
+18:09:39.564 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:09:40.058 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:09:42.071 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-11
+18:09:42.077 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

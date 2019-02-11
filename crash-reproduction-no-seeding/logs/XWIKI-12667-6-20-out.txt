@@ -1,0 +1,36 @@
+00:54:11.025 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:54:11.038 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment:923)
+00:54:11.038 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+00:54:28.032 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:56:47.489 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:56:47.517 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:56:47.518 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:56:47.579 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:56:47.581 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:56:47.581 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:56:47.581 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:56:47.582 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+00:56:47.586 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:57:10.230 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:57:10.231 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:57:10.231 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:57:10.231 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:57:10.231 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:57:10.231 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:57:10.232 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+xWikiAttachment0.getNextVersion();
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.isMetaDataDirty();
+Archive archive0 = mock(Archive.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setArchive(archive0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+xWikiAttachment0.getMimeType(xWikiContext2);
+
+00:57:10.257 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:57:10.842 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:57:18.101 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-6-20
+00:57:18.211 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,76 @@
+10:58:12.251 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$4
+10:58:12.261 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.ode.events.EventState.evaluateStep(EventState:218)
+10:58:12.261 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.ode.events.EventState
+10:58:14.517 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+10:58:21.815 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:58:21.844 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:58:21.844 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:58:21.930 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:58:21.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:58:21.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:58:21.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:58:21.931 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is evaluateStep
+10:58:21.951 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:58:38.616 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.8
+10:58:38.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.8. FE: 100 
+10:58:38.617 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:58:57.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+10:58:57.953 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 200 
+10:59:03.113 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+10:59:12.688 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+10:59:18.128 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+10:59:18.128 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+10:59:18.155 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:59:18.155 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:59:18.156 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+10:59:18.157 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 2191.100099231647;
+double double1 = Double.NaN;
+StepInterpolator stepInterpolator0 = mock(StepInterpolator.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(stepInterpolator0).getCurrentTime();
+doReturn((Object) null, (Object) null, (Object) null).when(stepInterpolator0).getInterpolatedState();
+doReturn(false, false).when(stepInterpolator0).isForward();
+StepInterpolator stepInterpolator1 = mock(StepInterpolator.class, new ViolatedAssumptionAnswer());
+doReturn(0.0).when(stepInterpolator1).getCurrentTime();
+doReturn((Object) null, (Object) null, (Object) null).when(stepInterpolator1).getInterpolatedState();
+doReturn(false, false).when(stepInterpolator1).isForward();
+double double2 = (-2149.183683091282);
+double double3 = (-990.29);
+boolean boolean0 = true;
+boolean boolean1 = true;
+boolean boolean2 = false;
+double double4 = (-1599.6003);
+StepProblem stepProblem0 = new StepProblem(double3, double2, double2);
+double double5 = 1278.46894786938;
+int int0 = 11;
+double double6 = (-952.97472730714);
+stepProblem0.setRate(int0);
+int int1 = 2229;
+EventState eventState0 = new EventState(stepProblem0, double0, double6, int1);
+eventState0.evaluateStep(stepInterpolator1);
+double double7 = (-9.34150530124423);
+double double8 = 2202.819912734;
+eventState0.getEventHandler();
+double[] doubleArray0 = new double[8];
+doubleArray0[0] = double8;
+doubleArray0[7] = double6;
+eventState0.stepAccepted(double4, doubleArray0);
+double double9 = (-2887.4);
+double[] doubleArray1 = new double[16];
+stepProblem0.setRate(double8);
+eventState0.evaluateStep(stepInterpolator0);
+doubleArray1[1] = double4;
+eventState0.reinitializeBegin(double9, doubleArray1);
+double double10 = 525.9658487549726;
+Double double11 = new Double(double5);
+Double double12 = new Double(double0);
+NordsieckStepInterpolator nordsieckStepInterpolator0 = new NordsieckStepInterpolator();
+NordsieckStepInterpolator nordsieckStepInterpolator1 = new NordsieckStepInterpolator(nordsieckStepInterpolator0);
+nordsieckStepInterpolator1.storeTime(double6);
+eventState0.getConvergence();
+double[] doubleArray2 = new double[0];
+eventState0.stepAccepted(double2, doubleArray2);
+
+10:59:18.186 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:59:18.754 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:59:20.460 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'EventState_ESTest' to results/MATH-78b-3-16
+10:59:20.741 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

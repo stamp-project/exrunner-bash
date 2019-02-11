@@ -1,0 +1,61 @@
+00:44:50.904 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+00:44:50.915 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment:923)
+00:44:50.916 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+00:45:08.634 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1056.
+00:48:05.193 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:48:05.224 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:48:05.224 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:48:05.271 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:48:05.280 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:48:05.281 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:48:05.283 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:48:05.283 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getMimeType
+00:48:05.297 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:48:24.264 [TEST_EXECUTION_THREAD_1] ERROR com.xpn.xwiki.doc.XWikiAttachment - Failed to compare content of attachments
+java.lang.NullPointerException: null
+	at com.xpn.xwiki.doc.XWikiAttachment.getContentInputStream(XWikiAttachment.java:725) ~[xwiki-platform-oldcore-7.2.jar:na]
+	at com.xpn.xwiki.doc.XWikiAttachment.apply(XWikiAttachment.java:1023) ~[xwiki-platform-oldcore-7.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+00:48:39.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+00:48:39.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:48:39.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:48:39.053 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:48:39.054 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:48:39.054 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+00:48:39.054 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+int int0 = xWikiAttachment0.getFilesize();
+XWikiDocument xWikiDocument1 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument1).getDocumentReference();
+doReturn(0L).when(xWikiDocument1).getId();
+xWikiAttachment0.setDoc(xWikiDocument1);
+xWikiAttachment0.getDocId();
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment0.getMimeType(xWikiContext0);
+MergeConfiguration mergeConfiguration0 = mock(MergeConfiguration.class, new ViolatedAssumptionAnswer());
+MergeResult mergeResult0 = mock(MergeResult.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.merge(xWikiAttachment0, xWikiAttachment0, mergeConfiguration0, xWikiContext0, mergeResult0);
+xWikiAttachment0.getMimeType(xWikiContext0);
+xWikiAttachment0.setId(int0);
+xWikiAttachment0.apply(xWikiAttachment0);
+xWikiAttachment0.isImage(xWikiContext0);
+xWikiAttachment0.getVersions();
+
+00:48:39.079 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:48:39.463 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:48:46.419 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-6-15
+00:48:46.439 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
