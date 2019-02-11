@@ -1,0 +1,48 @@
+04:30:16.194 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.xwiki.query.jpql.parser.ParserException
+04:30:16.199 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator.translate(XWQLtoHQLTranslator:55)
+04:30:16.213 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator
+04:30:21.670 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 568.
+04:31:19.516 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+04:31:19.541 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:31:19.541 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+04:31:19.575 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+04:31:19.575 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+04:31:19.575 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+04:31:19.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+04:31:19.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is translate
+04:31:19.580 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+04:31:32.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+04:31:32.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:31:32.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+04:31:32.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+04:31:32.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+04:31:32.547 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+04:31:32.573 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWQLtoHQLTranslator xWQLtoHQLTranslator0 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWQLtoHQLTranslator0, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+Injector.validateBean(xWQLtoHQLTranslator0, (Class<?>) XWQLtoHQLTranslator.class);
+QueryContext queryContext0 = mock(QueryContext.class, new ViolatedAssumptionAnswer());
+xWQLtoHQLTranslator0.getPrinter(queryContext0);
+String string0 = xWQLtoHQLTranslator0.getOutputLanguage();
+String string1 = "from";
+xWQLtoHQLTranslator0.translate(string1);
+XWQLtoHQLTranslator xWQLtoHQLTranslator1 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge1);
+Injector.validateBean(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class);
+xWQLtoHQLTranslator1.getDocumentAccessBridge();
+xWQLtoHQLTranslator1.getOutputLanguage();
+xWQLtoHQLTranslator0.getOutputLanguage();
+DocumentAccessBridge documentAccessBridge2 = xWQLtoHQLTranslator1.getDocumentAccessBridge();
+xWQLtoHQLTranslator0.getOutputLanguage();
+XWQLtoHQLTranslator xWQLtoHQLTranslator2 = new XWQLtoHQLTranslator();
+Injector.inject(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge2);
+Injector.validateBean(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class);
+QueryContext queryContext1 = mock(QueryContext.class, new ViolatedAssumptionAnswer());
+xWQLtoHQLTranslator1.getPrinter(queryContext1);
+xWQLtoHQLTranslator1.translate(string0);
+
+04:31:32.605 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+04:31:32.853 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+04:31:37.833 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWQLtoHQLTranslator_ESTest' to results/XWIKI-12919-3-19
+04:31:37.840 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
