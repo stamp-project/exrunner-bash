@@ -1,0 +1,128 @@
+18:05:47.207 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+18:05:47.215 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.createHibernateQuery(HqlQueryExecutor:230)
+18:05:47.215 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:05:54.721 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+18:07:58.211 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:07:58.244 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:07:58.245 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:07:58.283 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:07:58.283 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:07:58.283 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:07:58.284 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:07:58.284 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is createHibernateQuery
+18:07:58.347 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:07:58.468 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+18:08:04.902 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+18:08:22.759 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:08:32.791 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+18:08:38.076 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:09:03.303 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+18:09:03.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+18:09:03.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:11:00.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 200
+18:11:36.751 [Finalizer] WARN  org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+18:12:32.103 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 300
+18:12:32.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 300 
+18:13:45.392 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 400
+18:15:23.190 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 500
+18:16:34.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+18:16:34.399 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:16:34.400 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:16:34.400 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:16:34.400 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:16:34.411 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string0 = " I am the ^eighbor, completin the flush ";
+String string1 = ",oili&";
+DefaultQuery defaultQuery0 = new DefaultQuery(string0, string1, hqlQueryExecutor0);
+CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+int int0 = (-9);
+defaultQuery0.setOffset(int0);
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.addFilter(countDocumentFilter0);
+int int1 = 98;
+defaultQuery0.setWiki(string0);
+hqlQueryExecutor0.checkAllowed(defaultQuery1);
+Session session0 = mock(Session.class, new ViolatedAssumptionAnswer());
+Query query0 = hqlQueryExecutor0.createHibernateQuery(session0, defaultQuery1);
+hqlQueryExecutor0.populateParameters(query0, defaultQuery0);
+hqlQueryExecutor0.getContext();
+HqlQueryExecutor.isSafeSelect(string0);
+Configuration configuration0 = new Configuration();
+String string2 = "9{&VVgw\\hAD-m]FWE`i";
+FileSystemView fileSystemView0 = FileSystemView.getFileSystemView();
+File file0 = fileSystemView0.createFileObject(string1);
+Configuration configuration1 = configuration0.addFile(file0);
+Configuration configuration2 = configuration1.configure(string1);
+Interceptor interceptor0 = EmptyInterceptor.INSTANCE;
+Configuration configuration3 = configuration2.setInterceptor(interceptor0);
+String string3 = ")y*wz*qG2n=GS.Nc";
+QName qName0 = QName.get(string3, string0);
+int int2 = (-1530);
+IndexedElement indexedElement0 = new IndexedElement(qName0, int2);
+String string4 = "^^*5iF6Y3hA+qPD";
+DOMProcessingInstruction dOMProcessingInstruction0 = new DOMProcessingInstruction(string4, string1);
+Document document0 = dOMProcessingInstruction0.getOwnerDocument();
+configuration3.addDocument(document0);
+PersisterClassProvider persisterClassProvider0 = mock(PersisterClassProvider.class, new ViolatedAssumptionAnswer());
+String string5 = "";
+File.createTempFile(string5, string4);
+Configuration configuration4 = configuration0.addPackage(string5);
+DefaultSocketFactory defaultSocketFactory0 = new DefaultSocketFactory();
+String string6 = "current_database";
+int int3 = (-3344);
+ServerSocket serverSocket0 = defaultSocketFactory0.createServerSocket(string6, int3);
+Socket socket0 = serverSocket0.accept();
+InputStream inputStream0 = socket0.getInputStream();
+BufferedInputStream bufferedInputStream0 = new BufferedInputStream(inputStream0);
+int int4 = (-1789685948);
+BufferedInputStream bufferedInputStream1 = new BufferedInputStream(bufferedInputStream0, int4);
+Configuration configuration5 = configuration4.addInputStream(bufferedInputStream1);
+Configuration configuration6 = configuration5.setProperty(string1, string3);
+Configuration configuration7 = configuration6.addCacheableFile(string5);
+Configuration configuration8 = configuration7.configure();
+Class<PoolableConnection> class0 = PoolableConnection.class;
+Configuration configuration9 = configuration8.addAnnotatedClass(class0);
+CacheImpl<NamedQueryDefinition, LanguageQueryFilter> cacheImpl0 = new CacheImpl<NamedQueryDefinition, LanguageQueryFilter>(string3);
+Properties properties0 = cacheImpl0.getConfigurationAsProperties();
+NamingStrategy namingStrategy0 = DefaultComponentSafeNamingStrategy.INSTANCE;
+Configuration configuration10 = configuration2.setNamingStrategy(namingStrategy0);
+String string7 = "D!9#c0&>a@\\l(";
+configuration10.setCollectionCacheConcurrencyStrategy(string0, string7);
+URLStreamHandlerFactory.makeURL(string1);
+Configuration configuration11 = configuration0.setCacheConcurrencyStrategy(string6, string0, string0);
+Configuration configuration12 = configuration11.addJar(file0);
+Configuration configuration13 = configuration12.addClass(class0);
+Configuration configuration14 = configuration13.addFile(string1);
+Mapping mapping0 = configuration11.buildMapping();
+Settings settings0 = configuration12.buildSettings();
+EventListeners eventListeners0 = configuration7.getEventListeners();
+SessionFactoryObserver sessionFactoryObserver0 = configuration9.getSessionFactoryObserver();
+SessionFactoryImpl sessionFactoryImpl0 = new SessionFactoryImpl(configuration14, mapping0, settings0, eventListeners0, sessionFactoryObserver0);
+DriverManagerConnectionFactory driverManagerConnectionFactory0 = new DriverManagerConnectionFactory(string6, properties0);
+String string8 = "";
+ObjectName objectName0 = new ObjectName(string8);
+PoolableConnectionFactory poolableConnectionFactory0 = new PoolableConnectionFactory(driverManagerConnectionFactory0, objectName0);
+ObjectPool<PoolableConnection> objectPool0 = poolableConnectionFactory0.getPool();
+PoolingDataSource<PoolableConnection> poolingDataSource0 = new PoolingDataSource<PoolableConnection>(objectPool0);
+Connection connection0 = poolingDataSource0.getConnection();
+PoolableConnection poolableConnection0 = new PoolableConnection(connection0, objectPool0, objectName0);
+DelegatingConnection<PoolableConnection> delegatingConnection0 = new DelegatingConnection<PoolableConnection>(poolableConnection0);
+Connection connection1 = delegatingConnection0.getInnermostDelegate();
+org.hibernate.classic.Session session1 = sessionFactoryImpl0.openSession(connection1);
+hqlQueryExecutor0.createHibernateQuery(session1, defaultQuery0);
+
+18:16:34.439 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:16:35.407 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:16:44.022 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14152-5-0.8-0-3
+18:16:44.041 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

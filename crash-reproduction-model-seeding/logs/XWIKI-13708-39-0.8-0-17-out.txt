@@ -1,0 +1,58 @@
+21:06:48.632 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+21:06:48.637 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.resource.servlet.RoutingFilter.doFilter(RoutingFilter:137)
+21:06:48.637 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.resource.servlet.RoutingFilter
+21:06:57.085 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 578.
+21:08:51.405 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+21:08:51.426 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:08:51.426 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+21:08:51.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+21:08:51.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+21:08:51.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+21:08:51.451 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+21:08:51.452 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is doFilter
+21:08:51.498 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+21:08:51.502 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.Thread
+21:09:07.103 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.struts.action.ActionServlet
+21:09:12.661 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.XWiki
+21:09:26.542 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.web.XWikiAction
+21:09:31.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+21:09:40.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.333333333333334
+21:09:40.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.333333333333334. FE: 100 
+21:09:40.274 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+21:10:51.832 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 200
+21:10:51.832 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.25. FE: 200 
+21:11:39.698 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 300
+21:12:52.987 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 400
+21:13:44.730 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 500
+21:14:25.960 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 600
+21:15:04.898 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 700
+21:15:22.260 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 800
+21:16:27.808 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 900
+21:16:45.000 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: org/apache/juli/logging/Log
+21:17:13.355 [qtp1796829208-31] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:na]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:na]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:na]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+21:17:13.368 [qtp1796829208-31] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@6f8c6db9 in qtp1796829208{STARTED,8<=8<=200,i=5,q=0}
+21:17:13.416 [qtp1796829208-34] WARN  o.e.j.util.thread.QueuedThreadPool - 
+java.lang.IndexOutOfBoundsException: Index: 68807, Size: 70208
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_91]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_91]
+	at org.evosuite.runtime.LoopCounter.checkLoop(LoopCounter.java:111) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:596) ~[na:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+21:17:13.416 [qtp1796829208-34] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@6f8c6db9 in qtp1796829208{STARTED,8<=8<=200,i=6,q=0}
+21:17:20.575 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1000
+21:18:16.895 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1100
+21:18:53.707 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1200
+21:19:36.593 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1300
+21:19:56.267 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1400
+21:20:42.270 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1500
+21:21:02.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1600
+21:21:20.764 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1700
+21:21:26.950 [Finalizer] WARN  org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+21:21:40.721 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.25 | 1800

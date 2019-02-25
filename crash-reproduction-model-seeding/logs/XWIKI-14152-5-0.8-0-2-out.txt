@@ -1,0 +1,110 @@
+18:05:03.697 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+18:05:03.700 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.createHibernateQuery(HqlQueryExecutor:230)
+18:05:03.700 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:05:09.399 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+18:06:44.803 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:06:44.825 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:06:44.825 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:06:44.843 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:06:44.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:06:44.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:06:44.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:06:44.844 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is createHibernateQuery
+18:06:44.885 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+18:06:44.911 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+18:06:50.929 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+18:07:06.774 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+18:07:12.942 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+18:07:18.442 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:07:47.661 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+18:07:47.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+18:07:47.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:09:37.094 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 200
+18:11:21.939 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 300
+18:11:21.940 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.0. FE: 300 
+18:12:36.515 [Finalizer] WARN  org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+18:12:42.850 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 400
+18:14:06.109 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.0 | 500
+18:14:48.134 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 600
+18:14:48.141 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:14:48.142 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+18:14:48.142 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:14:48.142 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 600 
+18:14:48.149 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Query query0 = mock(Query.class, new ViolatedAssumptionAnswer());
+doReturn((Query) null).when(query0).setParameter(anyString() , any());
+HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager1 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager1);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string0 = "hql";
+NoOpQueryFilter noOpQueryFilter0 = new NoOpQueryFilter();
+hqlQueryExecutor0.setNamedParameter(query0, string0, noOpQueryFilter0);
+Session session0 = null;
+DefaultQuery defaultQuery0 = new DefaultQuery(string0, string0, hqlQueryExecutor0);
+CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+defaultQuery0.addFilter(countDocumentFilter0);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.addFilter(noOpQueryFilter0);
+hqlQueryExecutor0.createHibernateQuery(session0, defaultQuery1);
+hqlQueryExecutor0.checkAllowed(defaultQuery1);
+Configuration configuration0 = new Configuration();
+Configuration configuration1 = configuration0.addCacheableFile(string0);
+String string1 = "wheresord";
+Configuration configuration2 = configuration1.setCollectionCacheConcurrencyStrategy(string0, string1);
+String string2 = "where order by )*a'&";
+boolean boolean0 = true;
+DefaultCacheManager defaultCacheManager0 = new DefaultCacheManager(string2, boolean0);
+GlobalComponentRegistry globalComponentRegistry0 = defaultCacheManager0.getGlobalComponentRegistry();
+ModuleProperties moduleProperties0 = globalComponentRegistry0.getModuleProperties();
+Configuration configuration3 = configuration2.setCollectionCacheConcurrencyStrategy(string0, string1);
+Configuration configuration4 = configuration3.configure(string2);
+Class<JViewport> class0 = JViewport.class;
+Configuration configuration5 = configuration4.addClass(class0);
+Configuration configuration6 = configuration5.addResource(string1);
+InputStream inputStream0 = null;
+RandomAccessBufferedFileInputStream randomAccessBufferedFileInputStream0 = new RandomAccessBufferedFileInputStream(inputStream0);
+InputStreamByteInput inputStreamByteInput0 = new InputStreamByteInput(randomAccessBufferedFileInputStream0);
+Configuration configuration7 = configuration6.addInputStream(inputStreamByteInput0);
+DefaultComponentSafeNamingStrategy defaultComponentSafeNamingStrategy0 = new DefaultComponentSafeNamingStrategy();
+Configuration configuration8 = configuration7.setNamingStrategy(defaultComponentSafeNamingStrategy0);
+org.apache.hadoop.conf.Configuration configuration9 = new org.apache.hadoop.conf.Configuration();
+String string3 = "ids_.";
+File file0 = configuration9.getFile(string3, string3);
+Configuration configuration10 = configuration8.addJar(file0);
+Configuration configuration11 = configuration10.mergeProperties(moduleProperties0);
+Configuration configuration12 = configuration11.addFile(string0);
+String string4 = "hql";
+String string5 = "fetching state will fail as state transfer is not supported. Add one of the state transfer protocols to your configuration";
+Configuration configuration13 = configuration12.setProperty(string4, string5);
+configuration13.addDirectory(file0);
+File file1 = null;
+Configuration configuration14 = configuration0.addCacheableFileStrictly(file1);
+Configuration configuration15 = configuration14.addCacheableFile(file0);
+DOMDocumentType dOMDocumentType0 = new DOMDocumentType();
+Document document0 = dOMDocumentType0.getOwnerDocument();
+Configuration configuration16 = configuration15.configure(document0);
+Configuration configuration17 = configuration16.addAnnotatedClass(class0);
+Configuration configuration18 = configuration17.addProperties(moduleProperties0);
+Configuration configuration19 = configuration18.configure();
+Mapping mapping0 = null;
+Settings settings0 = configuration10.buildSettings((Properties) moduleProperties0);
+EventListeners eventListeners0 = new EventListeners();
+SessionFactoryObserver sessionFactoryObserver0 = configuration10.getSessionFactoryObserver();
+SessionFactoryImpl sessionFactoryImpl0 = new SessionFactoryImpl(configuration19, mapping0, settings0, eventListeners0, sessionFactoryObserver0);
+Interceptor interceptor0 = EmptyInterceptor.INSTANCE;
+org.hibernate.classic.Session session1 = sessionFactoryImpl0.openSession(interceptor0);
+hqlQueryExecutor0.createHibernateQuery(session1, defaultQuery1);
+
+18:14:48.161 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:14:48.894 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:14:57.557 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14152-5-0.8-0-2
+18:14:57.589 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
