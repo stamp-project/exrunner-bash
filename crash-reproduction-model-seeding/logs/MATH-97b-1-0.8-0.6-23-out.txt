@@ -1,0 +1,55 @@
+22:44:02.129 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+22:44:02.133 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.BrentSolver.solve(BrentSolver:141)
+22:44:02.133 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.BrentSolver
+22:44:06.385 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+22:44:11.851 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+22:44:11.861 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:44:11.861 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+22:44:11.876 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+22:44:11.897 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+22:44:11.898 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+22:44:11.898 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+22:44:11.898 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is solve
+22:44:11.933 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+22:44:11.966 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.apache.commons.math.analysis.BrentSolver
+22:44:19.069 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+22:44:26.624 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+22:44:26.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:44:26.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+22:44:26.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+22:44:26.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+22:44:26.653 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+22:44:26.654 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Expm1Function expm1Function0 = new Expm1Function();
+UnivariateRealFunction univariateRealFunction0 = expm1Function0.derivative();
+BrentSolver brentSolver0 = new BrentSolver(univariateRealFunction0);
+double double0 = (-3841.277243343443);
+double double1 = 608.39280868;
+double double2 = brentSolver0.solve(double0, double1);
+double double3 = 5514.7185;
+double double4 = 1.0E-15;
+brentSolver0.solve(double3, double4, double2);
+UnivariateRealFunction univariateRealFunction1 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+BrentSolver brentSolver1 = new BrentSolver(univariateRealFunction1);
+double double5 = Double.NaN;
+brentSolver1.setAbsoluteAccuracy(double5);
+int int0 = 0;
+brentSolver1.setMaximalIterationCount(int0);
+double double6 = (-874.379);
+double double7 = 0.0;
+double double8 = brentSolver1.solve(double6, double7);
+double double9 = 0.0;
+brentSolver1.solve(double8, double9);
+double double10 = (-1682.9589642);
+double double11 = 2010.87218;
+double double12 = brentSolver1.solve(double8, double10, double11);
+brentSolver1.solve(double1, double10);
+double double13 = (-2405.33429337239);
+double double14 = 541.7057932572097;
+brentSolver1.solve(double13, double14, double0);
+double double15 = (-2120.347224792754);
+brentSolver1.solve(double12, double15);
+
+22:44:26.684 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+22:44:26.931 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+22:44:28.988 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BrentSolver_ESTest' to results/MATH-97b-1-0.8-0.6-23
+22:44:29.041 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

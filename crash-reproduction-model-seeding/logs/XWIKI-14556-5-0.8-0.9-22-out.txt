@@ -1,0 +1,106 @@
+00:44:58.805 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+00:44:58.810 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor:417)
+00:44:58.810 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+00:45:05.575 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 552.
+00:46:55.733 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+00:46:55.748 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:46:55.782 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+00:46:55.797 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+00:46:55.807 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+00:46:55.807 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+00:46:55.807 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+00:46:55.807 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+00:46:55.843 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+00:46:56.013 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+00:47:06.006 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+00:47:13.156 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+00:47:58.199 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+00:47:58.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+00:47:58.200 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+00:49:43.401 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+00:50:53.469 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+00:50:53.469 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+00:50:53.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+00:50:53.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+00:50:53.470 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+00:50:53.473 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Provider<NoOpQueryFilter> provider0 = (Provider<NoOpQueryFilter>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "componentManagerProvider", (Object) provider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string0 = "order by hasaccesslevel for [{}], [{}], [{}]";
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = null;
+Map<ContextRootComponentManager, EmbeddableComponentManager> map0 = null;
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, map0);
+CollectionFilterImpl collectionFilterImpl0 = new CollectionFilterImpl(string0, hqlQueryExecutor0, sessionImplementor0, parameterMetadata0);
+int int0 = 1141;
+PipedOutputStream pipedOutputStream0 = new PipedOutputStream();
+PipedInputStream pipedInputStream0 = new PipedInputStream(pipedOutputStream0, int0);
+hqlQueryExecutor0.setNamedParameter(collectionFilterImpl0, string0, pipedInputStream0);
+Session session0 = mock(Session.class, new ViolatedAssumptionAnswer());
+Query query0 = mock(Query.class, new ViolatedAssumptionAnswer());
+doReturn((Query) null).when(query0).setParameter(anyString() , any());
+String string1 = "sql";
+hqlQueryExecutor0.setNamedParameter(query0, string1, string1);
+hqlQueryExecutor0.initialize();
+CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+SubstituteLoggingEvent substituteLoggingEvent0 = new SubstituteLoggingEvent();
+SubstituteLogger substituteLogger0 = substituteLoggingEvent0.getLogger();
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) substituteLogger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+String string2 = "Hi|t4L@nf|22247";
+HqlQueryExecutor.isSafeSelect(string2);
+String string3 = "order by select doc.fullname from xwikidocument doc";
+String string4 = "mgO`A.Gt`L|\"/~D";
+boolean boolean0 = true;
+SpaceComponentManager spaceComponentManager0 = new SpaceComponentManager();
+Provider<JLabel> provider1 = (Provider<JLabel>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "referenceProvider", (Object) provider1);
+ContextComponentManager contextComponentManager0 = new ContextComponentManager();
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "execution", (Object) execution1);
+EmbeddableComponentManager embeddableComponentManager0 = new EmbeddableComponentManager();
+ComponentManager componentManager0 = embeddableComponentManager0.getParent();
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "rootComponentManager", (Object) componentManager0);
+ContextRootComponentManager contextRootComponentManager0 = new ContextRootComponentManager();
+String string5 = null;
+EmbeddableComponentManager embeddableComponentManager1 = new EmbeddableComponentManager(string5);
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "rootComponentManager", (Object) embeddableComponentManager1);
+WikiComponentManager wikiComponentManager0 = new WikiComponentManager();
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "rootComponentManager", (Object) contextComponentManager0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "wikis", (Object) wikiDescriptorManager0);
+Execution execution2 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution2);
+EntityReferenceSerializer<SubstituteLoggingEvent> entityReferenceSerializer0 = (EntityReferenceSerializer<SubstituteLoggingEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer0);
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager0);
+Injector.validateBean(wikiComponentManager0, (Class<?>) WikiComponentManager.class);
+Injector.inject(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class, "userComponentManager", (Object) wikiComponentManager0);
+Injector.validateBean(contextRootComponentManager0, (Class<?>) ContextRootComponentManager.class);
+Injector.inject(contextComponentManager0, (Class<?>) ContextComponentManager.class, "userComponentManager", (Object) contextRootComponentManager0);
+Injector.validateBean(contextComponentManager0, (Class<?>) ContextComponentManager.class);
+ComponentManager componentManager1 = contextComponentManager0.getParent();
+Injector.inject(spaceComponentManager0, (Class<?>) SpaceComponentManager.class, "wikiComponentManager", (Object) componentManager1);
+Execution execution3 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution3);
+EntityReferenceSerializer<CountDocumentFilter> entityReferenceSerializer1 = (EntityReferenceSerializer<CountDocumentFilter>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer1);
+ComponentManagerManager componentManagerManager1 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(spaceComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager1);
+Injector.validateBean(spaceComponentManager0, (Class<?>) SpaceComponentManager.class);
+boolean boolean1 = true;
+
+00:50:53.493 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+00:50:54.117 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+00:50:58.155 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-5-0.8-0.9-22
+00:50:58.174 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,72 @@
+15:46:56.323 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+15:46:56.328 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor:417)
+15:46:56.328 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+15:47:06.636 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 552.
+15:49:28.193 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+15:49:28.202 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:49:28.202 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+15:49:28.227 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+15:49:28.231 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+15:49:28.232 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+15:49:28.232 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+15:49:28.232 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+15:49:28.262 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+15:49:28.447 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+15:49:39.890 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+15:49:47.329 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+15:50:18.109 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+15:50:18.109 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+15:50:18.109 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+15:51:44.414 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+15:54:25.228 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+15:54:25.228 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+15:54:25.229 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+15:54:25.229 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+15:54:25.229 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+15:54:25.232 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Provider<ScriptQueryParameter> provider0 = (Provider<ScriptQueryParameter>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "componentManagerProvider", (Object) provider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string0 = "hJ'<=";
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = new OrdinalParameterDescriptor[0];
+Map<HiddenSpaceFilter, SpaceComponentManager> map0 = null;
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, map0);
+QueryImpl queryImpl0 = new QueryImpl(string0, sessionImplementor0, parameterMetadata0);
+Object object0 = new Object();
+hqlQueryExecutor0.setNamedParameter(queryImpl0, string0, object0);
+String string1 = "";
+Boolean boolean0 = GVTAttributedCharacterIterator.TextAttribute.STRIKETHROUGH_ON;
+Query query0 = mock(Query.class, new ViolatedAssumptionAnswer());
+doReturn((Query) null).when(query0).setParameter(anyString() , any());
+String string2 = "m";
+boolean boolean1 = false;
+hqlQueryExecutor0.getStore();
+EscapeLikeParametersFilter escapeLikeParametersFilter0 = new EscapeLikeParametersFilter();
+DefaultQuery defaultQuery0 = new DefaultQuery(string2, string2, hqlQueryExecutor0);
+int int0 = 269;
+String string3 = "select doc.fullName from XWikiDocument doc ";
+StatsCollectingCache<TimeScheduler3.Task, DefaultQueryParameter> statsCollectingCache0 = new StatsCollectingCache<TimeScheduler3.Task, DefaultQueryParameter>(string3);
+String string4 = "\u01F5";
+ClassLoader.getSystemResourceAsStream(string4);
+String string5 = "";
+org.xwiki.query.Query query1 = defaultQuery0.setLimit(int0);
+boolean boolean2 = true;
+defaultQuery0.checkCurrentAuthor(boolean2);
+hqlQueryExecutor0.checkAllowed(query1);
+hqlQueryExecutor0.setNamedParameter(query0, string2, defaultQuery0);
+String string6 = ",\\tq*dy#ilzv";
+HqlQueryExecutor.isSafeSelect(string6);
+
+15:54:25.261 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+15:54:25.597 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+15:54:31.391 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-5-0.5-0.9-11
+15:54:31.432 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

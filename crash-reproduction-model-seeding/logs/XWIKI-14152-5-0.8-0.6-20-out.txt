@@ -1,0 +1,74 @@
+17:18:17.151 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+17:18:17.155 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.createHibernateQuery(HqlQueryExecutor:230)
+17:18:17.155 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+17:18:25.360 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1062.
+17:19:53.194 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:19:53.220 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:19:53.220 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+17:19:53.229 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+17:19:53.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+17:19:53.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+17:19:53.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+17:19:53.230 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is createHibernateQuery
+17:19:53.290 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+17:19:53.466 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+17:19:59.459 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of java.lang.String
+17:20:29.812 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+17:20:36.130 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.query.internal.CountDocumentFilter
+17:20:41.783 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+17:21:05.509 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.0
+17:21:05.509 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.0. FE: 100 
+17:21:05.510 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:22:58.915 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.0 | 200
+17:24:23.506 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 300
+17:24:23.506 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+17:24:23.507 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:24:23.507 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:24:23.507 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 300 
+17:24:23.509 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+String string0 = "g";
+String string1 = "qRX>fvY58";
+DefaultQuery defaultQuery0 = new DefaultQuery(string0, string1, hqlQueryExecutor0);
+CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) logger0);
+Injector.validateBean(countDocumentFilter0, (Class<?>) CountDocumentFilter.class);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.addFilter(countDocumentFilter0);
+hqlQueryExecutor0.checkAllowed(defaultQuery1);
+String string2 = "] on classpath";
+String string3 = "order by gettra'saction";
+DefaultQuery defaultQuery2 = new DefaultQuery(string2, string3, hqlQueryExecutor0);
+Session session0 = mock(Session.class, new ViolatedAssumptionAnswer());
+DefaultQuery defaultQuery3 = (DefaultQuery)defaultQuery0.setWiki(string2);
+hqlQueryExecutor0.createHibernateQuery(session0, defaultQuery3);
+defaultQuery2.setWiki(string2);
+Stack<UniqueDocumentFilter> stack0 = new Stack<UniqueDocumentFilter>();
+HqlQueryExecutor hqlQueryExecutor1 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager1 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor1, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager1);
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor1, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution1);
+JobProgressManager jobProgressManager1 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor1, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager1);
+HibernateSessionFactory hibernateSessionFactory1 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor1, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory1);
+Injector.validateBean(hqlQueryExecutor1, (Class<?>) HqlQueryExecutor.class);
+hqlQueryExecutor0.getContext();
+hqlQueryExecutor0.initialize();
+hqlQueryExecutor1.getContext();
+hqlQueryExecutor1.checkAllowed(defaultQuery2);
+hqlQueryExecutor1.completeShortFormStatement(string3);
+
+17:24:23.518 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:24:23.744 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:24:28.966 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14152-5-0.8-0.6-20
+17:24:28.988 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

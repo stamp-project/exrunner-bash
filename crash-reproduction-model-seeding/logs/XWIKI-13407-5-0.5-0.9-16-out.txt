@@ -1,0 +1,89 @@
+14:48:08.355 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.Exception
+14:48:08.359 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.watchlist.internal.job.WatchListJob.executeJob(WatchListJob:209)
+14:48:08.359 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.watchlist.internal.job.WatchListJob
+14:48:17.787 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 582.
+14:52:22.896 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:52:22.956 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:52:22.957 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:52:22.994 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:52:22.995 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:52:22.995 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:52:22.995 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:52:22.995 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is executeJob
+14:52:23.106 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+14:52:23.136 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.watchlist.internal.job.WatchListJob
+14:52:31.921 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiCacheStore
+14:52:45.176 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+14:52:56.078 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:53:06.240 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+14:53:06.241 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+14:53:06.241 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:53:52.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+14:54:27.622 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+14:54:53.938 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+14:55:29.611 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+14:56:03.976 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+14:56:29.581 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+14:57:01.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+14:57:35.750 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+14:58:02.759 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+14:58:38.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+14:59:10.886 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+14:59:38.671 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1300
+15:00:09.315 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1400
+15:00:34.658 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1500
+15:00:42.705 [TEST_EXECUTION_THREAD_1] ERROR o.x.w.internal.job.WatchListJob - Exception while running job
+java.lang.NullPointerException: null
+	at org.xwiki.watchlist.internal.job.WatchListJob.init(WatchListJob.java:96) ~[xwiki-platform-watchlist-api-8.1-rc-1.jar:8.1-rc-1]
+	at org.xwiki.watchlist.internal.job.WatchListJob.executeJob(WatchListJob.java:209) ~[xwiki-platform-watchlist-api-8.1-rc-1.jar:8.1-rc-1]
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+15:01:23.339 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1600
+15:01:25.671 [null_Worker-1317] ERROR org.quartz.simpl.SimpleThreadPool - Error while executing the Runnable: 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:567) ~[na:na]
+15:01:49.154 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1700
+15:02:02.496 [null_Worker-448] ERROR org.quartz.simpl.SimpleThreadPool - Worker thread was interrupt()'ed.
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method) ~[na:1.8.0_191]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:02.496 [null_Worker-343] ERROR org.quartz.simpl.SimpleThreadPool - Worker thread was interrupt()'ed.
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method) ~[na:1.8.0_191]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:02.496 [null_Worker-447] ERROR org.quartz.simpl.SimpleThreadPool - Worker thread was interrupt()'ed.
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method) ~[na:1.8.0_191]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:02.496 [null_Worker-342] ERROR org.quartz.simpl.SimpleThreadPool - Worker thread was interrupt()'ed.
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method) ~[na:1.8.0_191]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:02.497 [null_Worker-556] ERROR org.quartz.simpl.SimpleThreadPool - Worker thread was interrupt()'ed.
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method) ~[na:1.8.0_191]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:02.497 [null_Worker-300] ERROR org.quartz.simpl.SimpleThreadPool - Error while executing the Runnable: 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:567) ~[na:na]
+15:02:06.498 [null_Worker-448] ERROR org.quartz.simpl.SimpleThreadPool - Error while executing the Runnable: 
+java.lang.IndexOutOfBoundsException: Index: 411, Size: 415
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657) ~[na:1.8.0_191]
+	at java.util.ArrayList.get(ArrayList.java:433) ~[na:1.8.0_191]
+	at org.evosuite.runtime.LoopCounter.checkLoop(LoopCounter.java:111) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568) ~[na:na]
+15:02:19.729 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1800
+15:02:53.790 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1900

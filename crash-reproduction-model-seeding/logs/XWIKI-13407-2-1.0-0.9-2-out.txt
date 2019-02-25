@@ -1,0 +1,53 @@
+07:14:31.989 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.Exception
+07:14:32.002 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.XWikiHibernateBaseStore.cleanUp(XWikiHibernateBaseStore:1137)
+07:14:32.002 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.XWikiHibernateBaseStore
+07:14:43.139 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 582.
+07:15:43.629 [main] INFO  org.hibernate.cfg.Environment - Hibernate 3.6.9.Final
+07:15:43.644 [main] INFO  org.hibernate.cfg.Environment - hibernate.properties not found
+07:15:43.715 [main] INFO  org.hibernate.cfg.Environment - Bytecode provider name : javassist
+07:15:43.731 [main] INFO  org.hibernate.cfg.Environment - using JDK 1.4 java.sql.Timestamp handling
+07:17:47.628 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+07:17:47.663 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:17:47.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+07:17:47.755 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+07:17:47.760 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+07:17:47.761 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+07:17:47.761 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+07:17:47.761 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is cleanUp
+07:17:47.847 [main] INFO  e.s.b.seeding.ModelSeedingHelper - Start carving model
+07:17:47.885 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of org.xwiki.watchlist.internal.job.WatchListJob
+07:17:55.265 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiCacheStore
+07:18:02.763 [main] INFO  e.s.b.seeding.ModelSeedingHelper - working on model of com.xpn.xwiki.store.XWikiHibernateBaseStore
+07:18:13.162 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+07:18:46.786 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+07:18:46.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+07:18:46.787 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+07:20:14.714 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+07:21:07.090 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+07:21:51.788 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+07:22:48.899 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+07:22:54.377 [TEST_EXECUTION_THREAD_2] WARN  o.h.loader.custom.sql.SQLCustomQuery - Vnytt)=.k)<]87r^X
+java.sql.SQLTransientException: Vnytt)=.k)<]87r^X
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_191]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_191]
+	at org.evosuite.testcase.statements.ConstructorStatement$1.execute(ConstructorStatement.java:233) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.statements.ConstructorStatement.execute(ConstructorStatement.java:188) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) ~[botsing-reproduction.jar:1.0.2-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+07:22:54.379 [TEST_EXECUTION_THREAD_2] WARN  o.h.c.UserSuppliedConnectionProvider - No connection properties specified - the user must supply JDBC connections
+07:23:37.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+07:24:39.509 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+07:25:30.261 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+07:26:37.746 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+07:27:34.246 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+07:27:44.697 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: null
+07:28:25.557 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+07:29:23.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
