@@ -1,0 +1,67 @@
+06:06:58.942 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+06:06:58.953 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor:417)
+06:06:58.953 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+06:07:05.081 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 553.
+06:08:32.609 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+06:08:32.618 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:08:32.618 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+06:08:32.652 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:08:32.662 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:08:32.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:08:32.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:08:32.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+06:08:32.669 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+06:09:16.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+06:09:16.764 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. FE: 100 
+06:09:16.764 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+06:09:17.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:09:17.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:09:17.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:09:17.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:09:17.127 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+06:09:17.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+06:09:17.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+06:09:17.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+06:09:17.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+06:09:17.128 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is setNamedParameter
+06:09:57.854 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+06:10:26.935 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+06:11:06.573 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+06:11:32.545 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 500
+06:11:32.545 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+06:11:32.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+06:11:32.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+06:11:32.546 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 500 
+06:11:32.547 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+String string0 = null;
+Object object0 = null;
+String string1 = "reset";
+HqlQueryExecutor.isSafeSelect(string1);
+DefaultQuery defaultQuery0 = new DefaultQuery(string0, string1, hqlQueryExecutor0);
+HiddenSpaceFilter hiddenSpaceFilter0 = new HiddenSpaceFilter();
+ConfigurationSource configurationSource0 = mock(ConfigurationSource.class, new ViolatedAssumptionAnswer());
+Injector.inject(hiddenSpaceFilter0, (Class<?>) AbstractHiddenFilter.class, "userPreferencesSource", (Object) configurationSource0);
+Logger logger0 = (Logger)SQLCustomQuery.log;
+Injector.inject(hiddenSpaceFilter0, (Class<?>) AbstractWhereQueryFilter.class, "logger", (Object) logger0);
+Injector.validateBean(hiddenSpaceFilter0, (Class<?>) HiddenSpaceFilter.class);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.addFilter(hiddenSpaceFilter0);
+ComponentManager componentManager0 = null;
+ScriptQuery scriptQuery0 = new ScriptQuery(defaultQuery1, componentManager0);
+boolean boolean0 = true;
+ScriptQuery scriptQuery1 = (ScriptQuery)scriptQuery0.checkCurrentUser(boolean0);
+ScriptQuery scriptQuery2 = new ScriptQuery(scriptQuery1, componentManager0);
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = null;
+Map<EscapeLikeParametersFilter, HiddenDocumentFilter> map0 = null;
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, map0);
+CollectionFilterImpl collectionFilterImpl0 = new CollectionFilterImpl(string0, hiddenSpaceFilter0, sessionImplementor0, parameterMetadata0);
+LockOptions lockOptions0 = LockOptions.READ;
+LockOptions lockOptions1 = lockOptions0.setScope(boolean0);
+CollectionFilterImpl collectionFilterImpl1 = (CollectionFilterImpl)collectionFilterImpl0.setLockOptions(lockOptions1);
+hqlQueryExecutor0.setNamedParameter(collectionFilterImpl1, string0, scriptQuery1);
+HqlQueryExecutor.isSafeSelect(string0);
+
+06:11:32.564 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+06:11:32.979 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+06:11:39.440 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-5-5
+06:11:39.448 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

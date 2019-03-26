@@ -1,0 +1,52 @@
+14:17:37.309 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+14:17:37.331 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiDocument.getTranslationList(XWikiDocument:5983)
+14:17:37.341 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiDocument
+14:18:07.525 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 580.
+14:20:05.858 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:20:05.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:20:05.881 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+14:20:05.928 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+14:20:05.958 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+14:20:05.958 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+14:20:05.958 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+14:20:05.959 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getTranslationList
+14:20:05.977 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+14:23:05.736 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+14:23:05.737 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:23:05.737 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:23:05.737 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:23:05.737 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:23:05.737 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+14:23:05.738 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+doReturn((Locale) null).when(documentReference0).getLocale();
+XWikiContext xWikiContext0 = new XWikiContext();
+Locale locale0 = xWikiContext0.getInterfaceLocale();
+XWikiDocument xWikiDocument0 = new XWikiDocument(documentReference0, locale0);
+xWikiDocument0.getTranslationList(xWikiContext0);
+String string0 = xWikiDocument0.getVersion();
+DocumentReference documentReference1 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+xWikiDocument0.addXObjectsFromRequest(documentReference1, xWikiContext0);
+DocumentReference documentReference2 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+xWikiDocument0.setAuthorReference(documentReference2);
+XWikiContext xWikiContext1 = new XWikiContext();
+xWikiDocument0.getLock(xWikiContext1);
+xWikiDocument0.getTranslation();
+String string1 = "5R'-5RC;foXscmE0";
+String string2 = xWikiDocument0.getAttachmentRevisionURL(string0, string1, xWikiContext1);
+xWikiDocument0.loadDocumentArchive();
+xWikiDocument0.getTranslationList(xWikiContext0);
+xWikiDocument0.getSections();
+xWikiDocument0.setSpace(string2);
+String string3 = "";
+xWikiDocument0.getEditURL(string2, string3, xWikiContext1);
+xWikiDocument0.readFromTemplate(string1, xWikiContext0);
+xWikiDocument0.getTranslationList(xWikiContext1);
+xWikiDocument0.resolveClassReference(string2);
+xWikiDocument0.getAttachmentsToRemove();
+xWikiDocument0.setLocale(locale0);
+xWikiDocument0.toFullXML(xWikiContext0);
+
+14:23:05.751 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:23:06.046 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:23:14.479 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiDocument_ESTest' to results/XWIKI-14319-1-2
+14:23:14.589 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

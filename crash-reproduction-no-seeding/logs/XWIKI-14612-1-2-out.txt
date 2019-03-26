@@ -1,0 +1,50 @@
+13:13:59.669 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+13:13:59.682 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:62)
+13:13:59.682 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+13:14:06.596 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 586.
+13:16:40.615 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:16:40.626 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:16:40.626 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+13:16:40.639 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+13:16:40.640 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+13:16:40.641 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+13:16:40.641 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+13:16:40.641 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is parse
+13:16:40.647 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+13:17:10.974 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+13:17:10.974 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:17:10.974 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:17:10.975 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:17:10.975 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:17:10.975 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+13:17:11.103 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+Provider<ConfluenceParser> provider0 = (Provider<ConfluenceParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider0);
+EntityReferenceSerializer<DocBookParser> entityReferenceSerializer0 = (EntityReferenceSerializer<DocBookParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer0);
+Injector.validateBean(defaultContentParser0, (Class<?>) DefaultContentParser.class);
+DefaultContentParser defaultContentParser1 = new DefaultContentParser();
+Provider<DefaultListCellRenderer.UIResource> provider1 = (Provider<DefaultListCellRenderer.UIResource>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(provider1).get();
+Injector.inject(defaultContentParser1, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider1);
+EntityReferenceSerializer<PlainTextBlockParser> entityReferenceSerializer1 = (EntityReferenceSerializer<PlainTextBlockParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser1, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer1);
+Injector.validateBean(defaultContentParser1, (Class<?>) DefaultContentParser.class);
+String string0 = "";
+Syntax syntax0 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(syntax0).toIdString();
+EntityReference entityReference0 = mock(EntityReference.class, new ViolatedAssumptionAnswer());
+defaultContentParser1.parse(string0, syntax0, entityReference0);
+Syntax syntax1 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+defaultContentParser1.parse(string0, syntax1);
+DefaultContentParser defaultContentParser2 = new DefaultContentParser();
+Provider<XDOMXMLParser> provider2 = (Provider<XDOMXMLParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser2, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider2);
+EntityReferenceSerializer<ConfluenceParser> entityReferenceSerializer2 = (EntityReferenceSerializer<ConfluenceParser>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser2, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer2);
+Injector.validateBean(defaultContentParser2, (Class<?>) DefaultContentParser.class);
+
+13:17:11.136 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:17:11.547 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:17:19.664 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-1-2
+13:17:19.679 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,49 @@
+10:36:09.160 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+10:36:09.187 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+10:36:09.190 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+10:36:26.425 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1057.
+10:38:51.691 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:38:51.743 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:38:51.743 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:38:51.774 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:38:51.775 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:38:51.775 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:38:51.775 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:38:51.775 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+10:38:51.821 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:39:11.672 [TEST_EXECUTION_THREAD_1] WARN  com.xpn.xwiki.doc.XWikiAttachment - Failed to load content for attachment [@<unknown>]. This attachment is broken, please consider re-uploading it. Internal error: null
+10:39:24.244 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:39:24.245 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:39:24.245 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:39:24.260 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:39:24.261 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:39:24.261 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:39:24.262 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+xWikiAttachment0.getRCSVersion();
+XMLWriter xMLWriter0 = mock(XMLWriter.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = true;
+XWikiContext xWikiContext0 = new XWikiContext();
+xWikiAttachment0.toXML(xMLWriter0, boolean0, boolean0, xWikiContext0);
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+xWikiAttachment0.loadContent(xWikiContext1);
+long long0 = 128L;
+xWikiAttachment0.setDocId(long0);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+doReturn(0L).when(xWikiDocument0).getId();
+xWikiAttachment0.setDoc(xWikiDocument0);
+xWikiAttachment0.setDocId(long0);
+xWikiAttachment0.getAuthor();
+long long1 = xWikiAttachment0.getDocId();
+xWikiAttachment0.isContentDirty();
+xWikiAttachment0.getReference();
+xWikiAttachment0.isImage(xWikiContext0);
+xWikiAttachment0.setDocId(long1);
+xWikiAttachment0.toXML(xWikiContext0);
+xWikiAttachment0.setMetaDataDirty(boolean0);
+xWikiAttachment0.getReference();
+
+10:39:24.283 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:39:25.310 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:39:41.451 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-4-3
+10:39:41.480 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

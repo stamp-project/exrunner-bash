@@ -1,0 +1,77 @@
+05:39:26.872 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: com.xpn.xwiki.XWikiException
+05:39:26.890 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.XWikiHibernateStore.saveXWikiDoc(XWikiHibernateStore:659)
+05:39:26.891 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.XWikiHibernateStore
+05:39:53.400 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 585.
+05:42:01.546 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+05:42:01.557 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+05:42:01.557 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+05:42:01.568 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:42:01.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:42:01.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:42:01.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:42:01.576 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is saveXWikiDoc
+05:42:01.582 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+05:42:22.940 [main] ERROR e.s.b.f.t.f.RootMethodTestChromosomeFactory - Guided initialization failed. Please revise the target class and method!
+05:42:22.952 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: Guided initialization failed. Please revise the target class and method!
+05:42:23.085 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.998381877022654
+05:42:23.086 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.998381877022654. FE: 0 
+05:42:23.086 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+05:42:23.100 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:42:23.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:42:23.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:42:23.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:42:23.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is saveXWikiDoc
+05:42:23.103 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+05:42:23.105 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+05:42:23.106 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+05:42:23.106 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+05:42:23.106 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is saveXWikiDoc
+05:42:56.444 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 200
+05:42:56.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:42:56.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+05:42:56.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+05:42:56.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+05:42:56.448 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiHibernateStore xWikiHibernateStore0 = new XWikiHibernateStore();
+EntityReferenceSerializer<StringClass> entityReferenceSerializer0 = (EntityReferenceSerializer<StringClass>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "compactWikiEntityReferenceSerializer", (Object) entityReferenceSerializer0);
+DocumentReferenceResolver<PropertyClass> documentReferenceResolver0 = (DocumentReferenceResolver<PropertyClass>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "currentMixedDocumentReferenceResolver", (Object) documentReferenceResolver0);
+DocumentReferenceResolver<SessionFactoryImpl> documentReferenceResolver1 = (DocumentReferenceResolver<SessionFactoryImpl>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultDocumentReferenceResolver", (Object) documentReferenceResolver1);
+EntityReferenceSerializer<BaseStringProperty> entityReferenceSerializer1 = (EntityReferenceSerializer<BaseStringProperty>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(entityReferenceSerializer1).serialize(any(org.xwiki.model.reference.EntityReference.class) , any(java.lang.Object[].class));
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultEntityReferenceSerializer", (Object) entityReferenceSerializer1);
+EntityReferenceSerializer<ListProperty> entityReferenceSerializer2 = (EntityReferenceSerializer<ListProperty>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "localEntityReferenceSerializer", (Object) entityReferenceSerializer2);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "logger", (Object) logger0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "observationManager", (Object) observationManager0);
+Provider<Long> provider0 = (Provider<Long>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "oldRenderingProvider", (Object) provider0);
+QueryManager queryManager0 = mock(QueryManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "queryManager", (Object) queryManager0);
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+doReturn((Configuration) null).when(hibernateSessionFactory0).getConfiguration();
+doReturn((SessionFactory) null).when(hibernateSessionFactory0).getSessionFactory();
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class);
+XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(xWikiDocument0).getComment();
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+XWikiContext xWikiContext3 = xWikiContext2.clone();
+xWikiHibernateStore0.saveXWikiDoc(xWikiDocument0, xWikiContext3);
+
+05:42:56.568 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+05:42:56.844 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+05:43:12.811 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiHibernateStore_ESTest' to results/XWIKI-13141-1-10
+05:43:12.857 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

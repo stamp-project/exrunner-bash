@@ -1,0 +1,53 @@
+10:38:40.879 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+10:38:40.884 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment:156)
+10:38:40.884 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+10:38:56.989 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1057.
+10:41:19.629 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:41:19.657 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:41:19.657 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:41:19.694 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:41:19.706 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:41:19.706 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:41:19.706 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:41:19.706 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is getReference
+10:41:19.712 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:41:40.723 [TEST_EXECUTION_THREAD_1] WARN  com.xpn.xwiki.doc.XWikiAttachment - Failed to load archive for attachment [@<unknown>]. This attachment is broken, please consider re-uploading it. Internal error: null
+10:41:52.776 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+10:41:52.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:41:52.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:41:52.777 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+10:41:52.779 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:41:52.779 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. FE: 100 
+10:41:52.781 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+String string0 = null;
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiDocument xWikiDocument1 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument1).getDocumentReference();
+doReturn((String) null).when(xWikiDocument1).toString();
+xWikiAttachment0.setDoc(xWikiDocument1);
+XWikiDocument xWikiDocument2 = xWikiAttachment0.getDoc();
+xWikiAttachment0.getReference();
+XWikiAttachment xWikiAttachment1 = new XWikiAttachment(xWikiDocument2, string0);
+xWikiAttachment0.getArchive();
+String string1 = "w{FEIX|IFz";
+xWikiAttachment0.setFilename(string1);
+xWikiAttachment0.getVersion();
+boolean boolean0 = true;
+XWikiContext xWikiContext0 = null;
+xWikiAttachment0.toXML(boolean0, boolean0, xWikiContext0);
+xWikiAttachment1.getDoc();
+XWikiAttachmentContent xWikiAttachmentContent0 = mock(XWikiAttachmentContent.class, new ViolatedAssumptionAnswer());
+xWikiAttachment1.setAttachment_content(xWikiAttachmentContent0);
+byte[] byteArray0 = new byte[3];
+byte byte0 = (byte) (-127);
+byteArray0[0] = byte0;
+byte byte1 = (byte)92;
+byteArray0[1] = byte1;
+byte byte2 = (byte)90;
+byteArray0[2] = byte2;
+xWikiAttachment1.setContent(byteArray0);
+
+10:41:52.831 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:41:53.249 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:42:11.697 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-4-5
+10:42:11.716 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
