@@ -38,7 +38,7 @@ for t in ${job_list[@]}; do
   pid=$!
   echo $pid
   . parsing.sh $pid $execution_idx $application $case $version $frame $search_budget &
-  . observer.sh $pid &
+  . observer.sh $pid "$case-$frame-$execution_idx-out.txt" &
 
 
   while (( $(pgrep -l java | wc -l) >= $LIMIT ))
