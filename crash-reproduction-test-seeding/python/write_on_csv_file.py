@@ -17,7 +17,9 @@ seed_clone=sys.argv[8]
 seed_mutations=sys.argv[9]
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
+
 log_dir = os.path.join(dir_path, "..", "logs",case+"-"+seed_clone+"-"+frame_level+"-"+execution_idx+"-out.txt")
+
 out_dir = os.path.join(dir_path, "..", "results","results.csv")
 ##
 
