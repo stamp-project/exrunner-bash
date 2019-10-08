@@ -34,11 +34,11 @@ for t in ${job_list[@]}; do
   echo "Task#$counter is frame level $frame of issue $case. This crash happened in $application version $version. task configurations -> execution_idx: $execution_idx, search budget: $search_budget"
 
   ## Start the search process:
-  java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" "-integration_testing" -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXFITNESSEVALUATIONS -Dreset_static_fields=FALSE -Dvirtual_fs=TRUE -Dmax_recursion=50 -Dvirtual_net=FALSE -Dreplace_calls=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="results/$case-$frame-$execution_idx" > "logs/$case-$frame-$execution_idx-out.txt" 2> "logs/$case-$frame-$execution_idx-err.txt" &
+  /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" "-integration_testing" -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXFITNESSEVALUATIONS -Dreset_static_fields=FALSE -Dvirtual_fs=TRUE -Dmax_recursion=50 -Dvirtual_net=FALSE -Dreplace_calls=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="results/$case-$frame-$execution_idx" > "logs/$case-$frame-$execution_idx-out.txt" 2> "logs/$case-$frame-$execution_idx-err.txt" &
   pid=$!
   echo $pid
   . parsing.sh $pid $execution_idx $application $case $version $frame $search_budget &
-  . observer.sh $pid &
+  . observer.sh $pid "$case-$frame-$execution_idx-out.txt" &
 
 
   while (( $(pgrep -l java | wc -l) >= $LIMIT ))

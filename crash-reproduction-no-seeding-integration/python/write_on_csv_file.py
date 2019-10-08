@@ -59,7 +59,7 @@ csv_result = {"execution_idx": execution_idx,
               "version": version,
               "frame_level": frame_level,
               "search_budget": search_budget,
-              "fitness_function_value":"0.0",
+              "fitness_function_value":"-1",
               "fitness_function_evolution":"",
               "number_of_fitness_evaluations":0}
 
@@ -69,9 +69,8 @@ with open(log_dir, "r") as ins:
             splitted_line_1 = stdout_line.split("#")
             csv_result["number_of_fitness_evaluations"] = int(re.sub("[^0-9]", "", splitted_line_1[1]))
             distribution_ff = splitted_line_1[0].strip()
-            # if distribution_ff != csv_result["fitness_function_value"]:
-            #     csv_result["fitness_function_value"]=distribution_ff
-            #     csv_result["fitness_function_evolution"]+="["+distribution_ff+","+str(csv_result["number_of_fitness_evaluations"])+"]"
+        elif "Number of covered goals are 1/1" in stdout_line:
+            csv_result["fitness_function_value"]="0.0"
         elif "Exception type is detected:" in stdout_line:
             splitted_line_1 = stdout_line.split("Exception type is detected: ")
             csv_result["exception_name"]=splitted_line_1[1].replace('\n', ' ').replace('\r', '').strip()
