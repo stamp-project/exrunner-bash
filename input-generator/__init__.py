@@ -2,11 +2,12 @@ from data import CaseData,OtherData,ProjectData
 from os import path
 from re import sub
 import csv
+from sys import argv
 
 
 casesObject = CaseData()
 cases = casesObject.cases
-csvFileDir = path.join(path.dirname(path.realpath(__file__)),"..","experiment-runner","inputs","inputs.csv")
+csvFileDir = content=argv[1]
 csvFile = open(csvFileDir,"wb")
 writer = csv.writer(csvFile)
 fieldnames = ['execution_idx', 'application', 'case', 'version', 'classpath', 'package',
