@@ -83,6 +83,8 @@ with open(log_dir, "r") as ins:
         elif "* Minimizing test suite" in stdout_line and csv_result["number_of_fitness_evaluations"] == 0:
             csv_result["fitness_function_value"]="0.0"
             csv_result["fitness_function_evolution"]+="[0.0,"+str(csv_result["number_of_fitness_evaluations"]+1)+"]"
+        elif "Stopping reason: ZeroFitness" in stdout_line:
+            csv_result["fitness_function_value"]="0.0"
 
 
 
