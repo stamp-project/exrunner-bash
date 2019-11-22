@@ -13,4 +13,5 @@ search_budget=$7
 while kill -0 "$pid"; do
             sleep 1
 done
+echo "$execution_idx-$case-$frame"
 python python/write_on_csv_file.py $execution_idx $application $case $version $frame $search_budget &
