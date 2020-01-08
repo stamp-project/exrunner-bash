@@ -14,7 +14,7 @@ fieldnames = ['execution_idx', 'application', 'case', 'version', 'classpath', 'p
               'stacktrace_path', 'fixed', 'fixed_version', 'buggy_frame',
               'p_functional_mocking', 'functional_mocking_percent',
               'p_reflection_on_private','reflection_start_percent',
-              'search_budget','population','p_object_pool','p_model_pool_target_init', 'p_model_pool_non_target_init','seed_clone','seed_mutations', 'test_dir']
+              'search_budget','population','p_object_pool','p_model_pool_target_init', 'p_model_pool_non_target_init','seed_clone','seed_mutations', 'test_dir', 'search_algorithm', 'objectives']
 writer.writerow(fieldnames)
 for sc in OtherData().seed_clone:
     for index,case in enumerate(cases):
@@ -28,34 +28,38 @@ for sc in OtherData().seed_clone:
                             for sm in OtherData().seed_mutations:
                                 for pobj in OtherData().p_object_pool:
                                     for pmodel in OtherData.p_model_pool_init:
-                                        classpath = path.join("becnhmark","applications",project["name"].upper()+"-bins",project["name"].upper()+"-"+case["version"])
-                                        stacktracePath = path.join("becnhmark","crashes",project["name"].upper(),case["name"],case["name"]+".log")
-                                        testDir = path.join("JarFiles","GGA-tests",case["name"])
-                                        row = []
-                                        row.append(i+1)
-                                        row.append(project["name"])
-                                        row.append(case["name"])
-                                        row.append(case["version"])
-                                        row.append(classpath)
-                                        row.append(project["package"])
-                                        row.append(stacktracePath)
-                                        row.append("yes" if case["fixed"]=="1" else "no")
-                                        row.append(case["fixed_version"])
-                                        row.append(sub("[^0-9]", "",case["buggy_frame"]))
-                                        row.append(prob)
-                                        row.append(percent)
-                                        row.append(0)
-                                        row.append(0)
-                                        row.append(time)
-                                        row.append(pop)
-                                        row.append(pobj)
-                                        row.append(pmodel[0])
-                                        row.append(pmodel[1])
-                                        row.append(sc)
-                                        row.append(sm)
-                                        row.append(testDir)
-                                        writer.writerow(row)
-
+                                        for search_algorithm in OtherData.search_algorithm:
+                                            for objectives in OtherData.objectives:
+                                                classpath = path.join("becnhmark","applications",project["name"].upper()+"-bins",project["name"].upper()+"-"+case["version"])
+                                                stacktracePath = path.join("becnhmark","crashes",project["name"].upper(),case["name"],case["name"]+".log")
+                                                testDir = path.join("JarFiles","GGA-tests",case["name"])
+                                                row = []
+                                                row.append(i+1)
+                                                row.append(project["name"])
+                                                row.append(case["name"])
+                                                row.append(case["version"])
+                                                row.append(classpath)
+                                                row.append(project["package"])
+                                                row.append(stacktracePath)
+                                                row.append("yes" if case["fixed"]=="1" else "no")
+                                                row.append(case["fixed_version"])
+                                                row.append(sub("[^0-9]", "",case["buggy_frame"]))
+                                                row.append(prob)
+                                                row.append(percent)
+                                                row.append(0)
+                                                row.append(0)
+                                                row.append(time)
+                                                row.append(pop)
+                                                row.append(pobj)
+                                                row.append(pmodel[0])
+                                                row.append(pmodel[1])
+                                                row.append(sc)
+                                                row.append(sm)
+                                                row.append(testDir)
+                                                row.append(search_algorithm)
+                                                row.append(objectives)
+                                                writer.writerow(row)
+                                        
 
 csvFile.close()
 

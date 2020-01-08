@@ -361,14 +361,17 @@ class CaseData:
 
 
 class OtherData:
-    p_functional_mocking = [0.8]
-    functional_mocking_percent = [0.5]
+    search_algorithm=["NSGA_II","SPEA2"]
+    objectives = ["WeightedSum:TestLen"]
+    p_functional_mocking = [""]
+    functional_mocking_percent = [""]
     search_budget = [62328]
-    population = [100]
-    seed_clone=[0]
+    population = [50]
+    seed_clone=[""]
     # seed_clone=[1.0]
-    seed_mutations=[3]
-    p_object_pool=[0.6]
+    seed_mutations=[""]
+    p_object_pool=[""]
     # First index: target probability  |  Second index: non-target probability
-    p_model_pool_init = [[0.2, 0.2]];
+    # p_model_pool_init = [[0.2, 0.2]];
+    p_model_pool_init = [["", ""]]
     repeat = 10
