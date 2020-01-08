@@ -80,6 +80,12 @@ with open(log_dir, "r") as ins:
             if distribution_ff != csv_result["fitness_function_value"]:
                 csv_result["fitness_function_value"]=distribution_ff
                 csv_result["fitness_function_evolution"]+="["+distribution_ff+","+str(csv_result["number_of_fitness_evaluations"]+1)+"]"
+        elif "* Minimizing test suite" in stdout_line and csv_result["number_of_fitness_evaluations"] == 0:
+            csv_result["fitness_function_value"]="0.0"
+            csv_result["fitness_function_evolution"]+="[0.0,"+str(csv_result["number_of_fitness_evaluations"]+1)+"]"
+        elif "Stopping reason: ZeroFitness" in stdout_line:
+            csv_result["fitness_function_value"]="0.0"
+
 
 
 write_on_csv_file(csv_result,out_dir)
