@@ -87,5 +87,4 @@ with open(log_dir, "r") as ins:
             csv_result["fitness_function_value"]="0.0"
 
 
-
 write_on_csv_file(csv_result,out_dir)
