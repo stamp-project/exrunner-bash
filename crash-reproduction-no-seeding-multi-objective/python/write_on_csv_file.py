@@ -32,11 +32,12 @@ def write_on_csv_file(csv_result,csv_file_dir):
                    "exception_name",
                    "frame_level",
                    "search_budget",
+                   "search_algorithm",
+                   "objectives",
                    "fitness_function_value",
                    "number_of_fitness_evaluations",
-                   "fitness_function_evolution",
-                   "search_algorithm",
-                   "objectives"
+                   "time_spent",
+                   "fitness_function_evolution"
                    ]
 
     fields = []
@@ -66,31 +67,29 @@ csv_result = {"execution_idx": execution_idx,
               "fitness_function_value":"-1",
               "fitness_function_evolution":"",
               "number_of_fitness_evaluations":0,
+              "time_spent":0,
               "search_algorithm": search_algorithm,
               "objectives": objectives}
 
 with open(log_dir, "r") as ins:
     for stdout_line in ins:
-        if  "generation #" in stdout_line:
-            splitted_line_1 = stdout_line.split("#")
-            csv_result["number_of_fitness_evaluations"] = int(re.sub("[^0-9]", "", splitted_line_1[1]))
-            distribution_ff = splitted_line_1[0].strip()
-        elif "Number of covered goals are 1/1" in stdout_line:
+        if "New Value for Weighted Sum after" in stdout_line:
+            splitted_line_1 = stdout_line.split(" after ")
+            splitted_line_1 = splitted_line_1[1].split(" fitness")
+            ffEval=splitted_line_1[0].strip()
+            splitted_line_1 = splitted_line_1[1].split(" second: ")
+            ffValue=splitted_line_1[1].strip()
+            splitted_line_1  = splitted_line_1[0].split(" and ")
+            time=splitted_line_1[1].strip()
+            csv_result["number_of_fitness_evaluations"] = ffEval
+            csv_result["fitness_function_value"] = ffValue
+            csv_result["time_spent"] = time
+            csv_result["fitness_function_evolution"]+=("["+str(ffValue)+","+str(ffEval)+","+str(time)+"]")
+        elif "The target crash is covered" in stdout_line:
             csv_result["fitness_function_value"]="0.0"
         elif "Exception type is detected:" in stdout_line:
             splitted_line_1 = stdout_line.split("Exception type is detected: ")
             csv_result["exception_name"]=splitted_line_1[1].replace('\n', ' ').replace('\r', '').strip()
-        elif "FitnessFunctions - eu.stamp.botsing.fitnessfunction.IntegrationTestingFF@" in stdout_line:
-            splitted_line_1 = stdout_line.split(": ")
-            distribution_ff = splitted_line_1[1].strip()
-            if distribution_ff != csv_result["fitness_function_value"]:
-                csv_result["fitness_function_value"]=distribution_ff
-                csv_result["fitness_function_evolution"]+="["+distribution_ff+","+str(csv_result["number_of_fitness_evaluations"]+1)+"]"
-        elif "* Minimizing test suite" in stdout_line and csv_result["number_of_fitness_evaluations"] == 0:
-            csv_result["fitness_function_value"]="0.0"
-            csv_result["fitness_function_evolution"]+="[0.0,"+str(csv_result["number_of_fitness_evaluations"]+1)+"]"
-        elif "Stopping reason: ZeroFitness" in stdout_line:
-            csv_result["fitness_function_value"]="0.0"
 
 
 write_on_csv_file(csv_result,out_dir)
