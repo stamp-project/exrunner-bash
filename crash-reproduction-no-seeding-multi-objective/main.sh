@@ -55,3 +55,7 @@ while (( $(pgrep -l java | wc -l) > 0 ))
     do
                 sleep 1
     done
+# Sleep for 60 seconds to make sure that all of the reports will be saved
+sleep 60
+
+    
