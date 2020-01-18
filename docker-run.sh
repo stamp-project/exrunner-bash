@@ -19,5 +19,5 @@ docker run -dit --name exrunner-container  \
 --mount type=bind,source="$(pwd)/bins",target=/reproduction/bins \
 tudelft/exrunner
 # Execute main.sh in the running container
- docker exec -it exrunner-container bash -c "cd $experiment; bash main.sh $LIMIT"
+ docker exec -it exrunner-container bash -c "cd $experiment; bash main.sh $LIMIT > consoleLog/consoleOut.txt 2> consoleLog/consoleErr.txt"
 echo "Done!"
