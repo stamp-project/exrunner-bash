@@ -1,0 +1,1440 @@
+Sending build context to Docker daemon  59.86MB
+Step 1/13 : ARG experiment
+Step 2/13 : FROM	  	  fedora:latest
+latest: Pulling from library/fedora
+d318c91bf2a8: Pulling fs layer
+d318c91bf2a8: Verifying Checksum
+d318c91bf2a8: Download complete
+d318c91bf2a8: Pull complete
+Digest: sha256:d4f7df6b691d61af6cee7328f82f1d8afdef63bc38f58516858ae3045083924a
+Status: Downloaded newer image for fedora:latest
+ ---> f0858ad3febd
+Step 3/13 : RUN         dnf upgrade --assumeyes
+ ---> Running in c53d6e496ffe
+Fedora Modular 31 - x86_64                      1.6 MB/s | 5.2 MB     00:03    
+Fedora Modular 31 - x86_64 - Updates            5.5 MB/s | 3.8 MB     00:00    
+Fedora 31 - x86_64 - Updates                     16 MB/s |  18 MB     00:01    
+Fedora 31 - x86_64                               25 MB/s |  71 MB     00:02    
+Last metadata expiration check: 0:00:01 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                     Arch   Version                       Repo     Size
+================================================================================
+Upgrading:
+ audit-libs                  x86_64 3.0-0.15.20191104git1c2f876.fc31
+                                                                  updates 115 k
+ bash                        x86_64 5.0.11-1.fc31                 updates 1.6 M
+ crypto-policies             noarch 20191128-2.gitcd267a5.fc31    updates  97 k
+ cryptsetup-libs             x86_64 2.2.2-1.fc31                  updates 428 k
+ device-mapper               x86_64 1.02.165-1.fc31               updates 147 k
+ device-mapper-libs          x86_64 1.02.165-1.fc31               updates 182 k
+ dnf                         noarch 4.2.17-1.fc31                 updates 403 k
+ dnf-data                    noarch 4.2.17-1.fc31                 updates  48 k
+ elfutils-default-yama-scope noarch 0.178-7.fc31                  updates  17 k
+ elfutils-libelf             x86_64 0.178-7.fc31                  updates 190 k
+ elfutils-libs               x86_64 0.178-7.fc31                  updates 266 k
+ fedora-release-common       noarch 31-2                          updates  20 k
+ fedora-release-container    noarch 31-2                          updates  12 k
+ file-libs                   x86_64 5.37-8.fc31                   updates 541 k
+ glib2                       x86_64 2.62.4-1.fc31                 updates 2.6 M
+ glibc                       x86_64 2.30-8.fc31                   updates 3.5 M
+ glibc-common                x86_64 2.30-8.fc31                   updates 644 k
+ glibc-minimal-langpack      x86_64 2.30-8.fc31                   updates  55 k
+ gnupg2                      x86_64 2.2.18-2.fc31                 updates 2.4 M
+ gnutls                      x86_64 3.6.11-1.fc31                 updates 948 k
+ iptables-libs               x86_64 1.8.3-7.fc31                  updates  56 k
+ json-c                      x86_64 0.13.1-8.fc31                 updates  38 k
+ libblkid                    x86_64 2.34-4.fc31                   updates 158 k
+ libcomps                    x86_64 0.1.14-1.fc31                 updates  80 k
+ libdnf                      x86_64 0.39.1-1.fc31                 updates 636 k
+ libfdisk                    x86_64 2.34-4.fc31                   updates 210 k
+ libidn2                     x86_64 2.3.0-1.fc31                  updates 104 k
+ libmount                    x86_64 2.34-4.fc31                   updates 184 k
+ libnghttp2                  x86_64 1.39.2-2.fc31                 updates  81 k
+ libpwquality                x86_64 1.4.2-1.fc31                  updates 101 k
+ librepo                     x86_64 1.11.1-1.fc31                 updates  96 k
+ libreport-filesystem        noarch 2.11.3-1.fc31                 updates  14 k
+ libseccomp                  x86_64 2.4.2-2.fc31                  updates  76 k
+ libsmartcols                x86_64 2.34-4.fc31                   updates 126 k
+ libsolv                     x86_64 0.7.10-1.fc31                 updates 396 k
+ libssh                      x86_64 0.9.3-1.fc31                  updates 213 k
+ libssh-config               noarch 0.9.3-1.fc31                  updates  11 k
+ libsss_idmap                x86_64 2.2.2-3.fc31                  updates  47 k
+ libsss_nss_idmap            x86_64 2.2.2-3.fc31                  updates  54 k
+ libtirpc                    x86_64 1.2.5-0.fc31                  updates  97 k
+ libuuid                     x86_64 2.34-4.fc31                   updates  27 k
+ libxcrypt                   x86_64 4.4.10-2.fc31                 updates 126 k
+ libxml2                     x86_64 2.9.10-2.fc31                 updates 693 k
+ pam                         x86_64 1.3.1-21.fc31                 updates 660 k
+ pcre2                       x86_64 10.33-16.fc31                 updates 255 k
+ python-pip-wheel            noarch 19.1.1-7.fc31                 updates 1.2 M
+ python3                     x86_64 3.7.6-1.fc31                  updates  31 k
+ python3-dnf                 noarch 4.2.17-1.fc31                 updates 401 k
+ python3-hawkey              x86_64 0.39.1-1.fc31                 updates 101 k
+ python3-libcomps            x86_64 0.1.14-1.fc31                 updates  50 k
+ python3-libdnf              x86_64 0.39.1-1.fc31                 updates 706 k
+ python3-libs                x86_64 3.7.6-1.fc31                  updates 7.3 M
+ python3-rpm                 x86_64 4.15.1-1.fc31                 updates  95 k
+ rpm                         x86_64 4.15.1-1.fc31                 updates 499 k
+ rpm-build-libs              x86_64 4.15.1-1.fc31                 updates  97 k
+ rpm-libs                    x86_64 4.15.1-1.fc31                 updates 300 k
+ rpm-sign-libs               x86_64 4.15.1-1.fc31                 updates  26 k
+ sssd-client                 x86_64 2.2.2-3.fc31                  updates 106 k
+ sudo                        x86_64 1.8.29-1.fc31                 updates 908 k
+ systemd                     x86_64 243.5-1.fc31                  updates 3.8 M
+ systemd-libs                x86_64 243.5-1.fc31                  updates 525 k
+ systemd-pam                 x86_64 243.5-1.fc31                  updates 167 k
+ systemd-rpm-macros          noarch 243.5-1.fc31                  updates  23 k
+ util-linux                  x86_64 2.34-4.fc31                   updates 2.6 M
+ vim-minimal                 x86_64 2:8.2.109-1.fc31              updates 646 k
+ yum                         noarch 4.2.17-1.fc31                 updates  44 k
+ zchunk-libs                 x86_64 1.1.4-1.fc31                  updates  50 k
+ zlib                        x86_64 1.2.11-20.fc31                updates  92 k
+Installing dependencies:
+ adwaita-cursor-theme        noarch 3.34.3-1.fc31                 updates 623 k
+ adwaita-icon-theme          noarch 3.34.3-1.fc31                 updates  11 M
+ cups-libs                   x86_64 1:2.2.12-3.fc31               updates 276 k
+ fribidi                     x86_64 1.0.5-5.fc31                  updates  83 k
+ gcr                         x86_64 3.34.0-1.fc31                 updates 481 k
+ gcr-base                    x86_64 3.34.0-1.fc31                 updates 296 k
+ glib-networking             x86_64 2.62.3-1.fc31                 updates 155 k
+ gtk-update-icon-cache       x86_64 3.24.13-1.fc31                updates  34 k
+ gtk3                        x86_64 3.24.13-1.fc31                updates 4.6 M
+ libX11                      x86_64 1.6.9-2.fc31                  updates 659 k
+ libX11-common               noarch 1.6.9-2.fc31                  updates 153 k
+ libedit                     x86_64 3.1-30.20191211cvs.fc31       updates 105 k
+ libgusb                     x86_64 0.3.2-1.fc31                  updates  47 k
+ libjpeg-turbo               x86_64 2.0.2-5.fc31                  updates 168 k
+ libsoup                     x86_64 2.68.3-1.fc31                 updates 383 k
+ libtiff                     x86_64 4.0.10-7.fc31                 updates 179 k
+ openssh                     x86_64 8.1p1-1.fc31                  updates 440 k
+ openssh-clients             x86_64 8.1p1-1.fc31                  updates 601 k
+ pango                       x86_64 1.44.7-1.fc31                 updates 293 k
+ unbound-libs                x86_64 1.9.6-1.fc31                  updates 515 k
+ whois-nls                   noarch 5.5.4-1.fc31                  updates  33 k
+ xkeyboard-config            noarch 2.28-1.fc31                   updates 753 k
+ adobe-source-code-pro-fonts noarch 2.030.1.050-7.fc31            fedora  845 k
+ at-spi2-atk                 x86_64 2.34.1-1.fc31                 fedora   89 k
+ at-spi2-core                x86_64 2.34.0-1.fc31                 fedora  175 k
+ atk                         x86_64 2.34.1-1.fc31                 fedora  269 k
+ avahi-libs                  x86_64 0.7-20.fc31                   fedora   63 k
+ cairo                       x86_64 1.16.0-6.fc31                 fedora  707 k
+ cairo-gobject               x86_64 1.16.0-6.fc31                 fedora   20 k
+ colord-libs                 x86_64 1.4.4-2.fc31                  fedora  236 k
+ dbus-libs                   x86_64 1:1.12.16-3.fc31              fedora  161 k
+ fipscheck                   x86_64 1.5.0-7.fc31                  fedora   26 k
+ fipscheck-lib               x86_64 1.5.0-7.fc31                  fedora   14 k
+ fontconfig                  x86_64 2.13.92-3.fc31                fedora  263 k
+ fontpackages-filesystem     noarch 1.44-25.fc31                  fedora  8.1 k
+ freetype                    x86_64 2.10.0-3.fc31                 fedora  384 k
+ gdk-pixbuf2                 x86_64 2.40.0-1.fc31                 fedora  465 k
+ gdk-pixbuf2-modules         x86_64 2.40.0-1.fc31                 fedora   99 k
+ graphite2                   x86_64 1.3.13-1.fc31                 fedora  104 k
+ gsettings-desktop-schemas   x86_64 3.34.0-1.fc31                 fedora  644 k
+ harfbuzz                    x86_64 2.6.1-2.fc31                  fedora  628 k
+ hicolor-icon-theme          noarch 0.17-7.fc31                   fedora   45 k
+ jasper-libs                 x86_64 2.0.14-9.fc31                 fedora  165 k
+ jbigkit-libs                x86_64 2.1-17.fc31                   fedora   53 k
+ json-glib                   x86_64 1.4.4-3.fc31                  fedora  145 k
+ lcms2                       x86_64 2.9-6.fc31                    fedora  166 k
+ libXau                      x86_64 1.0.9-2.fc31                  fedora   31 k
+ libXcomposite               x86_64 0.4.4-17.fc31                 fedora   23 k
+ libXcursor                  x86_64 1.1.15-6.fc31                 fedora   30 k
+ libXdamage                  x86_64 1.1.4-17.fc31                 fedora   21 k
+ libXext                     x86_64 1.3.4-2.fc31                  fedora   39 k
+ libXfixes                   x86_64 5.0.3-10.fc31                 fedora   19 k
+ libXft                      x86_64 2.3.3-2.fc31                  fedora   64 k
+ libXi                       x86_64 1.7.10-2.fc31                 fedora   39 k
+ libXinerama                 x86_64 1.1.4-4.fc31                  fedora   14 k
+ libXrandr                   x86_64 1.5.2-2.fc31                  fedora   27 k
+ libXrender                  x86_64 0.9.10-10.fc31                fedora   27 k
+ libXtst                     x86_64 1.2.3-10.fc31                 fedora   21 k
+ libdatrie                   x86_64 0.2.9-10.fc31                 fedora   32 k
+ libepoxy                    x86_64 1.5.3-4.fc31                  fedora  248 k
+ libevent                    x86_64 2.1.8-7.fc31                  fedora  258 k
+ libmodman                   x86_64 2.0.1-20.fc31                 fedora   34 k
+ libpng                      x86_64 2:1.6.37-2.fc31               fedora  114 k
+ libproxy                    x86_64 0.4.15-14.fc31                fedora   69 k
+ libsecret                   x86_64 0.19.1-1.fc31                 fedora  171 k
+ libthai                     x86_64 0.1.28-3.fc31                 fedora  213 k
+ libwayland-client           x86_64 1.17.0-2.fc31                 fedora   35 k
+ libwayland-cursor           x86_64 1.17.0-2.fc31                 fedora   20 k
+ libwayland-egl              x86_64 1.17.0-2.fc31                 fedora   13 k
+ libxcb                      x86_64 1.13.1-3.fc31                 fedora  231 k
+ pixman                      x86_64 0.38.4-1.fc31                 fedora  260 k
+ rest                        x86_64 0.8.1-6.fc31                  fedora   70 k
+ trousers-lib                x86_64 0.3.13-13.fc31                fedora  171 k
+Installing weak dependencies:
+ elfutils-debuginfod-client  x86_64 0.178-7.fc31                  updates  31 k
+ gnupg2-smime                x86_64 2.2.18-2.fc31                 updates 274 k
+ libxcrypt-compat            x86_64 4.4.10-2.fc31                 updates  99 k
+ libxkbcommon                x86_64 0.9.1-3.fc31                  updates 120 k
+ mkpasswd                    x86_64 5.5.4-1.fc31                  updates  41 k
+ python-unversioned-command  noarch 3.7.6-1.fc31                  updates  15 k
+ python3-pip                 noarch 19.1.1-7.fc31                 updates 1.6 M
+ python3-unbound             x86_64 1.9.6-1.fc31                  updates 100 k
+ rpm-plugin-systemd-inhibit  x86_64 4.15.1-1.fc31                 updates  22 k
+ shared-mime-info            x86_64 1.15-1.fc31                   updates 303 k
+ abattis-cantarell-fonts     noarch 0.111-3.fc31                  fedora  257 k
+ cracklib-dicts              x86_64 2.9.6-21.fc31                 fedora  3.7 M
+ dconf                       x86_64 0.34.0-1.fc31                 fedora  109 k
+ deltarpm                    x86_64 3.6.2-2.fc31                  fedora   87 k
+ diffutils                   x86_64 3.7-3.fc31                    fedora  401 k
+ gnome-keyring               x86_64 3.34.0-1.fc31                 fedora  944 k
+ pinentry                    x86_64 1.1.0-6.fc31                  fedora   94 k
+ python3-setuptools          noarch 41.2.0-1.fc31                 fedora  578 k
+ trousers                    x86_64 0.3.13-13.fc31                fedora  150 k
+
+Transaction Summary
+================================================================================
+Install  92 Packages
+Upgrade  68 Packages
+
+Total download size: 76 M
+Downloading Packages:
+(1/160): cups-libs-2.2.12-3.fc31.x86_64.rpm     9.0 MB/s | 276 kB     00:00    
+(2/160): elfutils-debuginfod-client-0.178-7.fc3 5.1 MB/s |  31 kB     00:00    
+(3/160): adwaita-cursor-theme-3.34.3-1.fc31.noa  15 MB/s | 623 kB     00:00    
+(4/160): fribidi-1.0.5-5.fc31.x86_64.rpm         16 MB/s |  83 kB     00:00    
+(5/160): gcr-base-3.34.0-1.fc31.x86_64.rpm       21 MB/s | 296 kB     00:00    
+(6/160): glib-networking-2.62.3-1.fc31.x86_64.r  17 MB/s | 155 kB     00:00    
+(7/160): gcr-3.34.0-1.fc31.x86_64.rpm            14 MB/s | 481 kB     00:00    
+(8/160): gnupg2-smime-2.2.18-2.fc31.x86_64.rpm   22 MB/s | 274 kB     00:00    
+(9/160): gtk-update-icon-cache-3.24.13-1.fc31.x 6.0 MB/s |  34 kB     00:00    
+(10/160): libX11-1.6.9-2.fc31.x86_64.rpm         16 MB/s | 659 kB     00:00    
+(11/160): libX11-common-1.6.9-2.fc31.noarch.rpm  12 MB/s | 153 kB     00:00    
+(12/160): libedit-3.1-30.20191211cvs.fc31.x86_6  15 MB/s | 105 kB     00:00    
+(13/160): libgusb-0.3.2-1.fc31.x86_64.rpm       6.2 MB/s |  47 kB     00:00    
+(14/160): libjpeg-turbo-2.0.2-5.fc31.x86_64.rpm 9.9 MB/s | 168 kB     00:00    
+(15/160): libsoup-2.68.3-1.fc31.x86_64.rpm       15 MB/s | 383 kB     00:00    
+(16/160): gtk3-3.24.13-1.fc31.x86_64.rpm         32 MB/s | 4.6 MB     00:00    
+(17/160): libtiff-4.0.10-7.fc31.x86_64.rpm      5.4 MB/s | 179 kB     00:00    
+(18/160): libxcrypt-compat-4.4.10-2.fc31.x86_64  18 MB/s |  99 kB     00:00    
+(19/160): libxkbcommon-0.9.1-3.fc31.x86_64.rpm   20 MB/s | 120 kB     00:00    
+(20/160): adwaita-icon-theme-3.34.3-1.fc31.noar  38 MB/s |  11 MB     00:00    
+(21/160): mkpasswd-5.5.4-1.fc31.x86_64.rpm      838 kB/s |  41 kB     00:00    
+(22/160): openssh-clients-8.1p1-1.fc31.x86_64.r  46 MB/s | 601 kB     00:00    
+(23/160): pango-1.44.7-1.fc31.x86_64.rpm         20 MB/s | 293 kB     00:00    
+(24/160): openssh-8.1p1-1.fc31.x86_64.rpm       6.7 MB/s | 440 kB     00:00    
+(25/160): python-unversioned-command-3.7.6-1.fc 2.7 MB/s |  15 kB     00:00    
+(26/160): rpm-plugin-systemd-inhibit-4.15.1-1.f 3.4 MB/s |  22 kB     00:00    
+(27/160): python3-unbound-1.9.6-1.fc31.x86_64.r  12 MB/s | 100 kB     00:00    
+(28/160): unbound-libs-1.9.6-1.fc31.x86_64.rpm   36 MB/s | 515 kB     00:00    
+(29/160): shared-mime-info-1.15-1.fc31.x86_64.r  15 MB/s | 303 kB     00:00    
+(30/160): whois-nls-5.5.4-1.fc31.noarch.rpm     7.0 MB/s |  33 kB     00:00    
+(31/160): python3-pip-19.1.1-7.fc31.noarch.rpm   42 MB/s | 1.6 MB     00:00    
+(32/160): xkeyboard-config-2.28-1.fc31.noarch.r  18 MB/s | 753 kB     00:00    
+(33/160): abattis-cantarell-fonts-0.111-3.fc31. 3.9 MB/s | 257 kB     00:00    
+(34/160): at-spi2-core-2.34.0-1.fc31.x86_64.rpm  14 MB/s | 175 kB     00:00    
+(35/160): at-spi2-atk-2.34.1-1.fc31.x86_64.rpm  2.3 MB/s |  89 kB     00:00    
+(36/160): avahi-libs-0.7-20.fc31.x86_64.rpm      11 MB/s |  63 kB     00:00    
+(37/160): atk-2.34.1-1.fc31.x86_64.rpm           16 MB/s | 269 kB     00:00    
+(38/160): adobe-source-code-pro-fonts-2.030.1.0  10 MB/s | 845 kB     00:00    
+(39/160): cairo-gobject-1.16.0-6.fc31.x86_64.rp 3.6 MB/s |  20 kB     00:00    
+(40/160): cairo-1.16.0-6.fc31.x86_64.rpm         28 MB/s | 707 kB     00:00    
+(41/160): colord-libs-1.4.4-2.fc31.x86_64.rpm    15 MB/s | 236 kB     00:00    
+(42/160): dbus-libs-1.12.16-3.fc31.x86_64.rpm    19 MB/s | 161 kB     00:00    
+(43/160): dconf-0.34.0-1.fc31.x86_64.rpm         14 MB/s | 109 kB     00:00    
+(44/160): deltarpm-3.6.2-2.fc31.x86_64.rpm       12 MB/s |  87 kB     00:00    
+(45/160): fipscheck-1.5.0-7.fc31.x86_64.rpm     3.7 MB/s |  26 kB     00:00    
+(46/160): fipscheck-lib-1.5.0-7.fc31.x86_64.rpm 3.4 MB/s |  14 kB     00:00    
+(47/160): diffutils-3.7-3.fc31.x86_64.rpm        20 MB/s | 401 kB     00:00    
+(48/160): fontconfig-2.13.92-3.fc31.x86_64.rpm   23 MB/s | 263 kB     00:00    
+(49/160): fontpackages-filesystem-1.44-25.fc31. 1.4 MB/s | 8.1 kB     00:00    
+(50/160): freetype-2.10.0-3.fc31.x86_64.rpm      21 MB/s | 384 kB     00:00    
+(51/160): gdk-pixbuf2-2.40.0-1.fc31.x86_64.rpm   22 MB/s | 465 kB     00:00    
+(52/160): gdk-pixbuf2-modules-2.40.0-1.fc31.x86  13 MB/s |  99 kB     00:00    
+(53/160): graphite2-1.3.13-1.fc31.x86_64.rpm     10 MB/s | 104 kB     00:00    
+(54/160): gnome-keyring-3.34.0-1.fc31.x86_64.rp  29 MB/s | 944 kB     00:00    
+(55/160): gsettings-desktop-schemas-3.34.0-1.fc  22 MB/s | 644 kB     00:00    
+(56/160): cracklib-dicts-2.9.6-21.fc31.x86_64.r  28 MB/s | 3.7 MB     00:00    
+(57/160): hicolor-icon-theme-0.17-7.fc31.noarch 2.5 MB/s |  45 kB     00:00    
+(58/160): harfbuzz-2.6.1-2.fc31.x86_64.rpm       16 MB/s | 628 kB     00:00    
+(59/160): jbigkit-libs-2.1-17.fc31.x86_64.rpm   6.1 MB/s |  53 kB     00:00    
+(60/160): jasper-libs-2.0.14-9.fc31.x86_64.rpm   15 MB/s | 165 kB     00:00    
+(61/160): json-glib-1.4.4-3.fc31.x86_64.rpm      19 MB/s | 145 kB     00:00    
+(62/160): libXau-1.0.9-2.fc31.x86_64.rpm        5.4 MB/s |  31 kB     00:00    
+(63/160): lcms2-2.9-6.fc31.x86_64.rpm            18 MB/s | 166 kB     00:00    
+(64/160): libXcomposite-0.4.4-17.fc31.x86_64.rp 5.6 MB/s |  23 kB     00:00    
+(65/160): libXcursor-1.1.15-6.fc31.x86_64.rpm   6.9 MB/s |  30 kB     00:00    
+(66/160): libXdamage-1.1.4-17.fc31.x86_64.rpm   5.0 MB/s |  21 kB     00:00    
+(67/160): libXext-1.3.4-2.fc31.x86_64.rpm       9.2 MB/s |  39 kB     00:00    
+(68/160): libXfixes-5.0.3-10.fc31.x86_64.rpm    4.4 MB/s |  19 kB     00:00    
+(69/160): libXft-2.3.3-2.fc31.x86_64.rpm         14 MB/s |  64 kB     00:00    
+(70/160): libXi-1.7.10-2.fc31.x86_64.rpm        9.1 MB/s |  39 kB     00:00    
+(71/160): libXinerama-1.1.4-4.fc31.x86_64.rpm   3.5 MB/s |  14 kB     00:00    
+(72/160): libXrandr-1.5.2-2.fc31.x86_64.rpm     6.5 MB/s |  27 kB     00:00    
+(73/160): libXrender-0.9.10-10.fc31.x86_64.rpm  6.6 MB/s |  27 kB     00:00    
+(74/160): libXtst-1.2.3-10.fc31.x86_64.rpm      4.6 MB/s |  21 kB     00:00    
+(75/160): libdatrie-0.2.9-10.fc31.x86_64.rpm    7.3 MB/s |  32 kB     00:00    
+(76/160): libepoxy-1.5.3-4.fc31.x86_64.rpm       24 MB/s | 248 kB     00:00    
+(77/160): libmodman-2.0.1-20.fc31.x86_64.rpm    3.9 MB/s |  34 kB     00:00    
+(78/160): libevent-2.1.8-7.fc31.x86_64.rpm       20 MB/s | 258 kB     00:00    
+(79/160): libpng-1.6.37-2.fc31.x86_64.rpm        17 MB/s | 114 kB     00:00    
+(80/160): libproxy-0.4.15-14.fc31.x86_64.rpm     10 MB/s |  69 kB     00:00    
+(81/160): libsecret-0.19.1-1.fc31.x86_64.rpm     23 MB/s | 171 kB     00:00    
+(82/160): libwayland-client-1.17.0-2.fc31.x86_6 5.3 MB/s |  35 kB     00:00    
+(83/160): libwayland-cursor-1.17.0-2.fc31.x86_6 4.5 MB/s |  20 kB     00:00    
+(84/160): libthai-0.1.28-3.fc31.x86_64.rpm       24 MB/s | 213 kB     00:00    
+(85/160): libwayland-egl-1.17.0-2.fc31.x86_64.r 3.5 MB/s |  13 kB     00:00    
+(86/160): libxcb-1.13.1-3.fc31.x86_64.rpm        24 MB/s | 231 kB     00:00    
+(87/160): pinentry-1.1.0-6.fc31.x86_64.rpm       10 MB/s |  94 kB     00:00    
+(88/160): pixman-0.38.4-1.fc31.x86_64.rpm        24 MB/s | 260 kB     00:00    
+(89/160): rest-0.8.1-6.fc31.x86_64.rpm          7.6 MB/s |  70 kB     00:00    
+(90/160): trousers-0.3.13-13.fc31.x86_64.rpm     17 MB/s | 150 kB     00:00    
+(91/160): python3-setuptools-41.2.0-1.fc31.noar  32 MB/s | 578 kB     00:00    
+(92/160): trousers-lib-0.3.13-13.fc31.x86_64.rp  16 MB/s | 171 kB     00:00    
+(93/160): audit-libs-3.0-0.15.20191104git1c2f87  13 MB/s | 115 kB     00:00    
+(94/160): crypto-policies-20191128-2.gitcd267a5 2.2 MB/s |  97 kB     00:00    
+(95/160): cryptsetup-libs-2.2.2-1.fc31.x86_64.r 7.9 MB/s | 428 kB     00:00    
+(96/160): device-mapper-1.02.165-1.fc31.x86_64.  12 MB/s | 147 kB     00:00    
+(97/160): device-mapper-libs-1.02.165-1.fc31.x8  26 MB/s | 182 kB     00:00    
+(98/160): dnf-data-4.2.17-1.fc31.noarch.rpm      11 MB/s |  48 kB     00:00    
+(99/160): bash-5.0.11-1.fc31.x86_64.rpm          21 MB/s | 1.6 MB     00:00    
+(100/160): elfutils-default-yama-scope-0.178-7. 1.7 MB/s |  17 kB     00:00    
+(101/160): dnf-4.2.17-1.fc31.noarch.rpm          19 MB/s | 403 kB     00:00    
+(102/160): elfutils-libs-0.178-7.fc31.x86_64.rp  29 MB/s | 266 kB     00:00    
+(103/160): fedora-release-common-31-2.noarch.rp 2.7 MB/s |  20 kB     00:00    
+(104/160): elfutils-libelf-0.178-7.fc31.x86_64.  15 MB/s | 190 kB     00:00    
+(105/160): fedora-release-container-31-2.noarch 1.6 MB/s |  12 kB     00:00    
+(106/160): file-libs-5.37-8.fc31.x86_64.rpm      40 MB/s | 541 kB     00:00    
+(107/160): glibc-common-2.30-8.fc31.x86_64.rpm   33 MB/s | 644 kB     00:00    
+(108/160): glibc-minimal-langpack-2.30-8.fc31.x 7.8 MB/s |  55 kB     00:00    
+(109/160): glibc-2.30-8.fc31.x86_64.rpm          38 MB/s | 3.5 MB     00:00    
+(110/160): gnupg2-2.2.18-2.fc31.x86_64.rpm       34 MB/s | 2.4 MB     00:00    
+(111/160): iptables-libs-1.8.3-7.fc31.x86_64.rp 7.8 MB/s |  56 kB     00:00    
+(112/160): glib2-2.62.4-1.fc31.x86_64.rpm        20 MB/s | 2.6 MB     00:00    
+(113/160): json-c-0.13.1-8.fc31.x86_64.rpm      2.6 MB/s |  38 kB     00:00    
+(114/160): gnutls-3.6.11-1.fc31.x86_64.rpm       23 MB/s | 948 kB     00:00    
+(115/160): libcomps-0.1.14-1.fc31.x86_64.rpm     14 MB/s |  80 kB     00:00    
+(116/160): libblkid-2.34-4.fc31.x86_64.rpm       19 MB/s | 158 kB     00:00    
+(117/160): libfdisk-2.34-4.fc31.x86_64.rpm       27 MB/s | 210 kB     00:00    
+(118/160): libidn2-2.3.0-1.fc31.x86_64.rpm       12 MB/s | 104 kB     00:00    
+(119/160): libmount-2.34-4.fc31.x86_64.rpm       24 MB/s | 184 kB     00:00    
+(120/160): libnghttp2-1.39.2-2.fc31.x86_64.rpm   13 MB/s |  81 kB     00:00    
+(121/160): libdnf-0.39.1-1.fc31.x86_64.rpm       29 MB/s | 636 kB     00:00    
+(122/160): libpwquality-1.4.2-1.fc31.x86_64.rpm  15 MB/s | 101 kB     00:00    
+(123/160): librepo-1.11.1-1.fc31.x86_64.rpm      15 MB/s |  96 kB     00:00    
+(124/160): libreport-filesystem-2.11.3-1.fc31.n 3.6 MB/s |  14 kB     00:00    
+(125/160): libseccomp-2.4.2-2.fc31.x86_64.rpm    15 MB/s |  76 kB     00:00    
+(126/160): libsmartcols-2.34-4.fc31.x86_64.rpm   18 MB/s | 126 kB     00:00    
+(127/160): libssh-config-0.9.3-1.fc31.noarch.rp 3.0 MB/s |  11 kB     00:00    
+(128/160): libssh-0.9.3-1.fc31.x86_64.rpm        25 MB/s | 213 kB     00:00    
+(129/160): libsolv-0.7.10-1.fc31.x86_64.rpm      26 MB/s | 396 kB     00:00    
+(130/160): libsss_idmap-2.2.2-3.fc31.x86_64.rpm 8.9 MB/s |  47 kB     00:00    
+(131/160): libsss_nss_idmap-2.2.2-3.fc31.x86_64  12 MB/s |  54 kB     00:00    
+(132/160): libtirpc-1.2.5-0.fc31.x86_64.rpm      18 MB/s |  97 kB     00:00    
+(133/160): libuuid-2.34-4.fc31.x86_64.rpm       4.9 MB/s |  27 kB     00:00    
+(134/160): libxcrypt-4.4.10-2.fc31.x86_64.rpm    21 MB/s | 126 kB     00:00    
+(135/160): pcre2-10.33-16.fc31.x86_64.rpm        25 MB/s | 255 kB     00:00    
+(136/160): pam-1.3.1-21.fc31.x86_64.rpm          27 MB/s | 660 kB     00:00    
+(137/160): libxml2-2.9.10-2.fc31.x86_64.rpm      23 MB/s | 693 kB     00:00    
+(138/160): python3-3.7.6-1.fc31.x86_64.rpm      5.5 MB/s |  31 kB     00:00    
+(139/160): python3-hawkey-0.39.1-1.fc31.x86_64.  17 MB/s | 101 kB     00:00    
+(140/160): python-pip-wheel-19.1.1-7.fc31.noarc  35 MB/s | 1.2 MB     00:00    
+(141/160): python3-dnf-4.2.17-1.fc31.noarch.rpm  23 MB/s | 401 kB     00:00    
+(142/160): python3-libcomps-0.1.14-1.fc31.x86_6 4.5 MB/s |  50 kB     00:00    
+(143/160): python3-rpm-4.15.1-1.fc31.x86_64.rpm 8.6 MB/s |  95 kB     00:00    
+(144/160): python3-libdnf-0.39.1-1.fc31.x86_64.  28 MB/s | 706 kB     00:00    
+(145/160): rpm-4.15.1-1.fc31.x86_64.rpm          23 MB/s | 499 kB     00:00    
+(146/160): rpm-build-libs-4.15.1-1.fc31.x86_64. 8.4 MB/s |  97 kB     00:00    
+(147/160): rpm-sign-libs-4.15.1-1.fc31.x86_64.r 4.4 MB/s |  26 kB     00:00    
+(148/160): rpm-libs-4.15.1-1.fc31.x86_64.rpm     31 MB/s | 300 kB     00:00    
+(149/160): sssd-client-2.2.2-3.fc31.x86_64.rpm   12 MB/s | 106 kB     00:00    
+(150/160): sudo-1.8.29-1.fc31.x86_64.rpm         34 MB/s | 908 kB     00:00    
+(151/160): systemd-libs-243.5-1.fc31.x86_64.rpm  36 MB/s | 525 kB     00:00    
+(152/160): systemd-pam-243.5-1.fc31.x86_64.rpm   12 MB/s | 167 kB     00:00    
+(153/160): systemd-rpm-macros-243.5-1.fc31.noar 2.4 MB/s |  23 kB     00:00    
+(154/160): python3-libs-3.7.6-1.fc31.x86_64.rpm  47 MB/s | 7.3 MB     00:00    
+(155/160): systemd-243.5-1.fc31.x86_64.rpm       25 MB/s | 3.8 MB     00:00    
+(156/160): vim-minimal-8.2.109-1.fc31.x86_64.rp  12 MB/s | 646 kB     00:00    
+(157/160): yum-4.2.17-1.fc31.noarch.rpm          10 MB/s |  44 kB     00:00    
+(158/160): zchunk-libs-1.1.4-1.fc31.x86_64.rpm   11 MB/s |  50 kB     00:00    
+(159/160): zlib-1.2.11-20.fc31.x86_64.rpm        19 MB/s |  92 kB     00:00    
+(160/160): util-linux-2.34-4.fc31.x86_64.rpm     22 MB/s | 2.6 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            34 MB/s |  76 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: glibc-2.30-8.fc31.x86_64                               1/1 
+  Running scriptlet: glibc-2.30-8.fc31.x86_64                             1/228 
+  Upgrading        : glibc-2.30-8.fc31.x86_64                             1/228 
+  Running scriptlet: glibc-2.30-8.fc31.x86_64                             1/228 
+  Upgrading        : bash-5.0.11-1.fc31.x86_64                            2/228 
+  Running scriptlet: bash-5.0.11-1.fc31.x86_64                            2/228 
+  Upgrading        : glibc-common-2.30-8.fc31.x86_64                      3/228 
+  Upgrading        : glibc-minimal-langpack-2.30-8.fc31.x86_64            4/228 
+  Upgrading        : zlib-1.2.11-20.fc31.x86_64                           5/228 
+  Upgrading        : audit-libs-3.0-0.15.20191104git1c2f876.fc31.x86_     6/228 
+  Upgrading        : rpm-4.15.1-1.fc31.x86_64                             7/228 
+  Upgrading        : rpm-libs-4.15.1-1.fc31.x86_64                        8/228 
+  Upgrading        : libxml2-2.9.10-2.fc31.x86_64                         9/228 
+  Upgrading        : libuuid-2.34-4.fc31.x86_64                          10/228 
+  Upgrading        : libblkid-2.34-4.fc31.x86_64                         11/228 
+  Running scriptlet: libblkid-2.34-4.fc31.x86_64                         11/228 
+  Upgrading        : systemd-libs-243.5-1.fc31.x86_64                    12/228 
+  Running scriptlet: systemd-libs-243.5-1.fc31.x86_64                    12/228 
+  Installing       : dbus-libs-1:1.12.16-3.fc31.x86_64                   13/228 
+  Installing       : libpng-2:1.6.37-2.fc31.x86_64                       14/228 
+  Installing       : freetype-2.10.0-3.fc31.x86_64                       15/228 
+  Upgrading        : elfutils-libelf-0.178-7.fc31.x86_64                 16/228 
+  Upgrading        : libmount-2.34-4.fc31.x86_64                         17/228 
+  Upgrading        : glib2-2.62.4-1.fc31.x86_64                          18/228 
+  Installing       : shared-mime-info-1.15-1.fc31.x86_64                 19/228 
+  Running scriptlet: shared-mime-info-1.15-1.fc31.x86_64                 19/228 
+  Installing       : gdk-pixbuf2-2.40.0-1.fc31.x86_64                    20/228 
+  Installing       : atk-2.34.1-1.fc31.x86_64                            21/228 
+  Installing       : libjpeg-turbo-2.0.2-5.fc31.x86_64                   22/228 
+  Upgrading        : libsmartcols-2.34-4.fc31.x86_64                     23/228 
+  Installing       : fontpackages-filesystem-1.44-25.fc31.noarch         24/228 
+  Installing       : abattis-cantarell-fonts-0.111-3.fc31.noarch         25/228 
+  Installing       : fontconfig-2.13.92-3.fc31.x86_64                    26/228 
+  Running scriptlet: fontconfig-2.13.92-3.fc31.x86_64                    26/228 
+  Installing       : gcr-base-3.34.0-1.fc31.x86_64                       27/228 
+  Upgrading        : file-libs-5.37-8.fc31.x86_64                        28/228 
+  Installing       : fribidi-1.0.5-5.fc31.x86_64                         29/228 
+  Installing       : libevent-2.1.8-7.fc31.x86_64                        30/228 
+  Installing       : libwayland-client-1.17.0-2.fc31.x86_64              31/228 
+  Installing       : pixman-0.38.4-1.fc31.x86_64                         32/228 
+  Upgrading        : json-c-0.13.1-8.fc31.x86_64                         33/228 
+  Upgrading        : libidn2-2.3.0-1.fc31.x86_64                         34/228 
+  Upgrading        : libtirpc-1.2.5-0.fc31.x86_64                        35/228 
+  Upgrading        : pcre2-10.33-16.fc31.x86_64                          36/228 
+  Upgrading        : zchunk-libs-1.1.4-1.fc31.x86_64                     37/228 
+  Upgrading        : libsolv-0.7.10-1.fc31.x86_64                        38/228 
+  Installing       : cracklib-dicts-2.9.6-21.fc31.x86_64                 39/228 
+  Upgrading        : librepo-1.11.1-1.fc31.x86_64                        40/228 
+  Upgrading        : libdnf-0.39.1-1.fc31.x86_64                         41/228 
+  Installing       : libwayland-cursor-1.17.0-2.fc31.x86_64              42/228 
+  Installing       : adobe-source-code-pro-fonts-2.030.1.050-7.fc31.n    43/228 
+  Installing       : gsettings-desktop-schemas-3.34.0-1.fc31.x86_64      44/228 
+  Installing       : jasper-libs-2.0.14-9.fc31.x86_64                    45/228 
+  Installing       : gtk-update-icon-cache-3.24.13-1.fc31.x86_64         46/228 
+  Installing       : libgusb-0.3.2-1.fc31.x86_64                         47/228 
+  Installing       : dconf-0.34.0-1.fc31.x86_64                          48/228 
+  Installing       : json-glib-1.4.4-3.fc31.x86_64                       49/228 
+  Installing       : rpm-plugin-systemd-inhibit-4.15.1-1.fc31.x86_64     50/228 
+  Installing       : avahi-libs-0.7-20.fc31.x86_64                       51/228 
+  Upgrading        : libfdisk-2.34-4.fc31.x86_64                         52/228 
+  Upgrading        : libcomps-0.1.14-1.fc31.x86_64                       53/228 
+  Installing       : deltarpm-3.6.2-2.fc31.x86_64                        54/228 
+  Installing       : hicolor-icon-theme-0.17-7.fc31.noarch               55/228 
+  Installing       : elfutils-debuginfod-client-0.178-7.fc31.x86_64      56/228 
+  Installing       : libedit-3.1-30.20191211cvs.fc31.x86_64              57/228 
+  Installing       : diffutils-3.7-3.fc31.x86_64                         58/228 
+  Installing       : fipscheck-lib-1.5.0-7.fc31.x86_64                   59/228 
+  Installing       : fipscheck-1.5.0-7.fc31.x86_64                       60/228 
+  Installing       : graphite2-1.3.13-1.fc31.x86_64                      61/228 
+  Installing       : harfbuzz-2.6.1-2.fc31.x86_64                        62/228 
+  Installing       : jbigkit-libs-2.1-17.fc31.x86_64                     63/228 
+  Installing       : libtiff-4.0.10-7.fc31.x86_64                        64/228 
+  Installing       : gdk-pixbuf2-modules-2.40.0-1.fc31.x86_64            65/228 
+  Installing       : lcms2-2.9-6.fc31.x86_64                             66/228 
+  Installing       : colord-libs-1.4.4-2.fc31.x86_64                     67/228 
+  Installing       : libXau-1.0.9-2.fc31.x86_64                          68/228 
+  Installing       : libxcb-1.13.1-3.fc31.x86_64                         69/228 
+  Installing       : libdatrie-0.2.9-10.fc31.x86_64                      70/228 
+  Installing       : libthai-0.1.28-3.fc31.x86_64                        71/228 
+  Installing       : libepoxy-1.5.3-4.fc31.x86_64                        72/228 
+  Installing       : libmodman-2.0.1-20.fc31.x86_64                      73/228 
+  Installing       : libproxy-0.4.15-14.fc31.x86_64                      74/228 
+  Installing       : libwayland-egl-1.17.0-2.fc31.x86_64                 75/228 
+  Installing       : trousers-lib-0.3.13-13.fc31.x86_64                  76/228 
+  Upgrading        : iptables-libs-1.8.3-7.fc31.x86_64                   77/228 
+  Upgrading        : libseccomp-2.4.2-2.fc31.x86_64                      78/228 
+  Upgrading        : libsss_idmap-2.2.2-3.fc31.x86_64                    79/228 
+  Upgrading        : libsss_nss_idmap-2.2.2-3.fc31.x86_64                80/228 
+  Upgrading        : vim-minimal-2:8.2.109-1.fc31.x86_64                 81/228 
+  Upgrading        : fedora-release-container-31-2.noarch                82/228 
+  Upgrading        : fedora-release-common-31-2.noarch                   83/228 
+  Upgrading        : systemd-rpm-macros-243.5-1.fc31.noarch              84/228 
+  Upgrading        : libssh-config-0.9.3-1.fc31.noarch                   85/228 
+  Upgrading        : libreport-filesystem-2.11.3-1.fc31.noarch           86/228 
+  Upgrading        : dnf-data-4.2.17-1.fc31.noarch                       87/228 
+  Installing       : xkeyboard-config-2.28-1.fc31.noarch                 88/228 
+  Installing       : libxkbcommon-0.9.1-3.fc31.x86_64                    89/228 
+  Installing       : whois-nls-5.5.4-1.fc31.noarch                       90/228 
+  Upgrading        : libxcrypt-4.4.10-2.fc31.x86_64                      91/228 
+  Installing       : mkpasswd-5.5.4-1.fc31.x86_64                        92/228 
+  Upgrading        : libpwquality-1.4.2-1.fc31.x86_64                    93/228 
+  Upgrading        : pam-1.3.1-21.fc31.x86_64                            94/228 
+  Upgrading        : util-linux-2.34-4.fc31.x86_64                       95/228 
+  Running scriptlet: util-linux-2.34-4.fc31.x86_64                       95/228 
+  Installing       : libxcrypt-compat-4.4.10-2.fc31.x86_64               96/228 
+  Upgrading        : python-pip-wheel-19.1.1-7.fc31.noarch               97/228 
+  Installing       : python-unversioned-command-3.7.6-1.fc31.noarch      98/228 
+  Installing       : python3-pip-19.1.1-7.fc31.noarch                    99/228 
+  Installing       : python3-setuptools-41.2.0-1.fc31.noarch            100/228 
+  Upgrading        : python3-3.7.6-1.fc31.x86_64                        101/228 
+  Upgrading        : python3-libs-3.7.6-1.fc31.x86_64                   102/228 
+  Upgrading        : crypto-policies-20191128-2.gitcd267a5.fc31.noarc   103/228 
+  Upgrading        : device-mapper-1.02.165-1.fc31.x86_64               104/228 
+  Upgrading        : device-mapper-libs-1.02.165-1.fc31.x86_64          105/228 
+  Upgrading        : cryptsetup-libs-2.2.2-1.fc31.x86_64                106/228 
+  Upgrading        : elfutils-default-yama-scope-0.178-7.fc31.noarch    107/228 
+  Running scriptlet: elfutils-default-yama-scope-0.178-7.fc31.noarch    107/228 
+Couldn't write '0' to 'kernel/yama/ptrace_scope', ignoring: Read-only file system
+
+  Upgrading        : elfutils-libs-0.178-7.fc31.x86_64                  108/228 
+  Upgrading        : gnutls-3.6.11-1.fc31.x86_64                        109/228 
+  Upgrading        : systemd-pam-243.5-1.fc31.x86_64                    110/228 
+  Running scriptlet: systemd-243.5-1.fc31.x86_64                        111/228 
+  Upgrading        : systemd-243.5-1.fc31.x86_64                        111/228 
+  Running scriptlet: systemd-243.5-1.fc31.x86_64                        111/228 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                     112/228 
+  Installing       : trousers-0.3.13-13.fc31.x86_64                     112/228 
+  Running scriptlet: trousers-0.3.13-13.fc31.x86_64                     112/228 
+  Upgrading        : python3-libdnf-0.39.1-1.fc31.x86_64                113/228 
+  Upgrading        : python3-hawkey-0.39.1-1.fc31.x86_64                114/228 
+  Installing       : cups-libs-1:2.2.12-3.fc31.x86_64                   115/228 
+  Installing       : glib-networking-2.62.3-1.fc31.x86_64               116/228 
+  Installing       : libsoup-2.68.3-1.fc31.x86_64                       117/228 
+  Installing       : rest-0.8.1-6.fc31.x86_64                           118/228 
+  Upgrading        : rpm-build-libs-4.15.1-1.fc31.x86_64                119/228 
+  Running scriptlet: unbound-libs-1.9.6-1.fc31.x86_64                   120/228 
+  Installing       : unbound-libs-1.9.6-1.fc31.x86_64                   120/228 
+  Running scriptlet: unbound-libs-1.9.6-1.fc31.x86_64                   120/228 
+Created symlink /etc/systemd/system/timers.target.wants/unbound-anchor.timer → /usr/lib/systemd/system/unbound-anchor.timer.
+
+  Installing       : python3-unbound-1.9.6-1.fc31.x86_64                121/228 
+  Upgrading        : python3-libcomps-0.1.14-1.fc31.x86_64              122/228 
+  Running scriptlet: openssh-8.1p1-1.fc31.x86_64                        123/228 
+  Installing       : openssh-8.1p1-1.fc31.x86_64                        123/228 
+  Installing       : openssh-clients-8.1p1-1.fc31.x86_64                124/228 
+  Installing       : libX11-common-1.6.9-2.fc31.noarch                  125/228 
+  Installing       : libX11-1.6.9-2.fc31.x86_64                         126/228 
+  Installing       : libXext-1.3.4-2.fc31.x86_64                        127/228 
+  Installing       : libXrender-0.9.10-10.fc31.x86_64                   128/228 
+  Installing       : cairo-1.16.0-6.fc31.x86_64                         129/228 
+  Installing       : libXfixes-5.0.3-10.fc31.x86_64                     130/228 
+  Installing       : cairo-gobject-1.16.0-6.fc31.x86_64                 131/228 
+  Installing       : libXi-1.7.10-2.fc31.x86_64                         132/228 
+  Installing       : libXtst-1.2.3-10.fc31.x86_64                       133/228 
+  Installing       : at-spi2-core-2.34.0-1.fc31.x86_64                  134/228 
+  Installing       : at-spi2-atk-2.34.1-1.fc31.x86_64                   135/228 
+  Installing       : libXcursor-1.1.15-6.fc31.x86_64                    136/228 
+  Installing       : libXdamage-1.1.4-17.fc31.x86_64                    137/228 
+  Installing       : libXft-2.3.3-2.fc31.x86_64                         138/228 
+  Installing       : pango-1.44.7-1.fc31.x86_64                         139/228 
+  Installing       : libXrandr-1.5.2-2.fc31.x86_64                      140/228 
+  Installing       : libXinerama-1.1.4-4.fc31.x86_64                    141/228 
+  Installing       : libXcomposite-0.4.4-17.fc31.x86_64                 142/228 
+  Installing       : adwaita-cursor-theme-3.34.3-1.fc31.noarch          143/228 
+  Installing       : adwaita-icon-theme-3.34.3-1.fc31.noarch            144/228 
+  Installing       : gtk3-3.24.13-1.fc31.x86_64                         145/228 
+  Installing       : gcr-3.34.0-1.fc31.x86_64                           146/228 
+  Installing       : gnome-keyring-3.34.0-1.fc31.x86_64                 147/228 
+  Installing       : libsecret-0.19.1-1.fc31.x86_64                     148/228 
+  Installing       : pinentry-1.1.0-6.fc31.x86_64                       149/228 
+  Installing       : gnupg2-smime-2.2.18-2.fc31.x86_64                  150/228 
+  Upgrading        : gnupg2-2.2.18-2.fc31.x86_64                        151/228 
+  Upgrading        : rpm-sign-libs-4.15.1-1.fc31.x86_64                 152/228 
+  Upgrading        : python3-rpm-4.15.1-1.fc31.x86_64                   153/228 
+  Upgrading        : python3-dnf-4.2.17-1.fc31.noarch                   154/228 
+  Upgrading        : dnf-4.2.17-1.fc31.noarch                           155/228 
+  Running scriptlet: dnf-4.2.17-1.fc31.noarch                           155/228 
+  Upgrading        : yum-4.2.17-1.fc31.noarch                           156/228 
+  Upgrading        : libssh-0.9.3-1.fc31.x86_64                         157/228 
+  Upgrading        : sssd-client-2.2.2-3.fc31.x86_64                    158/228 
+  Running scriptlet: sssd-client-2.2.2-3.fc31.x86_64                    158/228 
+  Upgrading        : sudo-1.8.29-1.fc31.x86_64                          159/228 
+  Running scriptlet: sudo-1.8.29-1.fc31.x86_64                          159/228 
+  Upgrading        : libnghttp2-1.39.2-2.fc31.x86_64                    160/228 
+  Cleanup          : sudo-1.8.28-1.fc31.x86_64                          161/228 
+  Cleanup          : device-mapper-1.02.163-2.fc31.x86_64               162/228 
+  Cleanup          : fedora-release-common-31-1.noarch                  163/228 
+  Running scriptlet: sssd-client-2.2.2-1.fc31.x86_64                    164/228 
+  Cleanup          : sssd-client-2.2.2-1.fc31.x86_64                    164/228 
+  Cleanup          : libssh-0.9.0-6.fc31.x86_64                         165/228 
+  Cleanup          : vim-minimal-2:8.1.2198-1.fc31.x86_64               166/228 
+  Cleanup          : libpwquality-1.4.1-1.fc31.x86_64                   167/228 
+  Cleanup          : libsss_nss_idmap-2.2.2-1.fc31.x86_64               168/228 
+  Cleanup          : libsss_idmap-2.2.2-1.fc31.x86_64                   169/228 
+  Cleanup          : libnghttp2-1.39.2-1.fc31.x86_64                    170/228 
+  Cleanup          : yum-4.2.9-5.fc31.noarch                            171/228 
+  Running scriptlet: dnf-4.2.9-5.fc31.noarch                            172/228 
+  Cleanup          : dnf-4.2.9-5.fc31.noarch                            172/228 
+  Running scriptlet: dnf-4.2.9-5.fc31.noarch                            172/228 
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+
+  Cleanup          : python3-dnf-4.2.9-5.fc31.noarch                    173/228 
+  Cleanup          : dnf-data-4.2.9-5.fc31.noarch                       174/228 
+  Cleanup          : libreport-filesystem-2.10.1-2.fc31.noarch          175/228 
+  Cleanup          : libssh-config-0.9.0-6.fc31.noarch                  176/228 
+  Cleanup          : fedora-release-container-31-1.noarch               177/228 
+  Cleanup          : python3-rpm-4.15.0-6.fc31.x86_64                   178/228 
+  Cleanup          : rpm-build-libs-4.15.0-6.fc31.x86_64                179/228 
+  Cleanup          : elfutils-default-yama-scope-0.177-1.fc31.noarch    180/228 
+  Running scriptlet: systemd-243-4.gitef67743.fc31.x86_64               181/228 
+  Cleanup          : systemd-243-4.gitef67743.fc31.x86_64               181/228 
+  Cleanup          : elfutils-libs-0.177-1.fc31.x86_64                  182/228 
+  Cleanup          : util-linux-2.34-3.fc31.x86_64                      183/228 
+  Cleanup          : systemd-pam-243-4.gitef67743.fc31.x86_64           184/228 
+  Cleanup          : pam-1.3.1-18.fc31.x86_64                           185/228 
+  Cleanup          : cryptsetup-libs-2.2.1-1.fc31.x86_64                186/228 
+  Cleanup          : libfdisk-2.34-3.fc31.x86_64                        187/228 
+  Cleanup          : device-mapper-libs-1.02.163-2.fc31.x86_64          188/228 
+  Cleanup          : systemd-libs-243-4.gitef67743.fc31.x86_64          189/228 
+  Cleanup          : rpm-sign-libs-4.15.0-6.fc31.x86_64                 190/228 
+  Cleanup          : gnupg2-2.2.17-2.fc31.x86_64                        191/228 
+  Cleanup          : gnutls-3.6.10-1.fc31.x86_64                        192/228 
+  Cleanup          : python3-hawkey-0.35.3-6.fc31.x86_64                193/228 
+  Cleanup          : python3-libdnf-0.35.3-6.fc31.x86_64                194/228 
+  Cleanup          : libdnf-0.35.3-6.fc31.x86_64                        195/228 
+  Cleanup          : libsolv-0.7.7-1.fc31.x86_64                        196/228 
+  Cleanup          : rpm-4.15.0-6.fc31.x86_64                           197/228 
+  Cleanup          : rpm-libs-4.15.0-6.fc31.x86_64                      198/228 
+  Cleanup          : libsmartcols-2.34-3.fc31.x86_64                    199/228 
+  Cleanup          : librepo-1.10.5-1.fc31.x86_64                       200/228 
+  Cleanup          : glib2-2.62.1-1.fc31.x86_64                         201/228 
+  Cleanup          : libmount-2.34-3.fc31.x86_64                        202/228 
+  Cleanup          : libblkid-2.34-3.fc31.x86_64                        203/228 
+  Cleanup          : iptables-libs-1.8.3-5.fc31.x86_64                  204/228 
+  Cleanup          : audit-libs-3.0-0.12.20190507gitf58ec40.fc31.x86_   205/228 
+  Cleanup          : python3-libcomps-0.1.11-3.fc31.x86_64              206/228 
+  Cleanup          : libcomps-0.1.11-3.fc31.x86_64                      207/228 
+  Cleanup          : libxml2-2.9.9-3.fc31.x86_64                        208/228 
+  Cleanup          : json-c-0.13.1-6.fc31.x86_64                        209/228 
+  Cleanup          : file-libs-5.37-3.fc31.x86_64                       210/228 
+  Cleanup          : crypto-policies-20190816-4.gitbb9bf99.fc31.noarc   211/228 
+  Cleanup          : systemd-rpm-macros-243-4.gitef67743.fc31.noarch    212/228 
+  Cleanup          : pcre2-10.33-14.fc31.x86_64                         213/228 
+  Cleanup          : elfutils-libelf-0.177-1.fc31.x86_64                214/228 
+  Cleanup          : zchunk-libs-1.1.2-3.fc31.x86_64                    215/228 
+  Cleanup          : libidn2-2.2.0-2.fc31.x86_64                        216/228 
+  Cleanup          : python3-libs-3.7.4-5.fc31.x86_64                   217/228 
+  Cleanup          : python3-3.7.4-5.fc31.x86_64                        218/228 
+  Cleanup          : libtirpc-1.1.4-2.rc3.fc31.x86_64                   219/228 
+  Cleanup          : libuuid-2.34-3.fc31.x86_64                         220/228 
+  Cleanup          : libxcrypt-4.4.10-1.fc31.x86_64                     221/228 
+  Cleanup          : zlib-1.2.11-19.fc31.x86_64                         222/228 
+  Cleanup          : libseccomp-2.4.1-1.fc31.x86_64                     223/228 
+  Cleanup          : python-pip-wheel-19.1.1-4.fc31.noarch              224/228 
+  Cleanup          : bash-5.0.7-3.fc31.x86_64                           225/228 
+  Running scriptlet: bash-5.0.7-3.fc31.x86_64                           225/228 
+  Cleanup          : glibc-2.30-5.fc31.x86_64                           226/228 
+  Cleanup          : glibc-minimal-langpack-2.30-5.fc31.x86_64          227/228 
+  Cleanup          : glibc-common-2.30-5.fc31.x86_64                    228/228 
+  Running scriptlet: dconf-0.34.0-1.fc31.x86_64                         228/228 
+  Running scriptlet: crypto-policies-20191128-2.gitcd267a5.fc31.noarc   228/228 
+  Running scriptlet: glibc-common-2.30-5.fc31.x86_64                    228/228 
+  Running scriptlet: glibc-common-2.30-8.fc31.x86_64                    228/228 
+  Running scriptlet: glib2-2.62.4-1.fc31.x86_64                         228/228 
+  Running scriptlet: shared-mime-info-1.15-1.fc31.x86_64                228/228 
+  Running scriptlet: gdk-pixbuf2-2.40.0-1.fc31.x86_64                   228/228 
+  Running scriptlet: fontconfig-2.13.92-3.fc31.x86_64                   228/228 
+  Running scriptlet: hicolor-icon-theme-0.17-7.fc31.noarch              228/228 
+  Running scriptlet: systemd-243.5-1.fc31.x86_64                        228/228 
+  Running scriptlet: adwaita-icon-theme-3.34.3-1.fc31.noarch            228/228 
+  Verifying        : adwaita-cursor-theme-3.34.3-1.fc31.noarch            1/228 
+  Verifying        : adwaita-icon-theme-3.34.3-1.fc31.noarch              2/228 
+  Verifying        : cups-libs-1:2.2.12-3.fc31.x86_64                     3/228 
+  Verifying        : elfutils-debuginfod-client-0.178-7.fc31.x86_64       4/228 
+  Verifying        : fribidi-1.0.5-5.fc31.x86_64                          5/228 
+  Verifying        : gcr-3.34.0-1.fc31.x86_64                             6/228 
+  Verifying        : gcr-base-3.34.0-1.fc31.x86_64                        7/228 
+  Verifying        : glib-networking-2.62.3-1.fc31.x86_64                 8/228 
+  Verifying        : gnupg2-smime-2.2.18-2.fc31.x86_64                    9/228 
+  Verifying        : gtk-update-icon-cache-3.24.13-1.fc31.x86_64         10/228 
+  Verifying        : gtk3-3.24.13-1.fc31.x86_64                          11/228 
+  Verifying        : libX11-1.6.9-2.fc31.x86_64                          12/228 
+  Verifying        : libX11-common-1.6.9-2.fc31.noarch                   13/228 
+  Verifying        : libedit-3.1-30.20191211cvs.fc31.x86_64              14/228 
+  Verifying        : libgusb-0.3.2-1.fc31.x86_64                         15/228 
+  Verifying        : libjpeg-turbo-2.0.2-5.fc31.x86_64                   16/228 
+  Verifying        : libsoup-2.68.3-1.fc31.x86_64                        17/228 
+  Verifying        : libtiff-4.0.10-7.fc31.x86_64                        18/228 
+  Verifying        : libxcrypt-compat-4.4.10-2.fc31.x86_64               19/228 
+  Verifying        : libxkbcommon-0.9.1-3.fc31.x86_64                    20/228 
+  Verifying        : mkpasswd-5.5.4-1.fc31.x86_64                        21/228 
+  Verifying        : openssh-8.1p1-1.fc31.x86_64                         22/228 
+  Verifying        : openssh-clients-8.1p1-1.fc31.x86_64                 23/228 
+  Verifying        : pango-1.44.7-1.fc31.x86_64                          24/228 
+  Verifying        : python-unversioned-command-3.7.6-1.fc31.noarch      25/228 
+  Verifying        : python3-pip-19.1.1-7.fc31.noarch                    26/228 
+  Verifying        : python3-unbound-1.9.6-1.fc31.x86_64                 27/228 
+  Verifying        : rpm-plugin-systemd-inhibit-4.15.1-1.fc31.x86_64     28/228 
+  Verifying        : shared-mime-info-1.15-1.fc31.x86_64                 29/228 
+  Verifying        : unbound-libs-1.9.6-1.fc31.x86_64                    30/228 
+  Verifying        : whois-nls-5.5.4-1.fc31.noarch                       31/228 
+  Verifying        : xkeyboard-config-2.28-1.fc31.noarch                 32/228 
+  Verifying        : abattis-cantarell-fonts-0.111-3.fc31.noarch         33/228 
+  Verifying        : adobe-source-code-pro-fonts-2.030.1.050-7.fc31.n    34/228 
+  Verifying        : at-spi2-atk-2.34.1-1.fc31.x86_64                    35/228 
+  Verifying        : at-spi2-core-2.34.0-1.fc31.x86_64                   36/228 
+  Verifying        : atk-2.34.1-1.fc31.x86_64                            37/228 
+  Verifying        : avahi-libs-0.7-20.fc31.x86_64                       38/228 
+  Verifying        : cairo-1.16.0-6.fc31.x86_64                          39/228 
+  Verifying        : cairo-gobject-1.16.0-6.fc31.x86_64                  40/228 
+  Verifying        : colord-libs-1.4.4-2.fc31.x86_64                     41/228 
+  Verifying        : cracklib-dicts-2.9.6-21.fc31.x86_64                 42/228 
+  Verifying        : dbus-libs-1:1.12.16-3.fc31.x86_64                   43/228 
+  Verifying        : dconf-0.34.0-1.fc31.x86_64                          44/228 
+  Verifying        : deltarpm-3.6.2-2.fc31.x86_64                        45/228 
+  Verifying        : diffutils-3.7-3.fc31.x86_64                         46/228 
+  Verifying        : fipscheck-1.5.0-7.fc31.x86_64                       47/228 
+  Verifying        : fipscheck-lib-1.5.0-7.fc31.x86_64                   48/228 
+  Verifying        : fontconfig-2.13.92-3.fc31.x86_64                    49/228 
+  Verifying        : fontpackages-filesystem-1.44-25.fc31.noarch         50/228 
+  Verifying        : freetype-2.10.0-3.fc31.x86_64                       51/228 
+  Verifying        : gdk-pixbuf2-2.40.0-1.fc31.x86_64                    52/228 
+  Verifying        : gdk-pixbuf2-modules-2.40.0-1.fc31.x86_64            53/228 
+  Verifying        : gnome-keyring-3.34.0-1.fc31.x86_64                  54/228 
+  Verifying        : graphite2-1.3.13-1.fc31.x86_64                      55/228 
+  Verifying        : gsettings-desktop-schemas-3.34.0-1.fc31.x86_64      56/228 
+  Verifying        : harfbuzz-2.6.1-2.fc31.x86_64                        57/228 
+  Verifying        : hicolor-icon-theme-0.17-7.fc31.noarch               58/228 
+  Verifying        : jasper-libs-2.0.14-9.fc31.x86_64                    59/228 
+  Verifying        : jbigkit-libs-2.1-17.fc31.x86_64                     60/228 
+  Verifying        : json-glib-1.4.4-3.fc31.x86_64                       61/228 
+  Verifying        : lcms2-2.9-6.fc31.x86_64                             62/228 
+  Verifying        : libXau-1.0.9-2.fc31.x86_64                          63/228 
+  Verifying        : libXcomposite-0.4.4-17.fc31.x86_64                  64/228 
+  Verifying        : libXcursor-1.1.15-6.fc31.x86_64                     65/228 
+  Verifying        : libXdamage-1.1.4-17.fc31.x86_64                     66/228 
+  Verifying        : libXext-1.3.4-2.fc31.x86_64                         67/228 
+  Verifying        : libXfixes-5.0.3-10.fc31.x86_64                      68/228 
+  Verifying        : libXft-2.3.3-2.fc31.x86_64                          69/228 
+  Verifying        : libXi-1.7.10-2.fc31.x86_64                          70/228 
+  Verifying        : libXinerama-1.1.4-4.fc31.x86_64                     71/228 
+  Verifying        : libXrandr-1.5.2-2.fc31.x86_64                       72/228 
+  Verifying        : libXrender-0.9.10-10.fc31.x86_64                    73/228 
+  Verifying        : libXtst-1.2.3-10.fc31.x86_64                        74/228 
+  Verifying        : libdatrie-0.2.9-10.fc31.x86_64                      75/228 
+  Verifying        : libepoxy-1.5.3-4.fc31.x86_64                        76/228 
+  Verifying        : libevent-2.1.8-7.fc31.x86_64                        77/228 
+  Verifying        : libmodman-2.0.1-20.fc31.x86_64                      78/228 
+  Verifying        : libpng-2:1.6.37-2.fc31.x86_64                       79/228 
+  Verifying        : libproxy-0.4.15-14.fc31.x86_64                      80/228 
+  Verifying        : libsecret-0.19.1-1.fc31.x86_64                      81/228 
+  Verifying        : libthai-0.1.28-3.fc31.x86_64                        82/228 
+  Verifying        : libwayland-client-1.17.0-2.fc31.x86_64              83/228 
+  Verifying        : libwayland-cursor-1.17.0-2.fc31.x86_64              84/228 
+  Verifying        : libwayland-egl-1.17.0-2.fc31.x86_64                 85/228 
+  Verifying        : libxcb-1.13.1-3.fc31.x86_64                         86/228 
+  Verifying        : pinentry-1.1.0-6.fc31.x86_64                        87/228 
+  Verifying        : pixman-0.38.4-1.fc31.x86_64                         88/228 
+  Verifying        : python3-setuptools-41.2.0-1.fc31.noarch             89/228 
+  Verifying        : rest-0.8.1-6.fc31.x86_64                            90/228 
+  Verifying        : trousers-0.3.13-13.fc31.x86_64                      91/228 
+  Verifying        : trousers-lib-0.3.13-13.fc31.x86_64                  92/228 
+  Verifying        : audit-libs-3.0-0.15.20191104git1c2f876.fc31.x86_    93/228 
+  Verifying        : audit-libs-3.0-0.12.20190507gitf58ec40.fc31.x86_    94/228 
+  Verifying        : bash-5.0.11-1.fc31.x86_64                           95/228 
+  Verifying        : bash-5.0.7-3.fc31.x86_64                            96/228 
+  Verifying        : crypto-policies-20191128-2.gitcd267a5.fc31.noarc    97/228 
+  Verifying        : crypto-policies-20190816-4.gitbb9bf99.fc31.noarc    98/228 
+  Verifying        : cryptsetup-libs-2.2.2-1.fc31.x86_64                 99/228 
+  Verifying        : cryptsetup-libs-2.2.1-1.fc31.x86_64                100/228 
+  Verifying        : device-mapper-1.02.165-1.fc31.x86_64               101/228 
+  Verifying        : device-mapper-1.02.163-2.fc31.x86_64               102/228 
+  Verifying        : device-mapper-libs-1.02.165-1.fc31.x86_64          103/228 
+  Verifying        : device-mapper-libs-1.02.163-2.fc31.x86_64          104/228 
+  Verifying        : dnf-4.2.17-1.fc31.noarch                           105/228 
+  Verifying        : dnf-4.2.9-5.fc31.noarch                            106/228 
+  Verifying        : dnf-data-4.2.17-1.fc31.noarch                      107/228 
+  Verifying        : dnf-data-4.2.9-5.fc31.noarch                       108/228 
+  Verifying        : elfutils-default-yama-scope-0.178-7.fc31.noarch    109/228 
+  Verifying        : elfutils-default-yama-scope-0.177-1.fc31.noarch    110/228 
+  Verifying        : elfutils-libelf-0.178-7.fc31.x86_64                111/228 
+  Verifying        : elfutils-libelf-0.177-1.fc31.x86_64                112/228 
+  Verifying        : elfutils-libs-0.178-7.fc31.x86_64                  113/228 
+  Verifying        : elfutils-libs-0.177-1.fc31.x86_64                  114/228 
+  Verifying        : fedora-release-common-31-2.noarch                  115/228 
+  Verifying        : fedora-release-common-31-1.noarch                  116/228 
+  Verifying        : fedora-release-container-31-2.noarch               117/228 
+  Verifying        : fedora-release-container-31-1.noarch               118/228 
+  Verifying        : file-libs-5.37-8.fc31.x86_64                       119/228 
+  Verifying        : file-libs-5.37-3.fc31.x86_64                       120/228 
+  Verifying        : glib2-2.62.4-1.fc31.x86_64                         121/228 
+  Verifying        : glib2-2.62.1-1.fc31.x86_64                         122/228 
+  Verifying        : glibc-2.30-8.fc31.x86_64                           123/228 
+  Verifying        : glibc-2.30-5.fc31.x86_64                           124/228 
+  Verifying        : glibc-common-2.30-8.fc31.x86_64                    125/228 
+  Verifying        : glibc-common-2.30-5.fc31.x86_64                    126/228 
+  Verifying        : glibc-minimal-langpack-2.30-8.fc31.x86_64          127/228 
+  Verifying        : glibc-minimal-langpack-2.30-5.fc31.x86_64          128/228 
+  Verifying        : gnupg2-2.2.18-2.fc31.x86_64                        129/228 
+  Verifying        : gnupg2-2.2.17-2.fc31.x86_64                        130/228 
+  Verifying        : gnutls-3.6.11-1.fc31.x86_64                        131/228 
+  Verifying        : gnutls-3.6.10-1.fc31.x86_64                        132/228 
+  Verifying        : iptables-libs-1.8.3-7.fc31.x86_64                  133/228 
+  Verifying        : iptables-libs-1.8.3-5.fc31.x86_64                  134/228 
+  Verifying        : json-c-0.13.1-8.fc31.x86_64                        135/228 
+  Verifying        : json-c-0.13.1-6.fc31.x86_64                        136/228 
+  Verifying        : libblkid-2.34-4.fc31.x86_64                        137/228 
+  Verifying        : libblkid-2.34-3.fc31.x86_64                        138/228 
+  Verifying        : libcomps-0.1.14-1.fc31.x86_64                      139/228 
+  Verifying        : libcomps-0.1.11-3.fc31.x86_64                      140/228 
+  Verifying        : libdnf-0.39.1-1.fc31.x86_64                        141/228 
+  Verifying        : libdnf-0.35.3-6.fc31.x86_64                        142/228 
+  Verifying        : libfdisk-2.34-4.fc31.x86_64                        143/228 
+  Verifying        : libfdisk-2.34-3.fc31.x86_64                        144/228 
+  Verifying        : libidn2-2.3.0-1.fc31.x86_64                        145/228 
+  Verifying        : libidn2-2.2.0-2.fc31.x86_64                        146/228 
+  Verifying        : libmount-2.34-4.fc31.x86_64                        147/228 
+  Verifying        : libmount-2.34-3.fc31.x86_64                        148/228 
+  Verifying        : libnghttp2-1.39.2-2.fc31.x86_64                    149/228 
+  Verifying        : libnghttp2-1.39.2-1.fc31.x86_64                    150/228 
+  Verifying        : libpwquality-1.4.2-1.fc31.x86_64                   151/228 
+  Verifying        : libpwquality-1.4.1-1.fc31.x86_64                   152/228 
+  Verifying        : librepo-1.11.1-1.fc31.x86_64                       153/228 
+  Verifying        : librepo-1.10.5-1.fc31.x86_64                       154/228 
+  Verifying        : libreport-filesystem-2.11.3-1.fc31.noarch          155/228 
+  Verifying        : libreport-filesystem-2.10.1-2.fc31.noarch          156/228 
+  Verifying        : libseccomp-2.4.2-2.fc31.x86_64                     157/228 
+  Verifying        : libseccomp-2.4.1-1.fc31.x86_64                     158/228 
+  Verifying        : libsmartcols-2.34-4.fc31.x86_64                    159/228 
+  Verifying        : libsmartcols-2.34-3.fc31.x86_64                    160/228 
+  Verifying        : libsolv-0.7.10-1.fc31.x86_64                       161/228 
+  Verifying        : libsolv-0.7.7-1.fc31.x86_64                        162/228 
+  Verifying        : libssh-0.9.3-1.fc31.x86_64                         163/228 
+  Verifying        : libssh-0.9.0-6.fc31.x86_64                         164/228 
+  Verifying        : libssh-config-0.9.3-1.fc31.noarch                  165/228 
+  Verifying        : libssh-config-0.9.0-6.fc31.noarch                  166/228 
+  Verifying        : libsss_idmap-2.2.2-3.fc31.x86_64                   167/228 
+  Verifying        : libsss_idmap-2.2.2-1.fc31.x86_64                   168/228 
+  Verifying        : libsss_nss_idmap-2.2.2-3.fc31.x86_64               169/228 
+  Verifying        : libsss_nss_idmap-2.2.2-1.fc31.x86_64               170/228 
+  Verifying        : libtirpc-1.2.5-0.fc31.x86_64                       171/228 
+  Verifying        : libtirpc-1.1.4-2.rc3.fc31.x86_64                   172/228 
+  Verifying        : libuuid-2.34-4.fc31.x86_64                         173/228 
+  Verifying        : libuuid-2.34-3.fc31.x86_64                         174/228 
+  Verifying        : libxcrypt-4.4.10-2.fc31.x86_64                     175/228 
+  Verifying        : libxcrypt-4.4.10-1.fc31.x86_64                     176/228 
+  Verifying        : libxml2-2.9.10-2.fc31.x86_64                       177/228 
+  Verifying        : libxml2-2.9.9-3.fc31.x86_64                        178/228 
+  Verifying        : pam-1.3.1-21.fc31.x86_64                           179/228 
+  Verifying        : pam-1.3.1-18.fc31.x86_64                           180/228 
+  Verifying        : pcre2-10.33-16.fc31.x86_64                         181/228 
+  Verifying        : pcre2-10.33-14.fc31.x86_64                         182/228 
+  Verifying        : python-pip-wheel-19.1.1-7.fc31.noarch              183/228 
+  Verifying        : python-pip-wheel-19.1.1-4.fc31.noarch              184/228 
+  Verifying        : python3-3.7.6-1.fc31.x86_64                        185/228 
+  Verifying        : python3-3.7.4-5.fc31.x86_64                        186/228 
+  Verifying        : python3-dnf-4.2.17-1.fc31.noarch                   187/228 
+  Verifying        : python3-dnf-4.2.9-5.fc31.noarch                    188/228 
+  Verifying        : python3-hawkey-0.39.1-1.fc31.x86_64                189/228 
+  Verifying        : python3-hawkey-0.35.3-6.fc31.x86_64                190/228 
+  Verifying        : python3-libcomps-0.1.14-1.fc31.x86_64              191/228 
+  Verifying        : python3-libcomps-0.1.11-3.fc31.x86_64              192/228 
+  Verifying        : python3-libdnf-0.39.1-1.fc31.x86_64                193/228 
+  Verifying        : python3-libdnf-0.35.3-6.fc31.x86_64                194/228 
+  Verifying        : python3-libs-3.7.6-1.fc31.x86_64                   195/228 
+  Verifying        : python3-libs-3.7.4-5.fc31.x86_64                   196/228 
+  Verifying        : python3-rpm-4.15.1-1.fc31.x86_64                   197/228 
+  Verifying        : python3-rpm-4.15.0-6.fc31.x86_64                   198/228 
+  Verifying        : rpm-4.15.1-1.fc31.x86_64                           199/228 
+  Verifying        : rpm-4.15.0-6.fc31.x86_64                           200/228 
+  Verifying        : rpm-build-libs-4.15.1-1.fc31.x86_64                201/228 
+  Verifying        : rpm-build-libs-4.15.0-6.fc31.x86_64                202/228 
+  Verifying        : rpm-libs-4.15.1-1.fc31.x86_64                      203/228 
+  Verifying        : rpm-libs-4.15.0-6.fc31.x86_64                      204/228 
+  Verifying        : rpm-sign-libs-4.15.1-1.fc31.x86_64                 205/228 
+  Verifying        : rpm-sign-libs-4.15.0-6.fc31.x86_64                 206/228 
+  Verifying        : sssd-client-2.2.2-3.fc31.x86_64                    207/228 
+  Verifying        : sssd-client-2.2.2-1.fc31.x86_64                    208/228 
+  Verifying        : sudo-1.8.29-1.fc31.x86_64                          209/228 
+  Verifying        : sudo-1.8.28-1.fc31.x86_64                          210/228 
+  Verifying        : systemd-243.5-1.fc31.x86_64                        211/228 
+  Verifying        : systemd-243-4.gitef67743.fc31.x86_64               212/228 
+  Verifying        : systemd-libs-243.5-1.fc31.x86_64                   213/228 
+  Verifying        : systemd-libs-243-4.gitef67743.fc31.x86_64          214/228 
+  Verifying        : systemd-pam-243.5-1.fc31.x86_64                    215/228 
+  Verifying        : systemd-pam-243-4.gitef67743.fc31.x86_64           216/228 
+  Verifying        : systemd-rpm-macros-243.5-1.fc31.noarch             217/228 
+  Verifying        : systemd-rpm-macros-243-4.gitef67743.fc31.noarch    218/228 
+  Verifying        : util-linux-2.34-4.fc31.x86_64                      219/228 
+  Verifying        : util-linux-2.34-3.fc31.x86_64                      220/228 
+  Verifying        : vim-minimal-2:8.2.109-1.fc31.x86_64                221/228 
+  Verifying        : vim-minimal-2:8.1.2198-1.fc31.x86_64               222/228 
+  Verifying        : yum-4.2.17-1.fc31.noarch                           223/228 
+  Verifying        : yum-4.2.9-5.fc31.noarch                            224/228 
+  Verifying        : zchunk-libs-1.1.4-1.fc31.x86_64                    225/228 
+  Verifying        : zchunk-libs-1.1.2-3.fc31.x86_64                    226/228 
+  Verifying        : zlib-1.2.11-20.fc31.x86_64                         227/228 
+  Verifying        : zlib-1.2.11-19.fc31.x86_64                         228/228 
+
+Upgraded:
+  audit-libs-3.0-0.15.20191104git1c2f876.fc31.x86_64                            
+  bash-5.0.11-1.fc31.x86_64                                                     
+  crypto-policies-20191128-2.gitcd267a5.fc31.noarch                             
+  cryptsetup-libs-2.2.2-1.fc31.x86_64                                           
+  device-mapper-1.02.165-1.fc31.x86_64                                          
+  device-mapper-libs-1.02.165-1.fc31.x86_64                                     
+  dnf-4.2.17-1.fc31.noarch                                                      
+  dnf-data-4.2.17-1.fc31.noarch                                                 
+  elfutils-default-yama-scope-0.178-7.fc31.noarch                               
+  elfutils-libelf-0.178-7.fc31.x86_64                                           
+  elfutils-libs-0.178-7.fc31.x86_64                                             
+  fedora-release-common-31-2.noarch                                             
+  fedora-release-container-31-2.noarch                                          
+  file-libs-5.37-8.fc31.x86_64                                                  
+  glib2-2.62.4-1.fc31.x86_64                                                    
+  glibc-2.30-8.fc31.x86_64                                                      
+  glibc-common-2.30-8.fc31.x86_64                                               
+  glibc-minimal-langpack-2.30-8.fc31.x86_64                                     
+  gnupg2-2.2.18-2.fc31.x86_64                                                   
+  gnutls-3.6.11-1.fc31.x86_64                                                   
+  iptables-libs-1.8.3-7.fc31.x86_64                                             
+  json-c-0.13.1-8.fc31.x86_64                                                   
+  libblkid-2.34-4.fc31.x86_64                                                   
+  libcomps-0.1.14-1.fc31.x86_64                                                 
+  libdnf-0.39.1-1.fc31.x86_64                                                   
+  libfdisk-2.34-4.fc31.x86_64                                                   
+  libidn2-2.3.0-1.fc31.x86_64                                                   
+  libmount-2.34-4.fc31.x86_64                                                   
+  libnghttp2-1.39.2-2.fc31.x86_64                                               
+  libpwquality-1.4.2-1.fc31.x86_64                                              
+  librepo-1.11.1-1.fc31.x86_64                                                  
+  libreport-filesystem-2.11.3-1.fc31.noarch                                     
+  libseccomp-2.4.2-2.fc31.x86_64                                                
+  libsmartcols-2.34-4.fc31.x86_64                                               
+  libsolv-0.7.10-1.fc31.x86_64                                                  
+  libssh-0.9.3-1.fc31.x86_64                                                    
+  libssh-config-0.9.3-1.fc31.noarch                                             
+  libsss_idmap-2.2.2-3.fc31.x86_64                                              
+  libsss_nss_idmap-2.2.2-3.fc31.x86_64                                          
+  libtirpc-1.2.5-0.fc31.x86_64                                                  
+  libuuid-2.34-4.fc31.x86_64                                                    
+  libxcrypt-4.4.10-2.fc31.x86_64                                                
+  libxml2-2.9.10-2.fc31.x86_64                                                  
+  pam-1.3.1-21.fc31.x86_64                                                      
+  pcre2-10.33-16.fc31.x86_64                                                    
+  python-pip-wheel-19.1.1-7.fc31.noarch                                         
+  python3-3.7.6-1.fc31.x86_64                                                   
+  python3-dnf-4.2.17-1.fc31.noarch                                              
+  python3-hawkey-0.39.1-1.fc31.x86_64                                           
+  python3-libcomps-0.1.14-1.fc31.x86_64                                         
+  python3-libdnf-0.39.1-1.fc31.x86_64                                           
+  python3-libs-3.7.6-1.fc31.x86_64                                              
+  python3-rpm-4.15.1-1.fc31.x86_64                                              
+  rpm-4.15.1-1.fc31.x86_64                                                      
+  rpm-build-libs-4.15.1-1.fc31.x86_64                                           
+  rpm-libs-4.15.1-1.fc31.x86_64                                                 
+  rpm-sign-libs-4.15.1-1.fc31.x86_64                                            
+  sssd-client-2.2.2-3.fc31.x86_64                                               
+  sudo-1.8.29-1.fc31.x86_64                                                     
+  systemd-243.5-1.fc31.x86_64                                                   
+  systemd-libs-243.5-1.fc31.x86_64                                              
+  systemd-pam-243.5-1.fc31.x86_64                                               
+  systemd-rpm-macros-243.5-1.fc31.noarch                                        
+  util-linux-2.34-4.fc31.x86_64                                                 
+  vim-minimal-2:8.2.109-1.fc31.x86_64                                           
+  yum-4.2.17-1.fc31.noarch                                                      
+  zchunk-libs-1.1.4-1.fc31.x86_64                                               
+  zlib-1.2.11-20.fc31.x86_64                                                    
+
+Installed:
+  elfutils-debuginfod-client-0.178-7.fc31.x86_64                                
+  gnupg2-smime-2.2.18-2.fc31.x86_64                                             
+  libxcrypt-compat-4.4.10-2.fc31.x86_64                                         
+  libxkbcommon-0.9.1-3.fc31.x86_64                                              
+  mkpasswd-5.5.4-1.fc31.x86_64                                                  
+  python-unversioned-command-3.7.6-1.fc31.noarch                                
+  python3-pip-19.1.1-7.fc31.noarch                                              
+  python3-unbound-1.9.6-1.fc31.x86_64                                           
+  rpm-plugin-systemd-inhibit-4.15.1-1.fc31.x86_64                               
+  shared-mime-info-1.15-1.fc31.x86_64                                           
+  abattis-cantarell-fonts-0.111-3.fc31.noarch                                   
+  cracklib-dicts-2.9.6-21.fc31.x86_64                                           
+  dconf-0.34.0-1.fc31.x86_64                                                    
+  deltarpm-3.6.2-2.fc31.x86_64                                                  
+  diffutils-3.7-3.fc31.x86_64                                                   
+  gnome-keyring-3.34.0-1.fc31.x86_64                                            
+  pinentry-1.1.0-6.fc31.x86_64                                                  
+  python3-setuptools-41.2.0-1.fc31.noarch                                       
+  trousers-0.3.13-13.fc31.x86_64                                                
+  adwaita-cursor-theme-3.34.3-1.fc31.noarch                                     
+  adwaita-icon-theme-3.34.3-1.fc31.noarch                                       
+  cups-libs-1:2.2.12-3.fc31.x86_64                                              
+  fribidi-1.0.5-5.fc31.x86_64                                                   
+  gcr-3.34.0-1.fc31.x86_64                                                      
+  gcr-base-3.34.0-1.fc31.x86_64                                                 
+  glib-networking-2.62.3-1.fc31.x86_64                                          
+  gtk-update-icon-cache-3.24.13-1.fc31.x86_64                                   
+  gtk3-3.24.13-1.fc31.x86_64                                                    
+  libX11-1.6.9-2.fc31.x86_64                                                    
+  libX11-common-1.6.9-2.fc31.noarch                                             
+  libedit-3.1-30.20191211cvs.fc31.x86_64                                        
+  libgusb-0.3.2-1.fc31.x86_64                                                   
+  libjpeg-turbo-2.0.2-5.fc31.x86_64                                             
+  libsoup-2.68.3-1.fc31.x86_64                                                  
+  libtiff-4.0.10-7.fc31.x86_64                                                  
+  openssh-8.1p1-1.fc31.x86_64                                                   
+  openssh-clients-8.1p1-1.fc31.x86_64                                           
+  pango-1.44.7-1.fc31.x86_64                                                    
+  unbound-libs-1.9.6-1.fc31.x86_64                                              
+  whois-nls-5.5.4-1.fc31.noarch                                                 
+  xkeyboard-config-2.28-1.fc31.noarch                                           
+  adobe-source-code-pro-fonts-2.030.1.050-7.fc31.noarch                         
+  at-spi2-atk-2.34.1-1.fc31.x86_64                                              
+  at-spi2-core-2.34.0-1.fc31.x86_64                                             
+  atk-2.34.1-1.fc31.x86_64                                                      
+  avahi-libs-0.7-20.fc31.x86_64                                                 
+  cairo-1.16.0-6.fc31.x86_64                                                    
+  cairo-gobject-1.16.0-6.fc31.x86_64                                            
+  colord-libs-1.4.4-2.fc31.x86_64                                               
+  dbus-libs-1:1.12.16-3.fc31.x86_64                                             
+  fipscheck-1.5.0-7.fc31.x86_64                                                 
+  fipscheck-lib-1.5.0-7.fc31.x86_64                                             
+  fontconfig-2.13.92-3.fc31.x86_64                                              
+  fontpackages-filesystem-1.44-25.fc31.noarch                                   
+  freetype-2.10.0-3.fc31.x86_64                                                 
+  gdk-pixbuf2-2.40.0-1.fc31.x86_64                                              
+  gdk-pixbuf2-modules-2.40.0-1.fc31.x86_64                                      
+  graphite2-1.3.13-1.fc31.x86_64                                                
+  gsettings-desktop-schemas-3.34.0-1.fc31.x86_64                                
+  harfbuzz-2.6.1-2.fc31.x86_64                                                  
+  hicolor-icon-theme-0.17-7.fc31.noarch                                         
+  jasper-libs-2.0.14-9.fc31.x86_64                                              
+  jbigkit-libs-2.1-17.fc31.x86_64                                               
+  json-glib-1.4.4-3.fc31.x86_64                                                 
+  lcms2-2.9-6.fc31.x86_64                                                       
+  libXau-1.0.9-2.fc31.x86_64                                                    
+  libXcomposite-0.4.4-17.fc31.x86_64                                            
+  libXcursor-1.1.15-6.fc31.x86_64                                               
+  libXdamage-1.1.4-17.fc31.x86_64                                               
+  libXext-1.3.4-2.fc31.x86_64                                                   
+  libXfixes-5.0.3-10.fc31.x86_64                                                
+  libXft-2.3.3-2.fc31.x86_64                                                    
+  libXi-1.7.10-2.fc31.x86_64                                                    
+  libXinerama-1.1.4-4.fc31.x86_64                                               
+  libXrandr-1.5.2-2.fc31.x86_64                                                 
+  libXrender-0.9.10-10.fc31.x86_64                                              
+  libXtst-1.2.3-10.fc31.x86_64                                                  
+  libdatrie-0.2.9-10.fc31.x86_64                                                
+  libepoxy-1.5.3-4.fc31.x86_64                                                  
+  libevent-2.1.8-7.fc31.x86_64                                                  
+  libmodman-2.0.1-20.fc31.x86_64                                                
+  libpng-2:1.6.37-2.fc31.x86_64                                                 
+  libproxy-0.4.15-14.fc31.x86_64                                                
+  libsecret-0.19.1-1.fc31.x86_64                                                
+  libthai-0.1.28-3.fc31.x86_64                                                  
+  libwayland-client-1.17.0-2.fc31.x86_64                                        
+  libwayland-cursor-1.17.0-2.fc31.x86_64                                        
+  libwayland-egl-1.17.0-2.fc31.x86_64                                           
+  libxcb-1.13.1-3.fc31.x86_64                                                   
+  pixman-0.38.4-1.fc31.x86_64                                                   
+  rest-0.8.1-6.fc31.x86_64                                                      
+  trousers-lib-0.3.13-13.fc31.x86_64                                            
+
+Complete!
+Removing intermediate container c53d6e496ffe
+ ---> dd39fa8d5be0
+Step 4/13 : RUN         dnf install python2 --assumeyes
+ ---> Running in ef55ca579fcf
+Last metadata expiration check: 0:02:33 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version                 Repository    Size
+================================================================================
+Installing:
+ python2                 x86_64      2.7.17-1.fc31           updates       42 k
+Installing dependencies:
+ python2-libs            x86_64      2.7.17-1.fc31           updates      6.0 M
+ gdbm                    x86_64      1:1.18.1-1.fc31         fedora       127 k
+Installing weak dependencies:
+ python2-pip             noarch      19.1.1-7.fc31           updates      1.7 M
+ python2-setuptools      noarch      41.2.0-1.fc31           fedora       578 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total download size: 8.3 M
+Installed size: 39 M
+Downloading Packages:
+(1/5): python2-2.7.17-1.fc31.x86_64.rpm         168 kB/s |  42 kB     00:00    
+(2/5): gdbm-1.18.1-1.fc31.x86_64.rpm            2.5 MB/s | 127 kB     00:00    
+(3/5): python2-pip-19.1.1-7.fc31.noarch.rpm     4.6 MB/s | 1.7 MB     00:00    
+(4/5): python2-setuptools-41.2.0-1.fc31.noarch. 6.5 MB/s | 578 kB     00:00    
+(5/5): python2-libs-2.7.17-1.fc31.x86_64.rpm     14 MB/s | 6.0 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           5.2 MB/s | 8.3 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : gdbm-1:1.18.1-1.fc31.x86_64                            1/5 
+  Installing       : python2-libs-2.7.17-1.fc31.x86_64                      2/5 
+  Installing       : python2-pip-19.1.1-7.fc31.noarch                       3/5 
+  Installing       : python2-setuptools-41.2.0-1.fc31.noarch                4/5 
+  Installing       : python2-2.7.17-1.fc31.x86_64                           5/5 
+  Running scriptlet: python2-2.7.17-1.fc31.x86_64                           5/5 
+  Verifying        : python2-2.7.17-1.fc31.x86_64                           1/5 
+  Verifying        : python2-libs-2.7.17-1.fc31.x86_64                      2/5 
+  Verifying        : python2-pip-19.1.1-7.fc31.noarch                       3/5 
+  Verifying        : gdbm-1:1.18.1-1.fc31.x86_64                            4/5 
+  Verifying        : python2-setuptools-41.2.0-1.fc31.noarch                5/5 
+
+Installed:
+  python2-2.7.17-1.fc31.x86_64              python2-pip-19.1.1-7.fc31.noarch   
+  python2-setuptools-41.2.0-1.fc31.noarch   python2-libs-2.7.17-1.fc31.x86_64  
+  gdbm-1:1.18.1-1.fc31.x86_64              
+
+Complete!
+Removing intermediate container ef55ca579fcf
+ ---> cdcd73269748
+Step 5/13 : RUN         ln -sfn /usr/bin/python2 /usr/bin/python
+ ---> Running in 4cfe446d9359
+Removing intermediate container 4cfe446d9359
+ ---> 150a48aed772
+Step 6/13 : RUN         dnf install java-1.8.0-openjdk --assumeyes
+ ---> Running in d5baf99afc31
+Last metadata expiration check: 0:02:52 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                      Arch    Version                    Repo      Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk           x86_64  1:1.8.0.232.b09-0.fc31     updates  281 k
+Installing dependencies:
+ alsa-lib                     x86_64  1.2.1.2-4.fc31             updates  449 k
+ java-1.8.0-openjdk-headless  x86_64  1:1.8.0.232.b09-0.fc31     updates   32 M
+ xorg-x11-font-utils          x86_64  1:7.5-43.fc31              updates  104 k
+ copy-jdk-configs             noarch  3.7-4.fc31                 fedora    24 k
+ giflib                       x86_64  5.2.1-3.fc31               fedora    48 k
+ javapackages-filesystem      noarch  5.3.0-6.fc31               fedora    11 k
+ libfontenc                   x86_64  1.1.3-11.fc31              fedora    31 k
+ libpkgconf                   x86_64  1.6.3-2.fc31               fedora    37 k
+ lksctp-tools                 x86_64  1.0.16-12.fc31             fedora    94 k
+ lua                          x86_64  5.3.5-6.fc31               fedora   181 k
+ lua-posix                    x86_64  33.3.1-14.fc31             fedora   174 k
+ pkgconf                      x86_64  1.6.3-2.fc31               fedora    41 k
+ pkgconf-m4                   noarch  1.6.3-2.fc31               fedora    15 k
+ pkgconf-pkg-config           x86_64  1.6.3-2.fc31               fedora    11 k
+ ttmkfdir                     x86_64  3.0.9-57.fc31              fedora    56 k
+ tzdata-java                  noarch  2019c-1.fc31               fedora   157 k
+ xorg-x11-fonts-Type1         noarch  7.5-23.fc31                fedora   500 k
+Installing weak dependencies:
+ gtk2                         x86_64  2.24.32-6.fc31             updates  3.5 M
+
+Transaction Summary
+================================================================================
+Install  19 Packages
+
+Total download size: 38 M
+Installed size: 136 M
+Downloading Packages:
+(1/19): java-1.8.0-openjdk-1.8.0.232.b09-0.fc31 9.2 MB/s | 281 kB     00:00    
+(2/19): alsa-lib-1.2.1.2-4.fc31.x86_64.rpm       11 MB/s | 449 kB     00:00    
+(3/19): xorg-x11-font-utils-7.5-43.fc31.x86_64.  11 MB/s | 104 kB     00:00    
+(4/19): copy-jdk-configs-3.7-4.fc31.noarch.rpm  648 kB/s |  24 kB     00:00    
+(5/19): giflib-5.2.1-3.fc31.x86_64.rpm          5.9 MB/s |  48 kB     00:00    
+(6/19): javapackages-filesystem-5.3.0-6.fc31.no 2.6 MB/s |  11 kB     00:00    
+(7/19): libfontenc-1.1.3-11.fc31.x86_64.rpm     6.1 MB/s |  31 kB     00:00    
+(8/19): libpkgconf-1.6.3-2.fc31.x86_64.rpm      5.6 MB/s |  37 kB     00:00    
+(9/19): lksctp-tools-1.0.16-12.fc31.x86_64.rpm   11 MB/s |  94 kB     00:00    
+(10/19): lua-5.3.5-6.fc31.x86_64.rpm             12 MB/s | 181 kB     00:00    
+(11/19): gtk2-2.24.32-6.fc31.x86_64.rpm          23 MB/s | 3.5 MB     00:00    
+(12/19): lua-posix-33.3.1-14.fc31.x86_64.rpm    4.5 MB/s | 174 kB     00:00    
+(13/19): pkgconf-m4-1.6.3-2.fc31.noarch.rpm     1.5 MB/s |  15 kB     00:00    
+(14/19): pkgconf-pkg-config-1.6.3-2.fc31.x86_64 2.6 MB/s |  11 kB     00:00    
+(15/19): ttmkfdir-3.0.9-57.fc31.x86_64.rpm      8.6 MB/s |  56 kB     00:00    
+(16/19): pkgconf-1.6.3-2.fc31.x86_64.rpm        878 kB/s |  41 kB     00:00    
+(17/19): tzdata-java-2019c-1.fc31.noarch.rpm     13 MB/s | 157 kB     00:00    
+(18/19): xorg-x11-fonts-Type1-7.5-23.fc31.noarc 7.5 MB/s | 500 kB     00:00    
+(19/19): java-1.8.0-openjdk-headless-1.8.0.232.  58 MB/s |  32 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            24 MB/s |  38 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: copy-jdk-configs-3.7-4.fc31.noarch                     1/1 
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.232.b09-0.fc31.x   1/1 
+  Preparing        :                                                        1/1 
+  Installing       : tzdata-java-2019c-1.fc31.noarch                       1/19 
+  Installing       : ttmkfdir-3.0.9-57.fc31.x86_64                         2/19 
+  Installing       : pkgconf-m4-1.6.3-2.fc31.noarch                        3/19 
+  Installing       : lua-posix-33.3.1-14.fc31.x86_64                       4/19 
+  Installing       : lua-5.3.5-6.fc31.x86_64                               5/19 
+  Installing       : copy-jdk-configs-3.7-4.fc31.noarch                    6/19 
+  Installing       : lksctp-tools-1.0.16-12.fc31.x86_64                    7/19 
+  Installing       : libpkgconf-1.6.3-2.fc31.x86_64                        8/19 
+  Installing       : pkgconf-1.6.3-2.fc31.x86_64                           9/19 
+  Installing       : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               10/19 
+  Installing       : libfontenc-1.1.3-11.fc31.x86_64                      11/19 
+  Installing       : xorg-x11-font-utils-1:7.5-43.fc31.x86_64             12/19 
+  Installing       : xorg-x11-fonts-Type1-7.5-23.fc31.noarch              13/19 
+  Running scriptlet: xorg-x11-fonts-Type1-7.5-23.fc31.noarch              13/19 
+  Installing       : javapackages-filesystem-5.3.0-6.fc31.noarch          14/19 
+  Installing       : java-1.8.0-openjdk-headless-1:1.8.0.232.b09-0.fc31   15/19 
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.232.b09-0.fc31   15/19 
+  Installing       : giflib-5.2.1-3.fc31.x86_64                           16/19 
+  Installing       : gtk2-2.24.32-6.fc31.x86_64                           17/19 
+  Installing       : alsa-lib-1.2.1.2-4.fc31.x86_64                       18/19 
+  Installing       : java-1.8.0-openjdk-1:1.8.0.232.b09-0.fc31.x86_64     19/19 
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.232.b09-0.fc31.x86_64     19/19 
+  Running scriptlet: copy-jdk-configs-3.7-4.fc31.noarch                   19/19 
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.232.b09-0.fc31.x86_64     19/19 
+  Verifying        : alsa-lib-1.2.1.2-4.fc31.x86_64                        1/19 
+  Verifying        : gtk2-2.24.32-6.fc31.x86_64                            2/19 
+  Verifying        : java-1.8.0-openjdk-1:1.8.0.232.b09-0.fc31.x86_64      3/19 
+  Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.232.b09-0.fc31    4/19 
+  Verifying        : xorg-x11-font-utils-1:7.5-43.fc31.x86_64              5/19 
+  Verifying        : copy-jdk-configs-3.7-4.fc31.noarch                    6/19 
+  Verifying        : giflib-5.2.1-3.fc31.x86_64                            7/19 
+  Verifying        : javapackages-filesystem-5.3.0-6.fc31.noarch           8/19 
+  Verifying        : libfontenc-1.1.3-11.fc31.x86_64                       9/19 
+  Verifying        : libpkgconf-1.6.3-2.fc31.x86_64                       10/19 
+  Verifying        : lksctp-tools-1.0.16-12.fc31.x86_64                   11/19 
+  Verifying        : lua-5.3.5-6.fc31.x86_64                              12/19 
+  Verifying        : lua-posix-33.3.1-14.fc31.x86_64                      13/19 
+  Verifying        : pkgconf-1.6.3-2.fc31.x86_64                          14/19 
+  Verifying        : pkgconf-m4-1.6.3-2.fc31.noarch                       15/19 
+  Verifying        : pkgconf-pkg-config-1.6.3-2.fc31.x86_64               16/19 
+  Verifying        : ttmkfdir-3.0.9-57.fc31.x86_64                        17/19 
+  Verifying        : tzdata-java-2019c-1.fc31.noarch                      18/19 
+  Verifying        : xorg-x11-fonts-Type1-7.5-23.fc31.noarch              19/19 
+
+Installed:
+  java-1.8.0-openjdk-1:1.8.0.232.b09-0.fc31.x86_64                              
+  gtk2-2.24.32-6.fc31.x86_64                                                    
+  alsa-lib-1.2.1.2-4.fc31.x86_64                                                
+  java-1.8.0-openjdk-headless-1:1.8.0.232.b09-0.fc31.x86_64                     
+  xorg-x11-font-utils-1:7.5-43.fc31.x86_64                                      
+  copy-jdk-configs-3.7-4.fc31.noarch                                            
+  giflib-5.2.1-3.fc31.x86_64                                                    
+  javapackages-filesystem-5.3.0-6.fc31.noarch                                   
+  libfontenc-1.1.3-11.fc31.x86_64                                               
+  libpkgconf-1.6.3-2.fc31.x86_64                                                
+  lksctp-tools-1.0.16-12.fc31.x86_64                                            
+  lua-5.3.5-6.fc31.x86_64                                                       
+  lua-posix-33.3.1-14.fc31.x86_64                                               
+  pkgconf-1.6.3-2.fc31.x86_64                                                   
+  pkgconf-m4-1.6.3-2.fc31.noarch                                                
+  pkgconf-pkg-config-1.6.3-2.fc31.x86_64                                        
+  ttmkfdir-3.0.9-57.fc31.x86_64                                                 
+  tzdata-java-2019c-1.fc31.noarch                                               
+  xorg-x11-fonts-Type1-7.5-23.fc31.noarch                                       
+
+Complete!
+Removing intermediate container d5baf99afc31
+ ---> 908aae7bc4c1
+Step 7/13 : RUN         dnf install java-1.8.0-openjdk-devel --assumeyes
+ ---> Running in 300478c406ff
+Last metadata expiration check: 0:03:13 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                    Arch     Version                    Repo       Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel   x86_64   1:1.8.0.232.b09-0.fc31     updates   9.3 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 9.3 M
+Installed size: 41 M
+Downloading Packages:
+java-1.8.0-openjdk-devel-1.8.0.232.b09-0.fc31.x  60 MB/s | 9.3 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                            33 MB/s | 9.3 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : java-1.8.0-openjdk-devel-1:1.8.0.232.b09-0.fc31.x86_   1/1 
+  Running scriptlet: java-1.8.0-openjdk-devel-1:1.8.0.232.b09-0.fc31.x86_   1/1 
+  Verifying        : java-1.8.0-openjdk-devel-1:1.8.0.232.b09-0.fc31.x86_   1/1 
+
+Installed:
+  java-1.8.0-openjdk-devel-1:1.8.0.232.b09-0.fc31.x86_64                        
+
+Complete!
+Removing intermediate container 300478c406ff
+ ---> c5df7aaabc1d
+Step 8/13 : RUN         dnf install java-1.8.0-openjdk-openjfx --assumeyes
+ ---> Running in 596528c92b15
+Last metadata expiration check: 0:03:25 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                      Arch     Version                  Repo       Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-openjfx   x86_64   1:1.8.0.232.b09-0.fc31   updates    35 k
+Installing dependencies:
+ hwdata                       noarch   0.331-1.fc31             updates   1.4 M
+ libX11-xcb                   x86_64   1.6.9-2.fc31             updates    11 k
+ libdrm                       x86_64   2.4.100-1.fc31           updates   159 k
+ mesa-libGL                   x86_64   19.2.8-1.fc31            updates   180 k
+ mesa-libglapi                x86_64   19.2.8-1.fc31            updates    57 k
+ libXxf86vm                   x86_64   1.1.4-12.fc31            fedora     18 k
+ libglvnd                     x86_64   1:1.1.1-5.fc31           fedora    109 k
+ libglvnd-glx                 x86_64   1:1.1.1-5.fc31           fedora    147 k
+ libpciaccess                 x86_64   0.15-2.fc31              fedora     27 k
+ libxshmfence                 x86_64   1.3-5.fc31               fedora     12 k
+ openjfx                      x86_64   8.0.202-8.b07.fc31       fedora    8.7 M
+
+Transaction Summary
+================================================================================
+Install  12 Packages
+
+Total download size: 11 M
+Installed size: 21 M
+Downloading Packages:
+(1/12): libX11-xcb-1.6.9-2.fc31.x86_64.rpm      1.2 MB/s |  11 kB     00:00    
+(2/12): java-1.8.0-openjdk-openjfx-1.8.0.232.b0 2.8 MB/s |  35 kB     00:00    
+(3/12): libdrm-2.4.100-1.fc31.x86_64.rpm         12 MB/s | 159 kB     00:00    
+(4/12): mesa-libGL-19.2.8-1.fc31.x86_64.rpm      14 MB/s | 180 kB     00:00    
+(5/12): mesa-libglapi-19.2.8-1.fc31.x86_64.rpm  9.8 MB/s |  57 kB     00:00    
+(6/12): hwdata-0.331-1.fc31.noarch.rpm           21 MB/s | 1.4 MB     00:00    
+(7/12): libXxf86vm-1.1.4-12.fc31.x86_64.rpm     340 kB/s |  18 kB     00:00    
+(8/12): libpciaccess-0.15-2.fc31.x86_64.rpm     2.7 MB/s |  27 kB     00:00    
+(9/12): libxshmfence-1.3-5.fc31.x86_64.rpm      2.8 MB/s |  12 kB     00:00    
+(10/12): libglvnd-1.1.1-5.fc31.x86_64.rpm       1.6 MB/s | 109 kB     00:00    
+(11/12): libglvnd-glx-1.1.1-5.fc31.x86_64.rpm   3.6 MB/s | 147 kB     00:00    
+(12/12): openjfx-8.0.202-8.b07.fc31.x86_64.rpm   36 MB/s | 8.7 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           6.9 MB/s |  11 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libXxf86vm-1.1.4-12.fc31.x86_64                       1/12 
+  Installing       : libxshmfence-1.3-5.fc31.x86_64                        2/12 
+  Installing       : libglvnd-1:1.1.1-5.fc31.x86_64                        3/12 
+  Installing       : mesa-libglapi-19.2.8-1.fc31.x86_64                    4/12 
+  Installing       : libX11-xcb-1.6.9-2.fc31.x86_64                        5/12 
+  Installing       : hwdata-0.331-1.fc31.noarch                            6/12 
+  Installing       : libpciaccess-0.15-2.fc31.x86_64                       7/12 
+  Installing       : libdrm-2.4.100-1.fc31.x86_64                          8/12 
+  Installing       : libglvnd-glx-1:1.1.1-5.fc31.x86_64                    9/12 
+  Installing       : mesa-libGL-19.2.8-1.fc31.x86_64                      10/12 
+  Installing       : openjfx-8.0.202-8.b07.fc31.x86_64                    11/12 
+  Installing       : java-1.8.0-openjdk-openjfx-1:1.8.0.232.b09-0.fc31.   12/12 
+  Running scriptlet: java-1.8.0-openjdk-openjfx-1:1.8.0.232.b09-0.fc31.   12/12 
+  Verifying        : hwdata-0.331-1.fc31.noarch                            1/12 
+  Verifying        : java-1.8.0-openjdk-openjfx-1:1.8.0.232.b09-0.fc31.    2/12 
+  Verifying        : libX11-xcb-1.6.9-2.fc31.x86_64                        3/12 
+  Verifying        : libdrm-2.4.100-1.fc31.x86_64                          4/12 
+  Verifying        : mesa-libGL-19.2.8-1.fc31.x86_64                       5/12 
+  Verifying        : mesa-libglapi-19.2.8-1.fc31.x86_64                    6/12 
+  Verifying        : libXxf86vm-1.1.4-12.fc31.x86_64                       7/12 
+  Verifying        : libglvnd-1:1.1.1-5.fc31.x86_64                        8/12 
+  Verifying        : libglvnd-glx-1:1.1.1-5.fc31.x86_64                    9/12 
+  Verifying        : libpciaccess-0.15-2.fc31.x86_64                      10/12 
+  Verifying        : libxshmfence-1.3-5.fc31.x86_64                       11/12 
+  Verifying        : openjfx-8.0.202-8.b07.fc31.x86_64                    12/12 
+
+Installed:
+  java-1.8.0-openjdk-openjfx-1:1.8.0.232.b09-0.fc31.x86_64                      
+  hwdata-0.331-1.fc31.noarch                                                    
+  libX11-xcb-1.6.9-2.fc31.x86_64                                                
+  libdrm-2.4.100-1.fc31.x86_64                                                  
+  mesa-libGL-19.2.8-1.fc31.x86_64                                               
+  mesa-libglapi-19.2.8-1.fc31.x86_64                                            
+  libXxf86vm-1.1.4-12.fc31.x86_64                                               
+  libglvnd-1:1.1.1-5.fc31.x86_64                                                
+  libglvnd-glx-1:1.1.1-5.fc31.x86_64                                            
+  libpciaccess-0.15-2.fc31.x86_64                                               
+  libxshmfence-1.3-5.fc31.x86_64                                                
+  openjfx-8.0.202-8.b07.fc31.x86_64                                             
+
+Complete!
+Removing intermediate container 596528c92b15
+ ---> 08b8d848cfc5
+Step 9/13 : RUN         dnf install java-1.8.0-openjdk-openjfx-devel --assumeyes
+ ---> Running in b57482572c2f
+Last metadata expiration check: 0:03:41 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package                          Arch   Version                  Repo     Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-openjfx-devel x86_64 1:1.8.0.232.b09-0.fc31   updates  34 k
+Installing dependencies:
+ openjfx-devel                    x86_64 8.0.202-8.b07.fc31       fedora  1.7 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 1.7 M
+Installed size: 1.7 M
+Downloading Packages:
+(1/2): java-1.8.0-openjdk-openjfx-devel-1.8.0.2  41 kB/s |  34 kB     00:00    
+(2/2): openjfx-devel-8.0.202-8.b07.fc31.x86_64. 1.9 MB/s | 1.7 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           1.1 MB/s | 1.7 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : openjfx-devel-8.0.202-8.b07.fc31.x86_64                1/2 
+  Installing       : java-1.8.0-openjdk-openjfx-devel-1:1.8.0.232.b09-0.f   2/2 
+  Running scriptlet: java-1.8.0-openjdk-openjfx-devel-1:1.8.0.232.b09-0.f   2/2 
+  Verifying        : java-1.8.0-openjdk-openjfx-devel-1:1.8.0.232.b09-0.f   1/2 
+  Verifying        : openjfx-devel-8.0.202-8.b07.fc31.x86_64                2/2 
+
+Installed:
+  java-1.8.0-openjdk-openjfx-devel-1:1.8.0.232.b09-0.fc31.x86_64                
+  openjfx-devel-8.0.202-8.b07.fc31.x86_64                                       
+
+Complete!
+Removing intermediate container b57482572c2f
+ ---> 5d69f68d13ee
+Step 10/13 : RUN         dnf install procps --assumeyes
+ ---> Running in 1d3da4847e51
+Last metadata expiration check: 0:03:53 ago on Fri Jan 17 16:37:24 2020.
+Dependencies resolved.
+================================================================================
+ Package           Architecture   Version                  Repository      Size
+================================================================================
+Installing:
+ procps-ng         x86_64         3.3.15-6.fc31            fedora         326 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 326 k
+Installed size: 966 k
+Downloading Packages:
+procps-ng-3.3.15-6.fc31.x86_64.rpm              4.9 MB/s | 326 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           622 kB/s | 326 kB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : procps-ng-3.3.15-6.fc31.x86_64                         1/1 
+  Running scriptlet: procps-ng-3.3.15-6.fc31.x86_64                         1/1 
+  Verifying        : procps-ng-3.3.15-6.fc31.x86_64                         1/1 
+
+Installed:
+  procps-ng-3.3.15-6.fc31.x86_64                                                
+
+Complete!
+Removing intermediate container 1d3da4847e51
+ ---> df65aaf0434a
+Step 11/13 : WORKDIR /reproduction
+ ---> Running in ffd9f0a32de4
+Removing intermediate container ffd9f0a32de4
+ ---> 92ec20701d4b
+Step 12/13 : COPY lib /reproduction/lib
+ ---> d62a99f8cb3f
+Step 13/13 : COPY . /reproduction/
+ ---> ee52470da372
+Successfully built ee52470da372
+Successfully tagged tudelft/exrunner:latest
+2f155be88fdb741d2a3690ed1779ff1ac5746937ebb17282bc39b9c77c29cf24
