@@ -1,0 +1,77 @@
+04:35:02.891 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$4
+04:35:02.894 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BrentSolver.solve(BrentSolver:178)
+04:35:02.894 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BrentSolver
+04:35:02.894 [main] INFO  eu.stamp.botsing.Botsing - SPEA2
+04:35:03.402 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+04:35:04.488 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+04:35:04.498 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:35:04.517 [main] INFO  e.s.b.g.s.metaheuristics.SPEA2 - Initializing the first population with size of 50 individuals
+04:35:04.778 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 0 second: 5.857142857142857
+04:35:04.798 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 3 fitness evolutions and 0 second: 5.25
+04:35:05.277 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 12 fitness evolutions and 0 second: 5.142857142857142
+04:35:05.389 [main] INFO  e.s.b.g.s.metaheuristics.SPEA2 - Number of generations: 1
+04:35:05.389 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 5.142857142857142
+04:35:05.509 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 68 fitness evolutions and 0 second: 0.0
+04:35:05.740 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: BrentSolver brentSolver0 = new BrentSolver();
+double double0 = brentSolver0.getRelativeAccuracy();
+double double1 = 2948.0486800654876;
+double double2 = 1.0E-6;
+UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(double1, double2).when(univariateRealFunction0).value(anyDouble());
+double double3 = 240.9487537542298;
+double double4 = brentSolver0.solve(univariateRealFunction0, double0, double3);
+brentSolver0.resetRelativeAccuracy();
+brentSolver0.resetMaximalIterationCount();
+double double5 = Double.NaN;
+brentSolver0.setFunctionValueAccuracy(double5);
+int int0 = 0;
+double double6 = 1879.33;
+QuinticFunction quinticFunction0 = new QuinticFunction();
+MonitoredFunction monitoredFunction0 = new MonitoredFunction(quinticFunction0);
+brentSolver0.isBracketing(double6, double6, monitoredFunction0);
+brentSolver0.setResult(double5, int0);
+double double7 = 1.0E-15;
+brentSolver0.setAbsoluteAccuracy(double7);
+double double8 = 598.61;
+brentSolver0.verifyInterval(double8, double0);
+brentSolver0.setResult(double0, double3, int0);
+double double9 = 0.5;
+brentSolver0.setAbsoluteAccuracy(double9);
+brentSolver0.resetRelativeAccuracy();
+brentSolver0.getFunctionValueAccuracy();
+double double10 = 1.0E-6;
+UnivariateRealFunction univariateRealFunction1 = null;
+double double11 = 0.0;
+brentSolver0.solve(univariateRealFunction1, double0, double11);
+brentSolver0.getAbsoluteAccuracy();
+BrentSolver brentSolver1 = new BrentSolver(univariateRealFunction1);
+brentSolver1.resetRelativeAccuracy();
+double double12 = 653.196009328;
+double double13 = 1951.609602;
+brentSolver0.setResult(double13, int0);
+double double14 = 0.0;
+brentSolver1.solve(double14, double4);
+
+04:35:05.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.MathRuntimeException$4: function values at endpoints do not have different signs.  Endpoints: [0, 240.949], Values: [2,948.049, 0]
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(MathRuntimeException.java:305)
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.analysis.solvers.BrentSolver.solve(BrentSolver.java:178)
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+04:35:05.744 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+04:35:05.745 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+04:35:05.753 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+04:35:05.850 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+04:35:06.375 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+04:35:07.166 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'BrentSolver_ESTest' to results/MATH-78b-2-30-SPEA2-WeightedSum:TestLen:CallDiversity
+04:35:07.177 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

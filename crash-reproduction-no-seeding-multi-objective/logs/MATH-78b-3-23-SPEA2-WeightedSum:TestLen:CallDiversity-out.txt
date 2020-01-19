@@ -1,0 +1,86 @@
+04:32:57.825 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.MathRuntimeException$4
+04:32:57.831 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.ode.events.EventState.evaluateStep(EventState:218)
+04:32:57.831 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.ode.events.EventState
+04:32:57.832 [main] INFO  eu.stamp.botsing.Botsing - SPEA2
+04:32:58.456 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+04:33:00.159 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+04:33:00.171 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+04:33:00.192 [main] INFO  e.s.b.g.s.metaheuristics.SPEA2 - Initializing the first population with size of 50 individuals
+04:33:00.756 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 0 second: 5.994718309859155
+04:33:01.566 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 3 fitness evolutions and 1 second: 4.8
+04:33:01.785 [main] INFO  e.s.b.g.s.metaheuristics.SPEA2 - Number of generations: 1
+04:33:01.785 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.8
+04:33:02.054 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 76 fitness evolutions and 1 second: 0.0
+04:33:02.197 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: EventHandler eventHandler0 = mock(EventHandler.class, new ViolatedAssumptionAnswer());
+double double0 = (-4307.154501135703);
+double double1 = 2798.847;
+int int0 = 0;
+EventState eventState0 = new EventState(eventHandler0, double0, double1, int0);
+double double2 = eventState0.getConvergence();
+double double3 = Double.NaN;
+double double4 = 1.0;
+EventHandler eventHandler1 = mock(EventHandler.class, new ViolatedAssumptionAnswer());
+doReturn(double3, double4, 0.0).when(eventHandler1).g(anyDouble() , any(double[].class));
+double double5 = 220.832950528;
+double double6 = 3732.81;
+EventState eventState1 = new EventState(eventHandler1, double5, double6, int0);
+double double7 = eventState0.getConvergence();
+double[] doubleArray0 = new double[7];
+doubleArray0[0] = double2;
+double double8 = 1.0;
+doubleArray0[1] = double8;
+double double9 = (-0.1425465430742778);
+doubleArray0[2] = double9;
+doubleArray0[3] = double3;
+doubleArray0[4] = double5;
+doubleArray0[5] = double5;
+doubleArray0[6] = double3;
+boolean boolean0 = true;
+StepInterpolator stepInterpolator0 = mock(StepInterpolator.class, new ViolatedAssumptionAnswer());
+doReturn(double7).when(stepInterpolator0).getCurrentTime();
+doReturn((Object) doubleArray0, (Object) null, (Object) null).when(stepInterpolator0).getInterpolatedState();
+doReturn(boolean0, boolean0).when(stepInterpolator0).isForward();
+eventState1.evaluateStep(stepInterpolator0);
+EventHandler eventHandler2 = mock(EventHandler.class, new ViolatedAssumptionAnswer());
+doReturn(double0, double5).when(eventHandler2).g(anyDouble() , any(double[].class));
+double double10 = (-1.0);
+EventState eventState2 = new EventState(eventHandler2, double10, double5, int0);
+eventState0.getEventTime();
+boolean boolean1 = false;
+StepInterpolator stepInterpolator1 = mock(StepInterpolator.class, new ViolatedAssumptionAnswer());
+doReturn(double4).when(stepInterpolator1).getCurrentTime();
+doReturn(doubleArray0).when(stepInterpolator1).getInterpolatedState();
+doReturn(boolean1, boolean1).when(stepInterpolator1).isForward();
+boolean boolean2 = eventState1.evaluateStep(stepInterpolator1);
+eventState2.stop();
+StepInterpolator stepInterpolator2 = mock(StepInterpolator.class, new ViolatedAssumptionAnswer());
+doReturn(doubleArray0[2]).when(stepInterpolator2).getCurrentTime();
+doReturn(doubleArray0).when(stepInterpolator2).getInterpolatedState();
+doReturn(boolean2, boolean2).when(stepInterpolator2).isForward();
+DummyStepInterpolator dummyStepInterpolator0 = new DummyStepInterpolator();
+eventState0.evaluateStep(dummyStepInterpolator0);
+eventState0.evaluateStep(dummyStepInterpolator0);
+
+04:33:02.198 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+04:33:02.200 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.MathRuntimeException$4: function values at endpoints do not have different signs.  Endpoints: [?, ?], Values: [1, 1]
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(MathRuntimeException.java:305)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.analysis.solvers.BrentSolver.solve(BrentSolver.java:178)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.ode.events.EventState.evaluateStep(EventState.java:218)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+04:33:02.201 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+04:33:02.245 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+04:33:02.259 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+04:33:02.550 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+04:33:02.564 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'EventState_ESTest' to results/MATH-78b-3-23-SPEA2-WeightedSum:TestLen:CallDiversity
+04:33:02.588 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
