@@ -1,0 +1,78 @@
+21:06:32.970 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.joda.time.IllegalFieldValueException
+21:06:32.976 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.Days.daysBetween(Days:141)
+21:06:32.976 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.Days
+21:06:32.976 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+21:06:33.916 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+21:06:43.972 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+21:06:44.241 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:06:44.319 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+21:06:46.358 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 2 second: 5.7
+21:06:46.539 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 13 fitness evolutions and 2 second: 3.0
+21:06:48.649 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+21:06:48.650 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+21:06:49.555 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+21:06:49.555 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+21:06:49.710 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 176 fitness evolutions and 5 second: 0.0
+21:06:50.650 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: long long0 = (-1176L);
+int[] intArray0 = new int[12];
+int int0 = 1;
+intArray0[0] = int0;
+int int1 = (-3915);
+intArray0[1] = int1;
+int int2 = 1440;
+intArray0[2] = int2;
+int int3 = 3;
+intArray0[3] = int3;
+int int4 = 604800;
+intArray0[4] = int4;
+int int5 = (-1712);
+intArray0[5] = int5;
+String string0 = "";
+TestMonthDay_Basics testMonthDay_Basics0 = new TestMonthDay_Basics(string0);
+TestMonthDay_Basics.MockMD testMonthDay_Basics_MockMD0 = testMonthDay_Basics0.new MockMD();
+CopticChronology copticChronology0 = (CopticChronology)testMonthDay_Basics_MockMD0.getChronology();
+Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+doReturn(intArray0).when(chronology0).get(any(org.joda.time.ReadablePartial.class) , anyLong());
+doReturn(copticChronology0).when(chronology0).withUTC();
+MonthDay monthDay0 = new MonthDay(long0, chronology0);
+Days days0 = Days.daysBetween((ReadablePartial) monthDay0, (ReadablePartial) monthDay0);
+Days days1 = null;
+days0.isLessThan(days1);
+Days.standardDaysIn(days0);
+int int6 = 22;
+days0.getFieldType(int6);
+DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+monthDay0.toString();
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+MutableDateTime mutableDateTime0 = dateTimeFormatter0.parseMutableDateTime(string0);
+Days days2 = Days.daysBetween((ReadableInstant) mutableDateTime0, (ReadableInstant) mutableDateTime0);
+days2.toString();
+days0.toStandardWeeks();
+
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.IllegalFieldValueException: Value -3915 for dayOfMonth must be in the range [1,30]
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.field.FieldUtils.verifyValueBounds(FieldUtils.java:220)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.field.PreciseDurationDateTimeField.set(PreciseDurationDateTimeField.java:78)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.chrono.LimitChronology$LimitDateTimeField.set(LimitChronology.java:510)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.chrono.BaseChronology.set(BaseChronology.java:240)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.base.BaseSingleFieldPeriod.between(BaseSingleFieldPeriod.java:104)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.Days.daysBetween(Days.java:141)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+21:06:50.651 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+21:06:50.654 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+21:06:50.654 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+21:06:50.654 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+21:06:50.664 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+21:06:50.960 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+21:06:52.089 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+21:06:56.634 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'Days_ESTest' to results/TIME-10b-5-21-MOEAD-WeightedSum:TestLen:CallDiversity
+21:06:56.659 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
