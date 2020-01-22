@@ -1,0 +1,73 @@
+21:58:46.688 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.exception.TooManyEvaluationsException
+21:58:46.706 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.incrementEvaluationCount(BaseAbstractUnivariateRealSolver:296)
+21:58:46.706 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver
+21:58:46.706 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+21:58:48.643 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+21:59:00.226 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+21:59:00.288 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+21:59:00.436 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+21:59:05.105 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 4 second: 4.5
+21:59:05.321 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+21:59:07.981 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 64 fitness evolutions and 7 second: 0.0
+21:59:09.165 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+21:59:09.184 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: double double0 = 0.0;
+double double1 = 879.18869171;
+double double2 = SecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+double double3 = (-5171.0574001);
+SecantSolver secantSolver0 = new SecantSolver(double2, double3);
+secantSolver0.verifyInterval(double3, double0);
+double double4 = SecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+double double5 = (-1.0);
+double double6 = 5.0;
+int int0 = (-2110);
+double double7 = 0.0;
+secantSolver0.setup(int0, univariateRealFunction0, double5, double6, double7);
+AllowedSolution allowedSolution0 = AllowedSolution.ANY_SIDE;
+double double8 = secantSolver0.doSolve();
+double double9 = 740.058382;
+double double10 = SecantSolver.DEFAULT_ABSOLUTE_ACCURACY;
+double double11 = (-214.04402891547);
+LaguerreSolver laguerreSolver0 = new LaguerreSolver(double11);
+int int1 = laguerreSolver0.getEvaluations();
+double double12 = 4595.434753463184;
+double double13 = (-1420.100779);
+laguerreSolver0.verifyInterval(double12, double13);
+laguerreSolver0.doSolve();
+RiddersSolver riddersSolver0 = new RiddersSolver();
+double[] doubleArray0 = new double[1];
+double double14 = (-858.0);
+riddersSolver0.verifyBracketing(double14, double9);
+doubleArray0[0] = double8;
+PolynomialFunction polynomialFunction0 = new PolynomialFunction(doubleArray0);
+double double15 = 57.460060353;
+double double16 = 1.0E-15;
+polynomialFunction0.value(double16);
+double double17 = 753.0286748874;
+riddersSolver0.solve(int1, (UnivariateRealFunction) polynomialFunction0, double15, double17);
+riddersSolver0.doSolve();
+
+21:59:09.184 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.exception.TooManyEvaluationsException: illegal state: maximal count (-2,110) exceeded: evaluations
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.incrementEvaluationCount(BaseAbstractUnivariateRealSolver.java:296)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.analysis.solvers.BaseAbstractUnivariateRealSolver.computeObjectiveValue(BaseAbstractUnivariateRealSolver.java:153)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.analysis.solvers.SecantSolver.doSolve(SecantSolver.java:77)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+21:59:09.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+21:59:09.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+21:59:09.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+21:59:09.211 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+21:59:09.211 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+21:59:09.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+21:59:09.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+21:59:09.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+21:59:09.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+21:59:09.212 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+21:59:09.223 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+21:59:09.566 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+21:59:10.365 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+21:59:14.206 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'BaseAbstractUnivariateRealSolver_ESTest' to results/MATH-51b-1-10-NSGA_II-LineCoverage:ExceptionType:StackTraceSimilarity
+21:59:14.229 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
