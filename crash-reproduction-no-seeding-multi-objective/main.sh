@@ -35,13 +35,15 @@ for t in ${job_list[@]}; do
   search_algorithm=$(python python/get_from_json.py $t "search_algorithm")
   objectives=$(python python/get_from_json.py $t "objectives")
   echo "Task#$counter is frame level $frame of issue $case. This crash happened in $application version $version. task configurations -> execution_idx: $execution_idx, search algorithm: $search_algorithm, search objectives:$objectives, search budget: $search_budget"
-
-  ## Start the search process:
+  if [[ "$frame" -eq "3" ]]; then
+      ## Start the search process:
   java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -search_algorithm $search_algorithm -fitness $objectives -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXTIME -Dreset_static_fields=FALSE -Dmax_recursion=50 -Dvirtual_net=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="results/$case-$frame-$execution_idx-$search_algorithm-$objectives" > "logs/$case-$frame-$execution_idx-$search_algorithm-$objectives-out.txt" 2> "logs/$case-$frame-$execution_idx-$search_algorithm-$objectives-err.txt" &
   pid=$!
   # echo $pid
   . parsing.sh $pid $execution_idx $application $case $version $frame $search_budget $search_algorithm $objectives &
   . observer.sh $pid "$case-$frame-$execution_idx-$search_algorithm-$objectives-out.txt" &
+  fi
+
 
 
   while (( $(pgrep -l java | wc -l) >= $LIMIT ))
