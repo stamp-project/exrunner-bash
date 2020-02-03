@@ -6,7 +6,7 @@ docker stop exrunner-container
 # Remove old containers
 docker rm exrunner-container
 # Remove previous docker image
-# docker rmi tudelft/exrunner
+docker rmi tudelft/exrunner
 # Build a new docker image
 docker image build -t tudelft/exrunner $(pwd)
 # Execution
