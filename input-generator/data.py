@@ -362,9 +362,9 @@ class CaseData:
 
 class OtherData:
     # search_algorithm=["Single_Objective_GGA"]
-    search_algorithm=["NSGA_II","SPEA2","MOEAD","PESA_II","FEMO"]
-    objectives = ["WeightedSum:TestLen:CallDiversity"]
-    # objectives = ["WeightedSum"]
+    search_algorithm=["NSGA_II"]
+    # objectives = ["WeightedSum:TestLen:CallDiversity"]
+    objectives = ["LineCoverage:ExceptionType:StackTraceSimilarity"]
     p_functional_mocking = [""]
     functional_mocking_percent = [""]
     search_budget = [300]
