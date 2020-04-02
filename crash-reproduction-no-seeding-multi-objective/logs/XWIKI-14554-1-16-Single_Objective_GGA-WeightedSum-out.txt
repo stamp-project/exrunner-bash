@@ -1,0 +1,81 @@
+00:16:07.110 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+00:16:07.115 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+00:16:07.115 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+00:16:07.116 [main] INFO  eu.stamp.botsing.Botsing - Single_Objective_GGA
+00:16:12.954 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 580.
+00:18:14.216 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+00:18:14.261 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:18:14.281 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Initializing the first population with size of 50 individuals
+00:18:34.689 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 20 second: 4.5
+00:18:38.739 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the initial population is: 4.5
+00:18:38.740 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the final population is: 4.5. PT: 24 seconds
+00:18:38.741 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Starting evolution
+00:18:54.770 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the current population: 4.5 | 100
+00:19:06.194 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the current population: 4.5 | 150
+00:19:15.506 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 196 fitness evolutions and 61 second: 0.0
+00:19:17.326 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the current population: 0.0 | 200
+00:19:17.327 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the final population is: 0.0. PT: 63 seconds
+00:19:17.327 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - ZeroFitness :                      0 / 0            Finished!
+00:19:17.327 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - The search process is finished.
+00:19:17.327 [main] INFO  e.s.b.g.s.m.GuidedSingleObjectiveGA - Best fitness in the final population is: 0.0. PT: 63 seconds
+00:19:17.330 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationManager notificationManager0 = mock(NotificationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "notificationManager", (Object) notificationManager0);
+EntityReferenceSerializer<Integer> entityReferenceSerializer0 = (EntityReferenceSerializer<Integer>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class, "serializer", (Object) entityReferenceSerializer0);
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<TimeScheduler3.Task> mimeMessageFactory0 = (MimeMessageFactory<TimeScheduler3.Task>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+String string0 = null;
+Queue<SubstituteLoggingEvent> queue0 = null;
+boolean boolean0 = false;
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string0, queue0, boolean0);
+EventRecodingLogger eventRecodingLogger0 = new EventRecodingLogger(substituteLogger0, queue0);
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "logger", (Object) eventRecodingLogger0);
+DefaultMailSenderConfiguration defaultMailSenderConfiguration0 = new DefaultMailSenderConfiguration();
+ConfigurationSource configurationSource0 = mock(ConfigurationSource.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(configurationSource0).getProperty(anyString() , nullable(java.lang.Class.class));
+Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "documentsSource", (Object) configurationSource0);
+NOPLogger nOPLogger0 = NOPLogger.NOP_LOGGER;
+Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "logger", (Object) nOPLogger0);
+ConfigurationSource configurationSource1 = mock(ConfigurationSource.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(configurationSource1).getProperty(anyString() , nullable(java.lang.Object.class));
+Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "mailConfigSource", (Object) configurationSource1);
+ConfigurationSource configurationSource2 = mock(ConfigurationSource.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(configurationSource2).getProperty(anyString() , nullable(java.lang.Class.class));
+Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "xwikiPropertiesSource", (Object) configurationSource2);
+Injector.validateBean(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class);
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "mailSenderConfiguration", (Object) defaultMailSenderConfiguration0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(periodicMimeMessageIterator0, (Class<?>) PeriodicMimeMessageIterator.class);
+periodicMimeMessageIterator0.next();
+
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.slf4j.event.EventRecodingLogger.recordEvent(EventRecodingLogger.java:41)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.slf4j.event.EventRecodingLogger.recordEvent(EventRecodingLogger.java:26)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.slf4j.event.EventRecodingLogger.error(EventRecodingLogger.java:257)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator.java:214)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+00:19:17.331 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+00:19:17.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+00:19:17.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+00:19:17.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+00:19:17.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+00:19:17.334 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+00:19:17.337 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+00:19:17.337 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+00:19:17.337 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+00:19:17.337 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+00:19:17.364 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+00:19:17.480 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+00:19:20.471 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+00:19:32.915 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-16-Single_Objective_GGA-WeightedSum
+00:19:32.936 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
