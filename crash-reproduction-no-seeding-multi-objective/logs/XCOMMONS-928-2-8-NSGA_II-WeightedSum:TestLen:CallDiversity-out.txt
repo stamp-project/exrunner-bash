@@ -1,0 +1,79 @@
+10:55:35.429 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+10:55:35.443 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.installExtension(DefaultInstalledExtensionRepository:691)
+10:55:35.443 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository
+10:55:35.444 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+10:55:40.744 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 585.
+10:56:12.085 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+10:56:12.112 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:56:12.150 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+10:56:16.115 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 3 second: 5.0
+10:56:17.133 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+10:56:17.134 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 5.0
+10:56:18.632 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 53 fitness evolutions and 6 second: 4.0
+10:56:22.286 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+10:56:22.288 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 2
+10:56:22.288 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.0
+10:56:23.481 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+10:56:23.492 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 3
+10:56:23.492 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.0
+10:56:23.567 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 156 fitness evolutions and 11 second: 0.0
+10:56:25.130 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+10:56:25.147 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultInstalledExtensionRepository defaultInstalledExtensionRepository0 = new DefaultInstalledExtensionRepository();
+CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+doReturn((Collection) null).when(localExtension0).getAuthors();
+doReturn((String) null).when(localExtension0).getCategory();
+doReturn((Collection) null).when(localExtension0).getDependencies();
+doReturn((String) null).when(localExtension0).getDescription();
+doReturn((Collection) null).when(localExtension0).getFeatures();
+doReturn((ExtensionId) null).when(localExtension0).getId();
+doReturn((ExtensionIssueManagement) null).when(localExtension0).getIssueManagement();
+doReturn((Collection) null).when(localExtension0).getLicenses();
+doReturn((String) null).when(localExtension0).getName();
+doReturn((Map) null).when(localExtension0).getProperties();
+doReturn((ExtensionScm) null).when(localExtension0).getScm();
+doReturn((String) null).when(localExtension0).getSummary();
+doReturn((String) null).when(localExtension0).getType();
+doReturn((String) null).when(localExtension0).getWebSite();
+LocalExtensionRepository localExtensionRepository0 = mock(LocalExtensionRepository.class, new ViolatedAssumptionAnswer());
+doReturn(localExtension0).when(localExtensionRepository0).getLocalExtension(any(org.xwiki.extension.ExtensionId.class));
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "localRepository", (Object) localExtensionRepository0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "logger", (Object) logger0);
+Injector.validateBean(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class);
+String string0 = "";
+String string1 = "bz'PR13\"";
+ExtensionId extensionId0 = new ExtensionId(string0, string1);
+String string2 = "maximum size was already set to %s";
+LocalExtension localExtension1 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+doReturn(extensionId0, extensionId0).when(localExtension1).getId();
+String string3 = "";
+boolean boolean0 = true;
+Map<String, Object> map0 = null;
+InstalledExtension installedExtension0 = defaultInstalledExtensionRepository0.installExtension(localExtension1, string3, boolean0, map0);
+defaultInstalledExtensionRepository0.installExtension((LocalExtension) installedExtension0, string3, boolean0, map0);
+
+10:56:25.147 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ConcurrentHashMap.putAll(ConcurrentHashMap.java:1082)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.applyInstallExtension(DefaultInstalledExtensionRepository.java:449)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.installExtension(DefaultInstalledExtensionRepository.java:691)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor32.invoke(Unknown Source)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+10:56:25.148 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+10:56:25.149 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+10:56:25.149 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10:56:25.149 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+10:56:25.165 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+10:56:25.187 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+10:56:26.830 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+10:56:26.849 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DefaultInstalledExtensionRepository_ESTest' to results/XCOMMONS-928-2-8-NSGA_II-WeightedSum:TestLen:CallDiversity
+10:56:26.942 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

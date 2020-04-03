@@ -1,0 +1,80 @@
+18:53:19.993 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.xwiki.mail.MailStoreException
+18:53:20.008 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.mail.internal.DatabaseMailStatusStore.load(DatabaseMailStatusStore:98)
+18:53:20.008 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.mail.internal.DatabaseMailStatusStore
+18:53:20.009 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+18:53:23.048 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 578.
+18:54:43.621 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+18:54:43.639 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:54:43.663 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+18:54:54.047 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 10 second: 4.5
+18:54:54.562 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 4 fitness evolutions and 10 second: 3.0
+18:54:56.006 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+18:54:56.006 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:02.748 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:02.751 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 2
+18:55:02.751 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:04.987 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:05.008 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 3
+18:55:05.008 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:08.838 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:08.840 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 4
+18:55:08.840 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:11.131 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:11.132 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 5
+18:55:11.132 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:12.099 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:12.099 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 6
+18:55:12.100 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:13.110 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+18:55:13.112 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 7
+18:55:13.112 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+18:55:13.225 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 364 fitness evolutions and 29 second: 0.0
+18:55:13.728 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+18:55:13.734 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DatabaseMailStatusStore databaseMailStatusStore0 = new DatabaseMailStatusStore();
+XWikiContext xWikiContext0 = new XWikiContext();
+Provider<XWikiContext> provider0 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn(xWikiContext0).when(provider0).get();
+Injector.inject(databaseMailStatusStore0, (Class<?>) DatabaseMailStatusStore.class, "contextProvider", (Object) provider0);
+XWikiStoreInterface xWikiStoreInterface0 = mock(XWikiStoreInterface.class, new ViolatedAssumptionAnswer());
+String string0 = "A document may only contain one root elemel: ";
+databaseMailStatusStore0.load(string0);
+DatabaseMailStatusStore databaseMailStatusStore1 = new DatabaseMailStatusStore();
+Class<XWikiContext> class0 = XWikiContext.class;
+LoadedClass<XWikiContext> loadedClass0 = new LoadedClass<XWikiContext>(class0);
+com.google.inject.Injector injector0 = mock(com.google.inject.Injector.class, new ViolatedAssumptionAnswer());
+Injector.inject(loadedClass0, (Class<?>) AbstractDeferredClass.class, "injector", (Object) injector0);
+Injector.validateBean(loadedClass0, (Class<?>) LoadedClass.class);
+Injector.inject(databaseMailStatusStore1, (Class<?>) DatabaseMailStatusStore.class, "contextProvider", (Object) loadedClass0);
+XWikiContext xWikiContext1 = new XWikiContext();
+XWiki xWiki0 = new XWiki(xWikiContext1);
+AttachmentRecycleBinStore attachmentRecycleBinStore0 = xWiki0.getAttachmentRecycleBinStore();
+xWiki0.setAttachmentRecycleBinStore(attachmentRecycleBinStore0);
+XWikiStoreInterface xWikiStoreInterface1 = xWiki0.getNotCacheStore();
+Injector.inject(databaseMailStatusStore1, (Class<?>) DatabaseMailStatusStore.class, "hibernateStore", (Object) xWikiStoreInterface1);
+Injector.validateBean(databaseMailStatusStore1, (Class<?>) DatabaseMailStatusStore.class);
+databaseMailStatusStore1.load(string0);
+String string1 = "";
+databaseMailStatusStore0.load(string0);
+
+18:55:13.735 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+18:55:13.735 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.mail.MailStoreException: Failed to load mail statuses matching the filter [{id=A document may only contain one root elemel: }] from the database.
+18:55:13.735 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.mail.internal.DatabaseMailStatusStore.load(DatabaseMailStatusStore.java:142)
+18:55:13.739 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.mail.internal.DatabaseMailStatusStore.load(DatabaseMailStatusStore.java:98)
+18:55:13.739 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor32.invoke(Unknown Source)
+18:55:13.740 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+18:55:13.741 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+18:55:13.773 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+18:55:13.893 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+18:55:16.015 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+18:55:22.075 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DatabaseMailStatusStore_ESTest' to results/XWIKI-13616-2-28-NSGA_II-WeightedSum:TestLen:CallDiversity
+18:55:22.103 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

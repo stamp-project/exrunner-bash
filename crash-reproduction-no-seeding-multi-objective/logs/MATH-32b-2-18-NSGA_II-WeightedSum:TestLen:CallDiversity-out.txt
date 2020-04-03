@@ -1,0 +1,63 @@
+09:30:24.097 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+09:30:24.112 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.partitioning.AbstractRegion.getSize(AbstractRegion:381)
+09:30:24.112 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.partitioning.AbstractRegion
+09:30:24.113 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+09:30:26.646 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+09:30:33.501 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+09:30:33.574 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:30:33.716 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+09:30:37.069 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 3 second: 5.625
+09:30:38.909 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 2 fitness evolutions and 5 second: 3.0
+09:30:39.126 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+09:30:39.126 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+09:30:41.480 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+09:30:41.482 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 2
+09:30:41.482 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+09:30:42.052 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 123 fitness evolutions and 8 second: 0.0
+09:30:42.879 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+09:30:42.915 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: LinkedList<SubHyperplane<Euclidean2D>> linkedList0 = new LinkedList<SubHyperplane<Euclidean2D>>();
+PolygonsSet polygonsSet0 = new PolygonsSet(linkedList0);
+String string0 = "";
+double double0 = 2593.8;
+Vector1D vector1D0 = Vector1D.ZERO;
+double double1 = 0.0;
+Vector1D vector1D1 = new Vector1D(double0, vector1D0, double1, vector1D0, double0, vector1D0);
+boolean boolean0 = false;
+OrientedPoint orientedPoint0 = new OrientedPoint(vector1D1, boolean0);
+OrientedPoint orientedPoint1 = orientedPoint0.copySelf();
+SubOrientedPoint subOrientedPoint0 = orientedPoint1.wholeHyperplane();
+Hyperplane<Euclidean1D> hyperplane0 = subOrientedPoint0.getHyperplane();
+Region<Euclidean1D> region0 = null;
+SubOrientedPoint subOrientedPoint1 = new SubOrientedPoint(hyperplane0, region0);
+BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>();
+SubHyperplane<Euclidean2D> subHyperplane0 = bSPTree0.getCut();
+BSPTree<Euclidean2D> bSPTree1 = (BSPTree<Euclidean2D>) mock(BSPTree.class, new ViolatedAssumptionAnswer());
+doReturn(string0, string0).when(bSPTree1).toString();
+doReturn(subOrientedPoint1).when(bSPTree1).getAttribute();
+doReturn(subHyperplane0).when(bSPTree1).getCut();
+PolygonsSet polygonsSet1 = polygonsSet0.buildNew(bSPTree1);
+polygonsSet1.getSize();
+
+09:30:42.915 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+09:30:42.915 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.ClassCastException: org.apache.commons.math3.geometry.euclidean.oned.SubOrientedPoint cannot be cast to java.lang.Boolean
+09:30:42.915 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.computeGeometricalProperties(PolygonsSet.java:136)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.partitioning.AbstractRegion.getSize(AbstractRegion.java:381)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+09:30:42.916 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+09:30:42.917 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+09:30:42.934 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+09:30:43.187 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+09:30:44.699 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+09:30:48.155 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractRegion_ESTest' to results/MATH-32b-2-18-NSGA_II-WeightedSum:TestLen:CallDiversity
+09:30:48.202 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

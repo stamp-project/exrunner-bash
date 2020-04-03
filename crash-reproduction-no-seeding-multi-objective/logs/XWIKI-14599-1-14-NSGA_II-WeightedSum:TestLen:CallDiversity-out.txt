@@ -1,0 +1,54 @@
+02:51:34.476 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+02:51:34.497 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler:180)
+02:51:34.497 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler
+02:51:34.498 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+02:51:38.990 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 589.
+02:52:13.853 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+02:52:13.911 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+02:52:13.995 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+02:52:19.806 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 5 second: 4.0
+02:52:20.274 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+02:52:20.275 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.0
+02:52:20.314 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 52 fitness evolutions and 6 second: 0.0
+02:52:21.859 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+02:52:21.922 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: JarExtensionHandler jarExtensionHandler0 = new JarExtensionHandler();
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "componentManagerManager", (Object) componentManagerManager0);
+ClassLoaderManager classLoaderManager0 = mock(ClassLoaderManager.class, new ViolatedAssumptionAnswer());
+doReturn((NamespaceURLClassLoader) null).when(classLoaderManager0).getURLClassLoader(anyString() , anyBoolean());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "jarExtensionClassLoader", (Object) classLoaderManager0);
+Provider<ComponentDeclaration> provider0 = (Provider<ComponentDeclaration>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "defaultValidatorProvider", (Object) provider0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "logger", (Object) logger0);
+Injector.validateBean(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class);
+boolean boolean0 = true;
+InstalledExtension installedExtension0 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+doReturn(boolean0).when(installedExtension0).isValid(anyString());
+String string0 = "";
+Request request0 = mock(Request.class, new ViolatedAssumptionAnswer());
+jarExtensionHandler0.uninstall(installedExtension0, string0, request0);
+LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler.java:180)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+02:52:21.923 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+02:52:21.924 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+02:52:21.924 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+02:52:21.933 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+02:52:21.982 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+02:52:24.124 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+02:52:32.748 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'JarExtensionHandler_ESTest' to results/XWIKI-14599-1-14-NSGA_II-WeightedSum:TestLen:CallDiversity
+02:52:32.774 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

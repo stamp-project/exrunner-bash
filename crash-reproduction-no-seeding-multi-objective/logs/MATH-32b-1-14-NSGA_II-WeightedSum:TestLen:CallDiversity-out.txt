@@ -1,0 +1,56 @@
+09:25:54.046 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.ClassCastException
+09:25:54.056 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.computeGeometricalProperties(PolygonsSet:136)
+09:25:54.056 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet
+09:25:54.057 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+09:25:56.626 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+09:26:02.438 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+09:26:02.468 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:26:02.520 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+09:26:03.788 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.888888888888889
+09:26:05.907 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 5 fitness evolutions and 3 second: 3.0
+09:26:06.407 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+09:26:06.407 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+09:26:06.670 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 53 fitness evolutions and 4 second: 0.42857142857142855
+09:26:07.653 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 85 fitness evolutions and 5 second: 0.0
+09:26:08.611 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+09:26:08.629 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = Vector3D.MINUS_K;
+Plane plane0 = new Plane(vector3D0, vector3D0);
+Plane plane1 = new Plane(plane0);
+LinkedList<SubHyperplane<Euclidean2D>> linkedList0 = new LinkedList<SubHyperplane<Euclidean2D>>();
+PolygonsSet polygonsSet0 = new PolygonsSet(linkedList0);
+BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>(vector3D0);
+PolygonsSet polygonsSet1 = polygonsSet0.buildNew(bSPTree0);
+SubPlane subPlane0 = new SubPlane(plane1, polygonsSet1);
+SubHyperplane<Euclidean2D> subHyperplane0 = null;
+BSPTree<Euclidean2D> bSPTree1 = (BSPTree<Euclidean2D>) mock(BSPTree.class, new ViolatedAssumptionAnswer());
+doReturn(subPlane0).when(bSPTree1).getAttribute();
+doReturn(subHyperplane0).when(bSPTree1).getCut();
+PolygonsSet polygonsSet2 = new PolygonsSet(bSPTree1);
+Vector<Euclidean2D> vector0 = polygonsSet2.getBarycenter();
+polygonsSet2.checkPoint(vector0);
+polygonsSet2.computeGeometricalProperties();
+polygonsSet2.computeGeometricalProperties();
+
+09:26:08.629 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.ClassCastException: org.apache.commons.math3.geometry.euclidean.threed.SubPlane cannot be cast to java.lang.Boolean
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet.computeGeometricalProperties(PolygonsSet.java:136)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.partitioning.AbstractRegion.getBarycenter(AbstractRegion.java:396)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+09:26:08.644 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+09:26:08.645 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+09:26:08.666 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+09:26:08.820 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+09:26:09.862 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+09:26:12.539 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'PolygonsSet_ESTest' to results/MATH-32b-1-14-NSGA_II-WeightedSum:TestLen:CallDiversity
+09:26:12.590 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

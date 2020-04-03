@@ -1,0 +1,58 @@
+08:33:19.433 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+08:33:19.437 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+08:33:19.437 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+08:33:19.437 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+08:33:20.992 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+08:33:26.757 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+08:33:26.771 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:33:26.794 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+08:33:28.173 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.863636363636363
+08:33:29.029 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 4 fitness evolutions and 2 second: 0.0
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null).when(dateTimePrinter0).toString();
+doReturn(0).when(dateTimePrinter0).estimatePrintedLength();
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null, (String) null, (String) null, (String) null).when(dateTimeParser0).toString();
+doReturn(0, 0, 0, 0).when(dateTimeParser0).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+String string0 = "";
+DateTime dateTime0 = dateTimeFormatter0.parseDateTime(string0);
+dateTimeFormatter0.parseDateTime(string0);
+EthiopicChronology ethiopicChronology0 = EthiopicChronology.getInstanceUTC();
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+EthiopicChronology ethiopicChronology1 = (EthiopicChronology)ethiopicChronology0.withZone(dateTimeZone0);
+StrictChronology strictChronology0 = StrictChronology.getInstance(ethiopicChronology1);
+DateTimeZone dateTimeZone1 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+doReturn(0L).when(dateTimeZone1).getMillisKeepLocal(any(org.joda.time.DateTimeZone.class) , anyLong());
+StrictChronology strictChronology1 = (StrictChronology)strictChronology0.withZone(dateTimeZone1);
+LocalTime localTime0 = new LocalTime((Chronology) strictChronology1);
+int int0 = 10800000;
+LocalTime localTime1 = localTime0.plusSeconds(int0);
+dateTimeFormatter0.print((ReadablePartial) localTime1);
+String string1 = "";
+dateTimeFormatter0.parseLocalTime(string1);
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withOffsetParsed();
+String string2 = "ZYbWYV]t@l]hO14?";
+dateTimeFormatter1.parseDateTime(string2);
+PipedWriter pipedWriter0 = new PipedWriter();
+dateTimeFormatter1.printTo((Writer) pipedWriter0, (ReadableInstant) dateTime0);
+dateTimeFormatter0.isParser();
+
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: Invalid format: "ZYbWYV]t@l]hO14?"
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter.java:866)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+08:33:29.479 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+08:33:29.500 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
