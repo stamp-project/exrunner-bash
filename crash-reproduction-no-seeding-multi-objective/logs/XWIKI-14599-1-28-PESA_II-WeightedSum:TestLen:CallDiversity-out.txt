@@ -1,0 +1,74 @@
+08:24:54.741 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+08:24:54.812 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler:180)
+08:24:54.812 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler
+08:24:54.813 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+08:25:00.395 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 589.
+08:25:46.664 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+08:25:46.706 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:25:46.773 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+08:25:53.832 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 7 second: 5.888888888888889
+08:25:54.851 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 4 fitness evolutions and 8 second: 4.0
+08:25:55.875 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+08:25:55.876 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.0
+08:25:58.005 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 53 fitness evolutions and 11 second: 0.0
+08:25:58.641 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: String string0 = "Failed to load jar file components";
+JarExtensionHandler.isSupported(string0);
+JarExtensionHandler jarExtensionHandler0 = new JarExtensionHandler();
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "componentManagerManager", (Object) componentManagerManager0);
+NamespaceURLClassLoader namespaceURLClassLoader0 = mock(NamespaceURLClassLoader.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(namespaceURLClassLoader0).getNamespace();
+ClassLoaderManager classLoaderManager0 = mock(ClassLoaderManager.class, new ViolatedAssumptionAnswer());
+doReturn(namespaceURLClassLoader0).when(classLoaderManager0).getURLClassLoader(anyString() , anyBoolean());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "jarExtensionClassLoader", (Object) classLoaderManager0);
+Provider<String> provider0 = (Provider<String>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "defaultValidatorProvider", (Object) provider0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "logger", (Object) logger0);
+Injector.validateBean(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class);
+boolean boolean0 = true;
+InstalledExtension installedExtension0 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+doReturn(boolean0).when(installedExtension0).isValid(anyString());
+Request request0 = mock(Request.class, new ViolatedAssumptionAnswer());
+jarExtensionHandler0.uninstall(installedExtension0, string0, request0);
+JarExtensionHandler.isSupported(string0);
+jarExtensionHandler0.initialize();
+boolean boolean1 = false;
+InstalledExtension installedExtension1 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+doReturn(boolean1).when(installedExtension1).isValid(anyString());
+Request request1 = mock(Request.class, new ViolatedAssumptionAnswer());
+jarExtensionHandler0.uninstall(installedExtension1, string0, request1);
+LocalExtensionFile localExtensionFile0 = null;
+LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+doReturn(localExtensionFile0).when(localExtension0).getFile();
+String string1 = "$xwiki.parseGroovyFromString";
+Request request2 = mock(Request.class, new ViolatedAssumptionAnswer());
+InstalledExtension installedExtension2 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+jarExtensionHandler0.uninstall(installedExtension2, string1, request2);
+String string2 = "$xwiki.parseGroovyFromString";
+DefaultRequest defaultRequest0 = new DefaultRequest();
+jarExtensionHandler0.install(localExtension0, string1, defaultRequest0);
+
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException: StringEquals is not supposed to work on a null caller
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.instrumentation.testability.StringHelper.StringEquals(StringHelper.java:131)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler.java:180)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+08:25:58.642 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+08:25:58.643 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+08:25:58.692 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+08:25:59.140 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+08:26:02.716 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+08:26:13.717 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'JarExtensionHandler_ESTest' to results/XWIKI-14599-1-28-PESA_II-WeightedSum:TestLen:CallDiversity
+08:26:13.768 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

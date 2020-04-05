@@ -1,0 +1,25 @@
+Exception in thread "main" org.evosuite.testcase.execution.EvosuiteError: org.evosuite.testcase.execution.EvosuiteError: java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.runtime.MethodClosure
+	at org.evosuite.testcase.statements.AssignmentStatement$1.execute(AssignmentStatement.java:162)
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+	at org.evosuite.testcase.statements.AssignmentStatement.execute(AssignmentStatement.java:132)
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.evosuite.testcase.execution.EvosuiteError: java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.runtime.MethodClosure
+	at org.evosuite.testcase.variable.FieldReference.setObject(FieldReference.java:236)
+	at org.evosuite.testcase.statements.AssignmentStatement$1.execute(AssignmentStatement.java:145)
+	... 9 more
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.runtime.MethodClosure
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:43)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:156)
+	at java.lang.reflect.Field.acquireFieldAccessor(Field.java:1088)
+	at java.lang.reflect.Field.getFieldAccessor(Field.java:1069)
+	at java.lang.reflect.Field.setBoolean(Field.java:801)
+	at org.evosuite.runtime.Reflection.setField(Reflection.java:119)
+	at org.evosuite.testcase.variable.FieldReference.setObject(FieldReference.java:220)
+	... 10 more

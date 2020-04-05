@@ -1,0 +1,93 @@
+12:01:18.946 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+12:01:18.949 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+12:01:18.949 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+12:01:18.949 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+12:01:19.929 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+12:01:24.476 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+12:01:24.493 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:01:24.524 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+12:01:25.662 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.863636363636363
+12:01:26.518 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 7 fitness evolutions and 1 second: 0.0
+12:01:26.940 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser0).toString();
+doReturn(0).when(dateTimeParser0).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+String string0 = "NoYears";
+dateTimeFormatter0.parseDateTime(string0);
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTime dateTime0 = DateTime.now(dateTimeZone0);
+String string1 = dateTimeFormatter0.print((ReadableInstant) dateTime0);
+DateTimeZone dateTimeZone1 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withZone(dateTimeZone1);
+long long0 = dateTimeFormatter1.parseMillis(string1);
+dateTimeFormatter0.getLocale();
+Chronology chronology0 = dateTimeFormatter1.getChronology();
+FileWriter fileWriter0 = new FileWriter(string1);
+dateTimeFormatter0.printTo((Writer) fileWriter0, long0);
+dateTimeFormatter0.getLocale();
+int int0 = 3017;
+Integer integer0 = new Integer(int0);
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter0.withPivotYear(integer0);
+dateTimeFormatter1.isOffsetParsed();
+dateTimeFormatter1.isOffsetParsed();
+dateTimeFormatter1.print((ReadableInstant) dateTime0);
+dateTimeFormatter0.getPivotYear();
+dateTimeFormatter0.isOffsetParsed();
+dateTimeFormatter1.getPivotYear();
+DateTimeFieldType[] dateTimeFieldTypeArray0 = new DateTimeFieldType[7];
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.minuteOfDay();
+dateTimeFieldTypeArray0[0] = dateTimeFieldType0;
+DateTimeFieldType dateTimeFieldType1 = DateTimeFieldType.dayOfWeek();
+dateTimeFieldTypeArray0[1] = dateTimeFieldType1;
+DateTimeFieldType dateTimeFieldType2 = DateTimeFieldType.monthOfYear();
+dateTimeFieldTypeArray0[2] = dateTimeFieldType2;
+DateTimeFieldType dateTimeFieldType3 = DateTimeFieldType.minuteOfDay();
+dateTimeFieldTypeArray0[3] = dateTimeFieldType3;
+DateTimeFieldType dateTimeFieldType4 = DateTimeFieldType.secondOfDay();
+dateTimeFieldTypeArray0[4] = dateTimeFieldType4;
+DateTimeFieldType dateTimeFieldType5 = DateTimeFieldType.yearOfCentury();
+dateTimeFieldTypeArray0[5] = dateTimeFieldType5;
+DateTimeFieldType dateTimeFieldType6 = DateTimeFieldType.minuteOfDay();
+dateTimeFieldTypeArray0[6] = dateTimeFieldType6;
+int[] intArray0 = new int[7];
+intArray0[0] = int0;
+intArray0[1] = int0;
+int int1 = 2960;
+intArray0[2] = int1;
+intArray0[3] = int0;
+intArray0[4] = int0;
+intArray0[5] = int0;
+intArray0[6] = int0;
+Partial partial0 = new Partial(dateTimeFieldTypeArray0, intArray0, chronology0);
+int int2 = 0;
+int int3 = 1172;
+int int4 = 400;
+int int5 = (-1);
+PeriodType periodType0 = PeriodType.dayTime();
+PeriodType periodType1 = periodType0.withMinutesRemoved();
+Period period0 = new Period(int2, int1, int3, int1, int4, intArray0[6], intArray0[2], int5, periodType1);
+Partial partial1 = partial0.minus(period0);
+Partial partial2 = partial1.withChronologyRetainFields(chronology0);
+DateTimeFieldType dateTimeFieldType7 = DateTimeFieldType.clockhourOfDay();
+Partial partial3 = partial2.withField(dateTimeFieldType7, intArray0[3]);
+dateTimeFormatter2.print((ReadablePartial) partial3);
+
+12:01:26.940 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+12:01:26.940 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: Invalid format: "NoYears"
+12:01:26.940 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter.java:866)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+12:01:26.941 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+12:01:26.965 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite

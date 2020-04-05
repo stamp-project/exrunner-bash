@@ -1,0 +1,107 @@
+20:48:25.044 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+20:48:25.049 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+20:48:25.049 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+20:48:25.049 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+20:48:29.619 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 580.
+20:50:08.478 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+20:50:08.500 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:50:08.529 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+20:50:15.109 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 6 second: 4.5
+20:50:15.260 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+20:50:15.260 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+20:50:28.084 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 2
+20:50:28.084 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+20:50:30.173 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 113 fitness evolutions and 21 second: 0.0
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+periodicMimeMessageIterator0.next();
+NotificationUserIterator notificationUserIterator0 = new NotificationUserIterator();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+SubstituteLoggingEvent substituteLoggingEvent0 = new SubstituteLoggingEvent();
+SubstituteLogger substituteLogger0 = substituteLoggingEvent0.getLogger();
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "logger", (Object) substituteLogger0);
+XWikiHibernateStore xWikiHibernateStore0 = new XWikiHibernateStore();
+EntityReferenceSerializer<Integer> entityReferenceSerializer0 = (EntityReferenceSerializer<Integer>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "compactWikiEntityReferenceSerializer", (Object) entityReferenceSerializer0);
+DocumentReferenceResolver<String> documentReferenceResolver0 = (DocumentReferenceResolver<String>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "currentMixedDocumentReferenceResolver", (Object) documentReferenceResolver0);
+DocumentReferenceResolver<MimeMessage> documentReferenceResolver1 = (DocumentReferenceResolver<MimeMessage>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultDocumentReferenceResolver", (Object) documentReferenceResolver1);
+EntityReferenceSerializer<Object> entityReferenceSerializer1 = (EntityReferenceSerializer<Object>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "defaultEntityReferenceSerializer", (Object) entityReferenceSerializer1);
+EntityReferenceSerializer<ObjectPropertyReference> entityReferenceSerializer2 = (EntityReferenceSerializer<ObjectPropertyReference>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "localEntityReferenceSerializer", (Object) entityReferenceSerializer2);
+LinkedTransferQueue<SubstituteLoggingEvent> linkedTransferQueue0 = new LinkedTransferQueue<SubstituteLoggingEvent>();
+EventRecodingLogger eventRecodingLogger0 = new EventRecodingLogger(substituteLogger0, linkedTransferQueue0);
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "logger", (Object) eventRecodingLogger0);
+DefaultObservationManager defaultObservationManager0 = new DefaultObservationManager();
+ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "componentManager", (Object) componentManager0);
+Logger logger0 = SQLCustomQuery.log;
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "logger", (Object) logger0);
+Injector.validateBean(defaultObservationManager0, (Class<?>) DefaultObservationManager.class);
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "observationManager", (Object) defaultObservationManager0);
+Provider<String> provider0 = (Provider<String>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "oldRenderingProvider", (Object) provider0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiHibernateStore0, xWikiContext0);
+QueryManager queryManager0 = xWikiCacheStore0.getQueryManager();
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class, "queryManager", (Object) queryManager0);
+DataMigrationManager dataMigrationManager0 = mock(DataMigrationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "dataMigrationManager", (Object) dataMigrationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "execution", (Object) execution0);
+LoggerManager loggerManager0 = mock(LoggerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "loggerManager", (Object) loggerManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Provider<XYDatasetTableModel> provider1 = (Provider<XYDatasetTableModel>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiHibernateStore0, (Class<?>) XWikiHibernateBaseStore.class, "xcontextProvider", (Object) provider1);
+Injector.validateBean(xWikiHibernateStore0, (Class<?>) XWikiHibernateStore.class);
+QueryManager queryManager1 = xWikiHibernateStore0.getQueryManager();
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "queryManager", (Object) queryManager1);
+DocumentReferenceResolver<CompositeEvent> documentReferenceResolver2 = (DocumentReferenceResolver<CompositeEvent>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "resolver", (Object) documentReferenceResolver2);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+Injector.validateBean(notificationUserIterator0, (Class<?>) NotificationUserIterator.class);
+String string0 = "Ot(#k%";
+CacheImpl<TimeScheduler3.Task, TimeScheduler3.Task> cacheImpl0 = new CacheImpl<TimeScheduler3.Task, TimeScheduler3.Task>(string0);
+SecureCacheImpl<TimeScheduler3.Task, TimeScheduler3.Task> secureCacheImpl0 = new SecureCacheImpl<TimeScheduler3.Task, TimeScheduler3.Task>(cacheImpl0);
+ClassLoader classLoader0 = secureCacheImpl0.getClassLoader();
+ConfigurationBuilderHolder configurationBuilderHolder0 = new ConfigurationBuilderHolder(classLoader0);
+boolean boolean0 = false;
+DefaultCacheManager defaultCacheManager0 = new DefaultCacheManager(configurationBuilderHolder0, boolean0);
+String string1 = null;
+boolean boolean1 = false;
+Cache<Object, Object> cache0 = defaultCacheManager0.getCache(string1, string0, boolean1);
+DefaultEvent defaultEvent0 = new DefaultEvent();
+CompositeEvent compositeEvent0 = new CompositeEvent(defaultEvent0);
+CompositeEvent compositeEvent1 = new CompositeEvent(compositeEvent0);
+AtomicHashMap.ProxyMode atomicHashMap_ProxyMode0 = AtomicHashMap.ProxyMode.COARSE;
+AtomicHashMap<String, Object> atomicHashMap0 = AtomicHashMap.newInstance(cache0, (Object) compositeEvent1, (AtomicHashMap.ProxyMode) atomicHashMap_ProxyMode0);
+DocumentReference documentReference0 = notificationUserIterator0.next();
+periodicMimeMessageIterator0.initialize(notificationUserIterator0, atomicHashMap0, documentReference0);
+
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator.java:214)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+20:50:30.526 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+20:50:30.527 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+20:50:30.530 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+20:50:30.545 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+20:50:30.881 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+20:50:33.574 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+20:50:43.111 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-19-PESA_II-WeightedSum:TestLen:CallDiversity
+20:50:43.154 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

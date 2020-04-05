@@ -1,0 +1,58 @@
+20:42:55.795 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+20:42:55.800 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator:214)
+20:42:55.800 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.notifications.internal.email.AbstractMimeMessageIterator
+20:42:55.801 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+20:42:59.032 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 580.
+20:44:11.593 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+20:44:11.690 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+20:44:11.717 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+20:44:18.631 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 6 second: 4.5
+20:44:18.859 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+20:44:18.859 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+20:44:27.564 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 2
+20:44:27.564 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+20:44:35.146 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 133 fitness evolutions and 23 second: 0.0
+20:44:35.731 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PeriodicMimeMessageIterator periodicMimeMessageIterator0 = new PeriodicMimeMessageIterator();
+NotificationEmailRenderer notificationEmailRenderer0 = mock(NotificationEmailRenderer.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "defaultNotificationEmailRenderer", (Object) notificationEmailRenderer0);
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+MimeMessageFactory<PoolingConnection> mimeMessageFactory0 = (MimeMessageFactory<PoolingConnection>) mock(MimeMessageFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(periodicMimeMessageIterator0, (Class<?>) AbstractMimeMessageIterator.class, "factory", (Object) mimeMessageFactory0);
+periodicMimeMessageIterator0.next();
+NotificationUserIterator notificationUserIterator0 = new NotificationUserIterator();
+DocumentAccessBridge documentAccessBridge1 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "documentAccessBridge", (Object) documentAccessBridge1);
+SubstituteLoggingEvent substituteLoggingEvent0 = new SubstituteLoggingEvent();
+SubstituteLogger substituteLogger0 = substituteLoggingEvent0.getLogger();
+Injector.inject(notificationUserIterator0, (Class<?>) NotificationUserIterator.class, "logger", (Object) substituteLogger0);
+NotificationEmailInterval notificationEmailInterval0 = NotificationEmailInterval.DAILY;
+notificationUserIterator0.initialize(notificationEmailInterval0);
+XWikiStoreInterface xWikiStoreInterface0 = null;
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiStoreInterface0, xWikiContext2);
+
+20:44:35.731 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+20:44:35.731 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.notifications.internal.email.AbstractMimeMessageIterator.next(AbstractMimeMessageIterator.java:214)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+20:44:35.732 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+20:44:35.761 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+20:44:35.953 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+20:44:38.817 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+20:44:47.939 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractMimeMessageIterator_ESTest' to results/XWIKI-14554-1-4-PESA_II-WeightedSum:TestLen:CallDiversity
+20:44:47.952 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

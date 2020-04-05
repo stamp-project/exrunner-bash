@@ -1,0 +1,90 @@
+14:50:43.031 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:50:43.036 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+14:50:43.037 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+14:50:43.037 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+14:50:51.280 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 583.
+14:51:58.868 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+14:51:58.888 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:51:59.066 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+14:52:03.964 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 4 second: 5.909090909090909
+14:52:04.455 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 5 fitness evolutions and 5 second: 3.0
+14:52:07.312 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 9 fitness evolutions and 8 second: 0.0
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+String string1 = xWikiAttachment0.getMimeType(xWikiContext1);
+Reader reader0 = null;
+Archive archive0 = new Archive(string0, reader0);
+xWikiAttachment0.setArchive(archive0);
+xWikiAttachment0.getDoc();
+String string2 = xWikiAttachment0.getVersion();
+xWikiAttachment0.loadArchive(xWikiContext1);
+ItemManager itemManager0 = mock(ItemManager.class, new ViolatedAssumptionAnswer());
+SessionImpl sessionImpl0 = mock(SessionImpl.class, new ViolatedAssumptionAnswer());
+String string3 = "";
+NodeId nodeId0 = NodeId.valueOf(string3);
+NodeTypeRegistry nodeTypeRegistry0 = mock(NodeTypeRegistry.class, new ViolatedAssumptionAnswer());
+VirtualNodeTypeStateProvider virtualNodeTypeStateProvider0 = new VirtualNodeTypeStateProvider(nodeTypeRegistry0, nodeId0, nodeId0);
+QName qName0 = QName.JCR_XMLTEXT;
+QName[] qNameArray0 = new QName[4];
+qNameArray0[0] = qName0;
+QName qName1 = QName.JCR_SUCCESSORS;
+qNameArray0[1] = qName1;
+QName qName2 = QName.JCR_MIXINTYPES;
+qNameArray0[2] = qName2;
+qNameArray0[3] = qName0;
+VirtualNodeState virtualNodeState0 = new VirtualNodeState(virtualNodeTypeStateProvider0, nodeId0, nodeId0, qName0, qNameArray0);
+VirtualNodeState virtualNodeState1 = virtualNodeTypeStateProvider0.createNodeState(virtualNodeState0, qNameArray0[3], nodeId0, qName1);
+NodeDefinition nodeDefinition0 = mock(NodeDefinition.class, new ViolatedAssumptionAnswer());
+ItemLifeCycleListener[] itemLifeCycleListenerArray0 = new ItemLifeCycleListener[8];
+itemLifeCycleListenerArray0[0] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[1] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[2] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[3] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[4] = itemLifeCycleListenerArray0[3];
+itemLifeCycleListenerArray0[5] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[6] = (ItemLifeCycleListener) itemManager0;
+itemLifeCycleListenerArray0[7] = itemLifeCycleListenerArray0[6];
+VersionHistoryImpl versionHistoryImpl0 = new VersionHistoryImpl(itemManager0, sessionImpl0, nodeId0, virtualNodeState1, nodeDefinition0, itemLifeCycleListenerArray0);
+Value[] valueArray0 = new Value[4];
+ReferenceValue referenceValue0 = ReferenceValue.valueOf(string1);
+valueArray0[0] = (Value) referenceValue0;
+Session session0 = versionHistoryImpl0.getSession();
+SessionNamespaceResolver sessionNamespaceResolver0 = new SessionNamespaceResolver(session0);
+InternalValue internalValue0 = InternalValue.create(valueArray0[0], (NamespaceResolver) sessionNamespaceResolver0);
+Value value0 = internalValue0.toJCRValue(sessionNamespaceResolver0);
+valueArray0[1] = value0;
+DoubleValue doubleValue0 = DoubleValue.valueOf(string3);
+valueArray0[2] = (Value) doubleValue0;
+StringValue stringValue0 = new StringValue(string2);
+valueArray0[3] = (Value) stringValue0;
+PropertyImpl propertyImpl0 = versionHistoryImpl0.setProperty(qName1, valueArray0);
+InputStream inputStream0 = propertyImpl0.getStream();
+xWikiAttachment0.setContent(inputStream0);
+
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.setName(EntityReference.java:185)
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:153)
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference.java:68)
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment.java:156)
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment.java:980)
+14:52:08.176 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment.java:923)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+14:52:08.177 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+14:52:08.208 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite

@@ -1,0 +1,77 @@
+06:10:10.521 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+06:10:10.533 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine:116)
+06:10:10.533 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math3.geometry.euclidean.threed.SubLine
+06:10:10.534 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+06:10:11.216 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 4.
+06:10:16.463 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+06:10:16.489 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+06:10:16.521 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+06:10:17.329 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 0 second: 3.0
+06:10:19.485 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 37 fitness evolutions and 2 second: 0.6666666666666666
+06:10:19.544 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+06:10:19.545 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.6666666666666666
+06:10:20.216 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 83 fitness evolutions and 3 second: 0.6585365853658536
+06:10:20.279 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 94 fitness evolutions and 3 second: 0.0
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Vector3D vector3D0 = Vector3D.POSITIVE_INFINITY;
+double double0 = (-2167.7499618913444);
+double double1 = 3.141592653489793;
+Line line0 = new Line(vector3D0, vector3D0);
+Vector1D vector1D0 = line0.toSubSpace(vector3D0);
+double double2 = (-2157.4);
+Vector1D vector1D1 = Vector1D.NEGATIVE_INFINITY;
+Vector1D vector1D2 = new Vector1D(double1, vector1D0, double2, vector1D1);
+double double3 = 323.900456;
+double double4 = 3.141592653589793;
+Vector1D vector1D3 = new Vector1D(double0, vector1D2, double3, vector1D2, double4, vector1D2, double0, vector1D2);
+Line line1 = mock(Line.class, new ViolatedAssumptionAnswer());
+doReturn(vector3D0).when(line1).intersection(any(org.apache.commons.math3.geometry.euclidean.threed.Line.class));
+doReturn(vector1D3, vector1D1).when(line1).toSubSpace(nullable(org.apache.commons.math3.geometry.Vector.class));
+LinkedList<Interval> linkedList0 = new LinkedList<Interval>();
+Region.Location region_Location0 = Region.Location.INSIDE;
+IntervalsSet intervalsSet0 = mock(IntervalsSet.class, new ViolatedAssumptionAnswer());
+doReturn(linkedList0).when(intervalsSet0).asList();
+doReturn(region_Location0, region_Location0).when(intervalsSet0).checkPoint(nullable(org.apache.commons.math3.geometry.Vector.class));
+SubLine subLine0 = new SubLine(line1, intervalsSet0);
+subLine0.getSegments();
+boolean boolean0 = true;
+Vector3D vector3D1 = subLine0.intersection(subLine0, boolean0);
+vector1D1.getSpace();
+SubLine subLine1 = new SubLine(vector3D1, vector3D1);
+subLine1.getSegments();
+boolean boolean1 = true;
+double double5 = 1048.5764909427069;
+double double6 = (-275.18);
+Vector3D vector3D2 = new Vector3D(double5, double5, double6);
+Plane plane0 = new Plane(vector3D1, vector3D1, vector3D2);
+Vector3D vector3D3 = Vector3D.PLUS_K;
+Plane plane1 = new Plane(vector3D1, vector3D3);
+Line line2 = plane0.intersection(plane1);
+SubLine subLine2 = line2.wholeLine();
+subLine1.intersection(subLine2, boolean0);
+SubLine subLine3 = new SubLine(vector3D1, vector3D1);
+subLine1.getSegments();
+
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.euclidean.threed.Line.getAbscissa(Line.java:114)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.euclidean.threed.Line.toSubSpace(Line.java:129)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math3.geometry.euclidean.threed.SubLine.intersection(SubLine.java:116)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+06:10:20.363 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+06:10:20.364 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+06:10:20.400 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+06:10:20.817 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+06:10:21.157 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+06:10:23.479 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'SubLine_ESTest' to results/MATH-4b-3-16-PESA_II-WeightedSum:TestLen:CallDiversity
+06:10:23.495 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

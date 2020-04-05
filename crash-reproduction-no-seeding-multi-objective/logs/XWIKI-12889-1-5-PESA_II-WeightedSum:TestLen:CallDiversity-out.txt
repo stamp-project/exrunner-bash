@@ -1,0 +1,73 @@
+00:32:17.207 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+00:32:17.228 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rest.internal.DomainObjectFactory.createJobStatus(DomainObjectFactory:294)
+00:32:17.228 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rest.internal.DomainObjectFactory
+00:32:17.229 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+00:32:22.013 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 576.
+00:33:31.322 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+00:33:31.355 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+00:33:31.513 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+00:34:18.472 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 46 second: 4.5
+00:34:23.262 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+00:34:23.263 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+00:34:27.497 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 55 fitness evolutions and 55 second: 0.0
+00:34:27.967 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ObjectFactory objectFactory0 = new ObjectFactory();
+URI uRI0 = null;
+DefaultRequest defaultRequest0 = new DefaultRequest();
+JobStatus jobStatus0 = null;
+DefaultObservationManager defaultObservationManager0 = new DefaultObservationManager();
+ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "componentManager", (Object) componentManager0);
+Logger logger0 = (Logger)URLStreamHandlerFactory.log;
+Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "logger", (Object) logger0);
+Injector.validateBean(defaultObservationManager0, (Class<?>) DefaultObservationManager.class);
+DefaultLoggerManager defaultLoggerManager0 = new DefaultLoggerManager();
+String string0 = "";
+LinkedList<SubstituteLoggingEvent> linkedList0 = new LinkedList<SubstituteLoggingEvent>();
+boolean boolean0 = false;
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string0, linkedList0, boolean0);
+Injector.inject(defaultLoggerManager0, (Class<?>) DefaultLoggerManager.class, "logger", (Object) substituteLogger0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultLoggerManager0, (Class<?>) DefaultLoggerManager.class, "observation", (Object) observationManager0);
+Injector.validateBean(defaultLoggerManager0, (Class<?>) DefaultLoggerManager.class);
+DefaultJobStatus<DefaultRequest> defaultJobStatus0 = new DefaultJobStatus<DefaultRequest>(defaultRequest0, jobStatus0, defaultObservationManager0, defaultLoggerManager0);
+org.xwiki.rest.model.jaxb.JobStatus jobStatus1 = DomainObjectFactory.createJobStatus(objectFactory0, uRI0, defaultJobStatus0);
+ObjectFactory objectFactory1 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+doReturn(jobStatus1).when(objectFactory1).createJobStatus();
+URI uRI1 = null;
+JobStatus jobStatus2 = mock(JobStatus.class, new ViolatedAssumptionAnswer());
+doReturn(defaultRequest0).when(jobStatus2).getRequest();
+DomainObjectFactory.createJobStatus(objectFactory1, uRI1, jobStatus2);
+ObjectFactory objectFactory2 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+Document document0 = mock(Document.class, new ViolatedAssumptionAnswer());
+DomainObjectFactory.createTranslations(objectFactory2, uRI1, document0);
+DomainObjectFactory.getModelUtils();
+ObjectFactory objectFactory3 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+String string1 = "http://www.xwiki.org/rel/page";
+DomainObjectFactory.createWiki(objectFactory3, uRI1, string1);
+ObjectFactory objectFactory4 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+String string2 = "Q8D&y@pS6x}ezmJG:rk";
+com.xpn.xwiki.api.Class class0 = mock(com.xpn.xwiki.api.Class.class, new ViolatedAssumptionAnswer());
+DomainObjectFactory.createClass(objectFactory4, uRI1, string2, class0);
+
+00:34:27.967 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+00:34:27.967 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+00:34:27.967 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.Calendar.setTime(Calendar.java:1770)
+00:34:27.967 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rest.internal.DomainObjectFactory.createJobStatus(DomainObjectFactory.java:294)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor30.invoke(Unknown Source)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+00:34:27.968 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+00:34:27.994 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+00:34:28.395 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+00:34:31.922 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+00:34:39.198 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DomainObjectFactory_ESTest' to results/XWIKI-12889-1-5-PESA_II-WeightedSum:TestLen:CallDiversity
+00:34:39.211 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

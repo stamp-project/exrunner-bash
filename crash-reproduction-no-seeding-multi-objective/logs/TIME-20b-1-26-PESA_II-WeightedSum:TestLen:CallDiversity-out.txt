@@ -1,0 +1,45 @@
+12:01:49.871 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+12:01:49.878 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+12:01:49.879 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+12:01:49.879 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+12:01:50.709 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+12:01:55.542 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+12:01:55.558 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+12:01:55.591 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+12:01:56.866 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.863636363636363
+12:01:57.550 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 7 fitness evolutions and 1 second: 0.0
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+DateTimePrinter dateTimePrinter1 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser1 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser1).toString();
+doReturn(0).when(dateTimeParser1).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter1 = new DateTimeFormatter(dateTimePrinter1, dateTimeParser1);
+String string0 = "Instant must not be null";
+DateTime dateTime0 = dateTimeFormatter1.parseDateTime(string0);
+CharArrayWriter charArrayWriter0 = new CharArrayWriter();
+int int0 = 1776;
+CharArrayWriter charArrayWriter1 = charArrayWriter0.append((CharSequence) string0, int0, int0);
+dateTimeFormatter0.printTo((Writer) charArrayWriter1, (long) int0);
+dateTimeFormatter1.printTo((Writer) charArrayWriter0, (ReadableInstant) dateTime0);
+dateTimeFormatter1.withOffsetParsed();
+
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: Invalid format: "Instant must not be null"
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter.java:866)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+12:01:58.325 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+12:01:58.326 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+12:01:58.326 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+12:01:58.326 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+12:01:58.326 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+12:01:58.326 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+12:01:58.344 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite

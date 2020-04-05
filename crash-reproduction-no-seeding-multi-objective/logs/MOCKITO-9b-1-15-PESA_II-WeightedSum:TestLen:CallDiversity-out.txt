@@ -1,0 +1,65 @@
+11:26:12.550 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.base.MockitoException
+11:26:12.573 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.cannotCallAbstractRealMethod(Reporter:583)
+11:26:12.573 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+11:26:12.574 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+11:26:16.148 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 4.
+11:26:23.256 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+11:26:23.284 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:26:23.352 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+11:26:27.231 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 3 second: 0.0
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Reporter reporter0 = new Reporter();
+reporter0.cannotCallAbstractRealMethod();
+SerializableMode serializableMode0 = SerializableMode.BASIC;
+reporter0.usingConstructorWithFancySerializable(serializableMode0);
+Matcher<StubbedInvocationMatcher>[] matcherArray0 = (Matcher<StubbedInvocationMatcher>[]) Array.newInstance(Matcher.class, 1);
+Invocation invocation0 = null;
+List<Matcher> list0 = null;
+InvocationMatcher invocationMatcher0 = new InvocationMatcher(invocation0, list0);
+Answer<Object> answer0 = (Answer<Object>) mock(Answer.class, new ViolatedAssumptionAnswer());
+StubbedInvocationMatcher stubbedInvocationMatcher0 = new StubbedInvocationMatcher(invocationMatcher0, answer0);
+Matcher<StubbedInvocationMatcher> matcher0 = IsSame.sameInstance(stubbedInvocationMatcher0);
+matcherArray0[0] = matcher0;
+Matcher<InvocationMatcher> matcher1 = AllOf.allOf((Matcher<? extends InvocationMatcher>[]) matcherArray0);
+LocalizedMatcher localizedMatcher0 = new LocalizedMatcher(matcher1);
+Method method0 = stubbedInvocationMatcher0.getMethod();
+SerializableMethod serializableMethod0 = new SerializableMethod(method0);
+int int0 = 0;
+MockitoMethodProxy mockitoMethodProxy0 = mock(MockitoMethodProxy.class, new ViolatedAssumptionAnswer());
+CleanTraceRealMethod cleanTraceRealMethod0 = new CleanTraceRealMethod(mockitoMethodProxy0);
+InvocationImpl invocationImpl0 = new InvocationImpl(localizedMatcher0, serializableMethod0, matcherArray0, int0, cleanTraceRealMethod0);
+String string0 = "Cannot instantiate @InjectMocks field named '";
+String string1 = "";
+String string2 = null;
+String string3 = "";
+SQLNonTransientException sQLNonTransientException0 = new SQLNonTransientException();
+SQLRecoverableException sQLRecoverableException0 = new SQLRecoverableException(string3, sQLNonTransientException0);
+SQLDataException sQLDataException0 = new SQLDataException(string1, string2, sQLRecoverableException0);
+SQLFeatureNotSupportedException sQLFeatureNotSupportedException0 = new SQLFeatureNotSupportedException(string0, string0, sQLDataException0);
+SQLInvalidAuthorizationSpecException sQLInvalidAuthorizationSpecException0 = new SQLInvalidAuthorizationSpecException(string0, sQLFeatureNotSupportedException0);
+NotifiedMethodInvocationReport notifiedMethodInvocationReport0 = new NotifiedMethodInvocationReport((Invocation) invocationImpl0, (Throwable) sQLInvalidAuthorizationSpecException0);
+DescribedInvocation describedInvocation0 = notifiedMethodInvocationReport0.getInvocation();
+LocationImpl locationImpl0 = new LocationImpl();
+reporter0.neverWantedButInvoked(describedInvocation0, locationImpl0);
+
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.base.MockitoException: 
+Cannot call abstract real method on java object!
+Calling real methods is only possible when mocking non abstract method.
+  //correct example:
+  when(mockOfConcreteClass.nonAbstractMethod()).thenCallRealMethod();
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.Reporter.cannotCallAbstractRealMethod(Reporter.java:583)
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+11:26:29.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+11:26:29.107 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+11:26:29.107 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+11:26:29.107 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+11:26:29.107 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+11:26:29.107 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+11:26:29.108 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+11:26:29.116 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite

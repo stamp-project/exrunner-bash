@@ -1,0 +1,64 @@
+09:35:59.404 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.base.MockitoException
+09:35:59.409 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.serializableWontWorkForObjectsThatDontImplementSerializable(Reporter:760)
+09:35:59.409 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+09:35:59.410 [main] INFO  eu.stamp.botsing.Botsing - PESA_II
+09:36:02.996 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+09:36:08.303 [main] ERROR e.s.b.reproduction.CrashReproduction - Error in target initialization:
+09:36:08.353 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:36:08.481 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Initializing the first population with size of 50 individuals
+09:36:08.616 [main] WARN  e.s.b.g.s.metaheuristics.PESAII - Botsing was unsuccessful in generating the initial population. cause: Type org.mockito.internal.matchers.LocalizedMatcher not present
+09:36:08.796 [main] WARN  e.s.b.g.s.metaheuristics.PESAII - Botsing was unsuccessful in generating the initial population. cause: Type org.mockito.internal.matchers.LocalizedMatcher not present
+09:36:08.796 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 1
+09:36:08.796 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+09:36:08.893 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 0 second: 4.5
+09:36:08.897 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 2
+09:36:08.898 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.026 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 3
+09:36:10.027 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.038 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 4
+09:36:10.038 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.055 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 5
+09:36:10.055 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.095 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 6
+09:36:10.095 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.110 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 7
+09:36:10.110 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.133 [main] INFO  e.s.b.g.s.metaheuristics.PESAII - Number of generations: 8
+09:36:10.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.5
+09:36:10.215 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 16 fitness evolutions and 1 second: 0.0
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Reporter reporter0 = new Reporter();
+Class<Object> class0 = Object.class;
+reporter0.serializableWontWorkForObjectsThatDontImplementSerializable(class0);
+reporter0.notAMockPassedToVerify(class0);
+String string0 = "' is invalid";
+reporter0.extraInterfacesCannotContainMockedType(class0);
+
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.base.MockitoException: 
+You are using the setting 'withSettings().serializable()' however the type you are trying to mock 'Object'
+do not implement Serializable AND do not have a no-arg constructor.
+This combination is requested, otherwise you will get an 'java.io.InvalidClassException' when the mock will be serialized
+
+Also note that as requested by the Java serialization specification, the whole hierarchy need to implements Serializable,
+i.e. the top-most superclass has to implements Serializable.
+
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.Reporter.serializableWontWorkForObjectsThatDontImplementSerializable(Reporter.java:760)
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+09:36:10.270 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+09:36:10.271 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+09:36:10.304 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+09:36:10.380 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+09:36:12.527 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+09:36:16.623 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'Reporter_ESTest' to results/MOCKITO-10b-1-19-PESA_II-WeightedSum:TestLen:CallDiversity
+09:36:16.718 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
