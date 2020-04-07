@@ -1,0 +1,67 @@
+14:54:47.684 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:54:47.696 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment:980)
+14:54:47.696 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+14:54:47.697 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+14:55:05.449 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 583.
+14:57:16.026 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+14:57:16.044 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:57:16.149 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+14:57:22.175 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 6 second: 5.909090909090909
+14:57:30.691 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 10 fitness evolutions and 14 second: 0.0
+14:57:31.274 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+14:57:34.673 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+14:57:34.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string0 = null;
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiContext xWikiContext0 = null;
+xWikiAttachment0.resetMimeType(xWikiContext0);
+xWikiAttachment0.getContentInputStream(xWikiContext0);
+XWikiAttachment.getXClassEntityReferenceResolver();
+xWikiAttachment0.setVersion(string0);
+boolean boolean0 = false;
+xWikiAttachment0.toStringXML(boolean0, boolean0, xWikiContext0);
+xWikiAttachment0.getMimeType(xWikiContext0);
+InputStream inputStream0 = xWikiAttachment0.getContentInputStream(xWikiContext0);
+XWikiContextProvider xWikiContextProvider0 = new XWikiContextProvider();
+XWikiStubContextProvider xWikiStubContextProvider0 = mock(XWikiStubContextProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class, "contextProvider", (Object) xWikiStubContextProvider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class, "execution", (Object) execution0);
+Injector.validateBean(xWikiContextProvider0, (Class<?>) XWikiContextProvider.class);
+XWikiContext xWikiContext1 = xWikiContextProvider0.get();
+XWikiDocument xWikiDocument1 = xWikiContext1.getWikiServer();
+String string1 = "version";
+XWikiAttachment xWikiAttachment1 = xWikiDocument1.addAttachment(string1, inputStream0, xWikiContext0);
+xWikiAttachment0.apply(xWikiAttachment1);
+xWikiAttachment1.getId();
+XWikiAttachmentContent xWikiAttachmentContent0 = new XWikiAttachmentContent();
+xWikiAttachment0.setAttachment_content(xWikiAttachmentContent0);
+
+14:57:34.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+14:57:34.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.setName(EntityReference.java:185)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:153)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference.java:68)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment.java:156)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment.java:980)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.resetMimeType(XWikiAttachment.java:957)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+14:57:34.681 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+14:57:34.682 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+14:57:34.682 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+14:57:34.682 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+14:57:34.726 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+14:57:35.127 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+14:57:46.595 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+14:57:58.004 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-5-11-NSGA_II-LineCoverage:ExceptionType:StackTraceSimilarity
+14:57:58.050 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

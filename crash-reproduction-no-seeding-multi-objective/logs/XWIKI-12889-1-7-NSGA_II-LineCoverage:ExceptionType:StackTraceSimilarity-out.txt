@@ -1,0 +1,100 @@
+22:27:36.299 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+22:27:36.321 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rest.internal.DomainObjectFactory.createJobStatus(DomainObjectFactory:294)
+22:27:36.321 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rest.internal.DomainObjectFactory
+22:27:36.321 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+22:27:41.390 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 576.
+22:28:56.487 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+22:28:56.507 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:28:56.534 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+22:29:47.553 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 51 second: 4.5
+22:29:52.309 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+22:30:00.032 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+22:30:00.039 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 2
+22:30:00.039 [main] INFO  eu.stamp.botsing.ga.GAUtil - Individual #1:
+22:30:00.039 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.LineCoverageFF: 0.5
+22:30:00.039 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.ExceptionTypeFF: 0.0
+22:30:00.040 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.StackTraceSimilarityFF: 0.42857142857142855
+22:30:00.040 [main] INFO  eu.stamp.botsing.ga.GAUtil - Individual #1:
+22:30:00.040 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.LineCoverageFF: 1.0
+22:30:00.040 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.ExceptionTypeFF: 0.0
+22:30:00.040 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.StackTraceSimilarityFF: 0.3
+22:30:07.128 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+22:30:07.132 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 3
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - Individual #1:
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.LineCoverageFF: 0.5
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.ExceptionTypeFF: 0.0
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.StackTraceSimilarityFF: 0.4
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - Individual #1:
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.LineCoverageFF: 1.0
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.ExceptionTypeFF: 0.0
+22:30:07.133 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.StackTraceSimilarityFF: 0.28571428571428575
+22:30:10.257 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 166 fitness evolutions and 73 second: 0.0
+22:30:15.441 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 2
+22:30:15.458 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: ObjectFactory objectFactory0 = new ObjectFactory();
+JobStatus jobStatus0 = objectFactory0.createJobStatus();
+String string0 = "7*\\ai9/r";
+DefaultJobProgress defaultJobProgress0 = new DefaultJobProgress(string0);
+JobProgress jobProgress0 = DomainObjectFactory.createJobProgress(objectFactory0, defaultJobProgress0);
+ObjectFactory objectFactory1 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+doReturn(jobProgress0).when(objectFactory1).createJobProgress();
+doReturn(jobStatus0).when(objectFactory1).createJobStatus();
+URI uRI0 = null;
+DefaultRequest defaultRequest0 = new DefaultRequest();
+objectFactory0.createXwiki();
+org.xwiki.job.event.status.JobStatus.State jobStatus_State0 = org.xwiki.job.event.status.JobStatus.State.RUNNING;
+org.xwiki.job.event.status.JobStatus jobStatus1 = mock(org.xwiki.job.event.status.JobStatus.class, new ViolatedAssumptionAnswer());
+doReturn(defaultJobProgress0).when(jobStatus1).getProgress();
+doReturn(defaultRequest0).when(jobStatus1).getRequest();
+doReturn((Date) null).when(jobStatus1).getStartDate();
+doReturn(jobStatus_State0).when(jobStatus1).getState();
+DomainObjectFactory.createJobStatus(objectFactory1, uRI0, jobStatus1);
+ObjectFactory objectFactory2 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+Attachment attachment0 = mock(Attachment.class, new ViolatedAssumptionAnswer());
+String string1 = "";
+ObjectFactory objectFactory3 = mock(ObjectFactory.class, new ViolatedAssumptionAnswer());
+org.xwiki.job.event.status.JobStatus jobStatus2 = mock(org.xwiki.job.event.status.JobStatus.class, new ViolatedAssumptionAnswer());
+DomainObjectFactory.createJobStatus(objectFactory3, uRI0, jobStatus2);
+String string2 = "";
+Class class0 = mock(Class.class, new ViolatedAssumptionAnswer());
+DomainObjectFactory.createClass(objectFactory2, uRI0, string2, class0);
+ObjectFactory objectFactory4 = null;
+XWikiContext xWikiContext0 = new XWikiContext();
+Document document0 = mock(Document.class, new ViolatedAssumptionAnswer());
+BaseObject baseObject0 = mock(BaseObject.class, new ViolatedAssumptionAnswer());
+boolean boolean0 = false;
+XWiki xWiki0 = null;
+HSQLDialect hSQLDialect0 = new HSQLDialect();
+Boolean boolean1 = hSQLDialect0.performTemporaryTableDDLInIsolation();
+DomainObjectFactory.createObjectSummary(objectFactory4, uRI0, xWikiContext0, document0, baseObject0, boolean0, xWiki0, boolean1);
+PersistentIdentifierBag persistentIdentifierBag0 = new PersistentIdentifierBag();
+Version version0 = null;
+String string3 = "";
+int int0 = (-1253);
+int int1 = 2268;
+int int2 = 28;
+GregorianCalendar gregorianCalendar0 = new GregorianCalendar(int0, int1, int2, int2, int0);
+gregorianCalendar0.getGregorianChange();
+String string4 = "q@9x@*/5GG";
+
+22:30:15.458 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+22:30:15.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+22:30:15.459 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.Calendar.setTime(Calendar.java:1770)
+22:30:15.460 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rest.internal.DomainObjectFactory.createJobStatus(DomainObjectFactory.java:294)
+22:30:15.460 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor30.invoke(Unknown Source)
+22:30:15.460 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+22:30:15.460 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+22:30:15.461 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+22:30:15.476 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+22:30:19.325 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+22:30:21.755 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+22:30:29.743 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DomainObjectFactory_ESTest' to results/XWIKI-12889-1-7-NSGA_II-LineCoverage:ExceptionType:StackTraceSimilarity
+22:30:29.794 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

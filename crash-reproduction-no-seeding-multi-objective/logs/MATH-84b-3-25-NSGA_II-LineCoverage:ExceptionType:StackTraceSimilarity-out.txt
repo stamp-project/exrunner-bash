@@ -1,0 +1,82 @@
+07:39:50.911 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+07:39:50.916 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.optimize(DirectSearchOptimizer:307)
+07:39:50.917 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+07:39:50.917 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+07:39:53.841 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+07:40:01.917 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+07:40:01.952 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:40:02.012 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+07:40:04.454 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 2 second: 5.833333333333333
+07:40:04.690 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+07:40:08.151 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 61 fitness evolutions and 6 second: 3.0
+07:40:09.419 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 92 fitness evolutions and 7 second: 0.42857142857142855
+07:40:09.948 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 1
+07:40:09.995 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 2
+07:40:09.996 [main] INFO  eu.stamp.botsing.ga.GAUtil - Individual #1:
+07:40:09.996 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.LineCoverageFF: 0.0
+07:40:09.996 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.ExceptionTypeFF: 0.0
+07:40:09.996 [main] INFO  eu.stamp.botsing.ga.GAUtil - eu.stamp.botsing.fitnessfunction.multiobjectivization.StackTraceSimilarityFF: 0.42857142857142855
+07:40:10.274 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 107 fitness evolutions and 8 second: 0.0
+07:40:11.264 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+07:40:11.316 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+int int0 = 0;
+multiDirectional0.setMaxIterations(int0);
+MultivariateRealFunction multivariateRealFunction0 = mock(MultivariateRealFunction.class, new ViolatedAssumptionAnswer());
+doReturn(0.0, 0.0, 0.0, 0.0, 0.0).when(multivariateRealFunction0).value(any(double[].class));
+GoalType goalType0 = GoalType.MAXIMIZE;
+double[] doubleArray0 = new double[9];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+doubleArray0[2] = (double) int0;
+double double0 = 0.0;
+doubleArray0[3] = double0;
+doubleArray0[4] = (double) int0;
+doubleArray0[5] = (double) int0;
+doubleArray0[6] = (double) int0;
+doubleArray0[7] = (double) int0;
+doubleArray0[8] = (double) int0;
+RealPointValuePair realPointValuePair0 = multiDirectional0.optimize(multivariateRealFunction0, goalType0, doubleArray0);
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.replaceWorstPoint(realPointValuePair0, comparator0);
+int int1 = multiDirectional0.getEvaluations();
+multiDirectional0.incrementIterationsCounter();
+multiDirectional0.incrementIterationsCounter();
+double[][] doubleArray1 = new double[5][3];
+doubleArray1[0] = doubleArray0;
+doubleArray1[1] = doubleArray0;
+double[] doubleArray2 = new double[4];
+doubleArray2[0] = (double) int1;
+doubleArray2[1] = (double) int1;
+double double1 = 1.0E-8;
+doubleArray2[2] = double1;
+double double2 = 0.0;
+doubleArray2[3] = double2;
+doubleArray1[2] = doubleArray2;
+doubleArray1[3] = doubleArray0;
+doubleArray1[4] = doubleArray0;
+multiDirectional0.setStartConfiguration(doubleArray1);
+
+07:40:11.327 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.OptimizationException: org.apache.commons.math.MaxIterationsExceededException: Maximal number of iterations (0) exceeded
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer.java:320)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.direct.MultiDirectional.iterateSimplex(MultiDirectional.java:66)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.direct.DirectSearchOptimizer.optimize(DirectSearchOptimizer.java:307)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+07:40:11.328 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+07:40:11.329 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+07:40:11.338 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+07:40:11.407 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+07:40:13.447 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+07:40:19.815 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+07:40:24.653 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-3-25-NSGA_II-LineCoverage:ExceptionType:StackTraceSimilarity
+07:40:24.735 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

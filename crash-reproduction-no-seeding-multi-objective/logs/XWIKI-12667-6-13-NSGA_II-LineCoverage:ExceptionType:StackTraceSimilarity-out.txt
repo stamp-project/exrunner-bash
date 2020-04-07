@@ -1,0 +1,83 @@
+14:56:49.244 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+14:56:49.275 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment:923)
+14:56:49.275 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+14:56:49.276 [main] INFO  eu.stamp.botsing.Botsing - NSGA_II
+14:57:03.874 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 583.
+14:59:04.815 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+14:59:04.894 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:59:05.013 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Initializing the first population with size of 50 individuals
+14:59:17.270 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 12 second: 5.625
+14:59:22.591 [TEST_EXECUTION_THREAD_1] ERROR com.xpn.xwiki.doc.XWikiAttachment - Failed to compare content of attachments
+java.lang.NullPointerException: null
+	at com.xpn.xwiki.doc.XWikiAttachment.getContentInputStream(XWikiAttachment.java:725) ~[xwiki-platform-legacy-oldcore-7.2.jar:na]
+	at com.xpn.xwiki.doc.XWikiAttachment.apply(XWikiAttachment.java:1023) ~[xwiki-platform-legacy-oldcore-7.2.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_242]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_242]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_242]
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55) [botsing-reproduction.jar:1.0.8-SNAPSHOT]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
+14:59:22.743 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 6 fitness evolutions and 17 second: 3.0
+14:59:28.307 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 26 fitness evolutions and 23 second: 0.0
+14:59:29.450 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - Number of generations: 1
+14:59:37.161 [main] INFO  e.s.b.g.s.metaheuristics.NSGAII - * Front0 Size: 3
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string0 = null;
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+XWikiContext xWikiContext0 = null;
+xWikiAttachment0.getMimeType(xWikiContext0);
+ReadOnlyXWikiContextProvider readOnlyXWikiContextProvider0 = new ReadOnlyXWikiContextProvider();
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class, "execution", (Object) execution0);
+Injector.validateBean(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class);
+XWikiContext xWikiContext1 = readOnlyXWikiContextProvider0.get();
+ExportURLFactory exportURLFactory0 = new ExportURLFactory();
+XWikiContext xWikiContext2 = xWikiContext1.clone();
+XWiki xWiki0 = XWiki.getMainXWiki(xWikiContext2);
+XWikiStoreInterface xWikiStoreInterface0 = xWiki0.getNotCacheStore();
+XWikiCacheStore xWikiCacheStore0 = new XWikiCacheStore(xWikiStoreInterface0, xWikiContext0);
+MetaClass metaClass0 = xWiki0.getMetaclass();
+XWikiDocument xWikiDocument1 = metaClass0.getOwnerDocument();
+XWikiContext xWikiContext3 = xWikiContext1.clone();
+XWikiDocument xWikiDocument2 = xWikiCacheStore0.loadXWikiDoc(xWikiDocument1, xWikiContext3);
+String string1 = "";
+String string2 = "1.1";
+XWikiAttachment xWikiAttachment1 = exportURLFactory0.findAttachmentForDocRevision(xWikiDocument2, string1, string2, xWikiContext2);
+xWikiAttachment1.getMimeType(xWikiContext3);
+
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.setName(EntityReference.java:185)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:153)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference.java:68)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment.java:156)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment.java:980)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment.java:923)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+14:59:37.192 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+14:59:37.193 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+14:59:37.216 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+14:59:37.387 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+14:59:45.525 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+14:59:54.083 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-6-13-NSGA_II-LineCoverage:ExceptionType:StackTraceSimilarity
+14:59:54.108 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

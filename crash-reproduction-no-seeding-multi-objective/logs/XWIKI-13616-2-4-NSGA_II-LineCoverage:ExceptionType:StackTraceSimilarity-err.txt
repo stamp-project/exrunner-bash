@@ -1,0 +1,26 @@
+Exception in thread "main" java.lang.Error: org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+	at org.evosuite.testcase.execution.TestCaseExecutor.runTest(TestCaseExecutor.java:146)
+	at org.evosuite.testcase.TestFitnessFunction.runTest(TestFitnessFunction.java:91)
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:60)
+	at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:34)
+	at eu.stamp.botsing.ga.strategy.metaheuristics.NSGAII.calculateFitness(NSGAII.java:181)
+	at eu.stamp.botsing.ga.strategy.metaheuristics.NSGAII.evolve(NSGAII.java:94)
+	at eu.stamp.botsing.ga.strategy.metaheuristics.NSGAII.generateSolution(NSGAII.java:272)
+	at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:126)
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:113)
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:60)
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:96)
+	at eu.stamp.botsing.Botsing.main(Botsing.java:175)
+Caused by: org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:384)
+	at org.infinispan.util.concurrent.BlockingTaskAwareExecutorServiceImpl$ControllerThread.interrupt(BlockingTaskAwareExecutorServiceImpl.java:144)
+	at org.evosuite.runtime.thread.ThreadStopper.killAndJoinClientThreads(ThreadStopper.java:168)
+	at org.evosuite.testcase.execution.TestRunnable.killAndJoinClientThreads(TestRunnable.java:130)
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:346)
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:277)
+	at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:264)
+	at org.evosuite.testcase.execution.TestCaseExecutor.runTest(TestCaseExecutor.java:140)
+	... 11 more
+Exception in thread "2.5.4.13" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:384)
+	at org.infinispan.util.concurrent.BlockingTaskAwareExecutorServiceImpl$ControllerThread.run(BlockingTaskAwareExecutorServiceImpl.java:152)
