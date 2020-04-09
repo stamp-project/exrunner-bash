@@ -1,0 +1,79 @@
+11:03:52.992 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+11:03:52.997 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.populateParameters(HqlQueryExecutor:384)
+11:03:52.997 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+11:03:52.998 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+11:03:58.263 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 553.
+11:05:15.231 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+11:05:15.263 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+11:05:15.327 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+11:05:20.899 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 5 second: 5.892857142857142
+11:05:23.747 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 22 fitness evolutions and 8 second: 4.0
+11:05:24.404 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+11:05:24.404 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+11:05:42.077 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 108 fitness evolutions and 26 second: 3.0
+11:05:48.865 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+11:05:48.865 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+11:06:16.187 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 3
+11:06:16.188 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+11:06:39.438 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 4
+11:06:39.439 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+11:06:52.529 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 427 fitness evolutions and 97 second: 0.0
+11:07:04.662 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Provider<SQLQueryImpl> provider0 = (Provider<SQLQueryImpl>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "componentManagerProvider", (Object) provider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+int int0 = (-1);
+String string0 = "+nb};\"";
+String string1 = null;
+DefaultQueryExecutorManager defaultQueryExecutorManager0 = new DefaultQueryExecutorManager();
+Provider<Integer> provider1 = (Provider<Integer>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultQueryExecutorManager0, (Class<?>) DefaultQueryExecutorManager.class, "componentManagerProvider", (Object) provider1);
+Provider<XWikiContext> provider2 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultQueryExecutorManager0, (Class<?>) DefaultQueryExecutorManager.class, "namedQueryExecutorProvider", (Object) provider2);
+Injector.validateBean(defaultQueryExecutorManager0, (Class<?>) DefaultQueryExecutorManager.class);
+String string2 = null;
+DefaultQuery defaultQuery0 = new DefaultQuery(string1, string2, defaultQueryExecutorManager0);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.bindValue(string2, (Object) hqlQueryExecutor0);
+Map<String, Object> map0 = defaultQuery0.getNamedParameters();
+ExtendedProperties extendedProperties0 = new ExtendedProperties();
+String string3 = "order by 0b `$<%gue8z";
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = null;
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, extendedProperties0);
+CollectionFilterImpl collectionFilterImpl0 = new CollectionFilterImpl(string3, map0, sessionImplementor0, parameterMetadata0);
+Class<UserComponentManager> class0 = UserComponentManager.class;
+AliasToBeanResultTransformer aliasToBeanResultTransformer0 = new AliasToBeanResultTransformer(class0);
+CollectionFilterImpl collectionFilterImpl1 = (CollectionFilterImpl)collectionFilterImpl0.setResultTransformer(aliasToBeanResultTransformer0);
+hqlQueryExecutor0.populateParameters(collectionFilterImpl1, defaultQuery1);
+
+11:07:04.671 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.QueryParameterException: could not locate named parameter [null]
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.engine.query.ParameterMetadata.getNamedParameterDescriptor(ParameterMetadata.java:101)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.engine.query.ParameterMetadata.getNamedParameterExpectedType(ParameterMetadata.java:107)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.impl.AbstractQueryImpl.determineType(AbstractQueryImpl.java:460)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.impl.AbstractQueryImpl.setParameter(AbstractQueryImpl.java:430)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor.java:417)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.populateParameters(HqlQueryExecutor.java:384)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor34.invoke(Unknown Source)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+11:07:04.672 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+11:07:04.674 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+11:07:04.674 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+11:07:04.674 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+11:07:04.689 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+11:07:04.854 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+11:07:07.408 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+11:07:15.620 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-6-23-MOEAD-WeightedSum:TestLen:CallDiversity
+11:07:15.667 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

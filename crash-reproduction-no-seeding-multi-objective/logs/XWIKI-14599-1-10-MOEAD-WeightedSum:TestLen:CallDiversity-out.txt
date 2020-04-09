@@ -1,0 +1,70 @@
+07:28:44.537 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+07:28:44.583 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler:180)
+07:28:44.583 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.jar.internal.handler.JarExtensionHandler
+07:28:44.584 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+07:28:50.077 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 589.
+07:29:36.884 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+07:29:36.913 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+07:29:37.185 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+07:29:44.388 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 7 second: 4.0
+07:29:45.201 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+07:29:45.202 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+07:29:45.891 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 73 fitness evolutions and 8 second: 0.0
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: JarExtensionHandler jarExtensionHandler0 = new JarExtensionHandler();
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "componentManagerManager", (Object) componentManagerManager0);
+NamespaceURLClassLoader namespaceURLClassLoader0 = mock(NamespaceURLClassLoader.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(namespaceURLClassLoader0).getNamespace();
+ClassLoaderManager classLoaderManager0 = mock(ClassLoaderManager.class, new ViolatedAssumptionAnswer());
+doReturn(namespaceURLClassLoader0).when(classLoaderManager0).getURLClassLoader(anyString() , anyBoolean());
+Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "jarExtensionClassLoader", (Object) classLoaderManager0);
+Provider<ComponentDeclaration> provider0 = (Provider<ComponentDeclaration>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "defaultValidatorProvider", (Object) provider0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "logger", (Object) logger0);
+Injector.validateBean(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class);
+boolean boolean0 = true;
+InstalledExtension installedExtension0 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+doReturn(boolean0).when(installedExtension0).isValid(anyString());
+String string0 = "Must have at most one lower bound.";
+DefaultRequest defaultRequest0 = new DefaultRequest();
+String string1 = "Failed to load jar file";
+defaultRequest0.setId(string1);
+boolean boolean1 = true;
+String string2 = "Must have at most one lower bound.";
+DefaultRequest defaultRequest1 = new DefaultRequest();
+boolean boolean2 = true;
+String string3 = "Must have at most one lower bound.";
+DefaultRequest defaultRequest2 = new DefaultRequest();
+String string4 = "Failed to load jar file";
+defaultRequest2.setId(string1);
+boolean boolean3 = true;
+String string5 = "Must have at most one lower bound.";
+DefaultRequest defaultRequest3 = new DefaultRequest();
+String string6 = "Failed to load jar file";
+defaultRequest0.setId(string6);
+String string7 = "s#J";
+jarExtensionHandler0.uninstall(installedExtension0, string5, (Request) defaultRequest2);
+
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException: StringEquals is not supposed to work on a null caller
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.instrumentation.testability.StringHelper.StringEquals(StringHelper.java:131)
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.jar.internal.handler.JarExtensionHandler.uninstall(JarExtensionHandler.java:180)
+07:29:48.834 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+07:29:48.835 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+07:29:48.863 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+07:29:49.133 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+07:29:52.940 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+07:30:04.897 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'JarExtensionHandler_ESTest' to results/XWIKI-14599-1-10-MOEAD-WeightedSum:TestLen:CallDiversity
+07:30:04.943 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

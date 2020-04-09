@@ -1,0 +1,79 @@
+15:11:13.989 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+15:11:14.011 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.macro.toc.TocMacro.execute(TocMacro:125)
+15:11:14.011 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.macro.toc.TocMacro
+15:11:14.012 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+15:11:17.497 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 589.
+15:12:00.852 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+15:12:00.867 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+15:12:00.889 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+15:12:03.607 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 2 second: 5.727272727272727
+15:12:05.802 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 7 fitness evolutions and 4 second: 0.52
+15:12:05.879 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 12 fitness evolutions and 4 second: 0.3225806451612903
+15:12:06.406 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+15:12:06.406 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+15:12:17.781 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+15:12:17.781 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.52
+15:12:23.198 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 3
+15:12:23.198 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.52
+15:12:30.247 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 4
+15:12:30.248 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.52
+15:12:30.473 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 356 fitness evolutions and 29 second: 0.28571428571428575
+15:12:30.541 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 358 fitness evolutions and 29 second: 0.0
+15:12:33.803 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: TocMacro tocMacro0 = new TocMacro();
+LinkLabelGenerator linkLabelGenerator0 = mock(LinkLabelGenerator.class, new ViolatedAssumptionAnswer());
+Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "linkLabelGenerator", (Object) linkLabelGenerator0);
+Parser parser0 = mock(Parser.class, new ViolatedAssumptionAnswer());
+Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "plainTextParser", (Object) parser0);
+DefinitionDescriptionBlock definitionDescriptionBlock0 = null;
+Provider<DefinitionDescriptionBlock> provider0 = (Provider<DefinitionDescriptionBlock>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn(definitionDescriptionBlock0).when(provider0).get();
+Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "wikiModelProvider", (Object) provider0);
+BeanManager beanManager0 = mock(BeanManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(tocMacro0, (Class<?>) AbstractMacro.class, "beanManager", (Object) beanManager0);
+ComponentDescriptor<QuotationLineBlock> componentDescriptor0 = (ComponentDescriptor<QuotationLineBlock>) mock(ComponentDescriptor.class, new ViolatedAssumptionAnswer());
+Injector.inject(tocMacro0, (Class<?>) AbstractMacro.class, "componentDescriptor", (Object) componentDescriptor0);
+Injector.validateBean(tocMacro0, (Class<?>) TocMacro.class);
+int int0 = 0;
+String string0 = null;
+TocMacroParameters.Scope tocMacroParameters_Scope0 = TocMacroParameters.Scope.PAGE;
+TocMacroParameters.Scope tocMacroParameters_Scope1 = TocMacroParameters.Scope.LOCAL;
+boolean boolean0 = false;
+TocMacroParameters tocMacroParameters0 = mock(TocMacroParameters.class, new ViolatedAssumptionAnswer());
+doReturn(int0).when(tocMacroParameters0).getDepth();
+doReturn(string0, string0).when(tocMacroParameters0).getReference();
+doReturn(tocMacroParameters_Scope0, tocMacroParameters_Scope1).when(tocMacroParameters0).getScope();
+doReturn(int0).when(tocMacroParameters0).getStart();
+doReturn(boolean0).when(tocMacroParameters0).isCustomStart();
+doReturn(boolean0).when(tocMacroParameters0).isNumbered();
+String string1 = "Navigation";
+XDOM xDOM0 = null;
+DefaultHTMLCleanerConfiguration defaultHTMLCleanerConfiguration0 = new DefaultHTMLCleanerConfiguration();
+Map<String, String> map0 = defaultHTMLCleanerConfiguration0.getParameters();
+MacroBlock macroBlock0 = new MacroBlock(string0, map0, string1, boolean0);
+MacroTransformationContext macroTransformationContext0 = mock(MacroTransformationContext.class, new ViolatedAssumptionAnswer());
+doReturn(macroBlock0).when(macroTransformationContext0).getCurrentMacroBlock();
+doReturn(xDOM0).when(macroTransformationContext0).getXDOM();
+tocMacro0.execute(tocMacroParameters0, string1, macroTransformationContext0);
+
+15:12:33.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+15:12:33.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+15:12:33.804 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rendering.internal.macro.toc.TreeParametersBuilder.build(TreeParametersBuilder.java:71)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rendering.internal.macro.toc.TocMacro.execute(TocMacro.java:125)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+15:12:33.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+15:12:33.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+15:12:33.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+15:12:33.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+15:12:33.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+15:12:33.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+15:12:33.820 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+15:12:33.912 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+15:12:36.470 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+15:12:44.883 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'TocMacro_ESTest' to results/XRENDERING-481-2-12-MOEAD-WeightedSum:TestLen:CallDiversity
+15:12:44.903 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

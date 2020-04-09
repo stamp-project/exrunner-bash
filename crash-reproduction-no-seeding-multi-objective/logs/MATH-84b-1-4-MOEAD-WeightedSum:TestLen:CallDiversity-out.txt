@@ -1,0 +1,69 @@
+09:58:07.092 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.apache.commons.math.optimization.OptimizationException
+09:58:07.097 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer:320)
+09:58:07.097 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.apache.commons.math.optimization.direct.DirectSearchOptimizer
+09:58:07.098 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+09:58:09.833 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+09:58:18.603 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+09:58:18.668 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+09:58:18.729 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+09:58:20.599 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.625
+09:58:21.025 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+09:58:21.025 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+09:58:24.491 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 102 fitness evolutions and 5 second: 4.499999999650754
+09:58:25.676 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+09:58:25.676 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.499999999650754
+09:58:27.442 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 3
+09:58:27.442 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 4.499999999650754
+09:58:28.376 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 326 fitness evolutions and 9 second: 4.4988381099922545
+09:58:28.512 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 340 fitness evolutions and 9 second: 0.0
+09:58:28.708 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: MultiDirectional multiDirectional0 = new MultiDirectional();
+int int0 = (-2146849539);
+multiDirectional0.setMaxIterations(int0);
+RealConvergenceChecker realConvergenceChecker0 = mock(RealConvergenceChecker.class, new ViolatedAssumptionAnswer());
+multiDirectional0.setConvergenceChecker(realConvergenceChecker0);
+multiDirectional0.incrementIterationsCounter();
+MultivariateVectorialFunction multivariateVectorialFunction0 = mock(MultivariateVectorialFunction.class, new ViolatedAssumptionAnswer());
+double[] doubleArray0 = new double[3];
+doubleArray0[0] = (double) int0;
+doubleArray0[1] = (double) int0;
+double double0 = 1134.83;
+doubleArray0[2] = double0;
+LeastSquaresConverter leastSquaresConverter0 = new LeastSquaresConverter(multivariateVectorialFunction0, doubleArray0);
+GoalType goalType0 = GoalType.MAXIMIZE;
+RealPointValuePair realPointValuePair0 = multiDirectional0.optimize(leastSquaresConverter0, goalType0, doubleArray0);
+RealPointValuePair realPointValuePair1 = mock(RealPointValuePair.class, new ViolatedAssumptionAnswer());
+Comparator<RealPointValuePair> comparator0 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional0.replaceWorstPoint(realPointValuePair1, comparator0);
+SimpleRealPointChecker simpleRealPointChecker0 = new SimpleRealPointChecker();
+multiDirectional0.setConvergenceChecker(simpleRealPointChecker0);
+double double1 = 1.0E-5;
+double double2 = (-3385.6171);
+NelderMead nelderMead0 = new NelderMead(doubleArray0[1], int0, double1, double2);
+nelderMead0.incrementIterationsCounter();
+double double3 = (-530.522082);
+double double4 = (-3385.6171);
+MultiDirectional multiDirectional1 = new MultiDirectional(double3, double4);
+Comparator<RealPointValuePair> comparator1 = (Comparator<RealPointValuePair>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+multiDirectional1.replaceWorstPoint(realPointValuePair0, comparator1);
+
+09:58:28.709 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+09:58:28.710 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.OptimizationException: org.apache.commons.math.MaxIterationsExceededException: Maximal number of iterations (-2,146,849,539) exceeded
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.apache.commons.math.optimization.direct.DirectSearchOptimizer.incrementIterationsCounter(DirectSearchOptimizer.java:320)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+09:58:28.713 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+09:58:28.714 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+09:58:28.724 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+09:58:28.941 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+09:58:29.932 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+09:58:34.199 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DirectSearchOptimizer_ESTest' to results/MATH-84b-1-4-MOEAD-WeightedSum:TestLen:CallDiversity
+09:58:34.258 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

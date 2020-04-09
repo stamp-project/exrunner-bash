@@ -1,0 +1,66 @@
+08:59:01.077 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.xwiki.query.jpql.parser.ParserException
+08:59:01.085 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator.translate(XWQLtoHQLTranslator:55)
+08:59:01.085 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator
+08:59:01.086 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+08:59:04.160 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 569.
+08:59:36.696 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+08:59:36.723 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+08:59:36.756 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+08:59:37.313 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 0 second: 4.5
+08:59:38.955 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 2 fitness evolutions and 2 second: 3.0
+08:59:39.156 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 6 fitness evolutions and 2 second: 0.0
+08:59:39.775 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+08:59:39.776 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+08:59:42.936 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWQLtoHQLTranslator xWQLtoHQLTranslator0 = new XWQLtoHQLTranslator();
+DocumentAccessBridge documentAccessBridge0 = mock(DocumentAccessBridge.class, new ViolatedAssumptionAnswer());
+XWQLtoHQLTranslator xWQLtoHQLTranslator1 = new XWQLtoHQLTranslator();
+Injector.inject(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) documentAccessBridge0);
+Injector.validateBean(xWQLtoHQLTranslator1, (Class<?>) XWQLtoHQLTranslator.class);
+String string0 = "p+DA_";
+String string1 = xWQLtoHQLTranslator1.translate(string0);
+xWQLtoHQLTranslator0.translate(string1);
+Start start0 = null;
+XWQLtoHQLTranslator xWQLtoHQLTranslator2 = new XWQLtoHQLTranslator();
+DefaultDocumentAccessBridge defaultDocumentAccessBridge0 = new DefaultDocumentAccessBridge();
+Provider<String> provider0 = (Provider<String>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "authorizationProvider", (Object) provider0);
+EntityReferenceSerializer<Object> entityReferenceSerializer0 = (EntityReferenceSerializer<Object>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "compactWikiEntityReferenceSerializer", (Object) entityReferenceSerializer0);
+DocumentReferenceResolver<String> documentReferenceResolver0 = (DocumentReferenceResolver<String>) mock(DocumentReferenceResolver.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "currentMixedDocumentReferenceResolver", (Object) documentReferenceResolver0);
+EntityReferenceSerializer<String> entityReferenceSerializer1 = (EntityReferenceSerializer<String>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "defaultEntityReferenceSerializer", (Object) entityReferenceSerializer1);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "execution", (Object) execution0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class, "logger", (Object) logger0);
+Injector.validateBean(defaultDocumentAccessBridge0, (Class<?>) DefaultDocumentAccessBridge.class);
+Injector.inject(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class, "documentAccessBridge", (Object) defaultDocumentAccessBridge0);
+Injector.validateBean(xWQLtoHQLTranslator2, (Class<?>) XWQLtoHQLTranslator.class);
+DocumentAccessBridge documentAccessBridge1 = xWQLtoHQLTranslator2.documentAccessBridge;
+QueryContext queryContext0 = new QueryContext(start0, documentAccessBridge1);
+xWQLtoHQLTranslator1.getPrinter(queryContext0);
+
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.jpql.parser.ParserException: [1,1] expecting: select
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.jpql.parser.Parser.parse(Parser.java:1385)
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.jpql.internal.JPQLParser.parse(JPQLParser.java:46)
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.xwql.internal.hql.XWQLtoHQLTranslator.translate(XWQLtoHQLTranslator.java:55)
+08:59:42.937 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+08:59:42.938 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+08:59:42.938 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+08:59:42.938 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+08:59:42.938 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+08:59:42.958 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+08:59:42.989 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+08:59:43.160 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+08:59:46.929 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+08:59:55.128 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'XWQLtoHQLTranslator_ESTest' to results/XWIKI-12919-3-3-MOEAD-WeightedSum:TestLen:CallDiversity
+08:59:55.173 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

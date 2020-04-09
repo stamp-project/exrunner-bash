@@ -1,0 +1,77 @@
+13:06:30.948 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+13:06:30.952 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+13:06:30.952 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+13:06:30.953 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+13:06:33.735 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+13:06:47.011 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+13:06:47.069 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:06:47.177 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+13:06:50.535 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 3 second: 5.863636363636363
+13:06:52.314 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 2 fitness evolutions and 5 second: 4.0
+13:06:52.386 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 5 fitness evolutions and 5 second: 0.0
+13:06:54.508 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+13:06:54.509 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+13:06:59.867 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = null;
+String string0 = "Printing not supported";
+int int0 = 1;
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn(string0).when(dateTimeParser0).toString();
+doReturn(int0).when(dateTimeParser0).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser0);
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withZone(dateTimeZone0);
+DateTime dateTime0 = dateTimeFormatter0.parseDateTime(string0);
+long long0 = 1340L;
+String string1 = dateTimeFormatter0.print(long0);
+Integer integer0 = new Integer(int0);
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter1.withPivotYear(integer0);
+Writer writer0 = null;
+BufferedWriter bufferedWriter0 = new BufferedWriter(writer0);
+dateTimeFormatter2.printTo((Writer) bufferedWriter0, (ReadableInstant) dateTime0);
+DateTimeFieldType dateTimeFieldType0 = DateTimeFieldType.weekyearOfCentury();
+int int1 = (-2400);
+Partial partial0 = new Partial(dateTimeFieldType0, int1);
+CopticChronology copticChronology0 = CopticChronology.getInstance();
+Partial partial1 = partial0.withChronologyRetainFields(copticChronology0);
+DateTimeFormatter dateTimeFormatter3 = partial1.getFormatter();
+dateTimeFormatter3.getDefaultYear();
+String string2 = null;
+LocalDateTime localDateTime0 = dateTimeFormatter3.parseLocalDateTime(string0);
+dateTimeFormatter0.getChronology();
+dateTimeFormatter2.getDefaultYear();
+String string3 = null;
+String string4 = null;
+dateTimeFormatter1.parseDateTime(string4);
+dateTimeFormatter2.printTo(writer0, (ReadablePartial) localDateTime0);
+int int2 = 1853;
+dateTimeFormatter1.withPivotYear(int2);
+dateTimeFormatter3.withChronology(copticChronology0);
+String string5 = "Invalid format: \"";
+BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstanceUTC();
+DateTimeFormatter dateTimeFormatter4 = dateTimeFormatter0.withChronology(buddhistChronology0);
+String string6 = "mop1dXs&b IkiBO3|3";
+dateTimeFormatter4.parseDateTime(string6);
+int int3 = 2000;
+dateTimeFormatter1.parseDateTime(string1);
+
+13:06:59.868 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+13:06:59.868 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: Invalid format: "Printing not supported" is malformed at "rinting not supported"
+13:06:59.876 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter.java:866)
+13:06:59.876 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor28.invoke(Unknown Source)
+13:06:59.876 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+13:06:59.877 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+13:06:59.877 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+13:06:59.879 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+13:06:59.880 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+13:06:59.898 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+13:07:00.270 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+13:07:02.627 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+13:07:06.954 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-1-MOEAD-WeightedSum:TestLen:CallDiversity
+13:07:07.000 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

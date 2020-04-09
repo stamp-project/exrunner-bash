@@ -1,0 +1,65 @@
+22:51:01.013 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+22:51:01.022 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser:69)
+22:51:01.026 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.rendering.internal.parser.DefaultContentParser
+22:51:01.027 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+22:51:05.951 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 586.
+22:52:50.395 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+22:52:50.452 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+22:52:50.526 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+22:53:01.632 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 11 second: 4.5
+22:53:06.748 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 9 fitness evolutions and 16 second: 0.0
+22:53:07.893 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+22:53:07.894 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultContentParser defaultContentParser0 = new DefaultContentParser();
+ConfluenceParser confluenceParser0 = new ConfluenceParser();
+HTMLParser hTMLParser0 = new HTMLParser();
+HTMLCleaner hTMLCleaner0 = mock(HTMLCleaner.class, new ViolatedAssumptionAnswer());
+Injector.inject(hTMLParser0, (Class<?>) HTMLParser.class, "htmlCleaner", (Object) hTMLCleaner0);
+Provider<ConfluenceParser> provider0 = (Provider<ConfluenceParser>) mock(Provider.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(provider0).get();
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "componentManagerProvider", (Object) provider0);
+EntityReferenceSerializer<ContextComponentManager> entityReferenceSerializer0 = (EntityReferenceSerializer<ContextComponentManager>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultContentParser0, (Class<?>) DefaultContentParser.class, "serializer", (Object) entityReferenceSerializer0);
+Injector.validateBean(defaultContentParser0, (Class<?>) DefaultContentParser.class);
+String string0 = null;
+Syntax syntax0 = Syntax.ANNOTATED_XHTML_1_0;
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+DocumentReference documentReference0 = xWikiContext1.getUserReference();
+defaultContentParser0.parse(string0, syntax0, (EntityReference) documentReference0);
+String string1 = "";
+Syntax syntax1 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(syntax1).toIdString();
+defaultContentParser0.parse(string1, syntax1);
+String string2 = "VTY5;{o";
+Syntax syntax2 = mock(Syntax.class, new ViolatedAssumptionAnswer());
+EntityReference entityReference0 = mock(EntityReference.class, new ViolatedAssumptionAnswer());
+defaultContentParser0.parse(string2, syntax2, entityReference0);
+Syntax syntax3 = confluenceParser0.getSyntax();
+EntityReference entityReference1 = null;
+defaultContentParser0.parse(string1, syntax3, entityReference1);
+
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rendering.internal.parser.DefaultContentParser.getParser(DefaultContentParser.java:87)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser.java:62)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.rendering.internal.parser.DefaultContentParser.parse(DefaultContentParser.java:69)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+22:53:15.907 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+22:53:15.908 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+22:53:15.922 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+22:53:16.186 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+22:53:18.178 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+22:53:28.842 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DefaultContentParser_ESTest' to results/XWIKI-14612-2-4-MOEAD-WeightedSum:TestLen:CallDiversity
+22:53:28.874 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

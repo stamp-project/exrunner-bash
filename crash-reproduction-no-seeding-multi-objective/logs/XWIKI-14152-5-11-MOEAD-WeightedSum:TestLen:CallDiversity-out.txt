@@ -1,0 +1,80 @@
+16:00:29.791 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.StringIndexOutOfBoundsException
+16:00:29.797 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.createHibernateQuery(HqlQueryExecutor:230)
+16:00:29.797 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+16:00:29.798 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+16:00:32.888 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 560.
+16:01:23.446 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+16:01:23.464 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:01:23.490 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+16:01:28.538 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 5 second: 5.8
+16:01:29.892 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 6 fitness evolutions and 6 second: 5.0
+16:01:30.964 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+16:01:30.964 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+16:01:56.779 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 79 fitness evolutions and 33 second: 4.0
+16:02:04.315 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 132 fitness evolutions and 40 second: 3.0
+16:02:11.872 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+16:02:11.872 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 3.0
+16:02:16.759 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 181 fitness evolutions and 53 second: 0.0
+16:02:29.163 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+Session session0 = null;
+String string0 = "f@,hsp)";
+DefaultQuery defaultQuery0 = new DefaultQuery(string0, string0, hqlQueryExecutor0);
+HiddenSpaceFilter hiddenSpaceFilter0 = new HiddenSpaceFilter();
+ConfigurationSource configurationSource0 = mock(ConfigurationSource.class, new ViolatedAssumptionAnswer());
+Injector.inject(hiddenSpaceFilter0, (Class<?>) AbstractHiddenFilter.class, "userPreferencesSource", (Object) configurationSource0);
+Logger logger0 = (Logger)URLStreamHandlerFactory.log;
+Injector.inject(hiddenSpaceFilter0, (Class<?>) AbstractWhereQueryFilter.class, "logger", (Object) logger0);
+Injector.validateBean(hiddenSpaceFilter0, (Class<?>) HiddenSpaceFilter.class);
+DefaultQuery defaultQuery1 = (DefaultQuery)defaultQuery0.addFilter(hiddenSpaceFilter0);
+DefaultQuery defaultQuery2 = (DefaultQuery)defaultQuery0.bindValue(string0, (Object) string0);
+CountDocumentFilter countDocumentFilter0 = new CountDocumentFilter();
+String string1 = ",";
+PriorityBlockingQueue<SubstituteLoggingEvent> priorityBlockingQueue0 = new PriorityBlockingQueue<SubstituteLoggingEvent>();
+boolean boolean0 = false;
+SubstituteLogger substituteLogger0 = new SubstituteLogger(string1, priorityBlockingQueue0, boolean0);
+Injector.inject(countDocumentFilter0, (Class<?>) CountDocumentFilter.class, "logger", (Object) substituteLogger0);
+SubstituteLogger substituteLogger1 = new SubstituteLogger(string0, priorityBlockingQueue0, boolean0);
+DefaultQuery defaultQuery3 = (DefaultQuery)defaultQuery1.addFilter(countDocumentFilter0);
+hqlQueryExecutor0.createHibernateQuery(session0, defaultQuery2);
+DefaultQuery defaultQuery4 = new DefaultQuery(string0, hqlQueryExecutor0);
+int int0 = 12309;
+Query query0 = defaultQuery4.setLimit(int0);
+hqlQueryExecutor0.execute(query0);
+hqlQueryExecutor0.getStore();
+hqlQueryExecutor0.initialize();
+hqlQueryExecutor0.checkAllowed(defaultQuery3);
+
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.StringIndexOutOfBoundsException: String index out of range: -8
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.String.substring(String.java:1967)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.internal.AbstractQueryFilter.getSelectColumns(AbstractQueryFilter.java:80)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.internal.CountDocumentFilter.isFilterable(CountDocumentFilter.java:60)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.query.internal.CountDocumentFilter.filterStatement(CountDocumentFilter.java:70)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.createHibernateQuery(HqlQueryExecutor.java:230)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor32.invoke(Unknown Source)
+16:02:29.164 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+16:02:29.165 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+16:02:29.175 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+16:02:29.567 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+16:02:31.765 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+16:02:38.378 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14152-5-11-MOEAD-WeightedSum:TestLen:CallDiversity
+16:02:38.441 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

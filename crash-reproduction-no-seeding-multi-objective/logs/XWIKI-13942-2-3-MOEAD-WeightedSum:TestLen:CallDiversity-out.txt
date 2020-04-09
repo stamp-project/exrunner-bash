@@ -1,0 +1,82 @@
+16:12:35.190 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+16:12:35.195 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver.resolveDefaultReference(AbstractEntityReferenceResolver:77)
+16:12:35.195 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.model.internal.reference.AbstractEntityReferenceResolver
+16:12:35.196 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+16:12:38.082 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 586.
+16:13:03.792 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+16:13:03.813 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:13:03.842 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+16:13:04.974 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 1 second: 5.869565217391305
+16:13:05.229 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+16:13:05.229 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+16:13:09.259 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 109 fitness evolutions and 5 second: 3.0
+16:13:09.356 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 111 fitness evolutions and 5 second: 0.6
+16:13:09.868 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 127 fitness evolutions and 6 second: 0.42857142857142855
+16:13:10.525 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 2
+16:13:10.525 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.42857142857142855
+16:13:12.303 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 3
+16:13:12.303 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 0.42857142857142855
+16:13:13.041 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 282 fitness evolutions and 9 second: 0.0
+16:13:13.808 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultStringEntityReferenceResolver defaultStringEntityReferenceResolver0 = new DefaultStringEntityReferenceResolver();
+String string0 = "^DI&8<[1H.AD";
+EntityType entityType0 = EntityType.OBJECT_PROPERTY;
+EntityReference entityReference0 = null;
+EntityReference entityReference1 = new EntityReference(string0, entityType0, entityReference0);
+EntityReferenceProvider entityReferenceProvider0 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultStringEntityReferenceResolver0, (Class<?>) DefaultStringEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider0);
+DefaultSymbolScheme defaultSymbolScheme0 = new DefaultSymbolScheme();
+Injector.inject(defaultStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme0);
+Injector.validateBean(defaultStringEntityReferenceResolver0, (Class<?>) DefaultStringEntityReferenceResolver.class);
+EntityType entityType1 = EntityType.WIKI;
+DefaultStringEntityReferenceResolver defaultStringEntityReferenceResolver1 = new DefaultStringEntityReferenceResolver();
+EntityReferenceProvider entityReferenceProvider1 = mock(EntityReferenceProvider.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultStringEntityReferenceResolver1, (Class<?>) DefaultStringEntityReferenceResolver.class, "provider", (Object) entityReferenceProvider1);
+Injector.inject(defaultStringEntityReferenceResolver1, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme0);
+Injector.validateBean(defaultStringEntityReferenceResolver1, (Class<?>) DefaultStringEntityReferenceResolver.class);
+EntityType entityType2 = EntityType.ATTACHMENT;
+EntityType entityType3 = EntityType.SPACE;
+ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+DefaultSymbolScheme defaultSymbolScheme1 = new DefaultSymbolScheme();
+defaultSymbolScheme1.initialize();
+Injector.inject(explicitStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme1);
+Injector.validateBean(explicitStringEntityReferenceResolver0, (Class<?>) ExplicitStringEntityReferenceResolver.class);
+EntityType entityType4 = EntityType.BLOCK;
+Object[] objectArray0 = new Object[2];
+objectArray0[0] = (Object) entityType2;
+objectArray0[1] = (Object) entityType2;
+explicitStringEntityReferenceResolver0.resolveDefaultReference(entityType4, objectArray0);
+EntityType entityType5 = EntityType.DOCUMENT;
+Object[] objectArray1 = new Object[9];
+objectArray1[0] = (Object) entityReference0;
+objectArray1[1] = (Object) entityReferenceProvider1;
+objectArray1[2] = (Object) entityType2;
+objectArray1[3] = (Object) defaultSymbolScheme0;
+objectArray1[4] = (Object) entityType3;
+objectArray1[5] = (Object) entityReference0;
+objectArray1[7] = (Object) entityReferenceProvider0;
+objectArray1[8] = (Object) entityType0;
+explicitStringEntityReferenceResolver0.getDefaultReference(entityType5, objectArray1);
+defaultStringEntityReferenceResolver1.getDefaultReference(entityType5, objectArray1);
+
+16:13:13.808 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: The resolver parameter doesn't contain an Entity Reference of type [BLOCK]
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.internal.reference.ExplicitStringEntityReferenceResolver.getDefaultReference(ExplicitStringEntityReferenceResolver.java:45)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.internal.reference.AbstractEntityReferenceResolver.resolveDefaultReference(AbstractEntityReferenceResolver.java:77)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor17.invoke(Unknown Source)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+16:13:13.809 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+16:13:13.810 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+16:13:13.831 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+16:13:14.319 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+16:13:15.611 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+16:13:24.928 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractEntityReferenceResolver_ESTest' to results/XWIKI-13942-2-3-MOEAD-WeightedSum:TestLen:CallDiversity
+16:13:24.951 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,93 @@
+16:22:03.119 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+16:22:03.145 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.applyInstallExtension(DefaultInstalledExtensionRepository:449)
+16:22:03.145 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository
+16:22:03.162 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+16:22:10.967 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 585.
+16:23:18.975 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+16:23:19.047 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:23:19.269 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+16:23:30.404 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 11 second: 5.857142857142857
+16:23:30.413 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 2 fitness evolutions and 11 second: 4.5
+16:23:32.873 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+16:23:32.873 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+16:23:38.254 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 84 fitness evolutions and 18 second: 0.0
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DefaultInstalledExtensionRepository defaultInstalledExtensionRepository0 = new DefaultInstalledExtensionRepository();
+CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+WrappingInstalledExtension<DefaultInstalledExtension> wrappingInstalledExtension0 = (WrappingInstalledExtension<DefaultInstalledExtension>) mock(WrappingInstalledExtension.class, new ViolatedAssumptionAnswer());
+doReturn((Collection) null).when(wrappingInstalledExtension0).getAuthors();
+doReturn((String) null).when(wrappingInstalledExtension0).getCategory();
+doReturn((Collection) null).when(wrappingInstalledExtension0).getDependencies();
+doReturn((String) null).when(wrappingInstalledExtension0).getDescription();
+doReturn((Collection) null).when(wrappingInstalledExtension0).getFeatures();
+doReturn((ExtensionId) null).when(wrappingInstalledExtension0).getId();
+doReturn((ExtensionIssueManagement) null).when(wrappingInstalledExtension0).getIssueManagement();
+doReturn((Collection) null).when(wrappingInstalledExtension0).getLicenses();
+doReturn((String) null).when(wrappingInstalledExtension0).getName();
+doReturn((Map) null).when(wrappingInstalledExtension0).getProperties();
+doReturn((ExtensionScm) null).when(wrappingInstalledExtension0).getScm();
+doReturn((String) null).when(wrappingInstalledExtension0).getSummary();
+doReturn((String) null).when(wrappingInstalledExtension0).getType();
+doReturn((String) null).when(wrappingInstalledExtension0).getWebSite();
+WrappingLocalExtension<WrappingInstalledExtension<DefaultInstalledExtension>> wrappingLocalExtension0 = new WrappingLocalExtension<WrappingInstalledExtension<DefaultInstalledExtension>>(wrappingInstalledExtension0);
+LocalExtensionRepository localExtensionRepository0 = mock(LocalExtensionRepository.class, new ViolatedAssumptionAnswer());
+doReturn(wrappingLocalExtension0).when(localExtensionRepository0).getLocalExtension(any(org.xwiki.extension.ExtensionId.class));
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "localRepository", (Object) localExtensionRepository0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "logger", (Object) logger0);
+Injector.validateBean(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class);
+defaultInstalledExtensionRepository0.isFilterable();
+String string0 = "";
+int int0 = (-1398);
+int int1 = 46;
+String string1 = "PO\\L?y1,\\iqPC1#";
+ExtensionQuery extensionQuery0 = new ExtensionQuery();
+ExtensionQuery extensionQuery1 = new ExtensionQuery(extensionQuery0);
+List<ExtensionQuery.SortClause> list0 = extensionQuery1.getSortClauses();
+ExtensionQuery extensionQuery2 = mock(ExtensionQuery.class, new ViolatedAssumptionAnswer());
+doReturn(int0).when(extensionQuery2).getLimit();
+doReturn(int1).when(extensionQuery2).getOffset();
+doReturn(string1).when(extensionQuery2).getQuery();
+doReturn(list0).when(extensionQuery2).getSortClauses();
+defaultInstalledExtensionRepository0.searchInstalledExtensions(string0, extensionQuery2);
+String string2 = "ce)q:AH7u!";
+ExtensionId extensionId0 = new ExtensionId(string0, string2);
+String string3 = "JF#4bODZ-=&q";
+LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+doReturn(extensionId0, extensionId0).when(localExtension0).getId();
+boolean boolean0 = true;
+Map<String, Object> map0 = null;
+defaultInstalledExtensionRepository0.installExtension(localExtension0, string0, boolean0, map0);
+Collection<InstalledExtension> collection0 = defaultInstalledExtensionRepository0.getInstalledExtensions(string0);
+defaultInstalledExtensionRepository0.getBackwardDependencies(string0, string0);
+ExtensionQuery extensionQuery3 = mock(ExtensionQuery.class, new ViolatedAssumptionAnswer());
+defaultInstalledExtensionRepository0.searchInstalledExtensions(string0, extensionQuery3, collection0);
+String string4 = null;
+int int2 = 2508;
+int int3 = 1459;
+defaultInstalledExtensionRepository0.resolveVersions(string4, int2, int3);
+
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ConcurrentHashMap.putAll(ConcurrentHashMap.java:1082)
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.applyInstallExtension(DefaultInstalledExtensionRepository.java:449)
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository.installExtension(DefaultInstalledExtensionRepository.java:691)
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+16:23:42.949 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+16:23:42.950 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+16:23:42.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+16:23:42.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+16:23:42.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+16:23:42.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+16:23:42.951 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+16:23:42.972 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+16:23:43.005 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+16:23:46.341 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+16:23:46.359 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DefaultInstalledExtensionRepository_ESTest' to results/XCOMMONS-928-1-2-MOEAD-WeightedSum:TestLen:CallDiversity
+16:23:46.432 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

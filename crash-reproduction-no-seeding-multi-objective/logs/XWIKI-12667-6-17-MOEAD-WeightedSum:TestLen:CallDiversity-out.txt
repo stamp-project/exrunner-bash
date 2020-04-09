@@ -1,0 +1,86 @@
+17:32:51.495 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+17:32:51.501 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment:923)
+17:32:51.501 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.doc.XWikiAttachment
+17:32:51.502 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+17:33:08.887 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 583.
+17:35:09.227 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+17:35:09.248 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:35:09.320 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+17:35:15.315 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 5 second: 5.625
+17:35:15.722 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 4 fitness evolutions and 6 second: 3.0
+17:35:26.063 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 23 fitness evolutions and 16 second: 0.0
+17:35:27.051 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+17:35:27.051 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+17:35:33.203 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+doReturn((DocumentReference) null, (DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+String string0 = "";
+XWikiAttachment xWikiAttachment0 = new XWikiAttachment(xWikiDocument0, string0);
+xWikiAttachment0.isContentDirty();
+Archive archive0 = mock(Archive.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setArchive(archive0);
+XWikiContext xWikiContext0 = new XWikiContext();
+XWikiContext xWikiContext1 = xWikiContext0.clone();
+xWikiAttachment0.getMimeType(xWikiContext1);
+Archive archive1 = mock(Archive.class, new ViolatedAssumptionAnswer());
+xWikiAttachment0.setArchive(archive1);
+xWikiAttachment0.getId();
+LocalConnector localConnector0 = new LocalConnector();
+SSLEngine sSLEngine0 = mock(SSLEngine.class, new ViolatedAssumptionAnswer());
+byte[] byteArray0 = new byte[6];
+byte byte0 = (byte)0;
+byteArray0[0] = byte0;
+byte byte1 = (byte)2;
+byteArray0[1] = byte1;
+byte byte2 = (byte)0;
+byteArray0[2] = byte2;
+byte byte3 = (byte)78;
+byteArray0[3] = byte3;
+byte byte4 = (byte)64;
+byteArray0[4] = byte4;
+byte byte5 = (byte) (-98);
+byteArray0[5] = byte5;
+ByteArrayEndPoint byteArrayEndPoint0 = new ByteArrayEndPoint(byteArray0, byteArray0[4]);
+long long0 = 1L;
+SslConnection sslConnection0 = new SslConnection(sSLEngine0, byteArrayEndPoint0, long0);
+AsyncEndPoint asyncEndPoint0 = sslConnection0.getSslEndPoint();
+Server server0 = new Server();
+Buffers.Type buffers_Type0 = Buffers.Type.BYTE_ARRAY;
+ThreadLocalBuffers threadLocalBuffers0 = new ThreadLocalBuffers(buffers_Type0, byteArray0[4], buffers_Type0, byteArray0[2], buffers_Type0);
+HttpParser.EventHandler httpParser_EventHandler0 = mock(HttpParser.EventHandler.class, new ViolatedAssumptionAnswer());
+HttpParser httpParser0 = new HttpParser(threadLocalBuffers0, asyncEndPoint0, httpParser_EventHandler0);
+HttpGenerator httpGenerator0 = new HttpGenerator(threadLocalBuffers0, asyncEndPoint0);
+AbstractHttpConnection abstractHttpConnection0 = AbstractHttpConnection.getCurrentConnection();
+Request request0 = new Request(abstractHttpConnection0);
+BlockingHttpConnection blockingHttpConnection0 = new BlockingHttpConnection(localConnector0, asyncEndPoint0, server0, httpParser0, httpGenerator0, request0);
+ServletInputStream servletInputStream0 = blockingHttpConnection0.getInputStream();
+BufferedInputStream bufferedInputStream0 = new BufferedInputStream(servletInputStream0, byteArray0[2]);
+int int0 = 66;
+xWikiAttachment0.setContent((InputStream) bufferedInputStream0, int0);
+
+17:35:33.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+17:35:33.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+17:35:33.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.setName(EntityReference.java:185)
+17:35:33.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:153)
+17:35:33.204 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.AttachmentReference.<init>(AttachmentReference.java:68)
+17:35:33.206 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getReference(XWikiAttachment.java:156)
+17:35:33.206 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.extractMimeType(XWikiAttachment.java:980)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.doc.XWikiAttachment.getMimeType(XWikiAttachment.java:923)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+17:35:33.207 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+17:35:33.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+17:35:33.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+17:35:33.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+17:35:33.208 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+17:35:33.210 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+17:35:33.210 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+17:35:33.219 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+17:35:33.219 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+17:35:33.219 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+17:35:33.233 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+17:35:33.654 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+17:35:42.204 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+17:35:51.320 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'XWikiAttachment_ESTest' to results/XWIKI-12667-6-17-MOEAD-WeightedSum:TestLen:CallDiversity
+17:35:51.340 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

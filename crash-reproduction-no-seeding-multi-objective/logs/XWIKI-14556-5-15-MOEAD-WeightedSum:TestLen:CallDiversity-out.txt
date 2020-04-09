@@ -1,0 +1,78 @@
+10:57:05.118 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.hibernate.QueryParameterException
+10:57:05.123 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor:417)
+10:57:05.123 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor
+10:57:05.124 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+10:57:10.794 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 553.
+10:58:16.026 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+10:58:16.063 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:58:16.099 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+10:58:24.624 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 8 second: 5.75
+10:58:25.571 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 19 fitness evolutions and 9 second: 3.0
+10:58:28.447 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+10:58:28.447 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+10:58:46.801 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 117 fitness evolutions and 30 second: 0.0
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: HqlQueryExecutor hqlQueryExecutor0 = new HqlQueryExecutor();
+ContextualAuthorizationManager contextualAuthorizationManager0 = mock(ContextualAuthorizationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "authorization", (Object) contextualAuthorizationManager0);
+Provider<ContextRootComponentManager> provider0 = (Provider<ContextRootComponentManager>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "componentManagerProvider", (Object) provider0);
+Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "execution", (Object) execution0);
+JobProgressManager jobProgressManager0 = mock(JobProgressManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "progress", (Object) jobProgressManager0);
+HibernateSessionFactory hibernateSessionFactory0 = mock(HibernateSessionFactory.class, new ViolatedAssumptionAnswer());
+Injector.inject(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class, "sessionFactory", (Object) hibernateSessionFactory0);
+Injector.validateBean(hqlQueryExecutor0, (Class<?>) HqlQueryExecutor.class);
+Query query0 = mock(Query.class, new ViolatedAssumptionAnswer());
+doReturn((Query) null).when(query0).setParameter(anyString() , any());
+String string0 = "+VPs<WC\"";
+WikiComponentManager wikiComponentManager0 = new WikiComponentManager();
+ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "rootComponentManager", (Object) componentManager0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) WikiComponentManager.class, "wikis", (Object) wikiDescriptorManager0);
+Execution execution1 = mock(Execution.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "execution", (Object) execution1);
+EntityReferenceSerializer<ScriptQueryParameter> entityReferenceSerializer0 = (EntityReferenceSerializer<ScriptQueryParameter>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractEntityComponentManager.class, "serializer", (Object) entityReferenceSerializer0);
+ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(wikiComponentManager0, (Class<?>) AbstractGenericComponentManager.class, "componentManagerManager", (Object) componentManagerManager0);
+Injector.validateBean(wikiComponentManager0, (Class<?>) WikiComponentManager.class);
+hqlQueryExecutor0.setNamedParameter(query0, string0, wikiComponentManager0);
+SessionImplementor sessionImplementor0 = mock(SessionImplementor.class, new ViolatedAssumptionAnswer());
+OrdinalParameterDescriptor[] ordinalParameterDescriptorArray0 = null;
+Comparator<ContextRootComponentManager> comparator0 = (Comparator<ContextRootComponentManager>) mock(Comparator.class, new ViolatedAssumptionAnswer());
+ConcurrentSkipListMap<ContextRootComponentManager, EmbeddableComponentManager> concurrentSkipListMap0 = new ConcurrentSkipListMap<ContextRootComponentManager, EmbeddableComponentManager>(comparator0);
+PersistentSortedMap persistentSortedMap0 = new PersistentSortedMap(sessionImplementor0, concurrentSkipListMap0);
+ParameterMetadata parameterMetadata0 = new ParameterMetadata(ordinalParameterDescriptorArray0, persistentSortedMap0);
+CollectionFilterImpl collectionFilterImpl0 = new CollectionFilterImpl(string0, wikiComponentManager0, sessionImplementor0, parameterMetadata0);
+LockMode lockMode0 = LockMode.PESSIMISTIC_WRITE;
+CollectionFilterImpl collectionFilterImpl1 = (CollectionFilterImpl)collectionFilterImpl0.setLockMode(string0, lockMode0);
+hqlQueryExecutor0.setNamedParameter(collectionFilterImpl1, string0, parameterMetadata0);
+hqlQueryExecutor0.completeShortFormStatement(string0);
+
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.QueryParameterException: could not locate named parameter [+VPs<WC"]
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.engine.query.ParameterMetadata.getNamedParameterDescriptor(ParameterMetadata.java:101)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.engine.query.ParameterMetadata.getNamedParameterExpectedType(ParameterMetadata.java:107)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.impl.AbstractQueryImpl.determineType(AbstractQueryImpl.java:460)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.hibernate.impl.AbstractQueryImpl.setParameter(AbstractQueryImpl.java:430)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - com.xpn.xwiki.store.hibernate.query.HqlQueryExecutor.setNamedParameter(HqlQueryExecutor.java:417)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.GeneratedMethodAccessor35.invoke(Unknown Source)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+10:58:49.151 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10:58:49.152 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+10:58:49.187 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+10:58:49.703 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+10:58:52.064 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+10:59:02.202 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'HqlQueryExecutor_ESTest' to results/XWIKI-14556-5-15-MOEAD-WeightedSum:TestLen:CallDiversity
+10:59:02.279 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,59 @@
+18:11:07.503 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+18:11:07.514 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getCurrentWikiReference(AbstractDocumentConfigurationSource:185)
+18:11:07.514 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.xwiki.configuration.internal.AbstractDocumentConfigurationSource
+18:11:07.515 [main] INFO  eu.stamp.botsing.Botsing - MOEAD
+18:11:12.521 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 585.
+18:12:39.087 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+18:12:39.106 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:12:39.135 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Initializing the first population with size of 50 individuals
+18:12:43.604 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 1 fitness evolutions and 4 second: 4.5
+18:12:46.751 [main] INFO  e.s.botsing.ga.strategy.moea.MOEAD - Number of generations: 1
+18:12:46.751 [main] INFO  eu.stamp.botsing.ga.GAUtil - The best FF for WeightedSum is 1.7976931348623157E308
+18:13:19.028 [main] INFO  e.s.b.f.utils.WSEvolution - New Value for Weighted Sum after 132 fitness evolutions and 39 second: 0.0
+18:13:20.695 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: UserPreferencesConfigurationSource userPreferencesConfigurationSource0 = new UserPreferencesConfigurationSource();
+CacheManager cacheManager0 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager0);
+ConverterManager converterManager0 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager0);
+Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) logger0);
+ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) observationManager0);
+EntityReferenceSerializer<ApplicationStoppedEvent> entityReferenceSerializer0 = (EntityReferenceSerializer<ApplicationStoppedEvent>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer0);
+WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(wikiDescriptorManager0).getCurrentWikiId();
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager0);
+Provider<Object> provider0 = (Provider<Object>) mock(Provider.class, new ViolatedAssumptionAnswer());
+Injector.inject(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider0);
+Injector.validateBean(userPreferencesConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class);
+userPreferencesConfigurationSource0.getCurrentWikiReference();
+Class<ApplicationStoppedEvent> class0 = ApplicationStoppedEvent.class;
+userPreferencesConfigurationSource0.getDefault((Class<?>) class0);
+
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.setName(EntityReference.java:186)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:171)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:142)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.model.reference.WikiReference.<init>(WikiReference.java:61)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getCurrentWikiReference(AbstractDocumentConfigurationSource.java:185)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+18:13:20.696 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+18:13:20.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+18:13:20.700 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+18:13:20.700 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+18:13:20.738 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+18:13:20.824 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+18:13:23.329 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+18:13:31.524 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'AbstractDocumentConfigurationSource_ESTest' to results/XWIKI-13546-5-17-MOEAD-WeightedSum:TestLen:CallDiversity
+18:13:31.590 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
