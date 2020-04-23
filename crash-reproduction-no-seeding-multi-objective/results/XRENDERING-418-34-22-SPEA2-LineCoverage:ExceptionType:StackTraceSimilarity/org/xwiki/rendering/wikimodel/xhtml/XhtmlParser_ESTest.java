@@ -1,0 +1,20 @@
+/*
+
+ * Tue Apr 21 03:09:55 UTC 2020
+ */
+
+package org.xwiki.rendering.wikimodel.xhtml;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class XhtmlParser_ESTest extends XhtmlParser_ESTest_scaffolding {
+  @Test
+  public void notGeneratedAnyTest() {
+    // EvoSuite did not generate any tests
+  }
+}

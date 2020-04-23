@@ -1,0 +1,29 @@
+/*
+
+ * Mon Apr 20 10:07:18 UTC 2020
+ */
+
+package org.apache.commons.math.linear;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.linear.EigenDecompositionImpl;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class EigenDecompositionImpl_ESTest extends EigenDecompositionImpl_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      double[] doubleArray0 = new double[4];
+      doubleArray0[0] = 3.762195691083631;
+      double[] doubleArray1 = new double[3];
+      doubleArray1[0] = 6.0;
+      doubleArray1[1] = 3667.7098982867656;
+      doubleArray1[2] = 2078.0;
+      EigenDecompositionImpl eigenDecompositionImpl0 = new EigenDecompositionImpl(doubleArray0, doubleArray1, 2078.0);
+  }
+}

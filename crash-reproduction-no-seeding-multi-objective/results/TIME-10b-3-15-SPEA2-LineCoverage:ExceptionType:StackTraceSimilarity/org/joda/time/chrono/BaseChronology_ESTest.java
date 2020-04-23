@@ -1,0 +1,37 @@
+/*
+
+ * Tue Apr 21 13:04:46 UTC 2020
+ */
+
+package org.joda.time.chrono;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.joda.time.DateTimeZone;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
+import org.joda.time.chrono.EthiopicChronology;
+import org.joda.time.tz.FixedDateTimeZone;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BaseChronology_ESTest extends BaseChronology_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      FixedDateTimeZone fixedDateTimeZone0 = (FixedDateTimeZone)DateTimeZone.UTC;
+      int int0 = 7;
+      EthiopicChronology ethiopicChronology0 = EthiopicChronology.getInstance((DateTimeZone) fixedDateTimeZone0, 7);
+      Days days0 = Days.THREE;
+      days0.toStandardWeeks();
+      long long0 = 0L;
+      ethiopicChronology0.dayOfMonth();
+      ethiopicChronology0.days();
+      LocalDate localDate0 = new LocalDate((-1508L), (DateTimeZone) fixedDateTimeZone0);
+      // Undeclared exception!
+      ethiopicChronology0.set(localDate0, (-1L));
+  }
+}

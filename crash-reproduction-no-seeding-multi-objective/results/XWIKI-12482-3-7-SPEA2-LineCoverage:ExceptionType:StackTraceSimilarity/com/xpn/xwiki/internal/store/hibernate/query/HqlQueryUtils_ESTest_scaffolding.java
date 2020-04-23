@@ -1,0 +1,16 @@
+/**
+ * Scaffolding file used to store all the setups needed to run 
+ * Mon Apr 20 17:04:52 UTC 2020
+ */
+
+package com.xpn.xwiki.internal.store.hibernate.query;
+
+import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+import org.junit.BeforeClass;
+import org.junit.Before;
+import org.junit.After;
+
+@EvoSuiteClassExclude
+public class HqlQueryUtils_ESTest_scaffolding {
+  // Empty scaffolding for empty test suite
+}

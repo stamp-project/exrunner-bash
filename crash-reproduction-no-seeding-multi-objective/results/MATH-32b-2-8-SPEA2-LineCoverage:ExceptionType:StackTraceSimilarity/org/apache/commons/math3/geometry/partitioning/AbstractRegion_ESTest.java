@@ -1,0 +1,42 @@
+/*
+
+ * Mon Apr 20 11:03:23 UTC 2020
+ */
+
+package org.apache.commons.math3.geometry.partitioning;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math3.geometry.euclidean.threed.Euclidean3D;
+import org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSet;
+import org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
+import org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet;
+import org.apache.commons.math3.geometry.partitioning.BSPTree;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class AbstractRegion_ESTest extends AbstractRegion_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>();
+      BSPTree<Euclidean3D> bSPTree1 = new BSPTree<Euclidean3D>();
+      PolyhedronsSet polyhedronsSet0 = new PolyhedronsSet();
+      polyhedronsSet0.getBarycenter();
+      bSPTree1.setAttribute(bSPTree0);
+      Object object0 = new Object();
+      bSPTree1.setAttribute(object0);
+      Euclidean3D euclidean3D0 = Euclidean3D.getInstance();
+      Euclidean3D.getInstance();
+      bSPTree0.setAttribute(euclidean3D0);
+      PolygonsSet polygonsSet0 = new PolygonsSet();
+      polygonsSet0.getVertices();
+      double double0 = (-1334.666);
+      PolygonsSet polygonsSet1 = new PolygonsSet(bSPTree0);
+      // Undeclared exception!
+      polygonsSet1.getSize();
+  }
+}

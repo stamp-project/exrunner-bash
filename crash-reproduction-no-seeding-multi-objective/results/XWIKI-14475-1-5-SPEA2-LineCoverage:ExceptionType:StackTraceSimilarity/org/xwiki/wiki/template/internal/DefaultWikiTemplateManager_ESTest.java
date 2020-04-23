@@ -1,0 +1,50 @@
+/*
+
+ * Mon Apr 20 17:53:50 UTC 2020
+ */
+
+package org.xwiki.wiki.template.internal;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import javax.inject.Provider;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.query.QueryManager;
+import org.xwiki.wiki.descriptor.WikiDescriptor;
+import org.xwiki.wiki.descriptor.WikiDescriptorManager;
+import org.xwiki.wiki.manager.WikiManager;
+import org.xwiki.wiki.properties.WikiPropertyGroupProvider;
+import org.xwiki.wiki.provisioning.WikiProvisioningJobExecutor;
+import org.xwiki.wiki.template.internal.DefaultWikiTemplateManager;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class DefaultWikiTemplateManager_ESTest extends DefaultWikiTemplateManager_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      QueryManager queryManager0 = mock(QueryManager.class, new ViolatedAssumptionAnswer());
+      WikiPropertyGroupProvider wikiPropertyGroupProvider0 = mock(WikiPropertyGroupProvider.class, new ViolatedAssumptionAnswer());
+      WikiManager wikiManager0 = mock(WikiManager.class, new ViolatedAssumptionAnswer());
+      Provider<WikiDescriptor> provider0 = (Provider<WikiDescriptor>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      DefaultWikiTemplateManager defaultWikiTemplateManager0 = new DefaultWikiTemplateManager();
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "queryManager", (Object) queryManager0);
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "templateWikiPropertyGroupProvider", (Object) wikiPropertyGroupProvider0);
+      WikiDescriptor wikiDescriptor0 = new WikiDescriptor("XWiki.XWikiServer", "BwE");
+      WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+      doReturn(wikiDescriptor0).when(wikiDescriptorManager0).getById(anyString());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiManager", (Object) wikiManager0);
+      WikiProvisioningJobExecutor wikiProvisioningJobExecutor0 = mock(WikiProvisioningJobExecutor.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiProvisionerExecutor", (Object) wikiProvisioningJobExecutor0);
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "xcontextProvider", (Object) provider0);
+      Injector.validateBean(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class);
+      // Undeclared exception!
+      defaultWikiTemplateManager0.setTemplate("Failed to locate XWiki.XWikiServerClass documents", true);
+  }
+}

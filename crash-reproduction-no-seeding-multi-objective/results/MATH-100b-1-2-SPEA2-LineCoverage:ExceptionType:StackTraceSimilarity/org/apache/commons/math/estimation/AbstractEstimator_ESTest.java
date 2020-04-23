@@ -1,0 +1,45 @@
+/*
+
+ * Mon Apr 20 09:52:19 UTC 2020
+ */
+
+package org.apache.commons.math.estimation;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.estimation.EstimatedParameter;
+import org.apache.commons.math.estimation.LevenbergMarquardtEstimator;
+import org.apache.commons.math.estimation.LevenbergMarquardtEstimatorTest;
+import org.apache.commons.math.estimation.SimpleEstimationProblem;
+import org.apache.commons.math.estimation.WeightedMeasurement;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class AbstractEstimator_ESTest extends AbstractEstimator_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      LevenbergMarquardtEstimator levenbergMarquardtEstimator0 = new LevenbergMarquardtEstimator();
+      levenbergMarquardtEstimator0.incrementJacobianEvaluationsCounter();
+      EstimatedParameter[] estimatedParameterArray0 = new EstimatedParameter[1];
+      EstimatedParameter estimatedParameter0 = new EstimatedParameter(")sZJP|0s)`{:", (-19.14719303028832));
+      estimatedParameterArray0[0] = estimatedParameter0;
+      levenbergMarquardtEstimator0.parameters = estimatedParameterArray0;
+      LevenbergMarquardtEstimatorTest levenbergMarquardtEstimatorTest0 = new LevenbergMarquardtEstimatorTest((String) null);
+      LevenbergMarquardtEstimatorTest.QuadraticProblem levenbergMarquardtEstimatorTest_QuadraticProblem0 = levenbergMarquardtEstimatorTest0.new QuadraticProblem();
+      WeightedMeasurement weightedMeasurement0 = mock(WeightedMeasurement.class, new ViolatedAssumptionAnswer());
+      doReturn((-19.14719303028832), 0.0, 0.0).when(weightedMeasurement0).getPartial(any(org.apache.commons.math.estimation.EstimatedParameter.class));
+      doReturn(0.0).when(weightedMeasurement0).getWeight();
+      levenbergMarquardtEstimatorTest_QuadraticProblem0.addMeasurement(weightedMeasurement0);
+      levenbergMarquardtEstimator0.initializeEstimate(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+      SimpleEstimationProblem simpleEstimationProblem0 = new SimpleEstimationProblem();
+      levenbergMarquardtEstimatorTest_QuadraticProblem0.addPoint(0.098, (-590.0), 0.098);
+      // Undeclared exception!
+      levenbergMarquardtEstimator0.getCovariances(levenbergMarquardtEstimatorTest_QuadraticProblem0);
+  }
+}

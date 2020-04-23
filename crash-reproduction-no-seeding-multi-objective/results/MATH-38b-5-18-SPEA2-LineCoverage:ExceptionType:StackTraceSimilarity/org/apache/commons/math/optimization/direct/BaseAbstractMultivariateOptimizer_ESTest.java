@@ -1,0 +1,36 @@
+/*
+
+ * Tue Apr 21 08:33:40 UTC 2020
+ */
+
+package org.apache.commons.math.optimization.direct;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.analysis.SumSincFunction;
+import org.apache.commons.math.optimization.GoalType;
+import org.apache.commons.math.optimization.direct.BOBYQAOptimizer;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BaseAbstractMultivariateOptimizer_ESTest extends BaseAbstractMultivariateOptimizer_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      int int0 = 25;
+      BOBYQAOptimizer bOBYQAOptimizer0 = new BOBYQAOptimizer(25, 25, 25);
+      SumSincFunction sumSincFunction0 = new SumSincFunction(0.08453192481256322);
+      GoalType goalType0 = GoalType.MINIMIZE;
+      double[] doubleArray0 = new double[6];
+      doubleArray0[0] = (double) 25;
+      doubleArray0[3] = 1652.332299956377;
+      doubleArray0[2] = (double) 25;
+      doubleArray0[4] = (double) 25;
+      doubleArray0[5] = 1652.332299956377;
+      // Undeclared exception!
+      bOBYQAOptimizer0.optimize(25, sumSincFunction0, goalType0, doubleArray0);
+  }
+}

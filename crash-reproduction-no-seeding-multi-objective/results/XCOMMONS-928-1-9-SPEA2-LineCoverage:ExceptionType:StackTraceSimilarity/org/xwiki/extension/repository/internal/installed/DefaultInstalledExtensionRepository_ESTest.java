@@ -1,0 +1,50 @@
+/*
+
+ * Mon Apr 20 12:37:46 UTC 2020
+ */
+
+package org.xwiki.extension.repository.internal.installed;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.Collection;
+import java.util.PriorityQueue;
+import java.util.TreeSet;
+import java.util.concurrent.LinkedBlockingQueue;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.extension.DefaultExtensionDependency;
+import org.xwiki.extension.ExtensionAuthor;
+import org.xwiki.extension.ExtensionId;
+import org.xwiki.extension.repository.CoreExtensionRepository;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtension;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository;
+import org.xwiki.extension.wrap.WrappingInstalledExtension;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class DefaultInstalledExtensionRepository_ESTest extends DefaultInstalledExtensionRepository_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      DefaultInstalledExtensionRepository defaultInstalledExtensionRepository0 = new DefaultInstalledExtensionRepository();
+      CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+      PriorityQueue<ExtensionAuthor> priorityQueue0 = new PriorityQueue<ExtensionAuthor>();
+      String string0 = "America/New_York";
+      TreeSet<DefaultExtensionDependency> treeSet0 = new TreeSet<DefaultExtensionDependency>();
+      String string1 = "LAZY_PERSIST";
+      LinkedBlockingQueue<String> linkedBlockingQueue0 = new LinkedBlockingQueue<String>();
+      ExtensionId extensionId0 = new ExtensionId((String) null, "LAZY_PERSIST");
+      DefaultInstalledExtension defaultInstalledExtension0 = mock(DefaultInstalledExtension.class, new ViolatedAssumptionAnswer());
+      doReturn((Collection) null).when(defaultInstalledExtension0).getFeatures();
+      doReturn((ExtensionId) null).when(defaultInstalledExtension0).getId();
+      doReturn((String) null).when(defaultInstalledExtension0).getType();
+      WrappingInstalledExtension<DefaultInstalledExtension> wrappingInstalledExtension0 = new WrappingInstalledExtension<DefaultInstalledExtension>(defaultInstalledExtension0);
+      DefaultInstalledExtension defaultInstalledExtension1 = new DefaultInstalledExtension(wrappingInstalledExtension0, defaultInstalledExtensionRepository0);
+  }
+}

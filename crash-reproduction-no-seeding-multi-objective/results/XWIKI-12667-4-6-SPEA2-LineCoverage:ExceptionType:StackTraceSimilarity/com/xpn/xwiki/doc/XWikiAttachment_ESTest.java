@@ -1,0 +1,40 @@
+/*
+
+ * Mon Apr 20 13:19:50 UTC 2020
+ */
+
+package com.xpn.xwiki.doc;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import com.xpn.xwiki.doc.XWikiAttachment;
+import com.xpn.xwiki.doc.XWikiDocument;
+import java.util.Date;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+import org.xwiki.model.reference.DocumentReference;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class XWikiAttachment_ESTest extends XWikiAttachment_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      XWikiAttachment xWikiAttachment0 = new XWikiAttachment();
+      XWikiDocument xWikiDocument0 = mock(XWikiDocument.class, new ViolatedAssumptionAnswer());
+      doReturn((DocumentReference) null).when(xWikiDocument0).getDocumentReference();
+      xWikiAttachment0.setDoc(xWikiDocument0);
+      Date date0 = new Date(0L);
+      xWikiAttachment0.setDate(date0);
+      xWikiAttachment0.getDate();
+      boolean boolean0 = true;
+      xWikiAttachment0.incrementVersion();
+      String string0 = null;
+      xWikiAttachment0.setAuthor((String) null);
+      // Undeclared exception!
+      xWikiAttachment0.getReference();
+  }
+}

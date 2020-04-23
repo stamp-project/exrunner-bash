@@ -1,0 +1,31 @@
+/*
+
+ * Mon Apr 20 11:58:04 UTC 2020
+ */
+
+package org.apache.commons.math.analysis.solvers;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.analysis.SinFunction;
+import org.apache.commons.math.analysis.UnivariateRealFunction;
+import org.apache.commons.math.analysis.solvers.BisectionSolver;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BisectionSolver_ESTest extends BisectionSolver_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      BisectionSolver bisectionSolver0 = new BisectionSolver();
+      SinFunction sinFunction0 = new SinFunction();
+      UnivariateRealFunction univariateRealFunction0 = sinFunction0.derivative();
+      double double0 = (-554.51277435);
+      double double1 = (-432.43706891763);
+      // Undeclared exception!
+      bisectionSolver0.solve(univariateRealFunction0, (-554.51277435), (-432.43706891763), (-2584.28785782));
+  }
+}

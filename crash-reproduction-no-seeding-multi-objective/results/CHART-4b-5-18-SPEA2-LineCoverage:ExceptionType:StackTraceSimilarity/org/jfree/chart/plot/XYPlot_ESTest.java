@@ -1,0 +1,37 @@
+/*
+
+ * Mon Apr 20 11:44:41 UTC 2020
+ */
+
+package org.jfree.chart.plot;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.jfree.chart.axis.CyclicNumberAxis;
+import org.jfree.chart.axis.DateAxis;
+import org.jfree.chart.axis.LogAxis;
+import org.jfree.chart.axis.LogarithmicAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.CombinedRangeXYPlot;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.jfree.data.xy.CategoryTableXYDataset;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class XYPlot_ESTest extends XYPlot_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      CategoryTableXYDataset categoryTableXYDataset0 = new CategoryTableXYDataset();
+      LogarithmicAxis logarithmicAxis0 = new LogarithmicAxis("");
+      LogAxis logAxis0 = new LogAxis();
+      CombinedRangeXYPlot combinedRangeXYPlot0 = new CombinedRangeXYPlot((ValueAxis) null);
+      CyclicNumberAxis cyclicNumberAxis0 = new CyclicNumberAxis((-473.18), 10.0);
+      DateAxis dateAxis0 = new DateAxis();
+      XYPlot xYPlot0 = new XYPlot(categoryTableXYDataset0, cyclicNumberAxis0, logAxis0, (XYItemRenderer) null);
+  }
+}

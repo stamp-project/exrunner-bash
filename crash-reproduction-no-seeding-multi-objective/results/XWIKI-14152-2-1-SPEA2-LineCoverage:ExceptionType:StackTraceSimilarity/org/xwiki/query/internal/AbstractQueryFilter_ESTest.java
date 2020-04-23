@@ -1,0 +1,28 @@
+/*
+
+ * Mon Apr 20 12:00:05 UTC 2020
+ */
+
+package org.xwiki.query.internal;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+import org.xwiki.query.internal.UniqueDocumentFilter;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class AbstractQueryFilter_ESTest extends AbstractQueryFilter_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      UniqueDocumentFilter uniqueDocumentFilter0 = new UniqueDocumentFilter();
+      String string0 = "d";
+      uniqueDocumentFilter0.getOrderByColumns("d");
+      String string1 = "^(fdl41IDI#[97=;y0J";
+      // Undeclared exception!
+      uniqueDocumentFilter0.getSelectColumns("^(fdl41IDI#[97=;y0J");
+  }
+}

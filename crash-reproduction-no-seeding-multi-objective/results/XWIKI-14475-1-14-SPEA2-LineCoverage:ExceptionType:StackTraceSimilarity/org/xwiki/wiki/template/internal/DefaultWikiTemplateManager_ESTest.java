@@ -1,0 +1,60 @@
+/*
+
+ * Mon Apr 20 17:59:33 UTC 2020
+ */
+
+package org.xwiki.wiki.template.internal;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import javax.inject.Provider;
+import org.apache.commons.dbcp2.PoolingConnection;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.query.QueryManager;
+import org.xwiki.wiki.descriptor.WikiDescriptor;
+import org.xwiki.wiki.descriptor.WikiDescriptorManager;
+import org.xwiki.wiki.manager.WikiManager;
+import org.xwiki.wiki.properties.WikiPropertyGroupProvider;
+import org.xwiki.wiki.provisioning.WikiProvisioningJob;
+import org.xwiki.wiki.provisioning.WikiProvisioningJobExecutor;
+import org.xwiki.wiki.template.internal.DefaultWikiTemplateManager;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class DefaultWikiTemplateManager_ESTest extends DefaultWikiTemplateManager_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      DefaultWikiTemplateManager defaultWikiTemplateManager0 = new DefaultWikiTemplateManager();
+      QueryManager queryManager0 = mock(QueryManager.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "queryManager", (Object) queryManager0);
+      WikiPropertyGroupProvider wikiPropertyGroupProvider0 = mock(WikiPropertyGroupProvider.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "templateWikiPropertyGroupProvider", (Object) wikiPropertyGroupProvider0);
+      String string0 = "Bol}9CY7v,hNc9Ej";
+      WikiDescriptor wikiDescriptor0 = new WikiDescriptor("Bol}9CY7v,hNc9Ej", "Bol}9CY7v,hNc9Ej");
+      wikiDescriptor0.setOwnerId("Bol}9CY7v,hNc9Ej");
+      wikiDescriptor0.setPrettyName("Bol}9CY7v,hNc9Ej");
+      wikiDescriptor0.getReference();
+      WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
+      doReturn(wikiDescriptor0).when(wikiDescriptorManager0).getById(anyString());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiDescriptorManager", (Object) wikiDescriptorManager0);
+      WikiManager wikiManager0 = mock(WikiManager.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiManager", (Object) wikiManager0);
+      WikiProvisioningJob wikiProvisioningJob0 = mock(WikiProvisioningJob.class, new ViolatedAssumptionAnswer());
+      doReturn((String) null).when(wikiProvisioningJob0).toString();
+      WikiProvisioningJobExecutor wikiProvisioningJobExecutor0 = mock(WikiProvisioningJobExecutor.class, new ViolatedAssumptionAnswer());
+      doReturn(wikiProvisioningJob0).when(wikiProvisioningJobExecutor0).createAndExecuteJob(anyString() , anyString() , any());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "wikiProvisionerExecutor", (Object) wikiProvisioningJobExecutor0);
+      Provider<PoolingConnection> provider0 = (Provider<PoolingConnection>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class, "xcontextProvider", (Object) provider0);
+      defaultWikiTemplateManager0.applyTemplate("Bol}9CY7v,hNc9Ej", "Bol}9CY7v,hNc9Ej");
+      Injector.validateBean(defaultWikiTemplateManager0, (Class<?>) DefaultWikiTemplateManager.class);
+      // Undeclared exception!
+      defaultWikiTemplateManager0.setTemplate("", true);
+  }
+}

@@ -1,0 +1,32 @@
+/*
+
+ * Mon Apr 20 15:52:41 UTC 2020
+ */
+
+package com.xpn.xwiki.objects.classes;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import com.xpn.xwiki.objects.classes.BaseClass;
+import com.xpn.xwiki.objects.classes.TextAreaClass;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BaseClass_ESTest extends BaseClass_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      BaseClass baseClass0 = new BaseClass();
+      String string0 = "6>uHa<#laefh31:<zW";
+      baseClass0.addUsersField("6>uHa<#laefh31:<zW", "6>uHa<#laefh31:<zW", true);
+      String string1 = "";
+      int int0 = 0;
+      baseClass0.addTextField("", "", 0);
+      TextAreaClass.ContentType textAreaClass_ContentType0 = TextAreaClass.ContentType.WIKI_TEXT;
+      // Undeclared exception!
+      baseClass0.addTextAreaField("", (String) null, 0, 0, textAreaClass_ContentType0);
+  }
+}

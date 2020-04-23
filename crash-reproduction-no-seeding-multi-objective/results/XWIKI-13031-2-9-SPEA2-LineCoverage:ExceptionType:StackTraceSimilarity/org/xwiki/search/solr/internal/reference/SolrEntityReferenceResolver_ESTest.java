@@ -1,0 +1,49 @@
+/*
+
+ * Mon Apr 20 15:33:48 UTC 2020
+ */
+
+package org.xwiki.search.solr.internal.reference;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.solr.common.SolrDocument;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.model.EntityType;
+import org.xwiki.model.internal.reference.ExplicitStringEntityReferenceResolver;
+import org.xwiki.model.reference.EntityReferenceResolver;
+import org.xwiki.search.solr.internal.reference.SolrEntityReferenceResolver;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class SolrEntityReferenceResolver_ESTest extends SolrEntityReferenceResolver_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      SolrEntityReferenceResolver solrEntityReferenceResolver0 = new SolrEntityReferenceResolver();
+      EntityReferenceResolver<ExplicitStringEntityReferenceResolver> entityReferenceResolver0 = (EntityReferenceResolver<ExplicitStringEntityReferenceResolver>) mock(EntityReferenceResolver.class, new ViolatedAssumptionAnswer());
+      Injector.inject(solrEntityReferenceResolver0, (Class<?>) SolrEntityReferenceResolver.class, "explicitReferenceEntityReferenceResolver", (Object) entityReferenceResolver0);
+      SolrDocument solrDocument0 = new SolrDocument();
+      EntityType entityType0 = EntityType.OBJECT_PROPERTY;
+      Object[] objectArray0 = new Object[6];
+      solrDocument0.put("wiki", (Object) solrEntityReferenceResolver0);
+      objectArray0[0] = (Object) entityReferenceResolver0;
+      objectArray0[1] = (Object) solrDocument0;
+      objectArray0[2] = (Object) entityReferenceResolver0;
+      objectArray0[3] = (Object) entityReferenceResolver0;
+      objectArray0[4] = (Object) entityType0;
+      SolrDocument solrDocument1 = new SolrDocument();
+      SolrEntityReferenceResolver solrEntityReferenceResolver1 = new SolrEntityReferenceResolver();
+      ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+      Injector.inject(solrEntityReferenceResolver1, (Class<?>) SolrEntityReferenceResolver.class, "explicitReferenceEntityReferenceResolver", (Object) explicitStringEntityReferenceResolver0);
+      Injector.validateBean(solrEntityReferenceResolver1, (Class<?>) SolrEntityReferenceResolver.class);
+      EntityType entityType1 = EntityType.WIKI;
+      // Undeclared exception!
+      solrEntityReferenceResolver1.resolve(solrDocument0, entityType1, objectArray0);
+  }
+}

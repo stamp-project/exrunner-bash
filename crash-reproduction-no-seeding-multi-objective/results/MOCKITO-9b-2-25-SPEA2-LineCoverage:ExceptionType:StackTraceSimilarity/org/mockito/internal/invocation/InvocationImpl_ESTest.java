@@ -1,0 +1,57 @@
+/*
+
+ * Tue Apr 21 12:56:14 UTC 2020
+ */
+
+package org.mockito.internal.invocation;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.lang.reflect.Method;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+import org.mockito.exceptions.base.MockitoException;
+import org.mockito.internal.invocation.InvocationImpl;
+import org.mockito.internal.invocation.MockitoMethod;
+import org.mockito.internal.invocation.realmethod.RealMethod;
+import org.mockito.invocation.StubInfo;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class InvocationImpl_ESTest extends InvocationImpl_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      Object object0 = new Object();
+      MockitoMethod mockitoMethod0 = mock(MockitoMethod.class, new ViolatedAssumptionAnswer());
+      doReturn(true).when(mockitoMethod0).isAbstract();
+      doReturn((Method) null).when(mockitoMethod0).getJavaMethod();
+      doReturn(true).when(mockitoMethod0).isVarArgs();
+      Object[] objectArray0 = new Object[2];
+      objectArray0[0] = (Object) mockitoMethod0;
+      objectArray0[1] = (Object) mockitoMethod0;
+      RealMethod realMethod0 = null;
+      InvocationImpl invocationImpl0 = new InvocationImpl(object0, mockitoMethod0, objectArray0, 1308, (RealMethod) null);
+      invocationImpl0.getSequenceNumber();
+      invocationImpl0.getMethod();
+      invocationImpl0.stubInfo();
+      invocationImpl0.markStubbed((StubInfo) null);
+      try { 
+        invocationImpl0.callRealMethod();
+        fail("Expecting exception: MockitoException");
+      
+      } catch(MockitoException e) {
+         //
+         // 
+         // Cannot call abstract real method on java object!
+         // Calling real methods is only possible when mocking non abstract method.
+         //   //correct example:
+         //   when(mockOfConcreteClass.nonAbstractMethod()).thenCallRealMethod();
+         //
+         verifyException("org.mockito.exceptions.Reporter", e);
+      }
+  }
+}

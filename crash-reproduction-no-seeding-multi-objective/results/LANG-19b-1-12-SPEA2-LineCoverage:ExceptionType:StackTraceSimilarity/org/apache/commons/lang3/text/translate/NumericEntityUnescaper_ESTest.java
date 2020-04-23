@@ -1,0 +1,36 @@
+/*
+
+ * Tue Apr 21 06:53:12 UTC 2020
+ */
+
+package org.apache.commons.lang3.text.translate;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.io.StringWriter;
+import java.io.Writer;
+import org.apache.commons.lang3.text.translate.NumericEntityUnescaper;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class NumericEntityUnescaper_ESTest extends NumericEntityUnescaper_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      NumericEntityUnescaper numericEntityUnescaper0 = new NumericEntityUnescaper();
+      StringWriter stringWriter0 = new StringWriter();
+      stringWriter0.write("&&Lzq:Sq");
+      StringBuffer stringBuffer0 = stringWriter0.getBuffer();
+      NumericEntityUnescaper numericEntityUnescaper1 = new NumericEntityUnescaper();
+      StringWriter stringWriter1 = new StringWriter();
+      stringWriter0.write("&#");
+      stringWriter1.getBuffer();
+      NumericEntityUnescaper numericEntityUnescaper2 = new NumericEntityUnescaper();
+      StringWriter stringWriter2 = new StringWriter();
+      // Undeclared exception!
+      numericEntityUnescaper2.translate((CharSequence) stringBuffer0, (Writer) stringWriter0);
+  }
+}

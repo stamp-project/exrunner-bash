@@ -1,0 +1,41 @@
+/*
+
+ * Tue Apr 21 10:15:40 UTC 2020
+ */
+
+package org.apache.commons.math.optimization.direct;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.Comparator;
+import org.apache.commons.math.optimization.OptimizationException;
+import org.apache.commons.math.optimization.RealPointValuePair;
+import org.apache.commons.math.optimization.direct.MultiDirectional;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class MultiDirectional_ESTest extends MultiDirectional_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      double double0 = 0.0;
+      double double1 = 0.0;
+      MultiDirectional multiDirectional0 = new MultiDirectional(0.0, 0.0);
+      multiDirectional0.setMaxIterations((-1426));
+      multiDirectional0.getConvergenceChecker();
+      Comparator<RealPointValuePair> comparator0 = null;
+      try { 
+        multiDirectional0.iterateSimplex((Comparator<RealPointValuePair>) null);
+        fail("Expecting exception: OptimizationException");
+      
+      } catch(OptimizationException e) {
+         //
+         // org.apache.commons.math.MaxIterationsExceededException: Maximal number of iterations (-1,426) exceeded
+         //
+         verifyException("org.apache.commons.math.optimization.direct.DirectSearchOptimizer", e);
+      }
+  }
+}

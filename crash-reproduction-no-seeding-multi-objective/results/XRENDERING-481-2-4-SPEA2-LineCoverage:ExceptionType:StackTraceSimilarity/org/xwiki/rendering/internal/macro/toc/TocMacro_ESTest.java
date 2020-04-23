@@ -1,0 +1,71 @@
+/*
+
+ * Tue Apr 21 15:01:08 UTC 2020
+ */
+
+package org.xwiki.rendering.internal.macro.toc;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.Map;
+import java.util.Vector;
+import javax.inject.Provider;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.component.descriptor.ComponentDescriptor;
+import org.xwiki.properties.BeanManager;
+import org.xwiki.rendering.block.DefinitionDescriptionBlock;
+import org.xwiki.rendering.block.MacroBlock;
+import org.xwiki.rendering.block.MetaDataBlock;
+import org.xwiki.rendering.block.XDOM;
+import org.xwiki.rendering.internal.macro.toc.TocMacro;
+import org.xwiki.rendering.listener.Listener;
+import org.xwiki.rendering.listener.MetaData;
+import org.xwiki.rendering.macro.AbstractMacro;
+import org.xwiki.rendering.macro.toc.TocMacroParameters;
+import org.xwiki.rendering.parser.Parser;
+import org.xwiki.rendering.renderer.reference.link.LinkLabelGenerator;
+import org.xwiki.rendering.transformation.MacroTransformationContext;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class TocMacro_ESTest extends TocMacro_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      TocMacro tocMacro0 = new TocMacro();
+      LinkLabelGenerator linkLabelGenerator0 = mock(LinkLabelGenerator.class, new ViolatedAssumptionAnswer());
+      Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "linkLabelGenerator", (Object) linkLabelGenerator0);
+      Parser parser0 = mock(Parser.class, new ViolatedAssumptionAnswer());
+      Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "plainTextParser", (Object) parser0);
+      Provider<String> provider0 = (Provider<String>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      doReturn((String) null).when(provider0).get();
+      Injector.inject(tocMacro0, (Class<?>) TocMacro.class, "wikiModelProvider", (Object) provider0);
+      BeanManager beanManager0 = mock(BeanManager.class, new ViolatedAssumptionAnswer());
+      Injector.inject(tocMacro0, (Class<?>) AbstractMacro.class, "beanManager", (Object) beanManager0);
+      ComponentDescriptor<MetaDataBlock> componentDescriptor0 = (ComponentDescriptor<MetaDataBlock>) mock(ComponentDescriptor.class, new ViolatedAssumptionAnswer());
+      Injector.inject(tocMacro0, (Class<?>) AbstractMacro.class, "componentDescriptor", (Object) componentDescriptor0);
+      Injector.validateBean(tocMacro0, (Class<?>) TocMacro.class);
+      TocMacroParameters.Scope tocMacroParameters_Scope0 = TocMacroParameters.Scope.LOCAL;
+      TocMacroParameters tocMacroParameters0 = mock(TocMacroParameters.class, new ViolatedAssumptionAnswer());
+      doReturn((-1)).when(tocMacroParameters0).getDepth();
+      doReturn((String) null, (String) null).when(tocMacroParameters0).getReference();
+      doReturn(tocMacroParameters_Scope0, tocMacroParameters_Scope0).when(tocMacroParameters0).getScope();
+      doReturn(3811).when(tocMacroParameters0).getStart();
+      doReturn(false).when(tocMacroParameters0).isCustomStart();
+      doReturn(true).when(tocMacroParameters0).isNumbered();
+      Vector<DefinitionDescriptionBlock> vector0 = new Vector<DefinitionDescriptionBlock>();
+      MetaData metaData0 = MetaData.EMPTY;
+      XDOM xDOM0 = new XDOM(vector0, metaData0);
+      Map<String, String> map0 = Listener.EMPTY_PARAMETERS;
+      MacroBlock macroBlock0 = new MacroBlock("", map0, "", true);
+      MacroTransformationContext macroTransformationContext0 = mock(MacroTransformationContext.class, new ViolatedAssumptionAnswer());
+      doReturn(macroBlock0, macroBlock0).when(macroTransformationContext0).getCurrentMacroBlock();
+      // Undeclared exception!
+      tocMacro0.execute(tocMacroParameters0, ".0C", macroTransformationContext0);
+  }
+}

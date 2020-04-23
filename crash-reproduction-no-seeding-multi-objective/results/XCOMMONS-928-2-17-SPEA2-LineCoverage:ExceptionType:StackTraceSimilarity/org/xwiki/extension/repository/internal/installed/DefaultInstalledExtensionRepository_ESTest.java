@@ -1,0 +1,86 @@
+/*
+
+ * Mon Apr 20 12:49:38 UTC 2020
+ */
+
+package org.xwiki.extension.repository.internal.installed;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.LinkedTransferQueue;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.xwiki.extension.DefaultExtensionDependency;
+import org.xwiki.extension.DefaultExtensionIssueManagement;
+import org.xwiki.extension.ExtensionAuthor;
+import org.xwiki.extension.ExtensionId;
+import org.xwiki.extension.ExtensionLicense;
+import org.xwiki.extension.ExtensionScm;
+import org.xwiki.extension.LocalExtension;
+import org.xwiki.extension.repository.CoreExtensionRepository;
+import org.xwiki.extension.repository.InstalledExtensionRepository;
+import org.xwiki.extension.repository.LocalExtensionRepository;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtension;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository;
+import org.xwiki.extension.test.EmptyExtension;
+import org.xwiki.extension.wrap.WrappingLocalExtension;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class DefaultInstalledExtensionRepository_ESTest extends DefaultInstalledExtensionRepository_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      DefaultInstalledExtensionRepository defaultInstalledExtensionRepository0 = new DefaultInstalledExtensionRepository();
+      CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+      LinkedList<ExtensionAuthor> linkedList0 = new LinkedList<ExtensionAuthor>();
+      LinkedTransferQueue<String> linkedTransferQueue0 = new LinkedTransferQueue<String>();
+      ExtensionId extensionId0 = new ExtensionId("Invalid extension [{}] ({})", "Invalid extension [{}] ({})");
+      DefaultExtensionIssueManagement defaultExtensionIssueManagement0 = new DefaultExtensionIssueManagement((String) null, "Xd+*=#mk'mk");
+      LinkedBlockingQueue<ExtensionLicense> linkedBlockingQueue0 = new LinkedBlockingQueue<ExtensionLicense>();
+      Hashtable<String, Object> hashtable0 = new Hashtable<String, Object>();
+      EmptyExtension emptyExtension0 = new EmptyExtension(extensionId0, (String) null);
+      emptyExtension0.getScm();
+      DefaultInstalledExtension defaultInstalledExtension0 = mock(DefaultInstalledExtension.class, new ViolatedAssumptionAnswer());
+      doReturn(linkedList0).when(defaultInstalledExtension0).getAuthors();
+      doReturn("Invalid extension [{}] ({})").when(defaultInstalledExtension0).getCategory();
+      doReturn((List<DefaultExtensionDependency>) null).when(defaultInstalledExtension0).getDependencies();
+      doReturn((String) null).when(defaultInstalledExtension0).getDescription();
+      doReturn(linkedTransferQueue0).when(defaultInstalledExtension0).getFeatures();
+      doReturn(extensionId0).when(defaultInstalledExtension0).getId();
+      doReturn(defaultExtensionIssueManagement0).when(defaultInstalledExtension0).getIssueManagement();
+      doReturn(linkedBlockingQueue0).when(defaultInstalledExtension0).getLicenses();
+      doReturn("Invalid extension [{}] ({})").when(defaultInstalledExtension0).getName();
+      doReturn(hashtable0).when(defaultInstalledExtension0).getProperties();
+      doReturn((ExtensionScm) null).when(defaultInstalledExtension0).getScm();
+      doReturn((String) null).when(defaultInstalledExtension0).getSummary();
+      doReturn((String) null).when(defaultInstalledExtension0).getType();
+      doReturn("25F%CsiA0fCb#Y\"oc").when(defaultInstalledExtension0).getWebSite();
+      WrappingLocalExtension<DefaultInstalledExtension> wrappingLocalExtension0 = new WrappingLocalExtension<DefaultInstalledExtension>(defaultInstalledExtension0);
+      DefaultInstalledExtension defaultInstalledExtension1 = new DefaultInstalledExtension(wrappingLocalExtension0, (InstalledExtensionRepository) null);
+      LocalExtensionRepository localExtensionRepository0 = mock(LocalExtensionRepository.class, new ViolatedAssumptionAnswer());
+      doReturn(defaultInstalledExtension1).when(localExtensionRepository0).getLocalExtension(any(org.xwiki.extension.ExtensionId.class));
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "localRepository", (Object) localExtensionRepository0);
+      Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "logger", (Object) logger0);
+      Injector.validateBean(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class);
+      ExtensionId extensionId1 = new ExtensionId((String) null, (String) null);
+      LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+      doReturn(extensionId1, extensionId1).when(localExtension0).getId();
+      extensionId1.toString();
+      Hashtable<String, Object> hashtable1 = new Hashtable<String, Object>();
+      // Undeclared exception!
+      defaultInstalledExtensionRepository0.installExtension(localExtension0, "5WYk", false, (Map<String, Object>) null);
+  }
+}

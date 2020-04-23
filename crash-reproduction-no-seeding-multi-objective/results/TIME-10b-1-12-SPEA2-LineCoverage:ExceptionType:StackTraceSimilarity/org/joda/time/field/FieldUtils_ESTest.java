@@ -1,0 +1,33 @@
+/*
+
+ * Tue Apr 21 13:03:25 UTC 2020
+ */
+
+package org.joda.time.field;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.joda.time.DateTimeField;
+import org.joda.time.DateTimeZone;
+import org.joda.time.chrono.BuddhistChronology;
+import org.joda.time.field.FieldUtils;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class FieldUtils_ESTest extends FieldUtils_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      int int0 = 0;
+      FieldUtils.safeMultiply((long) 0, (-2029L));
+      int int1 = 0;
+      DateTimeZone dateTimeZone0 = DateTimeZone.forOffsetHours(0);
+      BuddhistChronology buddhistChronology0 = BuddhistChronology.getInstance(dateTimeZone0);
+      DateTimeField dateTimeField0 = buddhistChronology0.secondOfMinute();
+      // Undeclared exception!
+      FieldUtils.verifyValueBounds(dateTimeField0, 0, 0, (-1));
+  }
+}

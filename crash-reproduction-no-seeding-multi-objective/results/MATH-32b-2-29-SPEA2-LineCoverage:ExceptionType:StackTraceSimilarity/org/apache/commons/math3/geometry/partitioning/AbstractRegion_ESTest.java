@@ -1,0 +1,34 @@
+/*
+
+ * Mon Apr 20 11:26:33 UTC 2020
+ */
+
+package org.apache.commons.math3.geometry.partitioning;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.LinkedList;
+import org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
+import org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
+import org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet;
+import org.apache.commons.math3.geometry.partitioning.AbstractRegion;
+import org.apache.commons.math3.geometry.partitioning.BSPTree;
+import org.apache.commons.math3.geometry.partitioning.SubHyperplane;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class AbstractRegion_ESTest extends AbstractRegion_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      LinkedList<SubHyperplane<Euclidean2D>> linkedList0 = new LinkedList<SubHyperplane<Euclidean2D>>();
+      BSPTree<Euclidean2D> bSPTree0 = new BSPTree<Euclidean2D>(linkedList0);
+      PolygonsSet polygonsSet0 = new PolygonsSet(bSPTree0);
+      AbstractRegion<Euclidean2D, Euclidean1D> abstractRegion0 = polygonsSet0.copySelf();
+      // Undeclared exception!
+      abstractRegion0.getSize();
+  }
+}

@@ -1,0 +1,42 @@
+/*
+
+ * Mon Apr 20 21:14:43 UTC 2020
+ */
+
+package com.xpn.xwiki.internal.skin;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import com.xpn.xwiki.internal.ReadOnlyXWikiContextProvider;
+import com.xpn.xwiki.internal.skin.EnvironmentSkin;
+import com.xpn.xwiki.internal.skin.InternalSkinConfiguration;
+import com.xpn.xwiki.internal.skin.InternalSkinManager;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.slf4j.helpers.NOPLogger;
+import org.xwiki.context.Execution;
+import org.xwiki.environment.Environment;
+import org.xwiki.rendering.internal.syntax.DefaultSyntaxFactory;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class EnvironmentSkin_ESTest extends EnvironmentSkin_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      InternalSkinConfiguration internalSkinConfiguration0 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+      ReadOnlyXWikiContextProvider readOnlyXWikiContextProvider0 = new ReadOnlyXWikiContextProvider();
+      Execution execution0 = mock(Execution.class, new ViolatedAssumptionAnswer());
+      Injector.inject(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class, "execution", (Object) execution0);
+      Injector.validateBean(readOnlyXWikiContextProvider0, (Class<?>) ReadOnlyXWikiContextProvider.class);
+      NOPLogger nOPLogger0 = NOPLogger.NOP_LOGGER;
+      DefaultSyntaxFactory defaultSyntaxFactory0 = new DefaultSyntaxFactory();
+      EnvironmentSkin environmentSkin0 = new EnvironmentSkin("", (InternalSkinManager) null, internalSkinConfiguration0, nOPLogger0, defaultSyntaxFactory0, (Environment) null, readOnlyXWikiContextProvider0);
+      // Undeclared exception!
+      environmentSkin0.getOutputSyntaxString();
+  }
+}

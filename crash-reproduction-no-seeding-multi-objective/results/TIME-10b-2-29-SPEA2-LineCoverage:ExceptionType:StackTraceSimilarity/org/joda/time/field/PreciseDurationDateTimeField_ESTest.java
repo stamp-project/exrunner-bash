@@ -1,0 +1,38 @@
+/*
+
+ * Tue Apr 21 13:08:36 UTC 2020
+ */
+
+package org.joda.time.field;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.joda.time.DateTimeFieldType;
+import org.joda.time.DateTimeZone;
+import org.joda.time.DurationField;
+import org.joda.time.field.TestPreciseDurationDateTimeField;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class PreciseDurationDateTimeField_ESTest extends PreciseDurationDateTimeField_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      DateTimeFieldType dateTimeFieldType0 = mock(DateTimeFieldType.class, new ViolatedAssumptionAnswer());
+      DurationField durationField0 = mock(DurationField.class, new ViolatedAssumptionAnswer());
+      TestPreciseDurationDateTimeField.MockStandardBaseDateTimeField testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0 = new TestPreciseDurationDateTimeField.MockStandardBaseDateTimeField();
+      DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.isSupported();
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.getMaximumValue();
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.isLeap((-1302));
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.getLeapDurationField();
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.roundHalfEven((-194L));
+      // Undeclared exception!
+      testPreciseDurationDateTimeField_MockStandardBaseDateTimeField0.set(86400L, 200);
+  }
+}

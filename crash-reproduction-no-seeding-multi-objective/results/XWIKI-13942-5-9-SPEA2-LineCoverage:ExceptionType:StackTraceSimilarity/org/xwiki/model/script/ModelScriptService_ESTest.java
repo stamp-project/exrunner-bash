@@ -1,0 +1,54 @@
+/*
+
+ * Mon Apr 20 12:19:16 UTC 2020
+ */
+
+package org.xwiki.model.script;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.xwiki.component.manager.ComponentManager;
+import org.xwiki.model.EntityType;
+import org.xwiki.model.internal.reference.AbstractStringEntityReferenceResolver;
+import org.xwiki.model.internal.reference.DefaultStringEntityReferenceSerializer;
+import org.xwiki.model.internal.reference.DefaultSymbolScheme;
+import org.xwiki.model.internal.reference.ExplicitStringEntityReferenceResolver;
+import org.xwiki.model.reference.EntityReferenceSerializer;
+import org.xwiki.model.script.ModelScriptService;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class ModelScriptService_ESTest extends ModelScriptService_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      ModelScriptService modelScriptService0 = new ModelScriptService();
+      ExplicitStringEntityReferenceResolver explicitStringEntityReferenceResolver0 = new ExplicitStringEntityReferenceResolver();
+      DefaultSymbolScheme defaultSymbolScheme0 = new DefaultSymbolScheme();
+      Injector.inject(explicitStringEntityReferenceResolver0, (Class<?>) AbstractStringEntityReferenceResolver.class, "symbolScheme", (Object) defaultSymbolScheme0);
+      Injector.validateBean(explicitStringEntityReferenceResolver0, (Class<?>) ExplicitStringEntityReferenceResolver.class);
+      explicitStringEntityReferenceResolver0.initialize();
+      explicitStringEntityReferenceResolver0.initialize();
+      explicitStringEntityReferenceResolver0.initialize();
+      EntityType entityType0 = EntityType.ATTACHMENT;
+      defaultSymbolScheme0.initialize();
+      Object[] objectArray0 = new Object[3];
+      objectArray0[0] = (Object) entityType0;
+      objectArray0[1] = (Object) "Finished rehash aware operation for id %s";
+      objectArray0[2] = (Object) defaultSymbolScheme0;
+      ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
+      doReturn(explicitStringEntityReferenceResolver0).when(componentManager0).getInstance(any(java.lang.reflect.Type.class) , anyString());
+      Injector.inject(modelScriptService0, (Class<?>) ModelScriptService.class, "componentManager", (Object) componentManager0);
+      EntityReferenceSerializer<DefaultStringEntityReferenceSerializer> entityReferenceSerializer0 = (EntityReferenceSerializer<DefaultStringEntityReferenceSerializer>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
+      String string0 = "";
+      String string1 = "";
+      // Undeclared exception!
+      modelScriptService0.resolveSpace("", "+]= 5ns<&", objectArray0);
+  }
+}

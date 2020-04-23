@@ -1,0 +1,32 @@
+/*
+
+ * Tue Apr 21 06:16:33 UTC 2020
+ */
+
+package org.apache.commons.lang3;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.lang3.StringUtils;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class StringUtils_ESTest extends StringUtils_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      String string0 = "";
+      StringUtils.startsWithIgnoreCase("", "");
+      StringUtils.trimToNull("");
+      String string1 = "SZigHo#2o6.Q6TBU";
+      String[] stringArray0 = new String[3];
+      stringArray0[0] = "";
+      stringArray0[1] = "SZigHo#2o6.Q6TBU";
+      stringArray0[2] = null;
+      // Undeclared exception!
+      StringUtils.replaceEach("SZigHo#2o6.Q6TBU", stringArray0, stringArray0);
+  }
+}

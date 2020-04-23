@@ -1,0 +1,34 @@
+/*
+
+ * Mon Apr 20 11:47:53 UTC 2020
+ */
+
+package org.jfree.chart.plot;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.jfree.data.xy.XYDataset;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class XYPlot_ESTest extends XYPlot_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      XYDataset xYDataset0 = mock(XYDataset.class, new ViolatedAssumptionAnswer());
+      doReturn("Mt%X)'i'L!+", "WlTr(Iu(S2E{rg!", "TextAnchor.BASELINE_RIGHT", "WlTr(Iu(S2E{rg!").when(xYDataset0).toString();
+      doReturn(412).when(xYDataset0).getSeriesCount();
+      doReturn((-1352), (-1352), (-1352), (-1359), (-1359)).when(xYDataset0).getItemCount(anyInt());
+      XYPlot xYPlot0 = new XYPlot(xYDataset0, (ValueAxis) null, (ValueAxis) null, (XYItemRenderer) null);
+      // Undeclared exception!
+      xYPlot0.getDataRange((ValueAxis) null);
+  }
+}

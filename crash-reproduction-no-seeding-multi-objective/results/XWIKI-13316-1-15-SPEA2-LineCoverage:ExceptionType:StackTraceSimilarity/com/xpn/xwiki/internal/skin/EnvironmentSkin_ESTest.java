@@ -1,0 +1,43 @@
+/*
+
+ * Mon Apr 20 21:21:33 UTC 2020
+ */
+
+package com.xpn.xwiki.internal.skin;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import ch.qos.logback.classic.Logger;
+import com.xpn.xwiki.XWikiContext;
+import com.xpn.xwiki.internal.skin.EnvironmentSkin;
+import com.xpn.xwiki.internal.skin.InternalSkinConfiguration;
+import com.xpn.xwiki.internal.skin.InternalSkinManager;
+import javax.inject.Provider;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+import org.xwiki.environment.Environment;
+import org.xwiki.rendering.syntax.SyntaxFactory;
+import ucar.nc2.util.net.URLStreamHandlerFactory;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class EnvironmentSkin_ESTest extends EnvironmentSkin_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      InternalSkinManager internalSkinManager0 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+      InternalSkinConfiguration internalSkinConfiguration0 = mock(InternalSkinConfiguration.class, new ViolatedAssumptionAnswer());
+      Logger logger0 = (Logger)URLStreamHandlerFactory.log;
+      Provider<XWikiContext> provider0 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      InternalSkinManager internalSkinManager1 = mock(InternalSkinManager.class, new ViolatedAssumptionAnswer());
+      org.slf4j.Logger logger1 = mock(org.slf4j.Logger.class, new ViolatedAssumptionAnswer());
+      SyntaxFactory syntaxFactory0 = mock(SyntaxFactory.class, new ViolatedAssumptionAnswer());
+      Provider<XWikiContext> provider1 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      EnvironmentSkin environmentSkin0 = new EnvironmentSkin("", internalSkinManager1, (InternalSkinConfiguration) null, logger1, syntaxFactory0, (Environment) null, provider1);
+      // Undeclared exception!
+      environmentSkin0.getOutputSyntaxString();
+  }
+}

@@ -1,0 +1,59 @@
+/*
+
+ * Wed Apr 22 12:33:31 UTC 2020
+ */
+
+package org.xwiki.extension.jar.internal.handler;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import javax.inject.Provider;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.xwiki.classloader.ClassLoaderManager;
+import org.xwiki.classloader.NamespaceURLClassLoader;
+import org.xwiki.component.annotation.ComponentDeclaration;
+import org.xwiki.component.internal.multi.ComponentManagerManager;
+import org.xwiki.extension.InstalledExtension;
+import org.xwiki.extension.handler.internal.AbstractExtensionHandler;
+import org.xwiki.extension.jar.internal.handler.JarExtensionHandler;
+import org.xwiki.job.Request;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class JarExtensionHandler_ESTest extends JarExtensionHandler_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      JarExtensionHandler jarExtensionHandler0 = new JarExtensionHandler();
+      ComponentManagerManager componentManagerManager0 = mock(ComponentManagerManager.class, new ViolatedAssumptionAnswer());
+      Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "componentManagerManager", (Object) componentManagerManager0);
+      NamespaceURLClassLoader namespaceURLClassLoader0 = mock(NamespaceURLClassLoader.class, new ViolatedAssumptionAnswer());
+      doReturn((String) null).when(namespaceURLClassLoader0).getNamespace();
+      ClassLoaderManager classLoaderManager0 = mock(ClassLoaderManager.class, new ViolatedAssumptionAnswer());
+      doReturn(namespaceURLClassLoader0).when(classLoaderManager0).getURLClassLoader(anyString() , anyBoolean());
+      Injector.inject(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class, "jarExtensionClassLoader", (Object) classLoaderManager0);
+      Provider<ComponentDeclaration> provider0 = (Provider<ComponentDeclaration>) mock(Provider.class, new ViolatedAssumptionAnswer());
+      Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "defaultValidatorProvider", (Object) provider0);
+      Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+      Injector.inject(jarExtensionHandler0, (Class<?>) AbstractExtensionHandler.class, "logger", (Object) logger0);
+      Injector.validateBean(jarExtensionHandler0, (Class<?>) JarExtensionHandler.class);
+      jarExtensionHandler0.initialize();
+      InstalledExtension installedExtension0 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+      doReturn(false).when(installedExtension0).isValid(anyString());
+      String string0 = "";
+      Request request0 = mock(Request.class, new ViolatedAssumptionAnswer());
+      jarExtensionHandler0.uninstall(installedExtension0, "", request0);
+      boolean boolean0 = true;
+      InstalledExtension installedExtension1 = mock(InstalledExtension.class, new ViolatedAssumptionAnswer());
+      doReturn(true).when(installedExtension1).isValid(anyString());
+      Request request1 = mock(Request.class, new ViolatedAssumptionAnswer());
+      // Undeclared exception!
+      jarExtensionHandler0.uninstall(installedExtension1, "", request1);
+  }
+}

@@ -1,0 +1,31 @@
+/*
+
+ * Mon Apr 20 11:38:02 UTC 2020
+ */
+
+package org.jfree.chart;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.TimeZone;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.time.TimeSeriesCollection;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class ChartFactory_ESTest extends ChartFactory_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      String string0 = "=change >=+";
+      TimeSeriesCollection timeSeriesCollection0 = new TimeSeriesCollection((TimeZone) null);
+      PlotOrientation plotOrientation0 = PlotOrientation.VERTICAL;
+      boolean boolean0 = false;
+      // Undeclared exception!
+      ChartFactory.createScatterPlot("J#Y=O", "=change >=+", "zJxVYeh/x8\"?Zw+)vX", timeSeriesCollection0, plotOrientation0, false, false, false);
+  }
+}

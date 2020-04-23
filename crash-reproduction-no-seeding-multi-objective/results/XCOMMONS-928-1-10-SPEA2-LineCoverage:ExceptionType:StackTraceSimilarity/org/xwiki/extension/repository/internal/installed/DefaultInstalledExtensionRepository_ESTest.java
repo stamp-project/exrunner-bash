@@ -1,0 +1,56 @@
+/*
+
+ * Mon Apr 20 12:38:34 UTC 2020
+ */
+
+package org.xwiki.extension.repository.internal.installed;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.Collection;
+import javatests.DiamondIterableMapMRO;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.evosuite.runtime.javaee.injection.Injector;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.xwiki.extension.ExtensionId;
+import org.xwiki.extension.LocalExtension;
+import org.xwiki.extension.repository.CoreExtensionRepository;
+import org.xwiki.extension.repository.LocalExtensionRepository;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtension;
+import org.xwiki.extension.repository.internal.installed.DefaultInstalledExtensionRepository;
+import org.xwiki.extension.wrap.WrappingLocalExtension;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class DefaultInstalledExtensionRepository_ESTest extends DefaultInstalledExtensionRepository_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      DefaultInstalledExtensionRepository defaultInstalledExtensionRepository0 = new DefaultInstalledExtensionRepository();
+      CoreExtensionRepository coreExtensionRepository0 = mock(CoreExtensionRepository.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "coreExtensionRepository", (Object) coreExtensionRepository0);
+      WrappingLocalExtension<DefaultInstalledExtension> wrappingLocalExtension0 = (WrappingLocalExtension<DefaultInstalledExtension>) mock(WrappingLocalExtension.class, new ViolatedAssumptionAnswer());
+      doReturn((Collection) null).when(wrappingLocalExtension0).getFeatures();
+      doReturn((ExtensionId) null).when(wrappingLocalExtension0).getId();
+      doReturn((String) null).when(wrappingLocalExtension0).getType();
+      WrappingLocalExtension<WrappingLocalExtension<DefaultInstalledExtension>> wrappingLocalExtension1 = new WrappingLocalExtension<WrappingLocalExtension<DefaultInstalledExtension>>(wrappingLocalExtension0);
+      LocalExtensionRepository localExtensionRepository0 = mock(LocalExtensionRepository.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "localRepository", (Object) localExtensionRepository0);
+      Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
+      Injector.inject(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class, "logger", (Object) logger0);
+      Injector.validateBean(defaultInstalledExtensionRepository0, (Class<?>) DefaultInstalledExtensionRepository.class);
+      defaultInstalledExtensionRepository0.getInstalledExtensions();
+      defaultInstalledExtensionRepository0.getInstalledExtensions();
+      ExtensionId extensionId0 = new ExtensionId((String) null, (String) null);
+      ExtensionId extensionId1 = new ExtensionId((String) null, (String) null);
+      LocalExtension localExtension0 = mock(LocalExtension.class, new ViolatedAssumptionAnswer());
+      boolean boolean0 = true;
+      DiamondIterableMapMRO diamondIterableMapMRO0 = new DiamondIterableMapMRO();
+      String string0 = "M\\i-;Gim] ";
+      DefaultInstalledExtension defaultInstalledExtension0 = new DefaultInstalledExtension(wrappingLocalExtension1, defaultInstalledExtensionRepository0);
+  }
+}

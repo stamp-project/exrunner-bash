@@ -1,0 +1,34 @@
+/*
+
+ * Tue Apr 21 08:53:48 UTC 2020
+ */
+
+package org.apache.commons.math.analysis.solvers;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.analysis.Expm1Function;
+import org.apache.commons.math.analysis.UnivariateRealFunction;
+import org.apache.commons.math.analysis.solvers.AllowedSolution;
+import org.apache.commons.math.analysis.solvers.RegulaFalsiSolver;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BaseSecantSolver_ESTest extends BaseSecantSolver_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      double double0 = (-0.7444849317250399);
+      RegulaFalsiSolver regulaFalsiSolver0 = new RegulaFalsiSolver((-0.7444849317250399));
+      int int0 = 2750;
+      int int1 = (-732);
+      Expm1Function expm1Function0 = new Expm1Function();
+      double double1 = 182.625011987;
+      AllowedSolution allowedSolution0 = AllowedSolution.ABOVE_SIDE;
+      // Undeclared exception!
+      regulaFalsiSolver0.solve(146, (UnivariateRealFunction) expm1Function0, (-0.7444849317250399), 4276.552675597199, (-0.7444849317250399), allowedSolution0);
+  }
+}

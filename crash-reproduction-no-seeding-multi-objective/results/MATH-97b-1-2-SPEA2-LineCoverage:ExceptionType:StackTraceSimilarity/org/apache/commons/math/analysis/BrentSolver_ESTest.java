@@ -1,0 +1,33 @@
+/*
+
+ * Tue Apr 21 10:35:07 UTC 2020
+ */
+
+package org.apache.commons.math.analysis;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.analysis.BrentSolver;
+import org.apache.commons.math.analysis.UnivariateRealFunction;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BrentSolver_ESTest extends BrentSolver_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      UnivariateRealFunction univariateRealFunction0 = mock(UnivariateRealFunction.class, new ViolatedAssumptionAnswer());
+      doReturn((-1491.800055), (-1491.800055)).when(univariateRealFunction0).value(anyDouble());
+      BrentSolver brentSolver0 = new BrentSolver(univariateRealFunction0);
+      brentSolver0.setFunctionValueAccuracy((-1335.1280462531909));
+      brentSolver0.getFunctionValueAccuracy();
+      brentSolver0.setRelativeAccuracy((-1335.1280462531909));
+      // Undeclared exception!
+      brentSolver0.solve((-2497.779367766), (-1335.1280462531909));
+  }
+}

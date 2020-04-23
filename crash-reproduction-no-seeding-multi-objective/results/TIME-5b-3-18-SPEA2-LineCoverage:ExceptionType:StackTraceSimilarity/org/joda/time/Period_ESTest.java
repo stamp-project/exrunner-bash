@@ -1,0 +1,40 @@
+/*
+
+ * Wed Apr 22 19:41:14 UTC 2020
+ */
+
+package org.joda.time;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.joda.time.Chronology;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
+import org.joda.time.TestBaseSingleFieldPeriod;
+import org.joda.time.TestTimeOfDay_Basics;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class Period_ESTest extends Period_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      int int0 = (-1693);
+      Integer integer0 = new Integer((-1693));
+      Period period0 = Period.months((-1693));
+      period0.size();
+      period0.plusMonths(8);
+      TestTimeOfDay_Basics testTimeOfDay_Basics0 = new TestTimeOfDay_Basics("");
+      TestTimeOfDay_Basics.MockInstant testTimeOfDay_Basics_MockInstant0 = testTimeOfDay_Basics0.new MockInstant();
+      Chronology chronology0 = testTimeOfDay_Basics_MockInstant0.getChronology();
+      Period period1 = new Period((-1693), (-1693), chronology0);
+      period1.toMutablePeriod();
+      TestBaseSingleFieldPeriod.Single testBaseSingleFieldPeriod_Single0 = new TestBaseSingleFieldPeriod.Single(8);
+      PeriodType periodType0 = testBaseSingleFieldPeriod_Single0.getPeriodType();
+      // Undeclared exception!
+      period0.normalizedStandard(periodType0);
+  }
+}

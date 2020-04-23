@@ -1,0 +1,32 @@
+/*
+
+ * Tue Apr 21 11:19:14 UTC 2020
+ */
+
+package org.mockito.internal;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+import org.mockito.internal.MockitoCore;
+import org.mockito.internal.invocation.Invocation;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class MockitoCore_ESTest extends MockitoCore_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      MockitoCore mockitoCore0 = new MockitoCore();
+      Invocation invocation0 = mock(Invocation.class, new ViolatedAssumptionAnswer());
+      Class<Integer> class0 = Integer.TYPE;
+      MockitoCore mockitoCore1 = new MockitoCore();
+      mockitoCore1.validateMockitoUsage();
+      // Undeclared exception!
+      mockitoCore1.when(class0);
+  }
+}

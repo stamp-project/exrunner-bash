@@ -1,0 +1,43 @@
+/*
+
+ * Mon Apr 20 14:31:43 UTC 2020
+ */
+
+package com.xpn.xwiki.objects.classes;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.shaded.org.mockito.Mockito.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import com.xpn.xwiki.objects.BaseCollection;
+import com.xpn.xwiki.objects.classes.BaseClass;
+import com.xpn.xwiki.objects.meta.PasswordMetaClass;
+import java.util.Map;
+import java.util.TreeMap;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.runner.RunWith;
+import org.xwiki.model.reference.DocumentReference;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BaseClass_ESTest extends BaseClass_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      BaseClass baseClass0 = new BaseClass();
+      baseClass0.fromString("K36,^)'n");
+      int int0 = (-79);
+      baseClass0.addDateField("\" is closed.", "\" is closed.", "K36,^)'n", (-79));
+      baseClass0.getField("K36,^)'n");
+      DocumentReference documentReference0 = mock(DocumentReference.class, new ViolatedAssumptionAnswer());
+      String string0 = "XWiki.XWikiPreferences";
+      baseClass0.safeget("XWiki.XWikiPreferences");
+      String string1 = "yOC";
+      TreeMap<String, PasswordMetaClass> treeMap0 = new TreeMap<String, PasswordMetaClass>();
+      PasswordMetaClass passwordMetaClass0 = new PasswordMetaClass();
+      treeMap0.put("storageType", passwordMetaClass0);
+      // Undeclared exception!
+      passwordMetaClass0.fromMap((Map<String, ?>) treeMap0, (BaseCollection) null);
+  }
+}

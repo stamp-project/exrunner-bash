@@ -1,0 +1,45 @@
+/*
+
+ * Mon Apr 20 11:56:51 UTC 2020
+ */
+
+package org.apache.commons.math.stat.clustering;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import java.util.List;
+import java.util.Random;
+import org.apache.commons.math.stat.clustering.Cluster;
+import org.apache.commons.math.stat.clustering.EuclideanIntegerPoint;
+import org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class KMeansPlusPlusClusterer_ESTest extends KMeansPlusPlusClusterer_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      int[] intArray0 = new int[1];
+      int int0 = Integer.MAX_VALUE;
+      intArray0[0] = Integer.MAX_VALUE;
+      EuclideanIntegerPoint euclideanIntegerPoint0 = new EuclideanIntegerPoint(intArray0);
+      Cluster<EuclideanIntegerPoint> cluster0 = new Cluster<EuclideanIntegerPoint>(euclideanIntegerPoint0);
+      List<EuclideanIntegerPoint> list0 = cluster0.getPoints();
+      Random random0 = new Random((-925L));
+      cluster0.addPoint(euclideanIntegerPoint0);
+      cluster0.addPoint(euclideanIntegerPoint0);
+      Integer integer0 = new Integer(Integer.MAX_VALUE);
+      Cluster<EuclideanIntegerPoint> cluster1 = new Cluster<EuclideanIntegerPoint>(euclideanIntegerPoint0);
+      cluster0.addPoint(euclideanIntegerPoint0);
+      Random random1 = new Random(807L);
+      KMeansPlusPlusClusterer<EuclideanIntegerPoint> kMeansPlusPlusClusterer0 = new KMeansPlusPlusClusterer<EuclideanIntegerPoint>(random0);
+      random0.nextFloat();
+      List<EuclideanIntegerPoint> list1 = cluster0.getPoints();
+      kMeansPlusPlusClusterer0.cluster(list0, (-3040), 0);
+      // Undeclared exception!
+      kMeansPlusPlusClusterer0.cluster(list1, 0, (-679));
+  }
+}

@@ -1,0 +1,31 @@
+/*
+
+ * Mon Apr 20 11:58:59 UTC 2020
+ */
+
+package org.apache.commons.math.analysis.solvers;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.evosuite.runtime.EvoAssertions.*;
+import org.apache.commons.math.analysis.QuinticFunction;
+import org.apache.commons.math.analysis.UnivariateRealFunction;
+import org.apache.commons.math.analysis.solvers.BisectionSolver;
+import org.evosuite.runtime.EvoRunner;
+import org.evosuite.runtime.EvoRunnerParameters;
+import org.junit.runner.RunWith;
+
+@RunWith(EvoRunner.class) @EvoRunnerParameters(useVFS = true, useJEE = true) 
+public class BisectionSolver_ESTest extends BisectionSolver_ESTest_scaffolding {
+
+  @Test(timeout = 4000)
+  public void test0()  throws Throwable  {
+      BisectionSolver bisectionSolver0 = new BisectionSolver();
+      bisectionSolver0.result = 0.5;
+      double double0 = 2583.0;
+      QuinticFunction quinticFunction0 = new QuinticFunction();
+      double double1 = 2218.62175882207;
+      // Undeclared exception!
+      bisectionSolver0.solve((UnivariateRealFunction) quinticFunction0, 0.5, 1.0, (-1.0));
+  }
+}
