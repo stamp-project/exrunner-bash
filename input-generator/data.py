@@ -413,7 +413,7 @@ class CaseData:
 class OtherData:
     search_algorithm=["Single_Objective_GGA"]
     objectives = ["IntegrationSingleObjective"]
-    secondary_objective = [""]
+    secondary_objective = ["BasicBlockCoverage"]
     p_functional_mocking = [""]
     functional_mocking_percent = [""]
     search_budget = [300]
