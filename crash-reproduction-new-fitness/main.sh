@@ -41,11 +41,7 @@ for t in ${job_list[@]}; do
   outFile="logs/$case-$frame-$execution_idx-$search_algorithm-$objectives-$secondary_objective-out.txt"
   errFile="logs/$case-$frame-$execution_idx-$search_algorithm-$objectives-$secondary_objective-err.txt"
   resultDir="results/$case-$frame-$execution_idx-$search_algorithm-$objectives-$secondary_objective"
-  if [[ "$secondary_objective" -eq "" ]]; then
-    secondary_objective_command=""
-  else
-    secondary_objective_command="-crash_secondary_objective $secondary_objective"
-  fi
+
 
   if [[ "$objectives"  == *"Integration"* ]]; then
     integ_command="-integration_testing"
@@ -53,7 +49,12 @@ for t in ${job_list[@]}; do
     integ_command=""
   fi
   
-  java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -search_algorithm $search_algorithm -fitness $objectives $integ_command "$secondary_objective_command" -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXTIME -Dreset_static_fields=FALSE -Dmax_recursion=50 -Dvirtual_net=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="$resultDir" > "$outFile" 2> "$errFile" &
+  if [[ "$secondary_objective" == "" ]]; then
+    java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -search_algorithm $search_algorithm -fitness $objectives $integ_command -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXTIME -Dreset_static_fields=FALSE -Dmax_recursion=50 -Dvirtual_net=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="$resultDir" > "$outFile" 2> "$errFile" &
+  else
+    java -d64 -Xmx4000m -jar ../lib/botsing-reproduction.jar -project_cp "../bins/$application/$version/bin/" -crash_log "../crashes/$application/$case/$case.log" -search_algorithm $search_algorithm -fitness $objectives $integ_command -crash_secondary_objective $secondary_objective -target_frame $frame -Dsearch_budget=$search_budget -Dstopping_condition=MAXTIME -Dreset_static_fields=FALSE -Dmax_recursion=50 -Dvirtual_net=FALSE -Duse_separate_classloader=FALSE -Dtest_dir="$resultDir" > "$outFile" 2> "$errFile" &
+  fi
+  
   pid=$!
   # # echo $pid
   . parsing.sh $pid $execution_idx $application $case $version $frame $search_budget $search_algorithm $objectives $secondary_objective &
