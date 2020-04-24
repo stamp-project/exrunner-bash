@@ -51,7 +51,6 @@ def write_on_csv_file(csv_result,csv_file_dir):
     for cell in title_order:
         if cell in csv_result.keys():
             fields.append(csv_result[cell])
-            print cell
         else:
             fields.append("")
 
