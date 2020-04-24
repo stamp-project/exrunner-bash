@@ -14,7 +14,11 @@ frame_level=sys.argv[5]
 search_budget=sys.argv[6]
 search_algorithm=sys.argv[7]
 objectives=sys.argv[8]
-secondary_objective=sys.argv[9]
+if len(sys.argv) > 9:
+    secondary_objective=sys.argv[9]
+else:
+    secondary_objective=''
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 log_dir = os.path.join(dir_path, "..", "logs",case+"-"+frame_level+"-"+execution_idx+"-"+search_algorithm+"-"+objectives+"-"+secondary_objective+"-out.txt")
 out_dir = os.path.join(dir_path, "..", "results","results.csv")
