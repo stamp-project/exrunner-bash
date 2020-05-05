@@ -1,0 +1,54 @@
+14:15:23.631 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.mockito.exceptions.base.MockitoException
+14:15:23.636 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.mockito.exceptions.Reporter.serializableWontWorkForObjectsThatDontImplementSerializable(Reporter:760)
+14:15:23.636 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.mockito.exceptions.Reporter
+14:15:23.637 [main] INFO  eu.stamp.botsing.Botsing - Single_Objective_GGA
+14:15:27.727 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 3.
+14:15:34.006 [main] ERROR e.s.b.reproduction.CrashReproduction - Error in target initialization:
+14:15:34.048 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:15:34.107 [main] INFO  e.s.b.s.TestCaseSecondaryObjective - Secondary Objectives: BasicBlockCoverage
+14:15:34.117 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+14:15:34.361 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating the initial population. cause: Type org.mockito.internal.matchers.LocalizedMatcher not present
+14:15:34.474 [main] INFO  e.s.b.f.utils.CrashDistanceEvolution - New value for Crash Distance after 1 fitness evolutions and 0 second: 4.5
+14:15:34.475 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+14:15:34.475 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. PT: 0 seconds
+14:15:34.475 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:15:36.359 [main] INFO  e.s.b.f.utils.CrashDistanceEvolution - New value for Crash Distance after 18 fitness evolutions and 2 second: 3.0
+14:15:36.446 [main] INFO  e.s.b.f.utils.CrashDistanceEvolution - New value for Crash Distance after 24 fitness evolutions and 2 second: 0.0
+14:15:37.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.0 | 100
+14:15:37.634 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 3 seconds
+14:15:37.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+14:15:37.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:15:37.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 3 seconds
+14:15:37.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: Class<Integer> class0 = Integer.class;
+Reporter reporter0 = new Reporter();
+reporter0.serializableWontWorkForObjectsThatDontImplementSerializable(class0);
+
+14:15:37.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+14:15:37.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.base.MockitoException: 
+You are using the setting 'withSettings().serializable()' however the type you are trying to mock 'Integer'
+do not implement Serializable AND do not have a no-arg constructor.
+This combination is requested, otherwise you will get an 'java.io.InvalidClassException' when the mock will be serialized
+
+Also note that as requested by the Java serialization specification, the whole hierarchy need to implements Serializable,
+i.e. the top-most superclass has to implements Serializable.
+
+14:15:37.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.mockito.exceptions.Reporter.serializableWontWorkForObjectsThatDontImplementSerializable(Reporter.java:760)
+14:15:37.635 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+14:15:37.636 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+14:15:37.665 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+14:15:37.666 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+14:15:37.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+14:15:37.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+14:15:37.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+14:15:37.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+14:15:37.680 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+14:15:37.700 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+14:15:37.722 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+14:15:40.920 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+14:15:45.734 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'Reporter_ESTest' to results/MOCKITO-10b-1-25-Single_Objective_GGA-WeightedSum-BasicBlockCoverage
+14:15:45.792 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!

@@ -1,0 +1,81 @@
+17:06:50.448 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+17:06:50.453 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter:866)
+17:06:50.453 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.joda.time.format.DateTimeFormatter
+17:06:50.453 [main] INFO  eu.stamp.botsing.Botsing - Single_Objective_GGA
+17:06:52.808 [main] INFO  e.stamp.botsing.commons.SetupUtility - Starting the dependency analysis. The number of detected jar files is 5.
+17:07:04.042 [main] INFO  e.stamp.botsing.commons.SetupUtility - Analysing dependencies done!
+17:07:04.066 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:07:04.085 [main] INFO  e.s.b.s.TestCaseSecondaryObjective - Secondary Objectives: BasicBlockCoverage
+17:07:04.094 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+17:07:07.262 [main] INFO  e.s.b.f.utils.CrashDistanceEvolution - New value for Crash Distance after 1 fitness evolutions and 3 second: 5.863636363636363
+17:07:09.533 [main] INFO  e.s.b.f.utils.CrashDistanceEvolution - New value for Crash Distance after 6 fitness evolutions and 5 second: 0.0
+17:07:12.632 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+17:07:12.632 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 8 seconds
+17:07:12.632 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:07:12.661 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+17:07:12.661 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:07:12.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 8 seconds
+17:07:12.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: DateTimePrinter dateTimePrinter0 = mock(DateTimePrinter.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser0 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser1 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+DateTimeParser dateTimeParser2 = mock(DateTimeParser.class, new ViolatedAssumptionAnswer());
+doReturn((String) null).when(dateTimeParser2).toString();
+doReturn(0).when(dateTimeParser2).parseInto(any(org.joda.time.format.DateTimeParserBucket.class) , anyString() , anyInt());
+DateTimeFormatter dateTimeFormatter0 = new DateTimeFormatter(dateTimePrinter0, dateTimeParser2);
+String string0 = "British Summer Time";
+dateTimeFormatter0.parseDateTime(string0);
+Locale locale0 = dateTimeFormatter0.getLocale();
+DateTimeZone dateTimeZone0 = mock(DateTimeZone.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter1 = dateTimeFormatter0.withZone(dateTimeZone0);
+dateTimeFormatter0.parseDateTime(string0);
+int int0 = 7;
+DateTimeFormatter dateTimeFormatter2 = dateTimeFormatter1.withDefaultYear(int0);
+dateTimeFormatter1.parseLocalDate(string0);
+String string1 = "T'>@zb";
+dateTimeFormatter2.parseDateTime(string1);
+Locale locale1 = dateTimeFormatter1.getLocale();
+dateTimeFormatter2.parseDateTime(string1);
+DateTimeFormatter dateTimeFormatter3 = dateTimeFormatter0.withLocale(locale0);
+ReadWritableInstant readWritableInstant0 = mock(ReadWritableInstant.class, new ViolatedAssumptionAnswer());
+dateTimeFormatter2.parseInto(readWritableInstant0, string1, int0);
+DateTimeZone dateTimeZone1 = dateTimeFormatter3.getZone();
+dateTimeFormatter2.withZoneUTC();
+String string2 = "Pacific/Guadalcanal";
+dateTimeFormatter2.parseMutableDateTime(string2);
+DateTimePrinter dateTimePrinter1 = null;
+boolean boolean0 = false;
+Chronology chronology0 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+Integer integer0 = new Integer(int0);
+int int1 = 2674;
+DateTimeFormatter dateTimeFormatter4 = new DateTimeFormatter(dateTimePrinter1, dateTimeParser1, locale1, boolean0, chronology0, dateTimeZone1, integer0, int1);
+Chronology chronology1 = mock(Chronology.class, new ViolatedAssumptionAnswer());
+DateTimeFormatter dateTimeFormatter5 = dateTimeFormatter0.withChronology(chronology1);
+String string3 = "Printing not supported";
+dateTimeFormatter5.parseDateTime(string3);
+String string4 = "\\";
+dateTimeFormatter2.parseDateTime(string4);
+String string5 = "Instant must not be null";
+dateTimeFormatter3.parseLocalTime(string5);
+
+17:07:12.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution: 
+17:07:12.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.IllegalArgumentException: Invalid format: "British Summer Time"
+17:07:12.665 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.joda.time.format.DateTimeFormatter.parseDateTime(DateTimeFormatter.java:866)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Method.java:498)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(FutureTask.java:266)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+17:07:12.697 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Thread.java:748)
+17:07:12.737 [main] INFO  e.s.b.commons.PostProcessUtility - * Minimizing test suite
+17:07:13.513 [main] INFO  e.s.b.commons.PostProcessUtility - Generating assertions
+17:07:15.852 [main] INFO  e.s.b.commons.PostProcessUtility - * Compiling and checking tests
+17:07:20.889 [main] INFO  e.s.b.commons.PostProcessUtility - * Writing JUnit test case 'DateTimeFormatter_ESTest' to results/TIME-20b-1-30-Single_Objective_GGA-WeightedSum-BasicBlockCoverage
+17:07:20.921 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
