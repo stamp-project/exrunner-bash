@@ -425,4 +425,4 @@ class OtherData:
     # First index: target probability  |  Second index: non-target probability
     # p_model_pool_init = [[0.2, 0.2]];
     p_model_pool_init = [["", ""]]
-    repeat = 15
+    repeat = 30
